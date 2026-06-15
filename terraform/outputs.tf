@@ -19,8 +19,8 @@ output "activity_table_name" {
 }
 
 output "schedule_info" {
-  description = "App Runner weekday operating schedule."
-  value       = "Weekdays 10:00-12:00 and 13:00-17:00 JST. Resume is skipped on configured holidays. Off-hours guard pauses any service that is manually resumed."
+  description = "App Runner operating schedule."
+  value       = "Every day 9:00-24:00 JST. Resume is skipped on configured holidays. Off-hours guard pauses any service that is manually resumed."
 }
 
 output "budget_info" {

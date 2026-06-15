@@ -68,23 +68,13 @@ resource "aws_lambda_function" "scheduler" {
 locals {
   schedules = {
     resume = {
-      description = "Resume App Runner weekdays at 10:00 JST."
-      expression  = "cron(0 1 ? * MON-FRI *)"
-      action      = "resume"
-    }
-    lunch_pause = {
-      description = "Pause App Runner weekdays at 12:00 JST."
-      expression  = "cron(0 3 ? * MON-FRI *)"
-      action      = "pause"
-    }
-    lunch_resume = {
-      description = "Resume App Runner weekdays at 13:00 JST."
-      expression  = "cron(0 4 ? * MON-FRI *)"
+      description = "Resume App Runner daily at 9:00 JST."
+      expression  = "cron(0 0 ? * * *)" # 00:00 UTC = 09:00 JST every day
       action      = "resume"
     }
     pause = {
-      description = "Pause App Runner weekdays at 17:00 JST."
-      expression  = "cron(0 8 ? * MON-FRI *)"
+      description = "Pause App Runner daily at 24:00 JST (= 00:00 next day)."
+      expression  = "cron(0 15 ? * * *)" # 15:00 UTC = 24:00 JST same day
       action      = "pause"
     }
     off_hours_guard = {
@@ -113,46 +103,6 @@ resource "aws_lambda_permission" "resume" {
   function_name = aws_lambda_function.scheduler.function_name
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.resume.arn
-}
-
-resource "aws_cloudwatch_event_rule" "lunch_pause" {
-  name                = "${var.app_name}-lunch-pause"
-  description         = local.schedules.lunch_pause.description
-  schedule_expression = local.schedules.lunch_pause.expression
-}
-
-resource "aws_cloudwatch_event_target" "lunch_pause" {
-  rule  = aws_cloudwatch_event_rule.lunch_pause.name
-  arn   = aws_lambda_function.scheduler.arn
-  input = jsonencode({ action = local.schedules.lunch_pause.action })
-}
-
-resource "aws_lambda_permission" "lunch_pause" {
-  statement_id  = "AllowEventBridgeLunchPause"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.scheduler.function_name
-  principal     = "events.amazonaws.com"
-  source_arn    = aws_cloudwatch_event_rule.lunch_pause.arn
-}
-
-resource "aws_cloudwatch_event_rule" "lunch_resume" {
-  name                = "${var.app_name}-lunch-resume"
-  description         = local.schedules.lunch_resume.description
-  schedule_expression = local.schedules.lunch_resume.expression
-}
-
-resource "aws_cloudwatch_event_target" "lunch_resume" {
-  rule  = aws_cloudwatch_event_rule.lunch_resume.name
-  arn   = aws_lambda_function.scheduler.arn
-  input = jsonencode({ action = local.schedules.lunch_resume.action })
-}
-
-resource "aws_lambda_permission" "lunch_resume" {
-  statement_id  = "AllowEventBridgeLunchResume"
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.scheduler.function_name
-  principal     = "events.amazonaws.com"
-  source_arn    = aws_cloudwatch_event_rule.lunch_resume.arn
 }
 
 resource "aws_cloudwatch_event_rule" "pause" {

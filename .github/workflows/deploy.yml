@@ -53,15 +53,12 @@ jobs:
           fi
 
           SERVICE_STATUS=$(aws apprunner describe-service --service-arn "$SERVICE_ARN" --query "Service.Status" --output text)
-          JST_DAY=$(TZ=Asia/Tokyo date +%u)
-          JST_TIME=$(TZ=Asia/Tokyo date +%H%M)
+          JST_HOUR=$(TZ=Asia/Tokyo date +%-H)
 
-          # 平日 10-12 / 13-17 JST のみデプロイ実行 (それ以外は pause)
+          # 毎日 9:00-24:00 JST のみデプロイ実行 (それ以外は pause)
           OPERATING_HOURS=false
-          if [ "$JST_DAY" -ge 1 ] && [ "$JST_DAY" -le 5 ]; then
-            if { [ "$JST_TIME" -ge 1000 ] && [ "$JST_TIME" -lt 1200 ]; } || { [ "$JST_TIME" -ge 1300 ] && [ "$JST_TIME" -lt 1700 ]; }; then
-              OPERATING_HOURS=true
-            fi
+          if [ "$JST_HOUR" -ge 9 ] && [ "$JST_HOUR" -lt 24 ]; then
+            OPERATING_HOURS=true
           fi
 
           if [ "$OPERATING_HOURS" != "true" ]; then

@@ -26,11 +26,8 @@ def _holidays() -> set[str]:
 def _is_operating_time(now: datetime, holidays: set[str]) -> bool:
     if now.strftime("%Y-%m-%d") in holidays:
         return False
-    if now.weekday() >= 5:
-        return False
-
-    minutes = now.hour * 60 + now.minute
-    return (10 * 60 <= minutes < 12 * 60) or (13 * 60 <= minutes < 17 * 60)
+    # 毎日 9:00-24:00 (深夜 0:00 で停止)
+    return 9 <= now.hour < 24
 
 
 def _service_status(client, service_arn: str) -> str:
