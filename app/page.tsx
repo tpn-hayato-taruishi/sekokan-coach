@@ -146,6 +146,12 @@ type PdfUrlMap = { answer?: Record<string, string>; problem?: Record<string, str
 export default function QuizPage() {
   const [data, setData] = useState<QuizData | null>(null);
   const [pdfUrls, setPdfUrls] = useState<PdfUrlMap>({});
+  const [pdfOverlay, setPdfOverlay] = useState<{ url: string; title: string } | null>(null);
+  // ダッシュボードストリップの折りたたみ
+  const [dashboardCollapsed, setDashboardCollapsed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem('sekokan-dashboard-collapsed') === '1';
+  });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [filterLevel, setFilterLevel] = useState(() => {
@@ -341,6 +347,7 @@ export default function QuizPage() {
   useEffect(() => { try { localStorage.setItem('sekokan-exclude-strong', excludeStrong ? '1' : '0'); } catch {} }, [excludeStrong]);
   useEffect(() => { try { localStorage.setItem('sekokan-experience', JSON.stringify(experienceSurvey)); } catch {} }, [experienceSurvey]);
   useEffect(() => { try { localStorage.setItem('sekokan-experience-outputs', JSON.stringify(experienceOutputs)); } catch {} }, [experienceOutputs]);
+  useEffect(() => { try { localStorage.setItem('sekokan-dashboard-collapsed', dashboardCollapsed ? '1' : '0'); } catch {} }, [dashboardCollapsed]);
   useEffect(() => { try { localStorage.setItem('sekokan-exam-type', examType); } catch {} }, [examType]);
 
   // 経験記述AI生成: テーマごとにBedrockへ
@@ -731,10 +738,12 @@ export default function QuizPage() {
     const key = `${current.level}_第一次/${pdfName}`;
     const url = pdfUrls.problem?.[key];
     if (url) {
-      window.open(`${url}#page=${current.page || 1}`, '_blank');
+      setPdfOverlay({
+        url: `${url}#page=${current.page || 1}`,
+        title: `📄 ${current.level} ${current.year}${current.season ? ` ${current.season === 'AM' ? '前期' : current.season === 'PM' ? '後期' : current.season}` : ''} 問題PDF (p.${current.page || 1})`,
+      });
     } else {
-      // 問題PDF未公開年度 → kakomonn 解説サイトへ誘導
-      alert(`${current.year} の問題PDFは外部サイトに直リンク無し。代わりに kakomonn 解説サイトを開きます。`);
+      alert(`${current.year} の問題PDFは外部サイトに直リンク無し。kakomonn 解説サイトを開きます。`);
       openKakomon();
     }
   }, [current, pdfUrls, openKakomon]);
@@ -749,7 +758,10 @@ export default function QuizPage() {
     const key = `${current.level}_第一次/${ansName}`;
     const url = pdfUrls.answer?.[key];
     if (url) {
-      window.open(url, '_blank');
+      setPdfOverlay({
+        url,
+        title: `📑 ${current.level} ${current.year}${current.season ? ` ${current.season === 'AM' ? '前期' : current.season === 'PM' ? '後期' : current.season}` : ''} 解答PDF`,
+      });
     } else {
       alert(`${current.year} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
       openKakomon();
@@ -1628,8 +1640,37 @@ ${profileLines}
         </div>
       </header>
 
-      {/* ダッシュボードストリップ: 試験日 / 学習モード / 今日のノルマ / 統計 */}
-      <div className="bg-white border-b border-slate-200 px-4 py-2 flex-shrink-0">
+      {/* ダッシュボードストリップ: 試験日 / 学習モード / 今日のノルマ / 統計 (折りたたみ可) */}
+      <div className="bg-white border-b border-slate-200 px-4 py-1.5 flex-shrink-0">
+        <div className="flex items-center justify-between mb-1">
+          <button
+            onClick={() => setDashboardCollapsed((v) => !v)}
+            className="text-xs text-slate-600 hover:text-slate-900 font-bold flex items-center gap-1"
+            title={dashboardCollapsed ? '展開' : '折りたたみ'}
+          >
+            <span className="text-slate-400">{dashboardCollapsed ? '▶' : '▼'}</span>
+            📊 ダッシュボード
+            {dashboardCollapsed && (
+              <span className="ml-2 font-normal text-slate-500 text-[11px]">
+                試験日 {examDates['1級'] ? (() => {
+                  const t = new Date(examDates['1級'] + 'T00:00:00');
+                  const today = new Date(); today.setHours(0, 0, 0, 0);
+                  const d = Math.floor((t.getTime() - today.getTime()) / 86400000);
+                  return `1級残${d >= 0 ? d : '?'}日 / `;
+                })() : ''}
+                {examDates['2級'] ? (() => {
+                  const t = new Date(examDates['2級'] + 'T00:00:00');
+                  const today = new Date(); today.setHours(0, 0, 0, 0);
+                  const d = Math.floor((t.getTime() - today.getTime()) / 86400000);
+                  return `2級残${d >= 0 ? d : '?'}日`;
+                })() : ''}
+                {' / 🎯 '}{studyMode === 'browse' ? '👀眺め' : studyMode === 'weak' ? '🔥弱点' : studyMode === 'bookmark' ? '⭐ブックマーク' : '通常'}
+                {' / 📊 '}{stats.correct}/{stats.total} ({stats.total ? Math.round(stats.correct / stats.total * 100) : 0}%)
+              </span>
+            )}
+          </button>
+        </div>
+        {!dashboardCollapsed && (
         <div className="flex flex-wrap items-stretch gap-2 text-xs">
           {/* 試験日カウントダウン: 1級 + 2級 両方表示 (active な級をハイライト) */}
           {(['1級', '2級'] as const).map((lvl) => {
@@ -1823,6 +1864,7 @@ ${profileLines}
             </div>
           </div>
         </div>
+        )}
       </div>
 
       <div className="w-full flex-1 px-4 py-3 grid grid-cols-1 lg:grid-cols-12 gap-4 overflow-hidden">
@@ -2025,27 +2067,7 @@ ${profileLines}
 
               <p className="text-base leading-relaxed whitespace-pre-wrap">{current.question}</p>
 
-              {(current.figure_url || current.page_url) && (
-                <div className="bg-slate-50 border border-slate-200 rounded p-3 text-center">
-                  <a
-                    href={`/api/report/${encodeURI(current.figure_url || current.page_url || '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="クリックで拡大表示"
-                  >
-                    <img
-                      src={`/api/report/${encodeURI(current.figure_url || current.page_url || '')}`}
-                      alt={current.has_figure ? '問題の図' : '問題ページ全体'}
-                      className="max-w-full max-h-[400px] mx-auto cursor-zoom-in hover:opacity-90"
-                      loading="lazy"
-                    />
-                  </a>
-                  <p className="text-xs text-slate-500 mt-1">
-                    {current.has_figure ? '🖼 図あり問題' : '📄 問題ページ全体'}
-                    {' '}(p.{current.page ?? '?'} / クリックで原寸)
-                  </p>
-                </div>
-              )}
+              {/* 「📄 問題PDF」ボタンを押すと PDFオーバーレイで表示するため、サムネ画像は削除 */}
 
               <div className="space-y-2">
                 {current.choices.map((c, i) => {
@@ -2231,6 +2253,23 @@ ${profileLines}
           </div>
         </div>
       </div>
+
+      {/* PDFオーバーレイ表示 (外部PDFを iframe で埋め込み) */}
+      {pdfOverlay && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex flex-col" onClick={() => setPdfOverlay(null)}>
+          <div className="bg-white px-3 py-2 flex items-center gap-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
+            <span className="font-bold text-sm flex-1 truncate">{pdfOverlay.title}</span>
+            <a href={pdfOverlay.url} target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1 bg-slate-200 hover:bg-slate-300 rounded">↗ 新タブで開く</a>
+            <button onClick={() => setPdfOverlay(null)} className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded text-sm font-bold">✕ 閉じる</button>
+          </div>
+          <iframe
+            src={pdfOverlay.url}
+            className="flex-1 w-full bg-white"
+            title="PDF preview"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
