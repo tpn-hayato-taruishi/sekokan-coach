@@ -141,8 +141,11 @@ const SIM_DEF: Record<string, string> = {
   '過去問と全然違う': '新規テーマ または過去問にない聞き方。最近の出題傾向で要注意',
 };
 
+type PdfUrlMap = { answer?: Record<string, string>; problem?: Record<string, string> };
+
 export default function QuizPage() {
   const [data, setData] = useState<QuizData | null>(null);
+  const [pdfUrls, setPdfUrls] = useState<PdfUrlMap>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [filterLevel, setFilterLevel] = useState(() => {
@@ -423,6 +426,11 @@ export default function QuizPage() {
         setError((e as Error).message);
         setLoading(false);
       });
+    // PDF外部URLマッピング (AWSにPDFを保存せず外部サイト直リンクで開く)
+    fetch('/data/pdf-urls.json')
+      .then((r) => r.json())
+      .then((m: PdfUrlMap) => setPdfUrls(m))
+      .catch(() => {});
   }, []);
 
   // 頻出度フィルタ判定 (再宣言を避けるため先に置く)
@@ -694,24 +702,6 @@ export default function QuizPage() {
     setSubjStats({});
   }, []);
 
-  const openProblemPdf = useCallback(() => {
-    if (!current) return;
-    const pdfName = current.source_pdf || current.source.replace(/\.txt$/, '.pdf');
-    const url = `/api/pdf/${current.level}_第一次/${encodeURIComponent(pdfName)}#page=${current.page || 1}`;
-    window.open(url, '_blank');
-  }, [current]);
-
-  const openAnswerPdf = useCallback(() => {
-    if (!current) return;
-    const denki = current.level === '1級' ? '1denki' : '2denki';
-    let suffix = '';
-    if (current.level === '2級' && current.season === 'AM') suffix = '_early';
-    else if (current.level === '2級' && current.season === 'PM') suffix = '_late';
-    const ansName = `${current.year}_${denki}_01${suffix}_kaitou.pdf`;
-    const url = `/api/pdf/${current.level}_第一次/${encodeURIComponent(ansName)}`;
-    window.open(url, '_blank');
-  }, [current]);
-
   const openKakomon = useCallback(() => {
     if (!current) return;
     const KAKOMON_MAP_2: Record<string, string> = {
@@ -734,6 +724,37 @@ export default function QuizPage() {
       window.open(`https://${host}.kakomonn.com/`, '_blank');
     }
   }, [current]);
+
+  const openProblemPdf = useCallback(() => {
+    if (!current) return;
+    const pdfName = current.source_pdf || current.source.replace(/\.txt$/, '.pdf');
+    const key = `${current.level}_第一次/${pdfName}`;
+    const url = pdfUrls.problem?.[key];
+    if (url) {
+      window.open(`${url}#page=${current.page || 1}`, '_blank');
+    } else {
+      // 問題PDF未公開年度 → kakomonn 解説サイトへ誘導
+      alert(`${current.year} の問題PDFは外部サイトに直リンク無し。代わりに kakomonn 解説サイトを開きます。`);
+      openKakomon();
+    }
+  }, [current, pdfUrls, openKakomon]);
+
+  const openAnswerPdf = useCallback(() => {
+    if (!current) return;
+    const denki = current.level === '1級' ? '1denki' : '2denki';
+    let suffix = '';
+    if (current.level === '2級' && current.season === 'AM') suffix = '_early';
+    else if (current.level === '2級' && current.season === 'PM') suffix = '_late';
+    const ansName = `${current.year}_${denki}_01${suffix}_kaitou.pdf`;
+    const key = `${current.level}_第一次/${ansName}`;
+    const url = pdfUrls.answer?.[key];
+    if (url) {
+      window.open(url, '_blank');
+    } else {
+      alert(`${current.year} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
+      openKakomon();
+    }
+  }, [current, pdfUrls, openKakomon]);
 
   const askAi = useCallback(() => {
     if (!current) return;
