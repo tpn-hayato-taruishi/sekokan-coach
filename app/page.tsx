@@ -1274,7 +1274,7 @@ export default function QuizPage() {
 
   if (showWorkflow) {
     return (
-      <div className="h-screen w-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col overflow-hidden">
+      <div className="min-h-screen w-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col lg:h-screen lg:overflow-hidden">
         {/* ヘッダー (固定) */}
         <header className="bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-8 py-4 shadow-lg flex items-center justify-between flex-shrink-0">
           <div className="flex-1">
@@ -1561,7 +1561,7 @@ ${profileLines}
   const isRight = current && current.correct_answer && selected !== null && (selected + 1) === current.correct_answer;
 
   return (
-    <div className="h-screen bg-slate-50 flex flex-col overflow-hidden">
+    <div className="min-h-screen bg-slate-50 flex flex-col lg:h-screen lg:overflow-hidden">
       <header className="bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-6 py-2 shadow flex-shrink-0 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold leading-tight">⚡ 電気工事施工管理技士 過去問演習</h1>
