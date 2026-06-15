@@ -131,7 +131,8 @@ resource "aws_lambda_function" "budget_destroyer" {
       SERVICE_ARN   = aws_apprunner_service.app.arn
       ECR_REPO_NAME = aws_ecr_repository.app.name
       APP_NAME      = var.app_name
-      AWS_REGION    = var.aws_region
+      # AWS_REGION は Lambda の予約環境変数 (自動注入されるため削除)
+      DEPLOY_REGION = var.aws_region
     }
   }
 }
