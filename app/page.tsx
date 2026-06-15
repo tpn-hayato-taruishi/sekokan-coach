@@ -253,14 +253,19 @@ export default function QuizPage() {
   });
   // 第二次検定 経験記述ジェネレーター
   const [showExperience, setShowExperience] = useState(false);
-  const [experienceSurvey, setExperienceSurvey] = useState(() => {
-    const def = {
+  type ExperienceSurvey = {
+    projectName: string; location: string; client: string; startDate: string; endDate: string;
+    budget: string; buildingType: string; overview: string; role: string; specialPoints: string;
+    mySkills: string;
+  };
+  const [experienceSurvey, setExperienceSurvey] = useState<ExperienceSurvey>(() => {
+    const def: ExperienceSurvey = {
       projectName: '', location: '', client: '', startDate: '', endDate: '',
       budget: '', buildingType: '', overview: '', role: '', specialPoints: '',
       mySkills: '',
     };
     if (typeof window === 'undefined') return def;
-    try { return { ...def, ...JSON.parse(localStorage.getItem('sekokan-experience') || '{}') }; }
+    try { return { ...def, ...JSON.parse(localStorage.getItem('sekokan-experience') || '{}') } as ExperienceSurvey; }
     catch { return def; }
   });
   const [experienceOutputs, setExperienceOutputs] = useState<Record<string, string>>(() => {
