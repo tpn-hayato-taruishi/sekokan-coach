@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>前提知識グラフ - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">前提知識グラフ</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cut-list.html">← 捨てテーマリスト</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="time-budget.html">時間配分設計 →</a></span></nav>
+<section id="dependency-graph">
+  <h2>前提知識グラフ</h2>
+<p>科目間・テーマ間の<strong>前提知識の依存関係</strong>を示します。矢印の元が前提、先が応用です。</p>
+<svg viewBox="0 0 700 300" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6"/></marker></defs>
+  <rect x="10" y="28" width="200" height="24" fill="#eff6ff" stroke="#93c5fd" rx="4"/>
+  <text x="110" y="44" font-size="10" fill="#1e40af" text-anchor="middle">電気理論: 交流回路</text>
+  <line x1="215" y1="40" x2="360" y2="40" stroke="#3b82f6" stroke-width="2" marker-end="url(#dep-arrow)"/>
+  <text x="288" y="34" font-size="8" fill="#6b7280" text-anchor="middle">回路理論が設備理解の基礎</text>
+  <rect x="365" y="28" width="200" height="24" fill="#f0fdf4" stroke="#86efac" rx="4"/>
+  <text x="465" y="44" font-size="10" fill="#166534" text-anchor="middle">電気設備: 受変電設備</text>
+  <rect x="10" y="83" width="200" height="24" fill="#eff6ff" stroke="#93c5fd" rx="4"/>
+  <text x="110" y="99" font-size="10" fill="#1e40af" text-anchor="middle">電気理論: 三相交流</text>
+  <line x1="215" y1="95" x2="360" y2="95" stroke="#3b82f6" stroke-width="2" marker-end="url(#dep-arrow)"/>
+  <text x="288" y="89" font-size="8" fill="#6b7280" text-anchor="middle">三相の知識が施工に必要</text>
+  <rect x="365" y="83" width="200" height="24" fill="#f0fdf4" stroke="#86efac" rx="4"/>
+  <text x="465" y="99" font-size="10" fill="#166534" text-anchor="middle">施工: 配管配線</text>
+  <rect x="10" y="138" width="200" height="24" fill="#eff6ff" stroke="#93c5fd" rx="4"/>
+  <text x="110" y="154" font-size="10" fill="#1e40af" text-anchor="middle">施工: 接地工事</text>
+  <line x1="215" y1="150" x2="360" y2="150" stroke="#3b82f6" stroke-width="2" marker-end="url(#dep-arrow)"/>
+  <text x="288" y="144" font-size="8" fill="#6b7280" text-anchor="middle">施工知識が法規理解を助ける</text>
+  <rect x="365" y="138" width="200" height="24" fill="#f0fdf4" stroke="#86efac" rx="4"/>
+  <text x="465" y="154" font-size="10" fill="#166534" text-anchor="middle">法規: 電技解釈</text>
+  <rect x="10" y="193" width="200" height="24" fill="#eff6ff" stroke="#93c5fd" rx="4"/>
+  <text x="110" y="209" font-size="10" fill="#1e40af" text-anchor="middle">施工管理: ネットワーク工程表</text>
+  <line x1="215" y1="205" x2="360" y2="205" stroke="#3b82f6" stroke-width="2" marker-end="url(#dep-arrow)"/>
+  <text x="288" y="199" font-size="8" fill="#6b7280" text-anchor="middle">計算パターンが前提</text>
+  <rect x="365" y="193" width="200" height="24" fill="#f0fdf4" stroke="#86efac" rx="4"/>
+  <text x="465" y="209" font-size="10" fill="#166534" text-anchor="middle">施工管理: 工程管理</text>
+</svg>
+<h3>依存関係の詳細解説</h3>
+<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>電気理論: 交流回路</strong> → <strong>電気設備: 受変電設備</strong>
+<p style="font-size:0.9em;margin:4px 0;color:#374151">受変電設備の選定・設計には、短絡容量計算やインピーダンス計算が必要。交流回路の基礎がないと設備仕様の意味が理解できない。</p>
+</div>
+<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>電気理論: 三相交流</strong> → <strong>施工: 配管配線</strong>
+<p style="font-size:0.9em;margin:4px 0;color:#374151">三相回路の結線方式（Δ・Y）の知識は配線設計の基本。電流計算ができないと配管サイズや電線の選定ができない。</p>
+</div>
+<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>施工: 接地工事</strong> → <strong>法規: 電技解釈</strong>
+<p style="font-size:0.9em;margin:4px 0;color:#374151">接地の種別（A-D種）と施工方法を実務的に理解していると、法規の接地関連条文の暗記が容易になる。</p>
+</div>
+<div style="border-left:3px solid #3b82f6;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>施工管理: ネットワーク工程表</strong> → <strong>施工管理: 工程管理</strong>
+<p style="font-size:0.9em;margin:4px 0;color:#374151">ネットワーク工程表のクリティカルパス計算は工程管理の中核。この計算パターンを理解してから品質管理・安全管理に進むのが効率的。</p>
+</div>
+<h3>科目別 前提知識チェーン</h3>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（施工管理法）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>級電気工事施工</strong> 
+<span style="font-size:0.82em;color:#6b7280">14h（累積: 14h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#2</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>唖電気工事</strong> 
+<span style="font-size:0.82em;color:#6b7280">6h30m（累積: 20h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#3</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>電気工事</strong> 
+<span style="font-size:0.82em;color:#6b7280">3h30m（累積: 24h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#4</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>亜本日</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 25h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#5</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>受騎地変更者</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 26h）</span>
+</div>
+<h4>テーマ間の依存関係（施工管理法）</h4>
+<svg viewBox="0 0 700 260" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-施工管理法" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1e40af"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 級電気工事施工</text>
+  <rect x="100" y="65" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="79" font-size="9" fill="#374151">Lv2 唖電気工事</text>
+  <rect x="100" y="100" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="114" font-size="9" fill="#374151">Lv2 電気工事</text>
+  <rect x="100" y="135" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="149" font-size="9" fill="#374151">Lv2 亜本日</text>
+  <rect x="100" y="170" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="184" font-size="9" fill="#374151">Lv2 受騎地変更者</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（電気理論）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#b45309;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>電気工事</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h（累積: 4h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#b45309;min-width:24px">#2</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>日本電機工業会</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 5h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#b45309;min-width:24px">#3</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>亜日本電機工業</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 6h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#b45309;min-width:24px">#4</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>配線用図記号</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 7h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#b45309;min-width:24px">#5</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>配電盤茜制御盤</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 8h）</span>
+</div>
+<h4>テーマ間の依存関係（電気理論）</h4>
+<svg viewBox="0 0 700 260" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-電気理論" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 電気工事</text>
+  <rect x="100" y="65" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="79" font-size="9" fill="#374151">Lv2 日本電機工業会</text>
+  <rect x="100" y="100" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="114" font-size="9" fill="#374151">Lv2 亜日本電機工業</text>
+  <rect x="100" y="135" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="149" font-size="9" fill="#374151">Lv2 配線用図記号</text>
+  <rect x="100" y="170" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="184" font-size="9" fill="#374151">Lv2 配電盤茜制御盤</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（施工）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7e22ce;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>唖下記</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h（累積: 7h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7e22ce;min-width:24px">#2</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>工程表</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 12h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7e22ce;min-width:24px">#3</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>所要日数</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 13h）</span>
+</div>
+<h4>テーマ間の依存関係（施工）</h4>
+<svg viewBox="0 0 700 180" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-施工" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7e22ce"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 唖下記</text>
+  <rect x="100" y="65" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="79" font-size="9" fill="#374151">Lv2 工程表</text>
+  <rect x="100" y="100" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="114" font-size="9" fill="#374151">Lv2 所要日数</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（電気設備）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>唖電気工事</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h30m（累積: 4h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#2</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>電気工事</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 9h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#3</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>日本工業規格</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 10h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#4</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>構内電気設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 11h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#5</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>阿混合茜分波器</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 12h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#6</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>自動火災報知設</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 13h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0369a1;min-width:24px">#7</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>亜日本工業規格</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 14h30m）</span>
+</div>
+<h4>テーマ間の依存関係（電気設備）</h4>
+<svg viewBox="0 0 700 340" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-電気設備" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0369a1"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 唖電気工事</text>
+  <rect x="100" y="65" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="79" font-size="9" fill="#374151">Lv2 電気工事</text>
+  <rect x="100" y="100" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="114" font-size="9" fill="#374151">Lv2 日本工業規格</text>
+  <rect x="100" y="135" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="149" font-size="9" fill="#374151">Lv2 構内電気設備</text>
+  <rect x="100" y="170" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="184" font-size="9" fill="#374151">Lv2 阿混合茜分波器</text>
+  <rect x="100" y="205" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="219" font-size="9" fill="#374151">Lv2 自動火災報知設</text>
+  <rect x="100" y="240" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="254" font-size="9" fill="#374151">Lv2 亜日本工業規格</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（法規）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>電気事業法</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h（累積: 4h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#2</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>労働安全衛生法</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h30m（累積: 9h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#3</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>建設業法</strong> 
+<span style="font-size:0.82em;color:#6b7280">3h30m（累積: 13h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#4</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>亜点検作業用</strong> 
+<span style="font-size:0.82em;color:#6b7280">1h（累積: 14h）</span>
+</div>
+<h4>テーマ間の依存関係（法規）</h4>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-法規" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 電気事業法</text>
+  <rect x="100" y="65" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="79" font-size="9" fill="#374151">Lv2 労働安全衛生法</text>
+  <rect x="100" y="100" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="114" font-size="9" fill="#374151">Lv2 建設業法</text>
+  <rect x="100" y="135" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="149" font-size="9" fill="#374151">Lv2 亜点検作業用</text>
+</svg>
+</details>
+<h3>推奨学習順序</h3>
+<div class="tip">前提知識を先に固めてから応用テーマに進むと、理解速度が大幅に上がります。</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 1: 施工管理法</strong>
+<p style="font-size:0.9em;margin:4px 0">ネットワーク工程表・品質管理・安全管理のパターンを叩き込む。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 26h</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 2: 法規</strong>
+<p style="font-size:0.9em;margin:4px 0">建設業法・電気事業法・労安法を条文ベースで短期暗記。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 14h</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 3: 施工＋電気設備</strong>
+<p style="font-size:0.9em;margin:4px 0">高圧受電・配管配線・接地工事を中心に実務知識を整理。</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 4: 電気理論＋関連分野</strong>
+<p style="font-size:0.9em;margin:4px 0">計算問題は過去問パターンで対策。関連分野は建築・空調の基礎。</p>
+</div>
+<h3>並行して学べるテーマ</h3>
+<div class="note">以下のテーマ群は相互に依存が少ないため、同時並行で学習できます。</div>
+<p><strong>グループA:</strong> 施工管理法, 電気理論</p>
+<p><strong>グループB:</strong> 施工, 電気設備, 法規</p>
+<p style="font-size:0.9em;color:#6b7280">ただしグループAの基礎テーマ（深度Lv1-2）を先に済ませてからグループBの応用テーマに着手すると効率が上がる。</p>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cut-list.html">← 捨てテーマリスト</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="time-budget.html">時間配分設計 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全問題一覧（年度別傾向付き） - 関連分野 - 施工管理1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">全問題一覧（年度別傾向付き） ／ <strong>関連分野</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工管理法.html">施工管理法 →</a></span></nav>
+<section id="all-questions">
+  <h2>全問題一覧（年度別傾向付き）</h2>
+<p>全143問の過去問を科目・年度別に一覧表示。<strong>年度ごとのカテゴリ分布</strong>で出題傾向の変化が一目瞭然。</p>
+<div style="display:flex;align-items:center;gap:16px;margin:12px 0;padding:12px 16px;background:#eff6ff;border-radius:8px">
+  <span id="q-progress" style="font-weight:700;color:#1e40af">0/0問 完了</span>
+  <span style="font-size:0.85em;color:#6b7280">チェックボックスで学習進捗を記録（ブラウザに保存）</span>
+</div>
+<div class="note">チェックを入れると行がグレーアウトされ、進捗が自動カウントされます。</div>
+<script>
+function togQ(cb){var k="sekokan1_"+cb.dataset.key;localStorage.setItem(k,cb.checked?"1":"0");cb.closest("tr").classList.toggle("done",cb.checked);updateCount();}
+function updateCount(){var all=document.querySelectorAll(".q-chk-input");var done=document.querySelectorAll(".q-chk-input:checked");var el=document.getElementById("q-progress");if(el)el.textContent=done.length+"/"+all.length+"問 完了";}
+function restoreChecks(){document.querySelectorAll(".q-chk-input").forEach(function(cb){var k="sekokan1_"+cb.dataset.key;if(localStorage.getItem(k)==="1"){cb.checked=true;cb.closest("tr").classList.add("done");}});updateCount();}
+window.addEventListener("load",restoreChecks);
+</script>
+<h3>関連分野（18年分・143問）</h3>
+<div style="margin:8px 0 16px;overflow-x:auto">
+<table style="font-size:0.82em;white-space:nowrap">
+<tr><th>年度</th><th>問題構成（カテゴリ分布）</th><th>暗記率</th><th>傾向メモ</th></tr>
+<tr><td class="fwb">R7</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">RC造の梁貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">事務所ビルの給排気</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工の構造・特徴</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機械の用途</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備のウォーターハンマ</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄塔の基礎・マット基礎</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造・H形断面の形鋼梁</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+<tr><td class="fwb">R6</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">RC造の梁貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工のボイリング防止</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">地中送電線路の管路埋設工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">排水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の熱源機器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造・H形断面の形鋼梁</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+水準測量,排水設備,地中送電線路の管路埋設工法,土留め工のボイリング防止,空気調和設備の熱源機器,鉄道線路</span> <span style="color:#dc2626">-事務所ビルの給排気,土留め工の構造・特徴,建設機械の用途,給水設備のウォーターハンマ,鉄道の軌道構造,鉄塔の基礎・マット基礎</span> </td></tr>
+<tr><td class="fwb">R5</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土質調査・原位置試験</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機械・掘削機械</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の熱負荷計算</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備の運転制御</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリートの特性</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道変位</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造の部材名称</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+空気調和設備の熱負荷計算,土質調査・原位置試験,鉄道の軌道変位,土留め壁の種類,建設機械・掘削機械,鉄骨造の部材名称,給水設備の運転制御,鉄筋コンクリートの特性</span> <span style="color:#dc2626">-水準測量,RC造の梁貫通,鉄骨造・H形断面の形鋼梁,排水設備,地中送電線路の管路埋設工法,土留め工のボイリング防止,空気調和設備の熱源機器,鉄道線路</span> </td></tr>
+<tr><td class="fwb">R4</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機械・締固め機械</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">盛土工事・土量の変化率</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">遠心ポンプの特性曲線</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄塔の基礎</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリートの特性</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造の部材名称</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+鉄塔の基礎,建設機械・締固め機械,盛土工事・土量の変化率,鉄道の軌道構造,遠心ポンプの特性曲線,空気調和設備</span> <span style="color:#dc2626">-空気調和設備の熱負荷計算,土質調査・原位置試験,鉄道の軌道変位,土留め壁の種類,建設機械・掘削機械,給水設備の運転制御</span> </td></tr>
+<tr><td class="fwb">R3</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">RC造の梁貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">コンクリートの施工</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工のヒービング</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">排水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の省エネルギー対策</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の線路用語・JIS</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造の用語</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+コンクリートの施工,水準測量,土留め工のヒービング,空気調和設備の省エネルギー対策,RC造の梁貫通,排水設備,鉄骨構造の用語,鉄道の線路用語・JIS</span> <span style="color:#dc2626">-鉄塔の基礎,建設機械・締固め機械,盛土工事・土量の変化率,鉄道の軌道構造,鉄骨造の部材名称,遠心ポンプの特性曲線,空気調和設備,鉄筋コンクリートの特性</span> </td></tr>
+<tr><td class="fwb">R2</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">RC造の梁貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の掘削工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工のボイリング防止</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">地中送電線路の管路埋設工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の熱源機器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備の飲料用受水槽</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造の構造形式</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+給水設備の飲料用受水槽,土留め壁の掘削工法,地中送電線路の管路埋設工法,土留め工のボイリング防止,鉄道の軌道構造,鉄骨造の構造形式,空気調和設備の熱源機器</span> <span style="color:#dc2626">-コンクリートの施工,水準測量,土留め工のヒービング,空気調和設備の省エネルギー対策,排水設備,鉄骨構造の用語,鉄道の線路用語・JIS</span> </td></tr>
+<tr><td class="fwb">R1</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">ガス設備・LNG・LPG</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土量計算・ほぐし率と締固め率</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">地中送電線路の管路埋設工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の制御方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造の特徴</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+鉄骨構造の特徴,水準測量,空気調和設備の制御方式,ガス設備・LNG・LPG,鉄道線路の軌道構造,鉄筋コンクリート構造,土量計算・ほぐし率と締固め率</span> <span style="color:#dc2626">-給水設備の飲料用受水槽,土留め壁の掘削工法,RC造の梁貫通,土留め工のボイリング防止,鉄道の軌道構造,鉄骨造の構造形式,空気調和設備の熱源機器</span> </td></tr>
+<tr><td class="fwb">H30</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">コンクリートの施工</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">排水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造のH形鋼梁</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+コンクリートの施工,土留め壁の種類,排水設備,空気調和設備,鉄骨構造のH形鋼梁</span> <span style="color:#dc2626">-鉄骨構造の特徴,地中送電線路の管路埋設工法,空気調和設備の制御方式,ガス設備・LNG・LPG,土量計算・ほぐし率と締固め率</span> </td></tr>
+<tr><td class="fwb">H29</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土質調査・原位置試験</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機械・締固め機械</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の制御方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">遠心ポンプの特性曲線</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリートの特性</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造のH形鋼梁</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+土質調査・原位置試験,建設機械・締固め機械,空気調和設備の制御方式,遠心ポンプの特性曲線,鉄筋コンクリートの特性</span> <span style="color:#dc2626">-コンクリートの施工,水準測量,排水設備,鉄筋コンクリート構造,空気調和設備</span> </td></tr>
+<tr><td class="fwb">H28</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工のボイリング防止</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">地中送電線路の管路埋設工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量の誤差</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の省エネルギー</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備の給水方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリートの特性</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道構造・分岐器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造の部材名称</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+鉄道の軌道構造・分岐器,空気調和設備の省エネルギー,給水設備の給水方式,地中送電線路の管路埋設工法,水準測量の誤差,土留め工のボイリング防止,鉄骨造の部材名称</span> <span style="color:#dc2626">-土質調査・原位置試験,土留め壁の種類,建設機械・締固め機械,空気調和設備の制御方式,鉄道線路の軌道構造,遠心ポンプの特性曲線,鉄骨構造のH形鋼梁</span> </td></tr>
+<tr><td class="fwb">H27</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の支保工・掘削工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土質試験の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">排水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の熱源機器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄塔の基礎・深礎基礎</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路及び軌道</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造の用語</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨造の建築物</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+鉄塔の基礎・深礎基礎,排水設備,鉄骨造の建築物,鉄道線路及び軌道,空気調和設備の熱源機器,土質試験の種類,鉄骨構造の用語,土留め壁の支保工・掘削工法</span> <span style="color:#dc2626">-鉄道の軌道構造・分岐器,空気調和設備の省エネルギー,給水設備の給水方式,地中送電線路の管路埋設工法,水準測量の誤差,土留め工のボイリング防止,鉄骨造の部材名称,鉄筋コンクリートの特性</span> </td></tr>
+<tr><td class="fwb">H26</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">ポンプの直列運転特性</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の種類と特徴</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土質調査の試験</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">測量の誤差</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道の軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鋼材及び鋼管の記号・JIS</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気機器の耐震設計・固定ボルト</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+土質調査の試験,空気調和設備の方式,鋼材及び鋼管の記号・JIS,土留め壁の種類と特徴,鉄道の軌道構造,ポンプの直列運転特性,測量の誤差,電気機器の耐震設計・固定ボルト</span> <span style="color:#dc2626">-鉄塔の基礎・深礎基礎,排水設備,鉄骨造の建築物,鉄道線路及び軌道,空気調和設備の熱源機器,土質試験の種類,鉄骨構造の用語,土留め壁の支保工・掘削工法</span> </td></tr>
+<tr><td class="fwb">H25</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め工・掘削工事</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機械・締固め機械</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備の給水方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">軟弱地盤の改良工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道・軌道構造の用語・JIS</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+空気調和方式,軟弱地盤の改良工法,土留め工・掘削工事,給水設備の給水方式,建設機械・締固め機械,鉄道・軌道構造の用語・JIS,鉄筋コンクリート構造,鉄骨構造</span> <span style="color:#dc2626">-土質調査の試験,空気調和設備の方式,鋼材及び鋼管の記号・JIS,土留め壁の種類と特徴,鉄道の軌道構造,ポンプの直列運転特性,測量の誤差,電気機器の耐震設計・固定ボルト</span> </td></tr>
+<tr><td class="fwb">H24</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">コンクリートの施工</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">省エネルギー対策</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">遠心ポンプ・効率曲線</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄塔基礎の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造・梁貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道トンネル・掘削工法</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+鉄筋コンクリート構造・梁貫通,コンクリートの施工,水準測量,省エネルギー対策,遠心ポンプ・効率曲線,鉄道トンネル・掘削工法,鉄塔基礎の種類</span> <span style="color:#dc2626">-空気調和方式,軟弱地盤の改良工法,土留め工・掘削工事,給水設備の給水方式,建設機械・締固め機械,鉄道・軌道構造の用語・JIS,鉄骨構造</span> </td></tr>
+<tr><td class="fwb">H23</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">アスファルト舗装</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土留め壁の種類</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">熱源機器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">盛土工事・土量変化率</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造・部材名称</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨鉄筋コンクリート構造</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+盛土工事・土量変化率,鉄骨鉄筋コンクリート構造,土留め壁の種類,アスファルト舗装,給水方式,熱源機器,鉄骨構造・部材名称</span> <span style="color:#dc2626">-鉄筋コンクリート構造・梁貫通,コンクリートの施工,水準測量,省エネルギー対策,遠心ポンプ・効率曲線,鉄筋コンクリート構造,鉄道トンネル・掘削工法,鉄塔基礎の種類</span> </td></tr>
+<tr><td class="fwb">H22</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設工事の締固め機械</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">排水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">砂質地盤のボイリング防止</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の省エネルギー対策</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">軟弱地盤の改良工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造のトラス</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+軟弱地盤の改良工法,砂質地盤のボイリング防止,空気調和設備の省エネルギー対策,排水設備,建設工事の締固め機械,鉄骨構造のトラス,鉄筋コンクリート,鉄道線路</span> <span style="color:#dc2626">-盛土工事・土量変化率,鉄骨鉄筋コンクリート構造,土留め壁の種類,アスファルト舗装,給水方式,熱源機器,鉄骨構造・部材名称</span> </td></tr>
+<tr><td class="fwb">H21</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">コンクリートの施工</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土止め支保工の工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土質試験・圧密試験</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備・FCU+ダクト併用方式</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">給水設備</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造・はり貫通</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路・軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨構造の特徴</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+コンクリートの施工,鉄骨構造の特徴,空気調和設備・FCU+ダクト併用方式,土質試験・圧密試験,給水設備,土止め支保工の工法,鉄道線路・軌道構造,鉄筋コンクリート構造・はり貫通</span> <span style="color:#dc2626">-軟弱地盤の改良工法,砂質地盤のボイリング防止,空気調和設備の省エネルギー対策,排水設備,建設工事の締固め機械,鉄骨構造のトラス,鉄筋コンクリート,鉄道線路</span> </td></tr>
+<tr><td class="fwb">H20</td><td><span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">コンクリート構造物の劣化</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">地中電線路の山留め工法</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">測量用語・直接水準測量</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">空気調和設備の熱源機器</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">遠心ポンプの特性曲線</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄筋コンクリート構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄道線路・軌道構造</span> <span style="display:inline-block;background:#be185d22;color:#be185d;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鉄骨鉄筋コンクリート構造</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:50.0%;height:100%;background:#be185d"></div></div> 50%</td><td class="fz9"><span style="color:#16a34a">+コンクリート構造物の劣化,鉄骨鉄筋コンクリート構造,遠心ポンプの特性曲線,空気調和設備の熱源機器,鉄筋コンクリート構造,測量用語・直接水準測量,地中電線路の山留め工法</span> <span style="color:#dc2626">-コンクリートの施工,鉄骨構造の特徴,空気調和設備・FCU+ダクト併用方式,土質試験・圧密試験,給水設備,土止め支保工の工法,鉄筋コンクリート構造・はり貫通</span> </td></tr>
+</table>
+</div>
+<details><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.05em">関連分野 全問チェックリスト</summary>
+<table class="fz85">
+<tr><th style="width:30px">✓</th><th>年度</th><th>テーマ</th><th>問数</th><th>分類</th></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_RC造の梁貫通" onchange="togQ(this)"></td><td class="fws">R7</td><td>RC造の梁貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_事務所ビルの給排気" onchange="togQ(this)"></td><td class="fws">R7</td><td>事務所ビルの給排気</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_土留め工の構造・特徴" onchange="togQ(this)"></td><td class="fws">R7</td><td>土留め工の構造・特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_建設機械の用途" onchange="togQ(this)"></td><td class="fws">R7</td><td>建設機械の用途</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_給水設備のウォーターハンマ" onchange="togQ(this)"></td><td class="fws">R7</td><td>給水設備のウォーターハンマ</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_鉄塔の基礎・マット基礎" onchange="togQ(this)"></td><td class="fws">R7</td><td>鉄塔の基礎・マット基礎</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_鉄道の軌道構造" onchange="togQ(this)"></td><td class="fws">R7</td><td>鉄道の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R7_鉄骨造・H形断面の形鋼梁" onchange="togQ(this)"></td><td class="fws">R7</td><td>鉄骨造・H形断面の形鋼梁</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_RC造の梁貫通" onchange="togQ(this)"></td><td class="fws">R6</td><td>RC造の梁貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_土留め工のボイリング防止" onchange="togQ(this)"></td><td class="fws">R6</td><td>土留め工のボイリング防止</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_地中送電線路の管路埋設工法" onchange="togQ(this)"></td><td class="fws">R6</td><td>地中送電線路の管路埋設工法</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_排水設備" onchange="togQ(this)"></td><td class="fws">R6</td><td>排水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_水準測量" onchange="togQ(this)"></td><td class="fws">R6</td><td>水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_空気調和設備の熱源機器" onchange="togQ(this)"></td><td class="fws">R6</td><td>空気調和設備の熱源機器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_鉄道線路" onchange="togQ(this)"></td><td class="fws">R6</td><td>鉄道線路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R6_鉄骨造・H形断面の形鋼梁" onchange="togQ(this)"></td><td class="fws">R6</td><td>鉄骨造・H形断面の形鋼梁</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_土留め壁の種類" onchange="togQ(this)"></td><td class="fws">R5</td><td>土留め壁の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_土質調査・原位置試験" onchange="togQ(this)"></td><td class="fws">R5</td><td>土質調査・原位置試験</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_建設機械・掘削機械" onchange="togQ(this)"></td><td class="fws">R5</td><td>建設機械・掘削機械</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_空気調和設備の熱負荷計算" onchange="togQ(this)"></td><td class="fws">R5</td><td>空気調和設備の熱負荷計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_給水設備の運転制御" onchange="togQ(this)"></td><td class="fws">R5</td><td>給水設備の運転制御</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_鉄筋コンクリートの特性" onchange="togQ(this)"></td><td class="fws">R5</td><td>鉄筋コンクリートの特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_鉄道の軌道変位" onchange="togQ(this)"></td><td class="fws">R5</td><td>鉄道の軌道変位</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R5_鉄骨造の部材名称" onchange="togQ(this)"></td><td class="fws">R5</td><td>鉄骨造の部材名称</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_建設機械・締固め機械" onchange="togQ(this)"></td><td class="fws">R4</td><td>建設機械・締固め機械</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_盛土工事・土量の変化率" onchange="togQ(this)"></td><td class="fws">R4</td><td>盛土工事・土量の変化率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_空気調和設備" onchange="togQ(this)"></td><td class="fws">R4</td><td>空気調和設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_遠心ポンプの特性曲線" onchange="togQ(this)"></td><td class="fws">R4</td><td>遠心ポンプの特性曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_鉄塔の基礎" onchange="togQ(this)"></td><td class="fws">R4</td><td>鉄塔の基礎</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_鉄筋コンクリートの特性" onchange="togQ(this)"></td><td class="fws">R4</td><td>鉄筋コンクリートの特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_鉄道の軌道構造" onchange="togQ(this)"></td><td class="fws">R4</td><td>鉄道の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R4_鉄骨造の部材名称" onchange="togQ(this)"></td><td class="fws">R4</td><td>鉄骨造の部材名称</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_RC造の梁貫通" onchange="togQ(this)"></td><td class="fws">R3</td><td>RC造の梁貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_コンクリートの施工" onchange="togQ(this)"></td><td class="fws">R3</td><td>コンクリートの施工</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_土留め工のヒービング" onchange="togQ(this)"></td><td class="fws">R3</td><td>土留め工のヒービング</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_排水設備" onchange="togQ(this)"></td><td class="fws">R3</td><td>排水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_水準測量" onchange="togQ(this)"></td><td class="fws">R3</td><td>水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_空気調和設備の省エネルギー対策" onchange="togQ(this)"></td><td class="fws">R3</td><td>空気調和設備の省エネルギー対策</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_鉄道の線路用語・JIS" onchange="togQ(this)"></td><td class="fws">R3</td><td>鉄道の線路用語・JIS</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R3_鉄骨構造の用語" onchange="togQ(this)"></td><td class="fws">R3</td><td>鉄骨構造の用語</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_RC造の梁貫通" onchange="togQ(this)"></td><td class="fws">R2</td><td>RC造の梁貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_土留め壁の掘削工法" onchange="togQ(this)"></td><td class="fws">R2</td><td>土留め壁の掘削工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_土留め工のボイリング防止" onchange="togQ(this)"></td><td class="fws">R2</td><td>土留め工のボイリング防止</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_地中送電線路の管路埋設工法" onchange="togQ(this)"></td><td class="fws">R2</td><td>地中送電線路の管路埋設工法</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_空気調和設備の熱源機器" onchange="togQ(this)"></td><td class="fws">R2</td><td>空気調和設備の熱源機器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_給水設備の飲料用受水槽" onchange="togQ(this)"></td><td class="fws">R2</td><td>給水設備の飲料用受水槽</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_鉄道の軌道構造" onchange="togQ(this)"></td><td class="fws">R2</td><td>鉄道の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R2_鉄骨造の構造形式" onchange="togQ(this)"></td><td class="fws">R2</td><td>鉄骨造の構造形式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_ガス設備・LNG・LPG" onchange="togQ(this)"></td><td class="fws">R1</td><td>ガス設備・LNG・LPG</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_土量計算・ほぐし率と締固め率" onchange="togQ(this)"></td><td class="fws">R1</td><td>土量計算・ほぐし率と締固め率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_地中送電線路の管路埋設工法" onchange="togQ(this)"></td><td class="fws">R1</td><td>地中送電線路の管路埋設工法</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_水準測量" onchange="togQ(this)"></td><td class="fws">R1</td><td>水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_空気調和設備の制御方式" onchange="togQ(this)"></td><td class="fws">R1</td><td>空気調和設備の制御方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">R1</td><td>鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_鉄道線路の軌道構造" onchange="togQ(this)"></td><td class="fws">R1</td><td>鉄道線路の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_R1_鉄骨構造の特徴" onchange="togQ(this)"></td><td class="fws">R1</td><td>鉄骨構造の特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_コンクリートの施工" onchange="togQ(this)"></td><td class="fws">H30</td><td>コンクリートの施工</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_土留め壁の種類" onchange="togQ(this)"></td><td class="fws">H30</td><td>土留め壁の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_排水設備" onchange="togQ(this)"></td><td class="fws">H30</td><td>排水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_水準測量" onchange="togQ(this)"></td><td class="fws">H30</td><td>水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_空気調和設備" onchange="togQ(this)"></td><td class="fws">H30</td><td>空気調和設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H30</td><td>鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_鉄道線路の軌道構造" onchange="togQ(this)"></td><td class="fws">H30</td><td>鉄道線路の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H30_鉄骨構造のH形鋼梁" onchange="togQ(this)"></td><td class="fws">H30</td><td>鉄骨構造のH形鋼梁</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_土留め壁の種類" onchange="togQ(this)"></td><td class="fws">H29</td><td>土留め壁の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_土質調査・原位置試験" onchange="togQ(this)"></td><td class="fws">H29</td><td>土質調査・原位置試験</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_建設機械・締固め機械" onchange="togQ(this)"></td><td class="fws">H29</td><td>建設機械・締固め機械</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_空気調和設備の制御方式" onchange="togQ(this)"></td><td class="fws">H29</td><td>空気調和設備の制御方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_遠心ポンプの特性曲線" onchange="togQ(this)"></td><td class="fws">H29</td><td>遠心ポンプの特性曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_鉄筋コンクリートの特性" onchange="togQ(this)"></td><td class="fws">H29</td><td>鉄筋コンクリートの特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_鉄道線路の軌道構造" onchange="togQ(this)"></td><td class="fws">H29</td><td>鉄道線路の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H29_鉄骨構造のH形鋼梁" onchange="togQ(this)"></td><td class="fws">H29</td><td>鉄骨構造のH形鋼梁</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_土留め工のボイリング防止" onchange="togQ(this)"></td><td class="fws">H28</td><td>土留め工のボイリング防止</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_地中送電線路の管路埋設工法" onchange="togQ(this)"></td><td class="fws">H28</td><td>地中送電線路の管路埋設工法</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_水準測量の誤差" onchange="togQ(this)"></td><td class="fws">H28</td><td>水準測量の誤差</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_空気調和設備の省エネルギー" onchange="togQ(this)"></td><td class="fws">H28</td><td>空気調和設備の省エネルギー</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_給水設備の給水方式" onchange="togQ(this)"></td><td class="fws">H28</td><td>給水設備の給水方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_鉄筋コンクリートの特性" onchange="togQ(this)"></td><td class="fws">H28</td><td>鉄筋コンクリートの特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_鉄道の軌道構造・分岐器" onchange="togQ(this)"></td><td class="fws">H28</td><td>鉄道の軌道構造・分岐器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H28_鉄骨造の部材名称" onchange="togQ(this)"></td><td class="fws">H28</td><td>鉄骨造の部材名称</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_土留め壁の支保工・掘削工法" onchange="togQ(this)"></td><td class="fws">H27</td><td>土留め壁の支保工・掘削工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_土質試験の種類" onchange="togQ(this)"></td><td class="fws">H27</td><td>土質試験の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_排水設備" onchange="togQ(this)"></td><td class="fws">H27</td><td>排水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_空気調和設備の熱源機器" onchange="togQ(this)"></td><td class="fws">H27</td><td>空気調和設備の熱源機器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_鉄塔の基礎・深礎基礎" onchange="togQ(this)"></td><td class="fws">H27</td><td>鉄塔の基礎・深礎基礎</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_鉄道線路及び軌道" onchange="togQ(this)"></td><td class="fws">H27</td><td>鉄道線路及び軌道</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_鉄骨構造の用語" onchange="togQ(this)"></td><td class="fws">H27</td><td>鉄骨構造の用語</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H27_鉄骨造の建築物" onchange="togQ(this)"></td><td class="fws">H27</td><td>鉄骨造の建築物</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_ポンプの直列運転特性" onchange="togQ(this)"></td><td class="fws">H26</td><td>ポンプの直列運転特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_土留め壁の種類と特徴" onchange="togQ(this)"></td><td class="fws">H26</td><td>土留め壁の種類と特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_土質調査の試験" onchange="togQ(this)"></td><td class="fws">H26</td><td>土質調査の試験</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_測量の誤差" onchange="togQ(this)"></td><td class="fws">H26</td><td>測量の誤差</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_空気調和設備の方式" onchange="togQ(this)"></td><td class="fws">H26</td><td>空気調和設備の方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_鉄道の軌道構造" onchange="togQ(this)"></td><td class="fws">H26</td><td>鉄道の軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_鋼材及び鋼管の記号・JIS" onchange="togQ(this)"></td><td class="fws">H26</td><td>鋼材及び鋼管の記号・JIS</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H26_電気機器の耐震設計・固定ボルト" onchange="togQ(this)"></td><td class="fws">H26</td><td>電気機器の耐震設計・固定ボルト</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_土留め工・掘削工事" onchange="togQ(this)"></td><td class="fws">H25</td><td>土留め工・掘削工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_建設機械・締固め機械" onchange="togQ(this)"></td><td class="fws">H25</td><td>建設機械・締固め機械</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_空気調和方式" onchange="togQ(this)"></td><td class="fws">H25</td><td>空気調和方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_給水設備の給水方式" onchange="togQ(this)"></td><td class="fws">H25</td><td>給水設備の給水方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_軟弱地盤の改良工法" onchange="togQ(this)"></td><td class="fws">H25</td><td>軟弱地盤の改良工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H25</td><td>鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_鉄道・軌道構造の用語・JIS" onchange="togQ(this)"></td><td class="fws">H25</td><td>鉄道・軌道構造の用語・JIS</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H25_鉄骨構造" onchange="togQ(this)"></td><td class="fws">H25</td><td>鉄骨構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_コンクリートの施工" onchange="togQ(this)"></td><td class="fws">H24</td><td>コンクリートの施工</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_水準測量" onchange="togQ(this)"></td><td class="fws">H24</td><td>水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_省エネルギー対策" onchange="togQ(this)"></td><td class="fws">H24</td><td>省エネルギー対策</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_遠心ポンプ・効率曲線" onchange="togQ(this)"></td><td class="fws">H24</td><td>遠心ポンプ・効率曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#E67E00;font-weight:600">⚡秒殺テク</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_鉄塔基礎の種類" onchange="togQ(this)"></td><td class="fws">H24</td><td>鉄塔基礎の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H24</td><td>鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_鉄筋コンクリート構造・梁貫通" onchange="togQ(this)"></td><td class="fws">H24</td><td>鉄筋コンクリート構造・梁貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H24_鉄道トンネル・掘削工法" onchange="togQ(this)"></td><td class="fws">H24</td><td>鉄道トンネル・掘削工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_アスファルト舗装" onchange="togQ(this)"></td><td class="fws">H23</td><td>アスファルト舗装</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_土留め壁の種類" onchange="togQ(this)"></td><td class="fws">H23</td><td>土留め壁の種類</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_熱源機器" onchange="togQ(this)"></td><td class="fws">H23</td><td>熱源機器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_盛土工事・土量変化率" onchange="togQ(this)"></td><td class="fws">H23</td><td>盛土工事・土量変化率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_給水方式" onchange="togQ(this)"></td><td class="fws">H23</td><td>給水方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_鉄骨構造・部材名称" onchange="togQ(this)"></td><td class="fws">H23</td><td>鉄骨構造・部材名称</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H23_鉄骨鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H23</td><td>鉄骨鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_建設工事の締固め機械" onchange="togQ(this)"></td><td class="fws">H22</td><td>建設工事の締固め機械</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_排水設備" onchange="togQ(this)"></td><td class="fws">H22</td><td>排水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_砂質地盤のボイリング防止" onchange="togQ(this)"></td><td class="fws">H22</td><td>砂質地盤のボイリング防止</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_空気調和設備の省エネルギー対策" onchange="togQ(this)"></td><td class="fws">H22</td><td>空気調和設備の省エネルギー対策</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_軟弱地盤の改良工法" onchange="togQ(this)"></td><td class="fws">H22</td><td>軟弱地盤の改良工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_鉄筋コンクリート" onchange="togQ(this)"></td><td class="fws">H22</td><td>鉄筋コンクリート</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_鉄道線路" onchange="togQ(this)"></td><td class="fws">H22</td><td>鉄道線路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H22_鉄骨構造のトラス" onchange="togQ(this)"></td><td class="fws">H22</td><td>鉄骨構造のトラス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_コンクリートの施工" onchange="togQ(this)"></td><td class="fws">H21</td><td>コンクリートの施工</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_土止め支保工の工法" onchange="togQ(this)"></td><td class="fws">H21</td><td>土止め支保工の工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_土質試験・圧密試験" onchange="togQ(this)"></td><td class="fws">H21</td><td>土質試験・圧密試験</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_空気調和設備・FCU+ダクト併用方式" onchange="togQ(this)"></td><td class="fws">H21</td><td>空気調和設備・FCU+ダクト併用方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_給水設備" onchange="togQ(this)"></td><td class="fws">H21</td><td>給水設備</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_鉄筋コンクリート構造・はり貫通" onchange="togQ(this)"></td><td class="fws">H21</td><td>鉄筋コンクリート構造・はり貫通</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_鉄道線路・軌道構造" onchange="togQ(this)"></td><td class="fws">H21</td><td>鉄道線路・軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H21_鉄骨構造の特徴" onchange="togQ(this)"></td><td class="fws">H21</td><td>鉄骨構造の特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_コンクリート構造物の劣化" onchange="togQ(this)"></td><td class="fws">H20</td><td>コンクリート構造物の劣化</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_地中電線路の山留め工法" onchange="togQ(this)"></td><td class="fws">H20</td><td>地中電線路の山留め工法</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_測量用語・直接水準測量" onchange="togQ(this)"></td><td class="fws">H20</td><td>測量用語・直接水準測量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_空気調和設備の熱源機器" onchange="togQ(this)"></td><td class="fws">H20</td><td>空気調和設備の熱源機器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_遠心ポンプの特性曲線" onchange="togQ(this)"></td><td class="fws">H20</td><td>遠心ポンプの特性曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H20</td><td>鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_鉄道線路・軌道構造" onchange="togQ(this)"></td><td class="fws">H20</td><td>鉄道線路・軌道構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="関連分野_H20_鉄骨鉄筋コンクリート構造" onchange="togQ(this)"></td><td class="fws">H20</td><td>鉄骨鉄筋コンクリート構造</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.05em">関連分野 年度別詳細分析カード</summary>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R7 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>RC造の梁貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#4</span>/87</td></tr>
+<tr><td><strong>事務所ビルの給排気</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#33/87</td></tr>
+<tr><td><strong>土留め工の構造・特徴</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#39/87</td></tr>
+<tr><td><strong>建設機械の用途</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#47/87</td></tr>
+<tr><td><strong>給水設備のウォーターハンマ</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#64/87</td></tr>
+<tr><td><strong>鉄塔の基礎・マット基礎</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#69/87</td></tr>
+<tr><td><strong>鉄道の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#10</span>/87</td></tr>
+<tr><td><strong>鉄骨造・H形断面の形鋼梁</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#27</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>RC造の梁貫通: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">RC造の梁</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>事務所ビルの給排気: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">事務所ビル</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土留め工の構造・特徴: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>建設機械の用途: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設機械の</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>給水設備のウォーターハンマ: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄塔の基礎・マット基礎: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄塔の基礎</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造・H形断面の形鋼梁: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造・H</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+RC造の梁貫通（暗記で確保）、事務所ビルの給排気（暗記で確保）、土留め工の構造・特徴（暗記で確保）、建設機械の用途（暗記で確保）、給水設備のウォーターハンマ（暗記で確保）、鉄塔の基礎・マット基礎（暗記で確保）、鉄道の軌道構造（暗記で確保）、鉄骨造・H形断面の形鋼梁（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R6 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>RC造の梁貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#4</span>/87</td></tr>
+<tr><td><strong>土留め工のボイリング防止</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#11</span>/87</td></tr>
+<tr><td><strong>地中送電線路の管路埋設工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#7</span>/87</td></tr>
+<tr><td><strong>排水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#1</span>/87</td></tr>
+<tr><td><strong>水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#2</span>/87</td></tr>
+<tr><td><strong>空気調和設備の熱源機器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#8</span>/87</td></tr>
+<tr><td><strong>鉄道線路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#22</span>/87</td></tr>
+<tr><td><strong>鉄骨造・H形断面の形鋼梁</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#27</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>RC造の梁貫通: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">RC造の梁</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土留め工のボイリング防止: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工の</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>地中送電線路の管路埋設工法: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">地中送電線</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>排水設備: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">排水設備</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>水準測量: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>空気調和設備の熱源機器: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造・H形断面の形鋼梁: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造・H</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 2テーマ / <span style="color:#16a34a">新規: 水準測量, 排水設備, 地中送電線路の管路埋設工法, 土留め工のボイリング防止, 空気調和設備の熱源機器</span> / <span style="color:#dc2626">消滅: 事務所ビルの給排気, 土留め工の構造・特徴, 建設機械の用途, 給水設備のウォーターハンマ, 鉄道の軌道構造</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+RC造の梁貫通（暗記で確保）、土留め工のボイリング防止（暗記で確保）、地中送電線路の管路埋設工法（暗記で確保）、排水設備（暗記で確保）、水準測量（暗記で確保）、空気調和設備の熱源機器（暗記で確保）、鉄道線路（暗記で確保）、鉄骨造・H形断面の形鋼梁（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R5 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>土留め壁の種類</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#6</span>/87</td></tr>
+<tr><td><strong>土質調査・原位置試験</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#16</span>/87</td></tr>
+<tr><td><strong>建設機械・掘削機械</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#48/87</td></tr>
+<tr><td><strong>空気調和設備の熱負荷計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#59/87</td></tr>
+<tr><td><strong>給水設備の運転制御</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#65/87</td></tr>
+<tr><td><strong>鉄筋コンクリートの特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#9</span>/87</td></tr>
+<tr><td><strong>鉄道の軌道変位</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#76/87</td></tr>
+<tr><td><strong>鉄骨造の部材名称</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#15</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土留め壁の種類: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土質調査・原位置試験: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土質調査・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>建設機械・掘削機械: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設機械・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の熱負荷計算: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>給水設備の運転制御: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリートの特性: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の軌道変位: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造の部材名称: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造の部</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 空気調和設備の熱負荷計算, 土質調査・原位置試験, 鉄道の軌道変位, 土留め壁の種類, 建設機械・掘削機械</span> / <span style="color:#dc2626">消滅: 水準測量, RC造の梁貫通, 鉄骨造・H形断面の形鋼梁, 排水設備, 地中送電線路の管路埋設工法</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+土留め壁の種類（暗記で確保）、土質調査・原位置試験（暗記で確保）、建設機械・掘削機械（暗記で確保）、空気調和設備の熱負荷計算（暗記で確保）、給水設備の運転制御（暗記で確保）、鉄筋コンクリートの特性（暗記で確保）、鉄道の軌道変位（暗記で確保）、鉄骨造の部材名称（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R4 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>建設機械・締固め機械</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#12</span>/87</td></tr>
+<tr><td><strong>盛土工事・土量の変化率</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#53/87</td></tr>
+<tr><td><strong>空気調和設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#17</span>/87</td></tr>
+<tr><td><strong>遠心ポンプの特性曲線</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#13</span>/87</td></tr>
+<tr><td><strong>鉄塔の基礎</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#68/87</td></tr>
+<tr><td><strong>鉄筋コンクリートの特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#9</span>/87</td></tr>
+<tr><td><strong>鉄道の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#10</span>/87</td></tr>
+<tr><td><strong>鉄骨造の部材名称</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#15</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>建設機械・締固め機械: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設機械・</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>盛土工事・土量の変化率: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">盛土工事・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>空気調和設備: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>遠心ポンプの特性曲線: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">遠心ポンプ</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>鉄塔の基礎: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄塔の基礎</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリートの特性: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造の部材名称: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造の部</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 2テーマ / <span style="color:#16a34a">新規: 鉄塔の基礎, 建設機械・締固め機械, 盛土工事・土量の変化率, 鉄道の軌道構造, 遠心ポンプの特性曲線</span> / <span style="color:#dc2626">消滅: 空気調和設備の熱負荷計算, 土質調査・原位置試験, 鉄道の軌道変位, 土留め壁の種類, 建設機械・掘削機械</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+建設機械・締固め機械（暗記で確保）、盛土工事・土量の変化率（暗記で確保）、空気調和設備（暗記で確保）、遠心ポンプの特性曲線（暗記で確保）、鉄塔の基礎（暗記で確保）、鉄筋コンクリートの特性（暗記で確保）、鉄道の軌道構造（暗記で確保）、鉄骨造の部材名称（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R3 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>RC造の梁貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#4</span>/87</td></tr>
+<tr><td><strong>コンクリートの施工</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#5</span>/87</td></tr>
+<tr><td><strong>土留め工のヒービング</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#38/87</td></tr>
+<tr><td><strong>排水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#1</span>/87</td></tr>
+<tr><td><strong>水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#2</span>/87</td></tr>
+<tr><td><strong>空気調和設備の省エネルギー対策</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#19</span>/87</td></tr>
+<tr><td><strong>鉄道の線路用語・JIS</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#75/87</td></tr>
+<tr><td><strong>鉄骨構造の用語</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#26</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>RC造の梁貫通: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">RC造の梁</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>コンクリートの施工: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">コンクリー</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土留め工のヒービング: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>排水設備: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">排水設備</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>水準測量: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>空気調和設備の省エネルギー対策: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の線路用語・JIS: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の線路</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造の用語: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: コンクリートの施工, 水準測量, 土留め工のヒービング, 空気調和設備の省エネルギー対策, RC造の梁貫通</span> / <span style="color:#dc2626">消滅: 鉄塔の基礎, 建設機械・締固め機械, 盛土工事・土量の変化率, 鉄道の軌道構造, 鉄骨造の部材名称</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+RC造の梁貫通（暗記で確保）、コンクリートの施工（暗記で確保）、土留め工のヒービング（暗記で確保）、排水設備（暗記で確保）、水準測量（暗記で確保）、空気調和設備の省エネルギー対策（暗記で確保）、鉄道の線路用語・JIS（暗記で確保）、鉄骨構造の用語（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R2 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>RC造の梁貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#4</span>/87</td></tr>
+<tr><td><strong>土留め壁の掘削工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#35/87</td></tr>
+<tr><td><strong>土留め工のボイリング防止</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#11</span>/87</td></tr>
+<tr><td><strong>地中送電線路の管路埋設工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#7</span>/87</td></tr>
+<tr><td><strong>空気調和設備の熱源機器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#8</span>/87</td></tr>
+<tr><td><strong>給水設備の飲料用受水槽</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#66/87</td></tr>
+<tr><td><strong>鉄道の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#10</span>/87</td></tr>
+<tr><td><strong>鉄骨造の構造形式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#85/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>RC造の梁貫通: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">RC造の梁</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土留め壁の掘削工法: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土留め工のボイリング防止: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>地中送電線路の管路埋設工法: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">地中送電線</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>空気調和設備の熱源機器: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>給水設備の飲料用受水槽: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備の</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造の構造形式: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造の構</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 給水設備の飲料用受水槽, 土留め壁の掘削工法, 地中送電線路の管路埋設工法, 土留め工のボイリング防止, 鉄道の軌道構造</span> / <span style="color:#dc2626">消滅: コンクリートの施工, 水準測量, 土留め工のヒービング, 空気調和設備の省エネルギー対策, 排水設備</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+RC造の梁貫通（暗記で確保）、土留め壁の掘削工法（暗記で確保）、土留め工のボイリング防止（暗記で確保）、地中送電線路の管路埋設工法（暗記で確保）、空気調和設備の熱源機器（暗記で確保）、給水設備の飲料用受水槽（暗記で確保）、鉄道の軌道構造（暗記で確保）、鉄骨造の構造形式（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">R1 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>ガス設備・LNG・LPG</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#30/87</td></tr>
+<tr><td><strong>土量計算・ほぐし率と締固め率</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#44/87</td></tr>
+<tr><td><strong>地中送電線路の管路埋設工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#7</span>/87</td></tr>
+<tr><td><strong>水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#2</span>/87</td></tr>
+<tr><td><strong>空気調和設備の制御方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#18</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#3</span>/87</td></tr>
+<tr><td><strong>鉄道線路の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#14</span>/87</td></tr>
+<tr><td><strong>鉄骨構造の特徴</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#25</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>ガス設備・LNG・LPG: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">ガス設備・</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土量計算・ほぐし率と締固め率: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土量計算・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>地中送電線路の管路埋設工法: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">地中送電線</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>水準測量: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>空気調和設備の制御方式: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路の</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造の特徴: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 鉄骨構造の特徴, 水準測量, 空気調和設備の制御方式, ガス設備・LNG・LPG, 鉄道線路の軌道構造</span> / <span style="color:#dc2626">消滅: 給水設備の飲料用受水槽, 土留め壁の掘削工法, RC造の梁貫通, 土留め工のボイリング防止, 鉄道の軌道構造</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+ガス設備・LNG・LPG（暗記で確保）、土量計算・ほぐし率と締固め率（暗記で確保）、地中送電線路の管路埋設工法（暗記で確保）、水準測量（暗記で確保）、空気調和設備の制御方式（暗記で確保）、鉄筋コンクリート構造（暗記で確保）、鉄道線路の軌道構造（暗記で確保）、鉄骨構造の特徴（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H30 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>コンクリートの施工</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#5</span>/87</td></tr>
+<tr><td><strong>土留め壁の種類</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#6</span>/87</td></tr>
+<tr><td><strong>排水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#1</span>/87</td></tr>
+<tr><td><strong>水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#2</span>/87</td></tr>
+<tr><td><strong>空気調和設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#17</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#3</span>/87</td></tr>
+<tr><td><strong>鉄道線路の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#14</span>/87</td></tr>
+<tr><td><strong>鉄骨構造のH形鋼梁</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#24</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>コンクリートの施工: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">コンクリー</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土留め壁の種類: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>排水設備: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">排水設備</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>水準測量: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>空気調和設備: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路の</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造のH形鋼梁: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 3テーマ / <span style="color:#16a34a">新規: コンクリートの施工, 土留め壁の種類, 排水設備, 空気調和設備, 鉄骨構造のH形鋼梁</span> / <span style="color:#dc2626">消滅: 鉄骨構造の特徴, 地中送電線路の管路埋設工法, 空気調和設備の制御方式, ガス設備・LNG・LPG, 土量計算・ほぐし率と締固め率</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+コンクリートの施工（暗記で確保）、土留め壁の種類（暗記で確保）、排水設備（暗記で確保）、水準測量（暗記で確保）、空気調和設備（暗記で確保）、鉄筋コンクリート構造（暗記で確保）、鉄道線路の軌道構造（暗記で確保）、鉄骨構造のH形鋼梁（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H29 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>土留め壁の種類</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#6</span>/87</td></tr>
+<tr><td><strong>土質調査・原位置試験</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#16</span>/87</td></tr>
+<tr><td><strong>建設機械・締固め機械</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#12</span>/87</td></tr>
+<tr><td><strong>空気調和設備の制御方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#18</span>/87</td></tr>
+<tr><td><strong>遠心ポンプの特性曲線</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#13</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリートの特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#9</span>/87</td></tr>
+<tr><td><strong>鉄道線路の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#14</span>/87</td></tr>
+<tr><td><strong>鉄骨構造のH形鋼梁</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#24</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土留め壁の種類: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土質調査・原位置試験: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土質調査・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>建設機械・締固め機械: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設機械・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の制御方式: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>遠心ポンプの特性曲線: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">遠心ポンプ</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリートの特性: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路の軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路の</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造のH形鋼梁: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 3テーマ / <span style="color:#16a34a">新規: 土質調査・原位置試験, 建設機械・締固め機械, 空気調和設備の制御方式, 遠心ポンプの特性曲線, 鉄筋コンクリートの特性</span> / <span style="color:#dc2626">消滅: コンクリートの施工, 水準測量, 排水設備, 鉄筋コンクリート構造, 空気調和設備</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+土留め壁の種類（暗記で確保）、土質調査・原位置試験（暗記で確保）、建設機械・締固め機械（暗記で確保）、空気調和設備の制御方式（暗記で確保）、遠心ポンプの特性曲線（暗記で確保）、鉄筋コンクリートの特性（暗記で確保）、鉄道線路の軌道構造（暗記で確保）、鉄骨構造のH形鋼梁（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H28 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>土留め工のボイリング防止</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#11</span>/87</td></tr>
+<tr><td><strong>地中送電線路の管路埋設工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#7</span>/87</td></tr>
+<tr><td><strong>水準測量の誤差</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#49/87</td></tr>
+<tr><td><strong>空気調和設備の省エネルギー</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#60/87</td></tr>
+<tr><td><strong>給水設備の給水方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#20</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリートの特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#9</span>/87</td></tr>
+<tr><td><strong>鉄道の軌道構造・分岐器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#77/87</td></tr>
+<tr><td><strong>鉄骨造の部材名称</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#15</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土留め工のボイリング防止: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>地中送電線路の管路埋設工法: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">地中送電線</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>水準測量の誤差: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の省エネルギー: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>給水設備の給水方式: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリートの特性: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道の軌道構造・分岐器: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造の部材名称: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造の部</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 鉄道の軌道構造・分岐器, 空気調和設備の省エネルギー, 給水設備の給水方式, 地中送電線路の管路埋設工法, 水準測量の誤差</span> / <span style="color:#dc2626">消滅: 土質調査・原位置試験, 土留め壁の種類, 建設機械・締固め機械, 空気調和設備の制御方式, 鉄道線路の軌道構造</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+土留め工のボイリング防止（暗記で確保）、地中送電線路の管路埋設工法（暗記で確保）、水準測量の誤差（暗記で確保）、空気調和設備の省エネルギー（暗記で確保）、給水設備の給水方式（暗記で確保）、鉄筋コンクリートの特性（暗記で確保）、鉄道の軌道構造・分岐器（暗記で確保）、鉄骨造の部材名称（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H27 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>土留め壁の支保工・掘削工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#36/87</td></tr>
+<tr><td><strong>土質試験の種類</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#41/87</td></tr>
+<tr><td><strong>排水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#1</span>/87</td></tr>
+<tr><td><strong>空気調和設備の熱源機器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#8</span>/87</td></tr>
+<tr><td><strong>鉄塔の基礎・深礎基礎</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#70/87</td></tr>
+<tr><td><strong>鉄道線路及び軌道</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#80/87</td></tr>
+<tr><td><strong>鉄骨構造の用語</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#26</span>/87</td></tr>
+<tr><td><strong>鉄骨造の建築物</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#84/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土留め壁の支保工・掘削工法: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土質試験の種類: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土質試験の</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>排水設備: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">排水設備</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の熱源機器: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>鉄塔の基礎・深礎基礎: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄塔の基礎</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄道線路及び軌道: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路及</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄骨構造の用語: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨造の建築物: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨造の建</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 鉄塔の基礎・深礎基礎, 排水設備, 鉄骨造の建築物, 鉄道線路及び軌道, 空気調和設備の熱源機器</span> / <span style="color:#dc2626">消滅: 鉄道の軌道構造・分岐器, 空気調和設備の省エネルギー, 給水設備の給水方式, 地中送電線路の管路埋設工法, 水準測量の誤差</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+土留め壁の支保工・掘削工法（暗記で確保）、土質試験の種類（暗記で確保）、排水設備（暗記で確保）、空気調和設備の熱源機器（暗記で確保）、鉄塔の基礎・深礎基礎（暗記で確保）、鉄道線路及び軌道（暗記で確保）、鉄骨構造の用語（暗記で確保）、鉄骨造の建築物（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H26 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>ポンプの直列運転特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#32/87</td></tr>
+<tr><td><strong>土留め壁の種類と特徴</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#37/87</td></tr>
+<tr><td><strong>土質調査の試験</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#43/87</td></tr>
+<tr><td><strong>測量の誤差</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#50/87</td></tr>
+<tr><td><strong>空気調和設備の方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#58/87</td></tr>
+<tr><td><strong>鉄道の軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#10</span>/87</td></tr>
+<tr><td><strong>鋼材及び鋼管の記号・JIS</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#86/87</td></tr>
+<tr><td><strong>電気機器の耐震設計・固定ボルト</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#87/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>ポンプの直列運転特性: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">ポンプの直</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土留め壁の種類と特徴: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土質調査の試験: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土質調査の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>測量の誤差: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">測量の誤差</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>空気調和設備の方式: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄道の軌道構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道の軌道</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鋼材及び鋼管の記号・JIS: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鋼材及び鋼</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気機器の耐震設計・固定ボルト: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気機器の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 土質調査の試験, 空気調和設備の方式, 鋼材及び鋼管の記号・JIS, 土留め壁の種類と特徴, 鉄道の軌道構造</span> / <span style="color:#dc2626">消滅: 鉄塔の基礎・深礎基礎, 排水設備, 鉄骨造の建築物, 鉄道線路及び軌道, 空気調和設備の熱源機器</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+ポンプの直列運転特性（暗記で確保）、土留め壁の種類と特徴（暗記で確保）、土質調査の試験（暗記で確保）、測量の誤差（暗記で確保）、空気調和設備の方式（暗記で確保）、鉄道の軌道構造（暗記で確保）、鋼材及び鋼管の記号・JIS（暗記で確保）、電気機器の耐震設計・固定ボルト（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H25 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>土留め工・掘削工事</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#40/87</td></tr>
+<tr><td><strong>建設機械・締固め機械</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#12</span>/87</td></tr>
+<tr><td><strong>空気調和方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#57/87</td></tr>
+<tr><td><strong>給水設備の給水方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#20</span>/87</td></tr>
+<tr><td><strong>軟弱地盤の改良工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#21</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#3</span>/87</td></tr>
+<tr><td><strong>鉄道・軌道構造の用語・JIS</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#79/87</td></tr>
+<tr><td><strong>鉄骨構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#81/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土留め工・掘削工事: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め工・</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>建設機械・締固め機械: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設機械・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>空気調和方式: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和方</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>給水設備の給水方式: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備の</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>軟弱地盤の改良工法: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">軟弱地盤の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道・軌道構造の用語・JIS: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道・軌道</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 空気調和方式, 軟弱地盤の改良工法, 土留め工・掘削工事, 給水設備の給水方式, 建設機械・締固め機械</span> / <span style="color:#dc2626">消滅: 土質調査の試験, 空気調和設備の方式, 鋼材及び鋼管の記号・JIS, 土留め壁の種類と特徴, 鉄道の軌道構造</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+土留め工・掘削工事（暗記で確保）、建設機械・締固め機械（暗記で確保）、空気調和方式（暗記で確保）、給水設備の給水方式（暗記で確保）、軟弱地盤の改良工法（暗記で確保）、鉄筋コンクリート構造（暗記で確保）、鉄道・軌道構造の用語・JIS（暗記で確保）、鉄骨構造（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H24 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>コンクリートの施工</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#5</span>/87</td></tr>
+<tr><td><strong>水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#2</span>/87</td></tr>
+<tr><td><strong>省エネルギー対策</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#55/87</td></tr>
+<tr><td><strong>遠心ポンプ・効率曲線</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#E67E00;font-weight:600">⚡秒殺テク</span></td><td class="tac">#67/87</td></tr>
+<tr><td><strong>鉄塔基礎の種類</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#71/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#3</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造・梁貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#74/87</td></tr>
+<tr><td><strong>鉄道トンネル・掘削工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#78/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>コンクリートの施工: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">コンクリー</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>水準測量: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">水準測量</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>省エネルギー対策: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">省エネルギ</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>遠心ポンプ・効率曲線: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">遠心ポンプ</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>鉄塔基礎の種類: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄塔基礎の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄筋コンクリート構造・梁貫通: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄道トンネル・掘削工法: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道トンネ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 鉄筋コンクリート構造・梁貫通, コンクリートの施工, 水準測量, 省エネルギー対策, 遠心ポンプ・効率曲線</span> / <span style="color:#dc2626">消滅: 空気調和方式, 軟弱地盤の改良工法, 土留め工・掘削工事, 給水設備の給水方式, 建設機械・締固め機械</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+コンクリートの施工（暗記で確保）、水準測量（暗記で確保）、省エネルギー対策（暗記で確保）、遠心ポンプ・効率曲線（演習で対策）、鉄塔基礎の種類（暗記で確保）、鉄筋コンクリート構造（暗記で確保）、鉄筋コンクリート構造・梁貫通（暗記で確保）、鉄道トンネル・掘削工法（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H23 — 7問・7テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>アスファルト舗装</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#29</span>/87</td></tr>
+<tr><td><strong>土留め壁の種類</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#6</span>/87</td></tr>
+<tr><td><strong>熱源機器</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#52/87</td></tr>
+<tr><td><strong>盛土工事・土量変化率</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#54/87</td></tr>
+<tr><td><strong>給水方式</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#62/87</td></tr>
+<tr><td><strong>鉄骨構造・部材名称</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#83/87</td></tr>
+<tr><td><strong>鉄骨鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">14%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#28</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="57.1" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>アスファルト舗装: 1問 (14%)</title></rect>
+<text x="28.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">アスファル</text>
+<rect x="57.1" y="2" width="57.1" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土留め壁の種類: 1問 (14%)</title></rect>
+<text x="85.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土留め壁の</text>
+<rect x="114.3" y="2" width="57.1" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>熱源機器: 1問 (14%)</title></rect>
+<text x="142.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">熱源機器</text>
+<rect x="171.4" y="2" width="57.1" height="22" rx="2" fill="#d97706" opacity="0.8"><title>盛土工事・土量変化率: 1問 (14%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">盛土工事・</text>
+<rect x="228.6" y="2" width="57.1" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>給水方式: 1問 (14%)</title></rect>
+<text x="257.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水方式</text>
+<rect x="285.7" y="2" width="57.1" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄骨構造・部材名称: 1問 (14%)</title></rect>
+<text x="314.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造・</text>
+<rect x="342.9" y="2" width="57.1" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄骨鉄筋コンクリート構造: 1問 (14%)</title></rect>
+<text x="371.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨鉄筋コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 盛土工事・土量変化率, 鉄骨鉄筋コンクリート構造, 土留め壁の種類, アスファルト舗装, 給水方式</span> / <span style="color:#dc2626">消滅: 鉄筋コンクリート構造・梁貫通, コンクリートの施工, 水準測量, 省エネルギー対策, 遠心ポンプ・効率曲線</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（7テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+アスファルト舗装（暗記で確保）、土留め壁の種類（暗記で確保）、熱源機器（暗記で確保）、盛土工事・土量変化率（暗記で確保）、給水方式（暗記で確保）、鉄骨構造・部材名称（暗記で確保）、鉄骨鉄筋コンクリート構造（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約7問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H22 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>建設工事の締固め機械</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#46/87</td></tr>
+<tr><td><strong>排水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#1</span>/87</td></tr>
+<tr><td><strong>砂質地盤のボイリング防止</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#56/87</td></tr>
+<tr><td><strong>空気調和設備の省エネルギー対策</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#19</span>/87</td></tr>
+<tr><td><strong>軟弱地盤の改良工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#21</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#72/87</td></tr>
+<tr><td><strong>鉄道線路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#22</span>/87</td></tr>
+<tr><td><strong>鉄骨構造のトラス</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#82/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>建設工事の締固め機械: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">建設工事の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>排水設備: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">排水設備</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>砂質地盤のボイリング防止: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">砂質地盤の</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の省エネルギー対策: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>軟弱地盤の改良工法: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">軟弱地盤の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造のトラス: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 軟弱地盤の改良工法, 砂質地盤のボイリング防止, 空気調和設備の省エネルギー対策, 排水設備, 建設工事の締固め機械</span> / <span style="color:#dc2626">消滅: 盛土工事・土量変化率, 鉄骨鉄筋コンクリート構造, 土留め壁の種類, アスファルト舗装, 給水方式</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+建設工事の締固め機械（暗記で確保）、排水設備（暗記で確保）、砂質地盤のボイリング防止（暗記で確保）、空気調和設備の省エネルギー対策（暗記で確保）、軟弱地盤の改良工法（暗記で確保）、鉄筋コンクリート（暗記で確保）、鉄道線路（暗記で確保）、鉄骨構造のトラス（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H21 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>コンクリートの施工</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#5</span>/87</td></tr>
+<tr><td><strong>土止め支保工の工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#34/87</td></tr>
+<tr><td><strong>土質試験・圧密試験</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#42/87</td></tr>
+<tr><td><strong>空気調和設備・FCU+ダクト併用方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#61/87</td></tr>
+<tr><td><strong>給水設備</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#63/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造・はり貫通</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#73/87</td></tr>
+<tr><td><strong>鉄道線路・軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#23</span>/87</td></tr>
+<tr><td><strong>鉄骨構造の特徴</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#25</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>コンクリートの施工: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">コンクリー</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>土止め支保工の工法: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土止め支保</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土質試験・圧密試験: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">土質試験・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備・FCU+ダクト併用方式: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>給水設備: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">給水設備</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造・はり貫通: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路・軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨構造の特徴: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨構造の</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: コンクリートの施工, 鉄骨構造の特徴, 空気調和設備・FCU+ダクト併用方式, 土質試験・圧密試験, 給水設備</span> / <span style="color:#dc2626">消滅: 軟弱地盤の改良工法, 砂質地盤のボイリング防止, 空気調和設備の省エネルギー対策, 排水設備, 建設工事の締固め機械</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+コンクリートの施工（暗記で確保）、土止め支保工の工法（暗記で確保）、土質試験・圧密試験（暗記で確保）、空気調和設備・FCU+ダクト併用方式（暗記で確保）、給水設備（暗記で確保）、鉄筋コンクリート構造・はり貫通（暗記で確保）、鉄道線路・軌道構造（暗記で確保）、鉄骨構造の特徴（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #be185d22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#be185d;background:#be185d06;border-radius:6px">H20 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>コンクリート構造物の劣化</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#31/87</td></tr>
+<tr><td><strong>地中電線路の山留め工法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#45/87</td></tr>
+<tr><td><strong>測量用語・直接水準測量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#51/87</td></tr>
+<tr><td><strong>空気調和設備の熱源機器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#8</span>/87</td></tr>
+<tr><td><strong>遠心ポンプの特性曲線</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#13</span>/87</td></tr>
+<tr><td><strong>鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#3</span>/87</td></tr>
+<tr><td><strong>鉄道線路・軌道構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#23</span>/87</td></tr>
+<tr><td><strong>鉄骨鉄筋コンクリート構造</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#be185d;font-weight:700">#28</span>/87</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>コンクリート構造物の劣化: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">コンクリー</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>地中電線路の山留め工法: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">地中電線路</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>測量用語・直接水準測量: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">測量用語・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>空気調和設備の熱源機器: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">空気調和設</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>遠心ポンプの特性曲線: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">遠心ポンプ</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄筋コンク</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>鉄道線路・軌道構造: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄道線路・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>鉄骨鉄筋コンクリート構造: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">鉄骨鉄筋コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: コンクリート構造物の劣化, 鉄骨鉄筋コンクリート構造, 遠心ポンプの特性曲線, 空気調和設備の熱源機器, 鉄筋コンクリート構造</span> / <span style="color:#dc2626">消滅: コンクリートの施工, 鉄骨構造の特徴, 空気調和設備・FCU+ダクト併用方式, 土質試験・圧密試験, 給水設備</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+コンクリート構造物の劣化（暗記で確保）、地中電線路の山留め工法（暗記で確保）、測量用語・直接水準測量（暗記で確保）、空気調和設備の熱源機器（暗記で確保）、遠心ポンプの特性曲線（暗記で確保）、鉄筋コンクリート構造（暗記で確保）、鉄道線路・軌道構造（暗記で確保）、鉄骨鉄筋コンクリート構造（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工管理法.html">施工管理法 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 ｜ R7〜H20 ｜ Generated by Claude Code</footer>
+</body></html>

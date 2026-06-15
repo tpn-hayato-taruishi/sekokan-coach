@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R8（令和8年度）出題予測 - 施工管理2級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">R8（令和8年度）出題予測</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="priority.html">← 学習優先度ランキング</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="gap-risk.html">出題空白リスク（全科目横断） →</a></span></nav>
+<section id="prediction">
+  <h2>R8（令和8年度）出題予測</h2>
+<p>過去の出題頻度・空白年数・周期性から、R8で出題される確率を予測します。<strong>バブルの大きさ = 過去出題回数</strong> ですが、使い方は「当てにいく」ことではなく、<strong>先に厚く学ぶテーマを決めること</strong>です。</p>
+<div class="warn">あくまで統計的な予測です。新規テーマや設問の切り口までは予測できません。確率が低いテーマを「出ない」と読んで切るのは危険です。</div>
+<div class="note"><strong>読み方のコツ:</strong> 70%以上は本命、55〜69%は対抗、長期空白 × 過去頻出は復活警戒。各テーマの「主因」列は予測スコアに最も寄与した要素を示します。</div>
+<table>
+<tr><th>主因要素</th><th>意味</th><th>重み（最大寄与）</th></tr>
+<tr><td><span style="background:#dc2626;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px">直近頻度</span></td><td>直近5年で何回出題されているか（recency bias）</td><td>x60</td></tr>
+<tr><td><span style="background:#1d4ed8;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px">通算頻度</span></td><td>全期間の出題率（Bayesian平滑化で1回テーマを抑制）</td><td>x30</td></tr>
+<tr><td><span style="background:#7c3aed;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px">周期性</span></td><td>出題間隔の平均と現在の空白が一致するか（「そろそろ来る」検出）</td><td>最大+25</td></tr>
+<tr><td><span style="background:#059669;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px">トレンド</span></td><td>後半年/前半年の出題増減（増加傾向＝加点、減少＝減点）</td><td>±12</td></tr>
+<tr><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px">復活</span></td><td>頻出テーマ（通算25%以上）かつ3年以上空白でボーナス</td><td>最大+21</td></tr>
+</table>
+<table>
+<tr><th>判定</th><th>目安</th><th>意味</th><th>学習アクション</th></tr>
+<tr><td><strong>本命</strong></td><td>70%以上</td><td>頻出かつ直近も継続している軸</td><td>最初の1周で必ず固める</td></tr>
+<tr><td><strong>対抗</strong></td><td>55〜69%</td><td>頻出だが年次で揺れるテーマ</td><td>本命の次に押さえる</td></tr>
+<tr><td><strong>復活警戒</strong></td><td>長期空白 × 過去頻出</td><td>忘れたころに戻る可能性がある枠</td><td>直前期に最低1回は確認する</td></tr>
+</table>
+<h3>R8の見方を一行でまとめると</h3>
+<table>
+<tr><th>科目</th><th>本命</th><th>次点</th><th>復活警戒</th><th>学習の置き方</th></tr>
+<tr><td>施工管理法</td><td>級電気工事施工</td><td>唖電気工事・亜本日</td><td>唖電気工事・亜本日</td><td>頻出テーマを先に固定する</td></tr>
+<tr><td>電気理論</td><td>電気工事</td><td>日本電機工業会・亜日本電機工業</td><td>電気工事</td><td>頻出テーマを先に固定する</td></tr>
+<tr><td>施工</td><td>唖下記</td><td>工程表・所要日数</td><td>唖下記・工程表</td><td>頻出テーマを先に固定する</td></tr>
+<tr><td>電気設備</td><td>唖電気工事</td><td>電気工事・日本工業規格</td><td>唖電気工事・電気工事</td><td>頻出テーマを先に固定する</td></tr>
+<tr><td>法規</td><td>電気事業法</td><td>労働安全衛生法・建設業法</td><td>電気事業法・労働安全衛生法</td><td>頻出テーマを先に固定する</td></tr>
+</table>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（最有力: 級電気工事施工 出題率293%）</summary>
+<div style="margin:12px 0;text-align:center"><svg viewBox="0 0 700 220" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="60" y1="190" x2="680" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+<text x="30" y="105.0" text-anchor="middle" transform="rotate(-90,30,105.0)" font-size="10" fill="#64748b">予測スコア（相対）</text>
+<circle cx="160" cy="20.0" r="25" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>級電気工事施工: 予測スコア100 / 出題率294% / 空白1回 / 91回出題 / 主因 通算頻度</title></circle>
+<text x="160" y="23.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">100%</text>
+<text x="160" y="57.0" text-anchor="middle" font-size="8" fill="#334155">級電気工事施</text>
+<circle cx="640" cy="124.6" r="25" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>唖電気工事: 予測スコア38 / 出題率48% / 空白15回 / 15回出題 / 主因 復活</title></circle>
+<text x="640" y="127.6" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">38%</text>
+<text x="640" y="161.6" text-anchor="middle" font-size="8" fill="#334155">唖電気工事</text>
+<circle cx="640" cy="139.2" r="9" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>亜本日: 予測スコア30 / 出題率6% / 空白15回 / 2回出題 / 主因 トレンド</title></circle>
+<text x="640" y="142.2" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">30%</text>
+<text x="640" y="160.2" text-anchor="middle" font-size="8" fill="#334155">亜本日</text>
+<circle cx="640" cy="156.0" r="16" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>電気工事: 予測スコア20 / 出題率23% / 空白17回 / 7回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="184.5" text-anchor="middle" font-size="8" fill="#334155">電気工事</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>受騎地変更者: 予測スコア20 / 出題率3% / 空白24回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">受騎地変更者</text>
+<text x="80" y="206" text-anchor="middle" font-size="9" fill="#64748b">0年</text>
+<text x="160" y="206" text-anchor="middle" font-size="9" fill="#64748b">1年</text>
+<text x="240" y="206" text-anchor="middle" font-size="9" fill="#64748b">2年</text>
+<text x="320" y="206" text-anchor="middle" font-size="9" fill="#64748b">3年</text>
+<text x="400" y="206" text-anchor="middle" font-size="9" fill="#64748b">4年</text>
+<text x="480" y="206" text-anchor="middle" font-size="9" fill="#64748b">5年</text>
+<text x="560" y="206" text-anchor="middle" font-size="9" fill="#64748b">6年</text>
+<text x="640" y="206" text-anchor="middle" font-size="9" fill="#64748b">7年+</text>
+<text x="350.0" y="218" text-anchor="middle" font-size="10" fill="#64748b">空白年数 →</text>
+</svg></div>
+<table>
+<tr><th>カテゴリ</th><th>予測スコア（相対）</th><th>主因</th><th>過去出題</th><th>最終</th><th>空白</th></tr>
+<tr><td><strong>級電気工事施工</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 12 / 通算頻度 83 / 周期性 21 / トレンド -4 / 復活 0"></div><span style="font-weight:800;color:#dc2626">100%</span></div></td><td><span style="background:#1d4ed8;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 12 / 通算頻度 83 / 周期性 21 / トレンド -4 / 復活 0">通算頻度</span></td><td>91回</td><td>R7</td><td>1回</td></tr>
+<tr><td><strong>唖電気工事</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:38px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 14 / 周期性 0 / トレンド -9 / 復活 21"></div><span style="font-weight:800;color:#3b82f6">38%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 14 / 周期性 0 / トレンド -9 / 復活 21">復活</span></td><td>15回</td><td>R2</td><td>15回</td></tr>
+<tr><td><strong>亜本日</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:29px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 2 / 周期性 0 / トレンド +12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">30%</span></div></td><td><span style="background:#059669;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 2 / 周期性 0 / トレンド +12 / 復活 0">トレンド</span></td><td>2回</td><td>R2</td><td>15回</td></tr>
+<tr><td><strong>電気工事</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 6 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 6 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>7回</td><td>R1</td><td>17回</td></tr>
+<tr><td><strong>受騎地変更者</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H26</td><td>24回</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論（最有力: 電気工事 出題率35%）</summary>
+<div style="margin:12px 0;text-align:center"><svg viewBox="0 0 700 220" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="60" y1="190" x2="680" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+<text x="30" y="105.0" text-anchor="middle" transform="rotate(-90,30,105.0)" font-size="10" fill="#64748b">予測スコア（相対）</text>
+<circle cx="640" cy="20.0" r="22" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>電気工事: 予測スコア100 / 出題率35% / 空白15回 / 11回出題 / 主因 復活</title></circle>
+<text x="640" y="23.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">100%</text>
+<text x="640" y="54.5" text-anchor="middle" font-size="8" fill="#334155">電気工事</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>日本電機工業会: 予測スコア20 / 出題率3% / 空白26回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">日本電機工業</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>亜日本電機工業: 予測スコア20 / 出題率3% / 空白23回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">亜日本電機工</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>配線用図記号: 予測スコア20 / 出題率3% / 空白22回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">配線用図記号</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>配電盤茜制御盤: 予測スコア20 / 出題率3% / 空白19回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">配電盤茜制御</text>
+<text x="80" y="206" text-anchor="middle" font-size="9" fill="#64748b">0年</text>
+<text x="160" y="206" text-anchor="middle" font-size="9" fill="#64748b">1年</text>
+<text x="240" y="206" text-anchor="middle" font-size="9" fill="#64748b">2年</text>
+<text x="320" y="206" text-anchor="middle" font-size="9" fill="#64748b">3年</text>
+<text x="400" y="206" text-anchor="middle" font-size="9" fill="#64748b">4年</text>
+<text x="480" y="206" text-anchor="middle" font-size="9" fill="#64748b">5年</text>
+<text x="560" y="206" text-anchor="middle" font-size="9" fill="#64748b">6年</text>
+<text x="640" y="206" text-anchor="middle" font-size="9" fill="#64748b">7年+</text>
+<text x="350.0" y="218" text-anchor="middle" font-size="10" fill="#64748b">空白年数 →</text>
+</svg></div>
+<table>
+<tr><th>カテゴリ</th><th>予測スコア（相対）</th><th>主因</th><th>過去出題</th><th>最終</th><th>空白</th></tr>
+<tr><td><strong>電気工事</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 10 / 周期性 0 / トレンド -8 / 復活 21"></div><span style="font-weight:800;color:#dc2626">100%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 10 / 周期性 0 / トレンド -8 / 復活 21">復活</span></td><td>11回</td><td>R2</td><td>15回</td></tr>
+<tr><td><strong>日本電機工業会</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H24</td><td>26回</td></tr>
+<tr><td><strong>亜日本電機工業</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H27</td><td>23回</td></tr>
+<tr><td><strong>配線用図記号</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H28</td><td>22回</td></tr>
+<tr><td><strong>配電盤茜制御盤</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H30後期</td><td>19回</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工（最有力: 唖下記 出題率51%）</summary>
+<div style="margin:12px 0;text-align:center"><svg viewBox="0 0 700 220" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="60" y1="190" x2="680" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+<text x="30" y="105.0" text-anchor="middle" transform="rotate(-90,30,105.0)" font-size="10" fill="#64748b">予測スコア（相対）</text>
+<circle cx="640" cy="20.0" r="25" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>唖下記: 予測スコア100 / 出題率52% / 空白15回 / 16回出題 / 主因 復活</title></circle>
+<text x="640" y="23.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">100%</text>
+<text x="640" y="57.0" text-anchor="middle" font-size="8" fill="#334155">唖下記</text>
+<circle cx="640" cy="68.0" r="20" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>工程表: 予測スコア72 / 出題率29% / 空白17回 / 9回出題 / 主因 復活</title></circle>
+<text x="640" y="71.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">72%</text>
+<text x="640" y="99.5" text-anchor="middle" font-size="8" fill="#334155">工程表</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>所要日数: 予測スコア20 / 出題率3% / 空白24回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">所要日数</text>
+<text x="80" y="206" text-anchor="middle" font-size="9" fill="#64748b">0年</text>
+<text x="160" y="206" text-anchor="middle" font-size="9" fill="#64748b">1年</text>
+<text x="240" y="206" text-anchor="middle" font-size="9" fill="#64748b">2年</text>
+<text x="320" y="206" text-anchor="middle" font-size="9" fill="#64748b">3年</text>
+<text x="400" y="206" text-anchor="middle" font-size="9" fill="#64748b">4年</text>
+<text x="480" y="206" text-anchor="middle" font-size="9" fill="#64748b">5年</text>
+<text x="560" y="206" text-anchor="middle" font-size="9" fill="#64748b">6年</text>
+<text x="640" y="206" text-anchor="middle" font-size="9" fill="#64748b">7年+</text>
+<text x="350.0" y="218" text-anchor="middle" font-size="10" fill="#64748b">空白年数 →</text>
+</svg></div>
+<table>
+<tr><th>カテゴリ</th><th>予測スコア（相対）</th><th>主因</th><th>過去出題</th><th>最終</th><th>空白</th></tr>
+<tr><td><strong>唖下記</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 15 / 周期性 0 / トレンド -9 / 復活 21"></div><span style="font-weight:800;color:#dc2626">100%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 15 / 周期性 0 / トレンド -9 / 復活 21">復活</span></td><td>16回</td><td>R2</td><td>15回</td></tr>
+<tr><td><strong>工程表</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:71px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 8 / 周期性 0 / トレンド -12 / 復活 21"></div><span style="font-weight:800;color:#dc2626">72%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 8 / 周期性 0 / トレンド -12 / 復活 21">復活</span></td><td>9回</td><td>R1</td><td>17回</td></tr>
+<tr><td><strong>所要日数</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H26</td><td>24回</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備（最有力: 唖電気工事 出題率32%）</summary>
+<div style="margin:12px 0;text-align:center"><svg viewBox="0 0 700 220" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="60" y1="190" x2="680" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+<text x="30" y="105.0" text-anchor="middle" transform="rotate(-90,30,105.0)" font-size="10" fill="#64748b">予測スコア（相対）</text>
+<circle cx="640" cy="20.0" r="21" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>唖電気工事: 予測スコア100 / 出題率32% / 空白17回 / 10回出題 / 主因 復活</title></circle>
+<text x="640" y="23.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">100%</text>
+<text x="640" y="53.0" text-anchor="middle" font-size="8" fill="#334155">唖電気工事</text>
+<circle cx="640" cy="26.8" r="20" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>電気工事: 予測スコア96 / 出題率29% / 空白17回 / 9回出題 / 主因 復活</title></circle>
+<text x="640" y="29.8" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">96%</text>
+<text x="640" y="58.3" text-anchor="middle" font-size="8" fill="#334155">電気工事</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>日本工業規格: 予測スコア20 / 出題率3% / 空白29回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">日本工業規格</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>構内電気設備: 予測スコア20 / 出題率3% / 空白27回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">構内電気設備</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>阿混合茜分波器: 予測スコア20 / 出題率3% / 空白25回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">阿混合茜分波</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>自動火災報知設: 予測スコア20 / 出題率3% / 空白21回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">自動火災報知</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>亜日本工業規格: 予測スコア20 / 出題率3% / 空白18回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">亜日本工業規</text>
+<text x="80" y="206" text-anchor="middle" font-size="9" fill="#64748b">0年</text>
+<text x="160" y="206" text-anchor="middle" font-size="9" fill="#64748b">1年</text>
+<text x="240" y="206" text-anchor="middle" font-size="9" fill="#64748b">2年</text>
+<text x="320" y="206" text-anchor="middle" font-size="9" fill="#64748b">3年</text>
+<text x="400" y="206" text-anchor="middle" font-size="9" fill="#64748b">4年</text>
+<text x="480" y="206" text-anchor="middle" font-size="9" fill="#64748b">5年</text>
+<text x="560" y="206" text-anchor="middle" font-size="9" fill="#64748b">6年</text>
+<text x="640" y="206" text-anchor="middle" font-size="9" fill="#64748b">7年+</text>
+<text x="350.0" y="218" text-anchor="middle" font-size="10" fill="#64748b">空白年数 →</text>
+</svg></div>
+<table>
+<tr><th>カテゴリ</th><th>予測スコア（相対）</th><th>主因</th><th>過去出題</th><th>最終</th><th>空白</th></tr>
+<tr><td><strong>唖電気工事</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -12 / 復活 21"></div><span style="font-weight:800;color:#dc2626">100%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -12 / 復活 21">復活</span></td><td>10回</td><td>R1</td><td>17回</td></tr>
+<tr><td><strong>電気工事</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:95px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 8 / 周期性 0 / トレンド -12 / 復活 21"></div><span style="font-weight:800;color:#dc2626">96%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 8 / 周期性 0 / トレンド -12 / 復活 21">復活</span></td><td>9回</td><td>R1</td><td>17回</td></tr>
+<tr><td><strong>日本工業規格</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H21</td><td>29回</td></tr>
+<tr><td><strong>構内電気設備</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H23</td><td>27回</td></tr>
+<tr><td><strong>阿混合茜分波器</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H25</td><td>25回</td></tr>
+<tr><td><strong>自動火災報知設</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>H29</td><td>21回</td></tr>
+<tr><td><strong>亜日本工業規格</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>R1前期</td><td>18回</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規（最有力: 電気事業法 出題率32%）</summary>
+<div style="margin:12px 0;text-align:center"><svg viewBox="0 0 700 220" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="60" y1="190" x2="680" y2="190" stroke="#e5e7eb" stroke-width="1"/>
+<text x="30" y="105.0" text-anchor="middle" transform="rotate(-90,30,105.0)" font-size="10" fill="#64748b">予測スコア（相対）</text>
+<circle cx="640" cy="20.0" r="21" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>電気事業法: 予測スコア100 / 出題率32% / 空白15回 / 10回出題 / 主因 復活</title></circle>
+<text x="640" y="23.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">100%</text>
+<text x="640" y="53.0" text-anchor="middle" font-size="8" fill="#334155">電気事業法</text>
+<circle cx="640" cy="48.5" r="21" fill="#dc2626" fill-opacity="0.6" stroke="#dc2626" stroke-width="1.5"><title>労働安全衛生法: 予測スコア83 / 出題率32% / 空白17回 / 10回出題 / 主因 復活</title></circle>
+<text x="640" y="51.5" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">83%</text>
+<text x="640" y="81.5" text-anchor="middle" font-size="8" fill="#334155">労働安全衛生</text>
+<circle cx="640" cy="156.0" r="15" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>建設業法: 予測スコア20 / 出題率19% / 空白21回 / 6回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="183.0" text-anchor="middle" font-size="8" fill="#334155">建設業法</text>
+<circle cx="640" cy="156.0" r="8" fill="#3b82f6" fill-opacity="0.6" stroke="#3b82f6" stroke-width="1.5"><title>亜点検作業用: 予測スコア20 / 出題率3% / 空白16回 / 1回出題 / 主因 -</title></circle>
+<text x="640" y="159.0" text-anchor="middle" font-size="8" fill="#fff" font-weight="700">20%</text>
+<text x="640" y="176.0" text-anchor="middle" font-size="8" fill="#334155">亜点検作業用</text>
+<text x="80" y="206" text-anchor="middle" font-size="9" fill="#64748b">0年</text>
+<text x="160" y="206" text-anchor="middle" font-size="9" fill="#64748b">1年</text>
+<text x="240" y="206" text-anchor="middle" font-size="9" fill="#64748b">2年</text>
+<text x="320" y="206" text-anchor="middle" font-size="9" fill="#64748b">3年</text>
+<text x="400" y="206" text-anchor="middle" font-size="9" fill="#64748b">4年</text>
+<text x="480" y="206" text-anchor="middle" font-size="9" fill="#64748b">5年</text>
+<text x="560" y="206" text-anchor="middle" font-size="9" fill="#64748b">6年</text>
+<text x="640" y="206" text-anchor="middle" font-size="9" fill="#64748b">7年+</text>
+<text x="350.0" y="218" text-anchor="middle" font-size="10" fill="#64748b">空白年数 →</text>
+</svg></div>
+<table>
+<tr><th>カテゴリ</th><th>予測スコア（相対）</th><th>主因</th><th>過去出題</th><th>最終</th><th>空白</th></tr>
+<tr><td><strong>電気事業法</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -7 / 復活 21"></div><span style="font-weight:800;color:#dc2626">100%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -7 / 復活 21">復活</span></td><td>10回</td><td>R2</td><td>15回</td></tr>
+<tr><td><strong>労働安全衛生法</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:83px;height:16px;background:#dc2626;border-radius:4px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -12 / 復活 21"></div><span style="font-weight:800;color:#dc2626">83%</span></div></td><td><span style="background:#d97706;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 9 / 周期性 0 / トレンド -12 / 復活 21">復活</span></td><td>10回</td><td>R1</td><td>17回</td></tr>
+<tr><td><strong>建設業法</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 5 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 5 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>6回</td><td>H29</td><td>21回</td></tr>
+<tr><td><strong>亜点検作業用</strong></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:16px;background:#3b82f6;border-radius:4px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0"></div><span style="font-weight:800;color:#3b82f6">20%</span></div></td><td><span style="background:#64748b;color:#fff;padding:2px 6px;border-radius:3px;font-size:11px" title="直近頻度 0 / 通算頻度 1 / 周期性 0 / トレンド -12 / 復活 0">-</span></td><td>1回</td><td>R1後期</td><td>16回</td></tr>
+</table>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="priority.html">← 学習優先度ランキング</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="gap-risk.html">出題空白リスク（全科目横断） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理2級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

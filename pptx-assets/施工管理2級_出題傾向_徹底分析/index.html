@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施工管理2級 出題傾向 徹底分析 H20〜R7後期（31年分）</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+.section-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:20px 0}
+.section-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;display:block;color:#1e3a5f;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s}
+.section-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.15);text-decoration:none}
+.section-card .num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:#3b82f6;color:#fff;border-radius:6px;font-weight:700;font-size:0.85em;margin-right:8px}
+.section-card .title{font-weight:600;font-size:0.95em;display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body>
+<nav style="background:#fef3c7;border-bottom:1px solid #fde68a;padding:8px 16px;text-align:center;font-size:.9em">
+  <a href="../index.html" style="color:#92400e;font-weight:700">🏠 89試験ポータルに戻る</a>
+  ｜ <a href="../試験難易度ランキング_総合レポート.html" style="color:#92400e">📊 難易度ランキング</a>
+</nav>
+<div class="hero">
+  <h1>施工管理2級 出題傾向 徹底分析</h1>
+  <p>H21〜R7（23回分・第一次+第二次統合）× 6分野のデータを多角的に分析</p>
+  <div class="flow">
+    <div class="step">ヒートマップで<br>傾向を把握</div>
+    <div class="arrow">→</div>
+    <div class="step">サイクル分析で<br>次回予測</div>
+    <div class="arrow">→</div>
+    <div class="step">優先度ランキングで<br>学習順を決定</div>
+    <div class="arrow">→</div>
+    <div class="step">カバレッジ分析で<br>最小労力で合格</div>
+  </div>
+</div>
+<div class="container" style="max-width:1200px">
+<section>
+  <h2>目次（各セクションを別ページで表示）</h2>
+  <p>分析が大規模なため、セクションごとに分割して表示しています。各カードをクリックして該当ページに移動してください。</p>
+  <div class="note">対象: H20〜R7後期 の31年分 × 5科目 × 208問</div>
+  <div class="section-grid">
+    <a class="section-card" href="overview.html"><span class="num">1</span><span class="title">分析概要</span></a>
+    <a class="section-card" href="heatmap.html"><span class="num">2</span><span class="title">出題ヒートマップ（年度×分野）</span></a>
+    <a class="section-card" href="cycle.html"><span class="num">3</span><span class="title">出題サイクル分析</span></a>
+    <a class="section-card" href="coverage.html"><span class="num">4</span><span class="title">カバレッジ分析（最小テーマで最大カバー）</span></a>
+    <a class="section-card" href="priority.html"><span class="num">5</span><span class="title">学習優先度ランキング</span></a>
+    <a class="section-card" href="prediction.html"><span class="num">6</span><span class="title">R8（令和8年度）出題予測</span></a>
+    <a class="section-card" href="gap-risk.html"><span class="num">7</span><span class="title">出題空白リスク（全科目横断）</span></a>
+    <a class="section-card" href="kaiho.html"><span class="num">8</span><span class="title">解法パターン分布（科目別）</span></a>
+    <a class="section-card" href="strategy.html"><span class="num">9</span><span class="title">科目別 得点戦略</span></a>
+    <a class="section-card" href="scope-design.html"><span class="num">10</span><span class="title">勉強範囲の絞り込み設計</span></a>
+    <a class="section-card" href="question-selection.html"><span class="num">11</span><span class="title">優先過去問リスト</span></a>
+    <a class="section-card" href="memorization-patterns.html"><span class="num">12</span><span class="title">学習パターンの詳細化</span></a>
+    <a class="section-card" href="depth-map.html"><span class="num">13</span><span class="title">学習深度マップ</span></a>
+    <a class="section-card" href="minimum-pass.html"><span class="num">14</span><span class="title">最小合格セット（60%ライン突破）</span></a>
+    <a class="section-card" href="study-todo.html"><span class="num">15</span><span class="title">解くべき過去問リスト（年度別チェックリスト）</span></a>
+    <a class="section-card" href="rolling-backtest.html"><span class="num">16</span><span class="title">過去問学習シミュレーション（5/10年学習で各年度の得点推移）</span></a>
+    <a class="section-card" href="required-years.html"><span class="num">17</span><span class="title">必要学習年数分析（過去問を何年分やれば合格できるか）</span></a>
+    <a class="section-card" href="roi-analysis.html"><span class="num">18</span><span class="title">投資対効果分析</span></a>
+    <a class="section-card" href="cut-list.html"><span class="num">19</span><span class="title">捨てテーマリスト</span></a>
+    <a class="section-card" href="dependency-graph.html"><span class="num">20</span><span class="title">前提知識グラフ</span></a>
+    <a class="section-card" href="time-budget.html"><span class="num">21</span><span class="title">時間配分設計</span></a>
+    <a class="section-card" href="score-simulation.html"><span class="num">22</span><span class="title">得点シミュレーション</span></a>
+    <a class="section-card" href="weekly-plan.html"><span class="num">23</span><span class="title">週間学習計画</span></a>
+    <a class="section-card" href="deep-analysis.html"><span class="num">24</span><span class="title">深層単元分析（詳細テーマ別 完全版）</span></a>
+    <a class="section-card" href="raw-analysis.html"><span class="num">25</span><span class="title">個別テーマ傾向分析（正規化なし・最細粒度）</span></a>
+    <a class="section-card" href="cross-correlation.html"><span class="num">26</span><span class="title">科目間相関分析</span></a>
+    <a class="section-card" href="yearly-comprehensive.html"><span class="num">27</span><span class="title">年度別総合分析（全年度×全科目 完全展開）</span></a>
+    <a class="section-card" href="topic-pair-comparison.html"><span class="num">28</span><span class="title">テーマペア比較分析（同科目内 全ペア展開）</span></a>
+    <a class="section-card" href="difficulty-trend.html"><span class="num">29</span><span class="title">難易度トレンド分析</span></a>
+    <a class="section-card" href="real-difficulty.html"><span class="num">30</span><span class="title">合格基準点・合格率 実データ分析</span></a>
+    <a class="section-card" href="recommended-videos.html"><span class="num">31</span><span class="title">おすすめ学習動画（施工管理2級）</span></a>
+    <a class="section-card" href="coverage-rate.html"><span class="num">32</span><span class="title">過去問カバー率分析（新問を捨てた場合の得点）</span></a>
+    <a class="section-card" href="pass-strategy.html"><span class="num">33</span><span class="title">合格戦略（70%得点プラン）</span></a>
+    <a class="section-card" href="knowledge-map.html"><span class="num">34</span><span class="title">テーマ別 必要知識マップ</span></a>
+    <a class="section-card" href="all-questions.html"><span class="num">35</span><span class="title">全問題一覧（年度別傾向付き）</span></a>
+    <a class="section-card" href="roadmap.html"><span class="num">36</span><span class="title">学習ロードマップ</span></a>
+    <a class="section-card" href="formula-ref.html"><span class="num">37</span><span class="title">科目別 キー公式リファレンス</span></a>
+  </div>
+</section>
+</div>
+<footer>施工管理2級 出題傾向 徹底分析 ｜ H20〜R7後期（31年分） × 5科目 × 208問 ｜ Generated by Claude Code</footer>
+</body></html>

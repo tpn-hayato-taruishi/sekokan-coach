@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/terraform.tfvars
+terraform/allowed_ips.txt
+terraform/lambda/*.zip
+# NOTE: .terraform.lock.hcl はコミット対象（再現性確保）
+
+# bedrock cost tracking
+.bedrock-cost.json
+next-env.d.ts
+
+# pptx-assets/ は基本コミット (HTMLレポート) するが、巨大な挿絵PNGは除外
+# (figures は deploy.sh prebuild で必要に応じて配置するか、CI でスキップ)
+pptx-assets/施工管理_figures/
+dev.log

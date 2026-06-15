@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出題ヒートマップ（年度×分野） - 施工管理2級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">出題ヒートマップ（年度×分野）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="overview.html">← 分析概要</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cycle.html">出題サイクル分析 →</a></span></nav>
+<section id="heatmap">
+  <h2>出題ヒートマップ（年度×分野）</h2>
+<p>31年間の出題パターンを色の濃淡で可視化。<strong>青が濃い = その年にその分野から多く出題</strong>。</p>
+<p>白い列 = 出題なし。横の傾向で周期性、縦の傾向で年度の特徴が見えます。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（5 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 753 161" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="110.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,110.5,32)">H20</text>
+<text x="173.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,173.5,32)">H23</text>
+<text x="236.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,236.5,32)">H26</text>
+<text x="299.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,299.5,32)">H29</text>
+<text x="362.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,362.5,32)">R1前期</text>
+<text x="425.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,425.5,32)">R2</text>
+<text x="488.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,488.5,32)">R3後期</text>
+<text x="551.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,551.5,32)">R4後期</text>
+<text x="614.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,614.5,32)">R5後期</text>
+<text x="677.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,677.5,32)">R6後期</text>
+<text x="740.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,740.5,32)">R7後期</text>
+<text x="94" y="60.5" text-anchor="end" font-size="10" fill="#334155">級電気工事施工</text>
+<rect x="100" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H20 級電気工事施工: 3問</title></rect>
+<rect x="121" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H21 級電気工事施工: 5問</title></rect>
+<rect x="142" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H22 級電気工事施工: 5問</title></rect>
+<rect x="163" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H23 級電気工事施工: 5問</title></rect>
+<rect x="184" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H24 級電気工事施工: 5問</title></rect>
+<rect x="205" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H25 級電気工事施工: 5問</title></rect>
+<rect x="226" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H26 級電気工事施工: 3問</title></rect>
+<rect x="247" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H27 級電気工事施工: 5問</title></rect>
+<rect x="268" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H28 級電気工事施工: 5問</title></rect>
+<rect x="289" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H29 級電気工事施工: 5問</title></rect>
+<rect x="310" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H30 級電気工事施工: 6問</title></rect>
+<rect x="331" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H30後期 級電気工事施工: 1問</title></rect>
+<rect x="352" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R1前期 級電気工事施工: 1問</title></rect>
+<rect x="373" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R1 級電気工事施工: 6問</title></rect>
+<rect x="394" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R1後期 級電気工事施工: 1問</title></rect>
+<rect x="415" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R2 級電気工事施工: 4問</title></rect>
+<rect x="436" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R3前期 級電気工事施工: 1問</title></rect>
+<rect x="457" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R3 級電気工事施工: 6問</title></rect>
+<rect x="478" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R3後期 級電気工事施工: 1問</title></rect>
+<rect x="499" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R4 級電気工事施工: 6問</title></rect>
+<rect x="520" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R4前期 級電気工事施工: 1問</title></rect>
+<rect x="541" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R4後期 級電気工事施工: 1問</title></rect>
+<rect x="562" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R5 級電気工事施工: 6問</title></rect>
+<rect x="583" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R5前期 級電気工事施工: 1問</title></rect>
+<rect x="604" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R5後期 級電気工事施工: 1問</title></rect>
+<rect x="625" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R6 級電気工事施工: 1問</title></rect>
+<rect x="646" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 級電気工事施工: 0問</title></rect>
+<rect x="667" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 級電気工事施工: 0問</title></rect>
+<rect x="688" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 級電気工事施工: 0問</title></rect>
+<rect x="709" y="46" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R7 級電気工事施工: 1問</title></rect>
+<rect x="730" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 級電気工事施工: 0問</title></rect>
+<text x="94" y="81.5" text-anchor="end" font-size="10" fill="#334155">唖電気工事</text>
+<rect x="100" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 唖電気工事: 0問</title></rect>
+<rect x="121" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H21 唖電気工事: 1問</title></rect>
+<rect x="142" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H22 唖電気工事: 1問</title></rect>
+<rect x="163" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H23 唖電気工事: 1問</title></rect>
+<rect x="184" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H24 唖電気工事: 1問</title></rect>
+<rect x="205" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 唖電気工事: 2問</title></rect>
+<rect x="226" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H26 唖電気工事: 1問</title></rect>
+<rect x="247" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H27 唖電気工事: 1問</title></rect>
+<rect x="268" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 唖電気工事: 2問</title></rect>
+<rect x="289" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H29 唖電気工事: 1問</title></rect>
+<rect x="310" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H30 唖電気工事: 1問</title></rect>
+<rect x="331" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 唖電気工事: 0問</title></rect>
+<rect x="352" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 唖電気工事: 0問</title></rect>
+<rect x="373" y="67" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>R1 唖電気工事: 1問</title></rect>
+<rect x="394" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 唖電気工事: 0問</title></rect>
+<rect x="415" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R2 唖電気工事: 2問</title></rect>
+<rect x="436" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 唖電気工事: 0問</title></rect>
+<rect x="457" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 唖電気工事: 0問</title></rect>
+<rect x="478" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 唖電気工事: 0問</title></rect>
+<rect x="499" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 唖電気工事: 0問</title></rect>
+<rect x="520" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 唖電気工事: 0問</title></rect>
+<rect x="541" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 唖電気工事: 0問</title></rect>
+<rect x="562" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 唖電気工事: 0問</title></rect>
+<rect x="583" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 唖電気工事: 0問</title></rect>
+<rect x="604" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 唖電気工事: 0問</title></rect>
+<rect x="625" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 唖電気工事: 0問</title></rect>
+<rect x="646" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 唖電気工事: 0問</title></rect>
+<rect x="667" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 唖電気工事: 0問</title></rect>
+<rect x="688" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 唖電気工事: 0問</title></rect>
+<rect x="709" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 唖電気工事: 0問</title></rect>
+<rect x="730" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 唖電気工事: 0問</title></rect>
+<text x="94" y="102.5" text-anchor="end" font-size="10" fill="#334155">電気工事</text>
+<rect x="100" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 電気工事: 0問</title></rect>
+<rect x="121" y="88" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H21 電気工事: 1問</title></rect>
+<rect x="142" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 電気工事: 0問</title></rect>
+<rect x="163" y="88" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H23 電気工事: 1問</title></rect>
+<rect x="184" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 電気工事: 0問</title></rect>
+<rect x="205" y="88" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H25 電気工事: 1問</title></rect>
+<rect x="226" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 電気工事: 0問</title></rect>
+<rect x="247" y="88" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H27 電気工事: 1問</title></rect>
+<rect x="268" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 電気工事: 0問</title></rect>
+<rect x="289" y="88" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H29 電気工事: 1問</title></rect>
+<rect x="310" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 電気工事: 0問</title></rect>
+<rect x="331" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 電気工事: 0問</title></rect>
+<rect x="352" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 電気工事: 0問</title></rect>
+<rect x="373" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1 電気工事: 2問</title></rect>
+<rect x="394" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 電気工事: 0問</title></rect>
+<rect x="415" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 電気工事: 0問</title></rect>
+<rect x="436" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 電気工事: 0問</title></rect>
+<rect x="457" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 電気工事: 0問</title></rect>
+<rect x="478" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 電気工事: 0問</title></rect>
+<rect x="499" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 電気工事: 0問</title></rect>
+<rect x="520" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 電気工事: 0問</title></rect>
+<rect x="541" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 電気工事: 0問</title></rect>
+<rect x="562" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 電気工事: 0問</title></rect>
+<rect x="583" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 電気工事: 0問</title></rect>
+<rect x="604" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 電気工事: 0問</title></rect>
+<rect x="625" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 電気工事: 0問</title></rect>
+<rect x="646" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 電気工事: 0問</title></rect>
+<rect x="667" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 電気工事: 0問</title></rect>
+<rect x="688" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 電気工事: 0問</title></rect>
+<rect x="709" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 電気工事: 0問</title></rect>
+<rect x="730" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 電気工事: 0問</title></rect>
+<text x="94" y="123.5" text-anchor="end" font-size="10" fill="#334155">亜本日</text>
+<rect x="100" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 亜本日: 0問</title></rect>
+<rect x="121" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 亜本日: 0問</title></rect>
+<rect x="142" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 亜本日: 0問</title></rect>
+<rect x="163" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 亜本日: 0問</title></rect>
+<rect x="184" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 亜本日: 0問</title></rect>
+<rect x="205" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 亜本日: 0問</title></rect>
+<rect x="226" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 亜本日: 0問</title></rect>
+<rect x="247" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 亜本日: 0問</title></rect>
+<rect x="268" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 亜本日: 0問</title></rect>
+<rect x="289" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 亜本日: 0問</title></rect>
+<rect x="310" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 亜本日: 0問</title></rect>
+<rect x="331" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 亜本日: 0問</title></rect>
+<rect x="352" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 亜本日: 0問</title></rect>
+<rect x="373" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 亜本日: 0問</title></rect>
+<rect x="394" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 亜本日: 0問</title></rect>
+<rect x="415" y="109" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R2 亜本日: 2問</title></rect>
+<rect x="436" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 亜本日: 0問</title></rect>
+<rect x="457" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 亜本日: 0問</title></rect>
+<rect x="478" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 亜本日: 0問</title></rect>
+<rect x="499" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 亜本日: 0問</title></rect>
+<rect x="520" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 亜本日: 0問</title></rect>
+<rect x="541" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 亜本日: 0問</title></rect>
+<rect x="562" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 亜本日: 0問</title></rect>
+<rect x="583" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 亜本日: 0問</title></rect>
+<rect x="604" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 亜本日: 0問</title></rect>
+<rect x="625" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 亜本日: 0問</title></rect>
+<rect x="646" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 亜本日: 0問</title></rect>
+<rect x="667" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 亜本日: 0問</title></rect>
+<rect x="688" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 亜本日: 0問</title></rect>
+<rect x="709" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 亜本日: 0問</title></rect>
+<rect x="730" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 亜本日: 0問</title></rect>
+<text x="94" y="144.5" text-anchor="end" font-size="10" fill="#334155">受騎地変更者</text>
+<rect x="100" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 受騎地変更者: 0問</title></rect>
+<rect x="121" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 受騎地変更者: 0問</title></rect>
+<rect x="142" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 受騎地変更者: 0問</title></rect>
+<rect x="163" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 受騎地変更者: 0問</title></rect>
+<rect x="184" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 受騎地変更者: 0問</title></rect>
+<rect x="205" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 受騎地変更者: 0問</title></rect>
+<rect x="226" y="130" width="21" height="21" rx="2" fill="#93c5fd" opacity="1"><title>H26 受騎地変更者: 1問</title></rect>
+<rect x="247" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 受騎地変更者: 0問</title></rect>
+<rect x="268" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 受騎地変更者: 0問</title></rect>
+<rect x="289" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 受騎地変更者: 0問</title></rect>
+<rect x="310" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 受騎地変更者: 0問</title></rect>
+<rect x="331" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 受騎地変更者: 0問</title></rect>
+<rect x="352" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 受騎地変更者: 0問</title></rect>
+<rect x="373" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 受騎地変更者: 0問</title></rect>
+<rect x="394" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 受騎地変更者: 0問</title></rect>
+<rect x="415" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 受騎地変更者: 0問</title></rect>
+<rect x="436" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 受騎地変更者: 0問</title></rect>
+<rect x="457" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 受騎地変更者: 0問</title></rect>
+<rect x="478" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 受騎地変更者: 0問</title></rect>
+<rect x="499" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 受騎地変更者: 0問</title></rect>
+<rect x="520" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 受騎地変更者: 0問</title></rect>
+<rect x="541" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 受騎地変更者: 0問</title></rect>
+<rect x="562" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 受騎地変更者: 0問</title></rect>
+<rect x="583" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 受騎地変更者: 0問</title></rect>
+<rect x="604" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 受騎地変更者: 0問</title></rect>
+<rect x="625" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 受騎地変更者: 0問</title></rect>
+<rect x="646" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 受騎地変更者: 0問</title></rect>
+<rect x="667" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 受騎地変更者: 0問</title></rect>
+<rect x="688" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 受騎地変更者: 0問</title></rect>
+<rect x="709" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 受騎地変更者: 0問</title></rect>
+<rect x="730" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 受騎地変更者: 0問</title></rect>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論（5 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 753 161" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="110.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,110.5,32)">H20</text>
+<text x="173.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,173.5,32)">H23</text>
+<text x="236.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,236.5,32)">H26</text>
+<text x="299.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,299.5,32)">H29</text>
+<text x="362.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,362.5,32)">R1前期</text>
+<text x="425.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,425.5,32)">R2</text>
+<text x="488.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,488.5,32)">R3後期</text>
+<text x="551.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,551.5,32)">R4後期</text>
+<text x="614.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,614.5,32)">R5後期</text>
+<text x="677.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,677.5,32)">R6後期</text>
+<text x="740.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,740.5,32)">R7後期</text>
+<text x="94" y="60.5" text-anchor="end" font-size="10" fill="#334155">電気工事</text>
+<rect x="100" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H20 電気工事: 1問</title></rect>
+<rect x="121" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 電気工事: 0問</title></rect>
+<rect x="142" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H22 電気工事: 1問</title></rect>
+<rect x="163" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 電気工事: 0問</title></rect>
+<rect x="184" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 電気工事: 1問</title></rect>
+<rect x="205" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 電気工事: 0問</title></rect>
+<rect x="226" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H26 電気工事: 3問</title></rect>
+<rect x="247" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 電気工事: 0問</title></rect>
+<rect x="268" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 電気工事: 1問</title></rect>
+<rect x="289" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 電気工事: 0問</title></rect>
+<rect x="310" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H30 電気工事: 2問</title></rect>
+<rect x="331" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 電気工事: 0問</title></rect>
+<rect x="352" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 電気工事: 0問</title></rect>
+<rect x="373" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 電気工事: 0問</title></rect>
+<rect x="394" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 電気工事: 0問</title></rect>
+<rect x="415" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R2 電気工事: 2問</title></rect>
+<rect x="436" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 電気工事: 0問</title></rect>
+<rect x="457" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 電気工事: 0問</title></rect>
+<rect x="478" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 電気工事: 0問</title></rect>
+<rect x="499" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 電気工事: 0問</title></rect>
+<rect x="520" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 電気工事: 0問</title></rect>
+<rect x="541" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 電気工事: 0問</title></rect>
+<rect x="562" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 電気工事: 0問</title></rect>
+<rect x="583" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 電気工事: 0問</title></rect>
+<rect x="604" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 電気工事: 0問</title></rect>
+<rect x="625" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 電気工事: 0問</title></rect>
+<rect x="646" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 電気工事: 0問</title></rect>
+<rect x="667" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 電気工事: 0問</title></rect>
+<rect x="688" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 電気工事: 0問</title></rect>
+<rect x="709" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 電気工事: 0問</title></rect>
+<rect x="730" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 電気工事: 0問</title></rect>
+<text x="94" y="81.5" text-anchor="end" font-size="10" fill="#334155">日本電機工業会</text>
+<rect x="100" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 日本電機工業会: 0問</title></rect>
+<rect x="121" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 日本電機工業会: 0問</title></rect>
+<rect x="142" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 日本電機工業会: 0問</title></rect>
+<rect x="163" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 日本電機工業会: 0問</title></rect>
+<rect x="184" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 日本電機工業会: 1問</title></rect>
+<rect x="205" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 日本電機工業会: 0問</title></rect>
+<rect x="226" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 日本電機工業会: 0問</title></rect>
+<rect x="247" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 日本電機工業会: 0問</title></rect>
+<rect x="268" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 日本電機工業会: 0問</title></rect>
+<rect x="289" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 日本電機工業会: 0問</title></rect>
+<rect x="310" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 日本電機工業会: 0問</title></rect>
+<rect x="331" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 日本電機工業会: 0問</title></rect>
+<rect x="352" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 日本電機工業会: 0問</title></rect>
+<rect x="373" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 日本電機工業会: 0問</title></rect>
+<rect x="394" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 日本電機工業会: 0問</title></rect>
+<rect x="415" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 日本電機工業会: 0問</title></rect>
+<rect x="436" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 日本電機工業会: 0問</title></rect>
+<rect x="457" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 日本電機工業会: 0問</title></rect>
+<rect x="478" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 日本電機工業会: 0問</title></rect>
+<rect x="499" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 日本電機工業会: 0問</title></rect>
+<rect x="520" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 日本電機工業会: 0問</title></rect>
+<rect x="541" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 日本電機工業会: 0問</title></rect>
+<rect x="562" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 日本電機工業会: 0問</title></rect>
+<rect x="583" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 日本電機工業会: 0問</title></rect>
+<rect x="604" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 日本電機工業会: 0問</title></rect>
+<rect x="625" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 日本電機工業会: 0問</title></rect>
+<rect x="646" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 日本電機工業会: 0問</title></rect>
+<rect x="667" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 日本電機工業会: 0問</title></rect>
+<rect x="688" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 日本電機工業会: 0問</title></rect>
+<rect x="709" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 日本電機工業会: 0問</title></rect>
+<rect x="730" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 日本電機工業会: 0問</title></rect>
+<text x="94" y="102.5" text-anchor="end" font-size="10" fill="#334155">亜日本電機工業</text>
+<rect x="100" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 亜日本電機工業: 0問</title></rect>
+<rect x="121" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 亜日本電機工業: 0問</title></rect>
+<rect x="142" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 亜日本電機工業: 0問</title></rect>
+<rect x="163" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 亜日本電機工業: 0問</title></rect>
+<rect x="184" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 亜日本電機工業: 0問</title></rect>
+<rect x="205" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 亜日本電機工業: 0問</title></rect>
+<rect x="226" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 亜日本電機工業: 0問</title></rect>
+<rect x="247" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 亜日本電機工業: 1問</title></rect>
+<rect x="268" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 亜日本電機工業: 0問</title></rect>
+<rect x="289" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 亜日本電機工業: 0問</title></rect>
+<rect x="310" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 亜日本電機工業: 0問</title></rect>
+<rect x="331" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 亜日本電機工業: 0問</title></rect>
+<rect x="352" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 亜日本電機工業: 0問</title></rect>
+<rect x="373" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 亜日本電機工業: 0問</title></rect>
+<rect x="394" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 亜日本電機工業: 0問</title></rect>
+<rect x="415" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 亜日本電機工業: 0問</title></rect>
+<rect x="436" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 亜日本電機工業: 0問</title></rect>
+<rect x="457" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 亜日本電機工業: 0問</title></rect>
+<rect x="478" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 亜日本電機工業: 0問</title></rect>
+<rect x="499" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 亜日本電機工業: 0問</title></rect>
+<rect x="520" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 亜日本電機工業: 0問</title></rect>
+<rect x="541" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 亜日本電機工業: 0問</title></rect>
+<rect x="562" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 亜日本電機工業: 0問</title></rect>
+<rect x="583" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 亜日本電機工業: 0問</title></rect>
+<rect x="604" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 亜日本電機工業: 0問</title></rect>
+<rect x="625" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 亜日本電機工業: 0問</title></rect>
+<rect x="646" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 亜日本電機工業: 0問</title></rect>
+<rect x="667" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 亜日本電機工業: 0問</title></rect>
+<rect x="688" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 亜日本電機工業: 0問</title></rect>
+<rect x="709" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 亜日本電機工業: 0問</title></rect>
+<rect x="730" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 亜日本電機工業: 0問</title></rect>
+<text x="94" y="123.5" text-anchor="end" font-size="10" fill="#334155">配線用図記号</text>
+<rect x="100" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 配線用図記号: 0問</title></rect>
+<rect x="121" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 配線用図記号: 0問</title></rect>
+<rect x="142" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 配線用図記号: 0問</title></rect>
+<rect x="163" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 配線用図記号: 0問</title></rect>
+<rect x="184" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 配線用図記号: 0問</title></rect>
+<rect x="205" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 配線用図記号: 0問</title></rect>
+<rect x="226" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 配線用図記号: 0問</title></rect>
+<rect x="247" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 配線用図記号: 0問</title></rect>
+<rect x="268" y="109" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 配線用図記号: 1問</title></rect>
+<rect x="289" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 配線用図記号: 0問</title></rect>
+<rect x="310" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 配線用図記号: 0問</title></rect>
+<rect x="331" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 配線用図記号: 0問</title></rect>
+<rect x="352" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 配線用図記号: 0問</title></rect>
+<rect x="373" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 配線用図記号: 0問</title></rect>
+<rect x="394" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 配線用図記号: 0問</title></rect>
+<rect x="415" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 配線用図記号: 0問</title></rect>
+<rect x="436" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 配線用図記号: 0問</title></rect>
+<rect x="457" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 配線用図記号: 0問</title></rect>
+<rect x="478" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 配線用図記号: 0問</title></rect>
+<rect x="499" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 配線用図記号: 0問</title></rect>
+<rect x="520" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 配線用図記号: 0問</title></rect>
+<rect x="541" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 配線用図記号: 0問</title></rect>
+<rect x="562" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 配線用図記号: 0問</title></rect>
+<rect x="583" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 配線用図記号: 0問</title></rect>
+<rect x="604" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 配線用図記号: 0問</title></rect>
+<rect x="625" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 配線用図記号: 0問</title></rect>
+<rect x="646" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 配線用図記号: 0問</title></rect>
+<rect x="667" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 配線用図記号: 0問</title></rect>
+<rect x="688" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 配線用図記号: 0問</title></rect>
+<rect x="709" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 配線用図記号: 0問</title></rect>
+<rect x="730" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 配線用図記号: 0問</title></rect>
+<text x="94" y="144.5" text-anchor="end" font-size="10" fill="#334155">配電盤茜制御盤</text>
+<rect x="100" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 配電盤茜制御盤: 0問</title></rect>
+<rect x="121" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 配電盤茜制御盤: 0問</title></rect>
+<rect x="142" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 配電盤茜制御盤: 0問</title></rect>
+<rect x="163" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 配電盤茜制御盤: 0問</title></rect>
+<rect x="184" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 配電盤茜制御盤: 0問</title></rect>
+<rect x="205" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 配電盤茜制御盤: 0問</title></rect>
+<rect x="226" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 配電盤茜制御盤: 0問</title></rect>
+<rect x="247" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 配電盤茜制御盤: 0問</title></rect>
+<rect x="268" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 配電盤茜制御盤: 0問</title></rect>
+<rect x="289" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 配電盤茜制御盤: 0問</title></rect>
+<rect x="310" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 配電盤茜制御盤: 0問</title></rect>
+<rect x="331" y="130" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H30後期 配電盤茜制御盤: 1問</title></rect>
+<rect x="352" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="373" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 配電盤茜制御盤: 0問</title></rect>
+<rect x="394" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 配電盤茜制御盤: 0問</title></rect>
+<rect x="415" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 配電盤茜制御盤: 0問</title></rect>
+<rect x="436" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="457" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 配電盤茜制御盤: 0問</title></rect>
+<rect x="478" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 配電盤茜制御盤: 0問</title></rect>
+<rect x="499" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 配電盤茜制御盤: 0問</title></rect>
+<rect x="520" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="541" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 配電盤茜制御盤: 0問</title></rect>
+<rect x="562" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 配電盤茜制御盤: 0問</title></rect>
+<rect x="583" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="604" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 配電盤茜制御盤: 0問</title></rect>
+<rect x="625" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 配電盤茜制御盤: 0問</title></rect>
+<rect x="646" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="667" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 配電盤茜制御盤: 0問</title></rect>
+<rect x="688" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 配電盤茜制御盤: 0問</title></rect>
+<rect x="709" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 配電盤茜制御盤: 0問</title></rect>
+<rect x="730" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 配電盤茜制御盤: 0問</title></rect>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工（3 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 753 119" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="110.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,110.5,32)">H20</text>
+<text x="173.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,173.5,32)">H23</text>
+<text x="236.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,236.5,32)">H26</text>
+<text x="299.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,299.5,32)">H29</text>
+<text x="362.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,362.5,32)">R1前期</text>
+<text x="425.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,425.5,32)">R2</text>
+<text x="488.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,488.5,32)">R3後期</text>
+<text x="551.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,551.5,32)">R4後期</text>
+<text x="614.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,614.5,32)">R5後期</text>
+<text x="677.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,677.5,32)">R6後期</text>
+<text x="740.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,740.5,32)">R7後期</text>
+<text x="94" y="60.5" text-anchor="end" font-size="10" fill="#334155">唖下記</text>
+<rect x="100" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H20 唖下記: 1問</title></rect>
+<rect x="121" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 唖下記: 1問</title></rect>
+<rect x="142" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H22 唖下記: 1問</title></rect>
+<rect x="163" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 唖下記: 1問</title></rect>
+<rect x="184" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 唖下記: 1問</title></rect>
+<rect x="205" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 唖下記: 1問</title></rect>
+<rect x="226" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H26 唖下記: 1問</title></rect>
+<rect x="247" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 唖下記: 1問</title></rect>
+<rect x="268" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 唖下記: 1問</title></rect>
+<rect x="289" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 唖下記: 1問</title></rect>
+<rect x="310" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H30 唖下記: 2問</title></rect>
+<rect x="331" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 唖下記: 0問</title></rect>
+<rect x="352" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 唖下記: 0問</title></rect>
+<rect x="373" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R1 唖下記: 2問</title></rect>
+<rect x="394" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 唖下記: 0問</title></rect>
+<rect x="415" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R2 唖下記: 2問</title></rect>
+<rect x="436" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 唖下記: 0問</title></rect>
+<rect x="457" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 唖下記: 0問</title></rect>
+<rect x="478" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 唖下記: 0問</title></rect>
+<rect x="499" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 唖下記: 0問</title></rect>
+<rect x="520" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 唖下記: 0問</title></rect>
+<rect x="541" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 唖下記: 0問</title></rect>
+<rect x="562" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 唖下記: 0問</title></rect>
+<rect x="583" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 唖下記: 0問</title></rect>
+<rect x="604" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 唖下記: 0問</title></rect>
+<rect x="625" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 唖下記: 0問</title></rect>
+<rect x="646" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 唖下記: 0問</title></rect>
+<rect x="667" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 唖下記: 0問</title></rect>
+<rect x="688" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 唖下記: 0問</title></rect>
+<rect x="709" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 唖下記: 0問</title></rect>
+<rect x="730" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 唖下記: 0問</title></rect>
+<text x="94" y="81.5" text-anchor="end" font-size="10" fill="#334155">工程表</text>
+<rect x="100" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 工程表: 0問</title></rect>
+<rect x="121" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 工程表: 1問</title></rect>
+<rect x="142" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 工程表: 0問</title></rect>
+<rect x="163" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 工程表: 1問</title></rect>
+<rect x="184" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 工程表: 1問</title></rect>
+<rect x="205" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 工程表: 1問</title></rect>
+<rect x="226" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 工程表: 0問</title></rect>
+<rect x="247" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 工程表: 1問</title></rect>
+<rect x="268" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 工程表: 1問</title></rect>
+<rect x="289" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 工程表: 1問</title></rect>
+<rect x="310" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H30 工程表: 1問</title></rect>
+<rect x="331" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 工程表: 0問</title></rect>
+<rect x="352" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 工程表: 0問</title></rect>
+<rect x="373" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1 工程表: 1問</title></rect>
+<rect x="394" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 工程表: 0問</title></rect>
+<rect x="415" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 工程表: 0問</title></rect>
+<rect x="436" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 工程表: 0問</title></rect>
+<rect x="457" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 工程表: 0問</title></rect>
+<rect x="478" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 工程表: 0問</title></rect>
+<rect x="499" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 工程表: 0問</title></rect>
+<rect x="520" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 工程表: 0問</title></rect>
+<rect x="541" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 工程表: 0問</title></rect>
+<rect x="562" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 工程表: 0問</title></rect>
+<rect x="583" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 工程表: 0問</title></rect>
+<rect x="604" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 工程表: 0問</title></rect>
+<rect x="625" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 工程表: 0問</title></rect>
+<rect x="646" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 工程表: 0問</title></rect>
+<rect x="667" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 工程表: 0問</title></rect>
+<rect x="688" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 工程表: 0問</title></rect>
+<rect x="709" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 工程表: 0問</title></rect>
+<rect x="730" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 工程表: 0問</title></rect>
+<text x="94" y="102.5" text-anchor="end" font-size="10" fill="#334155">所要日数</text>
+<rect x="100" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 所要日数: 0問</title></rect>
+<rect x="121" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 所要日数: 0問</title></rect>
+<rect x="142" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 所要日数: 0問</title></rect>
+<rect x="163" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 所要日数: 0問</title></rect>
+<rect x="184" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 所要日数: 0問</title></rect>
+<rect x="205" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 所要日数: 0問</title></rect>
+<rect x="226" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H26 所要日数: 1問</title></rect>
+<rect x="247" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 所要日数: 0問</title></rect>
+<rect x="268" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 所要日数: 0問</title></rect>
+<rect x="289" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 所要日数: 0問</title></rect>
+<rect x="310" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 所要日数: 0問</title></rect>
+<rect x="331" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 所要日数: 0問</title></rect>
+<rect x="352" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 所要日数: 0問</title></rect>
+<rect x="373" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 所要日数: 0問</title></rect>
+<rect x="394" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 所要日数: 0問</title></rect>
+<rect x="415" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 所要日数: 0問</title></rect>
+<rect x="436" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 所要日数: 0問</title></rect>
+<rect x="457" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 所要日数: 0問</title></rect>
+<rect x="478" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 所要日数: 0問</title></rect>
+<rect x="499" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 所要日数: 0問</title></rect>
+<rect x="520" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 所要日数: 0問</title></rect>
+<rect x="541" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 所要日数: 0問</title></rect>
+<rect x="562" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 所要日数: 0問</title></rect>
+<rect x="583" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 所要日数: 0問</title></rect>
+<rect x="604" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 所要日数: 0問</title></rect>
+<rect x="625" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 所要日数: 0問</title></rect>
+<rect x="646" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 所要日数: 0問</title></rect>
+<rect x="667" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 所要日数: 0問</title></rect>
+<rect x="688" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 所要日数: 0問</title></rect>
+<rect x="709" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 所要日数: 0問</title></rect>
+<rect x="730" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 所要日数: 0問</title></rect>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備（7 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 753 203" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="110.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,110.5,32)">H20</text>
+<text x="173.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,173.5,32)">H23</text>
+<text x="236.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,236.5,32)">H26</text>
+<text x="299.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,299.5,32)">H29</text>
+<text x="362.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,362.5,32)">R1前期</text>
+<text x="425.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,425.5,32)">R2</text>
+<text x="488.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,488.5,32)">R3後期</text>
+<text x="551.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,551.5,32)">R4後期</text>
+<text x="614.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,614.5,32)">R5後期</text>
+<text x="677.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,677.5,32)">R6後期</text>
+<text x="740.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,740.5,32)">R7後期</text>
+<text x="94" y="60.5" text-anchor="end" font-size="10" fill="#334155">唖電気工事</text>
+<rect x="100" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H20 唖電気工事: 1問</title></rect>
+<rect x="121" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 唖電気工事: 1問</title></rect>
+<rect x="142" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 唖電気工事: 0問</title></rect>
+<rect x="163" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 唖電気工事: 1問</title></rect>
+<rect x="184" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 唖電気工事: 1問</title></rect>
+<rect x="205" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 唖電気工事: 0問</title></rect>
+<rect x="226" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 唖電気工事: 0問</title></rect>
+<rect x="247" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 唖電気工事: 1問</title></rect>
+<rect x="268" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 唖電気工事: 0問</title></rect>
+<rect x="289" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 唖電気工事: 1問</title></rect>
+<rect x="310" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H30 唖電気工事: 2問</title></rect>
+<rect x="331" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 唖電気工事: 0問</title></rect>
+<rect x="352" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 唖電気工事: 0問</title></rect>
+<rect x="373" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R1 唖電気工事: 2問</title></rect>
+<rect x="394" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 唖電気工事: 0問</title></rect>
+<rect x="415" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 唖電気工事: 0問</title></rect>
+<rect x="436" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 唖電気工事: 0問</title></rect>
+<rect x="457" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 唖電気工事: 0問</title></rect>
+<rect x="478" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 唖電気工事: 0問</title></rect>
+<rect x="499" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 唖電気工事: 0問</title></rect>
+<rect x="520" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 唖電気工事: 0問</title></rect>
+<rect x="541" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 唖電気工事: 0問</title></rect>
+<rect x="562" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 唖電気工事: 0問</title></rect>
+<rect x="583" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 唖電気工事: 0問</title></rect>
+<rect x="604" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 唖電気工事: 0問</title></rect>
+<rect x="625" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 唖電気工事: 0問</title></rect>
+<rect x="646" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 唖電気工事: 0問</title></rect>
+<rect x="667" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 唖電気工事: 0問</title></rect>
+<rect x="688" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 唖電気工事: 0問</title></rect>
+<rect x="709" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 唖電気工事: 0問</title></rect>
+<rect x="730" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 唖電気工事: 0問</title></rect>
+<text x="94" y="81.5" text-anchor="end" font-size="10" fill="#334155">電気工事</text>
+<rect x="100" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 電気工事: 0問</title></rect>
+<rect x="121" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 電気工事: 1問</title></rect>
+<rect x="142" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 電気工事: 0問</title></rect>
+<rect x="163" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 電気工事: 1問</title></rect>
+<rect x="184" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 電気工事: 1問</title></rect>
+<rect x="205" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 電気工事: 1問</title></rect>
+<rect x="226" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 電気工事: 0問</title></rect>
+<rect x="247" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 電気工事: 1問</title></rect>
+<rect x="268" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 電気工事: 1問</title></rect>
+<rect x="289" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 電気工事: 1問</title></rect>
+<rect x="310" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H30 電気工事: 1問</title></rect>
+<rect x="331" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 電気工事: 0問</title></rect>
+<rect x="352" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 電気工事: 0問</title></rect>
+<rect x="373" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1 電気工事: 1問</title></rect>
+<rect x="394" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 電気工事: 0問</title></rect>
+<rect x="415" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 電気工事: 0問</title></rect>
+<rect x="436" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 電気工事: 0問</title></rect>
+<rect x="457" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 電気工事: 0問</title></rect>
+<rect x="478" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 電気工事: 0問</title></rect>
+<rect x="499" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 電気工事: 0問</title></rect>
+<rect x="520" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 電気工事: 0問</title></rect>
+<rect x="541" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 電気工事: 0問</title></rect>
+<rect x="562" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 電気工事: 0問</title></rect>
+<rect x="583" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 電気工事: 0問</title></rect>
+<rect x="604" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 電気工事: 0問</title></rect>
+<rect x="625" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 電気工事: 0問</title></rect>
+<rect x="646" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 電気工事: 0問</title></rect>
+<rect x="667" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 電気工事: 0問</title></rect>
+<rect x="688" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 電気工事: 0問</title></rect>
+<rect x="709" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 電気工事: 0問</title></rect>
+<rect x="730" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 電気工事: 0問</title></rect>
+<text x="94" y="102.5" text-anchor="end" font-size="10" fill="#334155">日本工業規格</text>
+<rect x="100" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 日本工業規格: 0問</title></rect>
+<rect x="121" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 日本工業規格: 1問</title></rect>
+<rect x="142" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 日本工業規格: 0問</title></rect>
+<rect x="163" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 日本工業規格: 0問</title></rect>
+<rect x="184" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 日本工業規格: 0問</title></rect>
+<rect x="205" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 日本工業規格: 0問</title></rect>
+<rect x="226" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 日本工業規格: 0問</title></rect>
+<rect x="247" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 日本工業規格: 0問</title></rect>
+<rect x="268" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 日本工業規格: 0問</title></rect>
+<rect x="289" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 日本工業規格: 0問</title></rect>
+<rect x="310" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 日本工業規格: 0問</title></rect>
+<rect x="331" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 日本工業規格: 0問</title></rect>
+<rect x="352" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 日本工業規格: 0問</title></rect>
+<rect x="373" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 日本工業規格: 0問</title></rect>
+<rect x="394" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 日本工業規格: 0問</title></rect>
+<rect x="415" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 日本工業規格: 0問</title></rect>
+<rect x="436" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 日本工業規格: 0問</title></rect>
+<rect x="457" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 日本工業規格: 0問</title></rect>
+<rect x="478" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 日本工業規格: 0問</title></rect>
+<rect x="499" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 日本工業規格: 0問</title></rect>
+<rect x="520" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 日本工業規格: 0問</title></rect>
+<rect x="541" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 日本工業規格: 0問</title></rect>
+<rect x="562" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 日本工業規格: 0問</title></rect>
+<rect x="583" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 日本工業規格: 0問</title></rect>
+<rect x="604" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 日本工業規格: 0問</title></rect>
+<rect x="625" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 日本工業規格: 0問</title></rect>
+<rect x="646" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 日本工業規格: 0問</title></rect>
+<rect x="667" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 日本工業規格: 0問</title></rect>
+<rect x="688" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 日本工業規格: 0問</title></rect>
+<rect x="709" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 日本工業規格: 0問</title></rect>
+<rect x="730" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 日本工業規格: 0問</title></rect>
+<text x="94" y="123.5" text-anchor="end" font-size="10" fill="#334155">構内電気設備</text>
+<rect x="100" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 構内電気設備: 0問</title></rect>
+<rect x="121" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 構内電気設備: 0問</title></rect>
+<rect x="142" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 構内電気設備: 0問</title></rect>
+<rect x="163" y="109" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 構内電気設備: 1問</title></rect>
+<rect x="184" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 構内電気設備: 0問</title></rect>
+<rect x="205" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 構内電気設備: 0問</title></rect>
+<rect x="226" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 構内電気設備: 0問</title></rect>
+<rect x="247" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 構内電気設備: 0問</title></rect>
+<rect x="268" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 構内電気設備: 0問</title></rect>
+<rect x="289" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 構内電気設備: 0問</title></rect>
+<rect x="310" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 構内電気設備: 0問</title></rect>
+<rect x="331" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 構内電気設備: 0問</title></rect>
+<rect x="352" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 構内電気設備: 0問</title></rect>
+<rect x="373" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 構内電気設備: 0問</title></rect>
+<rect x="394" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 構内電気設備: 0問</title></rect>
+<rect x="415" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 構内電気設備: 0問</title></rect>
+<rect x="436" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 構内電気設備: 0問</title></rect>
+<rect x="457" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 構内電気設備: 0問</title></rect>
+<rect x="478" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 構内電気設備: 0問</title></rect>
+<rect x="499" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 構内電気設備: 0問</title></rect>
+<rect x="520" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 構内電気設備: 0問</title></rect>
+<rect x="541" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 構内電気設備: 0問</title></rect>
+<rect x="562" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 構内電気設備: 0問</title></rect>
+<rect x="583" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 構内電気設備: 0問</title></rect>
+<rect x="604" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 構内電気設備: 0問</title></rect>
+<rect x="625" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 構内電気設備: 0問</title></rect>
+<rect x="646" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 構内電気設備: 0問</title></rect>
+<rect x="667" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 構内電気設備: 0問</title></rect>
+<rect x="688" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 構内電気設備: 0問</title></rect>
+<rect x="709" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 構内電気設備: 0問</title></rect>
+<rect x="730" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 構内電気設備: 0問</title></rect>
+<text x="94" y="144.5" text-anchor="end" font-size="10" fill="#334155">阿混合茜分波器</text>
+<rect x="100" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 阿混合茜分波器: 0問</title></rect>
+<rect x="121" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 阿混合茜分波器: 0問</title></rect>
+<rect x="142" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 阿混合茜分波器: 0問</title></rect>
+<rect x="163" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 阿混合茜分波器: 0問</title></rect>
+<rect x="184" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 阿混合茜分波器: 0問</title></rect>
+<rect x="205" y="130" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 阿混合茜分波器: 1問</title></rect>
+<rect x="226" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 阿混合茜分波器: 0問</title></rect>
+<rect x="247" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 阿混合茜分波器: 0問</title></rect>
+<rect x="268" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 阿混合茜分波器: 0問</title></rect>
+<rect x="289" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 阿混合茜分波器: 0問</title></rect>
+<rect x="310" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 阿混合茜分波器: 0問</title></rect>
+<rect x="331" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 阿混合茜分波器: 0問</title></rect>
+<rect x="352" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 阿混合茜分波器: 0問</title></rect>
+<rect x="373" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 阿混合茜分波器: 0問</title></rect>
+<rect x="394" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 阿混合茜分波器: 0問</title></rect>
+<rect x="415" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 阿混合茜分波器: 0問</title></rect>
+<rect x="436" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 阿混合茜分波器: 0問</title></rect>
+<rect x="457" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 阿混合茜分波器: 0問</title></rect>
+<rect x="478" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 阿混合茜分波器: 0問</title></rect>
+<rect x="499" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 阿混合茜分波器: 0問</title></rect>
+<rect x="520" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 阿混合茜分波器: 0問</title></rect>
+<rect x="541" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 阿混合茜分波器: 0問</title></rect>
+<rect x="562" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 阿混合茜分波器: 0問</title></rect>
+<rect x="583" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 阿混合茜分波器: 0問</title></rect>
+<rect x="604" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 阿混合茜分波器: 0問</title></rect>
+<rect x="625" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 阿混合茜分波器: 0問</title></rect>
+<rect x="646" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 阿混合茜分波器: 0問</title></rect>
+<rect x="667" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 阿混合茜分波器: 0問</title></rect>
+<rect x="688" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 阿混合茜分波器: 0問</title></rect>
+<rect x="709" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 阿混合茜分波器: 0問</title></rect>
+<rect x="730" y="130" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 阿混合茜分波器: 0問</title></rect>
+<text x="94" y="165.5" text-anchor="end" font-size="10" fill="#334155">自動火災報知設</text>
+<rect x="100" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 自動火災報知設: 0問</title></rect>
+<rect x="121" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 自動火災報知設: 0問</title></rect>
+<rect x="142" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 自動火災報知設: 0問</title></rect>
+<rect x="163" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 自動火災報知設: 0問</title></rect>
+<rect x="184" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 自動火災報知設: 0問</title></rect>
+<rect x="205" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 自動火災報知設: 0問</title></rect>
+<rect x="226" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 自動火災報知設: 0問</title></rect>
+<rect x="247" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 自動火災報知設: 0問</title></rect>
+<rect x="268" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 自動火災報知設: 0問</title></rect>
+<rect x="289" y="151" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 自動火災報知設: 1問</title></rect>
+<rect x="310" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 自動火災報知設: 0問</title></rect>
+<rect x="331" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 自動火災報知設: 0問</title></rect>
+<rect x="352" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 自動火災報知設: 0問</title></rect>
+<rect x="373" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 自動火災報知設: 0問</title></rect>
+<rect x="394" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 自動火災報知設: 0問</title></rect>
+<rect x="415" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 自動火災報知設: 0問</title></rect>
+<rect x="436" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 自動火災報知設: 0問</title></rect>
+<rect x="457" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 自動火災報知設: 0問</title></rect>
+<rect x="478" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 自動火災報知設: 0問</title></rect>
+<rect x="499" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 自動火災報知設: 0問</title></rect>
+<rect x="520" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 自動火災報知設: 0問</title></rect>
+<rect x="541" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 自動火災報知設: 0問</title></rect>
+<rect x="562" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 自動火災報知設: 0問</title></rect>
+<rect x="583" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 自動火災報知設: 0問</title></rect>
+<rect x="604" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 自動火災報知設: 0問</title></rect>
+<rect x="625" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 自動火災報知設: 0問</title></rect>
+<rect x="646" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 自動火災報知設: 0問</title></rect>
+<rect x="667" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 自動火災報知設: 0問</title></rect>
+<rect x="688" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 自動火災報知設: 0問</title></rect>
+<rect x="709" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 自動火災報知設: 0問</title></rect>
+<rect x="730" y="151" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 自動火災報知設: 0問</title></rect>
+<text x="94" y="186.5" text-anchor="end" font-size="10" fill="#334155">亜日本工業規格</text>
+<rect x="100" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 亜日本工業規格: 0問</title></rect>
+<rect x="121" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 亜日本工業規格: 0問</title></rect>
+<rect x="142" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 亜日本工業規格: 0問</title></rect>
+<rect x="163" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 亜日本工業規格: 0問</title></rect>
+<rect x="184" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 亜日本工業規格: 0問</title></rect>
+<rect x="205" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 亜日本工業規格: 0問</title></rect>
+<rect x="226" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 亜日本工業規格: 0問</title></rect>
+<rect x="247" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 亜日本工業規格: 0問</title></rect>
+<rect x="268" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 亜日本工業規格: 0問</title></rect>
+<rect x="289" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 亜日本工業規格: 0問</title></rect>
+<rect x="310" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 亜日本工業規格: 0問</title></rect>
+<rect x="331" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 亜日本工業規格: 0問</title></rect>
+<rect x="352" y="172" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1前期 亜日本工業規格: 1問</title></rect>
+<rect x="373" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 亜日本工業規格: 0問</title></rect>
+<rect x="394" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 亜日本工業規格: 0問</title></rect>
+<rect x="415" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 亜日本工業規格: 0問</title></rect>
+<rect x="436" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 亜日本工業規格: 0問</title></rect>
+<rect x="457" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 亜日本工業規格: 0問</title></rect>
+<rect x="478" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 亜日本工業規格: 0問</title></rect>
+<rect x="499" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 亜日本工業規格: 0問</title></rect>
+<rect x="520" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 亜日本工業規格: 0問</title></rect>
+<rect x="541" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 亜日本工業規格: 0問</title></rect>
+<rect x="562" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 亜日本工業規格: 0問</title></rect>
+<rect x="583" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 亜日本工業規格: 0問</title></rect>
+<rect x="604" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 亜日本工業規格: 0問</title></rect>
+<rect x="625" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 亜日本工業規格: 0問</title></rect>
+<rect x="646" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 亜日本工業規格: 0問</title></rect>
+<rect x="667" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 亜日本工業規格: 0問</title></rect>
+<rect x="688" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 亜日本工業規格: 0問</title></rect>
+<rect x="709" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 亜日本工業規格: 0問</title></rect>
+<rect x="730" y="172" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 亜日本工業規格: 0問</title></rect>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規（4 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 753 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="110.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,110.5,32)">H20</text>
+<text x="173.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,173.5,32)">H23</text>
+<text x="236.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,236.5,32)">H26</text>
+<text x="299.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,299.5,32)">H29</text>
+<text x="362.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,362.5,32)">R1前期</text>
+<text x="425.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,425.5,32)">R2</text>
+<text x="488.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,488.5,32)">R3後期</text>
+<text x="551.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,551.5,32)">R4後期</text>
+<text x="614.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,614.5,32)">R5後期</text>
+<text x="677.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,677.5,32)">R6後期</text>
+<text x="740.5" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,740.5,32)">R7後期</text>
+<text x="94" y="60.5" text-anchor="end" font-size="10" fill="#334155">電気事業法</text>
+<rect x="100" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 電気事業法: 0問</title></rect>
+<rect x="121" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 電気事業法: 0問</title></rect>
+<rect x="142" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 電気事業法: 0問</title></rect>
+<rect x="163" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 電気事業法: 1問</title></rect>
+<rect x="184" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 電気事業法: 0問</title></rect>
+<rect x="205" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 電気事業法: 1問</title></rect>
+<rect x="226" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H26 電気事業法: 1問</title></rect>
+<rect x="247" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 電気事業法: 0問</title></rect>
+<rect x="268" y="46" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 電気事業法: 1問</title></rect>
+<rect x="289" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 電気事業法: 0問</title></rect>
+<rect x="310" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>H30 電気事業法: 2問</title></rect>
+<rect x="331" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 電気事業法: 0問</title></rect>
+<rect x="352" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 電気事業法: 0問</title></rect>
+<rect x="373" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R1 電気事業法: 2問</title></rect>
+<rect x="394" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 電気事業法: 0問</title></rect>
+<rect x="415" y="46" width="21" height="21" rx="2" fill="#1e40af" opacity="1"><title>R2 電気事業法: 2問</title></rect>
+<rect x="436" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 電気事業法: 0問</title></rect>
+<rect x="457" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 電気事業法: 0問</title></rect>
+<rect x="478" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 電気事業法: 0問</title></rect>
+<rect x="499" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 電気事業法: 0問</title></rect>
+<rect x="520" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 電気事業法: 0問</title></rect>
+<rect x="541" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 電気事業法: 0問</title></rect>
+<rect x="562" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 電気事業法: 0問</title></rect>
+<rect x="583" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 電気事業法: 0問</title></rect>
+<rect x="604" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 電気事業法: 0問</title></rect>
+<rect x="625" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 電気事業法: 0問</title></rect>
+<rect x="646" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 電気事業法: 0問</title></rect>
+<rect x="667" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 電気事業法: 0問</title></rect>
+<rect x="688" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 電気事業法: 0問</title></rect>
+<rect x="709" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 電気事業法: 0問</title></rect>
+<rect x="730" y="46" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 電気事業法: 0問</title></rect>
+<text x="94" y="81.5" text-anchor="end" font-size="10" fill="#334155">労働安全衛生法</text>
+<rect x="100" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 労働安全衛生法: 0問</title></rect>
+<rect x="121" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 労働安全衛生法: 1問</title></rect>
+<rect x="142" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 労働安全衛生法: 0問</title></rect>
+<rect x="163" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H23 労働安全衛生法: 1問</title></rect>
+<rect x="184" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 労働安全衛生法: 1問</title></rect>
+<rect x="205" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H25 労働安全衛生法: 1問</title></rect>
+<rect x="226" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H26 労働安全衛生法: 1問</title></rect>
+<rect x="247" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 労働安全衛生法: 1問</title></rect>
+<rect x="268" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H28 労働安全衛生法: 1問</title></rect>
+<rect x="289" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 労働安全衛生法: 1問</title></rect>
+<rect x="310" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H30 労働安全衛生法: 1問</title></rect>
+<rect x="331" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 労働安全衛生法: 0問</title></rect>
+<rect x="352" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 労働安全衛生法: 0問</title></rect>
+<rect x="373" y="67" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1 労働安全衛生法: 1問</title></rect>
+<rect x="394" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 労働安全衛生法: 0問</title></rect>
+<rect x="415" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 労働安全衛生法: 0問</title></rect>
+<rect x="436" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 労働安全衛生法: 0問</title></rect>
+<rect x="457" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 労働安全衛生法: 0問</title></rect>
+<rect x="478" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 労働安全衛生法: 0問</title></rect>
+<rect x="499" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 労働安全衛生法: 0問</title></rect>
+<rect x="520" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 労働安全衛生法: 0問</title></rect>
+<rect x="541" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 労働安全衛生法: 0問</title></rect>
+<rect x="562" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 労働安全衛生法: 0問</title></rect>
+<rect x="583" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 労働安全衛生法: 0問</title></rect>
+<rect x="604" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 労働安全衛生法: 0問</title></rect>
+<rect x="625" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 労働安全衛生法: 0問</title></rect>
+<rect x="646" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 労働安全衛生法: 0問</title></rect>
+<rect x="667" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 労働安全衛生法: 0問</title></rect>
+<rect x="688" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 労働安全衛生法: 0問</title></rect>
+<rect x="709" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 労働安全衛生法: 0問</title></rect>
+<rect x="730" y="67" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 労働安全衛生法: 0問</title></rect>
+<text x="94" y="102.5" text-anchor="end" font-size="10" fill="#334155">建設業法</text>
+<rect x="100" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H20 建設業法: 1問</title></rect>
+<rect x="121" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H21 建設業法: 1問</title></rect>
+<rect x="142" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H22 建設業法: 1問</title></rect>
+<rect x="163" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 建設業法: 0問</title></rect>
+<rect x="184" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H24 建設業法: 1問</title></rect>
+<rect x="205" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 建設業法: 0問</title></rect>
+<rect x="226" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 建設業法: 0問</title></rect>
+<rect x="247" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H27 建設業法: 1問</title></rect>
+<rect x="268" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 建設業法: 0問</title></rect>
+<rect x="289" y="88" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>H29 建設業法: 1問</title></rect>
+<rect x="310" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 建設業法: 0問</title></rect>
+<rect x="331" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 建設業法: 0問</title></rect>
+<rect x="352" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 建設業法: 0問</title></rect>
+<rect x="373" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 建設業法: 0問</title></rect>
+<rect x="394" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 建設業法: 0問</title></rect>
+<rect x="415" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 建設業法: 0問</title></rect>
+<rect x="436" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 建設業法: 0問</title></rect>
+<rect x="457" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 建設業法: 0問</title></rect>
+<rect x="478" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 建設業法: 0問</title></rect>
+<rect x="499" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 建設業法: 0問</title></rect>
+<rect x="520" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 建設業法: 0問</title></rect>
+<rect x="541" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 建設業法: 0問</title></rect>
+<rect x="562" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 建設業法: 0問</title></rect>
+<rect x="583" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 建設業法: 0問</title></rect>
+<rect x="604" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 建設業法: 0問</title></rect>
+<rect x="625" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 建設業法: 0問</title></rect>
+<rect x="646" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 建設業法: 0問</title></rect>
+<rect x="667" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 建設業法: 0問</title></rect>
+<rect x="688" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 建設業法: 0問</title></rect>
+<rect x="709" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 建設業法: 0問</title></rect>
+<rect x="730" y="88" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 建設業法: 0問</title></rect>
+<text x="94" y="123.5" text-anchor="end" font-size="10" fill="#334155">亜点検作業用</text>
+<rect x="100" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H20 亜点検作業用: 0問</title></rect>
+<rect x="121" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H21 亜点検作業用: 0問</title></rect>
+<rect x="142" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H22 亜点検作業用: 0問</title></rect>
+<rect x="163" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H23 亜点検作業用: 0問</title></rect>
+<rect x="184" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H24 亜点検作業用: 0問</title></rect>
+<rect x="205" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H25 亜点検作業用: 0問</title></rect>
+<rect x="226" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H26 亜点検作業用: 0問</title></rect>
+<rect x="247" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H27 亜点検作業用: 0問</title></rect>
+<rect x="268" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H28 亜点検作業用: 0問</title></rect>
+<rect x="289" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H29 亜点検作業用: 0問</title></rect>
+<rect x="310" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30 亜点検作業用: 0問</title></rect>
+<rect x="331" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 亜点検作業用: 0問</title></rect>
+<rect x="352" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 亜点検作業用: 0問</title></rect>
+<rect x="373" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R1 亜点検作業用: 0問</title></rect>
+<rect x="394" y="109" width="21" height="21" rx="2" fill="#3b82f6" opacity="1"><title>R1後期 亜点検作業用: 1問</title></rect>
+<rect x="415" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R2 亜点検作業用: 0問</title></rect>
+<rect x="436" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 亜点検作業用: 0問</title></rect>
+<rect x="457" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3 亜点検作業用: 0問</title></rect>
+<rect x="478" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 亜点検作業用: 0問</title></rect>
+<rect x="499" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4 亜点検作業用: 0問</title></rect>
+<rect x="520" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 亜点検作業用: 0問</title></rect>
+<rect x="541" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 亜点検作業用: 0問</title></rect>
+<rect x="562" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5 亜点検作業用: 0問</title></rect>
+<rect x="583" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 亜点検作業用: 0問</title></rect>
+<rect x="604" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 亜点検作業用: 0問</title></rect>
+<rect x="625" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6 亜点検作業用: 0問</title></rect>
+<rect x="646" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 亜点検作業用: 0問</title></rect>
+<rect x="667" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 亜点検作業用: 0問</title></rect>
+<rect x="688" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 亜点検作業用: 0問</title></rect>
+<rect x="709" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7 亜点検作業用: 0問</title></rect>
+<rect x="730" y="109" width="21" height="21" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 亜点検作業用: 0問</title></rect>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="overview.html">← 分析概要</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cycle.html">出題サイクル分析 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理2級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

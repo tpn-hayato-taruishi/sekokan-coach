@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科目間相関分析 - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">科目間相関分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="raw-analysis.html">← 個別テーマ傾向分析（正規化なし・最細粒度）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="yearly-comprehensive.html">年度別総合分析（全年度×全科目 完全展開） →</a></span></nav>
+<section id="cross-correlation">
+  <h2>科目間相関分析</h2>
+<p>5科目の出題データを横断的に分析。<strong>科目間の連動パターン</strong>を発見します。</p>
+<div class="note">科目をまたがるテーマの把握は、学習の優先順位付けと本番の出題予測に直結します。</div>
+<h3 class="deep-sub">15-1. 相関行列（科目間）</h3>
+<table><tr><th></th>
+<th>施工管理法</th>
+<th>電気理論</th>
+<th>施工</th>
+<th>電気設備</th>
+<th>法規</th>
+</tr>
+<tr><td><strong>施工管理法</strong></td>
+<td style="background:#dbeafe;text-align:center">1.00</td>
+<td style="text-align:center;background:#f0fdf4">0.40</td>
+<td style="text-align:center;background:#f0fdf4">0.83</td>
+<td style="text-align:center;background:#f0fdf4">0.67</td>
+<td style="text-align:center;background:#f0fdf4">0.82</td>
+</tr>
+<tr><td><strong>電気理論</strong></td>
+<td style="text-align:center;background:#f0fdf4">0.40</td>
+<td style="background:#dbeafe;text-align:center">1.00</td>
+<td style="text-align:center;background:#f0fdf4">0.57</td>
+<td class="tac">0.11</td>
+<td style="text-align:center;background:#f0fdf4">0.55</td>
+</tr>
+<tr><td><strong>施工</strong></td>
+<td style="text-align:center;background:#f0fdf4">0.83</td>
+<td style="text-align:center;background:#f0fdf4">0.57</td>
+<td style="background:#dbeafe;text-align:center">1.00</td>
+<td style="text-align:center;background:#f0fdf4">0.82</td>
+<td style="text-align:center;background:#f0fdf4">0.99</td>
+</tr>
+<tr><td><strong>電気設備</strong></td>
+<td style="text-align:center;background:#f0fdf4">0.67</td>
+<td class="tac">0.11</td>
+<td style="text-align:center;background:#f0fdf4">0.82</td>
+<td style="background:#dbeafe;text-align:center">1.00</td>
+<td style="text-align:center;background:#f0fdf4">0.81</td>
+</tr>
+<tr><td><strong>法規</strong></td>
+<td style="text-align:center;background:#f0fdf4">0.82</td>
+<td style="text-align:center;background:#f0fdf4">0.55</td>
+<td style="text-align:center;background:#f0fdf4">0.99</td>
+<td style="text-align:center;background:#f0fdf4">0.81</td>
+<td style="background:#dbeafe;text-align:center">1.00</td>
+</tr>
+</table>
+<div class="note">相関係数は -1（逆相関）〜 +1（正相関）。0.3以上は緑、-0.3以下は赤で表示。</div>
+<h3 class="deep-sub">15-2. 同年出題ペア（科目横断）</h3>
+<p>「ある科目でテーマAが出た年に、別の科目でテーマBも出やすい」パターンを抽出。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">同年出題ペア一覧を展開</summary>
+<table class="fz88">
+<tr><th>科目A:テーマ</th><th>科目B:テーマ</th><th>同時出題</th><th>条件付確率</th><th>直近同時年</th><th>解釈</th></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td class="tac fwb">13回/27年</td><td class="tac fwb">48%</td><td style="font-size:0.85em;color:#6b7280">H28, H29, H30, R1, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td class="tac fwb">12回/12年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H28, H29, H30, R1, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">10回/27年</td><td class="tac fwb">37%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">10回/12年</td><td class="tac fwb">83%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">10回/13年</td><td class="tac fwb">77%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td class="tac fwb">9回/27年</td><td class="tac fwb">33%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td class="tac fwb">9回/12年</td><td class="tac fwb">75%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td class="tac fwb">9回/27年</td><td class="tac fwb">33%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td class="tac fwb">9回/12年</td><td class="tac fwb">75%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td class="tac fwb">9回/13年</td><td class="tac fwb">69%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td class="tac fwb">9回/9年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">9回/9年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">9回/9年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H27, H28, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td class="tac fwb">8回/27年</td><td class="tac fwb">30%</td><td style="font-size:0.85em;color:#6b7280">H24, H27, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td class="tac fwb">8回/13年</td><td class="tac fwb">62%</td><td style="font-size:0.85em;color:#6b7280">H24, H27, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#b45309;font-weight:600">電気理論</span>:電気工事</td><td class="tac fwb">7回/27年</td><td class="tac fwb">26%</td><td style="font-size:0.85em;color:#6b7280">H24, H26, H28, H30, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td class="tac fwb">7回/12年</td><td class="tac fwb">58%</td><td style="font-size:0.85em;color:#6b7280">H24, H27, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#d97706;font-weight:600">法規</span>:電気事業法</td><td class="tac fwb">7回/27年</td><td class="tac fwb">26%</td><td style="font-size:0.85em;color:#6b7280">H26, H28, H30, R1, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:電気事業法</td><td class="tac fwb">7回/12年</td><td class="tac fwb">58%</td><td style="font-size:0.85em;color:#6b7280">H26, H28, H30, R1, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#b45309;font-weight:600">電気理論</span>:電気工事</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td class="tac fwb">7回/7年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H24, H26, H28, H30, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td class="tac fwb">7回/9年</td><td class="tac fwb">78%</td><td style="font-size:0.85em;color:#6b7280">H24, H27, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td><span style="color:#d97706;font-weight:600">法規</span>:電気事業法</td><td class="tac fwb">7回/13年</td><td class="tac fwb">54%</td><td style="font-size:0.85em;color:#6b7280">H26, H28, H30, R1, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">7回/8年</td><td class="tac fwb">88%</td><td style="font-size:0.85em;color:#6b7280">H24, H27, H29, H30, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#b45309;font-weight:600">電気理論</span>:電気工事</td><td class="tac fwb">6回/12年</td><td class="tac fwb">50%</td><td style="font-size:0.85em;color:#6b7280">H24, H26, H28, H30, R2</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:電気工事</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td class="tac fwb">6回/6年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H27, H29, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:電気工事</td><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td class="tac fwb">6回/6年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H27, H29, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:電気工事</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td class="tac fwb">6回/6年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H27, H29, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:級電気工事施工</td><td><span style="color:#d97706;font-weight:600">法規</span>:建設業法</td><td class="tac fwb">6回/27年</td><td class="tac fwb">22%</td><td style="font-size:0.85em;color:#6b7280">H21, H22, H24, H27, H29</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:労働安全衛生法</td><td class="tac fwb">6回/6年</td><td class="tac fwb">100%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H27, H29, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:唖下記</td><td><span style="color:#d97706;font-weight:600">法規</span>:建設業法</td><td class="tac fwb">6回/13年</td><td class="tac fwb">46%</td><td style="font-size:0.85em;color:#6b7280">H21, H22, H24, H27, H29</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:電気工事</td><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td class="tac fwb">5回/6年</td><td class="tac fwb">83%</td><td style="font-size:0.85em;color:#6b7280">H21, H23, H27, H29, R1</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#1e40af;font-weight:600">施工管理法</span>:唖電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:建設業法</td><td class="tac fwb">5回/12年</td><td class="tac fwb">42%</td><td style="font-size:0.85em;color:#6b7280">H21, H22, H24, H27, H29</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#7e22ce;font-weight:600">施工</span>:工程表</td><td><span style="color:#d97706;font-weight:600">法規</span>:電気事業法</td><td class="tac fwb">5回/9年</td><td class="tac fwb">56%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H28, H30, R1</td><td><span style="color:#f59e0b;font-weight:700">中程度の連動</span></td></tr>
+<tr><td><span style="color:#0369a1;font-weight:600">電気設備</span>:唖電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:建設業法</td><td class="tac fwb">5回/8年</td><td class="tac fwb">62%</td><td style="font-size:0.85em;color:#6b7280">H20, H21, H24, H27, H29</td><td><span style="color:#dc2626;font-weight:700">強い連動</span></td></tr>
+<tr><td><span style="color:#0369a1;font-weight:600">電気設備</span>:電気工事</td><td><span style="color:#d97706;font-weight:600">法規</span>:電気事業法</td><td class="tac fwb">5回/9年</td><td class="tac fwb">56%</td><td style="font-size:0.85em;color:#6b7280">H23, H25, H28, H30, R1</td><td><span style="color:#f59e0b;font-weight:700">中程度の連動</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">15-3. 科目ペア別 連動分析</h3>
+<p>各科目ペアの出題パターンを年度ごとに比較。</p>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#1e40af">施工管理法</span> × <span style="color:#b45309">電気理論</span>（相関: 0.40）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#1e40af">施工管理法 テーマ</th><th style="color:#b45309">電気理論 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#1e40af">施工管理法</span> × <span style="color:#7e22ce">施工</span>（相関: 0.83）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#1e40af">施工管理法 テーマ</th><th style="color:#7e22ce">施工 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#1e40af">施工管理法</span> × <span style="color:#0369a1">電気設備</span>（相関: 0.67）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#1e40af">施工管理法 テーマ</th><th style="color:#0369a1">電気設備 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#1e40af">施工管理法</span> × <span style="color:#d97706">法規</span>（相関: 0.82）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#1e40af">施工管理法 テーマ</th><th style="color:#d97706">法規 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">級電気工事施工</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#b45309">電気理論</span> × <span style="color:#7e22ce">施工</span>（相関: 0.57）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#b45309">電気理論 テーマ</th><th style="color:#7e22ce">施工 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#b45309">電気理論</span> × <span style="color:#0369a1">電気設備</span>（相関: 0.11）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#b45309">電気理論 テーマ</th><th style="color:#0369a1">電気設備 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#b45309">電気理論</span> × <span style="color:#d97706">法規</span>（相関: 0.55）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#b45309">電気理論 テーマ</th><th style="color:#d97706">法規 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#7e22ce">施工</span> × <span style="color:#0369a1">電気設備</span>（相関: 0.82）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#7e22ce">施工 テーマ</th><th style="color:#0369a1">電気設備 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#7e22ce">施工</span> × <span style="color:#d97706">法規</span>（相関: 0.99）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#7e22ce">施工 テーマ</th><th style="color:#d97706">法規 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:600;color:#1e3a5f;padding:4px 0;font-size:0.95em"><span style="color:#0369a1">電気設備</span> × <span style="color:#d97706">法規</span>（相関: 0.81）</summary>
+<table class="fz82">
+<tr><th>年度</th><th style="color:#0369a1">電気設備 テーマ</th><th style="color:#d97706">法規 テーマ</th><th>共通傾向</th></tr>
+<tr><td class="fwb">R7後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R7前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R6</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R5</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R4</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3後期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+<tr><td class="fwb">R3前期</td><td class="fz9">-</td><td class="fz9">-</td><td><span style="color:#3b82f6;font-size:0.85em">両方少ない</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">15-4. テーマ別 科目横断分析</h3>
+<p>各科目の全テーマについて、他科目との連動パターンを分析。同じ年に出題されるテーマの組み合わせを把握。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法 科目横断分析</summary>
+<details style="margin:2px 0;border-left:2px solid #1e40af33">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">級電気工事施工（91問）→ 他科目8テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工: 唖下記</td><td class="tac">13</td><td class="tac">48%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">10</td><td class="tac">37%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">9</td><td class="tac">33%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">9</td><td class="tac">33%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">8</td><td class="tac">30%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">7</td><td class="tac">26%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">7</td><td class="tac">26%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">6</td><td class="tac">22%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「級電気工事施工」が出題される年には「施工: 唖下記」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af33">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">唖電気工事（15問）→ 他科目8テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工: 唖下記</td><td class="tac">12</td><td class="tac">100%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">10</td><td class="tac">83%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">9</td><td class="tac">75%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">9</td><td class="tac">75%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">7</td><td class="tac">58%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">7</td><td class="tac">58%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">6</td><td class="tac">50%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">5</td><td class="tac">42%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「唖電気工事」が出題される年には「施工: 唖下記」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af33">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">電気工事（7問）→ 他科目7テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工: 唖下記</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">5</td><td class="tac">83%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">3</td><td class="tac">50%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">3</td><td class="tac">50%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「電気工事」が出題される年には「施工: 唖下記」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 科目横断分析</summary>
+<details style="margin:2px 0;border-left:2px solid #b4530933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">電気工事（11問）→ 他科目9テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">7</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">7</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">6</td><td class="tac">86%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">4</td><td class="tac">57%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">4</td><td class="tac">57%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">3</td><td class="tac">43%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">3</td><td class="tac">43%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">3</td><td class="tac">43%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">3</td><td class="tac">43%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「電気工事」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工 科目横断分析</summary>
+<details style="margin:2px 0;border-left:2px solid #7e22ce33">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">唖下記（16問）→ 他科目9テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">13</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">12</td><td class="tac">92%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">10</td><td class="tac">77%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">9</td><td class="tac">69%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">8</td><td class="tac">62%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">7</td><td class="tac">54%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">7</td><td class="tac">54%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">6</td><td class="tac">46%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">6</td><td class="tac">46%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「唖下記」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce33">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">工程表（9問）→ 他科目9テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">7</td><td class="tac">78%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">6</td><td class="tac">67%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">5</td><td class="tac">56%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">4</td><td class="tac">44%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">3</td><td class="tac">33%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「工程表」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備 科目横断分析</summary>
+<details style="margin:2px 0;border-left:2px solid #0369a133">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">唖電気工事（10問）→ 他科目9テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">8</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">8</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">7</td><td class="tac">88%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">7</td><td class="tac">88%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">7</td><td class="tac">88%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">5</td><td class="tac">62%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">5</td><td class="tac">62%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">3</td><td class="tac">38%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">3</td><td class="tac">38%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「唖電気工事」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a133">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">電気工事（9問）→ 他科目9テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>法規: 労働安全衛生法</td><td class="tac">9</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">6</td><td class="tac">67%</td></tr>
+<tr><td>法規: 電気事業法</td><td class="tac">5</td><td class="tac">56%</td></tr>
+<tr><td>法規: 建設業法</td><td class="tac">4</td><td class="tac">44%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">3</td><td class="tac">33%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「電気工事」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規 科目横断分析</summary>
+<details style="margin:2px 0;border-left:2px solid #d9770633">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">電気事業法（10問）→ 他科目8テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">7</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">7</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">7</td><td class="tac">100%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">5</td><td class="tac">71%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">5</td><td class="tac">71%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">4</td><td class="tac">57%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">3</td><td class="tac">43%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">3</td><td class="tac">43%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「電気事業法」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770633">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">労働安全衛生法（10問）→ 他科目8テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">10</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">10</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">10</td><td class="tac">100%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">9</td><td class="tac">90%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">9</td><td class="tac">90%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">7</td><td class="tac">70%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">6</td><td class="tac">60%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">4</td><td class="tac">40%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「労働安全衛生法」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770633">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">建設業法（6問）→ 他科目8テーマと連動</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<table class="fz85"><tr><th>連動テーマ</th><th>共起回数</th><th>共起率</th></tr>
+<tr><td>施工管理法: 級電気工事施工</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>施工: 唖下記</td><td class="tac">6</td><td class="tac">100%</td></tr>
+<tr><td>施工管理法: 唖電気工事</td><td class="tac">5</td><td class="tac">83%</td></tr>
+<tr><td>電気設備: 唖電気工事</td><td class="tac">5</td><td class="tac">83%</td></tr>
+<tr><td>施工: 工程表</td><td class="tac">4</td><td class="tac">67%</td></tr>
+<tr><td>電気設備: 電気工事</td><td class="tac">4</td><td class="tac">67%</td></tr>
+<tr><td>施工管理法: 電気工事</td><td class="tac">3</td><td class="tac">50%</td></tr>
+<tr><td>電気理論: 電気工事</td><td class="tac">3</td><td class="tac">50%</td></tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280;margin:4px 0">「建設業法」が出題される年には「施工管理法: 級電気工事施工」も出題される傾向あり。同時に学習することで相乗効果が期待できる。</p>
+</div></details>
+</details>
+<h3 class="deep-sub">15-5. 科目別 年度横断出題マップ</h3>
+<p>各科目の各テーマが各年度に出題されたかを<strong>完全マッピング</strong>。パターンの発見に。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法 完全出題マップ</summary>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R7 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白14回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R6 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白11回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R5後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白9回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R5前期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白8回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R5 — 6問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 6問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白8回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R4後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白6回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R4前期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白5回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R4 — 6問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 6問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白5回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R3後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白3回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R3 — 6問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 6問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白2回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R3前期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白2回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R2 — 8問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 4問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 亜本日: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算2回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R1後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R1 — 9問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 6問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">R1前期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白0回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 0問 / 電気設備: 1問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H30後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H30 — 7問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 6問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H29 — 7問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 2問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H28 — 7問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 2問 / 施工: 2問 / 電気設備: 1問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H27 — 7問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H26 — 5問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 3問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 受騎地変更者: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 2問 / 電気設備: 0問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H25 — 8問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H24 — 6問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 2問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H23 — 7問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 2問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H22 — 6問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H21 — 7問・3テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 5問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算15回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算7回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 0問 / 施工: 2問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #1e40af22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#1e40af">H20 — 3問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#1e40af">■</span> 級電気工事施工: 3問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算91回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 唖電気工事 (出題率39%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 電気理論: 1問 / 施工: 1問 / 電気設備: 1問 / 法規: 1問</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 完全出題マップ</summary>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">R2 — 2問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 施工: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H30後期 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 配電盤茜制御盤: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 施工: 0問 / 電気設備: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H30 — 2問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H28 — 2問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 配線用図記号: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 施工: 2問 / 電気設備: 1問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H27 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 亜日本電機工業: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H26 — 3問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 3問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 施工: 2問 / 電気設備: 0問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H24 — 2問・2テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 日本電機工業会: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 施工: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H22 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 施工: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #b4530922">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#b45309">H20 — 1問・1テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#b45309">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算11回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 施工: 1問 / 電気設備: 1問 / 法規: 1問</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工 完全出題マップ</summary>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">R2 — 2問・1テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">R1 — 3問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H30 — 3問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 1問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H29 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H28 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 電気設備: 1問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H27 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H26 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 所要日数: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 電気設備: 0問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H25 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H24 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 電気設備: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H23 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H22 — 1問・1テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 1問 / 電気設備: 0問 / 法規: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H21 — 2問・2テーマ出題（1テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 工程表: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 電気設備: 3問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #7e22ce22">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#7e22ce">H20 — 1問・1テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#7e22ce">■</span> 唖下記: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算16回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 電気理論: 1問 / 電気設備: 1問 / 法規: 1問</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備 完全出題マップ</summary>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">R1 — 3問・2テーマ出題（5テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">R1前期 — 1問・1テーマ出題（6テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 亜日本工業規格: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 電気理論: 0問 / 施工: 0問 / 法規: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H30 — 3問・2テーマ出題（5テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 2問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 1問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H29 — 3問・3テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 自動火災報知設: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H28 — 1問・1テーマ出題（6テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H27 — 2問・2テーマ出題（5テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H25 — 2問・2テーマ出題（5テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 阿混合茜分波器: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H24 — 2問・2テーマ出題（5テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H23 — 3問・3テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 構内電気設備: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H21 — 3問・3テーマ出題（4テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算9回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 日本工業規格: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 法規: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #0369a122">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#0369a1">H20 — 1問・1テーマ出題（6テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#0369a1">■</span> 唖電気工事: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 電気理論: 1問 / 施工: 1問 / 法規: 1問</p>
+</div></details>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規 完全出題マップ</summary>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">R2 — 2問・1テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 2問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 労働安全衛生法 (出題率32%・この時点の空白2回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 施工: 1問 / 電気設備: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">R1後期 — 1問・1テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 亜点検作業用: 1問 <span style="color:#008856;font-weight:600">📝問答暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算1回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 労働安全衛生法 (出題率32%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 電気理論: 0問 / 施工: 0問 / 電気設備: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">R1 — 3問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 2問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 電気設備: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H30 — 3問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 2問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 1問 / 施工: 2問 / 電気設備: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H29 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 電気設備: 3問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H28 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 施工: 2問 / 電気設備: 1問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H27 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 施工: 2問 / 電気設備: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H26 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 1問 / 施工: 2問 / 電気設備: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H25 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 電気設備: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H24 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 2問 / 施工: 2問 / 電気設備: 2問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H23 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 電気事業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 電気設備: 3問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H22 — 1問・1テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 労働安全衛生法 (出題率32%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 2問 / 電気理論: 1問 / 施工: 1問 / 電気設備: 0問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H21 — 2問・2テーマ出題（2テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 労働安全衛生法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算10回目中)</span></p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 3問 / 電気理論: 0問 / 施工: 2問 / 電気設備: 3問</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #d9770622">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#d97706">H20 — 1問・1テーマ出題（3テーマ不出題）</summary>
+<div style="padding:4px 12px;font-size:0.85em">
+<p style="font-weight:600;margin:2px 0">出題テーマ:</p>
+<p style="margin:1px 0;padding-left:10px"><span style="color:#d97706">■</span> 建設業法: 1問 <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> <span style="font-size:0.85em;color:#6b7280">(通算6回目中)</span></p>
+<p style="font-weight:600;margin:4px 0;color:#d97706">出題されなかった頻出テーマ（要注意）:</p>
+<p style="margin:1px 0;padding-left:10px;color:#d97706">△ 労働安全衛生法 (出題率32%・この時点の空白1回)</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">他科目の出題数: 施工管理法: 1問 / 電気理論: 1問 / 施工: 1問 / 電気設備: 1問</p>
+</div></details>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="raw-analysis.html">← 個別テーマ傾向分析（正規化なし・最細粒度）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="yearly-comprehensive.html">年度別総合分析（全年度×全科目 完全展開） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

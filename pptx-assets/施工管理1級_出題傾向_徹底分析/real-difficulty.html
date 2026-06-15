@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合格基準点・合格率 実データ分析 - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">合格基準点・合格率 実データ分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="difficulty-trend.html">← 難易度トレンド分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="recommended-videos.html">おすすめ学習動画（施工管理1級） →</a></span></nav>
+<section id="real-difficulty">
+  <h2>合格基準点・合格率 実データ分析</h2>
+<p><strong>合格最低得点率: 60%</strong>を基準に、出題データの統計指標で「本当に難しい年度」を特定します。</p>
+<div class="note"><strong>この試験の合格基準</strong>: 得点率60%以上が合格ライン。以下の分析では、この基準を前提に「どの年度が厳しかったか」を5指標で評価します。</div>
+<h3 class="deep-sub">17-1. 年度別 難易度指標</h3>
+<p>年度ごとの<strong>出題テーマ数・新傾向率・カテゴリ分散度</strong>を統合した難易度指標。値が高い年ほど対策が難しい。</p>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:0.85em;width:100%">
+<thead><tr style="background:#0267B7;color:#fff"><th style="padding:6px 8px">年度</th>
+<th>施工管理法</th>
+<th>電気理論</th>
+<th>施工</th>
+<th>電気設備</th>
+<th>法規</th>
+<th>全科目平均</th><th>難易度</th></tr></thead><tbody>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R7後期</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R7</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R7前期</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R6後期</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R6前期</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R6</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R5後期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R5前期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R5</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R4後期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R4前期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R4</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R3後期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R3</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R3前期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">2</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R2</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">44</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">13</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">10</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">15</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R1後期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">70</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">16</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">R1</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">11</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">16</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R1前期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">66</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">15</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H30後期</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">68</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">15</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H30</td>
+<td style="text-align:center;color:#333;font-weight:400">16</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">11</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">16</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H29</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">37</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">22</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H28</td>
+<td style="text-align:center;color:#333;font-weight:400">16</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">46</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">6</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">23</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H27</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">68</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">11</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">30</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">中</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H26</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">44</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">57</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">26</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">中</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H25</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">41</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">22</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H24</td>
+<td style="text-align:center;color:#333;font-weight:400">16</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">46</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">11</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">24</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H23</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">37</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">50</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">28</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">中</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H22</td>
+<td style="text-align:center;color:#333;font-weight:400">16</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">13</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">10</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">9</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#fff">
+<td style="padding:4px 8px;font-weight:700">H21</td>
+<td style="text-align:center;color:#333;font-weight:400">24</td>
+<td style="text-align:center;color:#333;font-weight:400">0</td>
+<td style="text-align:center;color:#333;font-weight:400">27</td>
+<td style="text-align:center;color:#333;font-weight:400">17</td>
+<td style="text-align:center;color:#333;font-weight:400">20</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">18</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">H20</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">8</td>
+<td style="text-align:center;color:#333;font-weight:400">13</td>
+<td style="text-align:center;color:#333;font-weight:400">6</td>
+<td style="text-align:center;color:#333;font-weight:400">10</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">9</td>
+<td style="text-align:center;color:#16a34a;font-weight:700">易</td>
+</tr>
+</tbody></table></div>
+<h3 class="deep-sub">17-2. 難易度トレンド推移</h3>
+<p>年度別の難易度指標の推移をグラフで可視化。</p>
+<div style="overflow-x:auto;margin-bottom:12px"><svg viewBox="0 0 650 200" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="40" y1="132.0" x2="630" y2="132.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="135.0" text-anchor="end" font-size="8" fill="#6b7280">20</text>
+<line x1="40" y1="104.0" x2="630" y2="104.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="107.0" text-anchor="end" font-size="8" fill="#6b7280">40</text>
+<line x1="40" y1="76.0" x2="630" y2="76.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="79.0" text-anchor="end" font-size="8" fill="#6b7280">60</text>
+<line x1="40" y1="48.0" x2="630" y2="48.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="51.0" text-anchor="end" font-size="8" fill="#6b7280">80</text>
+<line x1="40" y1="145.5" x2="630" y2="145.5" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4"/>
+<text x="632" y="148.5" font-size="7" fill="#f59e0b">平均10</text>
+<path d="M40.0,147.4 L59.7,135.4 L79.3,146.7 L99.0,121.4 L118.7,126.4 L138.3,128.6 L158.0,124.0 L177.7,118.0 L197.3,128.0 L217.0,129.8 L236.7,137.0 L256.3,138.7 L276.0,139.4 L295.7,137.0 L315.3,138.2 L335.0,138.9 L354.7,157.8 L374.3,157.8 L394.0,157.8 L413.7,157.8 L433.3,157.8 L453.0,157.8 L472.7,157.8 L492.3,157.8 L512.0,157.8 L531.7,157.8 L551.3,160.0 L571.0,160.0 L590.7,160.0 L610.3,157.8 L630.0,160.0" fill="none" stroke="#3b82f6" stroke-width="2.5" opacity="0.85"/>
+<circle cx="40.0" cy="147.4" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H20: 9</title></circle>
+<text x="40.0" y="175" text-anchor="middle" font-size="7" fill="#6b7280">H20</text>
+<circle cx="59.7" cy="135.4" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H21: 18</title></circle>
+<circle cx="79.3" cy="146.7" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H22: 9</title></circle>
+<circle cx="99.0" cy="121.4" r="4" fill="#f59e0b" stroke="#fff" stroke-width="1"><title>H23: 28</title></circle>
+<circle cx="118.7" cy="126.4" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H24: 24</title></circle>
+<circle cx="138.3" cy="128.6" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H25: 22</title></circle>
+<text x="138.3" y="175" text-anchor="middle" font-size="7" fill="#6b7280">H25</text>
+<circle cx="158.0" cy="124.0" r="4" fill="#f59e0b" stroke="#fff" stroke-width="1"><title>H26: 26</title></circle>
+<circle cx="177.7" cy="118.0" r="4" fill="#f59e0b" stroke="#fff" stroke-width="1"><title>H27: 30</title></circle>
+<circle cx="197.3" cy="128.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H28: 23</title></circle>
+<circle cx="217.0" cy="129.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H29: 22</title></circle>
+<circle cx="236.7" cy="137.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H30: 16</title></circle>
+<text x="236.7" y="175" text-anchor="middle" font-size="7" fill="#6b7280">H30</text>
+<circle cx="256.3" cy="138.7" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>H30後期: 15</title></circle>
+<circle cx="276.0" cy="139.4" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R1前期: 15</title></circle>
+<circle cx="295.7" cy="137.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R1: 16</title></circle>
+<circle cx="315.3" cy="138.2" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R1後期: 16</title></circle>
+<circle cx="335.0" cy="138.9" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R2: 15</title></circle>
+<text x="335.0" y="175" text-anchor="middle" font-size="7" fill="#6b7280">R2</text>
+<circle cx="354.7" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R3前期: 2</title></circle>
+<circle cx="374.3" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R3: 2</title></circle>
+<circle cx="394.0" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R3後期: 2</title></circle>
+<circle cx="413.7" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R4: 2</title></circle>
+<circle cx="433.3" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R4前期: 2</title></circle>
+<text x="433.3" y="175" text-anchor="middle" font-size="7" fill="#6b7280">R4前期</text>
+<circle cx="453.0" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R4後期: 2</title></circle>
+<circle cx="472.7" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R5: 2</title></circle>
+<circle cx="492.3" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R5前期: 2</title></circle>
+<circle cx="512.0" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R5後期: 2</title></circle>
+<circle cx="531.7" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R6: 2</title></circle>
+<text x="531.7" y="175" text-anchor="middle" font-size="7" fill="#6b7280">R6</text>
+<circle cx="551.3" cy="160.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R6前期: 0</title></circle>
+<circle cx="571.0" cy="160.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R6後期: 0</title></circle>
+<circle cx="590.7" cy="160.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R7前期: 0</title></circle>
+<circle cx="610.3" cy="157.8" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R7: 2</title></circle>
+<circle cx="630.0" cy="160.0" r="4" fill="#3b82f6" stroke="#fff" stroke-width="1"><title>R7後期: 0</title></circle>
+<text x="630.0" y="175" text-anchor="middle" font-size="7" fill="#6b7280">R7後期</text>
+</svg></div>
+<h3 class="deep-sub">17-3. 科目別 難易度傾向</h3>
+<table><tr><th>科目</th><th>推定難度</th><th>理解率</th><th>暗記率</th><th>傾向</th><th>対策のポイント</th></tr>
+<tr><td style="color:#1e40af;font-weight:700">施工管理法</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#b45309;font-weight:700">電気理論</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">35%</td><td class="tac">20%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#7e22ce;font-weight:700">施工</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">45%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#0369a1;font-weight:700">電気設備</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#d97706;font-weight:700">法規</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+</table>
+<h3 class="deep-sub">17-4. 科目別 新傾向率推移</h3>
+<p>科目ごとの新傾向テーマ出現率をSVGグラフで表示。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 591 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="589" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H20: 100%</title></rect>
+<text x="9.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H20</text>
+<rect x="20" y="40.0" width="17" height="80.0" rx="1" fill="#dc2626" opacity="0.8"><title>H21: 67%</title></rect>
+<rect x="39" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H22: 0%</title></rect>
+<rect x="58" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H23: 0%</title></rect>
+<rect x="77" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H24: 0%</title></rect>
+<rect x="96" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H25: 0%</title></rect>
+<text x="104.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H25</text>
+<rect x="115" y="80.0" width="17" height="40.0" rx="1" fill="#1e40af" opacity="0.8"><title>H26: 33%</title></rect>
+<rect x="134" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H27: 0%</title></rect>
+<rect x="153" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H28: 0%</title></rect>
+<rect x="172" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H29: 0%</title></rect>
+<rect x="191" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H30: 0%</title></rect>
+<text x="199.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<rect x="210" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>H30後期: 0%</title></rect>
+<rect x="229" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R1前期: 0%</title></rect>
+<rect x="248" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R1: 0%</title></rect>
+<rect x="267" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R1後期: 0%</title></rect>
+<rect x="286" y="80.0" width="17" height="40.0" rx="1" fill="#1e40af" opacity="0.8"><title>R2: 33%</title></rect>
+<text x="294.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+<rect x="305" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R3前期: 0%</title></rect>
+<rect x="324" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R3: 0%</title></rect>
+<rect x="343" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R3後期: 0%</title></rect>
+<rect x="362" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R4: 0%</title></rect>
+<rect x="381" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R4前期: 0%</title></rect>
+<text x="389.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R4前期</text>
+<rect x="400" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R4後期: 0%</title></rect>
+<rect x="419" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R5: 0%</title></rect>
+<rect x="438" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R5前期: 0%</title></rect>
+<rect x="457" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R5後期: 0%</title></rect>
+<rect x="476" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R6: 0%</title></rect>
+<text x="484.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R6</text>
+<rect x="495" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R6前期: 0%</title></rect>
+<rect x="514" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R6後期: 0%</title></rect>
+<rect x="533" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R7前期: 0%</title></rect>
+<rect x="552" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R7: 0%</title></rect>
+<rect x="571" y="120.0" width="17" height="0.0" rx="1" fill="#1e40af" opacity="0.8"><title>R7後期: 0%</title></rect>
+<text x="579.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7後期</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 591 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="589" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H20: 100%</title></rect>
+<text x="9.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H20</text>
+<rect x="20" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H21: 0%</title></rect>
+<rect x="39" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H22: 0%</title></rect>
+<rect x="58" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H23: 0%</title></rect>
+<rect x="77" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H24: 50%</title></rect>
+<rect x="96" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H25: 0%</title></rect>
+<text x="104.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H25</text>
+<rect x="115" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H26: 0%</title></rect>
+<rect x="134" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H27: 100%</title></rect>
+<rect x="153" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H28: 50%</title></rect>
+<rect x="172" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H29: 0%</title></rect>
+<rect x="191" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>H30: 0%</title></rect>
+<text x="199.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<rect x="210" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H30後期: 100%</title></rect>
+<rect x="229" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R1前期: 0%</title></rect>
+<rect x="248" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R1: 0%</title></rect>
+<rect x="267" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R1後期: 0%</title></rect>
+<rect x="286" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R2: 0%</title></rect>
+<text x="294.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+<rect x="305" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R3前期: 0%</title></rect>
+<rect x="324" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R3: 0%</title></rect>
+<rect x="343" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R3後期: 0%</title></rect>
+<rect x="362" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R4: 0%</title></rect>
+<rect x="381" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R4前期: 0%</title></rect>
+<text x="389.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R4前期</text>
+<rect x="400" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R4後期: 0%</title></rect>
+<rect x="419" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R5: 0%</title></rect>
+<rect x="438" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R5前期: 0%</title></rect>
+<rect x="457" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R5後期: 0%</title></rect>
+<rect x="476" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R6: 0%</title></rect>
+<text x="484.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R6</text>
+<rect x="495" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R6前期: 0%</title></rect>
+<rect x="514" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R6後期: 0%</title></rect>
+<rect x="533" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R7前期: 0%</title></rect>
+<rect x="552" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R7: 0%</title></rect>
+<rect x="571" y="120.0" width="17" height="0.0" rx="1" fill="#b45309" opacity="0.8"><title>R7後期: 0%</title></rect>
+<text x="579.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7後期</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 591 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="589" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H20: 100%</title></rect>
+<text x="9.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H20</text>
+<rect x="20" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H21: 50%</title></rect>
+<rect x="39" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H22: 0%</title></rect>
+<rect x="58" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H23: 0%</title></rect>
+<rect x="77" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H24: 0%</title></rect>
+<rect x="96" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H25: 0%</title></rect>
+<text x="104.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H25</text>
+<rect x="115" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H26: 50%</title></rect>
+<rect x="134" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H27: 0%</title></rect>
+<rect x="153" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H28: 0%</title></rect>
+<rect x="172" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H29: 0%</title></rect>
+<rect x="191" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H30: 0%</title></rect>
+<text x="199.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<rect x="210" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>H30後期: 0%</title></rect>
+<rect x="229" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R1前期: 0%</title></rect>
+<rect x="248" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R1: 0%</title></rect>
+<rect x="267" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R1後期: 0%</title></rect>
+<rect x="286" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R2: 0%</title></rect>
+<text x="294.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+<rect x="305" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R3前期: 0%</title></rect>
+<rect x="324" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R3: 0%</title></rect>
+<rect x="343" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R3後期: 0%</title></rect>
+<rect x="362" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R4: 0%</title></rect>
+<rect x="381" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R4前期: 0%</title></rect>
+<text x="389.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R4前期</text>
+<rect x="400" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R4後期: 0%</title></rect>
+<rect x="419" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R5: 0%</title></rect>
+<rect x="438" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R5前期: 0%</title></rect>
+<rect x="457" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R5後期: 0%</title></rect>
+<rect x="476" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R6: 0%</title></rect>
+<text x="484.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R6</text>
+<rect x="495" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R6前期: 0%</title></rect>
+<rect x="514" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R6後期: 0%</title></rect>
+<rect x="533" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R7前期: 0%</title></rect>
+<rect x="552" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R7: 0%</title></rect>
+<rect x="571" y="120.0" width="17" height="0.0" rx="1" fill="#7e22ce" opacity="0.8"><title>R7後期: 0%</title></rect>
+<text x="579.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7後期</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 591 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="589" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H20: 100%</title></rect>
+<text x="9.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H20</text>
+<rect x="20" y="40.0" width="17" height="80.0" rx="1" fill="#dc2626" opacity="0.8"><title>H21: 67%</title></rect>
+<rect x="39" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H22: 0%</title></rect>
+<rect x="58" y="80.0" width="17" height="40.0" rx="1" fill="#0369a1" opacity="0.8"><title>H23: 33%</title></rect>
+<rect x="77" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H24: 0%</title></rect>
+<rect x="96" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H25: 50%</title></rect>
+<text x="104.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H25</text>
+<rect x="115" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H26: 0%</title></rect>
+<rect x="134" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H27: 0%</title></rect>
+<rect x="153" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H28: 0%</title></rect>
+<rect x="172" y="80.0" width="17" height="40.0" rx="1" fill="#0369a1" opacity="0.8"><title>H29: 33%</title></rect>
+<rect x="191" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H30: 0%</title></rect>
+<text x="199.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<rect x="210" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>H30後期: 0%</title></rect>
+<rect x="229" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R1前期: 100%</title></rect>
+<rect x="248" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R1: 0%</title></rect>
+<rect x="267" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R1後期: 0%</title></rect>
+<rect x="286" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R2: 0%</title></rect>
+<text x="294.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+<rect x="305" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R3前期: 0%</title></rect>
+<rect x="324" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R3: 0%</title></rect>
+<rect x="343" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R3後期: 0%</title></rect>
+<rect x="362" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R4: 0%</title></rect>
+<rect x="381" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R4前期: 0%</title></rect>
+<text x="389.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R4前期</text>
+<rect x="400" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R4後期: 0%</title></rect>
+<rect x="419" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R5: 0%</title></rect>
+<rect x="438" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R5前期: 0%</title></rect>
+<rect x="457" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R5後期: 0%</title></rect>
+<rect x="476" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R6: 0%</title></rect>
+<text x="484.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R6</text>
+<rect x="495" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R6前期: 0%</title></rect>
+<rect x="514" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R6後期: 0%</title></rect>
+<rect x="533" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R7前期: 0%</title></rect>
+<rect x="552" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R7: 0%</title></rect>
+<rect x="571" y="120.0" width="17" height="0.0" rx="1" fill="#0369a1" opacity="0.8"><title>R7後期: 0%</title></rect>
+<text x="579.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7後期</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 591 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="589" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>H20: 100%</title></rect>
+<text x="9.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H20</text>
+<rect x="20" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H21: 50%</title></rect>
+<rect x="39" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H22: 0%</title></rect>
+<rect x="58" y="60.0" width="17" height="60.0" rx="1" fill="#f59e0b" opacity="0.8"><title>H23: 50%</title></rect>
+<rect x="77" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H24: 0%</title></rect>
+<rect x="96" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H25: 0%</title></rect>
+<text x="104.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H25</text>
+<rect x="115" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H26: 0%</title></rect>
+<rect x="134" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H27: 0%</title></rect>
+<rect x="153" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H28: 0%</title></rect>
+<rect x="172" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H29: 0%</title></rect>
+<rect x="191" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H30: 0%</title></rect>
+<text x="199.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<rect x="210" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>H30後期: 0%</title></rect>
+<rect x="229" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R1前期: 0%</title></rect>
+<rect x="248" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R1: 0%</title></rect>
+<rect x="267" y="0.0" width="17" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R1後期: 100%</title></rect>
+<rect x="286" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R2: 0%</title></rect>
+<text x="294.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+<rect x="305" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R3前期: 0%</title></rect>
+<rect x="324" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R3: 0%</title></rect>
+<rect x="343" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R3後期: 0%</title></rect>
+<rect x="362" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R4: 0%</title></rect>
+<rect x="381" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R4前期: 0%</title></rect>
+<text x="389.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R4前期</text>
+<rect x="400" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R4後期: 0%</title></rect>
+<rect x="419" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R5: 0%</title></rect>
+<rect x="438" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R5前期: 0%</title></rect>
+<rect x="457" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R5後期: 0%</title></rect>
+<rect x="476" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R6: 0%</title></rect>
+<text x="484.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R6</text>
+<rect x="495" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R6前期: 0%</title></rect>
+<rect x="514" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R6後期: 0%</title></rect>
+<rect x="533" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R7前期: 0%</title></rect>
+<rect x="552" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R7: 0%</title></rect>
+<rect x="571" y="120.0" width="17" height="0.0" rx="1" fill="#d97706" opacity="0.8"><title>R7後期: 0%</title></rect>
+<text x="579.5" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7後期</text>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="difficulty-trend.html">← 難易度トレンド分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="recommended-videos.html">おすすめ学習動画（施工管理1級） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

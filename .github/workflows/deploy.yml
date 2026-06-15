@@ -1,0 +1,85 @@
+name: Build & Deploy to AWS (sekokan-coach)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ap-northeast-1
+  ECR_REPOSITORY: sekokan-coach-frontend
+  SERVICE_NAME: sekokan-coach-dev
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build, tag, and push image to ECR
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:latest \
+            .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
+      - name: Update App Runner service (operating hours check)
+        run: |
+          SERVICE_ARN=$(aws apprunner list-services --query "ServiceSummaryList[?ServiceName=='${SERVICE_NAME}'].ServiceArn" --output text)
+          if [ -z "$SERVICE_ARN" ] || [ "$SERVICE_ARN" = "None" ]; then
+            echo "App Runner service '${SERVICE_NAME}' not found. Push image only."
+            exit 0
+          fi
+
+          SERVICE_STATUS=$(aws apprunner describe-service --service-arn "$SERVICE_ARN" --query "Service.Status" --output text)
+          JST_DAY=$(TZ=Asia/Tokyo date +%u)
+          JST_TIME=$(TZ=Asia/Tokyo date +%H%M)
+
+          # 平日 10-12 / 13-17 JST のみデプロイ実行 (それ以外は pause)
+          OPERATING_HOURS=false
+          if [ "$JST_DAY" -ge 1 ] && [ "$JST_DAY" -le 5 ]; then
+            if { [ "$JST_TIME" -ge 1000 ] && [ "$JST_TIME" -lt 1200 ]; } || { [ "$JST_TIME" -ge 1300 ] && [ "$JST_TIME" -lt 1700 ]; }; then
+              OPERATING_HOURS=true
+            fi
+          fi
+
+          if [ "$OPERATING_HOURS" != "true" ]; then
+            if [ "$SERVICE_STATUS" = "RUNNING" ]; then
+              aws apprunner pause-service --service-arn "$SERVICE_ARN"
+              echo "Outside operating hours. Pause requested for $SERVICE_ARN"
+            else
+              echo "Outside operating hours (status=$SERVICE_STATUS). Skipping."
+            fi
+            exit 0
+          fi
+
+          if [ "$SERVICE_STATUS" = "RUNNING" ]; then
+            aws apprunner start-deployment --service-arn "$SERVICE_ARN"
+            echo "Deployment started for $SERVICE_ARN"
+          elif [ "$SERVICE_STATUS" = "PAUSED" ]; then
+            aws apprunner resume-service --service-arn "$SERVICE_ARN"
+            echo "Resume requested for $SERVICE_ARN (will deploy after running)"
+          else
+            echo "Service status=$SERVICE_STATUS. Skipping deployment."
+          fi

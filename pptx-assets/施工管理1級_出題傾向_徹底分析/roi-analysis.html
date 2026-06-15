@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投資対効果分析 - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">投資対効果分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+<section id="roi-analysis">
+  <h2>投資対効果分析</h2>
+<p>各テーマの <strong>ROI = 出題確率 / 推定学習時間</strong> を算出。ROIが高いテーマから学習すれば最短で得点が伸びます。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.1em">施工管理法 ROIランキング</summary>
+<div class="tip">上位1個で60%カバー、上位2個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>級電気工事施工</td><td>78.4%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>14h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.056</span></div></td><td>5.6点</td><td>11回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>唖電気工事</td><td>12.9%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>6h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:21px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.020</span></div></td><td>2.0点</td><td>0回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>3</td><td>電気工事</td><td>6.0%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:18px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.017</span></div></td><td>1.7点</td><td>0回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+<tr><td>4</td><td>亜本日</td><td>1.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:18px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.017</span></div></td><td>1.7点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>5</td><td>受騎地変更者</td><td>0.9%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:9px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.009</span></div></td><td>0.9点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（施工管理法 上位15テーマ）</h4>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 級電気工事施工</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.056</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 14.0時間の学習（過去問演習 13h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 78.4% → 1時間あたり期待点数 5.6点。31年間で91回出題、31年中27年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で11回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 唖電気工事</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.020</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 6.5時間の学習（過去問演習 6h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 12.9% → 1時間あたり期待点数 2.0点。31年間で15回出題、31年中12年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R2。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 電気工事</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.017</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 3h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 6.0% → 1時間あたり期待点数 1.7点。31年間で7回出題、31年中6年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 亜本日</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.017</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 1.7% → 1時間あたり期待点数 1.7点。31年間で2回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R2。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 受騎地変更者</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.009</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 0.9% → 1時間あたり期待点数 0.9点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H26。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（施工管理法）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>級電気工事施工</td><td>78.4%</td><td>14.0h</td><td><strong>5.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>唖電気工事</td><td>12.9%</td><td>6.5h</td><td><strong>2.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:36%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>電気工事</td><td>6.0%</td><td>3.5h</td><td><strong>1.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:31%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>亜本日</td><td>1.7%</td><td>1.0h</td><td><strong>1.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:31%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>受騎地変更者</td><td>0.9%</td><td>1.0h</td><td><strong>0.9</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:15%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">施工管理法 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="241" x2="580" y2="241" stroke="#f3f4f6"/>
+  <text x="46" y="244" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="172" x2="580" y2="172" stroke="#f3f4f6"/>
+  <text x="46" y="175" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <line x1="50" y1="103" x2="580" y2="103" stroke="#f3f4f6"/>
+  <text x="46" y="106" font-size="8" fill="#9ca3af" text-anchor="end">60%</text>
+  <line x1="50" y1="35" x2="580" y2="35" stroke="#f3f4f6"/>
+  <text x="46" y="38" font-size="8" fill="#9ca3af" text-anchor="end">80%</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">級電気工事施</text>
+  <circle cx="185.0" cy="280.8" r="17.5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="185.0" y="260.3" font-size="7" fill="#374151" text-anchor="middle">電気工事</text>
+  <circle cx="292.1" cy="258.8" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="292.1" y="233.8" font-size="7" fill="#374151" text-anchor="middle">唖電気工事</text>
+  <circle cx="95.7" cy="294.5" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="95.7" cy="297.3" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.1em">電気理論 ROIランキング</summary>
+<div class="tip">上位1個で60%カバー、上位2個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>電気工事</td><td>73.3%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>4h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#b45309;border-radius:4px"></div><span class="fz8">0.183</span></div></td><td>18.3点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>亜日本電機工業</td><td>6.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:22px;height:8px;background:#b45309;border-radius:4px"></div><span class="fz8">0.067</span></div></td><td>6.7点</td><td>0回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>3</td><td>日本電機工業会</td><td>6.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:22px;height:8px;background:#b45309;border-radius:4px"></div><span class="fz8">0.067</span></div></td><td>6.7点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>4</td><td>配線用図記号</td><td>6.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:22px;height:8px;background:#b45309;border-radius:4px"></div><span class="fz8">0.067</span></div></td><td>6.7点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>5</td><td>配電盤茜制御盤</td><td>6.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:22px;height:8px;background:#b45309;border-radius:4px"></div><span class="fz8">0.067</span></div></td><td>6.7点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（電気理論 上位15テーマ）</h4>
+<div style="border-left:4px solid #b45309;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 電気工事</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.183</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.0時間の学習（過去問演習 3h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 73.3% → 1時間あたり期待点数 18.3点。31年間で11回出題、31年中7年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R2。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #b45309;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 亜日本電機工業</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.067</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 6.7% → 1時間あたり期待点数 6.7点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H27。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #b45309;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 日本電機工業会</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.067</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 6.7% → 1時間あたり期待点数 6.7点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H24。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #b45309;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 配線用図記号</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.067</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 6.7% → 1時間あたり期待点数 6.7点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H28。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #b45309;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 配電盤茜制御盤</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.067</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 6.7% → 1時間あたり期待点数 6.7点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H30後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（電気理論）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>電気工事</td><td>73.3%</td><td>4.0h</td><td><strong>18.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#b45309;border-radius:4px"></div></div></td></tr>
+<tr><td>亜日本電機工業</td><td>6.7%</td><td>1.0h</td><td><strong>6.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:36%;height:100%;background:#b45309;border-radius:4px"></div></div></td></tr>
+<tr><td>日本電機工業会</td><td>6.7%</td><td>1.0h</td><td><strong>6.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:36%;height:100%;background:#b45309;border-radius:4px"></div></div></td></tr>
+<tr><td>配線用図記号</td><td>6.7%</td><td>1.0h</td><td><strong>6.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:36%;height:100%;background:#b45309;border-radius:4px"></div></div></td></tr>
+<tr><td>配電盤茜制御盤</td><td>6.7%</td><td>1.0h</td><td><strong>6.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:36%;height:100%;background:#b45309;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">電気理論 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="236" x2="580" y2="236" stroke="#f3f4f6"/>
+  <text x="46" y="239" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="163" x2="580" y2="163" stroke="#f3f4f6"/>
+  <text x="46" y="166" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <line x1="50" y1="89" x2="580" y2="89" stroke="#f3f4f6"/>
+  <text x="46" y="92" font-size="8" fill="#9ca3af" text-anchor="end">60%</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">電気工事</text>
+  <circle cx="185.0" cy="277.3" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="185.0" cy="277.3" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="185.0" cy="277.3" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="185.0" cy="277.3" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.1em">施工 ROIランキング</summary>
+<div class="tip">上位1個で60%カバー、上位2個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>唖下記</td><td>61.5%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>7h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#7e22ce;border-radius:4px"></div><span class="fz8">0.088</span></div></td><td>8.8点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>工程表</td><td>34.6%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:47px;height:8px;background:#7e22ce;border-radius:4px"></div><span class="fz8">0.069</span></div></td><td>6.9点</td><td>0回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>3</td><td>所要日数</td><td>3.8%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:26px;height:8px;background:#7e22ce;border-radius:4px"></div><span class="fz8">0.038</span></div></td><td>3.8点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（施工 上位15テーマ）</h4>
+<div style="border-left:4px solid #7e22ce;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 唖下記</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.088</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.0時間の学習（過去問演習 6h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 61.5% → 1時間あたり期待点数 8.8点。31年間で16回出題、31年中13年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R2。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #7e22ce;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 工程表</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.069</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 34.6% → 1時間あたり期待点数 6.9点。31年間で9回出題、31年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #7e22ce;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 所要日数</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.038</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 3.8% → 1時間あたり期待点数 3.8点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H26。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（施工）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>唖下記</td><td>61.5%</td><td>7.0h</td><td><strong>8.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#7e22ce;border-radius:4px"></div></div></td></tr>
+<tr><td>工程表</td><td>34.6%</td><td>5.0h</td><td><strong>6.9</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:79%;height:100%;background:#7e22ce;border-radius:4px"></div></div></td></tr>
+<tr><td>所要日数</td><td>3.8%</td><td>1.0h</td><td><strong>3.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:44%;height:100%;background:#7e22ce;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">施工 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="222" x2="580" y2="222" stroke="#f3f4f6"/>
+  <text x="46" y="225" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="134" x2="580" y2="134" stroke="#f3f4f6"/>
+  <text x="46" y="138" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <line x1="50" y1="47" x2="580" y2="47" stroke="#f3f4f6"/>
+  <text x="46" y="50" font-size="8" fill="#9ca3af" text-anchor="end">60%</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">唖下記</text>
+  <circle cx="417.1" cy="159.4" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="417.1" y="134.4" font-size="7" fill="#374151" text-anchor="middle">工程表</text>
+  <circle cx="131.4" cy="284.4" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.1em">電気設備 ROIランキング</summary>
+<div class="tip">上位2個で60%カバー、上位3個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>唖電気工事</td><td>41.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>4h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.093</span></div></td><td>9.3点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>電気工事</td><td>37.5%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:49px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.075</span></div></td><td>7.5点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>亜日本工業規格</td><td>4.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>0回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>4</td><td>日本工業規格</td><td>4.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>5</td><td>構内電気設備</td><td>4.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>6</td><td>自動火災報知設</td><td>4.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>7</td><td>阿混合茜分波器</td><td>4.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（電気設備 上位15テーマ）</h4>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 唖電気工事</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.093</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.5時間の学習（過去問演習 4h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 41.7% → 1時間あたり期待点数 9.3点。31年間で10回出題、31年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 電気工事</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.075</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 37.5% → 1時間あたり期待点数 7.5点。31年間で9回出題、31年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 亜日本工業規格</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 4.2% → 1時間あたり期待点数 4.2点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 日本工業規格</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 4.2% → 1時間あたり期待点数 4.2点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H21。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 構内電気設備</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 4.2% → 1時間あたり期待点数 4.2点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H23。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 自動火災報知設</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 4.2% → 1時間あたり期待点数 4.2点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H29。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#7 阿混合茜分波器</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 4.2% → 1時間あたり期待点数 4.2点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H25。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（電気設備）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>唖電気工事</td><td>41.7%</td><td>4.5h</td><td><strong>9.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>電気工事</td><td>37.5%</td><td>5.0h</td><td><strong>7.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:81%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>亜日本工業規格</td><td>4.2%</td><td>1.0h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:45%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>日本工業規格</td><td>4.2%</td><td>1.0h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:45%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>構内電気設備</td><td>4.2%</td><td>1.0h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:45%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>自動火災報知設</td><td>4.2%</td><td>1.0h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:45%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>阿混合茜分波器</td><td>4.2%</td><td>1.0h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:45%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">電気設備 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="180" x2="580" y2="180" stroke="#f3f4f6"/>
+  <text x="46" y="183" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="51" x2="580" y2="51" stroke="#f3f4f6"/>
+  <text x="46" y="54" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <circle cx="510.0" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="510.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">唖電気工事</text>
+  <circle cx="160.0" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="160.0" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="160.0" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="160.0" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="160.0" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="560.0" cy="75.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="560.0" y="50.0" font-size="7" fill="#374151" text-anchor="middle">電気工事</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">法規 ROIランキング</summary>
+<div class="tip">上位2個で60%カバー、上位3個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>電気事業法</td><td>37.0%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>4h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.093</span></div></td><td>9.3点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>労働安全衛生法</td><td>37.0%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>5h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:44px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.067</span></div></td><td>6.7点</td><td>0回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>建設業法</td><td>22.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:41px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.063</span></div></td><td>6.3点</td><td>0回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>4</td><td>亜点検作業用</td><td>3.7%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>1h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:24px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.037</span></div></td><td>3.7点</td><td>0回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（法規 上位15テーマ）</h4>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 電気事業法</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.093</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.0時間の学習（過去問演習 3h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 37.0% → 1時間あたり期待点数 9.3点。31年間で10回出題、31年中7年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R2。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 労働安全衛生法</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.067</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.5時間の学習（過去問演習 5h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 37.0% → 1時間あたり期待点数 6.7点。31年間で10回出題、31年中10年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 建設業法</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.063</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 3h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 22.2% → 1時間あたり期待点数 6.3点。31年間で6回出題、31年中6年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: H29。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 亜点検作業用</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.037</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.0時間の学習（過去問演習 30分 + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 3.7% → 1時間あたり期待点数 3.7点。31年間で1回出題、31年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で0回出題。最終出題: R1後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（法規）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>電気事業法</td><td>37.0%</td><td>4.0h</td><td><strong>9.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>労働安全衛生法</td><td>37.0%</td><td>5.5h</td><td><strong>6.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:73%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>建設業法</td><td>22.2%</td><td>3.5h</td><td><strong>6.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:69%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>亜点検作業用</td><td>3.7%</td><td>1.0h</td><td><strong>3.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:40%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">法規 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="164" x2="580" y2="164" stroke="#f3f4f6"/>
+  <text x="46" y="167" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="378.2" cy="150.0" r="15.0" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="378.2" y="132.0" font-size="7" fill="#374151" text-anchor="middle">建設業法</text>
+  <circle cx="423.6" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="423.6" y="25.0" font-size="7" fill="#374151" text-anchor="middle">電気事業法</text>
+  <circle cx="150.9" cy="275.0" r="5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <circle cx="560.0" cy="50.0" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">労働安全衛生</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

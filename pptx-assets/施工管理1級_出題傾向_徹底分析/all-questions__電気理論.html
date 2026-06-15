@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全問題一覧（年度別傾向付き） - 電気理論 - 施工管理1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">全問題一覧（年度別傾向付き） ／ <strong>電気理論</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工.html">施工 →</a></span></nav>
+<section id="all-questions">
+  <h2>全問題一覧（年度別傾向付き）</h2>
+<p>全15問の過去問を科目・年度別に一覧表示。<strong>年度ごとのカテゴリ分布</strong>で出題傾向の変化が一目瞭然。</p>
+<div style="display:flex;align-items:center;gap:16px;margin:12px 0;padding:12px 16px;background:#eff6ff;border-radius:8px">
+  <span id="q-progress" style="font-weight:700;color:#1e40af">0/0問 完了</span>
+  <span style="font-size:0.85em;color:#6b7280">チェックボックスで学習進捗を記録（ブラウザに保存）</span>
+</div>
+<div class="note">チェックを入れると行がグレーアウトされ、進捗が自動カウントされます。</div>
+<script>
+function togQ(cb){var k="sekokan1_"+cb.dataset.key;localStorage.setItem(k,cb.checked?"1":"0");cb.closest("tr").classList.toggle("done",cb.checked);updateCount();}
+function updateCount(){var all=document.querySelectorAll(".q-chk-input");var done=document.querySelectorAll(".q-chk-input:checked");var el=document.getElementById("q-progress");if(el)el.textContent=done.length+"/"+all.length+"問 完了";}
+function restoreChecks(){document.querySelectorAll(".q-chk-input").forEach(function(cb){var k="sekokan1_"+cb.dataset.key;if(localStorage.getItem(k)==="1"){cb.checked=true;cb.closest("tr").classList.add("done");}});updateCount();}
+window.addEventListener("load",restoreChecks);
+</script>
+<h3>電気理論（31年分・15問）</h3>
+<div style="margin:8px 0 16px;overflow-x:auto">
+<table style="font-size:0.82em;white-space:nowrap">
+<tr><th>年度</th><th>問題構成（カテゴリ分布）</th><th>暗記率</th><th>傾向メモ</th></tr>
+<tr><td class="fwb">R2</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×2</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+<tr><td class="fwb">H30後期</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">配電盤茜制御盤</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+配電盤茜制御盤</span> <span style="color:#dc2626">-電気工事</span> </td></tr>
+<tr><td class="fwb">H30</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×2</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+電気工事</span> <span style="color:#dc2626">-配電盤茜制御盤</span> </td></tr>
+<tr><td class="fwb">H28</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">配線用図記号</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+配線用図記号</span> </td></tr>
+<tr><td class="fwb">H27</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">亜日本電機工業</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+亜日本電機工業</span> <span style="color:#dc2626">-配線用図記号,電気工事</span> </td></tr>
+<tr><td class="fwb">H26</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×3</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+電気工事</span> <span style="color:#dc2626">-亜日本電機工業</span> </td></tr>
+<tr><td class="fwb">H24</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">日本電機工業会</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+日本電機工業会</span> </td></tr>
+<tr><td class="fwb">H22</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#dc2626">-日本電機工業会</span> </td></tr>
+<tr><td class="fwb">H20</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+</table>
+</div>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 全問チェックリスト</summary>
+<table class="fz85">
+<tr><th style="width:30px">✓</th><th>年度</th><th>テーマ</th><th>問数</th><th>分類</th></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_電気工事" onchange="togQ(this)"></td><td class="fws">R2</td><td>電気工事</td><td class="tac">2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30後期_配電盤茜制御盤" onchange="togQ(this)"></td><td class="fws">H30後期</td><td>配電盤茜制御盤</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_電気工事" onchange="togQ(this)"></td><td class="fws">H30</td><td>電気工事</td><td class="tac">2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_電気工事" onchange="togQ(this)"></td><td class="fws">H28</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_配線用図記号" onchange="togQ(this)"></td><td class="fws">H28</td><td>配線用図記号</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_亜日本電機工業" onchange="togQ(this)"></td><td class="fws">H27</td><td>亜日本電機工業</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_電気工事" onchange="togQ(this)"></td><td class="fws">H26</td><td>電気工事</td><td class="tac">3</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_電気工事" onchange="togQ(this)"></td><td class="fws">H24</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_日本電機工業会" onchange="togQ(this)"></td><td class="fws">H24</td><td>日本電機工業会</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_電気工事" onchange="togQ(this)"></td><td class="fws">H22</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_電気工事" onchange="togQ(this)"></td><td class="fws">H20</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 年度別詳細分析カード</summary>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R2 — 2問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">2</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 2問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均2.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H30後期 — 1問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>配電盤茜制御盤</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#5/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>配電盤茜制御盤: 1問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">配電盤茜制</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+配電盤茜制御盤（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H30 — 2問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">2</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 2問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 電気工事</span> / <span style="color:#dc2626">消滅: 配電盤茜制御盤</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均2.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H28 — 2問・2テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>配線用図記号</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#4/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="200.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (50%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="200.0" y="2" width="200.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>配線用図記号: 1問 (50%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">配線用図記</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（2テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）、配線用図記号（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H27 — 1問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>亜日本電機工業</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#3/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>亜日本電機工業: 1問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">亜日本電機</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 亜日本電機工業</span> / <span style="color:#dc2626">消滅: 配線用図記号, 電気工事</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+亜日本電機工業（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H26 — 3問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">3</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 3問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 電気工事</span> / <span style="color:#dc2626">消滅: 亜日本電機工業</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均3.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約3問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H24 — 2問・2テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>日本電機工業会</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#2/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="200.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (50%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="200.0" y="2" width="200.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>日本電機工業会: 1問 (50%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">日本電機工</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（2テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）、日本電機工業会（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H22 — 1問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H20 — 1問・1テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (100%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+電気工事（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+</div></details>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工.html">施工 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

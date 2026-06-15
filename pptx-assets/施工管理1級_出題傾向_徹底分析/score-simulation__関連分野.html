@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>得点シミュレーション - 関連分野 - 施工管理1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">得点シミュレーション ／ <strong>関連分野</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="score-simulation.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="score-simulation__施工管理法.html">施工管理法 →</a></span></nav>
+<section id="score-simulation">
+  <h2>得点シミュレーション</h2>
+<p>学習範囲の違いで期待点数がどう変わるかを<strong>3つのプラン</strong>でシミュレーションします。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.1em">関連分野 得点シミュレーション</summary>
+<table><tr><th>プラン</th><th>学習テーマ数</th><th>学習時間</th><th>期待点数</th><th>合格確率</th></tr>
+<tr><td>Plan A: 最小60%</td><td>30</td><td>58h</td><td>60点</td><td style="color:#d97706;font-weight:700">60%</td></tr>
+<tr><td>Plan B: 安全70%</td><td>45</td><td>73h</td><td>71点</td><td style="color:#2563eb;font-weight:700">85%</td></tr>
+<tr><td>Plan C: フル80%+</td><td>87</td><td>115h30m</td><td>85点</td><td style="color:#16a34a;font-weight:700">95%+</td></tr>
+</table>
+<h4>年度別バックテスト（関連分野）</h4>
+<p style="font-size:0.88em;color:#6b7280">各プランでH20-R7の各年度を受験していたら何点取れたかをシミュレーション。</p>
+<table class="fz82"><tr><th>年度</th><th>全出題数</th>
+<th>Plan A: 最小60%</th>
+<th>Plan B: 安全70%</th>
+<th>Plan C: フル80%+</th>
+<th>60%ライン</th></tr>
+<tr><td>H20</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">88%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H21</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">38%</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H22</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H23</td><td>7</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">43%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">43%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">4問</td></tr>
+<tr><td>H24</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">38%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">38%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H25</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H26</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">12%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H27</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">38%</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H28</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H29</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>H30</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R1</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">88%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R2</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R3</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">88%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R4</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R5</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R6</td><td>8</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+<tr><td>R7</td><td>8</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">38%</td>
+<td style="color:#16a34a;font-weight:600;">62%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">5問</td></tr>
+</table>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="170" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="78" x2="680" y2="78" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="75" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polyline points="55.0,73.8 91.5,116.2 127.9,95.0 164.4,107.1 200.9,116.2 237.4,95.0 273.8,158.8 310.3,116.2 346.8,73.8 383.2,10.0 419.7,10.0 456.2,31.2 492.6,73.8 529.1,52.5 565.6,52.5 602.1,95.0 638.5,10.0 675.0,116.2" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="679.0" y="116.2" font-size="8" fill="#d97706">A</text>
+  <polyline points="55.0,31.2 91.5,73.8 127.9,95.0 164.4,107.1 200.9,116.2 237.4,73.8 273.8,95.0 310.3,73.8 346.8,73.8 383.2,10.0 419.7,10.0 456.2,10.0 492.6,52.5 529.1,31.2 565.6,52.5 602.1,95.0 638.5,10.0 675.0,73.8" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="679.0" y="73.8" font-size="8" fill="#2563eb">B</text>
+  <polyline points="55.0,10.0 91.5,10.0 127.9,10.0 164.4,10.0 200.9,10.0 237.4,10.0 273.8,10.0 310.3,10.0 346.8,10.0 383.2,10.0 419.7,10.0 456.2,10.0 492.6,10.0 529.1,10.0 565.6,10.0 602.1,10.0 638.5,10.0 675.0,10.0" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="679.0" y="10.0" font-size="8" fill="#16a34a">C</text>
+  <text x="55.0" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">H20</text>
+  <text x="237.4" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">H25</text>
+  <text x="419.7" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">H30</text>
+  <text x="602.1" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">R5</text>
+  <rect x="60" y="198" width="8" height="8" fill="#d97706"/>
+  <text x="72" y="205" font-size="8" fill="#6b7280">Plan A</text>
+  <rect x="120" y="198" width="8" height="8" fill="#2563eb"/>
+  <text x="132" y="205" font-size="8" fill="#6b7280">Plan B</text>
+  <rect x="180" y="198" width="8" height="8" fill="#16a34a"/>
+  <text x="192" y="205" font-size="8" fill="#6b7280">Plan C</text>
+</svg>
+<h4>最も危険な年度（関連分野）</h4>
+<p class="fz9"><strong>Plan A: 最小60%</strong>: <span style="color:#dc2626">9年度で不合格</span> → H21, H22, H23, H24, H25, H26, H27, R5, R7</p>
+<p class="fz9"><strong>Plan B: 安全70%</strong>: <span style="color:#dc2626">5年度で不合格</span> → H22, H23, H24, H26, R5</p>
+<p class="fz9"><strong>Plan C: フル80%+</strong>: <span style="color:#16a34a">全年度合格</span></p>
+<h4>感度分析:「もし新傾向が増えたら」（関連分野）</h4>
+<table class="fz88"><tr><th>シナリオ</th>
+<th>Plan A: 最小60%</th>
+<th>Plan B: 安全70%</th>
+<th>Plan C: フル80%+</th>
+</tr>
+<tr><td>現状（新傾向0問追加）</td>
+<td style="color:#16a34a;font-weight:600">60%</td>
+<td style="color:#16a34a;font-weight:600">71%</td>
+<td style="color:#16a34a;font-weight:600">85%</td>
+</tr>
+<tr><td>新傾向 +1問</td>
+<td style="color:#dc2626;font-weight:600">53%</td>
+<td style="color:#16a34a;font-weight:600">63%</td>
+<td style="color:#16a34a;font-weight:600">75%</td>
+</tr>
+<tr><td>新傾向 +2問</td>
+<td style="color:#dc2626;font-weight:600">48%</td>
+<td style="color:#dc2626;font-weight:600">56%</td>
+<td style="color:#16a34a;font-weight:600">68%</td>
+</tr>
+<tr><td>新傾向 +3問</td>
+<td style="color:#dc2626;font-weight:600">44%</td>
+<td style="color:#dc2626;font-weight:600">51%</td>
+<td style="color:#16a34a;font-weight:600">62%</td>
+</tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280">新傾向問題は学習範囲外から出題されるため、いずれのプランでもカバーできない。Plan Aは新傾向1問でも危険域に入る可能性がある。</p>
+</details>
+<h3>学習時間 vs 期待点数（収穫逓減カーブ）</h3>
+<svg viewBox="0 0 600 300" style="width:100%;max-width:600px;margin:16px 0">
+  <line x1="60" y1="20" x2="60" y2="260" stroke="#d1d5db"/>
+  <line x1="60" y1="260" x2="580" y2="260" stroke="#d1d5db"/>
+  <text x="300" y="290" font-size="11" fill="#6b7280" text-anchor="middle">累積学習時間 (h)</text>
+  <text x="15" y="150" font-size="11" fill="#6b7280" transform="rotate(-90,15,150)">期待点数</text>
+  <line x1="60" y1="122" x2="580" y2="122" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="582" y="118" font-size="9" fill="#ef4444" text-anchor="end">60%合格ライン</text>
+  <polyline points="82.7,252.0 95.5,243.9 108.2,235.9 118.8,229.4 129.4,223.0 140.0,216.6 150.6,210.1 161.2,203.7 171.8,197.3 182.4,190.8 190.9,186.0 199.4,181.2 207.9,176.4 216.4,171.5 224.8,166.7 231.2,163.5 237.6,160.3 243.9,157.1 250.3,153.8 256.7,150.6 263.0,147.4 269.4,144.2 275.8,141.0 282.1,137.8 288.5,134.5 294.8,131.3 301.2,128.1 307.6,124.9 311.8,123.3 316.1,121.7 320.3,120.1 324.5,118.5 328.8,116.9 333.0,115.2 337.3,113.6 341.5,112.0 345.8,110.4 350.0,108.8 354.2,107.2 358.5,105.6 362.7,104.0 367.0,102.4 371.2,100.8 375.5,99.2 379.7,97.6 383.9,95.9 388.2,94.3 392.4,92.7 396.7,91.1 400.9,89.5 405.2,87.9 409.4,86.3 413.6,84.7 417.9,83.1 422.1,81.5 426.4,79.9 430.6,78.3 434.8,76.6 439.1,75.0 443.3,73.4 447.6,71.8 451.8,70.2 456.1,68.6 460.3,67.0 464.5,65.4 468.8,63.8 475.2,62.2 479.4,60.6 483.6,59.0 487.9,57.3 492.1,55.7 496.4,54.1 500.6,52.5 504.8,50.9 509.1,49.3 513.3,47.7 517.6,46.1 521.8,44.5 526.1,42.9 530.3,41.3 534.5,39.7 538.8,38.0 543.0,36.4 547.3,34.8 551.5,33.2 555.8,31.6 560.0,30.0" fill="none" stroke="#be185d" stroke-width="2"/>
+  <text x="564.0" y="30.0" font-size="9" fill="#be185d">関連分野</text>
+</svg>
+<h3>リスク分析</h3>
+<div class="warn">Plan A（最小60%）で不合格になる確率は約40%です。新傾向問題が多い年や、出題が偏る年には60%に届かないリスクがあります。安全に合格するには<strong>Plan B以上</strong>を推奨します。</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="score-simulation.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="score-simulation__施工管理法.html">施工管理法 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 ｜ R7〜H20 ｜ Generated by Claude Code</footer>
+</body></html>

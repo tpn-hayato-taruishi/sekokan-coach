@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年度別総合分析（全年度×全科目 完全展開） - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">年度別総合分析（全年度×全科目 完全展開）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cross-correlation.html">← 科目間相関分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="topic-pair-comparison.html">テーマペア比較分析（同科目内 全ペア展開） →</a></span></nav>
+<section id="yearly-comprehensive">
+  <h2>年度別総合分析（全年度×全科目 完全展開）</h2>
+<p>各年度の出題テーマを科目ごとに完全展開し、年度ごとの特徴・難化傾向・科目間の連動パターンを分析します。</p>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R7後期 総合分析</summary>
+<div style="padding:12px 16px">
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R7後期 総括: 全0問・0テーマ</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R7 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R6</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 級電気工事施工</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R7 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R7前期 総合分析</summary>
+<div style="padding:12px 16px">
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R7前期 総括: 全0問・0テーマ</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R6後期 総合分析</summary>
+<div style="padding:12px 16px">
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R6後期 総括: 全0問・0テーマ</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R6前期 総合分析</summary>
+<div style="padding:12px 16px">
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R6前期 総括: 全0問・0テーマ</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R6 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R5後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R7
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R6 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R5後期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R5前期</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R6
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R5後期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R5前期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R4後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R5後期
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R5前期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R5 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（6問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">6</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R4後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R5後期
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R5 総括: 全6問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 6問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R4後期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R4前期</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R5
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R4後期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R4前期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R3後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R4後期
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R4前期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R4 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（6問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">6</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R3後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R4後期
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R4 総括: 全6問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 6問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R3後期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R3</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R4
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R3後期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R3 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（6問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">6</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R2</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R3後期
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R3 総括: 全6問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 6問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R3前期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R2</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R3後期
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 亜本日, 唖電気工事</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R3前期 総括: 全1問・1テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R2 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（8問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">4</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R1後期</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R3前期
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">R1</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+</td></tr>
+<tr><td class="fws">亜本日</td><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td class="tac">2</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 亜本日, 唖電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 亜本日</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（2問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">2</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">5年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(5回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 復活警戒: 5回ぶり出題
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">2</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">R1</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖下記</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">2</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">R1</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気事業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 亜点検作業用</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R2 総括: 全14問・6テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 8問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 2問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R1後期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">R1</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R2
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 唖電気工事, 電気工事</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">亜点検作業用</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 亜点検作業用</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 労働安全衛生法, 電気事業法</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 亜点検作業用</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R1後期 総括: 全2問・2テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R1 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（9問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">6</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H30後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R1後期
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">4年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(4回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 復活警戒: 4回ぶり出題
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: R2
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">2</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: R2
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖下記, 工程表</p>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">2</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 電気工事</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 亜日本工業規格</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">2</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: R2
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">3年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 労働安全衛生法, 電気事業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R1 総括: 全18問・9テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 9問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 3問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 3問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 3問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">R1前期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H30後期</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R1後期
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">亜日本工業規格</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 亜日本工業規格</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 亜日本工業規格</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">R1前期 総括: 全2問・2テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H30後期 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H30</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: R1前期
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 唖電気工事</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">配電盤茜制御盤</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 配電盤茜制御盤</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 配電盤茜制御盤</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H30後期 総括: 全2問・2テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H30 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">6</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H30後期
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: R1
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（2問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">2</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: R2
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">2</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: R1
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: R1
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">2</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: R1
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: R1
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 自動火災報知設</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（3問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">2</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: R1
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H29</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: R1
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気事業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 建設業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H30 総括: 全18問・9テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 2問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 3問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 3問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 3問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H29 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H30
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: R1
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H30
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H30
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H30
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（3問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H30
+</td></tr>
+<tr><td class="fws">自動火災報知設</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H30
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 自動火災報知設</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 自動火災報知設</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H28</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H30
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 建設業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気事業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H29 総括: 全14問・10テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 3問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H28 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H29
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H29
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H30
+</td></tr>
+<tr><td class="fws">配線用図記号</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 配線用図記号, 電気工事</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 亜日本電機工業</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 配線用図記号</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H29
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H29
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H29
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 唖電気工事</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: H30
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H27</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H29
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気事業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 建設業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H28 総括: 全14問・9テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H27 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H28
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H29
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H28
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 受騎地変更者</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">亜日本電機工業</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 亜日本電機工業</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 亜日本電機工業</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H28
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H28
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 工程表</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 所要日数</p>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">3年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H29
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H28
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 電気工事</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">3年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#7c3aed" title="復活出題">◆復活(3回ぶり)</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+ | 次回出題: H29
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H26</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H28
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 建設業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気事業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H27 総括: 全14問・10テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H26 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（5問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">3</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H27
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H27
+</td></tr>
+<tr><td class="fws">受騎地変更者</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 受騎地変更者</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 受騎地変更者</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（3問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">3</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H28
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H27
+</td></tr>
+<tr><td class="fws">所要日数</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 所要日数</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 工程表</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 所要日数</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: H28
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H25</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H27
+</td></tr>
+</table>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H26 総括: 全12問・8テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 5問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 3問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H25 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（8問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H26
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H26
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H27
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H26
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H27
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">阿混合茜分波器</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H27
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 阿混合茜分波器</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 唖電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 阿混合茜分波器</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: H26
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H24</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H26
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気事業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 建設業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H25 総括: 全14問・9テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 8問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H24 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（6問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H25
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H25
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H22</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H26
+</td></tr>
+<tr><td class="fws">日本電機工業会</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 日本電機工業会, 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 日本電機工業会</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H25
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H25
+</td></tr>
+</table>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H27
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H25
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 構内電気設備</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H22</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+ | 次回出題: H27
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H23</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H25
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 建設業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気事業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H24 総括: 全14問・10テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 6問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H23 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H22</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H24
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H25
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H22</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H22</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H24
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 工程表</p>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（3問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H24
+</td></tr>
+<tr><td class="fws">構内電気設備</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 構内電気設備, 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 構内電気設備</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気事業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 建設業法
+ | 次回出題: H25
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">2年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 労働安全衛生法, 電気事業法</p>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 建設業法</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 電気事業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H23 総括: 全14問・10テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 3問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H22 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（6問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H23
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H23
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 電気工事</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">H20</td><td class="tac">2年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H23
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 工程表</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H21</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+ | 次回出題: H24
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#dc2626;margin:4px 0">前年から消滅: 労働安全衛生法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H22 総括: 全9問・5テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 6問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 1問（1テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H21 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（7問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">H20</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H22
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">7</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H23
+</td></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td class="tac">15</td><td class="tac">39%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H22
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 唖電気工事, 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 電気工事, 唖電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">H20</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H22
+</td></tr>
+<tr><td class="fws">工程表</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H23
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 工程表</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 工程表</p>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（3問・3テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">H20</td><td class="tac">1年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H23
+</td></tr>
+<tr><td class="fws">日本工業規格</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">1</td><td class="tac">3%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 低頻度: 余裕時のみ
+</td></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">9</td><td class="tac">29%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H23
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 日本工業規格, 電気工事</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 日本工業規格, 電気工事</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（2問・2テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">H20</td><td class="tac">1年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#16a34a" title="連続出題">▲連続</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+ | 次回出題: H22
+</td></tr>
+<tr><td class="fws">労働安全衛生法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">10</td><td class="tac">32%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td><span style="color:#6b7280">—</span></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H23
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#16a34a;margin:4px 0">新規出題: 労働安全衛生法</p>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 労働安全衛生法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H21 総括: 全14問・10テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 7問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 2問（2テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 3問（3テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 2問（2テーマ）</p>
+</div>
+</div></details>
+<details style="margin:8px 0;border:1px solid #e2e8f0;border-radius:10px"><summary style="cursor:pointer;padding:12px 16px;font-weight:800;font-size:1.1em;background:#f8fafc;border-radius:10px">H20 総合分析</summary>
+<div style="padding:12px 16px">
+<h4 style="color:#1e40af;margin:10px 0 6px;border-bottom:2px solid #1e40af44;padding-bottom:4px">施工管理法（3問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">級電気工事施工</td><td style="text-align:center;font-weight:700;color:#1e40af">3</td><td class="tac">91</td><td class="tac">87%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 超頻出: 必ず得点源にする
+ | 次回出題: H21
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 級電気工事施工</p>
+<h4 style="color:#b45309;margin:10px 0 6px;border-bottom:2px solid #b4530944;padding-bottom:4px">電気理論（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">電気工事</td><td style="text-align:center;font-weight:700;color:#b45309">1</td><td class="tac">11</td><td class="tac">23%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H22
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 電気工事</p>
+<h4 style="color:#7e22ce;margin:10px 0 6px;border-bottom:2px solid #7e22ce44;padding-bottom:4px">施工（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖下記</td><td style="text-align:center;font-weight:700;color:#7e22ce">1</td><td class="tac">16</td><td class="tac">42%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 頻出: 確実に演習する
+ | 次回出題: H21
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 唖下記</p>
+<h4 style="color:#0369a1;margin:10px 0 6px;border-bottom:2px solid #0369a144;padding-bottom:4px">電気設備（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">唖電気工事</td><td style="text-align:center;font-weight:700;color:#0369a1">1</td><td class="tac">10</td><td class="tac">26%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 次回出題: H21
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 唖電気工事</p>
+<h4 style="color:#d97706;margin:10px 0 6px;border-bottom:2px solid #d9770644;padding-bottom:4px">法規（1問・1テーマ）</h4>
+<table style="font-size:0.85em;margin:4px 0"><tr><th>テーマ</th><th>出題数</th><th>累計</th><th>出題率</th><th>前回</th><th>空白</th><th>分類</th><th>傾向</th></tr>
+<tr><td class="fws">建設業法</td><td style="text-align:center;font-weight:700;color:#d97706">1</td><td class="tac">6</td><td class="tac">19%</td><td style="text-align:center;font-size:0.85em">-</td><td class="tac">0年</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td></td></tr>
+<tr><td colspan="8" style="font-size:0.82em;color:#475569;padding:2px 12px;border-top:none">💡 標準: 基本パターンを押さえる
+ | 交替傾向: 電気事業法
+ | 次回出題: H21
+</td></tr>
+</table>
+<p style="font-size:0.88em;color:#7c3aed;margin:4px 0">初出テーマ: 建設業法</p>
+<div style="background:#f1f5f9;border-radius:8px;padding:10px 14px;margin:10px 0">
+<p style="font-weight:700;margin:2px 0">H20 総括: 全7問・5テーマ</p>
+<p style="font-size:0.88em;margin:1px 0">　施工管理法: 3問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気理論: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　施工: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　電気設備: 1問（1テーマ）</p>
+<p style="font-size:0.88em;margin:1px 0">　法規: 1問（1テーマ）</p>
+</div>
+</div></details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cross-correlation.html">← 科目間相関分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="topic-pair-comparison.html">テーマペア比較分析（同科目内 全ペア展開） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

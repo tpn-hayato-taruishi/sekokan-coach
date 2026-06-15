@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.gitignore
+.env*
+*.md
+.bedrock-cost.json
+terraform/
+SESSION_LOG.md
+AGENTS.md
+CLAUDE.md
+dev.log
+# pptx-assets/ は意図的に含める (deploy.sh prebuild が生成 → Dockerfile が COPY)

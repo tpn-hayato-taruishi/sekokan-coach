@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学習深度マップ - 電気設備 - 施工管理2級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">学習深度マップ ／ <strong>電気設備</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="depth-map.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="depth-map__法規.html">法規 →</a></span></nav>
+<section id="depth-map">
+  <h2>学習深度マップ</h2>
+<p>各テーマに5段階の学習深度を割り当て、<strong>どれだけ深く学ぶ必要があるか</strong>を可視化します。深度が低いテーマは暗記だけで済み、高いテーマは原理理解が必要です。</p>
+<div class="note">深度レベル: <span style="display:inline-block;background:#9ca3af;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv1 見出し暗記</span> 見出し暗記 / <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 1行暗記 / <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> パターン処理 / <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 公式適用 / <span style="display:inline-block;background:#7c3aed;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv5 原理導出</span> 原理導出</div>
+<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:16px 20px;margin:12px 0">
+<p style="font-weight:800;margin:0 0 10px;font-size:1.05em">深度レベル定義</p>
+<p style="margin:6px 0"><span style="display:inline-block;background:#9ca3af;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv1 見出し暗記</span> <strong>Lv1 見出し暗記</strong>: テーマの名称と「何のことか」を一言で言えるレベル。詳細な数値や公式は不要。試験では「次のうち正しいものはどれか」の消去法で対処できる。<br>例: 「フェランチ効果＝軽負荷時に受電端電圧が送電端より上がる現象」と答えられる程度。<br><em>学習法</em>: 用語集を音読 → フラッシュカード高速回転 → 1テーマ30秒以内に一言説明できれば完了。</p>
+<p style="margin:6px 0"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <strong>Lv2 1行暗記</strong>: 見出しに加えて、定義・条件・代表的な数値を1行（1文）で正確に言えるレベル。選択肢の正誤判定が確実にできる。法規の条文穴埋めはここに該当。<br>例: 「B種接地抵抗＝変圧器の高圧側電路の1線地絡電流Igで150/Ig[Ω]以下」と即答できる。<br><em>学習法</em>: 暗記カードに「問い→1行解答」を書き、2日おき復習。似た数値は比較表を作成して混同防止。</p>
+<p style="margin:6px 0"><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>Lv3 パターン処理</strong>: 典型的な問題を「3ステップ以内の手順」で処理できるレベル。解法パターンを暗記し、問題を見た瞬間に適用手順が浮かぶ状態。応用は効かないが、典型問題なら確実に正答できる。<br>例: 「%Z計算 → Step1: 各機器の%Zを基準容量に換算 → Step2: 合成%Zを直並列で計算 → Step3: 短絡電流=基準電流/(%Z/100)」<br><em>学習法</em>: 過去問から典型パターンを3ステップに整理 → 手順カードを作成 → 初見問題でパターン認識が自動化されるまで反復。</p>
+<p style="margin:6px 0"><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>Lv4 公式適用</strong>: 問題文から必要な公式を選択し、正しく立式・計算できるレベル。複数の公式を組み合わせる問題や、条件分岐（直列/並列、Y/Δ等）を伴う計算にも対応可能。公式の適用条件と各変数の意味を理解している。<br>例: 「同期機の出力P=EV/Xs·sinδ から、負荷角δ・端子電圧V・内部誘起電圧E・同期リアクタンスXsの関係を使って有効電力と無効電力を求め、安定限界を判定できる」<br><em>学習法</em>: 公式を3つ以内に絞り込み → 適用条件の判定チャートを作成 → 時間計測しながら過去問演習 → 計算ミス防止のため単位を必ず記入。</p>
+<p style="margin:6px 0"><span style="display:inline-block;background:#7c3aed;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv5 原理導出</span> <strong>Lv5 原理導出</strong>: 公式そのものを原理から導出でき、なぜその式が成り立つかを白紙から説明できるレベル。初見の応用問題や変形問題にも、原理に戻って立式し直すことで対応できる。物理的意味の理解が深いため、数値の妥当性チェックも可能。<br>例: 「マクスウェル方程式から電磁波の波動方程式を導出し、境界条件を課して反射・透過係数を求める」「等価回路をキルヒホッフの法則で立式し、テブナンの定理で合成して任意の負荷条件での応答を求める」<br><em>学習法</em>: 教科書の導出過程を手書きで再現 → 各ステップの物理的意味を言語化 → 類題で変数を変えても対応可能か確認 → 模擬試験で初見問題に挑戦。</p>
+</div>
+<h3>科目別 深度分布</h3>
+<svg viewBox="0 0 700 120" style="width:100%;max-width:700px;margin:12px 0">
+  <text x="0" y="48" font-size="12" fill="#374151">電気設備</text>
+  <rect x="80.0" y="30" width="560.0" height="28" fill="#CC3333" rx="3"/>
+  <text x="360.0" y="48" font-size="10" fill="#fff" text-anchor="middle">Lv2: 24</text>
+  <rect x="80" y="104" width="12" height="12" fill="#9ca3af" rx="2"/>
+  <text x="96" y="114" font-size="10" fill="#555">Lv1 見出し暗記</text>
+  <rect x="190" y="104" width="12" height="12" fill="#CC3333" rx="2"/>
+  <text x="206" y="114" font-size="10" fill="#555">Lv2 1行暗記</text>
+  <rect x="300" y="104" width="12" height="12" fill="#E67E00" rx="2"/>
+  <text x="316" y="114" font-size="10" fill="#555">Lv3 パターン処理</text>
+  <rect x="410" y="104" width="12" height="12" fill="#005BA8" rx="2"/>
+  <text x="426" y="114" font-size="10" fill="#555">Lv4 公式適用</text>
+  <rect x="520" y="104" width="12" height="12" fill="#7c3aed" rx="2"/>
+  <text x="536" y="114" font-size="10" fill="#555">Lv5 原理導出</text>
+</svg>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.1em">電気設備（7テーマ・推定14h30m・出題24問）</summary>
+<table><tr><th>テーマ</th><th>出題数</th><th>深度</th><th>頻度バー</th><th>必要時間</th><th>学習方法</th></tr>
+<tr><td>唖電気工事</td><td>10</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:83%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">41.7%</span></div></td><td>4h30m</td><td>数値・定義を暗記</td></tr>
+<tr><td>電気工事</td><td>9</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:75%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">37.5%</span></div></td><td>5h</td><td>数値・定義を暗記</td></tr>
+<tr><td>日本工業規格</td><td>1</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">4.2%</span></div></td><td>1h</td><td>数値・定義を暗記</td></tr>
+<tr><td>構内電気設備</td><td>1</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">4.2%</span></div></td><td>1h</td><td>数値・定義を暗記</td></tr>
+<tr><td>阿混合茜分波器</td><td>1</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">4.2%</span></div></td><td>1h</td><td>数値・定義を暗記</td></tr>
+<tr><td>自動火災報知設</td><td>1</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">4.2%</span></div></td><td>1h</td><td>数値・定義を暗記</td></tr>
+<tr><td>亜日本工業規格</td><td>1</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:80px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:8%;height:100%;background:#0369a1;border-radius:4px"></div></div><span style="font-size:0.78em">4.2%</span></div></td><td>1h</td><td>数値・定義を暗記</td></tr>
+</table>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 唖電気工事（出題10回・4h30m）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H20</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H21</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H23</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H24</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H27</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H29</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H30(2)</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">R1(2)</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#CC3333" opacity="0.80" rx="2"/>
+  <text x="189" y="12" font-size="8" fill="#fff" text-anchor="middle">2</text>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#CC3333" opacity="0.80" rx="2"/>
+  <text x="243" y="12" font-size="8" fill="#fff" text-anchor="middle">2</text>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「唖電気工事」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去10回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>4h</td><td>0分</td><td>30分</td><td><strong>4h30m</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>唖電気工事の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率41.7% / 学習時間4.5h / 効率9.26（1hあたり期待9.3%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 電気工事（出題9回・5h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H21</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H23</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H24</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H25</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H27</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H28</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H29</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H30</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">R1</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「電気工事」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去9回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>4h30m</td><td>0分</td><td>30分</td><td><strong>5h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>電気工事の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率37.5% / 学習時間5.0h / 効率7.50（1hあたり期待7.5%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 日本工業規格（出題1回・1h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H21</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「日本工業規格」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去1回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>30分</td><td>0分</td><td>30分</td><td><strong>1h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>日本工業規格の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率4.2% / 学習時間1.0h / 効率4.17（1hあたり期待4.2%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 構内電気設備（出題1回・1h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H23</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「構内電気設備」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去1回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>30分</td><td>0分</td><td>30分</td><td><strong>1h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>構内電気設備の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率4.2% / 学習時間1.0h / 効率4.17（1hあたり期待4.2%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 阿混合茜分波器（出題1回・1h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H25</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「阿混合茜分波器」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去1回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>30分</td><td>0分</td><td>30分</td><td><strong>1h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>阿混合茜分波器の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率4.2% / 学習時間1.0h / 効率4.17（1hあたり期待4.2%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 自動火災報知設（出題1回・1h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">H29</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「自動火災報知設」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去1回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>30分</td><td>0分</td><td>30分</td><td><strong>1h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>自動火災報知設の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率4.2% / 学習時間1.0h / 効率4.17（1hあたり期待4.2%カバー）</p>
+</div></details>
+<details><summary style="cursor:pointer;padding:6px 0;color:#0369a1"><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 亜日本工業規格（出題1回・1h）</summary>
+<div style="padding:8px 16px;background:#f8fafc;border-left:3px solid #0369a1;margin:4px 0 12px">
+<p style="margin:4px 0"><strong>出題年度:</strong> 
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:1px 6px;border-radius:3px;font-size:0.78em;margin:1px">R1前期</span>
+</p>
+<svg viewBox="0 0 568 30" style="width:100%;max-width:568px;margin:4px 0">
+  <rect x="2" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="9" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H20</text>
+  <rect x="20" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="38" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="56" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="74" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="92" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="99" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H25</text>
+  <rect x="110" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="128" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="146" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="164" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="182" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="189" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">H30</text>
+  <rect x="200" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="218" y="2" width="14" height="14" fill="#CC3333" opacity="0.55" rx="2"/>
+  <rect x="236" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="254" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="272" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="279" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R2</text>
+  <rect x="290" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="308" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="326" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="344" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="362" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="369" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <rect x="380" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="398" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="416" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="434" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="452" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="459" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R6</text>
+  <rect x="470" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="488" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="506" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="524" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <rect x="542" y="2" width="14" height="14" fill="#f3f4f6" stroke="#e5e7eb" rx="2"/>
+  <text x="549" y="27" font-size="7" fill="#9ca3af" text-anchor="middle">R7後期</text>
+</svg>
+<p style="margin:6px 0"><strong>具体的な学習手順:</strong></p>
+<ol style="margin:4px 0;padding-left:20px">
+<li style="margin:2px 0;font-size:0.92em">「亜日本工業規格」の重要数値・定義を暗記カードにまとめる。</li>
+<li style="margin:2px 0;font-size:0.92em">過去1回の出題から頻出の数値・条件を抽出し、繰り返し暗記する。</li>
+<li style="margin:2px 0;font-size:0.92em">語呂合わせや図表を活用して記憶定着を図る。</li>
+<li style="margin:2px 0;font-size:0.92em">暗記確認テストを2日おきに実施し、忘却曲線に対抗する。</li>
+</ol>
+<p style="margin:6px 0"><strong>時間配分:</strong></p>
+<table style="width:auto;font-size:0.9em"><tr><th>過去問演習</th><th>理論学習</th><th>暗記</th><th>合計</th></tr>
+<tr><td>30分</td><td>0分</td><td>30分</td><td><strong>1h</strong></td></tr>
+</table>
+<p style="margin:6px 0"><strong>よくある失敗パターン:</strong></p>
+<ul style="font-size:0.88em;margin:2px 0;padding-left:18px;color:#dc2626">
+<li>似た数値の混同</li>
+<li>改正前の古いデータを覚えている</li>
+<li>選択肢の微妙な言い回しの違いを見逃す</li>
+<li>暗記の定着が不十分で本番で思い出せない</li>
+</ul>
+<p style="margin:6px 0"><strong>週別マイクロ計画（1週間）:</strong></p>
+<table style="font-size:0.88em;width:auto"><tr><th>週</th><th>内容</th><th>目標</th></tr>
+<tr><td>Week 1</td><td>暗記カード作成+初回高速回転</td><td>亜日本工業規格の主要知識を暗記</td></tr>
+<tr><td>Week 2</td><td>復習テスト+弱点補強</td><td>正答率90%以上を達成</td></tr>
+</table>
+<p style="margin:6px 0;font-size:0.88em"><strong>ROI:</strong> 出題確率4.2% / 学習時間1.0h / 効率4.17（1hあたり期待4.2%カバー）</p>
+</div></details>
+<h4 style="color:#0369a1;margin-top:16px">この深さまでやれば十分</h4>
+<p>各深度レベルで求められる理解度の具体例:</p>
+<div style="border-left:4px solid #CC3333;padding:6px 12px;margin:6px 0;background:#fafafa">
+<strong>Lv2 1行暗記</strong>（7テーマ）
+<p class="fz9">「唖電気工事」のようなテーマ → 数値や定義を正確に暗記。例: 具体的な数値、条件、名称をフラッシュカードで暗記。穴埋め問題に即答できるレベル。</p>
+<p style="font-size:0.85em;color:#6b7280">該当テーマ: 唖電気工事, 電気工事, 日本工業規格, 構内電気設備, 阿混合茜分波器, 自動火災報知設, 亜日本工業規格</p>
+</div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map__施工.html">← 施工</a></span><span style="text-align:center;flex:1"><a href="depth-map.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="depth-map__法規.html">法規 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理2級 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

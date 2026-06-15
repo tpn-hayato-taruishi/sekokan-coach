@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>過去問カバー率分析（新問を捨てた場合の得点） - 施工管理1級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">過去問カバー率分析（新問を捨てた場合の得点）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="recommended-videos.html">← おすすめ学習動画（施工管理1級）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="pass-strategy.html">合格戦略（70%得点プラン） →</a></span></nav>
+<section id="coverage-rate">
+  <h2>過去問カバー率分析（新問を捨てた場合の得点）</h2>
+<p>過去問を勉強した場合、本番で何点取れるか？<strong>「既出テーマ」の判定粒度</strong>を3段階で分析し、最適な学習戦略を導きます。</p>
+<div class="note">「大分類の理解」が最もコスパが高く、「丸暗記」は最もコスパが低い — データが証明しています。</div>
+<h3 class="deep-sub">3段階の「過去問からの出題率」</h3>
+<p>過去問を勉強した場合に何点取れるか？判定の粒度によって結果が大きく変わります。</p>
+<table class="fz9">
+<tr><th>科目</th><th>大分類で判定<br><span style="font-weight:400;font-size:0.8em">例:「電磁気」を学習</span></th><th>正規化サブトピックで判定<br><span style="font-weight:400;font-size:0.8em">例:「過渡現象」を学習</span></th><th>完全一致で判定<br><span style="font-weight:400;font-size:0.8em">例:「直列過渡」のみ学習</span></th></tr>
+<tr><td style="font-weight:700;color:#1e40af">施工管理法</td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">100%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格6/10年</span></td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">91%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格6/10年</span></td><td class="tac"><span style="color:#dc2626;font-weight:700;font-size:1.2em">77%</span><br><span style="font-size:0.8em;color:#6b7280">△ 合格5/10年</span></td></tr>
+<tr><td style="font-weight:700;color:#b45309">電気理論</td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">100%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#dc2626;font-weight:700;font-size:1.2em">60%</span><br><span style="font-size:0.8em;color:#6b7280">△ 合格0/10年</span></td><td class="tac"><span style="color:#6b7280;font-weight:700;font-size:1.2em">0%</span><br><span style="font-size:0.8em;color:#6b7280">× 合格0/10年</span></td></tr>
+<tr><td style="font-weight:700;color:#7e22ce">施工</td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">100%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">91%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#dc2626;font-weight:700;font-size:1.2em">70%</span><br><span style="font-size:0.8em;color:#6b7280">△ 合格0/10年</span></td></tr>
+<tr><td style="font-weight:700;color:#0369a1">電気設備</td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">100%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#dc2626;font-weight:700;font-size:1.2em">71%</span><br><span style="font-size:0.8em;color:#6b7280">△ 合格0/10年</span></td><td class="tac"><span style="color:#6b7280;font-weight:700;font-size:1.2em">39%</span><br><span style="font-size:0.8em;color:#6b7280">× 合格0/10年</span></td></tr>
+<tr><td style="font-weight:700;color:#d97706">法規</td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">100%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#16a34a;font-weight:700;font-size:1.2em">87%</span><br><span style="font-size:0.8em;color:#6b7280">◎ 合格0/10年</span></td><td class="tac"><span style="color:#6b7280;font-weight:700;font-size:1.2em">43%</span><br><span style="font-size:0.8em;color:#6b7280">× 合格0/10年</span></td></tr>
+</table>
+<div class="warn"><strong>結論: 「過去問の大分類を理解」すればほぼ合格圏内。</strong>ただし丸暗記（完全一致レベル）では不足。各大分類の<strong>原理・公式を理解</strong>した上で応用できることが必須。</div>
+<h3 class="deep-sub">年度別「新問を捨てた場合の得点」推移</h3>
+<p>大分類レベルで判定。<strong>過去に同じ大分類のテーマが出ていれば既出とカウント</strong>。赤の点線＝合格ライン(60%)。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（不合格年: 1/26年）</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 700 145" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="63.0" x2="700" y2="63.0" stroke="#dc2626" stroke-width="1" stroke-dasharray="4"/>
+<text x="2" y="60.0" font-size="8" fill="#dc2626" font-weight="700">60%合格</text>
+<line x1="0" y1="135" x2="700" y2="135" stroke="#e5e7eb" stroke-width="1"/>
+<path d="M10.0,135 10.0,95.0 L37.2,15.0 L64.4,15.0 L91.6,15.0 L118.8,15.0 L146.0,55.0 L173.2,15.0 L200.4,15.0 L227.6,15.0 L254.8,15.0 L282.0,15.0 L309.2,15.0 L336.4,15.0 L363.6,15.0 L390.8,55.0 L418.0,15.0 L445.2,15.0 L472.4,15.0 L499.6,15.0 L526.8,15.0 L554.0,15.0 L581.2,15.0 L608.4,15.0 L635.6,15.0 L662.8,15.0 L690.0,15.0 L690.0,135 Z" fill="#1e40af" opacity="0.1"/>
+<path d="M10.0,95.0 L37.2,15.0 L64.4,15.0 L91.6,15.0 L118.8,15.0 L146.0,55.0 L173.2,15.0 L200.4,15.0 L227.6,15.0 L254.8,15.0 L282.0,15.0 L309.2,15.0 L336.4,15.0 L363.6,15.0 L390.8,55.0 L418.0,15.0 L445.2,15.0 L472.4,15.0 L499.6,15.0 L526.8,15.0 L554.0,15.0 L581.2,15.0 L608.4,15.0 L635.6,15.0 L662.8,15.0 L690.0,15.0" fill="none" stroke="#1e40af" stroke-width="2"/>
+<circle cx="10.0" cy="95.0" r="3" fill="#1e40af"><title>H21: 33%</title></circle>
+<text x="10.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H21</text>
+<circle cx="37.2" cy="15.0" r="3" fill="#1e40af"><title>H22: 100%</title></circle>
+<circle cx="64.4" cy="15.0" r="3" fill="#1e40af"><title>H23: 100%</title></circle>
+<circle cx="91.6" cy="15.0" r="3" fill="#1e40af"><title>H24: 100%</title></circle>
+<circle cx="118.8" cy="15.0" r="3" fill="#1e40af"><title>H25: 100%</title></circle>
+<circle cx="146.0" cy="55.0" r="3" fill="#1e40af"><title>H26: 67%</title></circle>
+<text x="146.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H26</text>
+<circle cx="173.2" cy="15.0" r="3" fill="#1e40af"><title>H27: 100%</title></circle>
+<circle cx="200.4" cy="15.0" r="3" fill="#1e40af"><title>H28: 100%</title></circle>
+<circle cx="227.6" cy="15.0" r="3" fill="#1e40af"><title>H29: 100%</title></circle>
+<circle cx="254.8" cy="15.0" r="3" fill="#1e40af"><title>H30: 100%</title></circle>
+<circle cx="282.0" cy="15.0" r="3" fill="#1e40af"><title>H30後期: 100%</title></circle>
+<text x="282.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H30後期</text>
+<circle cx="309.2" cy="15.0" r="3" fill="#1e40af"><title>R1前期: 100%</title></circle>
+<circle cx="336.4" cy="15.0" r="3" fill="#1e40af"><title>R1: 100%</title></circle>
+<circle cx="363.6" cy="15.0" r="3" fill="#1e40af"><title>R1後期: 100%</title></circle>
+<circle cx="390.8" cy="55.0" r="3" fill="#1e40af"><title>R2: 67%</title></circle>
+<circle cx="418.0" cy="15.0" r="3" fill="#1e40af"><title>R3前期: 100%</title></circle>
+<text x="418.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R3前期</text>
+<circle cx="445.2" cy="15.0" r="3" fill="#1e40af"><title>R3: 100%</title></circle>
+<circle cx="472.4" cy="15.0" r="3" fill="#1e40af"><title>R3後期: 100%</title></circle>
+<circle cx="499.6" cy="15.0" r="3" fill="#1e40af"><title>R4: 100%</title></circle>
+<circle cx="526.8" cy="15.0" r="3" fill="#1e40af"><title>R4前期: 100%</title></circle>
+<circle cx="554.0" cy="15.0" r="3" fill="#1e40af"><title>R4後期: 100%</title></circle>
+<text x="554.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R4後期</text>
+<circle cx="581.2" cy="15.0" r="3" fill="#1e40af"><title>R5: 100%</title></circle>
+<circle cx="608.4" cy="15.0" r="3" fill="#1e40af"><title>R5前期: 100%</title></circle>
+<circle cx="635.6" cy="15.0" r="3" fill="#1e40af"><title>R5後期: 100%</title></circle>
+<circle cx="662.8" cy="15.0" r="3" fill="#1e40af"><title>R6: 100%</title></circle>
+<circle cx="690.0" cy="15.0" r="3" fill="#1e40af"><title>R7: 100%</title></circle>
+<text x="690.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論（不合格年: 4/8年）</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 700 145" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="63.0" x2="700" y2="63.0" stroke="#dc2626" stroke-width="1" stroke-dasharray="4"/>
+<text x="2" y="60.0" font-size="8" fill="#dc2626" font-weight="700">60%合格</text>
+<line x1="0" y1="135" x2="700" y2="135" stroke="#e5e7eb" stroke-width="1"/>
+<path d="M10.0,135 10.0,15.0 L107.1,75.0 L204.3,15.0 L301.4,135.0 L398.6,75.0 L495.7,15.0 L592.9,135.0 L690.0,15.0 L690.0,135 Z" fill="#b45309" opacity="0.1"/>
+<path d="M10.0,15.0 L107.1,75.0 L204.3,15.0 L301.4,135.0 L398.6,75.0 L495.7,15.0 L592.9,135.0 L690.0,15.0" fill="none" stroke="#b45309" stroke-width="2"/>
+<circle cx="10.0" cy="15.0" r="3" fill="#b45309"><title>H22: 100%</title></circle>
+<text x="10.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H22</text>
+<circle cx="107.1" cy="75.0" r="3" fill="#b45309"><title>H24: 50%</title></circle>
+<circle cx="204.3" cy="15.0" r="3" fill="#b45309"><title>H26: 100%</title></circle>
+<circle cx="301.4" cy="135.0" r="3" fill="#b45309"><title>H27: 0%</title></circle>
+<circle cx="398.6" cy="75.0" r="3" fill="#b45309"><title>H28: 50%</title></circle>
+<circle cx="495.7" cy="15.0" r="3" fill="#b45309"><title>H30: 100%</title></circle>
+<text x="495.7" y="134" text-anchor="middle" font-size="7" fill="#64748b">H30</text>
+<circle cx="592.9" cy="135.0" r="3" fill="#b45309"><title>H30後期: 0%</title></circle>
+<circle cx="690.0" cy="15.0" r="3" fill="#b45309"><title>R2: 100%</title></circle>
+<text x="690.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7e22ce;padding:8px 0;font-size:1.05em">施工（不合格年: 2/12年）</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 700 145" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="63.0" x2="700" y2="63.0" stroke="#dc2626" stroke-width="1" stroke-dasharray="4"/>
+<text x="2" y="60.0" font-size="8" fill="#dc2626" font-weight="700">60%合格</text>
+<line x1="0" y1="135" x2="700" y2="135" stroke="#e5e7eb" stroke-width="1"/>
+<path d="M10.0,135 10.0,75.0 L71.8,15.0 L133.6,15.0 L195.5,15.0 L257.3,15.0 L319.1,75.0 L380.9,15.0 L442.7,15.0 L504.5,15.0 L566.4,15.0 L628.2,15.0 L690.0,15.0 L690.0,135 Z" fill="#7e22ce" opacity="0.1"/>
+<path d="M10.0,75.0 L71.8,15.0 L133.6,15.0 L195.5,15.0 L257.3,15.0 L319.1,75.0 L380.9,15.0 L442.7,15.0 L504.5,15.0 L566.4,15.0 L628.2,15.0 L690.0,15.0" fill="none" stroke="#7e22ce" stroke-width="2"/>
+<circle cx="10.0" cy="75.0" r="3" fill="#7e22ce"><title>H21: 50%</title></circle>
+<text x="10.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H21</text>
+<circle cx="71.8" cy="15.0" r="3" fill="#7e22ce"><title>H22: 100%</title></circle>
+<circle cx="133.6" cy="15.0" r="3" fill="#7e22ce"><title>H23: 100%</title></circle>
+<circle cx="195.5" cy="15.0" r="3" fill="#7e22ce"><title>H24: 100%</title></circle>
+<circle cx="257.3" cy="15.0" r="3" fill="#7e22ce"><title>H25: 100%</title></circle>
+<circle cx="319.1" cy="75.0" r="3" fill="#7e22ce"><title>H26: 50%</title></circle>
+<text x="319.1" y="134" text-anchor="middle" font-size="7" fill="#64748b">H26</text>
+<circle cx="380.9" cy="15.0" r="3" fill="#7e22ce"><title>H27: 100%</title></circle>
+<circle cx="442.7" cy="15.0" r="3" fill="#7e22ce"><title>H28: 100%</title></circle>
+<circle cx="504.5" cy="15.0" r="3" fill="#7e22ce"><title>H29: 100%</title></circle>
+<circle cx="566.4" cy="15.0" r="3" fill="#7e22ce"><title>H30: 100%</title></circle>
+<circle cx="628.2" cy="15.0" r="3" fill="#7e22ce"><title>R1: 100%</title></circle>
+<text x="628.2" y="134" text-anchor="middle" font-size="7" fill="#64748b">R1</text>
+<circle cx="690.0" cy="15.0" r="3" fill="#7e22ce"><title>R2: 100%</title></circle>
+<text x="690.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">電気設備（不合格年: 3/10年）</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 700 145" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="63.0" x2="700" y2="63.0" stroke="#dc2626" stroke-width="1" stroke-dasharray="4"/>
+<text x="2" y="60.0" font-size="8" fill="#dc2626" font-weight="700">60%合格</text>
+<line x1="0" y1="135" x2="700" y2="135" stroke="#e5e7eb" stroke-width="1"/>
+<path d="M10.0,135 10.0,95.0 L85.6,55.0 L161.1,15.0 L236.7,75.0 L312.2,15.0 L387.8,15.0 L463.3,55.0 L538.9,15.0 L614.4,135.0 L690.0,15.0 L690.0,135 Z" fill="#0369a1" opacity="0.1"/>
+<path d="M10.0,95.0 L85.6,55.0 L161.1,15.0 L236.7,75.0 L312.2,15.0 L387.8,15.0 L463.3,55.0 L538.9,15.0 L614.4,135.0 L690.0,15.0" fill="none" stroke="#0369a1" stroke-width="2"/>
+<circle cx="10.0" cy="95.0" r="3" fill="#0369a1"><title>H21: 33%</title></circle>
+<text x="10.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H21</text>
+<circle cx="85.6" cy="55.0" r="3" fill="#0369a1"><title>H23: 67%</title></circle>
+<circle cx="161.1" cy="15.0" r="3" fill="#0369a1"><title>H24: 100%</title></circle>
+<circle cx="236.7" cy="75.0" r="3" fill="#0369a1"><title>H25: 50%</title></circle>
+<circle cx="312.2" cy="15.0" r="3" fill="#0369a1"><title>H27: 100%</title></circle>
+<circle cx="387.8" cy="15.0" r="3" fill="#0369a1"><title>H28: 100%</title></circle>
+<text x="387.8" y="134" text-anchor="middle" font-size="7" fill="#64748b">H28</text>
+<circle cx="463.3" cy="55.0" r="3" fill="#0369a1"><title>H29: 67%</title></circle>
+<circle cx="538.9" cy="15.0" r="3" fill="#0369a1"><title>H30: 100%</title></circle>
+<circle cx="614.4" cy="135.0" r="3" fill="#0369a1"><title>R1前期: 0%</title></circle>
+<circle cx="690.0" cy="15.0" r="3" fill="#0369a1"><title>R1: 100%</title></circle>
+<text x="690.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R1</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規（不合格年: 3/13年）</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 700 145" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="63.0" x2="700" y2="63.0" stroke="#dc2626" stroke-width="1" stroke-dasharray="4"/>
+<text x="2" y="60.0" font-size="8" fill="#dc2626" font-weight="700">60%合格</text>
+<line x1="0" y1="135" x2="700" y2="135" stroke="#e5e7eb" stroke-width="1"/>
+<path d="M10.0,135 10.0,75.0 L66.7,15.0 L123.3,75.0 L180.0,15.0 L236.7,15.0 L293.3,15.0 L350.0,15.0 L406.7,15.0 L463.3,15.0 L520.0,15.0 L576.7,15.0 L633.3,135.0 L690.0,15.0 L690.0,135 Z" fill="#d97706" opacity="0.1"/>
+<path d="M10.0,75.0 L66.7,15.0 L123.3,75.0 L180.0,15.0 L236.7,15.0 L293.3,15.0 L350.0,15.0 L406.7,15.0 L463.3,15.0 L520.0,15.0 L576.7,15.0 L633.3,135.0 L690.0,15.0" fill="none" stroke="#d97706" stroke-width="2"/>
+<circle cx="10.0" cy="75.0" r="3" fill="#d97706"><title>H21: 50%</title></circle>
+<text x="10.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">H21</text>
+<circle cx="66.7" cy="15.0" r="3" fill="#d97706"><title>H22: 100%</title></circle>
+<circle cx="123.3" cy="75.0" r="3" fill="#d97706"><title>H23: 50%</title></circle>
+<circle cx="180.0" cy="15.0" r="3" fill="#d97706"><title>H24: 100%</title></circle>
+<circle cx="236.7" cy="15.0" r="3" fill="#d97706"><title>H25: 100%</title></circle>
+<circle cx="293.3" cy="15.0" r="3" fill="#d97706"><title>H26: 100%</title></circle>
+<text x="293.3" y="134" text-anchor="middle" font-size="7" fill="#64748b">H26</text>
+<circle cx="350.0" cy="15.0" r="3" fill="#d97706"><title>H27: 100%</title></circle>
+<circle cx="406.7" cy="15.0" r="3" fill="#d97706"><title>H28: 100%</title></circle>
+<circle cx="463.3" cy="15.0" r="3" fill="#d97706"><title>H29: 100%</title></circle>
+<circle cx="520.0" cy="15.0" r="3" fill="#d97706"><title>H30: 100%</title></circle>
+<circle cx="576.7" cy="15.0" r="3" fill="#d97706"><title>R1: 100%</title></circle>
+<text x="576.7" y="134" text-anchor="middle" font-size="7" fill="#64748b">R1</text>
+<circle cx="633.3" cy="135.0" r="3" fill="#d97706"><title>R1後期: 0%</title></circle>
+<circle cx="690.0" cy="15.0" r="3" fill="#d97706"><title>R2: 100%</title></circle>
+<text x="690.0" y="134" text-anchor="middle" font-size="7" fill="#64748b">R2</text>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="recommended-videos.html">← おすすめ学習動画（施工管理1級）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="pass-strategy.html">合格戦略（70%得点プラン） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

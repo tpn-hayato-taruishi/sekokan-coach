@@ -1,0 +1,395 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0284c7;
+  --color-primary-light: #e0f2fe;
+  --color-primary-dark: #0369a1;
+  --color-accent: #f97316;
+  --color-bg: #f0f9ff;
+  --color-text: #0f172a;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark {
+  background: #030712;
+  color: #e5e7eb;
+}
+
+/* Typing dots animation */
+@keyframes typing-bounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+}
+
+.typing-dot:nth-child(1) { animation: typing-bounce 1.4s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation: typing-bounce 1.4s ease-in-out 0.2s infinite; }
+.typing-dot:nth-child(3) { animation: typing-bounce 1.4s ease-in-out 0.4s infinite; }
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Slow pulse for hero highlight */
+.animate-pulse-slow {
+  animation: pulseSlow 2s ease-in-out infinite;
+}
+@keyframes pulseSlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Count-up number animation */
+@keyframes countUpPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-count-up {
+  animation: countUpPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ========================================
+   プラッチくん アニメーション
+   ======================================== */
+
+/* --- ボディカラー --- */
+.platch-body {
+  fill: #2dd4bf;
+  stroke: #0d9488;
+  stroke-width: 1.5;
+}
+.platch-eye {
+  fill: #1e293b;
+}
+.platch-cheek {
+  fill: #fda4af;
+  opacity: 0.5;
+}
+.platch-hand {
+  fill: #5eead4;
+  stroke: #0d9488;
+  stroke-width: 1;
+}
+.platch-foot {
+  fill: #0d9488;
+}
+.platch-antenna-tip {
+  fill: #eab308;
+}
+
+/* --- idle: ゆらゆら浮遊 --- */
+@keyframes platch-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+.platch-idle .platch-svg {
+  animation: platch-float 2.5s ease-in-out infinite;
+}
+
+/* --- talking: ぴょこぴょこバウンス --- */
+@keyframes platch-bounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(-2deg); }
+  75% { transform: translateY(-3px) rotate(2deg); }
+}
+.platch-talking .platch-svg {
+  animation: platch-bounce 0.6s ease-in-out infinite;
+}
+
+/* --- thinking: ゆっくり揺れ --- */
+@keyframes platch-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+.platch-thinking .platch-svg {
+  animation: platch-sway 1.5s ease-in-out infinite;
+}
+
+/* --- happy: ジャンプ --- */
+@keyframes platch-jump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-10px) scale(1.05); }
+  50% { transform: translateY(-12px) scale(1.05); }
+  80% { transform: translateY(0) scale(0.97); }
+}
+.platch-happy .platch-svg {
+  animation: platch-jump 0.8s ease-in-out infinite;
+}
+
+/* --- worried: ぷるぷる震え --- */
+@keyframes platch-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+.platch-worried .platch-svg {
+  animation: platch-shake 0.5s ease-in-out infinite;
+}
+
+/* --- アンテナLED点滅 --- */
+@keyframes antenna-blink {
+  0%, 70%, 100% { fill: #eab308; }
+  80% { fill: #facc15; filter: drop-shadow(0 0 4px #eab308); }
+}
+.platch-antenna-tip {
+  animation: antenna-blink 2s ease-in-out infinite;
+}
+
+/* --- アンテナ揺れ（talking時） --- */
+@keyframes antenna-wiggle {
+  0%, 100% { transform: rotate(0deg); transform-origin: 40px 18px; }
+  25% { transform: rotate(-8deg); transform-origin: 40px 18px; }
+  75% { transform: rotate(8deg); transform-origin: 40px 18px; }
+}
+.platch-talking .platch-antenna {
+  animation: antenna-wiggle 0.4s ease-in-out infinite;
+}
+
+/* --- 手ふり（idle） --- */
+@keyframes wave-left {
+  0%, 100% { transform: rotate(0deg); transform-origin: 18px 46px; }
+  50% { transform: rotate(-12deg); transform-origin: 18px 46px; }
+}
+@keyframes wave-right {
+  0%, 100% { transform: rotate(0deg); transform-origin: 62px 46px; }
+  50% { transform: rotate(12deg); transform-origin: 62px 46px; }
+}
+.platch-idle .platch-hand-left {
+  animation: wave-left 3s ease-in-out infinite;
+}
+.platch-happy .platch-hand-left,
+.platch-happy .platch-hand-right {
+  animation: wave-left 0.4s ease-in-out infinite alternate;
+}
+
+/* --- ZETA電波パルス --- */
+@keyframes signal-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+.platch-signal path:nth-child(1) {
+  animation: signal-pulse 1.5s ease-in-out infinite;
+}
+.platch-signal path:nth-child(2) {
+  animation: signal-pulse 1.5s ease-in-out 0.3s infinite;
+}
+
+/* --- キラキラ --- */
+@keyframes sparkle-float {
+  0% { opacity: 0; transform: scale(0.5) translateY(0); }
+  50% { opacity: 1; transform: scale(1) translateY(-4px); }
+  100% { opacity: 0; transform: scale(0.5) translateY(-8px); }
+}
+.sparkle-1 { animation: sparkle-float 1s ease-in-out infinite; }
+.sparkle-2 { animation: sparkle-float 1s ease-in-out 0.3s infinite; }
+.sparkle-3 { animation: sparkle-float 1s ease-in-out 0.6s infinite; }
+
+/* --- thinking ドット --- */
+@keyframes think-pop {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+.think-dot { fill: #94a3b8; }
+.think-dot-1 { animation: think-pop 1.2s ease-in-out infinite; }
+.think-dot-2 { animation: think-pop 1.2s ease-in-out 0.2s infinite; }
+.think-dot-3 { animation: think-pop 1.2s ease-in-out 0.4s infinite; }
+
+/* --- コンテナ --- */
+.platch-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* --- クリック: ぴょこん --- */
+@keyframes platch-poke-bounce {
+  0% { transform: scale(1) translateY(0) rotate(0deg); }
+  20% { transform: scale(0.92, 1.08) translateY(2px) rotate(0deg); }
+  40% { transform: scale(1.1, 0.9) translateY(-15px) rotate(-8deg); }
+  60% { transform: scale(1.05, 0.95) translateY(-8px) rotate(5deg); }
+  80% { transform: scale(0.98, 1.02) translateY(-2px) rotate(-2deg); }
+  100% { transform: scale(1) translateY(0) rotate(0deg); }
+}
+.platch-poke .platch-svg {
+  animation: platch-poke-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+/* --- ダブルクリック: くるくる回転 --- */
+@keyframes platch-spin {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(180deg) scale(1.15); }
+  50% { transform: rotate(360deg) scale(1); }
+  75% { transform: rotate(540deg) scale(1.1); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+.platch-spin .platch-svg {
+  animation: platch-spin 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+}
+
+/* --- ハートエフェクト --- */
+@keyframes platch-heart-float {
+  0% { opacity: 1; transform: translate(0, 0) scale(0.5) rotate(0deg); }
+  30% { opacity: 1; transform: translate(var(--hx, 10px), -15px) scale(1.2) rotate(-15deg); }
+  100% { opacity: 0; transform: translate(var(--hx, 10px), -35px) scale(0.6) rotate(15deg); }
+}
+.platch-heart {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  font-size: 0.8em;
+  pointer-events: none;
+  z-index: 10;
+  animation: platch-heart-float 1.1s ease-out forwards;
+}
+.platch-heart:nth-child(odd) { --hx: -12px; }
+.platch-heart:nth-child(even) { --hx: 14px; }
+.platch-heart:nth-child(3n) { --hx: 2px; animation-duration: 0.9s; }
+
+/* --- 旗のはためき --- */
+@keyframes flag-wave {
+  0%, 100% { transform: skewX(0deg) scaleX(1); }
+  25% { transform: skewX(-3deg) scaleX(0.95); }
+  50% { transform: skewX(2deg) scaleX(1.02); }
+  75% { transform: skewX(-1deg) scaleX(0.98); }
+}
+.platch-flag {
+  animation: flag-wave 2s ease-in-out infinite;
+  transform-origin: 90px -2px;
+}
+
+/* ========================================
+   チャット内 Markdown スタイル
+   ======================================== */
+.chat-markdown p {
+  margin: 0.25em 0;
+  line-height: 1.7;
+}
+.chat-markdown ul,
+.chat-markdown ol {
+  margin: 0.25em 0;
+  padding-left: 1.25em;
+}
+.chat-markdown li {
+  margin-bottom: 0.15em;
+}
+.chat-markdown strong {
+  font-weight: 700;
+  color: #0d9488;
+}
+.chat-markdown.dark strong {
+  color: #5eead4;
+}
+.chat-markdown h1, .chat-markdown h2, .chat-markdown h3 {
+  font-weight: 700;
+  margin: 0.5em 0 0.25em;
+  line-height: 1.4;
+}
+.chat-markdown h1 { font-size: 1.1em; }
+.chat-markdown h2 { font-size: 1.05em; }
+.chat-markdown h3 { font-size: 1em; }
+.chat-markdown code {
+  background: #e2e8f0;
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+.chat-markdown.dark code {
+  background: #374151;
+}
+.chat-markdown pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75em 1em;
+  overflow-x: auto;
+  margin: 0.5em 0;
+  font-size: 0.85em;
+}
+.chat-markdown table {
+  border-collapse: collapse;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+  width: 100%;
+}
+.chat-markdown th, .chat-markdown td {
+  border: 1px solid #cbd5e1;
+  padding: 0.3em 0.6em;
+  text-align: left;
+}
+.chat-markdown th {
+  background: #f0fdfa;
+  font-weight: 700;
+  color: #134e4a;
+}
+.chat-markdown.dark th {
+  background: #374151;
+  color: #d1d5db;
+}
+.chat-markdown.dark td {
+  border-color: #4b5563;
+}
+.chat-markdown blockquote {
+  border-left: 3px solid #0d9488;
+  padding-left: 0.75em;
+  margin: 0.5em 0;
+  color: #64748b;
+}
+.chat-markdown.dark blockquote {
+  color: #9ca3af;
+  border-left-color: #5eead4;
+}
+.chat-markdown a {
+  color: #0d9488;
+  text-decoration: underline;
+}
+.chat-markdown.dark a {
+  color: #5eead4;
+}

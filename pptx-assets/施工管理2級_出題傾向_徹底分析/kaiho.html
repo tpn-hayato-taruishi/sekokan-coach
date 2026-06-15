@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>解法パターン分布（科目別） - 施工管理2級 出題傾向 徹底分析 H20〜R7後期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">解法パターン分布（科目別）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="gap-risk.html">← 出題空白リスク（全科目横断）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="strategy.html">科目別 得点戦略 →</a></span></nav>
+<section id="kaiho">
+  <h2>解法パターン分布（科目別）</h2>
+  <p>全5科目の過去問を学習パターンに分類しました。<strong>どの科目が理解中心か、どの科目が暗記中心か</strong>を把握すると、勉強の順番とノートの作り方が決めやすくなります。</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:18px 0 20px">
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px">
+<h4 style="margin:0;color:#1e3a5f">施工管理法</h4>
+<div class="tar"><div style="font-size:1.4em;font-weight:800;color:#1e3a5f">116</div><div style="font-size:0.78em;color:#64748b">分類済み</div></div></div>
+<div style="font-size:0.82em;color:#475569;margin-bottom:10px">最多分類: <strong style="color:#16a34a">7.問答知識</strong> (41問)</div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#2563eb">2.定石計算</span>
+<span style="color:#475569">40問 / 34.5%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:34.5%;height:100%;background:#2563eb"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#dc2626">6.数値・規格暗記</span>
+<span style="color:#475569">23問 / 19.8%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:19.8%;height:100%;background:#dc2626"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#d97706">5.公式即答</span>
+<span style="color:#475569">12問 / 10.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:10.3%;height:100%;background:#d97706"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#16a34a">7.問答知識</span>
+<span style="color:#475569">41問 / 35.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:35.3%;height:100%;background:#16a34a"></div></div></div>
+</div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px">
+<h4 style="margin:0;color:#1e3a5f">電気理論</h4>
+<div class="tar"><div style="font-size:1.4em;font-weight:800;color:#1e3a5f">15</div><div style="font-size:0.78em;color:#64748b">分類済み</div></div></div>
+<div style="font-size:0.82em;color:#475569;margin-bottom:10px">最多分類: <strong style="color:#2563eb">2.定石計算</strong> (6問)</div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#2563eb">2.定石計算</span>
+<span style="color:#475569">6問 / 40.0%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:40.0%;height:100%;background:#2563eb"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#dc2626">6.数値・規格暗記</span>
+<span style="color:#475569">1問 / 6.7%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:6.7%;height:100%;background:#dc2626"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#d97706">5.公式即答</span>
+<span style="color:#475569">2問 / 13.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:13.3%;height:100%;background:#d97706"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#16a34a">7.問答知識</span>
+<span style="color:#475569">6問 / 40.0%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:40.0%;height:100%;background:#16a34a"></div></div></div>
+</div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px">
+<h4 style="margin:0;color:#1e3a5f">施工</h4>
+<div class="tar"><div style="font-size:1.4em;font-weight:800;color:#1e3a5f">26</div><div style="font-size:0.78em;color:#64748b">分類済み</div></div></div>
+<div style="font-size:0.82em;color:#475569;margin-bottom:10px">最多分類: <strong style="color:#16a34a">7.問答知識</strong> (10問)</div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#2563eb">2.定石計算</span>
+<span style="color:#475569">9問 / 34.6%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:34.6%;height:100%;background:#2563eb"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#dc2626">6.数値・規格暗記</span>
+<span style="color:#475569">5問 / 19.2%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:19.2%;height:100%;background:#dc2626"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#d97706">5.公式即答</span>
+<span style="color:#475569">2問 / 7.7%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:7.7%;height:100%;background:#d97706"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#16a34a">7.問答知識</span>
+<span style="color:#475569">10問 / 38.5%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:38.5%;height:100%;background:#16a34a"></div></div></div>
+</div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px">
+<h4 style="margin:0;color:#1e3a5f">電気設備</h4>
+<div class="tar"><div style="font-size:1.4em;font-weight:800;color:#1e3a5f">24</div><div style="font-size:0.78em;color:#64748b">分類済み</div></div></div>
+<div style="font-size:0.82em;color:#475569;margin-bottom:10px">最多分類: <strong style="color:#16a34a">7.問答知識</strong> (10問)</div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#2563eb">2.定石計算</span>
+<span style="color:#475569">8問 / 33.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:33.3%;height:100%;background:#2563eb"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#dc2626">6.数値・規格暗記</span>
+<span style="color:#475569">4問 / 16.7%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:16.7%;height:100%;background:#dc2626"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#d97706">5.公式即答</span>
+<span style="color:#475569">2問 / 8.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:8.3%;height:100%;background:#d97706"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#16a34a">7.問答知識</span>
+<span style="color:#475569">10問 / 41.7%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:41.7%;height:100%;background:#16a34a"></div></div></div>
+</div>
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px">
+<h4 style="margin:0;color:#1e3a5f">法規</h4>
+<div class="tar"><div style="font-size:1.4em;font-weight:800;color:#1e3a5f">27</div><div style="font-size:0.78em;color:#64748b">分類済み</div></div></div>
+<div style="font-size:0.82em;color:#475569;margin-bottom:10px">最多分類: <strong style="color:#16a34a">7.問答知識</strong> (11問)</div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#2563eb">2.定石計算</span>
+<span style="color:#475569">9問 / 33.3%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:33.3%;height:100%;background:#2563eb"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#dc2626">6.数値・規格暗記</span>
+<span style="color:#475569">5問 / 18.5%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:18.5%;height:100%;background:#dc2626"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#d97706">5.公式即答</span>
+<span style="color:#475569">2問 / 7.4%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:7.4%;height:100%;background:#d97706"></div></div></div>
+<div style="margin:8px 0">
+<div style="display:flex;justify-content:space-between;gap:12px;font-size:0.88em">
+<span style="font-weight:600;color:#16a34a">7.問答知識</span>
+<span style="color:#475569">11問 / 40.7%</span></div>
+<div style="height:8px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-top:4px">
+<div style="width:40.7%;height:100%;background:#16a34a"></div></div></div>
+</div>
+  </div>
+  <table>
+    <tr><th>学習パターン</th><th>意味</th><th>向く勉強法</th></tr>
+    <tr><td style="color:#1d4ed8;font-weight:700">1.導出・原理展開</td><td>微分方程式や制御式を立てて展開する型</td><td>起点式と途中3行を再現できるまで手を動かす</td></tr>
+    <tr><td style="color:#2563eb;font-weight:700">2.定石計算</td><td>既知の型に当てはめて解く計算問題</td><td>見抜き → 式選択 → 代入の順を固定して反復する</td></tr>
+    <tr><td style="color:#60a5fa;font-weight:700">3.図表・状態把握</td><td>ベクトル図・回路図・状態遷移を読む型</td><td>まず図を書き、状態を言語化してから計算に入る</td></tr>
+    <tr><td style="color:#7c3aed;font-weight:700">4.条件判定・規則適用</td><td>条文・規程・条件分岐を当てる型</td><td>主語と条件を確認し、「どの設備の何の値か」を整理する</td></tr>
+    <tr><td style="color:#d97706;font-weight:700">5.公式即答</td><td>式や定義を即答する一発系</td><td>公式名と適用条件をセットで覚える</td></tr>
+    <tr><td style="color:#dc2626;font-weight:700">6.数値・規格暗記</td><td>規格値・離隔・基準値などの暗記型</td><td>「対象 + 条件 + 数値」の1行メモで回す</td></tr>
+    <tr><td style="color:#16a34a;font-weight:700">7.問答知識</td><td>特徴・理由・違いを説明する型</td><td>一問一答で2〜3文の短答を作る</td></tr>
+    <tr><td style="color:#0f766e;font-weight:700">8.答案テンプレ</td><td>二次の記述・論述を型で書く問題</td><td>書き出し → 根拠 → 結論 の順を固定する</td></tr>
+  </table>
+  <div class="note"><strong>結論:</strong> 分類名を覚えることが目的ではなく、問題を見た瞬間に「何型か」「最初の1手は何か」を決められる状態を作ることが重要です。</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="gap-risk.html">← 出題空白リスク（全科目横断）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="strategy.html">科目別 得点戦略 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理2級 出題傾向 徹底分析 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

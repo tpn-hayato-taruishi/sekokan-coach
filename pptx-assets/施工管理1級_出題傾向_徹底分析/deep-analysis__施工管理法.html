@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深層単元分析（詳細テーマ別 完全版） - 施工管理法 - 施工管理1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">深層単元分析（詳細テーマ別 完全版） ／ <strong>施工管理法</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="deep-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="deep-analysis__電気理論.html">電気理論 →</a></span></nav>
+<section id="deep-analysis">
+  <h2>深層単元分析（詳細テーマ別 完全版）</h2>
+<p>大分類のさらに下の<strong>具体的なテーマ</strong>単位で、出題傾向を<strong>6つの視点</strong>から分析します。</p>
+<div class="note">詳細テーマ単位の分析により、具体的に何を勉強すべきかがわかります。</div>
+<h3 class="deep-sub">13-1. ヒートマップ（詳細テーマ × 年度）</h3>
+<p>頻出上位の詳細テーマが<strong>いつ出題されたか</strong>を色の濃淡で表示。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（頻出TOP5）</summary>
+<div style="overflow-x:auto;margin-bottom:16px"><svg viewBox="0 0 844 166" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="171.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,171.0,32)">H20</text>
+<text x="237.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,237.0,32)">H23</text>
+<text x="303.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,303.0,32)">H26</text>
+<text x="369.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,369.0,32)">H29</text>
+<text x="435.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,435.0,32)">R1前期</text>
+<text x="501.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,501.0,32)">R2</text>
+<text x="567.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,567.0,32)">R3後期</text>
+<text x="633.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,633.0,32)">R4後期</text>
+<text x="699.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,699.0,32)">R5後期</text>
+<text x="765.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,765.0,32)">R6後期</text>
+<text x="831.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,831.0,32)">R7後期</text>
+<text x="154" y="61.0" text-anchor="end" font-size="9" fill="#334155">級電気工事施工</text>
+<rect x="160" y="46" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H20 級電気工事施工: 3問</title></rect>
+<rect x="182" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H21 級電気工事施工: 5問</title></rect>
+<rect x="204" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H22 級電気工事施工: 5問</title></rect>
+<rect x="226" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H23 級電気工事施工: 5問</title></rect>
+<rect x="248" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H24 級電気工事施工: 5問</title></rect>
+<rect x="270" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H25 級電気工事施工: 5問</title></rect>
+<rect x="292" y="46" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H26 級電気工事施工: 3問</title></rect>
+<rect x="314" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H27 級電気工事施工: 5問</title></rect>
+<rect x="336" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H28 級電気工事施工: 5問</title></rect>
+<rect x="358" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H29 級電気工事施工: 5問</title></rect>
+<rect x="380" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H30 級電気工事施工: 6問</title></rect>
+<rect x="402" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H30後期 級電気工事施工: 1問</title></rect>
+<rect x="424" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1前期 級電気工事施工: 1問</title></rect>
+<rect x="446" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>R1 級電気工事施工: 6問</title></rect>
+<rect x="468" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1後期 級電気工事施工: 1問</title></rect>
+<rect x="490" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>R2 級電気工事施工: 4問</title></rect>
+<rect x="512" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3前期 級電気工事施工: 1問</title></rect>
+<rect x="534" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>R3 級電気工事施工: 6問</title></rect>
+<rect x="556" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3後期 級電気工事施工: 1問</title></rect>
+<rect x="578" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>R4 級電気工事施工: 6問</title></rect>
+<rect x="600" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4前期 級電気工事施工: 1問</title></rect>
+<rect x="622" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4後期 級電気工事施工: 1問</title></rect>
+<rect x="644" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>R5 級電気工事施工: 6問</title></rect>
+<rect x="666" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5前期 級電気工事施工: 1問</title></rect>
+<rect x="688" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5後期 級電気工事施工: 1問</title></rect>
+<rect x="710" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R6 級電気工事施工: 1問</title></rect>
+<rect x="732" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 級電気工事施工: 0問</title></rect>
+<rect x="754" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 級電気工事施工: 0問</title></rect>
+<rect x="776" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 級電気工事施工: 0問</title></rect>
+<rect x="798" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R7 級電気工事施工: 1問</title></rect>
+<rect x="820" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 級電気工事施工: 0問</title></rect>
+<text x="154" y="83.0" text-anchor="end" font-size="9" fill="#334155">唖電気工事</text>
+<rect x="160" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H20 唖電気工事: 0問</title></rect>
+<rect x="182" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H21 唖電気工事: 1問</title></rect>
+<rect x="204" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H22 唖電気工事: 1問</title></rect>
+<rect x="226" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H23 唖電気工事: 1問</title></rect>
+<rect x="248" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H24 唖電気工事: 1問</title></rect>
+<rect x="270" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H25 唖電気工事: 2問</title></rect>
+<rect x="292" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H26 唖電気工事: 1問</title></rect>
+<rect x="314" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H27 唖電気工事: 1問</title></rect>
+<rect x="336" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H28 唖電気工事: 2問</title></rect>
+<rect x="358" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H29 唖電気工事: 1問</title></rect>
+<rect x="380" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H30 唖電気工事: 1問</title></rect>
+<rect x="402" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 唖電気工事: 0問</title></rect>
+<rect x="424" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 唖電気工事: 0問</title></rect>
+<rect x="446" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1 唖電気工事: 1問</title></rect>
+<rect x="468" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 唖電気工事: 0問</title></rect>
+<rect x="490" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>R2 唖電気工事: 2問</title></rect>
+<rect x="512" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 唖電気工事: 0問</title></rect>
+<rect x="534" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3 唖電気工事: 0問</title></rect>
+<rect x="556" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 唖電気工事: 0問</title></rect>
+<rect x="578" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4 唖電気工事: 0問</title></rect>
+<rect x="600" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 唖電気工事: 0問</title></rect>
+<rect x="622" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 唖電気工事: 0問</title></rect>
+<rect x="644" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5 唖電気工事: 0問</title></rect>
+<rect x="666" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 唖電気工事: 0問</title></rect>
+<rect x="688" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 唖電気工事: 0問</title></rect>
+<rect x="710" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6 唖電気工事: 0問</title></rect>
+<rect x="732" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 唖電気工事: 0問</title></rect>
+<rect x="754" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 唖電気工事: 0問</title></rect>
+<rect x="776" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 唖電気工事: 0問</title></rect>
+<rect x="798" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7 唖電気工事: 0問</title></rect>
+<rect x="820" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 唖電気工事: 0問</title></rect>
+<text x="154" y="105.0" text-anchor="end" font-size="9" fill="#334155">電気工事</text>
+<rect x="160" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H20 電気工事: 0問</title></rect>
+<rect x="182" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H21 電気工事: 1問</title></rect>
+<rect x="204" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H22 電気工事: 0問</title></rect>
+<rect x="226" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H23 電気工事: 1問</title></rect>
+<rect x="248" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H24 電気工事: 0問</title></rect>
+<rect x="270" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H25 電気工事: 1問</title></rect>
+<rect x="292" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H26 電気工事: 0問</title></rect>
+<rect x="314" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H27 電気工事: 1問</title></rect>
+<rect x="336" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H28 電気工事: 0問</title></rect>
+<rect x="358" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H29 電気工事: 1問</title></rect>
+<rect x="380" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30 電気工事: 0問</title></rect>
+<rect x="402" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 電気工事: 0問</title></rect>
+<rect x="424" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 電気工事: 0問</title></rect>
+<rect x="446" y="90" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>R1 電気工事: 2問</title></rect>
+<rect x="468" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 電気工事: 0問</title></rect>
+<rect x="490" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R2 電気工事: 0問</title></rect>
+<rect x="512" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 電気工事: 0問</title></rect>
+<rect x="534" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3 電気工事: 0問</title></rect>
+<rect x="556" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 電気工事: 0問</title></rect>
+<rect x="578" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4 電気工事: 0問</title></rect>
+<rect x="600" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 電気工事: 0問</title></rect>
+<rect x="622" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 電気工事: 0問</title></rect>
+<rect x="644" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5 電気工事: 0問</title></rect>
+<rect x="666" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 電気工事: 0問</title></rect>
+<rect x="688" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 電気工事: 0問</title></rect>
+<rect x="710" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6 電気工事: 0問</title></rect>
+<rect x="732" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 電気工事: 0問</title></rect>
+<rect x="754" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 電気工事: 0問</title></rect>
+<rect x="776" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 電気工事: 0問</title></rect>
+<rect x="798" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7 電気工事: 0問</title></rect>
+<rect x="820" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 電気工事: 0問</title></rect>
+<text x="154" y="127.0" text-anchor="end" font-size="9" fill="#334155">亜本日</text>
+<rect x="160" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H20 亜本日: 0問</title></rect>
+<rect x="182" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H21 亜本日: 0問</title></rect>
+<rect x="204" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H22 亜本日: 0問</title></rect>
+<rect x="226" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H23 亜本日: 0問</title></rect>
+<rect x="248" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H24 亜本日: 0問</title></rect>
+<rect x="270" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H25 亜本日: 0問</title></rect>
+<rect x="292" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H26 亜本日: 0問</title></rect>
+<rect x="314" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H27 亜本日: 0問</title></rect>
+<rect x="336" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H28 亜本日: 0問</title></rect>
+<rect x="358" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H29 亜本日: 0問</title></rect>
+<rect x="380" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30 亜本日: 0問</title></rect>
+<rect x="402" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 亜本日: 0問</title></rect>
+<rect x="424" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 亜本日: 0問</title></rect>
+<rect x="446" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1 亜本日: 0問</title></rect>
+<rect x="468" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 亜本日: 0問</title></rect>
+<rect x="490" y="112" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>R2 亜本日: 2問</title></rect>
+<rect x="512" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 亜本日: 0問</title></rect>
+<rect x="534" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3 亜本日: 0問</title></rect>
+<rect x="556" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 亜本日: 0問</title></rect>
+<rect x="578" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4 亜本日: 0問</title></rect>
+<rect x="600" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 亜本日: 0問</title></rect>
+<rect x="622" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 亜本日: 0問</title></rect>
+<rect x="644" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5 亜本日: 0問</title></rect>
+<rect x="666" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 亜本日: 0問</title></rect>
+<rect x="688" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 亜本日: 0問</title></rect>
+<rect x="710" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6 亜本日: 0問</title></rect>
+<rect x="732" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 亜本日: 0問</title></rect>
+<rect x="754" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 亜本日: 0問</title></rect>
+<rect x="776" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 亜本日: 0問</title></rect>
+<rect x="798" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7 亜本日: 0問</title></rect>
+<rect x="820" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 亜本日: 0問</title></rect>
+<text x="154" y="149.0" text-anchor="end" font-size="9" fill="#334155">受騎地変更者</text>
+<rect x="160" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H20 受騎地変更者: 0問</title></rect>
+<rect x="182" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H21 受騎地変更者: 0問</title></rect>
+<rect x="204" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H22 受騎地変更者: 0問</title></rect>
+<rect x="226" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H23 受騎地変更者: 0問</title></rect>
+<rect x="248" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H24 受騎地変更者: 0問</title></rect>
+<rect x="270" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H25 受騎地変更者: 0問</title></rect>
+<rect x="292" y="134" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>H26 受騎地変更者: 1問</title></rect>
+<rect x="314" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H27 受騎地変更者: 0問</title></rect>
+<rect x="336" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H28 受騎地変更者: 0問</title></rect>
+<rect x="358" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H29 受騎地変更者: 0問</title></rect>
+<rect x="380" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30 受騎地変更者: 0問</title></rect>
+<rect x="402" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H30後期 受騎地変更者: 0問</title></rect>
+<rect x="424" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 受騎地変更者: 0問</title></rect>
+<rect x="446" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1 受騎地変更者: 0問</title></rect>
+<rect x="468" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 受騎地変更者: 0問</title></rect>
+<rect x="490" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R2 受騎地変更者: 0問</title></rect>
+<rect x="512" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 受騎地変更者: 0問</title></rect>
+<rect x="534" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3 受騎地変更者: 0問</title></rect>
+<rect x="556" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 受騎地変更者: 0問</title></rect>
+<rect x="578" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4 受騎地変更者: 0問</title></rect>
+<rect x="600" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 受騎地変更者: 0問</title></rect>
+<rect x="622" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 受騎地変更者: 0問</title></rect>
+<rect x="644" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5 受騎地変更者: 0問</title></rect>
+<rect x="666" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 受騎地変更者: 0問</title></rect>
+<rect x="688" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 受騎地変更者: 0問</title></rect>
+<rect x="710" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6 受騎地変更者: 0問</title></rect>
+<rect x="732" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 受騎地変更者: 0問</title></rect>
+<rect x="754" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 受騎地変更者: 0問</title></rect>
+<rect x="776" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 受騎地変更者: 0問</title></rect>
+<rect x="798" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7 受騎地変更者: 0問</title></rect>
+<rect x="820" y="134" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 受騎地変更者: 0問</title></rect>
+</svg></div>
+<div style="margin:8px 0">
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #1e40af33"><strong>級電気工事施工</strong>（91問）: <span style="color:#dc2626">超頻出</span>: 出題率87%。ほぼ毎年出題されるため最優先。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #1e40af33"><strong>唖電気工事</strong>（15問）: <span style="color:#7c3aed">復活警戒</span>: 15回空白だが通算15回の実績。次回出題の可能性大。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #1e40af33"><strong>電気工事</strong>（7問）: <span style="color:#7c3aed">復活警戒</span>: 17回空白だが通算7回の実績。次回出題の可能性大。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #1e40af33"><strong>亜本日</strong>（2問）: 低頻度: 通算2回のみ。優先度は低い。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #1e40af33"><strong>受騎地変更者</strong>（1問）: 低頻度: 通算1回のみ。優先度は低い。</p>
+</div>
+</details>
+<h3 class="deep-sub">13-2. サイクル再分析（詳細テーマ）</h3>
+<p>詳細テーマの出題間隔を分析。<strong>平均間隔・最大間隔・直近間隔</strong>でサイクルを把握。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（5テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>出題数</th><th>出題率</th><th>平均間隔</th><th>最大空白</th><th>直近空白</th><th>出題年バッジ</th></tr>
+<tr><td class="tac fwb">1</td><td><strong>級電気工事施工</strong></td><td class="tac fwb">91</td><td class="tac">87%</td><td class="tac">1.1回</td><td style="text-align:center;">4回</td><td style="text-align:center;">1回</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H20</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H21</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H22</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H23</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H24</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H25</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H26</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H27</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H28</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30後期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R1前期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R1</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R1後期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R2</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R3前期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R3</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R3後期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R4</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R4前期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R4後期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R5</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R5前期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R5後期</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R6</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R7</span></td></tr>
+<tr><td class="tac fwb">2</td><td><strong>唖電気工事</strong></td><td class="tac fwb">15</td><td class="tac">39%</td><td class="tac">1.3回</td><td style="text-align:center;">3回</td><td style="text-align:center;color:#dc2626;font-weight:700">15回</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H21</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H22</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H23</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H24</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H25</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H26</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H27</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H28</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R1</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R2</span></td></tr>
+<tr><td class="tac fwb">3</td><td><strong>電気工事</strong></td><td class="tac fwb">7</td><td class="tac">19%</td><td class="tac">2.4回</td><td style="text-align:center;">4回</td><td style="text-align:center;color:#dc2626;font-weight:700">17回</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H21</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H23</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H25</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H27</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R1</span></td></tr>
+<tr><td class="tac fwb">4</td><td><strong>亜本日</strong></td><td class="tac fwb">2</td><td class="tac">3%</td><td class="tac">31.0回</td><td style="text-align:center;color:#dc2626;font-weight:700">31回</td><td style="text-align:center;color:#dc2626;font-weight:700">15回</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">R2</span></td></tr>
+<tr><td class="tac fwb">5</td><td><strong>受騎地変更者</strong></td><td class="tac fwb">1</td><td class="tac">3%</td><td class="tac">31.0回</td><td style="text-align:center;color:#dc2626;font-weight:700">31回</td><td style="text-align:center;color:#dc2626;font-weight:700">24回</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H26</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">13-3. カバレッジ再分析（詳細テーマ）</h3>
+<p>詳細テーマを出題数順に並べ、<strong>何テーマで何%カバーできるか</strong>を再計算。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（116問・5テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>問題数</th><th>割合</th><th>累積カバー</th><th>解法分類</th></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td><strong>級電気工事施工</strong></td><td class="tac">91</td><td class="tac">78.4%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:78.4%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">78.4%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td><strong>唖電気工事</strong></td><td class="tac">15</td><td class="tac">12.9%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:91.4%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">91.4%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#1e40af">3</td><td><strong>電気工事</strong></td><td class="tac">7</td><td class="tac">6.0%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:97.4%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">97.4%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#1e40af">4</td><td><strong>亜本日</strong></td><td class="tac">2</td><td class="tac">1.7%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:99.1%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">99.1%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td><strong>受騎地変更者</strong></td><td class="tac">1</td><td class="tac">0.9%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100.0%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">100.0%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+</table>
+<div style="margin:8px 0"><svg viewBox="0 0 560 150" style="max-width:100%;height:auto">
+<line x1="50" y1="10" x2="50" y2="120" stroke="#e5e7eb"/>
+<line x1="50" y1="120" x2="550" y2="120" stroke="#e5e7eb"/>
+<line x1="50" y1="54" x2="550" y2="54" stroke="#ef4444" stroke-dasharray="3,3" opacity="0.5"/>
+<text x="46" y="54" font-size="8" fill="#ef4444" text-anchor="end">60%</text>
+<line x1="50" y1="32" x2="550" y2="32" stroke="#d97706" stroke-dasharray="3,3" opacity="0.5"/>
+<text x="46" y="32" font-size="8" fill="#d97706" text-anchor="end">80%</text>
+<polyline points="55.0,33.7 180.0,19.5 305.0,12.8 430.0,10.9 555.0,10.0" fill="none" stroke="#1e40af" stroke-width="2"/>
+<text x="300" y="140" font-size="9" fill="#6b7280" text-anchor="middle">テーマ数（頻出順）</text>
+</svg></div>
+</details>
+<h3 class="deep-sub">13-4. 優先度再分析（詳細テーマ）</h3>
+<p>詳細テーマの学習優先度を<strong>頻度×直近度×コスパ</strong>で再計算。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（5テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>出題</th><th>頻度</th><th>直近5回</th><th>空白</th><th>最終</th><th>分類</th><th>優先度</th></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td><strong>級電気工事施工</strong></td><td class="tac">91</td><td class="tac">87%</td><td class="tac">1</td><td style="text-align:center;">1回</td><td style="text-align:center;font-size:0.85em">R7</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">213</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td><strong>唖電気工事</strong></td><td class="tac">15</td><td class="tac">39%</td><td class="tac">0</td><td style="text-align:center;color:#dc2626;font-weight:700">15回</td><td style="text-align:center;font-size:0.85em">R2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">42</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#1e40af">3</td><td><strong>電気工事</strong></td><td class="tac">7</td><td class="tac">19%</td><td class="tac">0</td><td style="text-align:center;color:#dc2626;font-weight:700">17回</td><td style="text-align:center;font-size:0.85em">R1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">20</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#1e40af">4</td><td><strong>亜本日</strong></td><td class="tac">2</td><td class="tac">3%</td><td class="tac">0</td><td style="text-align:center;color:#dc2626;font-weight:700">15回</td><td style="text-align:center;font-size:0.85em">R2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">5</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td><strong>受騎地変更者</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="tac">0</td><td style="text-align:center;color:#dc2626;font-weight:700">24回</td><td style="text-align:center;font-size:0.85em">H26</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">3</td></tr>
+</table>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>#1 級電気工事施工</strong>（スコア213）: 過去91回と豊富な出題実績。出題率87%の安定テーマ。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>#2 唖電気工事</strong>（スコア42）: 過去15回と豊富な出題実績。15回空白は復活出題リスク。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>#3 電気工事</strong>（スコア20）: 過去7回と豊富な出題実績。17回空白は復活出題リスク。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>#4 亜本日</strong>（スコア5）: 出題頻度やコスパを総合すると優先度は標準。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>#5 受騎地変更者</strong>（スコア3）: 出題頻度やコスパを総合すると優先度は標準。</p>
+</details>
+<h3 class="deep-sub">13-5. 出題予測（詳細テーマ）</h3>
+<p>詳細テーマの次回出題確率を統計的に予測。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（5テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>予測スコア（相対）</th><th>過去出題</th><th>頻度</th><th>空白</th><th>判定</th></tr>
+<tr><td style="text-align:center;font-weight:700;color:#1e40af">1</td><td><strong>級電気工事施工</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:100px;height:14px;background:#dc2626;border-radius:3px"></div><span class="fwb tred">100%</span></div></td><td class="tac">91回</td><td class="tac">87%</td><td class="tac">1回</td><td class="fwb tred">本命</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#1e40af">2</td><td><strong>唖電気工事</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:38px;height:14px;background:#7c3aed;border-radius:3px"></div><span style="font-weight:700;color:#7c3aed">38%</span></div></td><td class="tac">15回</td><td class="tac">39%</td><td class="tac">15回</td><td style="font-weight:700;color:#7c3aed">復活警戒</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#1e40af">3</td><td><strong>亜本日</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:29px;height:14px;background:#3b82f6;border-radius:3px"></div><span style="font-weight:700;color:#3b82f6">30%</span></div></td><td class="tac">2回</td><td class="tac">3%</td><td class="tac">15回</td><td style="font-weight:700;color:#3b82f6">-</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#1e40af">4</td><td><strong>電気工事</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:20px;height:14px;background:#7c3aed;border-radius:3px"></div><span style="font-weight:700;color:#7c3aed">20%</span></div></td><td class="tac">7回</td><td class="tac">19%</td><td class="tac">17回</td><td style="font-weight:700;color:#7c3aed">復活警戒</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#1e40af">5</td><td><strong>受騎地変更者</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:20px;height:14px;background:#3b82f6;border-radius:3px"></div><span style="font-weight:700;color:#3b82f6">20%</span></div></td><td class="tac">1回</td><td class="tac">3%</td><td class="tac">24回</td><td style="font-weight:700;color:#3b82f6">-</td></tr>
+</table>
+<div style="margin:8px 0">
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>級電気工事施工</strong>: 予測スコア100% / 出題率95%CI: 89〜100% / 過去5年バックテスト的中率: 20%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>唖電気工事</strong>: 予測スコア38% / 出題率95%CI: 32〜65% / 過去5年バックテスト的中率: 0%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>亜本日</strong>: 予測スコア30% / 出題率95%CI: 2〜21% / 過去5年バックテスト的中率: 100%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>電気工事</strong>: 予測スコア20% / 出題率95%CI: 11〜40% / 過去5年バックテスト的中率: 100%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #1e40af33"><strong>受騎地変更者</strong>: 予測スコア20% / 出題率95%CI: 1〜16% / 過去5年バックテスト的中率: 100%</p>
+</div>
+</details>
+<h3 class="deep-sub">13-6. 出題空白リスク（詳細テーマ）</h3>
+<p>詳細テーマの空白リスクを全科目横断で抽出。</p>
+<table class="fz85">
+<tr><th>科目</th><th>テーマ</th><th>空白</th><th>最終</th><th>過去出題</th><th>リスク</th><th>直近出題年</th></tr>
+<tr><td style="color:#1e40af;font-weight:600;font-size:0.85em">施工管理法</td><td><strong>受騎地変更者</strong></td><td style="font-weight:800;color:#dc2626">24回</td><td>H26</td><td>1回</td><td style="color:#d97706;font-weight:700">中</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H26</span></td></tr>
+<tr><td style="color:#1e40af;font-weight:600;font-size:0.85em">施工管理法</td><td><strong>電気工事</strong></td><td style="font-weight:800;color:#dc2626">17回</td><td>R1</td><td>7回</td><td style="color:#dc2626;font-weight:700">高</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H23</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H25</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H27</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H29</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">R1</span></td></tr>
+<tr><td style="color:#1e40af;font-weight:600;font-size:0.85em">施工管理法</td><td><strong>唖電気工事</strong></td><td style="font-weight:800;color:#dc2626">15回</td><td>R2</td><td>15回</td><td style="color:#dc2626;font-weight:700">高</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H28</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H29</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">H30</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">R1</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">R2</span></td></tr>
+<tr><td style="color:#1e40af;font-weight:600;font-size:0.85em">施工管理法</td><td><strong>亜本日</strong></td><td style="font-weight:800;color:#dc2626">15回</td><td>R2</td><td>2回</td><td style="color:#d97706;font-weight:700">中</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.8em">R2</span></td></tr>
+</table>
+<details style="margin:3px 0;border-left:3px solid #d97706">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.88em"><span style="color:#d97706;font-weight:700">[中]</span> 施工管理法 / 受騎地変更者 — 空白24回・通算1回</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p><strong>出題年度:</strong> H26</p>
+<p>出題率: 3% / 最終出題: H26 / 現在の空白: 24回</p>
+<div style="display:flex;flex-wrap:wrap;gap:1px;margin:4px 0">
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H20: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H21: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H22: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H23: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H24: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H25: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H26">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H27: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H28: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="H29: 空白3回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="H30: 空白4回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="H30後期: 空白5回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R1前期: 空白6回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R1: 空白7回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R1後期: 空白8回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R2: 空白9回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R3前期: 空白10回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R3: 空白11回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R3後期: 空白12回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4: 空白13回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4前期: 空白14回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4後期: 空白15回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5: 空白16回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5前期: 空白17回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5後期: 空白18回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6: 空白19回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6前期: 空白20回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6後期: 空白21回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7前期: 空白22回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7: 空白23回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7後期: 空白24回"></span>
+</div>
+</div></details>
+<details style="margin:3px 0;border-left:3px solid #dc2626">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.88em"><span style="color:#dc2626;font-weight:700">[高]</span> 施工管理法 / 電気工事 — 空白17回・通算7回</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p><strong>出題年度:</strong> H21, H23, H25, H27, H29, R1</p>
+<p>出題率: 19% / 最終出題: R1 / 現在の空白: 17回</p>
+<p>過去の出題間隔: 2回, 2回, 2回, 2回, 4回 / 平均: 2.4回</p>
+<p style="color:#dc2626;font-weight:700">現在の空白（17回）は平均間隔（2.4回）の7.1倍。<strong>復活出題の可能性が非常に高い。</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:1px;margin:4px 0">
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H20: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H21">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H22: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H23">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H24: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H25">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H26: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H27">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H28: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H29">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H30: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H30後期: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R1前期: 空白3回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="R1">2</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1後期: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R2: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R3前期: 空白3回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R3: 空白4回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R3後期: 空白5回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4: 空白6回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4前期: 空白7回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4後期: 空白8回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5: 空白9回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5前期: 空白10回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5後期: 空白11回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6: 空白12回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6前期: 空白13回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6後期: 空白14回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7前期: 空白15回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7: 空白16回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7後期: 空白17回"></span>
+</div>
+</div></details>
+<details style="margin:3px 0;border-left:3px solid #dc2626">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.88em"><span style="color:#dc2626;font-weight:700">[高]</span> 施工管理法 / 唖電気工事 — 空白15回・通算15回</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p><strong>出題年度:</strong> H21, H22, H23, H24, H25, H26, H27, H28, H29, H30, R1, R2</p>
+<p>出題率: 39% / 最終出題: R2 / 現在の空白: 15回</p>
+<p>過去の出題間隔: 1回, 1回, 1回, 1回, 1回, 1回, 1回, 1回, 1回, 3回, 2回 / 平均: 1.3回</p>
+<p style="color:#dc2626;font-weight:700">現在の空白（15回）は平均間隔（1.3回）の11.8倍。<strong>復活出題の可能性が非常に高い。</strong></p>
+<div style="display:flex;flex-wrap:wrap;gap:1px;margin:4px 0">
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H20: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H21">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H22">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H23">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H24">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H25">2</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H26">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H27">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H28">2</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H29">1</span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="H30">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H30後期: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1前期: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="R1">1</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1後期: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="R2">2</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R3前期: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R3: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R3後期: 空白3回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R4: 空白4回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4前期: 空白5回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4後期: 空白6回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5: 空白7回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5前期: 空白8回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5後期: 空白9回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6: 空白10回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6前期: 空白11回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6後期: 空白12回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7前期: 空白13回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7: 空白14回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7後期: 空白15回"></span>
+</div>
+</div></details>
+<details style="margin:3px 0;border-left:3px solid #d97706">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.88em"><span style="color:#d97706;font-weight:700">[中]</span> 施工管理法 / 亜本日 — 空白15回・通算2回</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p><strong>出題年度:</strong> R2</p>
+<p>出題率: 3% / 最終出題: R2 / 現在の空白: 15回</p>
+<div style="display:flex;flex-wrap:wrap;gap:1px;margin:4px 0">
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H20: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H21: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H22: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H23: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H24: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H25: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H26: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H27: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H28: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H29: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H30: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="H30後期: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1前期: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R1後期: 空白0回"></span>
+<span style="display:inline-block;width:16px;height:16px;text-align:center;line-height:16px;background:#1e40af;color:#fff;border-radius:2px;font-size:6px" title="R2">2</span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R3前期: 空白1回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#f1f5f9;border-radius:2px" title="R3: 空白2回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R3後期: 空白3回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fef3c7;border-radius:2px" title="R4: 空白4回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4前期: 空白5回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R4後期: 空白6回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5: 空白7回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5前期: 空白8回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R5後期: 空白9回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6: 空白10回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6前期: 空白11回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R6後期: 空白12回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7前期: 空白13回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7: 空白14回"></span>
+<span style="display:inline-block;width:16px;height:16px;background:#fecaca;border-radius:2px" title="R7後期: 空白15回"></span>
+</div>
+</div></details>
+<h3 class="deep-sub" style="border-bottom-color:#1e40af">施工管理法 全テーマ詳細</h3>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#1 級電気工事施工（累計91問 / 出題率87% / 最終R7）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H20×3</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H21×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H22×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H23×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H24×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H25×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H26×3</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H27×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H28×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29×5</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30×6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30後期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R1前期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R1×6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R1後期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R2×4</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R3前期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R3×6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R3後期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R4×6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R4前期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R4後期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R5×6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R5前期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R5後期</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R6</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R7</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 568 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#008856"><title>H20: 3問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#008856"><title>H21: 5問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#008856"><title>H22: 5問</title></rect>
+<rect x="54" y="0" width="17" height="18" rx="2" fill="#008856"><title>H23: 5問</title></rect>
+<rect x="72" y="0" width="17" height="18" rx="2" fill="#008856"><title>H24: 5問</title></rect>
+<rect x="90" y="0" width="17" height="18" rx="2" fill="#008856"><title>H25: 5問</title></rect>
+<rect x="108" y="0" width="17" height="18" rx="2" fill="#008856"><title>H26: 3問</title></rect>
+<rect x="126" y="0" width="17" height="18" rx="2" fill="#008856"><title>H27: 5問</title></rect>
+<rect x="144" y="0" width="17" height="18" rx="2" fill="#008856"><title>H28: 5問</title></rect>
+<rect x="162" y="0" width="17" height="18" rx="2" fill="#008856"><title>H29: 5問</title></rect>
+<rect x="180" y="0" width="17" height="18" rx="2" fill="#008856"><title>H30: 6問</title></rect>
+<rect x="198" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H30後期: 1問</title></rect>
+<rect x="216" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R1前期: 1問</title></rect>
+<rect x="234" y="0" width="17" height="18" rx="2" fill="#008856"><title>R1: 6問</title></rect>
+<rect x="252" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R1後期: 1問</title></rect>
+<rect x="270" y="0" width="17" height="18" rx="2" fill="#008856"><title>R2: 4問</title></rect>
+<rect x="288" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R3前期: 1問</title></rect>
+<rect x="306" y="0" width="17" height="18" rx="2" fill="#008856"><title>R3: 6問</title></rect>
+<rect x="324" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R3後期: 1問</title></rect>
+<rect x="342" y="0" width="17" height="18" rx="2" fill="#008856"><title>R4: 6問</title></rect>
+<rect x="360" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R4前期: 1問</title></rect>
+<rect x="378" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R4後期: 1問</title></rect>
+<rect x="396" y="0" width="17" height="18" rx="2" fill="#008856"><title>R5: 6問</title></rect>
+<rect x="414" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R5前期: 1問</title></rect>
+<rect x="432" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R5後期: 1問</title></rect>
+<rect x="450" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R6: 1問</title></rect>
+<rect x="468" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="486" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="504" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="522" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R7: 1問</title></rect>
+<rect x="540" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5回: 1問 / 直近10回: 11問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均1.1回（最短1回〜最長4回）。
+ほぼ毎年〜隔年出題のため、確実にマスターすべきテーマ。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H20→H21</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H21→H22</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H22→H23</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H23→H24</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H24→H25</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H25→H26</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H26→H27</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H27→H28</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H28→H29</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H29→H30</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H30→H30後期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H30後期→R1前期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R1前期→R1</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R1→R1後期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R1後期→R2</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R2→R3前期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R3前期→R3</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R3→R3後期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R3後期→R4</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R4→R4前期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R4前期→R4後期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R4後期→R5</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R5→R5前期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R5前期→R5後期</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R5後期→R6</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>R6→R7</td><td class="tac fwb">4回</td><td><span style="color:#d97706">やや長い</span></td></tr>
+<tr style="background:#fef2f2"><td>R7→現在</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">正常</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位1テーマで累積91/116問（78.4%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:78.4%;height:100%;background:linear-gradient(90deg,#1e40af,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+累計91問の豊富な出題実績。出題率87%の安定出題テーマ。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 112 → <span style="color:#dc2626;font-weight:700">確度高</span> <span style="color:#64748b;font-size:0.95em">（主因: 通算頻度 / 直近12・通算83・周期21・トレンド-4・復活0）</span></p>
+<p style="font-weight:600;font-size:0.85em;margin:6px 0 2px">年度別リスク推移:</p>
+<div style="display:flex;flex-wrap:wrap;gap:2px;margin:2px 0 8px">
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H20: 3問">3</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H21: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H22: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H23: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H24: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H25: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H26: 3問">3</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H27: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H28: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H29: 5問">5</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H30: 6問">6</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H30後期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R1前期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R1: 6問">6</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R1後期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R2: 4問">4</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R3前期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R3: 6問">6</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R3後期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R4: 6問">6</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R4前期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R4後期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R5: 6問">6</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R5前期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R5後期: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R6: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R6前期: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R6後期: 空白2回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R7前期: 空白3回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R7: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R7後期: 空白1回">·</span>
+</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#2 唖電気工事（累計15問 / 出題率39% / 最終R2）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H21</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H22</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H23</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H24</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H25×2</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H26</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H27</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H28×2</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R1</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R2×2</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 568 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H20: 0問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H21: 1問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H22: 1問</title></rect>
+<rect x="54" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H23: 1問</title></rect>
+<rect x="72" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H24: 1問</title></rect>
+<rect x="90" y="0" width="17" height="18" rx="2" fill="#008856"><title>H25: 2問</title></rect>
+<rect x="108" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H26: 1問</title></rect>
+<rect x="126" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H27: 1問</title></rect>
+<rect x="144" y="0" width="17" height="18" rx="2" fill="#008856"><title>H28: 2問</title></rect>
+<rect x="162" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H29: 1問</title></rect>
+<rect x="180" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H30: 1問</title></rect>
+<rect x="198" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30後期: 0問</title></rect>
+<rect x="216" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="234" y="0" width="17" height="18" rx="2" fill="#00885666"><title>R1: 1問</title></rect>
+<rect x="252" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="270" y="0" width="17" height="18" rx="2" fill="#008856"><title>R2: 2問</title></rect>
+<rect x="288" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="306" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3: 0問</title></rect>
+<rect x="324" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="342" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4: 0問</title></rect>
+<rect x="360" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="378" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="396" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5: 0問</title></rect>
+<rect x="414" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="432" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="450" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6: 0問</title></rect>
+<rect x="468" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="486" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="504" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="522" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7: 0問</title></rect>
+<rect x="540" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5回: 0問 / 直近10回: 0問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均1.3回（最短1回〜最長3回）。
+ほぼ毎年〜隔年出題のため、確実にマスターすべきテーマ。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H21→H22</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H22→H23</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H23→H24</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H24→H25</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H25→H26</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H26→H27</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H27→H28</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H28→H29</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H29→H30</td><td class="tac fwb">1回</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H30→R1</td><td class="tac fwb">3回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr><td>R1→R2</td><td class="tac fwb">2回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr style="background:#fef2f2"><td>R2→現在</td><td class="tac fwb">15回</td><td><span style="color:#dc2626">復活警戒</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位2テーマで累積106/116問（91.4%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:91.4%;height:100%;background:linear-gradient(90deg,#1e40af,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+累計15問の豊富な出題実績。15回空白による復活リスク大。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 26 → <span style="color:#d97706;font-weight:700">確度中</span> <span style="color:#64748b;font-size:0.95em">（主因: 復活 / 直近0・通算14・周期0・トレンド-9・復活21）</span></p>
+<p style="font-weight:600;font-size:0.85em;margin:6px 0 2px">年度別リスク推移:</p>
+<div style="display:flex;flex-wrap:wrap;gap:2px;margin:2px 0 8px">
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H20: 空白0回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H21: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H22: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H23: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H24: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H25: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H26: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H27: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H28: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H29: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H30: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H30後期: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R1前期: 空白2回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R1: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R1後期: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R2: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R3前期: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R3: 空白2回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R3後期: 空白3回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R4: 空白4回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R4前期: 空白5回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R4後期: 空白6回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5: 空白7回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5前期: 空白8回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5後期: 空白9回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6: 空白10回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6前期: 空白11回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6後期: 空白12回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7前期: 空白13回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7: 空白14回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7後期: 空白15回">·</span>
+</div>
+<div class="warn">15回間出題なし。次回出題リスクあり。</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#3 電気工事（累計7問 / 出題率19% / 最終R1）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H21</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H23</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H25</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H27</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R1×2</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 568 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H20: 0問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H21: 1問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H22: 0問</title></rect>
+<rect x="54" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H23: 1問</title></rect>
+<rect x="72" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H24: 0問</title></rect>
+<rect x="90" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H25: 1問</title></rect>
+<rect x="108" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H26: 0問</title></rect>
+<rect x="126" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H27: 1問</title></rect>
+<rect x="144" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H28: 0問</title></rect>
+<rect x="162" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H29: 1問</title></rect>
+<rect x="180" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30: 0問</title></rect>
+<rect x="198" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30後期: 0問</title></rect>
+<rect x="216" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="234" y="0" width="17" height="18" rx="2" fill="#008856"><title>R1: 2問</title></rect>
+<rect x="252" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="270" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="288" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="306" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3: 0問</title></rect>
+<rect x="324" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="342" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4: 0問</title></rect>
+<rect x="360" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="378" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="396" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5: 0問</title></rect>
+<rect x="414" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="432" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="450" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6: 0問</title></rect>
+<rect x="468" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="486" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="504" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="522" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7: 0問</title></rect>
+<rect x="540" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5回: 0問 / 直近10回: 0問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均2.4回（最短2回〜最長4回）。
+2〜4年周期で出題。出題がない年の翌年は要注意。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H21→H23</td><td class="tac fwb">2回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr><td>H23→H25</td><td class="tac fwb">2回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr><td>H25→H27</td><td class="tac fwb">2回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr><td>H27→H29</td><td class="tac fwb">2回</td><td><span style="color:#2563eb">通常</span></td></tr>
+<tr><td>H29→R1</td><td class="tac fwb">4回</td><td><span style="color:#d97706">やや長い</span></td></tr>
+<tr style="background:#fef2f2"><td>R1→現在</td><td class="tac fwb">17回</td><td><span style="color:#dc2626">復活警戒</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位3テーマで累積113/116問（97.4%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:97.4%;height:100%;background:linear-gradient(90deg,#1e40af,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+累計7問の豊富な出題実績。17回空白による復活リスク大。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 0 → <span style="color:#9ca3af;font-weight:700">確度低</span> <span style="color:#64748b;font-size:0.95em">（主因: - / 直近0・通算6・周期0・トレンド-12・復活0）</span></p>
+<p style="font-weight:600;font-size:0.85em;margin:6px 0 2px">年度別リスク推移:</p>
+<div style="display:flex;flex-wrap:wrap;gap:2px;margin:2px 0 8px">
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H20: 空白0回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H21: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H22: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H23: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H24: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H25: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H26: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H27: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H28: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H29: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H30: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="H30後期: 空白2回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R1前期: 空白3回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="R1: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R1後期: 空白1回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#f1f5f9;border-radius:3px;font-size:7px;color:#9ca3af" title="R2: 空白2回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R3前期: 空白3回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fef3c7;border-radius:3px;font-size:7px;color:#9ca3af" title="R3: 空白4回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R3後期: 空白5回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R4: 空白6回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R4前期: 空白7回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R4後期: 空白8回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5: 空白9回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5前期: 空白10回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R5後期: 空白11回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6: 空白12回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6前期: 空白13回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R6後期: 空白14回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7前期: 空白15回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7: 空白16回">·</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#fecaca;border-radius:3px;font-size:7px;color:#9ca3af" title="R7後期: 空白17回">·</span>
+</div>
+<div class="warn">17回間出題なし。次回出題リスクあり。</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#4 亜本日（累計2問 / 出題率3% / 最終R2）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">R2×2</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 568 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H20: 0問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H21: 0問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H22: 0問</title></rect>
+<rect x="54" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H23: 0問</title></rect>
+<rect x="72" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H24: 0問</title></rect>
+<rect x="90" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H25: 0問</title></rect>
+<rect x="108" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H26: 0問</title></rect>
+<rect x="126" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H27: 0問</title></rect>
+<rect x="144" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H28: 0問</title></rect>
+<rect x="162" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H29: 0問</title></rect>
+<rect x="180" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30: 0問</title></rect>
+<rect x="198" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30後期: 0問</title></rect>
+<rect x="216" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="234" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1: 0問</title></rect>
+<rect x="252" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="270" y="0" width="17" height="18" rx="2" fill="#008856"><title>R2: 2問</title></rect>
+<rect x="288" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="306" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3: 0問</title></rect>
+<rect x="324" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="342" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4: 0問</title></rect>
+<rect x="360" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="378" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="396" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5: 0問</title></rect>
+<rect x="414" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="432" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="450" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6: 0問</title></rect>
+<rect x="468" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="486" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="504" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="522" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7: 0問</title></rect>
+<rect x="540" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5回: 0問 / 直近10回: 0問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位4テーマで累積115/116問（99.1%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:99.1%;height:100%;background:linear-gradient(90deg,#1e40af,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+出題頻度が低いため優先度は下位。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 14 → <span style="color:#9ca3af;font-weight:700">確度低</span> <span style="color:#64748b;font-size:0.95em">（主因: トレンド / 直近0・通算2・周期0・トレンド+12・復活0）</span></p>
+<div class="warn">15回間出題なし。次回出題リスクあり。</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#5 受騎地変更者（累計1問 / 出題率3% / 最終H26）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H26</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 568 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H20: 0問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H21: 0問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H22: 0問</title></rect>
+<rect x="54" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H23: 0問</title></rect>
+<rect x="72" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H24: 0問</title></rect>
+<rect x="90" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H25: 0問</title></rect>
+<rect x="108" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H26: 1問</title></rect>
+<rect x="126" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H27: 0問</title></rect>
+<rect x="144" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H28: 0問</title></rect>
+<rect x="162" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H29: 0問</title></rect>
+<rect x="180" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30: 0問</title></rect>
+<rect x="198" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H30後期: 0問</title></rect>
+<rect x="216" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="234" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1: 0問</title></rect>
+<rect x="252" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="270" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="288" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="306" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3: 0問</title></rect>
+<rect x="324" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="342" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4: 0問</title></rect>
+<rect x="360" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="378" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="396" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5: 0問</title></rect>
+<rect x="414" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="432" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="450" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6: 0問</title></rect>
+<rect x="468" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="486" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="504" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="522" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7: 0問</title></rect>
+<rect x="540" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5回: 0問 / 直近10回: 0問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位5テーマで累積116/116問（100.0%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:100.0%;height:100%;background:linear-gradient(90deg,#1e40af,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+出題頻度が低いため優先度は下位。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 0 → <span style="color:#9ca3af;font-weight:700">確度低</span> <span style="color:#64748b;font-size:0.95em">（主因: - / 直近0・通算1・周期0・トレンド-12・復活0）</span></p>
+<div class="warn">24回間出題なし。次回出題リスクあり。</div>
+</div></details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="deep-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="deep-analysis__電気理論.html">電気理論 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+</body></html>

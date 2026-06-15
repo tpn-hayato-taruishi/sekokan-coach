@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>深層単元分析（詳細テーマ別 完全版） - 電気工学 - 施工管理1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">施工管理1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">深層単元分析（詳細テーマ別 完全版） ／ <strong>電気工学</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="deep-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="deep-analysis__施工管理法.html">施工管理法 →</a></span></nav>
+<section id="deep-analysis">
+  <h2>深層単元分析（詳細テーマ別 完全版）</h2>
+<p>大分類のさらに下の<strong>具体的なテーマ</strong>単位で、出題傾向を<strong>6つの視点</strong>から分析します。</p>
+<div class="note">詳細テーマ単位の分析により、具体的に何を勉強すべきかがわかります。</div>
+<h3 class="deep-sub">13-1. ヒートマップ（詳細テーマ × 年度）</h3>
+<p>頻出上位の詳細テーマが<strong>いつ出題されたか</strong>を色の濃淡で表示。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#c2410c;padding:8px 0;font-size:1.05em">電気工学（頻出TOP3）</summary>
+<div style="overflow-x:auto;margin-bottom:16px"><svg viewBox="0 0 228 122" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="171.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,171.0,32)">H28</text>
+<text x="215.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,215.0,32)">H30</text>
+<text x="154" y="61.0" text-anchor="end" font-size="9" fill="#334155">級電気工事施工管理技術検</text>
+<rect x="160" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H28 級電気工事施工管理技術検: 2問</title></rect>
+<rect x="182" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H29 級電気工事施工管理技術検: 2問</title></rect>
+<rect x="204" y="46" width="22" height="22" rx="2" fill="#1e40af" opacity="1"><title>H30 級電気工事施工管理技術検: 3問</title></rect>
+<text x="154" y="83.0" text-anchor="end" font-size="9" fill="#334155">上記の電気工事の現場にお</text>
+<rect x="160" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H28 上記の電気工事の現場にお: 1問</title></rect>
+<rect x="182" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H29 上記の電気工事の現場にお: 1問</title></rect>
+<rect x="204" y="68" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H30 上記の電気工事の現場にお: 1問</title></rect>
+<text x="154" y="105.0" text-anchor="end" font-size="9" fill="#334155">目的亜用途亜方式亜方法亜</text>
+<rect x="160" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>H28 目的亜用途亜方式亜方法亜: 0問</title></rect>
+<rect x="182" y="90" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H29 目的亜用途亜方式亜方法亜: 1問</title></rect>
+<rect x="204" y="90" width="22" height="22" rx="2" fill="#3b82f6" opacity="1"><title>H30 目的亜用途亜方式亜方法亜: 1問</title></rect>
+</svg></div>
+<div style="margin:8px 0">
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #c2410c33"><strong>級電気工事施工管理技術検</strong>（7問）: <span style="color:#dc2626">超頻出</span>: 出題率100%。ほぼ毎年出題されるため最優先。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #c2410c33"><strong>上記の電気工事の現場にお</strong>（3問）: <span style="color:#dc2626">超頻出</span>: 出題率100%。ほぼ毎年出題されるため最優先。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:8px;border-left:2px solid #c2410c33"><strong>目的亜用途亜方式亜方法亜</strong>（2問）: <span style="color:#dc2626">超頻出</span>: 出題率67%。ほぼ毎年出題されるため最優先。</p>
+</div>
+</details>
+<h3 class="deep-sub">13-2. サイクル再分析（詳細テーマ）</h3>
+<p>詳細テーマの出題間隔を分析。<strong>平均間隔・最大間隔・直近間隔</strong>でサイクルを把握。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#c2410c;padding:8px 0;font-size:1.05em">電気工学（3テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>出題数</th><th>出題率</th><th>平均間隔</th><th>最大空白</th><th>直近空白</th><th>出題年バッジ</th></tr>
+<tr><td class="tac fwb">1</td><td><strong>級電気工事施工管理技術検</strong></td><td class="tac fwb">7</td><td class="tac">100%</td><td class="tac">1.0年</td><td style="text-align:center;">1年</td><td style="text-align:center;">0年</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H28</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30</span></td></tr>
+<tr><td class="tac fwb">2</td><td><strong>上記の電気工事の現場にお</strong></td><td class="tac fwb">3</td><td class="tac">100%</td><td class="tac">1.0年</td><td style="text-align:center;">1年</td><td style="text-align:center;">0年</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H28</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30</span></td></tr>
+<tr><td class="tac fwb">3</td><td><strong>目的亜用途亜方式亜方法亜</strong></td><td class="tac fwb">2</td><td class="tac">67%</td><td class="tac">1.0年</td><td style="text-align:center;">1年</td><td style="text-align:center;">0年</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H29</span><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 4px;margin:1px;font-size:0.85em">H30</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">13-3. カバレッジ再分析（詳細テーマ）</h3>
+<p>詳細テーマを出題数順に並べ、<strong>何テーマで何%カバーできるか</strong>を再計算。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#c2410c;padding:8px 0;font-size:1.05em">電気工学（12問・3テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>問題数</th><th>割合</th><th>累積カバー</th><th>解法分類</th></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#c2410c">1</td><td><strong>級電気工事施工管理技術検</strong></td><td class="tac">7</td><td class="tac">58.3%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:58.3%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">58.3%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#c2410c">2</td><td><strong>上記の電気工事の現場にお</strong></td><td class="tac">3</td><td class="tac">25.0%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:83.3%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">83.3%</span></div></td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr ><td style="text-align:center;font-weight:700;color:#c2410c">3</td><td><strong>目的亜用途亜方式亜方法亜</strong></td><td class="tac">2</td><td class="tac">16.7%</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100.0%;height:100%;background:linear-gradient(90deg,#3b82f6,#22c55e);border-radius:5px"></div></div><span style="font-size:0.85em;font-weight:700;color:#1e40af">100.0%</span></div></td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+</table>
+<div style="margin:8px 0"><svg viewBox="0 0 560 150" style="max-width:100%;height:auto">
+<line x1="50" y1="10" x2="50" y2="120" stroke="#e5e7eb"/>
+<line x1="50" y1="120" x2="550" y2="120" stroke="#e5e7eb"/>
+<line x1="50" y1="54" x2="550" y2="54" stroke="#ef4444" stroke-dasharray="3,3" opacity="0.5"/>
+<text x="46" y="54" font-size="8" fill="#ef4444" text-anchor="end">60%</text>
+<line x1="50" y1="32" x2="550" y2="32" stroke="#d97706" stroke-dasharray="3,3" opacity="0.5"/>
+<text x="46" y="32" font-size="8" fill="#d97706" text-anchor="end">80%</text>
+<polyline points="55.0,55.8 305.0,28.3 555.0,10.0" fill="none" stroke="#c2410c" stroke-width="2"/>
+<text x="300" y="140" font-size="9" fill="#6b7280" text-anchor="middle">テーマ数（頻出順）</text>
+</svg></div>
+</details>
+<h3 class="deep-sub">13-4. 優先度再分析（詳細テーマ）</h3>
+<p>詳細テーマの学習優先度を<strong>頻度×直近度×コスパ</strong>で再計算。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#c2410c;padding:8px 0;font-size:1.05em">電気工学（3テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>出題</th><th>頻度</th><th>直近5年</th><th>空白</th><th>最終</th><th>分類</th><th>優先度</th></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#c2410c">1</td><td><strong>級電気工事施工管理技術検</strong></td><td class="tac">7</td><td class="tac">100%</td><td class="tac">7</td><td style="text-align:center;">0年</td><td style="text-align:center;font-size:0.85em">H30</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">79</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#c2410c">2</td><td><strong>上記の電気工事の現場にお</strong></td><td class="tac">3</td><td class="tac">100%</td><td class="tac">3</td><td style="text-align:center;">0年</td><td style="text-align:center;font-size:0.85em">H30</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">51</td></tr>
+<tr style="background:#eff6ff"><td style="text-align:center;font-weight:700;color:#c2410c">3</td><td><strong>目的亜用途亜方式亜方法亜</strong></td><td class="tac">2</td><td class="tac">67%</td><td class="tac">2</td><td style="text-align:center;">0年</td><td style="text-align:center;font-size:0.85em">H30</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td style="font-weight:800;color:#1e40af">34</td></tr>
+</table>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>#1 級電気工事施工管理技術検</strong>（スコア79）: 過去7回と豊富な出題実績。直近5年で7回出題と近年活発。出題率100%の安定テーマ。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>#2 上記の電気工事の現場にお</strong>（スコア51）: 直近5年で3回出題と近年活発。出題率100%の安定テーマ。</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>#3 目的亜用途亜方式亜方法亜</strong>（スコア34）: 出題率67%の安定テーマ。</p>
+</details>
+<h3 class="deep-sub">13-5. 出題予測（詳細テーマ）</h3>
+<p>詳細テーマの次回出題確率を統計的に予測。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#c2410c;padding:8px 0;font-size:1.05em">電気工学（3テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>テーマ</th><th>予測スコア（相対）</th><th>過去出題</th><th>頻度</th><th>空白</th><th>判定</th></tr>
+<tr><td style="text-align:center;font-weight:700;color:#c2410c">1</td><td><strong>級電気工事施工管理技術検</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:100px;height:14px;background:#dc2626;border-radius:3px"></div><span class="fwb tred">100%</span></div></td><td class="tac">7回</td><td class="tac">100%</td><td class="tac">0年</td><td class="fwb tred">本命</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#c2410c">2</td><td><strong>上記の電気工事の現場にお</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:83px;height:14px;background:#dc2626;border-radius:3px"></div><span class="fwb tred">84%</span></div></td><td class="tac">3回</td><td class="tac">100%</td><td class="tac">0年</td><td class="fwb tred">本命</td></tr>
+<tr><td style="text-align:center;font-weight:700;color:#c2410c">3</td><td><strong>目的亜用途亜方式亜方法亜</strong></td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:62px;height:14px;background:#d97706;border-radius:3px"></div><span style="font-weight:700;color:#d97706">62%</span></div></td><td class="tac">2回</td><td class="tac">67%</td><td class="tac">0年</td><td style="font-weight:700;color:#d97706">対抗</td></tr>
+</table>
+<div style="margin:8px 0">
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>級電気工事施工管理技術検</strong>: 予測スコア100% / 出題率95%CI: 44〜100% / 過去5年バックテスト的中率: 100%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>上記の電気工事の現場にお</strong>: 予測スコア84% / 出題率95%CI: 44〜100% / 過去5年バックテスト的中率: 100%</p>
+<p style="font-size:0.82em;margin:1px 0;padding-left:10px;border-left:2px solid #c2410c33"><strong>目的亜用途亜方式亜方法亜</strong>: 予測スコア62% / 出題率95%CI: 21〜94% / 過去5年バックテスト的中率: 50%</p>
+</div>
+</details>
+<h3 class="deep-sub">13-6. 出題空白リスク（詳細テーマ）</h3>
+<p>詳細テーマの空白リスクを全科目横断で抽出。</p>
+<table class="fz85">
+<tr><th>科目</th><th>テーマ</th><th>空白</th><th>最終</th><th>過去出題</th><th>リスク</th><th>直近出題年</th></tr>
+</table>
+<div class="tip">2年以上の空白テーマはありません。</div>
+<h3 class="deep-sub" style="border-bottom-color:#c2410c">電気工学 全テーマ詳細</h3>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#1 級電気工事施工管理技術検（累計7問 / 出題率100% / 最終H30）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H28×2</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29×2</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30×3</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 64 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#008856"><title>H28: 2問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#008856"><title>H29: 2問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#008856"><title>H30: 3問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5年: 7問 / 直近10年: 7問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均1.0年（最短1年〜最長1年）。
+ほぼ毎年〜隔年出題のため、確実にマスターすべきテーマ。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H28→H29</td><td class="tac fwb">1年</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H29→H30</td><td class="tac fwb">1年</td><td><span style="color:#16a34a">連続</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位1テーマで累積7/12問（58.3%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:58.3%;height:100%;background:linear-gradient(90deg,#c2410c,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+累計7問の豊富な出題実績。直近5年で7回出題と近年活発。出題率100%の安定出題テーマ。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 156 → <span style="color:#dc2626;font-weight:700">確度高</span></p>
+<p style="font-weight:600;font-size:0.85em;margin:6px 0 2px">年度別リスク推移:</p>
+<div style="display:flex;flex-wrap:wrap;gap:2px;margin:2px 0 8px">
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H28: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H29: 2問">2</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H30: 3問">3</span>
+</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #008856">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#2 上記の電気工事の現場にお（累計3問 / 出題率100% / 最終H30）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H28</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29</span> <span style="display:inline-block;background:#00885622;color:#008856;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 64 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H28: 1問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H29: 1問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#00885666"><title>H30: 1問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#008856;font-weight:600">📝問答暗記</span> / 直近5年: 3問 / 直近10年: 3問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均1.0年（最短1年〜最長1年）。
+ほぼ毎年〜隔年出題のため、確実にマスターすべきテーマ。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H28→H29</td><td class="tac fwb">1年</td><td><span style="color:#16a34a">連続</span></td></tr>
+<tr><td>H29→H30</td><td class="tac fwb">1年</td><td><span style="color:#16a34a">連続</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位2テーマで累積10/12問（83.3%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:83.3%;height:100%;background:linear-gradient(90deg,#c2410c,#008856);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+直近5年で3回出題と近年活発。出題率100%の安定出題テーマ。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 124 → <span style="color:#dc2626;font-weight:700">確度高</span></p>
+<p style="font-weight:600;font-size:0.85em;margin:6px 0 2px">年度別リスク推移:</p>
+<div style="display:flex;flex-wrap:wrap;gap:2px;margin:2px 0 8px">
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H28: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H29: 1問">1</span>
+<span style="display:inline-block;width:18px;height:18px;text-align:center;line-height:18px;background:#008856;color:#fff;border-radius:3px;font-size:7px;font-weight:700" title="H30: 1問">1</span>
+</div>
+</div></details>
+<details style="margin:6px 0;border-left:4px solid #CC3333">
+<summary style="cursor:pointer;padding:6px 10px;font-weight:700">#3 目的亜用途亜方式亜方法亜（累計2問 / 出題率67% / 最終H30）</summary>
+<div style="padding:8px 14px">
+<p style="margin:4px 0 8px"><span style="display:inline-block;background:#CC333322;color:#CC3333;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H29</span> <span style="display:inline-block;background:#CC333322;color:#CC3333;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em;font-weight:600">H30</span></p>
+<div style="margin:4px 0 8px;overflow-x:auto"><svg viewBox="0 0 64 20" style="max-width:100%;height:20px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0" y="0" width="17" height="18" rx="2" fill="#f1f5f9"><title>H28: 0問</title></rect>
+<rect x="18" y="0" width="17" height="18" rx="2" fill="#CC333366"><title>H29: 1問</title></rect>
+<rect x="36" y="0" width="17" height="18" rx="2" fill="#CC333366"><title>H30: 1問</title></rect>
+</svg></div>
+<p style="font-size:0.85em;margin:2px 0">分類: <span style="color:#CC3333;font-weight:600">🔴丸暗記</span> / 直近5年: 2問 / 直近10年: 2問</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>パターン解析:</strong> 出題間隔 平均1.0年（最短1年〜最長1年）。
+ほぼ毎年〜隔年出題のため、確実にマスターすべきテーマ。
+</p>
+<table style="font-size:0.82em;margin:4px 0"><tr><th>区間</th><th>間隔</th><th>評価</th></tr>
+<tr><td>H29→H30</td><td class="tac fwb">1年</td><td><span style="color:#16a34a">連続</span></td></tr>
+</table>
+<p style="font-size:0.85em;margin:4px 0"><strong>カバレッジ位置:</strong> 上位3テーマで累積12/12問（100.0%）カバー
+<div style="width:200px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:6px"><div style="width:100.0%;height:100%;background:linear-gradient(90deg,#c2410c,#CC3333);border-radius:4px"></div></div></p>
+<p style="font-size:0.85em;margin:4px 0"><strong>優先度根拠:</strong> 
+直近5年で2回出題と近年活発。出題率67%の安定出題テーマ。</p>
+<p style="font-size:0.85em;margin:4px 0"><strong>次回出題予測:</strong> スコア 83 → <span style="color:#dc2626;font-weight:700">確度高</span></p>
+</div></details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="deep-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="deep-analysis__施工管理法.html">施工管理法 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>施工管理1級 ｜ H28〜H30 ｜ Generated by Claude Code</footer>
+</body></html>
