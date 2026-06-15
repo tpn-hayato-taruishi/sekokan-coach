@@ -223,11 +223,8 @@ export default function QuizPage() {
     try { return JSON.parse(localStorage.getItem('sekokan-subj') || '{}'); } catch { return {}; }
   });
   const [showReport, setShowReport] = useState(false);
-  // TOP画面ワークフロー (初回訪問時に自動表示。常にヘッダーから再表示可)
-  const [showWorkflow, setShowWorkflow] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return localStorage.getItem('sekokan-workflow-seen') !== '1';
-  });
+  // TOP画面: 合格ロードマップを常に先頭表示 (アクセス毎)
+  const [showWorkflow, setShowWorkflow] = useState(true);
   // ワークフロー対象: 級×検定 (4パターン)
   type ExamType = '1級_1次' | '1級_2次' | '2級_1次' | '2級_2次';
   const [examType, setExamType] = useState<ExamType>(() => {
