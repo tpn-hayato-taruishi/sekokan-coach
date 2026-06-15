@@ -1170,7 +1170,7 @@ export default function QuizPage() {
               </p>
               <div className="space-y-2">
                 {SURVEY_FIELDS.map((f) => (
-                  <div key={f.key}>
+                  <div key={String(f.key)}>
                     <label className="text-xs font-bold text-slate-700">{f.label}</label>
                     {f.multiline ? (
                       <textarea
