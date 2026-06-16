@@ -1013,9 +1013,10 @@ ${(current.choices || []).map((c, i) => `  ${i + 1}. ${c}`).join('\n')}
       const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|許可|届出/.test(q);
       if (isLawNumeric) return false;
       const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
-      const purelyNum = ch.filter(isPurelyNumeric).length;
+      const isFormulaChoice = (c: string) => /[A-Za-zΩ]+\s*[＝=]\s*[\d.A-Za-z()/+\-×*√]+/.test(c);
+      const calcCount = ch.filter((c) => isPurelyNumeric(c) || isFormulaChoice(c)).length;
       const hasFormulaLang = /求めよ|の値として|何[\[V Ω]|を求める|表す式|算出|計算式/.test(q);
-      return purelyNum >= 4 || (hasFormulaLang && purelyNum >= 2);
+      return calcCount >= 4 || (hasFormulaLang && calcCount >= 2);
     };
     const calcCount = sameTheme.filter(isCalcProblem).length + (isCalcProblem(current) ? 1 : 0);
     const isCalcTheme = calcCount >= Math.max(2, Math.floor((sameTheme.length + 1) * 0.5));
@@ -1203,12 +1204,14 @@ ${examplesBlock}
     // 問題タイプを自動判定 (精度重視)
     // 法令暗記キーワード (これらがあれば calc 判定から外す)
     const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|上、定められ|許可|届出/.test(q);
-    // calc: 「計算問題」明示か、選択肢が "数値だけ" + 法令暗記でない
+    // calc: 「計算問題」明示か、選択肢が "数値だけ" or "公式 (X=Y形式)" + 法令暗記でない
     const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
-    const purelyNumericChoices = choices.filter(isPurelyNumeric).length;
+    const isFormulaChoice = (c: string) => /[A-Za-zΩ]+\s*[＝=]\s*[\d.A-Za-z()/+\-×*√]+/.test(c) || /[A-Za-z]+[12n]?\s*[+\-×*/]\s*[A-Za-z]+[12n]?/.test(c);
+    const isCalcChoice = (c: string) => isPurelyNumeric(c) || isFormulaChoice(c);
+    const calcChoiceCount = choices.filter(isCalcChoice).length;
     const hasFormulaLang = /求めよ|の値として|何[\[V Ω]|を求める|表す式|算出|計算式|として、正しい/.test(q) && !isLawNumeric;
-    // 計算問題と判定: 法令でない + (4つ全て数値 or 計算言語+2つ以上数値)
-    const hasFormula = !isLawNumeric && (purelyNumericChoices >= 4 || (hasFormulaLang && purelyNumericChoices >= 2));
+    // 計算問題と判定: 法令でない + (4つ全て計算系 or 計算言語+2つ以上)
+    const hasFormula = !isLawNumeric && (calcChoiceCount >= 4 || (hasFormulaLang && calcChoiceCount >= 2));
     // figure: 図参照 (calcより優先しない)
     const hasFigure = (/図に示す|示す図|図のような|図のように|図の(うち|中で|よう)/.test(q) || (current.has_figure ?? false)) && !hasFormula;
     // law: 法令名 + 「上」「に基づき」など。単独の「法」は除外 (「測定法」「工法」誤検出回避)
