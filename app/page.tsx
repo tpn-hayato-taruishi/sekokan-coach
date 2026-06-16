@@ -2231,13 +2231,16 @@ ${profileLines}
                       onClick={goPrev}
                       disabled={historyIdx <= 0}
                       className="px-3 py-2 bg-slate-400 text-white rounded text-sm font-bold hover:bg-slate-500 disabled:opacity-30 disabled:cursor-not-allowed"
-                      title="前の問題に戻る (←キー)"
+                      title="前の問題に戻る (PCなら ← キーでも操作可)"
                     >
                       ← 前へ
                     </button>
-                    <span className="text-xs text-slate-500 hidden sm:inline" title="PC専用: スペースキーで次の問題、←キーで前の問題">⌨ PC: Space=次 / ←=前</span>
-                    <button onClick={next} className="px-5 py-2 bg-emerald-600 text-white rounded text-sm font-bold hover:bg-emerald-700 ml-auto">
-                      次の問題 (Space) →
+                    <button
+                      onClick={next}
+                      className="px-5 py-2 bg-emerald-600 text-white rounded text-sm font-bold hover:bg-emerald-700 ml-auto"
+                      title="次の問題に進む (PCなら Space または → キーでも操作可)"
+                    >
+                      次の問題 →
                     </button>
                   </>
                 ) : !judged ? (
