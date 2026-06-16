@@ -1012,7 +1012,7 @@ ${(current.choices || []).map((c, i) => `  ${i + 1}. ${c}`).join('\n')}
       const q = p.question || '';
       const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|許可|届出/.test(q);
       if (isLawNumeric) return false;
-      const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
+      const isPurelyNumeric = (c: string) => /^\s*[\d.\s√/\-+()×,]+\s*(Ω|V|A|W|J|Hz|kV|kW|kVA|kΩ|MΩ|mA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa|N|N\/m|VA|lx|lm|cd|回転|回|倍|個|本|枚|ppm|ppb|度|°|H|F|μF|nF|pF|T|Wb)?\s*$/.test(c.trim());
       const isFormulaChoice = (c: string) => /[A-Za-zΩ]+\s*[＝=]\s*[\d.A-Za-z()/+\-×*√]+/.test(c);
       const calcCount = ch.filter((c) => isPurelyNumeric(c) || isFormulaChoice(c)).length;
       const hasFormulaLang = /求めよ|の値として|何[\[V Ω]|を求める|表す式|算出|計算式/.test(q);
@@ -1205,7 +1205,8 @@ ${examplesBlock}
     // 法令暗記キーワード (これらがあれば calc 判定から外す)
     const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|上、定められ|許可|届出/.test(q);
     // calc: 「計算問題」明示か、選択肢が "数値だけ" or "公式 (X=Y形式)" + 法令暗記でない
-    const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
+    // 数値部分は '1 000' のような thousand-separator space も許容
+    const isPurelyNumeric = (c: string) => /^\s*[\d.\s√/\-+()×,]+\s*(Ω|V|A|W|J|Hz|kV|kW|kVA|kΩ|MΩ|mA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa|N|N\/m|VA|lx|lm|cd|回転|回|倍|個|本|枚|ppm|ppb|度|°|H|F|μF|nF|pF|T|Wb)?\s*$/.test(c.trim());
     const isFormulaChoice = (c: string) => /[A-Za-zΩ]+\s*[＝=]\s*[\d.A-Za-z()/+\-×*√]+/.test(c) || /[A-Za-z]+[12n]?\s*[+\-×*/]\s*[A-Za-z]+[12n]?/.test(c);
     const isCalcChoice = (c: string) => isPurelyNumeric(c) || isFormulaChoice(c);
     const calcChoiceCount = choices.filter(isCalcChoice).length;
