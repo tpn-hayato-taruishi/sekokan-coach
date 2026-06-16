@@ -734,10 +734,17 @@ export default function QuizPage() {
     const pdfName = current.source_pdf || current.source.replace(/\.txt$/, '.pdf');
     const key = `${current.level}_第一次/${pdfName}`;
     const url = pdfUrls.problem?.[key];
-    if (url) {
+    // 安全チェック: 必ず 2級 problem -> 2級 URL になっているか
+    const levelTag = current.level === '1級' ? '1denki' : '2denki';
+    const isLevelMismatch = url && url.includes(current.level === '1級' ? '2denki' : '1denki');
+    if (url && !isLevelMismatch) {
       window.open(`${url}#page=${current.page || 1}`, '_blank', 'noopener,noreferrer');
     } else {
-      alert(`${current.year} の問題PDFは外部サイトに直リンク無し。kakomonn 解説サイトを開きます。`);
+      if (isLevelMismatch) {
+        alert(`URL不整合検出: ${current.level} ${current.year} の問題PDFが ${levelTag} を含みません。kakomonn 解説サイトを開きます。`);
+      } else {
+        alert(`${current.level} ${current.year} の問題PDFは外部サイトに直リンク無し。kakomonn 解説サイトを開きます。`);
+      }
       openKakomon();
     }
   }, [current, pdfUrls, openKakomon]);
@@ -745,16 +752,39 @@ export default function QuizPage() {
   const openAnswerPdf = useCallback(() => {
     if (!current) return;
     const denki = current.level === '1級' ? '1denki' : '2denki';
+    // 1級は AM/PM (午前/午後)、2級は 前期=AM=early / 後期=PM=late
     let suffix = '';
-    if (current.level === '2級' && current.season === 'AM') suffix = '_early';
+    if (current.level === '1級' && current.season === 'AM') suffix = '_am';
+    else if (current.level === '1級' && current.season === 'PM') suffix = '_pm';
+    else if (current.level === '2級' && current.season === 'AM') suffix = '_early';
     else if (current.level === '2級' && current.season === 'PM') suffix = '_late';
     const ansName = `${current.year}_${denki}_01${suffix}_kaitou.pdf`;
-    const key = `${current.level}_第一次/${ansName}`;
-    const url = pdfUrls.answer?.[key];
-    if (url) {
+    const primaryKey = `${current.level}_第一次/${ansName}`;
+    let url = pdfUrls.answer?.[primaryKey];
+    // フォールバック: suffix なしのキー(古い年度) も試す
+    if (!url) {
+      const fallbackName = `${current.year}_${denki}_01_kaitou.pdf`;
+      url = pdfUrls.answer?.[`${current.level}_第一次/${fallbackName}`];
+    }
+    // フォールバック2: pdf-urls.json の全 answer キーから level/year/season で検索
+    if (!url) {
+      const answerKeys = Object.keys(pdfUrls.answer || {});
+      const yearTag = current.year;
+      const seasonTag = current.season === 'AM' ? '(早|前|am|AM)' : current.season === 'PM' ? '(後|遅|pm|PM|late)' : '';
+      const re = new RegExp(`${current.level}.*${yearTag}.*${seasonTag}`);
+      const matchKey = answerKeys.find((k) => re.test(k));
+      if (matchKey) url = pdfUrls.answer![matchKey];
+    }
+    // 安全チェック: URL が正しい級を指しているか
+    const isLevelMismatch = url && url.includes(current.level === '1級' ? '2denki' : '1denki');
+    if (url && !isLevelMismatch) {
       window.open(url, '_blank', 'noopener,noreferrer');
     } else {
-      alert(`${current.year} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
+      if (isLevelMismatch) {
+        alert(`URL不整合検出: ${current.level} ${current.year} の解答PDFが ${denki} を含みません。kakomonn 解説サイトを開きます。`);
+      } else {
+        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
+      }
       openKakomon();
     }
   }, [current, pdfUrls, openKakomon]);
@@ -797,35 +827,60 @@ export default function QuizPage() {
     );
   }, [current]);
 
-  // 機能④: テーマ別「瞬殺テク集」生成 (理解後の即答パターン辞典)
+  // 機能④: テーマ別「瞬殺テク集」生成 — 選択肢を絞り込むためのパターン辞典
   const generateInstantTricks = useCallback(() => {
     if (!current || !current.theme) return;
+    const allProblems = data?.problems || [];
+    const sameTheme = allProblems.filter((p) => p.theme === current.theme && p.id !== current.id).slice(0, 6);
+    const examplesBlock = sameTheme.length > 0
+      ? `\n## 同テーマの過去問サンプル (これらから出題パターンと正答パターンを抽出してください)\n` + sameTheme.map((p, i) =>
+          `### 例${i + 1}: ${p.level} ${p.year} No.${p.no}\n` +
+          `Q: ${p.question.slice(0, 250)}\n` +
+          `選択肢:\n${(p.choices || []).map((c, j) => `  ${j + 1}. ${c.slice(0, 90)}`).join('\n')}\n` +
+          (p.correct_answer ? `正答: ${p.correct_answer}番` : ''),
+        ).join('\n\n')
+      : '';
     chatRef.current?.sendMessage(
-      `テーマ「${current.theme}」(${current.subject}) の過去問を瞬殺で解くための裏技集を作ってください。
+      `テーマ「${current.theme}」(${current.subject}) の過去問4択を **選択肢を絞り込んで正解を選ぶ** ためのパターン辞典を作ってください。
 
-要件:
-- 問題文にこのキーワード/状況が出たら、正解は必ずコレ という「即答パターン」
-- 4択中、正解選択肢に頻出する定番フレーズ (これが選択肢にあれば疑え)
-- 試験本番で1秒で正解を弾き出すための覚え方 (例: 変圧器中性点→B種接地、絶縁抵抗の数値、○m以上の距離、○日以内の期限など)
-- ひっかけ選択肢の典型パターン (これが入っていたら捨てる)
+## 受験生の要望
+- 「正解の根拠を完全に理解する」のではなく「**選択肢を見て、これは違う・これは怪しい** と判別して絞り込みたい」
+- 試験本番で迷ったときに、選択肢の語句だけ見て確率の高い答えに賭けたい
 
-出力フォーマット:
-【⚡ 瞬殺パターン】
-・キーワード「○○」が問題文にある → 正解は「△△」
-・(複数列挙)
+## 現在の問題
+${current.question.slice(0, 300)}
+選択肢:
+${(current.choices || []).map((c, i) => `  ${i + 1}. ${c.slice(0, 100)}`).join('\n')}
+${current.correct_answer ? `正答: ${current.correct_answer}番` : ''}
+${examplesBlock}
 
-【🎯 正解選択肢の定番フレーズ】
-・(選択肢に含まれていたら正解候補)
+## 守るべきこと
+1. 上記の **過去問サンプルから実際の言葉を引用** して書く。一般論や抽象論は禁止。
+2. 「正答に出やすい単語」「誤答にはこのフレーズが多い」など、**選択肢の文面パターン** に焦点。
+3. 「問題文と合わない選択肢を選ぶ」「計算結果と一致しないものは誤答」のような **当たり前の話は絶対書かない**。
 
-【💡 数値/期限の暗記必須項目】
-・(絶対覚える数字一覧)
+## 出力フォーマット
 
-【⚠ ひっかけ選択肢の見分け方】
-・(典型的なミスリードパターン)
+【🎯 正答に出やすい単語・フレーズ】 (4-6個)
+・「○○」を含む選択肢 → 正答率高 (理由: 例3,例5でも正答にこの単語あり)
+・「常に・必ず」を含む選択肢 → ほぼ正答 (法令や基準の絶対表現)
+(具体的に、過去問の文面から引用すること)
 
-短く、覚えやすく、本番で即答できる形に。`
+【❌ 誤答に頻出するNGワード】 (4-6個)
+・「省略できる」「不要である」 → 誤答多 (安全関連は省略不可が原則)
+・「逆比例」「上昇する」など、原則の逆を書いた表現 → 誤答
+(過去問の誤答選択肢から具体的に引用すること)
+
+【🔑 二択まで絞ったときの最終判断】
+迷う2選択肢が出たとき、どちらを選ぶ? このテーマ固有の判断基準を1-2個。
+例: 「より厳しい基準を選ぶ」「より具体的な数値を選ぶ」
+
+【📌 暗記必須の固有名詞・数値】 (3-5個)
+このテーマで出る数字や固有名詞をリスト化。
+
+簡潔に。本番で迷ったとき選択肢を見ながら絞り込めるレベルに。`,
     );
-  }, [current]);
+  }, [current, data]);
 
   // 機能③: 語呂合わせ・暗記カード生成 (法規/丸暗記向け)
   const generateMnemonic = useCallback(() => {
@@ -2180,7 +2235,7 @@ ${profileLines}
                     >
                       ← 前へ
                     </button>
-                    <span className="text-xs text-slate-500">[Space] 次 / [←] 前</span>
+                    <span className="text-xs text-slate-500 hidden sm:inline" title="PC専用: スペースキーで次の問題、←キーで前の問題">⌨ PC: Space=次 / ←=前</span>
                     <button onClick={next} className="px-5 py-2 bg-emerald-600 text-white rounded text-sm font-bold hover:bg-emerald-700 ml-auto">
                       次の問題 (Space) →
                     </button>
