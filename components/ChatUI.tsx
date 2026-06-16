@@ -10,6 +10,15 @@ interface ChatMessage {
   timestamp: number;
 }
 
+interface ThemeSampleProblem {
+  level?: string;
+  year?: string;
+  no?: number;
+  question?: string;
+  choices?: string[];
+  correctAnswer?: number;
+}
+
 interface QuizContext {
   level?: string;
   year?: string;
@@ -21,6 +30,7 @@ interface QuizContext {
   correctAnswer?: number;
   userSelection?: number;
   explanation?: string;
+  themeSamples?: ThemeSampleProblem[];
 }
 
 interface ChatUIProps {
@@ -136,10 +146,10 @@ const ChatUI = forwardRef<ChatUIHandle, ChatUIProps>(function ChatUIInner(
   }), [sendText, clearInternal]);
 
   const quickActions = [
-    '正解の理由を詳しく教えて',
-    '他の選択肢がなぜ違うか説明して',
-    'このテーマで覚えるコツは？',
-    '似た問題が出たら何に注意？',
+    'この問題の設問極性 (適当を選ぶ問題か、不適当を選ぶ問題か) を確認した上で、正答の根拠を法令条文や公式で具体的に説明してください。',
+    '誤答3つそれぞれについて、なぜ誤りか (または不適当系問題なら、なぜ正しい文か) を具体的な根拠とともに教えてください。1つも省略しないでください。',
+    'このテーマで覚えるべき不変ポイント (法令/物理/規格の絶対基準) を、語呂合わせや具体的なキーワード→正答対応の形で5個以内に絞って教えてください。',
+    'このテーマで類似問題が出たとき、選択肢を見た瞬間に怪しい/正解候補を絞り込むためのキーワードパターンを教えてください。実際の過去問例も併記してください。',
   ];
 
   return (
