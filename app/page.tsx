@@ -70,12 +70,12 @@ const EXAM_STRUCTURES: Record<string, ExamEra[]> = {
     {
       era: 'R3～現行', applies: '令和3年度以降',
       total: 64, answer: 40, pass: 60,
-      note: '第一次検定に名称変更。応用能力問題(No.38-42、5択全問必須)が新設され独立して50%以上必要に。',
+      note: '第一次検定に名称変更。No.38-42は5択全問必須 (足切り無し、合格基準60%のみ)。1級と違い応用能力50%足切りは無し。',
       groups: [
         { name: '電気工学', subject: '電気理論', no: 'No.1～12', out: 12, must: 8, type: '選択' },
         { name: '電気応用・電気設備', subject: '電気設備', no: 'No.13～32', out: 20, must: 12, type: '選択' },
         { name: '関連分野', subject: '電気設備', no: 'No.33～37', out: 5, must: 5, type: '必須' },
-        { name: '施工管理法 (応用能力)', subject: '施工管理法', no: 'No.38～42', out: 5, must: 5, type: '必須(50%以上)' },
+        { name: '施工管理法 (5択問題)', subject: '施工管理法', no: 'No.38～42', out: 5, must: 5, type: '必須' },
         { name: '施工管理法', subject: '施工管理法', no: 'No.43～52', out: 10, must: 10, type: '必須' },
         { name: '法規', subject: '法規', no: 'No.53～64', out: 12, must: 10, type: '選択' },
       ],
