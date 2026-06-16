@@ -900,14 +900,21 @@ ${examplesBlock}
   // 機能③: 語呂合わせ・暗記カード生成 (法規/丸暗記向け)
   const generateMnemonic = useCallback(() => {
     if (!current) return;
+    const isNegative = /不適当|誤って|誤った|定められていない|該当しない|関係のない/.test(current.question);
     chatRef.current?.sendMessage(
       `この問題に出てくる用語・単位・数値を **意味を考えずに暗記** できる語呂合わせを作ってください。
+
+## ⚠️ 重要 - 設問の極性チェック
+この問題は **${isNegative ? '「不適当 / 誤り / 定められていない」を選ぶ問題' : '「適当 / 正しい」を選ぶ問題'}** です。
+${isNegative
+  ? `→ 正答番号 (${current.correct_answer || '?'}番) の選択肢は **間違った文** です。**選択肢の内容をそのまま暗記させてはいけません**。必ず正しい内容に訂正してから語呂を作ってください。
+他の3つ (誤答番号) の選択肢は **正しい文** なので、こちらから事実を抽出します。`
+  : `→ 正答番号 (${current.correct_answer || '?'}番) の選択肢が正しい文です。これを暗記対象にします。`}
 
 ## 現在の問題
 ${current.question.slice(0, 250)}
 選択肢:
-${(current.choices || []).map((c, i) => `  ${i + 1}. ${c.slice(0, 80)}`).join('\n')}
-${current.correct_answer ? `正答: ${current.correct_answer}番` : ''}
+${(current.choices || []).map((c, i) => `  ${i + 1}. ${c.slice(0, 80)}${current.correct_answer === i + 1 ? (isNegative ? ' ← 正答(=この文は誤り、訂正必要)' : ' ← 正答(=正しい文)') : ''}`).join('\n')}
 
 ## 「語呂合わせ」の定義
 意味の説明 (= 正答の言い換え) を語呂合わせと言わない。受験生が **意味を理解しなくても語感だけで暗記できる** フレーズ。
