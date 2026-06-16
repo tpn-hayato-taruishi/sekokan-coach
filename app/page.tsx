@@ -1006,9 +1006,19 @@ ${(current.choices || []).map((c, i) => `  ${i + 1}. ${c}`).join('\n')}
     if (!current || !current.theme) return;
     const allProblems = data?.problems || [];
     const sameTheme = allProblems.filter((p) => p.theme === current.theme && p.id !== current.id);
-    // 計算問題かどうかを多数決で判定
-    const calcCount = sameTheme.filter((p) => /計算|求めよ|の値|何\[|A\]|V\]|Ω\]|W\]/.test(p.question + (p.choices || []).join(' '))).length;
-    const isCalcTheme = calcCount >= Math.max(2, Math.floor(sameTheme.length * 0.5));
+    // 計算テーマかどうかを多数決で判定 (精度向上版)
+    const isCalcProblem = (p: typeof current) => {
+      const ch = p.choices || [];
+      const q = p.question || '';
+      const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|許可|届出/.test(q);
+      if (isLawNumeric) return false;
+      const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
+      const purelyNum = ch.filter(isPurelyNumeric).length;
+      const hasFormulaLang = /求めよ|の値として|何[\[V Ω]|を求める|表す式|算出|計算式/.test(q);
+      return purelyNum >= 4 || (hasFormulaLang && purelyNum >= 2);
+    };
+    const calcCount = sameTheme.filter(isCalcProblem).length + (isCalcProblem(current) ? 1 : 0);
+    const isCalcTheme = calcCount >= Math.max(2, Math.floor((sameTheme.length + 1) * 0.5));
     const sampleN = Math.min(sameTheme.length, 8);
     const examplesBlock = sampleN > 0
       ? `\n## 同テーマの過去問サンプル (${sampleN}問。これらの選択肢と正答を見比べて傾向を抽出してください)\n` + sameTheme.slice(0, 8).map((p, i) =>
@@ -1188,13 +1198,24 @@ ${examplesBlock}
   const generateMnemonic = useCallback(() => {
     if (!current) return;
     const q = current.question || '';
-    const choicesText = (current.choices || []).join(' ');
+    const choices = current.choices || [];
     const isNegative = /不適当|誤って|誤った|定められていない|該当しない|関係のない|含まれない|除かれて/.test(q);
-    // 問題タイプを自動判定
-    const hasFormula = /計算|求めよ|何\[|の値|A\]|V\]|Ω\]|W\]|H\]|F\]/.test(q + choicesText);
-    const hasFigure = /図に示す|図の|示す図|図のような/.test(q) || (current.has_figure ?? false);
-    const isLaw = /法|条|令|規程|JIS|定められ|届出|記載|許可|該当する/.test(q);
-    const isPair = /組合せ|単位|名称|記号/.test(q);
+    // 問題タイプを自動判定 (精度重視)
+    // 法令暗記キーワード (これらがあれば calc 判定から外す)
+    const isLawNumeric = /法|条|令|規程|JIS|技術基準|定められ|上、定められ|許可|届出/.test(q);
+    // calc: 「計算問題」明示か、選択肢が "数値だけ" + 法令暗記でない
+    const isPurelyNumeric = (c: string) => /^\s*[\d.√/\-+()×]+\s*(Ω|V|A|W|J|Hz|kV|kW|mA|MΩ|kΩ|kVA|cosφ|%|分|秒|時間|m|cm|mm|kg|MPa)?\s*$/.test(c);
+    const purelyNumericChoices = choices.filter(isPurelyNumeric).length;
+    const hasFormulaLang = /求めよ|の値として|何[\[V Ω]|を求める|表す式|算出|計算式|として、正しい/.test(q) && !isLawNumeric;
+    // 計算問題と判定: 法令でない + (4つ全て数値 or 計算言語+2つ以上数値)
+    const hasFormula = !isLawNumeric && (purelyNumericChoices >= 4 || (hasFormulaLang && purelyNumericChoices >= 2));
+    // figure: 図参照 (calcより優先しない)
+    const hasFigure = (/図に示す|示す図|図のような|図のように|図の(うち|中で|よう)/.test(q) || (current.has_figure ?? false)) && !hasFormula;
+    // law: 法令名 + 「上」「に基づき」など。単独の「法」は除外 (「測定法」「工法」誤検出回避)
+    const isLaw = /電気設備の技術基準|電気事業法|電気工事士法|建設業法|建築基準法|労働安全衛生法|消防法|労働基準法|電気用品安全法|電気工事業の業務|廃棄物の処理|大気汚染防止法|騒音規制法|JIS.{0,8}(上|では|に|規定)|日本産業規格|日本工業規格|定められ|届出|記載事項|許可を受け/.test(q);
+    // pair: 「組合せ」 OR 選択肢が「○○ — △△」形式 (両側に対応関係)
+    const choicesArePairs = choices.filter((c) => /[—／/＿\t]| {2,}/.test(c)).length >= 3;
+    const isPair = /組合せ|の単位|の名称|の記号|に該当する用語/.test(q) || choicesArePairs;
     const problemType: 'calc' | 'figure' | 'law' | 'pair' | 'fact' =
       hasFormula ? 'calc'
       : hasFigure ? 'figure'
