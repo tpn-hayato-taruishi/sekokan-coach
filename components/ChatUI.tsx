@@ -145,11 +145,23 @@ const ChatUI = forwardRef<ChatUIHandle, ChatUIProps>(function ChatUIInner(
     clear: clearInternal,
   }), [sendText, clearInternal]);
 
-  const quickActions = [
-    'この問題の設問極性 (適当を選ぶ問題か、不適当を選ぶ問題か) を確認した上で、正答の根拠を法令条文や公式で具体的に説明してください。',
-    '誤答3つそれぞれについて、なぜ誤りか (または不適当系問題なら、なぜ正しい文か) を具体的な根拠とともに教えてください。1つも省略しないでください。',
-    'このテーマで覚えるべき不変ポイント (法令/物理/規格の絶対基準) を、語呂合わせや具体的なキーワード→正答対応の形で5個以内に絞って教えてください。',
-    'このテーマで類似問題が出たとき、選択肢を見た瞬間に怪しい/正解候補を絞り込むためのキーワードパターンを教えてください。実際の過去問例も併記してください。',
+  const quickActions: { label: string; prompt: string }[] = [
+    {
+      label: '正答の根拠',
+      prompt: 'この問題の設問極性 (適当を選ぶ問題か、不適当を選ぶ問題か) を確認した上で、正答の根拠を法令条文や公式で具体的に説明してください。',
+    },
+    {
+      label: '誤答3つの理由',
+      prompt: '誤答3つそれぞれについて、なぜ誤りか (または不適当系問題なら、なぜ正しい文か) を具体的な根拠とともに教えてください。1つも省略しないでください。',
+    },
+    {
+      label: '覚えるコツ',
+      prompt: 'このテーマで覚えるべき不変ポイント (法令/物理/規格の絶対基準) を、語呂合わせや具体的なキーワード→正答対応の形で5個以内に絞って教えてください。',
+    },
+    {
+      label: '類題の絞り込み法',
+      prompt: 'このテーマで類似問題が出たとき、選択肢を見た瞬間に怪しい/正解候補を絞り込むためのキーワードパターンを教えてください。実際の過去問例も併記してください。',
+    },
   ];
 
   return (
@@ -206,12 +218,13 @@ const ChatUI = forwardRef<ChatUIHandle, ChatUIProps>(function ChatUIInner(
         <div className="flex flex-wrap gap-1">
           {quickActions.map((q) => (
             <button
-              key={q}
-              onClick={() => { setInput(q); }}
+              key={q.label}
+              onClick={() => { setInput(q.prompt); }}
               disabled={busy}
+              title={q.prompt}
               className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded hover:bg-blue-100 disabled:opacity-50"
             >
-              {q}
+              {q.label}
             </button>
           ))}
         </div>
