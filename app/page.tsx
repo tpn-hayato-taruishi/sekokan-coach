@@ -2152,10 +2152,19 @@ ${profileLines}
                 >
                   {bookmarkIds.has(current.id) ? '⭐ 登録済' : '☆ ブックマーク'}
                 </button>
-                <button onClick={openProblemPdf} className={`px-3 py-2 rounded text-sm font-bold text-white ${current.has_figure ? 'bg-violet-500 hover:bg-violet-600' : 'bg-slate-500 hover:bg-slate-600'}`}>
-                  {current.has_figure ? '🖼 問題PDF (図あり)' : '📄 問題PDF'}
+                <button
+                  onClick={openProblemPdf}
+                  className={`px-3 py-2 rounded text-sm font-bold text-white ${current.has_figure ? 'bg-violet-500 hover:bg-violet-600' : 'bg-slate-500 hover:bg-slate-600'}`}
+                  title={`問題PDF を新タブで開く (p.${current.page || '?'} 周辺に No.${current.no})`}
+                >
+                  {current.has_figure ? '🖼 問題PDF' : '📄 問題PDF'}
+                  {current.page ? <span className="ml-1 text-[10px] opacity-80">p.{current.page}</span> : null}
                 </button>
-                <button onClick={openAnswerPdf} className="px-3 py-2 bg-teal-500 text-white rounded text-sm font-bold hover:bg-teal-600">
+                <button
+                  onClick={openAnswerPdf}
+                  className="px-3 py-2 bg-teal-500 text-white rounded text-sm font-bold hover:bg-teal-600"
+                  title={`解答PDF を新タブで開く (No.${current.no} を探してください)`}
+                >
                   📑 解答PDF
                 </button>
                 <button onClick={openKakomon} className="px-3 py-2 bg-cyan-500 text-white rounded text-sm font-bold hover:bg-cyan-600">
