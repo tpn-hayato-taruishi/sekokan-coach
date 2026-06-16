@@ -144,7 +144,6 @@ type PdfUrlMap = { answer?: Record<string, string>; problem?: Record<string, str
 export default function QuizPage() {
   const [data, setData] = useState<QuizData | null>(null);
   const [pdfUrls, setPdfUrls] = useState<PdfUrlMap>({});
-  const [pdfOverlay, setPdfOverlay] = useState<{ url: string; title: string } | null>(null);
   // ダッシュボードストリップの折りたたみ
   const [dashboardCollapsed, setDashboardCollapsed] = useState(() => {
     if (typeof window === 'undefined') return false;
@@ -736,10 +735,7 @@ export default function QuizPage() {
     const key = `${current.level}_第一次/${pdfName}`;
     const url = pdfUrls.problem?.[key];
     if (url) {
-      setPdfOverlay({
-        url: `${url}#page=${current.page || 1}`,
-        title: `📄 ${current.level} ${current.year}${current.season ? ` ${current.season === 'AM' ? '前期' : current.season === 'PM' ? '後期' : current.season}` : ''} 問題PDF (p.${current.page || 1})`,
-      });
+      window.open(`${url}#page=${current.page || 1}`, '_blank', 'noopener,noreferrer');
     } else {
       alert(`${current.year} の問題PDFは外部サイトに直リンク無し。kakomonn 解説サイトを開きます。`);
       openKakomon();
@@ -756,10 +752,7 @@ export default function QuizPage() {
     const key = `${current.level}_第一次/${ansName}`;
     const url = pdfUrls.answer?.[key];
     if (url) {
-      setPdfOverlay({
-        url,
-        title: `📑 ${current.level} ${current.year}${current.season ? ` ${current.season === 'AM' ? '前期' : current.season === 'PM' ? '後期' : current.season}` : ''} 解答PDF`,
-      });
+      window.open(url, '_blank', 'noopener,noreferrer');
     } else {
       alert(`${current.year} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
       openKakomon();
@@ -2252,22 +2245,6 @@ ${profileLines}
         </div>
       </div>
 
-      {/* PDFオーバーレイ表示 (外部PDFを iframe で埋め込み) */}
-      {pdfOverlay && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex flex-col" onClick={() => setPdfOverlay(null)}>
-          <div className="bg-white px-3 py-2 flex items-center gap-2 flex-shrink-0" onClick={(e) => e.stopPropagation()}>
-            <span className="font-bold text-sm flex-1 truncate">{pdfOverlay.title}</span>
-            <a href={pdfOverlay.url} target="_blank" rel="noopener noreferrer" className="text-xs px-3 py-1 bg-slate-200 hover:bg-slate-300 rounded">↗ 新タブで開く</a>
-            <button onClick={() => setPdfOverlay(null)} className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded text-sm font-bold">✕ 閉じる</button>
-          </div>
-          <iframe
-            src={pdfOverlay.url}
-            className="flex-1 w-full bg-white"
-            title="PDF preview"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
     </div>
   );
 }
