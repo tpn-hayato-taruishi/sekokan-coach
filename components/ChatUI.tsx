@@ -215,14 +215,15 @@ const ChatUI = forwardRef<ChatUIHandle, ChatUIProps>(function ChatUIInner(
       )}
 
       <div className="border-t border-slate-200 p-3 space-y-2">
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="text-[10px] text-slate-500 font-semibold mr-1">⚡ クイック質問:</span>
           {quickActions.map((q) => (
             <button
               key={q.label}
-              onClick={() => { setInput(q.prompt); }}
+              onClick={() => sendText(q.prompt)}
               disabled={busy}
-              title={q.prompt}
-              className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded hover:bg-blue-100 disabled:opacity-50"
+              title={`即送信: ${q.prompt}`}
+              className="text-xs px-2.5 py-1.5 bg-blue-50 text-blue-700 rounded font-semibold hover:bg-blue-600 hover:text-white disabled:opacity-50 transition"
             >
               {q.label}
             </button>
@@ -240,13 +241,13 @@ const ChatUI = forwardRef<ChatUIHandle, ChatUIProps>(function ChatUIInner(
             }}
             placeholder="質問を入力 (Enterで送信、Shift+Enterで改行)"
             disabled={busy}
-            rows={2}
+            rows={3}
             className="flex-1 px-3 py-2 border border-slate-300 rounded text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
             onClick={send}
             disabled={busy || !input.trim()}
-            className="px-4 py-2 bg-blue-600 text-white rounded font-bold text-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-blue-600 text-white rounded font-bold text-sm hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed self-stretch"
           >
             送信
           </button>

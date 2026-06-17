@@ -419,6 +419,8 @@ export default function QuizPage() {
     setFilterFreq('');
   }, []);
 
+  const activeFilterCount = [filterLevel, filterSubject, filterTheme, filterSim, filterFreq].filter(Boolean).length;
+
   useEffect(() => {
     fetch('/data/quiz.json')
       .then((r) => r.json())
@@ -639,24 +641,33 @@ export default function QuizPage() {
     }
   }, [current, judged, redoMode, wrongIds, studyMode]);
 
-  // Space キーで次の問題 / ← で前へ (眺めモード用ナビゲーション)
+  // キーボードショートカット:
+  // - browseモード: Space/→で次、←で前 (常時)
+  // - 通常モード: 判定済みなら Space/→で次の問題に進む
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      // テキスト入力中は無視
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
-      if (studyMode !== 'browse') return;
-      if (e.key === ' ' || e.key === 'ArrowRight') {
-        e.preventDefault();
-        pickNext();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        goPrev();
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      if (studyMode === 'browse') {
+        if (e.key === ' ' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          pickNext();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goPrev();
+        }
+      } else if (judged) {
+        if (e.key === ' ' || e.key === 'ArrowRight') {
+          e.preventDefault();
+          pickNext();
+        }
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [studyMode, pickNext, goPrev]);
+  }, [studyMode, judged, pickNext, goPrev]);
 
   // 試験日までの残日数 + 1日あたり推奨問題数
   const examInfo = useMemo((): { days: number | null; dailyTarget: number; todayCount: number; totalTarget: number; remaining: number; pace: string } => {
@@ -2605,10 +2616,20 @@ ${topThemes}
               </button>
               <button
                 onClick={clearFilters}
-                className="px-3 py-2 bg-slate-100 text-slate-700 border border-slate-300 rounded text-sm hover:bg-slate-200"
-                title="級・科目・テーマ・類似度のフィルタをすべて解除"
+                disabled={activeFilterCount === 0}
+                className={`px-3 py-2 rounded text-sm border inline-flex items-center gap-1.5 transition ${
+                  activeFilterCount > 0
+                    ? 'bg-rose-50 text-rose-700 border-rose-300 hover:bg-rose-100 font-bold'
+                    : 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                }`}
+                title={activeFilterCount > 0 ? `${activeFilterCount}個のフィルタを解除` : 'フィルタは未適用'}
               >
                 ✖ フィルタクリア
+                {activeFilterCount > 0 && (
+                  <span className="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 bg-rose-600 text-white rounded-full text-xs font-bold">
+                    {activeFilterCount}
+                  </span>
+                )}
               </button>
               <button
                 onClick={resetStats}
@@ -2722,15 +2743,20 @@ ${topThemes}
                       key={i}
                       onClick={() => judge(i)}
                       disabled={judged}
-                      className={`w-full text-left px-4 py-3 border-2 rounded transition ${
+                      className={`w-full text-left px-4 py-3.5 border-2 rounded flex items-start gap-3 transition ${
                         isCorrect ? 'border-emerald-500 bg-emerald-50 text-emerald-900' :
                         isWrong ? 'border-red-500 bg-red-50 text-red-900' :
                         selected === i ? 'border-blue-500 bg-blue-50' :
                         'border-slate-200 hover:border-blue-400 hover:bg-slate-50'
                       } ${judged ? 'cursor-default' : 'cursor-pointer'}`}
                     >
-                      <span className="font-bold text-blue-700 mr-2">{i + 1}.</span>
-                      <span className="text-sm">{c}</span>
+                      <span className={`flex-shrink-0 inline-flex items-center justify-center w-7 h-7 rounded-full font-bold text-sm ${
+                        isCorrect ? 'bg-emerald-500 text-white' :
+                        isWrong ? 'bg-red-500 text-white' :
+                        selected === i ? 'bg-blue-500 text-white' :
+                        'bg-slate-100 text-blue-700'
+                      }`}>{i + 1}</span>
+                      <span className="text-base leading-relaxed flex-1">{c}</span>
                     </button>
                   );
                 })}
@@ -2828,17 +2854,19 @@ ${topThemes}
                     <button
                       onClick={goPrev}
                       disabled={historyIdx <= 0}
-                      className="px-3 py-2 bg-slate-400 text-white rounded text-sm font-bold hover:bg-slate-500 disabled:opacity-30 disabled:cursor-not-allowed"
-                      title="前の問題に戻る (PCなら ← キーでも操作可)"
+                      className="px-3 py-2 bg-slate-400 text-white rounded text-sm font-bold hover:bg-slate-500 disabled:opacity-30 disabled:cursor-not-allowed inline-flex items-center gap-1.5"
+                      title="前の問題に戻る"
                     >
                       ← 前へ
+                      <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 bg-white/25 rounded text-[10px] font-mono font-normal">←</kbd>
                     </button>
                     <button
                       onClick={next}
-                      className="px-5 py-2 bg-emerald-600 text-white rounded text-sm font-bold hover:bg-emerald-700 ml-auto"
-                      title="次の問題に進む (PCなら Space または → キーでも操作可)"
+                      className="px-5 py-2 bg-emerald-600 text-white rounded text-sm font-bold hover:bg-emerald-700 ml-auto inline-flex items-center gap-1.5"
+                      title="次の問題に進む"
                     >
                       次の問題 →
+                      <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 bg-white/25 rounded text-[10px] font-mono font-normal">Space / →</kbd>
                     </button>
                   </>
                 ) : !judged ? (
@@ -2850,8 +2878,9 @@ ${topThemes}
                     <button onClick={redo} className="px-3 py-2 bg-sky-500 text-white rounded text-sm font-bold hover:bg-sky-600">
                       🔄 同じ問題をもう一度
                     </button>
-                    <button onClick={next} className="px-5 py-2 bg-blue-600 text-white rounded text-sm font-bold hover:bg-blue-700 ml-auto">
+                    <button onClick={next} className="px-5 py-2 bg-blue-600 text-white rounded text-sm font-bold hover:bg-blue-700 ml-auto inline-flex items-center gap-1.5">
                       次の問題 →
+                      <kbd className="hidden sm:inline-flex items-center px-1.5 py-0.5 bg-white/25 rounded text-[10px] font-mono font-normal">Space / →</kbd>
                     </button>
                   </>
                 )}
