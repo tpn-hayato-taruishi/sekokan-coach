@@ -75,10 +75,10 @@ footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85
   <p style="font-size:0.95em">全問題一覧（年度別傾向付き） ／ <strong>電気理論</strong></p>
 </div>
 <div class="container" id="main-content" style="padding:16px 24px">
-<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工.html">施工 →</a></span></nav>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__電気設備.html">電気設備 →</a></span></nav>
 <section id="all-questions">
   <h2>全問題一覧（年度別傾向付き）</h2>
-<p>全15問の過去問を科目・年度別に一覧表示。<strong>年度ごとのカテゴリ分布</strong>で出題傾向の変化が一目瞭然。</p>
+<p>全160問の過去問を科目・年度別に一覧表示。<strong>年度ごとのカテゴリ分布</strong>で出題傾向の変化が一目瞭然。</p>
 <div style="display:flex;align-items:center;gap:16px;margin:12px 0;padding:12px 16px;background:#eff6ff;border-radius:8px">
   <span id="q-progress" style="font-weight:700;color:#1e40af">0/0問 完了</span>
   <span style="font-size:0.85em;color:#6b7280">チェックボックスで学習進捗を記録（ブラウザに保存）</span>
@@ -90,201 +90,954 @@ function updateCount(){var all=document.querySelectorAll(".q-chk-input");var don
 function restoreChecks(){document.querySelectorAll(".q-chk-input").forEach(function(cb){var k="sekokan1_"+cb.dataset.key;if(localStorage.getItem(k)==="1"){cb.checked=true;cb.closest("tr").classList.add("done");}});updateCount();}
 window.addEventListener("load",restoreChecks);
 </script>
-<h3>電気理論（31年分・15問）</h3>
+<h3>電気理論（18年分・160問）</h3>
 <div style="margin:8px 0 16px;overflow-x:auto">
 <table style="font-size:0.82em;white-space:nowrap">
 <tr><th>年度</th><th>問題構成（カテゴリ分布）</th><th>暗記率</th><th>傾向メモ</th></tr>
-<tr><td class="fwb">R2</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×2</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
-<tr><td class="fwb">H30後期</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">配電盤茜制御盤</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+配電盤茜制御盤</span> <span style="color:#dc2626">-電気工事</span> </td></tr>
-<tr><td class="fwb">H30</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×2</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+電気工事</span> <span style="color:#dc2626">-配電盤茜制御盤</span> </td></tr>
-<tr><td class="fwb">H28</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">配線用図記号</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+配線用図記号</span> </td></tr>
-<tr><td class="fwb">H27</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">亜日本電機工業</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+亜日本電機工業</span> <span style="color:#dc2626">-配線用図記号,電気工事</span> </td></tr>
-<tr><td class="fwb">H26</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事×3</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+電気工事</span> <span style="color:#dc2626">-亜日本電機工業</span> </td></tr>
-<tr><td class="fwb">H24</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">日本電機工業会</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+日本電機工業会</span> </td></tr>
-<tr><td class="fwb">H22</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#dc2626">-日本電機工業会</span> </td></tr>
-<tr><td class="fwb">H20</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気工事</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+<tr><td class="fwb">R7</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">並列回路の消費電力計算（RL並列+R並列）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・ブリッジ平衡条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・進相コンデンサ容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・短絡比</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">誘導電動機・始動法</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・分流器の内部抵抗</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・相互インダクタンス</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサのエネルギー</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:12.5%;height:100%;background:#b45309"></div></div> 12%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+<tr><td class="fwb">R6</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">RLC直列回路の有効電力計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・二電力計法による力率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・速度制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・進相コンデンサ容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">単相2線式配電線路の電圧降下計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・全損失計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">抵抗の発生熱量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">直流回路・重ね合わせの定理</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自己インダクタンスの計算</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+RLC直列回路の有効電力計算,直流回路・重ね合わせの定理,三相誘導電動機・速度制御,自己インダクタンスの計算,変圧器・全損失計算,単相2線式配電線路の電圧降下計算,三相交流回路・二電力計法による力率,抵抗の発生熱量計算</span> <span style="color:#dc2626">-並列回路の消費電力計算（RL並列+R並列）,静電気・コンデンサのエネルギー,誘導電動機・始動法,交流回路・ブリッジ平衡条件,電磁誘導・相互インダクタンス,同期発電機・短絡比,電気計測・分流器の内部抵抗</span> </td></tr>
+<tr><td class="fwb">R5</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス制御・正逆運転回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・消費電力計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機の特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・一次電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">発電機の特徴</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">直線状電線の抵抗値計算（抵抗率・断面積）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気化学・電解精錬</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・指示電気計器の動作原理</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサの電荷計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電界・電気力線の性質</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:10.0%;height:100%;background:#b45309"></div></div> 10%</td><td class="fz9"><span style="color:#16a34a">+シーケンス制御・正逆運転回路,三相誘導電動機の特性,発電機の特徴,変圧器・一次電流計算,三相交流回路・消費電力計算,直線状電線の抵抗値計算（抵抗率・断面積）,電気化学・電解精錬,電気計測・指示電気計器の動作原理,静電気・コンデンサの電荷計算,静電界・電気力線の性質</span> <span style="color:#dc2626">-RLC直列回路の有効電力計算,直流回路・重ね合わせの定理,三相誘導電動機・速度制御,自己インダクタンスの計算,力率改善・進相コンデンサ容量,変圧器・全損失計算,単相2線式配電線路の電圧降下計算,三相交流回路・二電力計法による力率,抵抗の発生熱量計算</span> </td></tr>
+<tr><td class="fwb">R4</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路の電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相短絡電流計算（変圧器%インピーダンス）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">分流器の内部抵抗</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・進相コンデンサ容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">抵抗の発生熱量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自動制御・JIS</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気加熱・誘導加熱</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・相互インダクタンス</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+分流器の内部抵抗,三相交流回路の電流計算,同期発電機・電圧変動率,自動制御・JIS,単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）,変圧器・電圧変動率,電気加熱・誘導加熱,力率改善・進相コンデンサ容量,三相短絡電流計算（変圧器%インピーダンス）,電磁誘導・相互インダクタンス,抵抗の発生熱量計算</span> <span style="color:#dc2626">-シーケンス制御・正逆運転回路,三相誘導電動機の特性,発電機の特徴,変圧器・一次電流計算,三相交流回路・消費電力計算,直線状電線の抵抗値計算（抵抗率・断面積）,電気化学・電解精錬,電気計測・指示電気計器の動作原理,静電気・コンデンサの電荷計算,静電界・電気力線の性質</span> </td></tr>
+<tr><td class="fwb">R3</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・二電力計法による力率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・Y-Δ始動方式</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・ブリッジ平衡条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・励磁方式</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・励磁突入電流</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自動制御・ブロック線図の合成伝達関数</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自己インダクタンスの計算・環状鉄心</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・点電荷に働く静電力</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+変圧器・励磁突入電流,交流回路・ブリッジ平衡条件,三相誘導電動機・Y-Δ始動方式,同期発電機・励磁方式,静電気・点電荷に働く静電力,三相交流回路・二電力計法による力率,自己インダクタンスの計算・環状鉄心,自動制御・ブロック線図の合成伝達関数</span> <span style="color:#dc2626">-分流器の内部抵抗,三相交流回路の電流計算,同期発電機・電圧変動率,自動制御・JIS,電磁誘導・相互インダクタンス,変圧器・電圧変動率,電気加熱・誘導加熱,力率改善・進相コンデンサ容量,三相短絡電流計算（変圧器%インピーダンス）,抵抗の発生熱量計算</span> </td></tr>
+<tr><td class="fwb">R2</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス回路・論理回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">パーセントインピーダンス（%Z）</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・速度制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・RLC直列回路の有効電力</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・並行運転</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・鉄損と銅損の変化</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">強磁性体のヒステリシス曲線</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気化学・電気分解</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・多重範囲電圧計の倍率器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサの電荷計算</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:10.0%;height:100%;background:#b45309"></div></div> 10%</td><td class="fz9"><span style="color:#16a34a">+電気計測・多重範囲電圧計の倍率器,シーケンス回路・論理回路,変圧器・鉄損と銅損の変化,パーセントインピーダンス（%Z）,強磁性体のヒステリシス曲線,三相誘導電動機・速度制御,交流回路・RLC直列回路の有効電力,同期発電機・並行運転,静電気・コンデンサの電荷計算,電気化学・電気分解</span> <span style="color:#dc2626">-変圧器・励磁突入電流,交流回路・ブリッジ平衡条件,三相誘導電動機・Y-Δ始動方式,同期発電機・励磁方式,単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）,静電気・点電荷に働く静電力,三相交流回路・二電力計法による力率,自己インダクタンスの計算・環状鉄心,自動制御・ブロック線図の合成伝達関数</span> </td></tr>
+<tr><td class="fwb">R1</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス回路・論理回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・抵抗値と消費電力計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機の特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・ベクトル図</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・効率と損失の特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">抵抗の発生熱量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・電流力計形計器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・相互インダクタンス計算</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:12.5%;height:100%;background:#b45309"></div></div> 12%</td><td class="fz9"><span style="color:#16a34a">+電気計測・電流力計形計器,三相誘導電動機の特性,電磁誘導・相互インダクタンス計算,同期発電機・ベクトル図,変圧器・効率と損失の特性,三相交流回路・抵抗値と消費電力計算,抵抗の発生熱量計算</span> <span style="color:#dc2626">-電気計測・多重範囲電圧計の倍率器,変圧器・鉄損と銅損の変化,パーセントインピーダンス（%Z）,強磁性体のヒステリシス曲線,三相誘導電動機・速度制御,交流回路・RLC直列回路の有効電力,同期発電機・並行運転,静電気・コンデンサの電荷計算,電気化学・電気分解</span> </td></tr>
+<tr><td class="fwb">H30</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス回路・論理回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・二電力計法による力率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・速度制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・基本性質</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・一次電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">誘導発電機の特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・円形コイルの起電力</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・点電荷に働く静電力</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+三相誘導電動機・速度制御,交流回路・基本性質,変圧器・一次電流計算,誘導発電機の特性,電磁誘導・円形コイルの起電力,静電気・点電荷に働く静電力,三相交流回路・二電力計法による力率</span> <span style="color:#dc2626">-電気計測・電流力計形計器,三相誘導電動機の特性,電磁誘導・相互インダクタンス計算,同期発電機・ベクトル図,変圧器・効率と損失の特性,三相交流回路・抵抗値と消費電力計算,抵抗の発生熱量計算</span> </td></tr>
+<tr><td class="fwb">H29</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機の特性曲線</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・RLC直列回路の力率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・進相コンデンサ容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・三相結線</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自動制御・ブロック線図</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">誘導電動機・始動法</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・分流器の倍率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁気・自己インダクタンス</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサの静電容量</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:10.0%;height:100%;background:#b45309"></div></div> 10%</td><td class="fz9"><span style="color:#16a34a">+自動制御・ブロック線図,同期発電機・電圧変動率,誘導電動機・始動法,電磁気・自己インダクタンス,交流回路・RLC直列回路の力率,静電気・コンデンサの静電容量,力率改善・進相コンデンサ容量,変圧器・三相結線,三相誘導電動機の特性曲線,電気計測・分流器の倍率</span> <span style="color:#dc2626">-シーケンス回路・論理回路,三相誘導電動機・速度制御,交流回路・基本性質,変圧器・一次電流計算,誘導発電機の特性,電磁誘導・円形コイルの起電力,静電気・点電荷に働く静電力,三相交流回路・二電力計法による力率</span> </td></tr>
+<tr><td class="fwb">H28</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス制御・論理回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機の特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・ブリッジ平衡条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・励磁方式</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・励磁突入電流</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・整流形計器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・誘導起電力</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサのエネルギー</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:12.5%;height:100%;background:#b45309"></div></div> 12%</td><td class="fz9"><span style="color:#16a34a">+シーケンス制御・論理回路,電磁誘導・誘導起電力,変圧器・励磁突入電流,静電気・コンデンサのエネルギー,交流回路・ブリッジ平衡条件,三相誘導電動機の特性,同期発電機・励磁方式,電気計測・整流形計器</span> <span style="color:#dc2626">-自動制御・ブロック線図,同期発電機・電圧変動率,誘導電動機・始動法,電磁気・自己インダクタンス,交流回路・RLC直列回路の力率,静電気・コンデンサの静電容量,力率改善・進相コンデンサ容量,変圧器・三相結線,三相誘導電動機の特性曲線,電気計測・分流器の倍率</span> </td></tr>
+<tr><td class="fwb">H27</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス回路・論理回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">リアクトルの設置目的</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・始動法</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・短絡比</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・一次電流の計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">導体の抵抗値計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・指示電気計器の動作原理</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁誘導・相互インダクタンス</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:11.1%;height:100%;background:#b45309"></div></div> 11%</td><td class="fz9"><span style="color:#16a34a">+シーケンス回路・論理回路,リアクトルの設置目的,電磁誘導・相互インダクタンス,導体の抵抗値計算,同期発電機・短絡比,電気計測・指示電気計器の動作原理,三相誘導電動機・始動法,三相交流回路・電流計算,変圧器・一次電流の計算</span> <span style="color:#dc2626">-シーケンス制御・論理回路,電磁誘導・誘導起電力,変圧器・励磁突入電流,静電気・コンデンサのエネルギー,交流回路・ブリッジ平衡条件,三相誘導電動機の特性,同期発電機・励磁方式,電気計測・整流形計器</span> </td></tr>
+<tr><td class="fwb">H26</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路・消費電力計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・速度制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・進相コンデンサ容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・三相短絡特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・鉄損と銅損の関係</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">抵抗の発生熱量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">自動制御・積分動作のステップ応答</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・分流器の倍率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁力・平行導体間の力の方向</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:11.1%;height:100%;background:#b45309"></div></div> 11%</td><td class="fz9"><span style="color:#16a34a">+三相誘導電動機・速度制御,電磁力・平行導体間の力の方向,三相交流回路・消費電力計算,力率改善・進相コンデンサ容量,変圧器・鉄損と銅損の関係,自動制御・積分動作のステップ応答,同期発電機・三相短絡特性,電気計測・分流器の倍率,抵抗の発生熱量計算</span> <span style="color:#dc2626">-シーケンス回路・論理回路,リアクトルの設置目的,電磁誘導・相互インダクタンス,導体の抵抗値計算,同期発電機・短絡比,電気計測・指示電気計器の動作原理,三相誘導電動機・始動法,三相交流回路・電流計算,変圧器・一次電流の計算</span> </td></tr>
+<tr><td class="fwb">H25</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・キルヒホッフの法則</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・並行運転条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">論理回路・真理値表</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電動機・巻上装置の所要出力</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気化学・電気めっき</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・整流形計器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・平行板コンデンサの静電容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・電気力線の性質</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">高圧進相コンデンサ・JIS</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:10.0%;height:100%;background:#b45309"></div></div> 10%</td><td class="fz9"><span style="color:#16a34a">+交流回路・キルヒホッフの法則,静電気・電気力線の性質,電気化学・電気めっき,電動機・巻上装置の所要出力,静電気・平行板コンデンサの静電容量,変圧器・電圧変動率,同期発電機・並行運転条件,高圧進相コンデンサ・JIS,電気計測・整流形計器,論理回路・真理値表</span> <span style="color:#dc2626">-三相誘導電動機・速度制御,電磁力・平行導体間の力の方向,三相交流回路・消費電力計算,力率改善・進相コンデンサ容量,変圧器・鉄損と銅損の関係,自動制御・積分動作のステップ応答,同期発電機・三相短絡特性,電気計測・分流器の倍率,抵抗の発生熱量計算</span> </td></tr>
+<tr><td class="fwb">H24</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス制御とフィードバック制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機・始動法</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流回路・RLC直列回路の力率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流遮断器・消弧方式</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器の結線</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・電流力計形計器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁気・直線状導線の磁界</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電気・コンデンサの電荷</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:11.1%;height:100%;background:#b45309"></div></div> 11%</td><td class="fz9"><span style="color:#16a34a">+電気計測・電流力計形計器,同期発電機・電圧変動率,交流遮断器・消弧方式,変圧器の結線,交流回路・RLC直列回路の力率,電磁気・直線状導線の磁界,シーケンス制御とフィードバック制御,三相誘導電動機・始動法,静電気・コンデンサの電荷</span> <span style="color:#dc2626">-交流回路・キルヒホッフの法則,静電気・電気力線の性質,電気化学・電気めっき,電動機・巻上装置の所要出力,静電気・平行板コンデンサの静電容量,変圧器・電圧変動率,同期発電機・並行運転条件,高圧進相コンデンサ・JIS,電気計測・整流形計器,論理回路・真理値表</span> </td></tr>
+<tr><td class="fwb">H23</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相電動機・始動制御シーケンス</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">交流ブリッジ平衡条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">力率改善・コンデンサ容量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機・励磁方式</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器・効率と損失特性</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">環状鉄心・自己インダクタンス</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気計測・分流器</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電線の抵抗値計算</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:12.5%;height:100%;background:#b45309"></div></div> 12%</td><td class="fz9"><span style="color:#16a34a">+力率改善・コンデンサ容量計算,三相電動機・始動制御シーケンス,電気計測・分流器,同期発電機・励磁方式,交流ブリッジ平衡条件,電線の抵抗値計算,変圧器・効率と損失特性,環状鉄心・自己インダクタンス</span> <span style="color:#dc2626">-電気計測・電流力計形計器,同期発電機・電圧変動率,交流遮断器・消弧方式,変圧器の結線,交流回路・RLC直列回路の力率,電磁気・直線状導線の磁界,シーケンス制御とフィードバック制御,三相誘導電動機・始動法,静電気・コンデンサの電荷</span> </td></tr>
+<tr><td class="fwb">H22</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">フィードバック制御・伝達関数</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相平衡回路の消費電力計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機の速度制御</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">変圧器の一次電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">抵抗の発熱量計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">指示電気計器の動作原理</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">発電機の種類と特徴</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">磁気ヒステリシスループ</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+三相平衡回路の消費電力計算,発電機の種類と特徴,抵抗の発熱量計算,指示電気計器の動作原理,フィードバック制御・伝達関数,三相誘導電動機の速度制御,変圧器の一次電流計算,磁気ヒステリシスループ</span> <span style="color:#dc2626">-力率改善・コンデンサ容量計算,三相電動機・始動制御シーケンス,電気計測・分流器,同期発電機・励磁方式,交流ブリッジ平衡条件,電線の抵抗値計算,変圧器・効率と損失特性,環状鉄心・自己インダクタンス</span> </td></tr>
+<tr><td class="fwb">H21</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス制御・論理回路とリレー回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相交流回路の電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相同期発電機の並列運転条件</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相変圧器の結線</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相誘導電動機のY-△始動</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">直列コンデンサのエネルギー</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電磁力の計算・導線と磁界</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">静電電圧計</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+三相交流回路の電流計算,三相同期発電機の並列運転条件,シーケンス制御・論理回路とリレー回路,三相変圧器の結線,三相誘導電動機のY-△始動,直列コンデンサのエネルギー,静電電圧計,電磁力の計算・導線と磁界</span> <span style="color:#dc2626">-三相平衡回路の消費電力計算,発電機の種類と特徴,抵抗の発熱量計算,指示電気計器の動作原理,フィードバック制御・伝達関数,三相誘導電動機の速度制御,変圧器の一次電流計算,磁気ヒステリシスループ</span> </td></tr>
+<tr><td class="fwb">H20</td><td><span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">シーケンス制御・自己保持回路</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相かご形誘導電動機の始動</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">三相変圧器の短絡電流計算</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">同期発電機の電圧変動率</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">環状鉄心の相互インダクタンス</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">直列コンデンサの電荷・容量</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電気回路の基本法則</span> <span style="display:inline-block;background:#b4530922;color:#b45309;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">電流力計形計器</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:20.0%;height:100%;background:#b45309"></div></div> 20%</td><td class="fz9"><span style="color:#16a34a">+環状鉄心の相互インダクタンス,シーケンス制御・自己保持回路,電気回路の基本法則,直列コンデンサの電荷・容量,三相変圧器の短絡電流計算,三相かご形誘導電動機の始動,同期発電機の電圧変動率,電流力計形計器</span> <span style="color:#dc2626">-三相交流回路の電流計算,三相同期発電機の並列運転条件,シーケンス制御・論理回路とリレー回路,三相変圧器の結線,三相誘導電動機のY-△始動,直列コンデンサのエネルギー,静電電圧計,電磁力の計算・導線と磁界</span> </td></tr>
 </table>
 </div>
 <details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 全問チェックリスト</summary>
 <table class="fz85">
 <tr><th style="width:30px">✓</th><th>年度</th><th>テーマ</th><th>問数</th><th>分類</th></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_電気工事" onchange="togQ(this)"></td><td class="fws">R2</td><td>電気工事</td><td class="tac">2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30後期_配電盤茜制御盤" onchange="togQ(this)"></td><td class="fws">H30後期</td><td>配電盤茜制御盤</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_電気工事" onchange="togQ(this)"></td><td class="fws">H30</td><td>電気工事</td><td class="tac">2</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_電気工事" onchange="togQ(this)"></td><td class="fws">H28</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_配線用図記号" onchange="togQ(this)"></td><td class="fws">H28</td><td>配線用図記号</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_亜日本電機工業" onchange="togQ(this)"></td><td class="fws">H27</td><td>亜日本電機工業</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_電気工事" onchange="togQ(this)"></td><td class="fws">H26</td><td>電気工事</td><td class="tac">3</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_電気工事" onchange="togQ(this)"></td><td class="fws">H24</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_日本電機工業会" onchange="togQ(this)"></td><td class="fws">H24</td><td>日本電機工業会</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_電気工事" onchange="togQ(this)"></td><td class="fws">H22</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
-<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_電気工事" onchange="togQ(this)"></td><td class="fws">H20</td><td>電気工事</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_並列回路の消費電力計算（RL並列+R並列）" onchange="togQ(this)"></td><td class="fws">R7</td><td>並列回路の消費電力計算（RL並列+R並列）</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_交流回路・ブリッジ平衡条件" onchange="togQ(this)"></td><td class="fws">R7</td><td>交流回路・ブリッジ平衡条件</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_力率改善・進相コンデンサ容量" onchange="togQ(this)"></td><td class="fws">R7</td><td>力率改善・進相コンデンサ容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_同期発電機・短絡比" onchange="togQ(this)"></td><td class="fws">R7</td><td>同期発電機・短絡比</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_誘導電動機・始動法" onchange="togQ(this)"></td><td class="fws">R7</td><td>誘導電動機・始動法</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_電気計測・分流器の内部抵抗" onchange="togQ(this)"></td><td class="fws">R7</td><td>電気計測・分流器の内部抵抗</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_電磁誘導・相互インダクタンス" onchange="togQ(this)"></td><td class="fws">R7</td><td>電磁誘導・相互インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R7_静電気・コンデンサのエネルギー" onchange="togQ(this)"></td><td class="fws">R7</td><td>静電気・コンデンサのエネルギー</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_RLC直列回路の有効電力計算" onchange="togQ(this)"></td><td class="fws">R6</td><td>RLC直列回路の有効電力計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_三相交流回路・二電力計法による力率" onchange="togQ(this)"></td><td class="fws">R6</td><td>三相交流回路・二電力計法による力率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_三相誘導電動機・速度制御" onchange="togQ(this)"></td><td class="fws">R6</td><td>三相誘導電動機・速度制御</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_力率改善・進相コンデンサ容量" onchange="togQ(this)"></td><td class="fws">R6</td><td>力率改善・進相コンデンサ容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_単相2線式配電線路の電圧降下計算" onchange="togQ(this)"></td><td class="fws">R6</td><td>単相2線式配電線路の電圧降下計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_変圧器・全損失計算" onchange="togQ(this)"></td><td class="fws">R6</td><td>変圧器・全損失計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_抵抗の発生熱量計算" onchange="togQ(this)"></td><td class="fws">R6</td><td>抵抗の発生熱量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_直流回路・重ね合わせの定理" onchange="togQ(this)"></td><td class="fws">R6</td><td>直流回路・重ね合わせの定理</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R6_自己インダクタンスの計算" onchange="togQ(this)"></td><td class="fws">R6</td><td>自己インダクタンスの計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_シーケンス制御・正逆運転回路" onchange="togQ(this)"></td><td class="fws">R5</td><td>シーケンス制御・正逆運転回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_三相交流回路・消費電力計算" onchange="togQ(this)"></td><td class="fws">R5</td><td>三相交流回路・消費電力計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_三相誘導電動機の特性" onchange="togQ(this)"></td><td class="fws">R5</td><td>三相誘導電動機の特性</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_変圧器・一次電流計算" onchange="togQ(this)"></td><td class="fws">R5</td><td>変圧器・一次電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_発電機の特徴" onchange="togQ(this)"></td><td class="fws">R5</td><td>発電機の特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_直線状電線の抵抗値計算（抵抗率・断面積）" onchange="togQ(this)"></td><td class="fws">R5</td><td>直線状電線の抵抗値計算（抵抗率・断面積）</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_電気化学・電解精錬" onchange="togQ(this)"></td><td class="fws">R5</td><td>電気化学・電解精錬</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_電気計測・指示電気計器の動作原理" onchange="togQ(this)"></td><td class="fws">R5</td><td>電気計測・指示電気計器の動作原理</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_静電気・コンデンサの電荷計算" onchange="togQ(this)"></td><td class="fws">R5</td><td>静電気・コンデンサの電荷計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R5_静電界・電気力線の性質" onchange="togQ(this)"></td><td class="fws">R5</td><td>静電界・電気力線の性質</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_三相交流回路の電流計算" onchange="togQ(this)"></td><td class="fws">R4</td><td>三相交流回路の電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_三相短絡電流計算（変圧器%インピーダンス）" onchange="togQ(this)"></td><td class="fws">R4</td><td>三相短絡電流計算（変圧器%インピーダンス）</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_分流器の内部抵抗" onchange="togQ(this)"></td><td class="fws">R4</td><td>分流器の内部抵抗</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_力率改善・進相コンデンサ容量" onchange="togQ(this)"></td><td class="fws">R4</td><td>力率改善・進相コンデンサ容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）" onchange="togQ(this)"></td><td class="fws">R4</td><td>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_同期発電機・電圧変動率" onchange="togQ(this)"></td><td class="fws">R4</td><td>同期発電機・電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_変圧器・電圧変動率" onchange="togQ(this)"></td><td class="fws">R4</td><td>変圧器・電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_抵抗の発生熱量計算" onchange="togQ(this)"></td><td class="fws">R4</td><td>抵抗の発生熱量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_自動制御・JIS" onchange="togQ(this)"></td><td class="fws">R4</td><td>自動制御・JIS</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_電気加熱・誘導加熱" onchange="togQ(this)"></td><td class="fws">R4</td><td>電気加熱・誘導加熱</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R4_電磁誘導・相互インダクタンス" onchange="togQ(this)"></td><td class="fws">R4</td><td>電磁誘導・相互インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_三相交流回路・二電力計法による力率" onchange="togQ(this)"></td><td class="fws">R3</td><td>三相交流回路・二電力計法による力率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_三相誘導電動機・Y-Δ始動方式" onchange="togQ(this)"></td><td class="fws">R3</td><td>三相誘導電動機・Y-Δ始動方式</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_交流回路・ブリッジ平衡条件" onchange="togQ(this)"></td><td class="fws">R3</td><td>交流回路・ブリッジ平衡条件</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）" onchange="togQ(this)"></td><td class="fws">R3</td><td>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_同期発電機・励磁方式" onchange="togQ(this)"></td><td class="fws">R3</td><td>同期発電機・励磁方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_変圧器・励磁突入電流" onchange="togQ(this)"></td><td class="fws">R3</td><td>変圧器・励磁突入電流</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_自動制御・ブロック線図の合成伝達関数" onchange="togQ(this)"></td><td class="fws">R3</td><td>自動制御・ブロック線図の合成伝達関数</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_自己インダクタンスの計算・環状鉄心" onchange="togQ(this)"></td><td class="fws">R3</td><td>自己インダクタンスの計算・環状鉄心</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R3_静電気・点電荷に働く静電力" onchange="togQ(this)"></td><td class="fws">R3</td><td>静電気・点電荷に働く静電力</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_シーケンス回路・論理回路" onchange="togQ(this)"></td><td class="fws">R2</td><td>シーケンス回路・論理回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_パーセントインピーダンス（%Z）" onchange="togQ(this)"></td><td class="fws">R2</td><td>パーセントインピーダンス（%Z）</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_三相誘導電動機・速度制御" onchange="togQ(this)"></td><td class="fws">R2</td><td>三相誘導電動機・速度制御</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_交流回路・RLC直列回路の有効電力" onchange="togQ(this)"></td><td class="fws">R2</td><td>交流回路・RLC直列回路の有効電力</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_同期発電機・並行運転" onchange="togQ(this)"></td><td class="fws">R2</td><td>同期発電機・並行運転</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_変圧器・鉄損と銅損の変化" onchange="togQ(this)"></td><td class="fws">R2</td><td>変圧器・鉄損と銅損の変化</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_強磁性体のヒステリシス曲線" onchange="togQ(this)"></td><td class="fws">R2</td><td>強磁性体のヒステリシス曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_電気化学・電気分解" onchange="togQ(this)"></td><td class="fws">R2</td><td>電気化学・電気分解</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_電気計測・多重範囲電圧計の倍率器" onchange="togQ(this)"></td><td class="fws">R2</td><td>電気計測・多重範囲電圧計の倍率器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R2_静電気・コンデンサの電荷計算" onchange="togQ(this)"></td><td class="fws">R2</td><td>静電気・コンデンサの電荷計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_シーケンス回路・論理回路" onchange="togQ(this)"></td><td class="fws">R1</td><td>シーケンス回路・論理回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_三相交流回路・抵抗値と消費電力計算" onchange="togQ(this)"></td><td class="fws">R1</td><td>三相交流回路・抵抗値と消費電力計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_三相誘導電動機の特性" onchange="togQ(this)"></td><td class="fws">R1</td><td>三相誘導電動機の特性</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_同期発電機・ベクトル図" onchange="togQ(this)"></td><td class="fws">R1</td><td>同期発電機・ベクトル図</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_変圧器・効率と損失の特性" onchange="togQ(this)"></td><td class="fws">R1</td><td>変圧器・効率と損失の特性</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_抵抗の発生熱量計算" onchange="togQ(this)"></td><td class="fws">R1</td><td>抵抗の発生熱量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_電気計測・電流力計形計器" onchange="togQ(this)"></td><td class="fws">R1</td><td>電気計測・電流力計形計器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_R1_電磁誘導・相互インダクタンス計算" onchange="togQ(this)"></td><td class="fws">R1</td><td>電磁誘導・相互インダクタンス計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_シーケンス回路・論理回路" onchange="togQ(this)"></td><td class="fws">H30</td><td>シーケンス回路・論理回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_三相交流回路・二電力計法による力率" onchange="togQ(this)"></td><td class="fws">H30</td><td>三相交流回路・二電力計法による力率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_三相誘導電動機・速度制御" onchange="togQ(this)"></td><td class="fws">H30</td><td>三相誘導電動機・速度制御</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_交流回路・基本性質" onchange="togQ(this)"></td><td class="fws">H30</td><td>交流回路・基本性質</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_変圧器・一次電流計算" onchange="togQ(this)"></td><td class="fws">H30</td><td>変圧器・一次電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_誘導発電機の特性" onchange="togQ(this)"></td><td class="fws">H30</td><td>誘導発電機の特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_電磁誘導・円形コイルの起電力" onchange="togQ(this)"></td><td class="fws">H30</td><td>電磁誘導・円形コイルの起電力</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H30_静電気・点電荷に働く静電力" onchange="togQ(this)"></td><td class="fws">H30</td><td>静電気・点電荷に働く静電力</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_三相誘導電動機の特性曲線" onchange="togQ(this)"></td><td class="fws">H29</td><td>三相誘導電動機の特性曲線</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_交流回路・RLC直列回路の力率" onchange="togQ(this)"></td><td class="fws">H29</td><td>交流回路・RLC直列回路の力率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_力率改善・進相コンデンサ容量" onchange="togQ(this)"></td><td class="fws">H29</td><td>力率改善・進相コンデンサ容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_同期発電機・電圧変動率" onchange="togQ(this)"></td><td class="fws">H29</td><td>同期発電機・電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_変圧器・三相結線" onchange="togQ(this)"></td><td class="fws">H29</td><td>変圧器・三相結線</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_自動制御・ブロック線図" onchange="togQ(this)"></td><td class="fws">H29</td><td>自動制御・ブロック線図</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_誘導電動機・始動法" onchange="togQ(this)"></td><td class="fws">H29</td><td>誘導電動機・始動法</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_電気計測・分流器の倍率" onchange="togQ(this)"></td><td class="fws">H29</td><td>電気計測・分流器の倍率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_電磁気・自己インダクタンス" onchange="togQ(this)"></td><td class="fws">H29</td><td>電磁気・自己インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H29_静電気・コンデンサの静電容量" onchange="togQ(this)"></td><td class="fws">H29</td><td>静電気・コンデンサの静電容量</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_シーケンス制御・論理回路" onchange="togQ(this)"></td><td class="fws">H28</td><td>シーケンス制御・論理回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_三相誘導電動機の特性" onchange="togQ(this)"></td><td class="fws">H28</td><td>三相誘導電動機の特性</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_交流回路・ブリッジ平衡条件" onchange="togQ(this)"></td><td class="fws">H28</td><td>交流回路・ブリッジ平衡条件</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_同期発電機・励磁方式" onchange="togQ(this)"></td><td class="fws">H28</td><td>同期発電機・励磁方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_変圧器・励磁突入電流" onchange="togQ(this)"></td><td class="fws">H28</td><td>変圧器・励磁突入電流</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_電気計測・整流形計器" onchange="togQ(this)"></td><td class="fws">H28</td><td>電気計測・整流形計器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_電磁誘導・誘導起電力" onchange="togQ(this)"></td><td class="fws">H28</td><td>電磁誘導・誘導起電力</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H28_静電気・コンデンサのエネルギー" onchange="togQ(this)"></td><td class="fws">H28</td><td>静電気・コンデンサのエネルギー</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_シーケンス回路・論理回路" onchange="togQ(this)"></td><td class="fws">H27</td><td>シーケンス回路・論理回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_リアクトルの設置目的" onchange="togQ(this)"></td><td class="fws">H27</td><td>リアクトルの設置目的</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_三相交流回路・電流計算" onchange="togQ(this)"></td><td class="fws">H27</td><td>三相交流回路・電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_三相誘導電動機・始動法" onchange="togQ(this)"></td><td class="fws">H27</td><td>三相誘導電動機・始動法</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_同期発電機・短絡比" onchange="togQ(this)"></td><td class="fws">H27</td><td>同期発電機・短絡比</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_変圧器・一次電流の計算" onchange="togQ(this)"></td><td class="fws">H27</td><td>変圧器・一次電流の計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_導体の抵抗値計算" onchange="togQ(this)"></td><td class="fws">H27</td><td>導体の抵抗値計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_電気計測・指示電気計器の動作原理" onchange="togQ(this)"></td><td class="fws">H27</td><td>電気計測・指示電気計器の動作原理</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H27_電磁誘導・相互インダクタンス" onchange="togQ(this)"></td><td class="fws">H27</td><td>電磁誘導・相互インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_三相交流回路・消費電力計算" onchange="togQ(this)"></td><td class="fws">H26</td><td>三相交流回路・消費電力計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_三相誘導電動機・速度制御" onchange="togQ(this)"></td><td class="fws">H26</td><td>三相誘導電動機・速度制御</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_力率改善・進相コンデンサ容量" onchange="togQ(this)"></td><td class="fws">H26</td><td>力率改善・進相コンデンサ容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_同期発電機・三相短絡特性" onchange="togQ(this)"></td><td class="fws">H26</td><td>同期発電機・三相短絡特性</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_変圧器・鉄損と銅損の関係" onchange="togQ(this)"></td><td class="fws">H26</td><td>変圧器・鉄損と銅損の関係</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_抵抗の発生熱量計算" onchange="togQ(this)"></td><td class="fws">H26</td><td>抵抗の発生熱量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_自動制御・積分動作のステップ応答" onchange="togQ(this)"></td><td class="fws">H26</td><td>自動制御・積分動作のステップ応答</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_電気計測・分流器の倍率" onchange="togQ(this)"></td><td class="fws">H26</td><td>電気計測・分流器の倍率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H26_電磁力・平行導体間の力の方向" onchange="togQ(this)"></td><td class="fws">H26</td><td>電磁力・平行導体間の力の方向</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_交流回路・キルヒホッフの法則" onchange="togQ(this)"></td><td class="fws">H25</td><td>交流回路・キルヒホッフの法則</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_同期発電機・並行運転条件" onchange="togQ(this)"></td><td class="fws">H25</td><td>同期発電機・並行運転条件</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_変圧器・電圧変動率" onchange="togQ(this)"></td><td class="fws">H25</td><td>変圧器・電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_論理回路・真理値表" onchange="togQ(this)"></td><td class="fws">H25</td><td>論理回路・真理値表</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_電動機・巻上装置の所要出力" onchange="togQ(this)"></td><td class="fws">H25</td><td>電動機・巻上装置の所要出力</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_電気化学・電気めっき" onchange="togQ(this)"></td><td class="fws">H25</td><td>電気化学・電気めっき</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_電気計測・整流形計器" onchange="togQ(this)"></td><td class="fws">H25</td><td>電気計測・整流形計器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_静電気・平行板コンデンサの静電容量" onchange="togQ(this)"></td><td class="fws">H25</td><td>静電気・平行板コンデンサの静電容量</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_静電気・電気力線の性質" onchange="togQ(this)"></td><td class="fws">H25</td><td>静電気・電気力線の性質</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H25_高圧進相コンデンサ・JIS" onchange="togQ(this)"></td><td class="fws">H25</td><td>高圧進相コンデンサ・JIS</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_シーケンス制御とフィードバック制御" onchange="togQ(this)"></td><td class="fws">H24</td><td>シーケンス制御とフィードバック制御</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_三相誘導電動機・始動法" onchange="togQ(this)"></td><td class="fws">H24</td><td>三相誘導電動機・始動法</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_交流回路・RLC直列回路の力率" onchange="togQ(this)"></td><td class="fws">H24</td><td>交流回路・RLC直列回路の力率</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_交流遮断器・消弧方式" onchange="togQ(this)"></td><td class="fws">H24</td><td>交流遮断器・消弧方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_同期発電機・電圧変動率" onchange="togQ(this)"></td><td class="fws">H24</td><td>同期発電機・電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_変圧器の結線" onchange="togQ(this)"></td><td class="fws">H24</td><td>変圧器の結線</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_電気計測・電流力計形計器" onchange="togQ(this)"></td><td class="fws">H24</td><td>電気計測・電流力計形計器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_電磁気・直線状導線の磁界" onchange="togQ(this)"></td><td class="fws">H24</td><td>電磁気・直線状導線の磁界</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H24_静電気・コンデンサの電荷" onchange="togQ(this)"></td><td class="fws">H24</td><td>静電気・コンデンサの電荷</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_三相電動機・始動制御シーケンス" onchange="togQ(this)"></td><td class="fws">H23</td><td>三相電動機・始動制御シーケンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_交流ブリッジ平衡条件" onchange="togQ(this)"></td><td class="fws">H23</td><td>交流ブリッジ平衡条件</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_力率改善・コンデンサ容量計算" onchange="togQ(this)"></td><td class="fws">H23</td><td>力率改善・コンデンサ容量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_同期発電機・励磁方式" onchange="togQ(this)"></td><td class="fws">H23</td><td>同期発電機・励磁方式</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_変圧器・効率と損失特性" onchange="togQ(this)"></td><td class="fws">H23</td><td>変圧器・効率と損失特性</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_環状鉄心・自己インダクタンス" onchange="togQ(this)"></td><td class="fws">H23</td><td>環状鉄心・自己インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_電気計測・分流器" onchange="togQ(this)"></td><td class="fws">H23</td><td>電気計測・分流器</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H23_電線の抵抗値計算" onchange="togQ(this)"></td><td class="fws">H23</td><td>電線の抵抗値計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_フィードバック制御・伝達関数" onchange="togQ(this)"></td><td class="fws">H22</td><td>フィードバック制御・伝達関数</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_三相平衡回路の消費電力計算" onchange="togQ(this)"></td><td class="fws">H22</td><td>三相平衡回路の消費電力計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_三相誘導電動機の速度制御" onchange="togQ(this)"></td><td class="fws">H22</td><td>三相誘導電動機の速度制御</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_変圧器の一次電流計算" onchange="togQ(this)"></td><td class="fws">H22</td><td>変圧器の一次電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_抵抗の発熱量計算" onchange="togQ(this)"></td><td class="fws">H22</td><td>抵抗の発熱量計算</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_指示電気計器の動作原理" onchange="togQ(this)"></td><td class="fws">H22</td><td>指示電気計器の動作原理</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_発電機の種類と特徴" onchange="togQ(this)"></td><td class="fws">H22</td><td>発電機の種類と特徴</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H22_磁気ヒステリシスループ" onchange="togQ(this)"></td><td class="fws">H22</td><td>磁気ヒステリシスループ</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_シーケンス制御・論理回路とリレー回路" onchange="togQ(this)"></td><td class="fws">H21</td><td>シーケンス制御・論理回路とリレー回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_三相交流回路の電流計算" onchange="togQ(this)"></td><td class="fws">H21</td><td>三相交流回路の電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_三相同期発電機の並列運転条件" onchange="togQ(this)"></td><td class="fws">H21</td><td>三相同期発電機の並列運転条件</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_三相変圧器の結線" onchange="togQ(this)"></td><td class="fws">H21</td><td>三相変圧器の結線</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_三相誘導電動機のY-△始動" onchange="togQ(this)"></td><td class="fws">H21</td><td>三相誘導電動機のY-△始動</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_直列コンデンサのエネルギー" onchange="togQ(this)"></td><td class="fws">H21</td><td>直列コンデンサのエネルギー</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_電磁力の計算・導線と磁界" onchange="togQ(this)"></td><td class="fws">H21</td><td>電磁力の計算・導線と磁界</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H21_静電電圧計" onchange="togQ(this)"></td><td class="fws">H21</td><td>静電電圧計</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_シーケンス制御・自己保持回路" onchange="togQ(this)"></td><td class="fws">H20</td><td>シーケンス制御・自己保持回路</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_三相かご形誘導電動機の始動" onchange="togQ(this)"></td><td class="fws">H20</td><td>三相かご形誘導電動機の始動</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_三相変圧器の短絡電流計算" onchange="togQ(this)"></td><td class="fws">H20</td><td>三相変圧器の短絡電流計算</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_同期発電機の電圧変動率" onchange="togQ(this)"></td><td class="fws">H20</td><td>同期発電機の電圧変動率</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_環状鉄心の相互インダクタンス" onchange="togQ(this)"></td><td class="fws">H20</td><td>環状鉄心の相互インダクタンス</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_直列コンデンサの電荷・容量" onchange="togQ(this)"></td><td class="fws">H20</td><td>直列コンデンサの電荷・容量</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_電気回路の基本法則" onchange="togQ(this)"></td><td class="fws">H20</td><td>電気回路の基本法則</td><td class="tac">1</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="電気理論_H20_電流力計形計器" onchange="togQ(this)"></td><td class="fws">H20</td><td>電流力計形計器</td><td class="tac">1</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td></tr>
 </table>
 </details>
 <details><summary style="cursor:pointer;font-weight:700;color:#b45309;padding:8px 0;font-size:1.05em">電気理論 年度別詳細分析カード</summary>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R2 — 2問・1テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R7 — 8問・8テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">2</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>並列回路の消費電力計算（RL並列+R並列）</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#50/118</td></tr>
+<tr><td><strong>交流回路・ブリッジ平衡条件</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#7</span>/118</td></tr>
+<tr><td><strong>力率改善・進相コンデンサ容量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/118</td></tr>
+<tr><td><strong>同期発電機・短絡比</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#16</span>/118</td></tr>
+<tr><td><strong>誘導電動機・始動法</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#20</span>/118</td></tr>
+<tr><td><strong>電気計測・分流器の内部抵抗</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#101/118</td></tr>
+<tr><td><strong>電磁誘導・相互インダクタンス</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#10</span>/118</td></tr>
+<tr><td><strong>静電気・コンデンサのエネルギー</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#25</span>/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 2問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>並列回路の消費電力計算（RL並列+R並列）: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">並列回路の</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>交流回路・ブリッジ平衡条件: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>力率改善・進相コンデンサ容量: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">力率改善・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・短絡比: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>誘導電動機・始動法: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">誘導電動機</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>電気計測・分流器の内部抵抗: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電磁誘導・相互インダクタンス: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁誘導・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>静電気・コンデンサのエネルギー: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
 </svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均2.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+並列回路の消費電力計算（RL並列+R並列）（暗記で確保）、交流回路・ブリッジ平衡条件（原理理解が鍵）、力率改善・進相コンデンサ容量（暗記で確保）、同期発電機・短絡比（暗記で確保）、誘導電動機・始動法（原理理解が鍵）、電気計測・分流器の内部抵抗（原理理解が鍵）、電磁誘導・相互インダクタンス（暗記で確保）、静電気・コンデンサのエネルギー（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約7問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H30後期 — 1問・1テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R6 — 9問・9テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>配電盤茜制御盤</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#5/5</td></tr>
+<tr><td><strong>RLC直列回路の有効電力計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#28</span>/118</td></tr>
+<tr><td><strong>三相交流回路・二電力計法による力率</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#5</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・速度制御</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#3</span>/118</td></tr>
+<tr><td><strong>力率改善・進相コンデンサ容量</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/118</td></tr>
+<tr><td><strong>単相2線式配電線路の電圧降下計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#58/118</td></tr>
+<tr><td><strong>変圧器・全損失計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#68/118</td></tr>
+<tr><td><strong>抵抗の発生熱量計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#4</span>/118</td></tr>
+<tr><td><strong>直流回路・重ね合わせの定理</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#83/118</td></tr>
+<tr><td><strong>自己インダクタンスの計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#90/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>配電盤茜制御盤: 1問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">配電盤茜制</text>
-</svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
-<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-配電盤茜制御盤（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
-</div></details>
-<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H30 — 2問・1テーマ</summary>
-<div style="padding:10px 14px">
-<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
-<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">2</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
-</table>
-<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 2問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="0.0" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>RLC直列回路の有効電力計算: 1問 (11%)</title></rect>
+<text x="22.2" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">RLC直列</text>
+<rect x="44.4" y="2" width="44.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相交流回路・二電力計法による力率: 1問 (11%)</title></rect>
+<text x="66.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="88.9" y="2" width="44.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機・速度制御: 1問 (11%)</title></rect>
+<text x="111.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="133.3" y="2" width="44.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>力率改善・進相コンデンサ容量: 1問 (11%)</title></rect>
+<text x="155.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">力率改善・</text>
+<rect x="177.8" y="2" width="44.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>単相2線式配電線路の電圧降下計算: 1問 (11%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">単相2線式</text>
+<rect x="222.2" y="2" width="44.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>変圧器・全損失計算: 1問 (11%)</title></rect>
+<text x="244.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・全</text>
+<rect x="266.7" y="2" width="44.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>抵抗の発生熱量計算: 1問 (11%)</title></rect>
+<text x="288.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">抵抗の発生</text>
+<rect x="311.1" y="2" width="44.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>直流回路・重ね合わせの定理: 1問 (11%)</title></rect>
+<text x="333.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">直流回路・</text>
+<rect x="355.6" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>自己インダクタンスの計算: 1問 (11%)</title></rect>
+<text x="377.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">自己インダ</text>
 </svg>
 <p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
-<span style="color:#16a34a">新規: 電気工事</span> / <span style="color:#dc2626">消滅: 配電盤茜制御盤</span>
+継続: 1テーマ / <span style="color:#16a34a">新規: RLC直列回路の有効電力計算, 直流回路・重ね合わせの定理, 三相誘導電動機・速度制御, 自己インダクタンスの計算, 変圧器・全損失計算</span> / <span style="color:#dc2626">消滅: 並列回路の消費電力計算（RL並列+R並列）, 静電気・コンデンサのエネルギー, 誘導電動機・始動法, 交流回路・ブリッジ平衡条件, 電磁誘導・相互インダクタンス</span>
 </p>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均2.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（9テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+RLC直列回路の有効電力計算（暗記で確保）、三相交流回路・二電力計法による力率（原理理解が鍵）、三相誘導電動機・速度制御（原理理解が鍵）、力率改善・進相コンデンサ容量（暗記で確保）、単相2線式配電線路の電圧降下計算（暗記で確保）、変圧器・全損失計算（原理理解が鍵）、抵抗の発生熱量計算（暗記で確保）、直流回路・重ね合わせの定理（原理理解が鍵）、自己インダクタンスの計算（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約9問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H28 — 2問・2テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R5 — 10問・10テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
-<tr><td><strong>配線用図記号</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#4/5</td></tr>
+<tr><td><strong>シーケンス制御・正逆運転回路</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#30</span>/118</td></tr>
+<tr><td><strong>三相交流回路・消費電力計算</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#12</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機の特性</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#6</span>/118</td></tr>
+<tr><td><strong>変圧器・一次電流計算</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#17</span>/118</td></tr>
+<tr><td><strong>発電機の特徴</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#79/118</td></tr>
+<tr><td><strong>直線状電線の抵抗値計算（抵抗率・断面積）</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#84/118</td></tr>
+<tr><td><strong>電気化学・電解精錬</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#98/118</td></tr>
+<tr><td><strong>電気計測・指示電気計器の動作原理</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#22</span>/118</td></tr>
+<tr><td><strong>静電気・コンデンサの電荷計算</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#26</span>/118</td></tr>
+<tr><td><strong>静電界・電気力線の性質</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#116/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="200.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (50%)</title></rect>
-<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
-<rect x="200.0" y="2" width="200.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>配線用図記号: 1問 (50%)</title></rect>
-<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">配線用図記</text>
-</svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（2テーマ・平均1.0問/テーマ）</p>
-<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）、配線用図記号（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
-</div></details>
-<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H27 — 1問・1テーマ</summary>
-<div style="padding:10px 14px">
-<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
-<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>亜日本電機工業</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#3/5</td></tr>
-</table>
-<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>亜日本電機工業: 1問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">亜日本電機</text>
+<rect x="0.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス制御・正逆運転回路: 1問 (10%)</title></rect>
+<text x="20.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="40.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相交流回路・消費電力計算: 1問 (10%)</title></rect>
+<text x="60.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="80.0" y="2" width="40.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機の特性: 1問 (10%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="120.0" y="2" width="40.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>変圧器・一次電流計算: 1問 (10%)</title></rect>
+<text x="140.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・一</text>
+<rect x="160.0" y="2" width="40.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>発電機の特徴: 1問 (10%)</title></rect>
+<text x="180.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">発電機の特</text>
+<rect x="200.0" y="2" width="40.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>直線状電線の抵抗値計算（抵抗率・断面積）: 1問 (10%)</title></rect>
+<text x="220.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">直線状電線</text>
+<rect x="240.0" y="2" width="40.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気化学・電解精錬: 1問 (10%)</title></rect>
+<text x="260.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気化学・</text>
+<rect x="280.0" y="2" width="40.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気計測・指示電気計器の動作原理: 1問 (10%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="320.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>静電気・コンデンサの電荷計算: 1問 (10%)</title></rect>
+<text x="340.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
+<rect x="360.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>静電界・電気力線の性質: 1問 (10%)</title></rect>
+<text x="380.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電界・電</text>
 </svg>
 <p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
-<span style="color:#16a34a">新規: 亜日本電機工業</span> / <span style="color:#dc2626">消滅: 配線用図記号, 電気工事</span>
+<span style="color:#16a34a">新規: シーケンス制御・正逆運転回路, 三相誘導電動機の特性, 発電機の特徴, 変圧器・一次電流計算, 三相交流回路・消費電力計算</span> / <span style="color:#dc2626">消滅: RLC直列回路の有効電力計算, 直流回路・重ね合わせの定理, 三相誘導電動機・速度制御, 自己インダクタンスの計算, 力率改善・進相コンデンサ容量</span>
 </p>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（10テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-亜日本電機工業（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+シーケンス制御・正逆運転回路（暗記で確保）、三相交流回路・消費電力計算（原理理解が鍵）、三相誘導電動機の特性（原理理解が鍵）、変圧器・一次電流計算（原理理解が鍵）、発電機の特徴（暗記で確保）、直線状電線の抵抗値計算（抵抗率・断面積）（暗記で確保）、電気化学・電解精錬（暗記で確保）、電気計測・指示電気計器の動作原理（原理理解が鍵）、静電気・コンデンサの電荷計算（原理理解が鍵）、静電界・電気力線の性質（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約9問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H26 — 3問・1テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R4 — 11問・11テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">3</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>三相交流回路の電流計算</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#11</span>/118</td></tr>
+<tr><td><strong>三相短絡電流計算（変圧器%インピーダンス）</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#44/118</td></tr>
+<tr><td><strong>分流器の内部抵抗</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#56/118</td></tr>
+<tr><td><strong>力率改善・進相コンデンサ容量</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/118</td></tr>
+<tr><td><strong>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#15</span>/118</td></tr>
+<tr><td><strong>同期発電機・電圧変動率</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#9</span>/118</td></tr>
+<tr><td><strong>変圧器・電圧変動率</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#19</span>/118</td></tr>
+<tr><td><strong>抵抗の発生熱量計算</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#4</span>/118</td></tr>
+<tr><td><strong>自動制御・JIS</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#86/118</td></tr>
+<tr><td><strong>電気加熱・誘導加熱</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#95/118</td></tr>
+<tr><td><strong>電磁誘導・相互インダクタンス</strong></td><td class="tac">1</td><td class="tac">9%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#10</span>/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 3問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="0.0" y="2" width="36.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>三相交流回路の電流計算: 1問 (9%)</title></rect>
+<rect x="36.4" y="2" width="36.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相短絡電流計算（変圧器%インピーダンス）: 1問 (9%)</title></rect>
+<rect x="72.7" y="2" width="36.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>分流器の内部抵抗: 1問 (9%)</title></rect>
+<rect x="109.1" y="2" width="36.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>力率改善・進相コンデンサ容量: 1問 (9%)</title></rect>
+<rect x="145.5" y="2" width="36.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）: 1問 (9%)</title></rect>
+<rect x="181.8" y="2" width="36.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>同期発電機・電圧変動率: 1問 (9%)</title></rect>
+<rect x="218.2" y="2" width="36.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>変圧器・電圧変動率: 1問 (9%)</title></rect>
+<rect x="254.5" y="2" width="36.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>抵抗の発生熱量計算: 1問 (9%)</title></rect>
+<rect x="290.9" y="2" width="36.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>自動制御・JIS: 1問 (9%)</title></rect>
+<rect x="327.3" y="2" width="36.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>電気加熱・誘導加熱: 1問 (9%)</title></rect>
+<rect x="363.6" y="2" width="36.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>電磁誘導・相互インダクタンス: 1問 (9%)</title></rect>
 </svg>
 <p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
-<span style="color:#16a34a">新規: 電気工事</span> / <span style="color:#dc2626">消滅: 亜日本電機工業</span>
+<span style="color:#16a34a">新規: 分流器の内部抵抗, 三相交流回路の電流計算, 同期発電機・電圧変動率, 自動制御・JIS, 単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</span> / <span style="color:#dc2626">消滅: シーケンス制御・正逆運転回路, 三相誘導電動機の特性, 発電機の特徴, 変圧器・一次電流計算, 三相交流回路・消費電力計算</span>
 </p>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#d97706;font-weight:700">集中型</span>（少テーマから厚く出題 → 深い理解が必要）（1テーマ・平均3.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（11テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約3問</p>
+三相交流回路の電流計算（原理理解が鍵）、三相短絡電流計算（変圧器%インピーダンス）（原理理解が鍵）、分流器の内部抵抗（暗記で確保）、力率改善・進相コンデンサ容量（暗記で確保）、単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）（暗記で確保）、同期発電機・電圧変動率（暗記で確保）、変圧器・電圧変動率（原理理解が鍵）、抵抗の発生熱量計算（暗記で確保）、自動制御・JIS（暗記で確保）、電気加熱・誘導加熱（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約11問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H24 — 2問・2テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R3 — 9問・9テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
-<tr><td><strong>日本電機工業会</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#2/5</td></tr>
+<tr><td><strong>三相交流回路・二電力計法による力率</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#5</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・Y-Δ始動方式</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#48/118</td></tr>
+<tr><td><strong>交流回路・ブリッジ平衡条件</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#7</span>/118</td></tr>
+<tr><td><strong>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#15</span>/118</td></tr>
+<tr><td><strong>同期発電機・励磁方式</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#8</span>/118</td></tr>
+<tr><td><strong>変圧器・励磁突入電流</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#18</span>/118</td></tr>
+<tr><td><strong>自動制御・ブロック線図の合成伝達関数</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#88/118</td></tr>
+<tr><td><strong>自己インダクタンスの計算・環状鉄心</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#91/118</td></tr>
+<tr><td><strong>静電気・点電荷に働く静電力</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#27</span>/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="200.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (50%)</title></rect>
-<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
-<rect x="200.0" y="2" width="200.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>日本電機工業会: 1問 (50%)</title></rect>
-<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">日本電機工</text>
+<rect x="0.0" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>三相交流回路・二電力計法による力率: 1問 (11%)</title></rect>
+<text x="22.2" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="44.4" y="2" width="44.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相誘導電動機・Y-Δ始動方式: 1問 (11%)</title></rect>
+<text x="66.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="88.9" y="2" width="44.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>交流回路・ブリッジ平衡条件: 1問 (11%)</title></rect>
+<text x="111.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="133.3" y="2" width="44.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）: 1問 (11%)</title></rect>
+<text x="155.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">単相2線式</text>
+<rect x="177.8" y="2" width="44.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>同期発電機・励磁方式: 1問 (11%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="222.2" y="2" width="44.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>変圧器・励磁突入電流: 1問 (11%)</title></rect>
+<text x="244.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・励</text>
+<rect x="266.7" y="2" width="44.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>自動制御・ブロック線図の合成伝達関数: 1問 (11%)</title></rect>
+<text x="288.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">自動制御・</text>
+<rect x="311.1" y="2" width="44.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>自己インダクタンスの計算・環状鉄心: 1問 (11%)</title></rect>
+<text x="333.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">自己インダ</text>
+<rect x="355.6" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>静電気・点電荷に働く静電力: 1問 (11%)</title></rect>
+<text x="377.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・点</text>
 </svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（2テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 変圧器・励磁突入電流, 交流回路・ブリッジ平衡条件, 三相誘導電動機・Y-Δ始動方式, 同期発電機・励磁方式, 静電気・点電荷に働く静電力</span> / <span style="color:#dc2626">消滅: 分流器の内部抵抗, 三相交流回路の電流計算, 同期発電機・電圧変動率, 自動制御・JIS, 電磁誘導・相互インダクタンス</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（9テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）、日本電機工業会（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約2問</p>
+三相交流回路・二電力計法による力率（原理理解が鍵）、三相誘導電動機・Y-Δ始動方式（原理理解が鍵）、交流回路・ブリッジ平衡条件（原理理解が鍵）、単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）（暗記で確保）、同期発電機・励磁方式（暗記で確保）、変圧器・励磁突入電流（原理理解が鍵）、自動制御・ブロック線図の合成伝達関数（暗記で確保）、自己インダクタンスの計算・環状鉄心（暗記で確保）、静電気・点電荷に働く静電力（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約9問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H22 — 1問・1テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R2 — 10問・10テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>シーケンス回路・論理回路</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#2</span>/118</td></tr>
+<tr><td><strong>パーセントインピーダンス（%Z）</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#34</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・速度制御</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#3</span>/118</td></tr>
+<tr><td><strong>交流回路・RLC直列回路の有効電力</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#52/118</td></tr>
+<tr><td><strong>同期発電機・並行運転</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#62/118</td></tr>
+<tr><td><strong>変圧器・鉄損と銅損の変化</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#71/118</td></tr>
+<tr><td><strong>強磁性体のヒステリシス曲線</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#74/118</td></tr>
+<tr><td><strong>電気化学・電気分解</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#97/118</td></tr>
+<tr><td><strong>電気計測・多重範囲電圧計の倍率器</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#102/118</td></tr>
+<tr><td><strong>静電気・コンデンサの電荷計算</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#26</span>/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="0.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス回路・論理回路: 1問 (10%)</title></rect>
+<text x="20.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="40.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>パーセントインピーダンス（%Z）: 1問 (10%)</title></rect>
+<text x="60.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">パーセント</text>
+<rect x="80.0" y="2" width="40.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機・速度制御: 1問 (10%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="120.0" y="2" width="40.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>交流回路・RLC直列回路の有効電力: 1問 (10%)</title></rect>
+<text x="140.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="160.0" y="2" width="40.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>同期発電機・並行運転: 1問 (10%)</title></rect>
+<text x="180.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="40.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>変圧器・鉄損と銅損の変化: 1問 (10%)</title></rect>
+<text x="220.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・鉄</text>
+<rect x="240.0" y="2" width="40.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>強磁性体のヒステリシス曲線: 1問 (10%)</title></rect>
+<text x="260.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">強磁性体の</text>
+<rect x="280.0" y="2" width="40.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気化学・電気分解: 1問 (10%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気化学・</text>
+<rect x="320.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気計測・多重範囲電圧計の倍率器: 1問 (10%)</title></rect>
+<text x="340.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="360.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>静電気・コンデンサの電荷計算: 1問 (10%)</title></rect>
+<text x="380.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
 </svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 電気計測・多重範囲電圧計の倍率器, シーケンス回路・論理回路, 変圧器・鉄損と銅損の変化, パーセントインピーダンス（%Z）, 強磁性体のヒステリシス曲線</span> / <span style="color:#dc2626">消滅: 変圧器・励磁突入電流, 交流回路・ブリッジ平衡条件, 三相誘導電動機・Y-Δ始動方式, 同期発電機・励磁方式, 単相2線式配電線路のC点線間電圧計算（電圧降下・複数負荷）</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（10テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+シーケンス回路・論理回路（暗記で確保）、パーセントインピーダンス（%Z）（暗記で確保）、三相誘導電動機・速度制御（原理理解が鍵）、交流回路・RLC直列回路の有効電力（原理理解が鍵）、同期発電機・並行運転（暗記で確保）、変圧器・鉄損と銅損の変化（原理理解が鍵）、強磁性体のヒステリシス曲線（暗記で確保）、電気化学・電気分解（暗記で確保）、電気計測・多重範囲電圧計の倍率器（原理理解が鍵）、静電気・コンデンサの電荷計算（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約9問</p>
 </div></details>
 <details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
-<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H20 — 1問・1テーマ</summary>
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">R1 — 8問・8テーマ</summary>
 <div style="padding:10px 14px">
 <p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
 <table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
-<tr><td><strong>電気工事</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/5</td></tr>
+<tr><td><strong>シーケンス回路・論理回路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#2</span>/118</td></tr>
+<tr><td><strong>三相交流回路・抵抗値と消費電力計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#38</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機の特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#6</span>/118</td></tr>
+<tr><td><strong>同期発電機・ベクトル図</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#60/118</td></tr>
+<tr><td><strong>変圧器・効率と損失の特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#69/118</td></tr>
+<tr><td><strong>抵抗の発生熱量計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#4</span>/118</td></tr>
+<tr><td><strong>電気計測・電流力計形計器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#24</span>/118</td></tr>
+<tr><td><strong>電磁誘導・相互インダクタンス計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#109/118</td></tr>
 </table>
 <svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
-<rect x="0.0" y="2" width="400.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電気工事: 1問 (100%)</title></rect>
-<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気工事</text>
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス回路・論理回路: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相交流回路・抵抗値と消費電力計算: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機の特性: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・ベクトル図: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・効率と損失の特性: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・効</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>抵抗の発生熱量計算: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">抵抗の発生</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気計測・電流力計形計器: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電磁誘導・相互インダクタンス計算: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁誘導・</text>
 </svg>
-<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（1テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 電気計測・電流力計形計器, 三相誘導電動機の特性, 電磁誘導・相互インダクタンス計算, 同期発電機・ベクトル図, 変圧器・効率と損失の特性</span> / <span style="color:#dc2626">消滅: 電気計測・多重範囲電圧計の倍率器, 変圧器・鉄損と銅損の変化, パーセントインピーダンス（%Z）, 強磁性体のヒステリシス曲線, 三相誘導電動機・速度制御</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
 <p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
-電気工事（暗記で確保）を重点対策。</p>
-<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約1問</p>
+シーケンス回路・論理回路（暗記で確保）、三相交流回路・抵抗値と消費電力計算（原理理解が鍵）、三相誘導電動機の特性（原理理解が鍵）、同期発電機・ベクトル図（暗記で確保）、変圧器・効率と損失の特性（原理理解が鍵）、抵抗の発生熱量計算（暗記で確保）、電気計測・電流力計形計器（原理理解が鍵）、電磁誘導・相互インダクタンス計算（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約7問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H30 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス回路・論理回路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#2</span>/118</td></tr>
+<tr><td><strong>三相交流回路・二電力計法による力率</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#5</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・速度制御</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#3</span>/118</td></tr>
+<tr><td><strong>交流回路・基本性質</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#54/118</td></tr>
+<tr><td><strong>変圧器・一次電流計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#17</span>/118</td></tr>
+<tr><td><strong>誘導発電機の特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#92/118</td></tr>
+<tr><td><strong>電磁誘導・円形コイルの起電力</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#108/118</td></tr>
+<tr><td><strong>静電気・点電荷に働く静電力</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#27</span>/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス回路・論理回路: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相交流回路・二電力計法による力率: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機・速度制御: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>交流回路・基本性質: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・一次電流計算: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・一</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>誘導発電機の特性: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">誘導発電機</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電磁誘導・円形コイルの起電力: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁誘導・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>静電気・点電荷に働く静電力: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・点</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+継続: 1テーマ / <span style="color:#16a34a">新規: 三相誘導電動機・速度制御, 交流回路・基本性質, 変圧器・一次電流計算, 誘導発電機の特性, 電磁誘導・円形コイルの起電力</span> / <span style="color:#dc2626">消滅: 電気計測・電流力計形計器, 三相誘導電動機の特性, 電磁誘導・相互インダクタンス計算, 同期発電機・ベクトル図, 変圧器・効率と損失の特性</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス回路・論理回路（暗記で確保）、三相交流回路・二電力計法による力率（原理理解が鍵）、三相誘導電動機・速度制御（原理理解が鍵）、交流回路・基本性質（原理理解が鍵）、変圧器・一次電流計算（原理理解が鍵）、誘導発電機の特性（暗記で確保）、電磁誘導・円形コイルの起電力（暗記で確保）、静電気・点電荷に働く静電力（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H29 — 10問・10テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>三相誘導電動機の特性曲線</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#46/118</td></tr>
+<tr><td><strong>交流回路・RLC直列回路の力率</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#14</span>/118</td></tr>
+<tr><td><strong>力率改善・進相コンデンサ容量</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/118</td></tr>
+<tr><td><strong>同期発電機・電圧変動率</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#9</span>/118</td></tr>
+<tr><td><strong>変圧器・三相結線</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#67/118</td></tr>
+<tr><td><strong>自動制御・ブロック線図</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#87/118</td></tr>
+<tr><td><strong>誘導電動機・始動法</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#20</span>/118</td></tr>
+<tr><td><strong>電気計測・分流器の倍率</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#21</span>/118</td></tr>
+<tr><td><strong>電磁気・自己インダクタンス</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#107/118</td></tr>
+<tr><td><strong>静電気・コンデンサの静電容量</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#113/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>三相誘導電動機の特性曲線: 1問 (10%)</title></rect>
+<text x="20.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="40.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>交流回路・RLC直列回路の力率: 1問 (10%)</title></rect>
+<text x="60.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="80.0" y="2" width="40.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>力率改善・進相コンデンサ容量: 1問 (10%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">力率改善・</text>
+<rect x="120.0" y="2" width="40.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・電圧変動率: 1問 (10%)</title></rect>
+<text x="140.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="160.0" y="2" width="40.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・三相結線: 1問 (10%)</title></rect>
+<text x="180.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・三</text>
+<rect x="200.0" y="2" width="40.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>自動制御・ブロック線図: 1問 (10%)</title></rect>
+<text x="220.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">自動制御・</text>
+<rect x="240.0" y="2" width="40.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>誘導電動機・始動法: 1問 (10%)</title></rect>
+<text x="260.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">誘導電動機</text>
+<rect x="280.0" y="2" width="40.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気計測・分流器の倍率: 1問 (10%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="320.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電磁気・自己インダクタンス: 1問 (10%)</title></rect>
+<text x="340.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁気・自</text>
+<rect x="360.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>静電気・コンデンサの静電容量: 1問 (10%)</title></rect>
+<text x="380.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 自動制御・ブロック線図, 同期発電機・電圧変動率, 誘導電動機・始動法, 電磁気・自己インダクタンス, 交流回路・RLC直列回路の力率</span> / <span style="color:#dc2626">消滅: シーケンス回路・論理回路, 三相誘導電動機・速度制御, 交流回路・基本性質, 変圧器・一次電流計算, 誘導発電機の特性</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（10テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+三相誘導電動機の特性曲線（原理理解が鍵）、交流回路・RLC直列回路の力率（原理理解が鍵）、力率改善・進相コンデンサ容量（暗記で確保）、同期発電機・電圧変動率（暗記で確保）、変圧器・三相結線（原理理解が鍵）、自動制御・ブロック線図（暗記で確保）、誘導電動機・始動法（原理理解が鍵）、電気計測・分流器の倍率（原理理解が鍵）、電磁気・自己インダクタンス（原理理解が鍵）、静電気・コンデンサの静電容量（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約9問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H28 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス制御・論理回路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#32</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機の特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#6</span>/118</td></tr>
+<tr><td><strong>交流回路・ブリッジ平衡条件</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#7</span>/118</td></tr>
+<tr><td><strong>同期発電機・励磁方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#8</span>/118</td></tr>
+<tr><td><strong>変圧器・励磁突入電流</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#18</span>/118</td></tr>
+<tr><td><strong>電気計測・整流形計器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#23</span>/118</td></tr>
+<tr><td><strong>電磁誘導・誘導起電力</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#110/118</td></tr>
+<tr><td><strong>静電気・コンデンサのエネルギー</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#25</span>/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス制御・論理回路: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相誘導電動機の特性: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>交流回路・ブリッジ平衡条件: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・励磁方式: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・励磁突入電流: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・励</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>電気計測・整流形計器: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電磁誘導・誘導起電力: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁誘導・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>静電気・コンデンサのエネルギー: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: シーケンス制御・論理回路, 電磁誘導・誘導起電力, 変圧器・励磁突入電流, 静電気・コンデンサのエネルギー, 交流回路・ブリッジ平衡条件</span> / <span style="color:#dc2626">消滅: 自動制御・ブロック線図, 同期発電機・電圧変動率, 誘導電動機・始動法, 電磁気・自己インダクタンス, 交流回路・RLC直列回路の力率</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス制御・論理回路（暗記で確保）、三相誘導電動機の特性（原理理解が鍵）、交流回路・ブリッジ平衡条件（原理理解が鍵）、同期発電機・励磁方式（暗記で確保）、変圧器・励磁突入電流（原理理解が鍵）、電気計測・整流形計器（原理理解が鍵）、電磁誘導・誘導起電力（暗記で確保）、静電気・コンデンサのエネルギー（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約7問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H27 — 9問・9テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス回路・論理回路</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#2</span>/118</td></tr>
+<tr><td><strong>リアクトルの設置目的</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#36</span>/118</td></tr>
+<tr><td><strong>三相交流回路・電流計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#39</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・始動法</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#13</span>/118</td></tr>
+<tr><td><strong>同期発電機・短絡比</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#16</span>/118</td></tr>
+<tr><td><strong>変圧器・一次電流の計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#66/118</td></tr>
+<tr><td><strong>導体の抵抗値計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#73/118</td></tr>
+<tr><td><strong>電気計測・指示電気計器の動作原理</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#22</span>/118</td></tr>
+<tr><td><strong>電磁誘導・相互インダクタンス</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#10</span>/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス回路・論理回路: 1問 (11%)</title></rect>
+<text x="22.2" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="44.4" y="2" width="44.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>リアクトルの設置目的: 1問 (11%)</title></rect>
+<text x="66.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">リアクトル</text>
+<rect x="88.9" y="2" width="44.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相交流回路・電流計算: 1問 (11%)</title></rect>
+<text x="111.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="133.3" y="2" width="44.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>三相誘導電動機・始動法: 1問 (11%)</title></rect>
+<text x="155.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="177.8" y="2" width="44.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>同期発電機・短絡比: 1問 (11%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="222.2" y="2" width="44.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>変圧器・一次電流の計算: 1問 (11%)</title></rect>
+<text x="244.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・一</text>
+<rect x="266.7" y="2" width="44.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>導体の抵抗値計算: 1問 (11%)</title></rect>
+<text x="288.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">導体の抵抗</text>
+<rect x="311.1" y="2" width="44.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気計測・指示電気計器の動作原理: 1問 (11%)</title></rect>
+<text x="333.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="355.6" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電磁誘導・相互インダクタンス: 1問 (11%)</title></rect>
+<text x="377.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁誘導・</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: シーケンス回路・論理回路, リアクトルの設置目的, 電磁誘導・相互インダクタンス, 導体の抵抗値計算, 同期発電機・短絡比</span> / <span style="color:#dc2626">消滅: シーケンス制御・論理回路, 電磁誘導・誘導起電力, 変圧器・励磁突入電流, 静電気・コンデンサのエネルギー, 交流回路・ブリッジ平衡条件</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（9テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス回路・論理回路（暗記で確保）、リアクトルの設置目的（暗記で確保）、三相交流回路・電流計算（原理理解が鍵）、三相誘導電動機・始動法（原理理解が鍵）、同期発電機・短絡比（暗記で確保）、変圧器・一次電流の計算（原理理解が鍵）、導体の抵抗値計算（暗記で確保）、電気計測・指示電気計器の動作原理（原理理解が鍵）、電磁誘導・相互インダクタンス（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H26 — 9問・9テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>三相交流回路・消費電力計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#12</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・速度制御</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#3</span>/118</td></tr>
+<tr><td><strong>力率改善・進相コンデンサ容量</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#1</span>/118</td></tr>
+<tr><td><strong>同期発電機・三相短絡特性</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#61/118</td></tr>
+<tr><td><strong>変圧器・鉄損と銅損の関係</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#72/118</td></tr>
+<tr><td><strong>抵抗の発生熱量計算</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#4</span>/118</td></tr>
+<tr><td><strong>自動制御・積分動作のステップ応答</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#89/118</td></tr>
+<tr><td><strong>電気計測・分流器の倍率</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#21</span>/118</td></tr>
+<tr><td><strong>電磁力・平行導体間の力の方向</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#105/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>三相交流回路・消費電力計算: 1問 (11%)</title></rect>
+<text x="22.2" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="44.4" y="2" width="44.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相誘導電動機・速度制御: 1問 (11%)</title></rect>
+<text x="66.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="88.9" y="2" width="44.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>力率改善・進相コンデンサ容量: 1問 (11%)</title></rect>
+<text x="111.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">力率改善・</text>
+<rect x="133.3" y="2" width="44.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・三相短絡特性: 1問 (11%)</title></rect>
+<text x="155.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="177.8" y="2" width="44.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・鉄損と銅損の関係: 1問 (11%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・鉄</text>
+<rect x="222.2" y="2" width="44.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>抵抗の発生熱量計算: 1問 (11%)</title></rect>
+<text x="244.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">抵抗の発生</text>
+<rect x="266.7" y="2" width="44.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>自動制御・積分動作のステップ応答: 1問 (11%)</title></rect>
+<text x="288.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">自動制御・</text>
+<rect x="311.1" y="2" width="44.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電気計測・分流器の倍率: 1問 (11%)</title></rect>
+<text x="333.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="355.6" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>電磁力・平行導体間の力の方向: 1問 (11%)</title></rect>
+<text x="377.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁力・平</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 三相誘導電動機・速度制御, 電磁力・平行導体間の力の方向, 三相交流回路・消費電力計算, 力率改善・進相コンデンサ容量, 変圧器・鉄損と銅損の関係</span> / <span style="color:#dc2626">消滅: シーケンス回路・論理回路, リアクトルの設置目的, 電磁誘導・相互インダクタンス, 導体の抵抗値計算, 同期発電機・短絡比</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（9テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+三相交流回路・消費電力計算（原理理解が鍵）、三相誘導電動機・速度制御（原理理解が鍵）、力率改善・進相コンデンサ容量（暗記で確保）、同期発電機・三相短絡特性（暗記で確保）、変圧器・鉄損と銅損の関係（原理理解が鍵）、抵抗の発生熱量計算（暗記で確保）、自動制御・積分動作のステップ応答（暗記で確保）、電気計測・分流器の倍率（原理理解が鍵）、電磁力・平行導体間の力の方向（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H25 — 10問・10テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>交流回路・キルヒホッフの法則</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#53/118</td></tr>
+<tr><td><strong>同期発電機・並行運転条件</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#63/118</td></tr>
+<tr><td><strong>変圧器・電圧変動率</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#19</span>/118</td></tr>
+<tr><td><strong>論理回路・真理値表</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#93/118</td></tr>
+<tr><td><strong>電動機・巻上装置の所要出力</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#94/118</td></tr>
+<tr><td><strong>電気化学・電気めっき</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#96/118</td></tr>
+<tr><td><strong>電気計測・整流形計器</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#23</span>/118</td></tr>
+<tr><td><strong>静電気・平行板コンデンサの静電容量</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#114/118</td></tr>
+<tr><td><strong>静電気・電気力線の性質</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#115/118</td></tr>
+<tr><td><strong>高圧進相コンデンサ・JIS</strong></td><td class="tac">1</td><td class="tac">10%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#118/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>交流回路・キルヒホッフの法則: 1問 (10%)</title></rect>
+<text x="20.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="40.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>同期発電機・並行運転条件: 1問 (10%)</title></rect>
+<text x="60.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="80.0" y="2" width="40.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>変圧器・電圧変動率: 1問 (10%)</title></rect>
+<text x="100.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・電</text>
+<rect x="120.0" y="2" width="40.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>論理回路・真理値表: 1問 (10%)</title></rect>
+<text x="140.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">論理回路・</text>
+<rect x="160.0" y="2" width="40.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>電動機・巻上装置の所要出力: 1問 (10%)</title></rect>
+<text x="180.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電動機・巻</text>
+<rect x="200.0" y="2" width="40.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>電気化学・電気めっき: 1問 (10%)</title></rect>
+<text x="220.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気化学・</text>
+<rect x="240.0" y="2" width="40.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気計測・整流形計器: 1問 (10%)</title></rect>
+<text x="260.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="280.0" y="2" width="40.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>静電気・平行板コンデンサの静電容量: 1問 (10%)</title></rect>
+<text x="300.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・平</text>
+<rect x="320.0" y="2" width="40.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>静電気・電気力線の性質: 1問 (10%)</title></rect>
+<text x="340.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・電</text>
+<rect x="360.0" y="2" width="40.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>高圧進相コンデンサ・JIS: 1問 (10%)</title></rect>
+<text x="380.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">高圧進相コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 交流回路・キルヒホッフの法則, 静電気・電気力線の性質, 電気化学・電気めっき, 電動機・巻上装置の所要出力, 静電気・平行板コンデンサの静電容量</span> / <span style="color:#dc2626">消滅: 三相誘導電動機・速度制御, 電磁力・平行導体間の力の方向, 三相交流回路・消費電力計算, 力率改善・進相コンデンサ容量, 変圧器・鉄損と銅損の関係</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（10テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+交流回路・キルヒホッフの法則（原理理解が鍵）、同期発電機・並行運転条件（暗記で確保）、変圧器・電圧変動率（原理理解が鍵）、論理回路・真理値表（暗記で確保）、電動機・巻上装置の所要出力（暗記で確保）、電気化学・電気めっき（暗記で確保）、電気計測・整流形計器（原理理解が鍵）、静電気・平行板コンデンサの静電容量（原理理解が鍵）、静電気・電気力線の性質（原理理解が鍵）、高圧進相コンデンサ・JIS（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約9問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H24 — 9問・9テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス制御とフィードバック制御</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#29</span>/118</td></tr>
+<tr><td><strong>三相誘導電動機・始動法</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#13</span>/118</td></tr>
+<tr><td><strong>交流回路・RLC直列回路の力率</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#14</span>/118</td></tr>
+<tr><td><strong>交流遮断器・消弧方式</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#55/118</td></tr>
+<tr><td><strong>同期発電機・電圧変動率</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#9</span>/118</td></tr>
+<tr><td><strong>変圧器の結線</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#65/118</td></tr>
+<tr><td><strong>電気計測・電流力計形計器</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#24</span>/118</td></tr>
+<tr><td><strong>電磁気・直線状導線の磁界</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#106/118</td></tr>
+<tr><td><strong>静電気・コンデンサの電荷</strong></td><td class="tac">1</td><td class="tac">11%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#112/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス制御とフィードバック制御: 1問 (11%)</title></rect>
+<text x="22.2" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="44.4" y="2" width="44.4" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相誘導電動機・始動法: 1問 (11%)</title></rect>
+<text x="66.7" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="88.9" y="2" width="44.4" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>交流回路・RLC直列回路の力率: 1問 (11%)</title></rect>
+<text x="111.1" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流回路・</text>
+<rect x="133.3" y="2" width="44.4" height="22" rx="2" fill="#d97706" opacity="0.8"><title>交流遮断器・消弧方式: 1問 (11%)</title></rect>
+<text x="155.6" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流遮断器</text>
+<rect x="177.8" y="2" width="44.4" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>同期発電機・電圧変動率: 1問 (11%)</title></rect>
+<text x="200.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="222.2" y="2" width="44.4" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>変圧器の結線: 1問 (11%)</title></rect>
+<text x="244.4" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器の結</text>
+<rect x="266.7" y="2" width="44.4" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気計測・電流力計形計器: 1問 (11%)</title></rect>
+<text x="288.9" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="311.1" y="2" width="44.4" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電磁気・直線状導線の磁界: 1問 (11%)</title></rect>
+<text x="333.3" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁気・直</text>
+<rect x="355.6" y="2" width="44.4" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>静電気・コンデンサの電荷: 1問 (11%)</title></rect>
+<text x="377.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電気・コ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 電気計測・電流力計形計器, 同期発電機・電圧変動率, 交流遮断器・消弧方式, 変圧器の結線, 交流回路・RLC直列回路の力率</span> / <span style="color:#dc2626">消滅: 交流回路・キルヒホッフの法則, 静電気・電気力線の性質, 電気化学・電気めっき, 電動機・巻上装置の所要出力, 静電気・平行板コンデンサの静電容量</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（9テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス制御とフィードバック制御（暗記で確保）、三相誘導電動機・始動法（原理理解が鍵）、交流回路・RLC直列回路の力率（原理理解が鍵）、交流遮断器・消弧方式（暗記で確保）、同期発電機・電圧変動率（暗記で確保）、変圧器の結線（原理理解が鍵）、電気計測・電流力計形計器（原理理解が鍵）、電磁気・直線状導線の磁界（原理理解が鍵）、静電気・コンデンサの電荷（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H23 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>三相電動機・始動制御シーケンス</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#49/118</td></tr>
+<tr><td><strong>交流ブリッジ平衡条件</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#51/118</td></tr>
+<tr><td><strong>力率改善・コンデンサ容量計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#57/118</td></tr>
+<tr><td><strong>同期発電機・励磁方式</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#8</span>/118</td></tr>
+<tr><td><strong>変圧器・効率と損失特性</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#70/118</td></tr>
+<tr><td><strong>環状鉄心・自己インダクタンス</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#78/118</td></tr>
+<tr><td><strong>電気計測・分流器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#100/118</td></tr>
+<tr><td><strong>電線の抵抗値計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#111/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>三相電動機・始動制御シーケンス: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相電動機</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>交流ブリッジ平衡条件: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">交流ブリッ</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>力率改善・コンデンサ容量計算: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">力率改善・</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機・励磁方式: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>変圧器・効率と損失特性: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器・効</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>環状鉄心・自己インダクタンス: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">環状鉄心・</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気計測・分流器: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気計測・</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電線の抵抗値計算: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電線の抵抗</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 力率改善・コンデンサ容量計算, 三相電動機・始動制御シーケンス, 電気計測・分流器, 同期発電機・励磁方式, 交流ブリッジ平衡条件</span> / <span style="color:#dc2626">消滅: 電気計測・電流力計形計器, 同期発電機・電圧変動率, 交流遮断器・消弧方式, 変圧器の結線, 交流回路・RLC直列回路の力率</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+三相電動機・始動制御シーケンス（暗記で確保）、交流ブリッジ平衡条件（暗記で確保）、力率改善・コンデンサ容量計算（暗記で確保）、同期発電機・励磁方式（暗記で確保）、変圧器・効率と損失特性（原理理解が鍵）、環状鉄心・自己インダクタンス（暗記で確保）、電気計測・分流器（原理理解が鍵）、電線の抵抗値計算（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約1問 / 計算・理解系: 約7問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H22 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>フィードバック制御・伝達関数</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#35</span>/118</td></tr>
+<tr><td><strong>三相平衡回路の消費電力計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#43/118</td></tr>
+<tr><td><strong>三相誘導電動機の速度制御</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#47/118</td></tr>
+<tr><td><strong>変圧器の一次電流計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#64/118</td></tr>
+<tr><td><strong>抵抗の発熱量計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#75/118</td></tr>
+<tr><td><strong>指示電気計器の動作原理</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#76/118</td></tr>
+<tr><td><strong>発電機の種類と特徴</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#80/118</td></tr>
+<tr><td><strong>磁気ヒステリシスループ</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#85/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>フィードバック制御・伝達関数: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">フィードバ</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相平衡回路の消費電力計算: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相平衡回</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相誘導電動機の速度制御: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>変圧器の一次電流計算: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">変圧器の一</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>抵抗の発熱量計算: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">抵抗の発熱</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>指示電気計器の動作原理: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">指示電気計</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>発電機の種類と特徴: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">発電機の種</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>磁気ヒステリシスループ: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">磁気ヒステ</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 三相平衡回路の消費電力計算, 発電機の種類と特徴, 抵抗の発熱量計算, 指示電気計器の動作原理, フィードバック制御・伝達関数</span> / <span style="color:#dc2626">消滅: 力率改善・コンデンサ容量計算, 三相電動機・始動制御シーケンス, 電気計測・分流器, 同期発電機・励磁方式, 交流ブリッジ平衡条件</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+フィードバック制御・伝達関数（暗記で確保）、三相平衡回路の消費電力計算（暗記で確保）、三相誘導電動機の速度制御（原理理解が鍵）、変圧器の一次電流計算（原理理解が鍵）、抵抗の発熱量計算（暗記で確保）、指示電気計器の動作原理（暗記で確保）、発電機の種類と特徴（暗記で確保）、磁気ヒステリシスループ（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H21 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス制御・論理回路とリレー回路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#33</span>/118</td></tr>
+<tr><td><strong>三相交流回路の電流計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#11</span>/118</td></tr>
+<tr><td><strong>三相同期発電機の並列運転条件</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#40/118</td></tr>
+<tr><td><strong>三相変圧器の結線</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#42/118</td></tr>
+<tr><td><strong>三相誘導電動機のY-△始動</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#45/118</td></tr>
+<tr><td><strong>直列コンデンサのエネルギー</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#81/118</td></tr>
+<tr><td><strong>電磁力の計算・導線と磁界</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#104/118</td></tr>
+<tr><td><strong>静電電圧計</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#117/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス制御・論理回路とリレー回路: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相交流回路の電流計算: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相交流回</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相同期発電機の並列運転条件: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相同期発</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>三相変圧器の結線: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相変圧器</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>三相誘導電動機のY-△始動: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相誘導電</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>直列コンデンサのエネルギー: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">直列コンデ</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電磁力の計算・導線と磁界: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電磁力の計</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>静電電圧計: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">静電電圧計</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 三相交流回路の電流計算, 三相同期発電機の並列運転条件, シーケンス制御・論理回路とリレー回路, 三相変圧器の結線, 三相誘導電動機のY-△始動</span> / <span style="color:#dc2626">消滅: 三相平衡回路の消費電力計算, 発電機の種類と特徴, 抵抗の発熱量計算, 指示電気計器の動作原理, フィードバック制御・伝達関数</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス制御・論理回路とリレー回路（暗記で確保）、三相交流回路の電流計算（原理理解が鍵）、三相同期発電機の並列運転条件（暗記で確保）、三相変圧器の結線（原理理解が鍵）、三相誘導電動機のY-△始動（原理理解が鍵）、直列コンデンサのエネルギー（暗記で確保）、電磁力の計算・導線と磁界（暗記で確保）、静電電圧計（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #b4530922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#b45309;background:#b4530906;border-radius:6px">H20 — 8問・8テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>シーケンス制御・自己保持回路</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#31</span>/118</td></tr>
+<tr><td><strong>三相かご形誘導電動機の始動</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#b45309;font-weight:700">#37</span>/118</td></tr>
+<tr><td><strong>三相変圧器の短絡電流計算</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#41/118</td></tr>
+<tr><td><strong>同期発電機の電圧変動率</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#59/118</td></tr>
+<tr><td><strong>環状鉄心の相互インダクタンス</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#77/118</td></tr>
+<tr><td><strong>直列コンデンサの電荷・容量</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#82/118</td></tr>
+<tr><td><strong>電気回路の基本法則</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#CC3333;font-weight:600">🔴丸暗記</span></td><td class="tac">#99/118</td></tr>
+<tr><td><strong>電流力計形計器</strong></td><td class="tac">1</td><td class="tac">12%</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td class="tac">#103/118</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="50.0" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>シーケンス制御・自己保持回路: 1問 (12%)</title></rect>
+<text x="25.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">シーケンス</text>
+<rect x="50.0" y="2" width="50.0" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>三相かご形誘導電動機の始動: 1問 (12%)</title></rect>
+<text x="75.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相かご形</text>
+<rect x="100.0" y="2" width="50.0" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>三相変圧器の短絡電流計算: 1問 (12%)</title></rect>
+<text x="125.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">三相変圧器</text>
+<rect x="150.0" y="2" width="50.0" height="22" rx="2" fill="#d97706" opacity="0.8"><title>同期発電機の電圧変動率: 1問 (12%)</title></rect>
+<text x="175.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">同期発電機</text>
+<rect x="200.0" y="2" width="50.0" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>環状鉄心の相互インダクタンス: 1問 (12%)</title></rect>
+<text x="225.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">環状鉄心の</text>
+<rect x="250.0" y="2" width="50.0" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>直列コンデンサの電荷・容量: 1問 (12%)</title></rect>
+<text x="275.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">直列コンデ</text>
+<rect x="300.0" y="2" width="50.0" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>電気回路の基本法則: 1問 (12%)</title></rect>
+<text x="325.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電気回路の</text>
+<rect x="350.0" y="2" width="50.0" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>電流力計形計器: 1問 (12%)</title></rect>
+<text x="375.0" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">電流力計形</text>
+</svg>
+<p style="font-size:0.88em;margin:6px 0"><strong>前年との比較:</strong> 
+<span style="color:#16a34a">新規: 環状鉄心の相互インダクタンス, シーケンス制御・自己保持回路, 電気回路の基本法則, 直列コンデンサの電荷・容量, 三相変圧器の短絡電流計算</span> / <span style="color:#dc2626">消滅: 三相交流回路の電流計算, 三相同期発電機の並列運転条件, シーケンス制御・論理回路とリレー回路, 三相変圧器の結線, 三相誘導電動機のY-△始動</span>
+</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#2563eb">標準型</span>（バランスの取れた出題構成）（8テーマ・平均1.0問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+シーケンス制御・自己保持回路（暗記で確保）、三相かご形誘導電動機の始動（原理理解が鍵）、三相変圧器の短絡電流計算（原理理解が鍵）、同期発電機の電圧変動率（暗記で確保）、環状鉄心の相互インダクタンス（暗記で確保）、直列コンデンサの電荷・容量（暗記で確保）、電気回路の基本法則（暗記で確保）、電流力計形計器（暗記で確保）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約8問</p>
 </div></details>
 </details>
 <a href="#" class="back-to-top">目次に戻る ↑</a>
 </section>
-<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__施工.html">施工 →</a></span></nav>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__電気設備.html">電気設備 →</a></span></nav>
 </div>
 <script>
 (function(){
@@ -307,5 +1060,5 @@ window.addEventListener("load",restoreChecks);
   });
 })();
 </script>
-<footer>施工管理1級 ｜ H20〜R7後期 ｜ Generated by Claude Code</footer>
+<footer>施工管理1級 ｜ R7〜H20 ｜ Generated by Claude Code</footer>
 </body></html>

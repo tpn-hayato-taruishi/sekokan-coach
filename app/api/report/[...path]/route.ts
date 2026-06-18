@@ -2,12 +2,13 @@ import { NextRequest } from 'next/server';
 import { readFile, stat } from 'node:fs/promises';
 import { join, resolve, normalize } from 'node:path';
 
-// 配信元 pptx/ — 開発時は親リポジトリ参照、本番Docker内は同梱の pptx-assets/
+// 配信元 — 親 repo の data/reports/ を最優先、Docker 内は同梱の pptx-assets/
 async function resolveRoot(): Promise<string> {
   const candidates = [
-    resolve(process.cwd(), 'pptx-assets'),       // 本番 Docker
-    resolve(process.cwd(), '..', 'pptx'),         // 開発 (親ディレクトリ)
-    resolve(process.cwd(), 'pptx'),               // フォールバック
+    resolve(process.cwd(), '..', '..', 'data', 'reports'), // 開発 (親 repo data/reports/) ★最優先
+    resolve(process.cwd(), 'pptx-assets'),                 // 本番 Docker
+    resolve(process.cwd(), '..', 'pptx'),                  // レガシー (旧構成)
+    resolve(process.cwd(), 'pptx'),                        // フォールバック
   ];
   for (const c of candidates) {
     try {
@@ -15,7 +16,7 @@ async function resolveRoot(): Promise<string> {
       if (s.isDirectory()) return c;
     } catch {}
   }
-  return candidates[1]; // 最後の手段
+  return candidates[0]; // 最後の手段 (data/reports/)
 }
 
 const TYPE_MAP: Record<string, string> = {
