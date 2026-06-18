@@ -38,20 +38,27 @@ cmd_apply() {
 }
 
 cmd_prebuild() {
-  # 親リポジトリ pptx/ から build context にアセットコピー
-  # (Docker build は SCRIPT_DIR を context にするため、親 pptx は見えない)
-  local PPTX_SRC="$SCRIPT_DIR/../pptx"
+  # 親リポジトリ data/reports/ から build context にアセットコピー
+  # (Docker build は SCRIPT_DIR を context にするため、親の data/ は見えない)
+  # ※ 移行前の旧パス: ../pptx
+  local REPORTS_SRC="$SCRIPT_DIR/../../data/reports"
+  local REPORTS_SRC_LEGACY="$SCRIPT_DIR/../pptx"
   local PPTX_DST="$SCRIPT_DIR/pptx-assets"
-  if [[ ! -d "$PPTX_SRC" ]]; then
-    error "親 pptx/ が見つかりません: $PPTX_SRC"
+  if [[ ! -d "$REPORTS_SRC" ]]; then
+    if [[ -d "$REPORTS_SRC_LEGACY" ]]; then
+      REPORTS_SRC="$REPORTS_SRC_LEGACY"
+      info "Legacy path detected: $REPORTS_SRC_LEGACY"
+    else
+      error "data/reports/ (旧 pptx/) が見つかりません: $REPORTS_SRC"
+    fi
   fi
-  info "pptx/ → pptx-assets/ にアセットコピー (HTML + PNG)..."
+  info "data/reports/ → pptx-assets/ にアセットコピー (HTML + PNG)..."
   rm -rf "$PPTX_DST"
   mkdir -p "$PPTX_DST"
   # HTMLレポート (個別ファイル + 徹底分析ディレクトリ) + 挿絵PNGディレクトリ
-  cp "$PPTX_SRC"/*.html "$PPTX_DST"/ 2>/dev/null || true
-  cp -r "$PPTX_SRC"/*_出題傾向_徹底分析 "$PPTX_DST"/ 2>/dev/null || true
-  cp -r "$PPTX_SRC"/施工管理_figures "$PPTX_DST"/ 2>/dev/null || true
+  cp "$REPORTS_SRC"/*.html "$PPTX_DST"/ 2>/dev/null || true
+  cp -r "$REPORTS_SRC"/*_出題傾向_徹底分析 "$PPTX_DST"/ 2>/dev/null || true
+  cp -r "$REPORTS_SRC"/施工管理_figures "$PPTX_DST"/ 2>/dev/null || true
   local SIZE
   SIZE=$(du -sh "$PPTX_DST" 2>/dev/null | cut -f1)
   info "pptx-assets/ コピー完了 (size: $SIZE)"
