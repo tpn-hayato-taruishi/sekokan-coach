@@ -1,69 +1,352 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8">
-<title>電気通信工事施工管理技士 1級 簡易版</title>
-<style>
-body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; max-width: 980px; margin: 20px auto; padding: 0 20px; line-height: 1.7; color: #1e293b; }
-h1 { color: #1e40af; border-bottom: 3px solid #1e40af; padding-bottom: 8px; }
-h2 { color: #1d4ed8; border-left: 5px solid #1d4ed8; padding-left: 12px; margin-top: 32px; }
-.stat-row { display: flex; gap: 16px; flex-wrap: wrap; margin: 16px 0; }
-.stat-card { flex: 1; min-width: 180px; background: #eff6ff; padding: 16px; border-radius: 8px; }
-.stat-card .v { font-size: 2em; font-weight: 800; color: #1e40af; }
-.stat-card .l { font-size: 0.85em; color: #64748b; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-table th, table td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
-table th { background: #f1f5f9; }
-.r { text-align: right; font-weight: 700; color: #1e40af; }
-.chip { display: inline-block; background: #dbeafe; color: #1e40af; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; margin: 2px; }
-.muted { color: #94a3b8; font-size: 0.9em; }
-.note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 16px 0; border-radius: 4px; }
-ul { padding-left: 20px; }
-</style>
-</head><body>
-<h1>電気通信工事施工管理技士 1級 簡易版</h1>
-<p>1次検定の出題傾向を要点だけまとめた簡易版レポートです。詳細は <a href="../電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html">徹底分析レポート</a> を参照。</p>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1級 電気通信工事施工管理技士 第一次検定 — 要点ガイド (簡易版)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>body{font-family:'Meiryo UI','Yu Gothic',sans-serif}</style>
+</head>
+<body class="bg-slate-50">
+<div class="max-w-4xl mx-auto p-5">
+  <header class="text-center mb-6">
+    <h1 class="text-3xl font-black text-blue-900 mb-1">📊 1級 電気通信工事施工管理技士</h1>
+    <p class="text-blue-700 font-bold">第一次検定 — 要点ガイド (簡易版)</p>
+    <p class="text-xs text-slate-500 mt-2">合格に必要な情報だけ。詳細版は別途参照。出典: 過去 8年分 全625問の統計分析</p>
+  </header>
 
-<h2>📊 ボリューム</h2>
-<div class="stat-row">
-  <div class="stat-card">
-    <div class="v">625</div>
-    <div class="l">過去問総数</div>
-  </div>
-  <div class="stat-card">
-    <div class="v">357</div>
-    <div class="l">正答付き (57%)</div>
-  </div>
-  <div class="stat-card">
-    <div class="v">7</div>
-    <div class="l">年度数</div>
-  </div>
-  <div class="stat-card">
-    <div class="v">6</div>
-    <div class="l">科目数</div>
-  </div>
+  <section class="bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-amber-400 rounded-lg p-5 mb-5">
+    <h2 class="text-xl font-bold text-amber-900 mb-2">🏆 まずこれを覚える: 合格戦略 3 ポイント</h2>
+    <ol class="list-decimal pl-6 space-y-1 text-sm">
+      <li><strong>合格基準は60%</strong>。満点不要。出ない分野は捨てて頻出を完璧に。</li>
+      <li><strong>過去問の 0% が「同じ・ほぼ同じ」再出題</strong>。過去問演習が最効率。</li>
+      <li><strong>頻出TOP20テーマで全問題の 0% カバー</strong>。20%の努力で60%取れる (パレート)。</li>
+    </ol>
+  </section>
+
+  <section class="bg-white rounded-lg shadow p-5 mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">🎯 試験の出題構成 — 必須 vs 選択 (年度ごとに変遷)</h2>
+    <p class="text-sm text-slate-600 mb-3">
+      電気通信工事施工管理技士は <strong>令和3年度から制度改正</strong> され、「学科試験」→「第一次検定」に変更 + 応用能力問題が追加されました。
+      <strong className="text-emerald-700">R3以降が現行制度</strong>。古い年度の過去問は構成が異なるので参考程度に。
+    </p>
+    
+        <details open class="mb-3 border rounded">
+          <summary class="cursor-pointer px-3 py-2 bg-blue-50 hover:bg-blue-100 font-bold text-blue-900 flex items-center gap-2">
+            <span>📋 R3～現行 (令和3年度以降)</span>
+            <span class='text-xs bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded font-bold'>現行制度 (これに合わせて学習)</span>
+          </summary>
+          <div class="p-3">
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded p-2 mb-2 text-sm">
+              <strong>全90問出題 / 60問解答 / 合格 60%以上</strong>
+              <span class="text-slate-700"> / 必須 22問 + 選択 43問</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-2">📝 電気通信主任技術者+建設業の知識を統合した試験。応用能力問題に注意。</p>
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-blue-100 text-blue-900">
+                  <th class="px-3 py-2 text-left">区分</th>
+                  <th class="px-3 py-2 text-left text-xs">No.</th>
+                  <th class="px-3 py-2 text-right">出題数</th>
+                  <th class="px-3 py-2 text-right">解答数</th>
+                  <th class="px-3 py-2 text-left">必須/選択</th>
+                  <th class="px-3 py-2 text-left">戦略</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y">
+                <tr class="bg-emerald-50">
+              <td class="px-3 py-2 font-bold">電気工学・電気通信工学等</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.1～15</td>
+              <td class="px-3 py-2 text-right">15問</td>
+              <td class="px-3 py-2 text-right font-bold">10問</td>
+              <td class="px-3 py-2 text-emerald-700 font-bold text-sm">選択</td>
+              <td class="px-3 py-2 text-xs"><span class='text-emerald-700 font-bold'>5問捨てられる</span></td>
+            </tr><tr class="bg-emerald-50">
+              <td class="px-3 py-2 font-bold">電気通信設備</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.16～40</td>
+              <td class="px-3 py-2 text-right">25問</td>
+              <td class="px-3 py-2 text-right font-bold">15問</td>
+              <td class="px-3 py-2 text-emerald-700 font-bold text-sm">選択</td>
+              <td class="px-3 py-2 text-xs"><span class='text-emerald-700 font-bold'>10問捨てられる</span></td>
+            </tr><tr class="bg-emerald-50">
+              <td class="px-3 py-2 font-bold">関連分野・設計施工</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.41～55</td>
+              <td class="px-3 py-2 text-right">15問</td>
+              <td class="px-3 py-2 text-right font-bold">10問</td>
+              <td class="px-3 py-2 text-emerald-700 font-bold text-sm">選択</td>
+              <td class="px-3 py-2 text-xs"><span class='text-emerald-700 font-bold'>5問捨てられる</span></td>
+            </tr><tr class="bg-red-50">
+              <td class="px-3 py-2 font-bold">施工管理法</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.56～68</td>
+              <td class="px-3 py-2 text-right">13問</td>
+              <td class="px-3 py-2 text-right font-bold">12問</td>
+              <td class="px-3 py-2 text-red-700 font-bold text-sm">必須</td>
+              <td class="px-3 py-2 text-xs"><span class='text-emerald-700 font-bold'>1問捨てられる</span></td>
+            </tr><tr class="bg-red-50">
+              <td class="px-3 py-2 font-bold">施工管理法 (応用能力)</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.69～78</td>
+              <td class="px-3 py-2 text-right">10問</td>
+              <td class="px-3 py-2 text-right font-bold">10問</td>
+              <td class="px-3 py-2 text-red-700 font-bold text-sm">必須(50%以上)</td>
+              <td class="px-3 py-2 text-xs"><span class='text-red-700 font-bold'>捨て不可</span></td>
+            </tr><tr class="bg-emerald-50">
+              <td class="px-3 py-2 font-bold">法規</td>
+              <td class="px-3 py-2 text-xs text-slate-500">No.79～90</td>
+              <td class="px-3 py-2 text-right">12問</td>
+              <td class="px-3 py-2 text-right font-bold">8問</td>
+              <td class="px-3 py-2 text-emerald-700 font-bold text-sm">選択</td>
+              <td class="px-3 py-2 text-xs"><span class='text-emerald-700 font-bold'>4問捨てられる</span></td>
+            </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+    <div class="mt-3 bg-yellow-50 border-l-4 border-yellow-400 p-3 text-sm">
+      <strong className="text-yellow-900">💡 戦略の基本:</strong>
+      <ul class="list-disc pl-5 mt-1 text-slate-700">
+        <li><strong className="text-emerald-700">選択問題</strong> = 得意な分野を多めに選んで弱点を回避できる → <strong>強み科目から多めに選ぶ</strong></li>
+        <li><strong className="text-red-700">必須問題</strong> = 捨てられない → 必須科目 (関連分野・施工管理法・応用能力) は重点学習</li>
+        <li><strong>応用能力問題</strong> (R3以降に追加・施工管理法 No.71～82) は<strong>独立して50%以上</strong>必要 — ここで足切りに注意</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-white rounded-lg shadow p-5 mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">📐 科目別の過去問内訳 (本ツールに収録)</h2>
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="bg-blue-50 text-blue-900">
+          <th class="px-3 py-2 text-left">科目</th>
+          <th class="px-3 py-2 text-right">問題数</th>
+          <th class="px-3 py-2 text-right">割合</th>
+          <th class="px-3 py-2 text-left">どんな科目か</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y">
+        <tr>
+          <td class="px-3 py-2 font-bold">その他</td>
+          <td class="px-3 py-2 text-right">299問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">47.8%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">上記分類に当てはまらないテーマ群。</td>
+        </tr><tr>
+          <td class="px-3 py-2 font-bold">電気通信工学</td>
+          <td class="px-3 py-2 text-right">176問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">28.2%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">通信プロトコル・変調復調・光ファイバ・アンテナ・電波・サンプリング理論等。</td>
+        </tr><tr>
+          <td class="px-3 py-2 font-bold">設計施工</td>
+          <td class="px-3 py-2 text-right">67問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">10.7%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">現場施工手順・配線/ケーブル敷設/基地局/接地/管路。実務直結の知識。</td>
+        </tr><tr>
+          <td class="px-3 py-2 font-bold">電気工学</td>
+          <td class="px-3 py-2 text-right">56問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">9.0%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">オームの法則・三相交流・電磁気・電力計算など電気の基礎理論。計算問題が中心。</td>
+        </tr><tr>
+          <td class="px-3 py-2 font-bold">施工管理法</td>
+          <td class="px-3 py-2 text-right">18問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">2.9%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">工程管理・品質管理・安全管理・原価管理。ネットワーク工程表など。</td>
+        </tr><tr>
+          <td class="px-3 py-2 font-bold">法規</td>
+          <td class="px-3 py-2 text-right">9問</td>
+          <td class="px-3 py-2 text-right text-blue-700 font-bold">1.4%</td>
+          <td class="px-3 py-2 text-sm text-slate-600">電気通信事業法・電波法・建設業法・労働安全衛生法。条文と数字の暗記勝負。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-xs text-slate-500 mt-2">※ 上記は本ツールに収録された過去問の内訳。実際の試験は上の「試験の出題構成」表が正式</p>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">🃏 学習カテゴリ別の戦略</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="rounded-lg p-4 border-l-4 bg-white shadow-sm" style="border-color:#CC3333">
+          <div class="text-3xl mb-1">🔴</div>
+          <div class="font-bold text-lg" style="color:#CC3333">丸暗記</div>
+          <div class="text-2xl font-black my-1">0問 <span class="text-sm font-normal text-slate-500">(0.0%)</span></div>
+          <div class="text-xs text-slate-600">条文・規格値・用語を暗記すれば確実に得点。直前1ヶ月の詰め込み向き</div>
+        </div><div class="rounded-lg p-4 border-l-4 bg-white shadow-sm" style="border-color:#E67E00">
+          <div class="text-3xl mb-1">📝</div>
+          <div class="font-bold text-lg" style="color:#E67E00">問答暗記</div>
+          <div class="text-2xl font-black my-1">625問 <span class="text-sm font-normal text-slate-500">(100.0%)</span></div>
+          <div class="text-xs text-slate-600">問題と選択肢のセットをパターンで覚える。眺めモードで刷り込みやすい</div>
+        </div><div class="rounded-lg p-4 border-l-4 bg-white shadow-sm" style="border-color:#008856">
+          <div class="text-3xl mb-1">⚡</div>
+          <div class="font-bold text-lg" style="color:#008856">秒殺テク</div>
+          <div class="text-2xl font-black my-1">0問 <span class="text-sm font-normal text-slate-500">(0.0%)</span></div>
+          <div class="text-xs text-slate-600">公式一発で答えが出る計算。公式暗記+代入で得点源化</div>
+        </div><div class="rounded-lg p-4 border-l-4 bg-white shadow-sm" style="border-color:#005BA8">
+          <div class="text-3xl mb-1">🔵</div>
+          <div class="font-bold text-lg" style="color:#005BA8">理解必須</div>
+          <div class="text-2xl font-black my-1">0問 <span class="text-sm font-normal text-slate-500">(0.0%)</span></div>
+          <div class="text-xs text-slate-600">回路・現象の原理を理解しないと解けない。時間をかけて理解する</div>
+        </div>
+    </div>
+    <p class="text-xs text-slate-500 mt-2">🔴丸暗記 + 📝問答暗記 で <strong>625問</strong> 占める。眺めモードで効率的に消化できる。</p>
+  </section>
+
+  <section class="bg-white rounded-lg shadow p-5 mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">↻ 過去問の再出題率</h2>
+    <div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xl w-6 text-center">♻️</span>
+          <span class="font-semibold w-32 text-sm">過去問と同じ</span>
+          <div class="flex-1 bg-slate-200 rounded-full h-5 relative overflow-hidden">
+            <div class="h-full rounded-full transition-all" style="width:0.0%;background:#059669"></div>
+          </div>
+          <span class="text-sm font-bold w-20 text-right">0問 (0.0%)</span>
+        </div><div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xl w-6 text-center">↻</span>
+          <span class="font-semibold w-32 text-sm">ほぼ同じ</span>
+          <div class="flex-1 bg-slate-200 rounded-full h-5 relative overflow-hidden">
+            <div class="h-full rounded-full transition-all" style="width:0.0%;background:#10b981"></div>
+          </div>
+          <span class="text-sm font-bold w-20 text-right">0問 (0.0%)</span>
+        </div><div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xl w-6 text-center">🔀</span>
+          <span class="font-semibold w-32 text-sm">一部違う</span>
+          <div class="flex-1 bg-slate-200 rounded-full h-5 relative overflow-hidden">
+            <div class="h-full rounded-full transition-all" style="width:0.0%;background:#d97706"></div>
+          </div>
+          <span class="text-sm font-bold w-20 text-right">0問 (0.0%)</span>
+        </div><div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xl w-6 text-center">⤵</span>
+          <span class="font-semibold w-32 text-sm">大幅違う</span>
+          <div class="flex-1 bg-slate-200 rounded-full h-5 relative overflow-hidden">
+            <div class="h-full rounded-full transition-all" style="width:0.0%;background:#ea580c"></div>
+          </div>
+          <span class="text-sm font-bold w-20 text-right">0問 (0.0%)</span>
+        </div><div class="flex items-center gap-2 mb-1.5">
+          <span class="text-xl w-6 text-center">🆕</span>
+          <span class="font-semibold w-32 text-sm">過去問と全然違う</span>
+          <div class="flex-1 bg-slate-200 rounded-full h-5 relative overflow-hidden">
+            <div class="h-full rounded-full transition-all" style="width:0.0%;background:#7c3aed"></div>
+          </div>
+          <span class="text-sm font-bold w-20 text-right">0問 (0.0%)</span>
+        </div>
+    <p class="text-sm text-emerald-700 font-bold mt-3">
+      ✅ 「同じ + ほぼ同じ」だけで <strong>0%</strong>。過去問演習だけで合格ラインに乗りやすい。
+    </p>
+  </section>
+
+  <section class="bg-white rounded-lg shadow p-5 mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">📅 年度別 出題傾向</h2>
+    <p class="text-sm text-slate-600 mb-3">
+      最近の年度ほど次回試験の傾向に近い。<strong>濃い青セル</strong>は出題数が多い分野 (15問+)、薄い青は中程度 (8-14問)。
+    </p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-xs border-collapse">
+        <thead>
+          <tr class="bg-blue-100 text-blue-900">
+            <th class="px-2 py-1 text-left">年度</th>
+            <th class="px-2 py-1 text-center">合計</th>
+            <th class="px-2 py-1 text-center">その他</th><th class="px-2 py-1 text-center">電気通信工学</th><th class="px-2 py-1 text-center">設計施工</th><th class="px-2 py-1 text-center">電気工学</th><th class="px-2 py-1 text-center">施工管理法</th><th class="px-2 py-1 text-center">法規</th>
+            <th class="px-2 py-1 text-left">主要テーマ TOP3</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y">
+          <tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R7 前期</td>
+          <td class="px-2 py-1 text-center font-bold">54</td>
+          <td class="px-2 py-1 text-center bg-blue-100">27</td><td class="px-2 py-1 text-center bg-blue-100">24</td><td class="px-2 py-1 text-center bg-slate-50">1</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R7 後期</td>
+          <td class="px-2 py-1 text-center font-bold">35</td>
+          <td class="px-2 py-1 text-center bg-blue-100">25</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R6 前期</td>
+          <td class="px-2 py-1 text-center font-bold">53</td>
+          <td class="px-2 py-1 text-center bg-blue-100">28</td><td class="px-2 py-1 text-center bg-blue-100">20</td><td class="px-2 py-1 text-center bg-slate-50">1</td><td class="px-2 py-1 text-center bg-slate-50">4</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R6 後期</td>
+          <td class="px-2 py-1 text-center font-bold">35</td>
+          <td class="px-2 py-1 text-center bg-blue-100">27</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center bg-slate-50">6</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R5 前期</td>
+          <td class="px-2 py-1 text-center font-bold">58</td>
+          <td class="px-2 py-1 text-center bg-blue-100">34</td><td class="px-2 py-1 text-center bg-blue-100">18</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center bg-slate-50">1</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R5 後期</td>
+          <td class="px-2 py-1 text-center font-bold">32</td>
+          <td class="px-2 py-1 text-center bg-blue-100">24</td><td class="px-2 py-1 text-center bg-slate-50">1</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R4 前期</td>
+          <td class="px-2 py-1 text-center font-bold">58</td>
+          <td class="px-2 py-1 text-center bg-blue-100">32</td><td class="px-2 py-1 text-center bg-blue-100">21</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R4 後期</td>
+          <td class="px-2 py-1 text-center font-bold">32</td>
+          <td class="px-2 py-1 text-center bg-blue-100">25</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R3 前期</td>
+          <td class="px-2 py-1 text-center font-bold">58</td>
+          <td class="px-2 py-1 text-center bg-blue-100">29</td><td class="px-2 py-1 text-center bg-blue-100">22</td><td class="px-2 py-1 text-center bg-slate-50">4</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R3 後期</td>
+          <td class="px-2 py-1 text-center font-bold">32</td>
+          <td class="px-2 py-1 text-center bg-blue-100">25</td><td class="px-2 py-1 text-center bg-slate-50">2</td><td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R2 前期</td>
+          <td class="px-2 py-1 text-center font-bold">57</td>
+          <td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center bg-blue-100">27</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center bg-blue-50">14</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center bg-slate-50">5</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R2 後期</td>
+          <td class="px-2 py-1 text-center font-bold">32</td>
+          <td class="px-2 py-1 text-center bg-slate-50">5</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center bg-blue-50">11</td><td class="px-2 py-1 text-center bg-blue-50">9</td><td class="px-2 py-1 text-center bg-slate-50">4</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R1 前期</td>
+          <td class="px-2 py-1 text-center font-bold">57</td>
+          <td class="px-2 py-1 text-center bg-blue-50">9</td><td class="px-2 py-1 text-center bg-blue-100">26</td><td class="px-2 py-1 text-center bg-slate-50">4</td><td class="px-2 py-1 text-center bg-blue-50">11</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center bg-slate-50">4</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr><tr>
+          <td class="px-2 py-1 font-bold text-blue-800 whitespace-nowrap">R1 後期</td>
+          <td class="px-2 py-1 text-center font-bold">32</td>
+          <td class="px-2 py-1 text-center bg-slate-50">4</td><td class="px-2 py-1 text-center bg-slate-50">3</td><td class="px-2 py-1 text-center bg-blue-50">10</td><td class="px-2 py-1 text-center bg-slate-50">7</td><td class="px-2 py-1 text-center bg-blue-50">8</td><td class="px-2 py-1 text-center ">—</td>
+          <td class="px-2 py-1 text-xs text-slate-600">—</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-slate-500 mt-2">※ 直近3年が最有力。同じテーマが連続出題されている分野は次回も出やすい</p>
+  </section>
+
+  <section class="bg-white rounded-lg shadow p-5 mb-5">
+    <h2 class="text-xl font-bold text-blue-900 mb-3">🔥 最頻出テーマ TOP20 (パレートの法則)</h2>
+    <p class="text-sm text-slate-600 mb-3">この20テーマを完璧にすれば、全問題の約0%をカバー。残りは捨ててもOK。</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+      
+    </div>
+    <p class="text-xs text-slate-500 mt-3">テーマ総数 0 個中、TOP20 のみで合格圏到達可能</p>
+  </section>
+
+  <section class="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-400 rounded-lg p-5 mb-5">
+    <h2 class="text-xl font-bold text-emerald-900 mb-3">✅ 最短合格ロードマップ</h2>
+    <ol class="list-decimal pl-6 space-y-2 text-sm">
+      <li><strong>STEP1 (1日):</strong> このページを読む + 過去問1年分を眺めモードで流し見</li>
+      <li><strong>STEP2 (1-2週間):</strong> 頻出TOP20テーマを <strong>眺めモード</strong> で刷り込み (1分10問ペース)</li>
+      <li><strong>STEP3 (1-2週間):</strong> 丸暗記&問答暗記カテゴリの問題を AI解説 + 暗記カードで詰め込む</li>
+      <li><strong>STEP4 (1週間):</strong> 通常テストモードで模試。間違いは弱点モードで反復</li>
+      <li><strong>STEP5 (試験直前):</strong> ブックマーク問題 + 瞬殺テク集を見直し</li>
+    </ol>
+  </section>
+
+  <footer class="text-center text-xs text-slate-400 mt-6 pb-4">
+    生成: scripts/generate_easy_report.py / 元データ: pptx/施工管理_演習データ.json<br>
+    詳細な徹底分析版は <a href="施工管理1級_出題傾向_徹底分析/index.html" class="text-blue-600 underline">こちら</a>
+  </footer>
 </div>
-
-<h2>📚 科目別の出題量</h2>
-<table>
-<tr><th>科目</th><th>問題数</th><th>説明</th></tr>
-<tr><td><strong>その他</strong></td><td class='r'>299問 (48%)</td><td>上記分類に当てはまらないテーマ群。</td></tr>
-<tr><td><strong>電気通信工学</strong></td><td class='r'>176問 (28%)</td><td>通信プロトコル・変調復調・光ファイバ・アンテナ・電波・サンプリング理論等。</td></tr>
-<tr><td><strong>設計施工</strong></td><td class='r'>67問 (11%)</td><td>現場施工手順・配線/ケーブル敷設/基地局/接地/管路。実務直結の知識。</td></tr>
-<tr><td><strong>電気工学</strong></td><td class='r'>56問 (9%)</td><td>オームの法則・三相交流・電磁気・電力計算など電気の基礎理論。計算問題が中心。</td></tr>
-<tr><td><strong>施工管理法</strong></td><td class='r'>18問 (3%)</td><td>工程管理・品質管理・安全管理・原価管理。ネットワーク工程表など。</td></tr>
-<tr><td><strong>法規</strong></td><td class='r'>9問 (1%)</td><td>電気通信事業法・電波法・建設業法・労働安全衛生法。条文と数字の暗記勝負。</td></tr>
-</table>
-
-<h2>📅 年度別分布</h2>
-<div><span class='chip'>R1: 89問</span> <span class='chip'>R2: 89問</span> <span class='chip'>R3: 90問</span> <span class='chip'>R4: 90問</span> <span class='chip'>R5: 90問</span> <span class='chip'>R6: 88問</span> <span class='chip'>R7: 89問</span></div>
-
-<h2>🔥 頻出テーマ TOP20</h2>
-<ul><li><em>テーマ未抽出</em></li></ul>
-
-<div class="note">
-<strong>合格戦略 (60%以上で合格)</strong>:
-合格に必要な点数を最小化するため、選択問題は得意な科目を優先選択するのが鉄則。
-詳細な戦略は徹底分析レポートを参照してください。
-</div>
-
-<p class="muted">Generated from data/reports/電気通信工事_演習データ.json</p>
-</body></html>
+</body>
+</html>

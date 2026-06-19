@@ -187,6 +187,17 @@ export default function QuizPage() {
     if (typeof window === 'undefined') return new Set();
     try { return new Set(JSON.parse(localStorage.getItem('sekokan-bookmark') || '[]')); } catch { return new Set(); }
   });
+  // 試験種別 (電気工事 / 電気通信工事) — 試験日fetchより前に宣言する必要あり
+  type ExamCategory = 'denki' | 'denkitsushin';
+  const [examCategory, setExamCategory] = useState<ExamCategory>(() => {
+    if (typeof window === 'undefined') return 'denki';
+    const saved = localStorage.getItem('sekokan-exam-category');
+    return (saved === 'denkitsushin' ? 'denkitsushin' : 'denki');
+  });
+  useEffect(() => {
+    try { localStorage.setItem('sekokan-exam-category', examCategory); } catch {}
+  }, [examCategory]);
+
   // 試験日 — 1級/2級それぞれの日付を保持 (公式取得 + ユーザー上書き対応)
   const [examDates, setExamDates] = useState<{ '1級': string; '2級': string }>(() => {
     if (typeof window === 'undefined') return { '1級': '', '2級': '' };
@@ -302,7 +313,7 @@ export default function QuizPage() {
   const fetchExamDate = useCallback(async (level: '1級' | '2級') => {
     setExamDateFetching((f) => ({ ...f, [level]: true }));
     try {
-      const r = await fetch(`/api/exam-date?level=${encodeURIComponent(level)}`);
+      const r = await fetch(`/api/exam-date?level=${encodeURIComponent(level)}&category=${examCategory}`);
       const d = await r.json();
       setExamDateDebug((dbg) => ({ ...dbg, [level]: `source=${d.source} / ${d.debug || ''} / 取得=${d.examDate || '未公表'}` }));
       if (d.examDate) {
@@ -328,14 +339,14 @@ export default function QuizPage() {
     } finally {
       setExamDateFetching((f) => ({ ...f, [level]: false }));
     }
-  }, []);
+  }, [examCategory]);
 
-  // 起動時: 1級+2級 両方を取得 (manualで上書き済みでないもののみ)
+  // 起動時 + 試験種別切替時: 1級+2級 両方を取得 (manualで上書き済みでないもののみ)
   useEffect(() => {
     if (examDateSources['1級'] !== 'manual') fetchExamDate('1級');
     if (examDateSources['2級'] !== 'manual') fetchExamDate('2級');
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [examCategory]);
 
   // 現在のフィルタ級に対応する試験日 (フィルタなしなら 2級 を主表示)
   const activeLevel: '1級' | '2級' = (filterLevel === '1級' || filterLevel === '2級') ? filterLevel : '2級';
@@ -423,17 +434,7 @@ export default function QuizPage() {
 
   const activeFilterCount = [filterLevel, filterSubject, filterTheme, filterSim, filterFreq].filter(Boolean).length;
 
-  // 試験種別の切替 (電気工事 / 電気通信工事)
-  type ExamCategory = 'denki' | 'denkitsushin';
-  const [examCategory, setExamCategory] = useState<ExamCategory>(() => {
-    if (typeof window === 'undefined') return 'denki';
-    const saved = localStorage.getItem('sekokan-exam-category');
-    return (saved === 'denkitsushin' ? 'denkitsushin' : 'denki');
-  });
-  useEffect(() => {
-    try { localStorage.setItem('sekokan-exam-category', examCategory); } catch {}
-  }, [examCategory]);
-
+  // (examCategory は前方で宣言済み — 試験日fetchより前に必要なため)
   const examLabel = examCategory === 'denki' ? '電気工事' : '電気通信工事';
   const quizJsonUrl = examCategory === 'denki' ? '/data/quiz.json' : '/data/quiz_denkitsushin.json';
 
