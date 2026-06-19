@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>週間学習計画 - 電気通信工事施工管理技士1級 出題傾向 徹底分析 R7〜R7</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">週間学習計画</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation.html">← 得点シミュレーション</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="deep-analysis.html">深層単元分析（詳細テーマ別 完全版） →</a></span></nav>
+<section id="weekly-plan">
+  <h2>週間学習計画</h2>
+<p>週10時間の学習ペースを想定した<strong>具体的な週間計画</strong>を生成します。</p>
+<div class="note">想定: 週10時間（月-金 2h/日）の学習ペース。全23週間で全テーマカバー。</div>
+<table><tr><th>週</th><th>対象テーマ</th><th>学習内容</th><th>到達目標</th><th>累積カバー率</th></tr>
+<tr><td>Week 1</td><td>正答肢, 土地区画整理事, 藩爵窪王</td><td>施工管理法 / 造園設計 / 電気通信</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:15%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">15%</span></div></td></tr>
+<tr><td>Week 2</td><td>剣運路惰, 土地区画整理法, 土地区画整理事, 施工管理法</td><td>施工管理法 / 管工事設備 / 電気通信</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:30%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">30%</span></div></td></tr>
+<tr><td>Week 3</td><td>正答肢, 換地計画, 級土木施工管理</td><td>土木工学 / 施工管理法 / 管工事設備</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:40%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">40%</span></div></td></tr>
+<tr><td>Week 4</td><td>第一次検定, 労佐姜全衛生訣</td><td>土木工学 / 管工事設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:45%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">45%</span></div></td></tr>
+<tr><td>Week 5</td><td>建誹工鞘, 労働姜全衛生訣</td><td>管工事設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:47%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">47%</span></div></td></tr>
+<tr><td>Week 6</td><td>換地設計, 総代会</td><td>管工事設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:49%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">49%</span></div></td></tr>
+<tr><td>Week 7</td><td>華道路惰, 施工計画径歪, 発荒詮価, 施工計畜作歪</td><td>施工管理法 / 管工事設備</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:53%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">53%</span></div></td></tr>
+<tr><td>Week 8</td><td>施工計画, 級電気通信工事, 比例評価式換地, 換地設計 他2件</td><td>施工管理法</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:60%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">60%</span></div></td></tr>
+<tr><td>Week 9</td><td>保留地, 換地処分, 仮換地, 土地区画整理審 他2件</td><td>施工管理法</td><td><span style="color:#dc2626;font-weight:700">60%到達!</span></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:66%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">66%</span></div></td></tr>
+<tr><td>Week 10</td><td>廻設業法, 品買簗琢, 土地区画整理士, 土地区画整理事</td><td>土木工学 / 施工管理法</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:72%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">72%</span></div></td></tr>
+<tr><td>Week 11</td><td>間題葺号, 集中茂童</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:74%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">74%</span></div></td></tr>
+<tr><td>Week 12</td><td>労働忠準没, 一土径水術箔華</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:77%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">77%</span></div></td></tr>
+<tr><td>Week 13</td><td>鏡瘻保桟寿策, 蓮証槻載</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:79%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">79%</span></div></td></tr>
+<tr><td>Week 14</td><td>土地区画整理組, 換地設計</td><td>土木工学</td><td><span style="color:#16a34a;font-weight:700">80%到達!</span></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:81%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">81%</span></div></td></tr>
+<tr><td>Week 15</td><td>路線価算定, 路線価式</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:83%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">83%</span></div></td></tr>
+<tr><td>Week 16</td><td>個別的要因, 全間籠諏</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:85%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">85%</span></div></td></tr>
+<tr><td>Week 17</td><td>模式図, 集中胆童</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:87%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">87%</span></div></td></tr>
+<tr><td>Week 18</td><td>建設機鞍, 泥睦保譚</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:89%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">89%</span></div></td></tr>
+<tr><td>Week 19</td><td>鞍張地箱, 笑種工法</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:91%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">91%</span></div></td></tr>
+<tr><td>Week 20</td><td>笠踏基防, 茂栂箒涙</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:94%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">94%</span></div></td></tr>
+<tr><td>Week 21</td><td>土未工事, 建訴機載</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:96%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">96%</span></div></td></tr>
+<tr><td>Week 22</td><td>弐工種袢, 塗装学科表紙</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:98%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">98%</span></div></td></tr>
+<tr><td>Week 23</td><td>薬注学科表紙, 一次表紙</td><td>土木工学</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">100%</span></div></td></tr>
+</table>
+<h3>週別 詳細学習計画</h3>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 1（8h30m・累積15%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[造園設計]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>正答肢</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>土地区画整理事</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>藩爵窪王</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">正答肢</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理事</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">藩爵窪王</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「正答肢」の公式を導出過程から説明できるか？</li>
+<li>「土地区画整理事」の典型問題を制限時間内に解けるか？</li>
+<li>「藩爵窪王」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 2（10h・累積30%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>剣運路惰</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>土地区画整理法</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>土地区画整理事</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>施工管理法</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">剣運路惰</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理事</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工管理法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「剣運路惰」の公式を導出過程から説明できるか？</li>
+<li>「土地区画整理法」の典型問題を制限時間内に解けるか？</li>
+<li>「土地区画整理事」の公式を導出過程から説明できるか？</li>
+<li>「施工管理法」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 3（8h30m・累積40%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>正答肢</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>換地計画</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>級土木施工管理</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">正答肢</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地計画</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">級土木施工管理</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「正答肢」の公式を導出過程から説明できるか？</li>
+<li>「換地計画」の公式を導出過程から説明できるか？</li>
+<li>「級土木施工管理」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 4（7h・累積45%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>第一次検定</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>労佐姜全衛生訣</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">第一次検定</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">労佐姜全衛生訣</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「第一次検定」の公式を導出過程から説明できるか？</li>
+<li>「労佐姜全衛生訣」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 5（7h・累積47%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>建誹工鞘</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>労働姜全衛生訣</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">建誹工鞘</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">労働姜全衛生訣</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「建誹工鞘」の公式を導出過程から説明できるか？</li>
+<li>「労働姜全衛生訣」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 6（7h・累積49%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>換地設計</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>総代会</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地設計</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">総代会</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「換地設計」の公式を導出過程から説明できるか？</li>
+<li>「総代会」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 7（10h・累積53%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>華道路惰</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#be185d;font-weight:600">[管工事設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>施工計画径歪</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>発荒詮価</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>施工計畜作歪</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">華道路惰</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工計画径歪</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">発荒詮価</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工計畜作歪</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「華道路惰」の公式を導出過程から説明できるか？</li>
+<li>「施工計画径歪」の公式を導出過程から説明できるか？</li>
+<li>「発荒詮価」の典型問題を制限時間内に解けるか？</li>
+<li>「施工計畜作歪」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 8（9h・累積60%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>施工計画</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>級電気通信工事</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>比例評価式換地</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>換地設計</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>換地計算</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>換地計画</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工計画</div>
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地計画</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">級電気通信工事</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">比例評価式換地</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地設計</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地計算</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工計画」の典型問題を制限時間内に解けるか？</li>
+<li>「級電気通信工事」の典型問題を制限時間内に解けるか？</li>
+<li>「比例評価式換地」の典型問題を制限時間内に解けるか？</li>
+<li>「換地設計」の典型問題を制限時間内に解けるか？</li>
+<li>「換地計算」の典型問題を制限時間内に解けるか？</li>
+<li>「換地計画」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 9（9h・累積66%） <span style="color:#dc2626;font-weight:700">[60%到達!]</span></summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>保留地</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>換地処分</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>仮換地</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>土地区画整理審</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>工型擁壁</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>土木施工管理技</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">保留地</div>
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土木施工管理技</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地処分</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">仮換地</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理審</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">工型擁壁</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「保留地」の典型問題を制限時間内に解けるか？</li>
+<li>「換地処分」の典型問題を制限時間内に解けるか？</li>
+<li>「仮換地」の典型問題を制限時間内に解けるか？</li>
+<li>「土地区画整理審」の典型問題を制限時間内に解けるか？</li>
+<li>「工型擁壁」の典型問題を制限時間内に解けるか？</li>
+<li>「土木施工管理技」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 10（10h・累積72%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>廻設業法</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0369a1;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>品買簗琢</strong> <span style="font-size:0.82em;color:#6b7280">1h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>土地区画整理士</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>土地区画整理事</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">廻設業法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">品買簗琢</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">1h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理士</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理事</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「廻設業法」の典型問題を制限時間内に解けるか？</li>
+<li>「品買簗琢」の典型問題を制限時間内に解けるか？</li>
+<li>「土地区画整理士」の公式を導出過程から説明できるか？</li>
+<li>「土地区画整理事」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 11（7h・累積74%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>間題葺号</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>集中茂童</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">間題葺号</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">集中茂童</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「間題葺号」の公式を導出過程から説明できるか？</li>
+<li>「集中茂童」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 12（7h・累積77%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>労働忠準没</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>一土径水術箔華</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">労働忠準没</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">一土径水術箔華</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「労働忠準没」の公式を導出過程から説明できるか？</li>
+<li>「一土径水術箔華」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 13（7h・累積79%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>鏡瘻保桟寿策</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>蓮証槻載</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">鏡瘻保桟寿策</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">蓮証槻載</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「鏡瘻保桟寿策」の公式を導出過程から説明できるか？</li>
+<li>「蓮証槻載」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 14（7h・累積81%） <span style="color:#16a34a;font-weight:700">[80%到達!]</span></summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>土地区画整理組</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>換地設計</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土地区画整理組</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">換地設計</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「土地区画整理組」の公式を導出過程から説明できるか？</li>
+<li>「換地設計」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 15（7h・累積83%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>路線価算定</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>路線価式</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">路線価算定</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">路線価式</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「路線価算定」の公式を導出過程から説明できるか？</li>
+<li>「路線価式」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 16（7h・累積85%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>個別的要因</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>全間籠諏</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">個別的要因</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">全間籠諏</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「個別的要因」の公式を導出過程から説明できるか？</li>
+<li>「全間籠諏」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 17（7h・累積87%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>模式図</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>集中胆童</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">模式図</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">集中胆童</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「模式図」の公式を導出過程から説明できるか？</li>
+<li>「集中胆童」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 18（7h・累積89%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>建設機鞍</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>泥睦保譚</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">建設機鞍</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">泥睦保譚</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「建設機鞍」の公式を導出過程から説明できるか？</li>
+<li>「泥睦保譚」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 19（7h・累積91%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>鞍張地箱</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>笑種工法</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">鞍張地箱</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">笑種工法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「鞍張地箱」の公式を導出過程から説明できるか？</li>
+<li>「笑種工法」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 20（7h・累積94%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>笠踏基防</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>茂栂箒涙</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">笠踏基防</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">茂栂箒涙</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「笠踏基防」の公式を導出過程から説明できるか？</li>
+<li>「茂栂箒涙」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 21（7h・累積96%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>土未工事</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>建訴機載</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">土未工事</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">建訴機載</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「土未工事」の公式を導出過程から説明できるか？</li>
+<li>「建訴機載」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 22（7h・累積98%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>弐工種袢</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>塗装学科表紙</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">弐工種袢</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">塗装学科表紙</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「弐工種袢」の公式を導出過程から説明できるか？</li>
+<li>「塗装学科表紙」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 23（7h・累積100%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>薬注学科表紙</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[土木工学]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>一次表紙</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">薬注学科表紙</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">一次表紙</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「薬注学科表紙」の公式を導出過程から説明できるか？</li>
+<li>「一次表紙」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<h3>累積カバー率の推移</h3>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="170" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="78" x2="680" y2="78" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="75" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <line x1="50" y1="44" x2="680" y2="44" stroke="#16a34a" stroke-dasharray="5,5"/>
+  <text x="682" y="41" font-size="9" fill="#16a34a" text-anchor="end">80%</text>
+  <polygon points="55.0,154.7 83.2,129.4 111.4,111.3 139.5,104.0 167.7,100.4 195.9,96.8 224.1,89.6 252.3,78.7 280.5,67.9 308.6,57.0 336.8,53.4 365.0,49.8 393.2,46.2 421.4,42.6 449.5,38.9 477.7,35.3 505.9,31.7 534.1,28.1 562.3,24.5 590.5,20.9 618.6,17.2 646.8,13.6 675.0,10.0 675.0,180 55,180" fill="#3b82f6" opacity="0.12"/>
+  <polyline points="55.0,154.7 83.2,129.4 111.4,111.3 139.5,104.0 167.7,100.4 195.9,96.8 224.1,89.6 252.3,78.7 280.5,67.9 308.6,57.0 336.8,53.4 365.0,49.8 393.2,46.2 421.4,42.6 449.5,38.9 477.7,35.3 505.9,31.7 534.1,28.1 562.3,24.5 590.5,20.9 618.6,17.2 646.8,13.6 675.0,10.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="55.0" cy="154.7" r="3" fill="#3b82f6"/>
+  <text x="55.0" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W1</text>
+  <circle cx="83.2" cy="129.4" r="3" fill="#3b82f6"/>
+  <circle cx="111.4" cy="111.3" r="3" fill="#3b82f6"/>
+  <text x="111.4" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W3</text>
+  <circle cx="139.5" cy="104.0" r="3" fill="#3b82f6"/>
+  <circle cx="167.7" cy="100.4" r="3" fill="#3b82f6"/>
+  <text x="167.7" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W5</text>
+  <circle cx="195.9" cy="96.8" r="3" fill="#3b82f6"/>
+  <circle cx="224.1" cy="89.6" r="3" fill="#3b82f6"/>
+  <text x="224.1" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W7</text>
+  <circle cx="252.3" cy="78.7" r="3" fill="#3b82f6"/>
+  <circle cx="280.5" cy="67.9" r="3" fill="#3b82f6"/>
+  <text x="280.5" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W9</text>
+  <circle cx="308.6" cy="57.0" r="3" fill="#3b82f6"/>
+  <circle cx="336.8" cy="53.4" r="3" fill="#3b82f6"/>
+  <text x="336.8" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W11</text>
+  <circle cx="365.0" cy="49.8" r="3" fill="#3b82f6"/>
+  <circle cx="393.2" cy="46.2" r="3" fill="#3b82f6"/>
+  <text x="393.2" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W13</text>
+  <circle cx="421.4" cy="42.6" r="3" fill="#3b82f6"/>
+  <circle cx="449.5" cy="38.9" r="3" fill="#3b82f6"/>
+  <text x="449.5" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W15</text>
+  <circle cx="477.7" cy="35.3" r="3" fill="#3b82f6"/>
+  <circle cx="505.9" cy="31.7" r="3" fill="#3b82f6"/>
+  <text x="505.9" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W17</text>
+  <circle cx="534.1" cy="28.1" r="3" fill="#3b82f6"/>
+  <circle cx="562.3" cy="24.5" r="3" fill="#3b82f6"/>
+  <text x="562.3" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W19</text>
+  <circle cx="590.5" cy="20.9" r="3" fill="#3b82f6"/>
+  <circle cx="618.6" cy="17.2" r="3" fill="#3b82f6"/>
+  <text x="618.6" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W21</text>
+  <circle cx="646.8" cy="13.6" r="3" fill="#3b82f6"/>
+  <circle cx="675.0" cy="10.0" r="3" fill="#3b82f6"/>
+  <text x="675.0" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W23</text>
+  <text x="25" y="110" font-size="9" fill="#6b7280" transform="rotate(-90,25,110)">カバー率%</text>
+</svg>
+<h3>Ganttチャート</h3>
+<svg viewBox="0 0 700 566" style="width:100%;max-width:700px;margin:12px 0">
+  <text x="0" y="35" font-size="9" fill="#6b7280">W1</text>
+  <rect x="40.0" y="25" width="263.5" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <rect x="303.5" y="25" width="112.9" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="416.5" y="25" width="263.5" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="0" y="55" font-size="9" fill="#6b7280">W2</text>
+  <rect x="40.0" y="45" width="224.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <rect x="264.0" y="45" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="45" width="224.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="584.0" y="45" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <text x="0" y="75" font-size="9" fill="#6b7280">W3</text>
+  <rect x="40.0" y="65" width="263.5" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="303.5" y="65" width="263.5" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="567.1" y="65" width="112.9" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <text x="0" y="95" font-size="9" fill="#6b7280">W4</text>
+  <rect x="40.0" y="85" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="85" width="320.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <text x="0" y="115" font-size="9" fill="#6b7280">W5</text>
+  <rect x="40.0" y="105" width="320.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="105" width="320.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <text x="0" y="135" font-size="9" fill="#6b7280">W6</text>
+  <rect x="40.0" y="125" width="320.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="125" width="320.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <text x="0" y="155" font-size="9" fill="#6b7280">W7</text>
+  <rect x="40.0" y="145" width="224.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="264.0" y="145" width="224.0" height="14" fill="#be185d" rx="2" opacity="0.8"/>
+  <rect x="488.0" y="145" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="584.0" y="145" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <text x="0" y="175" font-size="9" fill="#6b7280">W8</text>
+  <rect x="40.0" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="146.7" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="253.3" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="466.7" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="573.3" y="165" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <text x="0" y="195" font-size="9" fill="#6b7280">W9</text>
+  <rect x="40.0" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="146.7" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="253.3" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="466.7" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="573.3" y="185" width="106.7" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <text x="690" y="195" font-size="9" fill="#dc2626" text-anchor="end">60%</text>
+  <text x="0" y="215" font-size="9" fill="#6b7280">W10</text>
+  <rect x="40.0" y="205" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="136.0" y="205" width="96.0" height="14" fill="#0369a1" rx="2" opacity="0.8"/>
+  <rect x="232.0" y="205" width="224.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="456.0" y="205" width="224.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="235" font-size="9" fill="#6b7280">W11</text>
+  <rect x="40.0" y="225" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="225" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="255" font-size="9" fill="#6b7280">W12</text>
+  <rect x="40.0" y="245" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="245" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="275" font-size="9" fill="#6b7280">W13</text>
+  <rect x="40.0" y="265" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="265" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="295" font-size="9" fill="#6b7280">W14</text>
+  <rect x="40.0" y="285" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="285" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="690" y="295" font-size="9" fill="#16a34a" text-anchor="end">80%</text>
+  <text x="0" y="315" font-size="9" fill="#6b7280">W15</text>
+  <rect x="40.0" y="305" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="305" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="335" font-size="9" fill="#6b7280">W16</text>
+  <rect x="40.0" y="325" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="325" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="355" font-size="9" fill="#6b7280">W17</text>
+  <rect x="40.0" y="345" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="345" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="375" font-size="9" fill="#6b7280">W18</text>
+  <rect x="40.0" y="365" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="365" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="395" font-size="9" fill="#6b7280">W19</text>
+  <rect x="40.0" y="385" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="385" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="415" font-size="9" fill="#6b7280">W20</text>
+  <rect x="40.0" y="405" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="405" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="435" font-size="9" fill="#6b7280">W21</text>
+  <rect x="40.0" y="425" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="425" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="455" font-size="9" fill="#6b7280">W22</text>
+  <rect x="40.0" y="445" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="445" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="475" font-size="9" fill="#6b7280">W23</text>
+  <rect x="40.0" y="465" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="465" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+</svg>
+<h3>遅れた場合のリカバリープラン</h3>
+<div class="warn">学習が遅れた場合の対処法を、遅れの程度別に整理します。</div>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">1-2週間の遅れ</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 週末に4時間の追加学習で取り戻す。</li>
+<li><strong>優先:</strong> ROI上位テーマを最優先。深度Lv1-2のテーマは後回し。</li>
+<li><strong>方法:</strong> 暗記テーマは通勤時間にフラッシュカードで補う。</li>
+<li><strong>目安:</strong> 2週間以内にカバー率を計画比-5%以内に戻す。</li>
+</ul></div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">3-4週間の遅れ</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 捨てテーマリストのテーマを全カットし、学習範囲を縮小。</li>
+<li><strong>優先:</strong> 最小合格セットのテーマのみに集中。</li>
+<li><strong>方法:</strong> 深度Lv4-5のテーマはLv3レベルの理解に留め、時間を節約。</li>
+<li><strong>目安:</strong> Plan A（最小60%カバー）に切り替え、合格ライン到達を最優先。</li>
+</ul></div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">5週間以上の遅れ</summary>
+<div style="padding:6px 12px;background:#fef2f2;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 科目を絞る戦略に転換。科目合格制度がある場合は2-3科目に集中。</li>
+<li><strong>優先:</strong> 最も合格に近い科目を優先。法規など暗記科目は短期決戦可能。</li>
+<li><strong>方法:</strong> 過去問の出題頻度上位5テーマだけに絞り、確実に得点。</li>
+<li><strong>心構え:</strong> 全科目合格を諦め、科目合格を積み上げる長期戦略に転換。</li>
+</ul></div></details>
+<div class="tip">総学習期間: 約<strong>23週間</strong>（177h）@ 週10h</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation.html">← 得点シミュレーション</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="deep-analysis.html">深層単元分析（詳細テーマ別 完全版） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 出題傾向 徹底分析 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>

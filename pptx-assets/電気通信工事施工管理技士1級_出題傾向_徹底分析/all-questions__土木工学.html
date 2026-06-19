@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全問題一覧（年度別傾向付き） - 土木工学 - 電気通信工事施工管理技士1級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">全問題一覧（年度別傾向付き） ／ <strong>土木工学</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__管工事設備.html">管工事設備 →</a></span></nav>
+<section id="all-questions">
+  <h2>全問題一覧（年度別傾向付き）</h2>
+<p>全39問の過去問を科目・年度別に一覧表示。<strong>年度ごとのカテゴリ分布</strong>で出題傾向の変化が一目瞭然。</p>
+<div style="display:flex;align-items:center;gap:16px;margin:12px 0;padding:12px 16px;background:#eff6ff;border-radius:8px">
+  <span id="q-progress" style="font-weight:700;color:#1e40af">0/0問 完了</span>
+  <span style="font-size:0.85em;color:#6b7280">チェックボックスで学習進捗を記録（ブラウザに保存）</span>
+</div>
+<div class="note">チェックを入れると行がグレーアウトされ、進捗が自動カウントされます。</div>
+<script>
+function togQ(cb){var k="dentsuko1_"+cb.dataset.key;localStorage.setItem(k,cb.checked?"1":"0");cb.closest("tr").classList.toggle("done",cb.checked);updateCount();}
+function updateCount(){var all=document.querySelectorAll(".q-chk-input");var done=document.querySelectorAll(".q-chk-input:checked");var el=document.getElementById("q-progress");if(el)el.textContent=done.length+"/"+all.length+"問 完了";}
+function restoreChecks(){document.querySelectorAll(".q-chk-input").forEach(function(cb){var k="dentsuko1_"+cb.dataset.key;if(localStorage.getItem(k)==="1"){cb.checked=true;cb.closest("tr").classList.add("done");}});updateCount();}
+window.addEventListener("load",restoreChecks);
+</script>
+<h3>土木工学（1年分・39問）</h3>
+<div style="margin:8px 0 16px;overflow-x:auto">
+<table style="font-size:0.82em;white-space:nowrap">
+<tr><th>年度</th><th>問題構成（カテゴリ分布）</th><th>暗記率</th><th>傾向メモ</th></tr>
+<tr><td class="fwb">R7</td><td><span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">正答肢×6</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">第一次検定×3</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土地区画整理士×2</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土地区画整理事×2</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">間題葺号</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">集中茂童</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">労働忠準没</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">一土径水術箔華</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鏡瘻保桟寿策</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">蓮証槻載</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土地区画整理組</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">換地設計</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">路線価算定</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">路線価式</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">個別的要因</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">全間籠諏</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">模式図</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">集中胆童</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建設機鞍</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">泥睦保譚</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">鞍張地箱</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">笑種工法</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">笠踏基防</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">茂栂箒涙</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">土未工事</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">建訴機載</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">弐工種袢</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">塗装学科表紙</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">薬注学科表紙</span> <span style="display:inline-block;background:#1e40af22;color:#1e40af;border-radius:4px;padding:1px 6px;margin:1px;font-size:0.9em">一次表紙</span> </td><td><div style="display:inline-block;width:50px;height:10px;background:#e5e7eb;border-radius:3px;overflow:hidden;vertical-align:middle"><div style="width:40.0%;height:100%;background:#1e40af"></div></div> 40%</td><td class="fz9"><span style="color:#9ca3af">-</span></td></tr>
+</table>
+</div>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">土木工学 全問チェックリスト</summary>
+<table class="fz85">
+<tr><th style="width:30px">✓</th><th>年度</th><th>テーマ</th><th>問数</th><th>分類</th></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_間題葺号" onchange="togQ(this)"></td><td class="fws">R7</td><td>間題葺号</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_集中茂童" onchange="togQ(this)"></td><td class="fws">R7</td><td>集中茂童</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_労働忠準没" onchange="togQ(this)"></td><td class="fws">R7</td><td>労働忠準没</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_一土径水術箔華" onchange="togQ(this)"></td><td class="fws">R7</td><td>一土径水術箔華</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_鏡瘻保桟寿策" onchange="togQ(this)"></td><td class="fws">R7</td><td>鏡瘻保桟寿策</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_蓮証槻載" onchange="togQ(this)"></td><td class="fws">R7</td><td>蓮証槻載</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_第一次検定" onchange="togQ(this)"></td><td class="fws">R7</td><td>第一次検定</td><td class="tac">3</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_正答肢" onchange="togQ(this)"></td><td class="fws">R7</td><td>正答肢</td><td class="tac">6</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_土地区画整理士" onchange="togQ(this)"></td><td class="fws">R7</td><td>土地区画整理士</td><td class="tac">2</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_土地区画整理組" onchange="togQ(this)"></td><td class="fws">R7</td><td>土地区画整理組</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_換地設計" onchange="togQ(this)"></td><td class="fws">R7</td><td>換地設計</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_路線価算定" onchange="togQ(this)"></td><td class="fws">R7</td><td>路線価算定</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_路線価式" onchange="togQ(this)"></td><td class="fws">R7</td><td>路線価式</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_土地区画整理事" onchange="togQ(this)"></td><td class="fws">R7</td><td>土地区画整理事</td><td class="tac">2</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_個別的要因" onchange="togQ(this)"></td><td class="fws">R7</td><td>個別的要因</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_全間籠諏" onchange="togQ(this)"></td><td class="fws">R7</td><td>全間籠諏</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_模式図" onchange="togQ(this)"></td><td class="fws">R7</td><td>模式図</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_集中胆童" onchange="togQ(this)"></td><td class="fws">R7</td><td>集中胆童</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_建設機鞍" onchange="togQ(this)"></td><td class="fws">R7</td><td>建設機鞍</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_泥睦保譚" onchange="togQ(this)"></td><td class="fws">R7</td><td>泥睦保譚</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_鞍張地箱" onchange="togQ(this)"></td><td class="fws">R7</td><td>鞍張地箱</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_笑種工法" onchange="togQ(this)"></td><td class="fws">R7</td><td>笑種工法</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_笠踏基防" onchange="togQ(this)"></td><td class="fws">R7</td><td>笠踏基防</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_茂栂箒涙" onchange="togQ(this)"></td><td class="fws">R7</td><td>茂栂箒涙</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_土未工事" onchange="togQ(this)"></td><td class="fws">R7</td><td>土未工事</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_建訴機載" onchange="togQ(this)"></td><td class="fws">R7</td><td>建訴機載</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_弐工種袢" onchange="togQ(this)"></td><td class="fws">R7</td><td>弐工種袢</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_塗装学科表紙" onchange="togQ(this)"></td><td class="fws">R7</td><td>塗装学科表紙</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_薬注学科表紙" onchange="togQ(this)"></td><td class="fws">R7</td><td>薬注学科表紙</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac"><input type="checkbox" class="q-chk-input" data-key="土木工学_R7_一次表紙" onchange="togQ(this)"></td><td class="fws">R7</td><td>一次表紙</td><td class="tac">1</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">土木工学 年度別詳細分析カード</summary>
+<details style="margin:4px 0;border:1px solid #1e40af22;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;font-weight:700;color:#1e40af;background:#1e40af06;border-radius:6px">R7 — 39問・30テーマ</summary>
+<div style="padding:10px 14px">
+<p style="font-weight:700;margin:4px 0">出題テーマ構成</p>
+<table class="fz85"><tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>全体順位</th></tr>
+<tr><td><strong>正答肢</strong></td><td class="tac">6</td><td class="tac">15%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#1</span>/30</td></tr>
+<tr><td><strong>第一次検定</strong></td><td class="tac">3</td><td class="tac">8%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#2</span>/30</td></tr>
+<tr><td><strong>土地区画整理士</strong></td><td class="tac">2</td><td class="tac">5%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#3</span>/30</td></tr>
+<tr><td><strong>土地区画整理事</strong></td><td class="tac">2</td><td class="tac">5%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#4</span>/30</td></tr>
+<tr><td><strong>間題葺号</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#5</span>/30</td></tr>
+<tr><td><strong>集中茂童</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#6</span>/30</td></tr>
+<tr><td><strong>労働忠準没</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#7</span>/30</td></tr>
+<tr><td><strong>一土径水術箔華</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#8</span>/30</td></tr>
+<tr><td><strong>鏡瘻保桟寿策</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#9</span>/30</td></tr>
+<tr><td><strong>蓮証槻載</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#1e40af;font-weight:700">#10</span>/30</td></tr>
+<tr><td><strong>土地区画整理組</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#11/30</td></tr>
+<tr><td><strong>換地設計</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#12/30</td></tr>
+<tr><td><strong>路線価算定</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#13/30</td></tr>
+<tr><td><strong>路線価式</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#14/30</td></tr>
+<tr><td><strong>個別的要因</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#15/30</td></tr>
+<tr><td><strong>全間籠諏</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#16/30</td></tr>
+<tr><td><strong>模式図</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#17/30</td></tr>
+<tr><td><strong>集中胆童</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#18/30</td></tr>
+<tr><td><strong>建設機鞍</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#19/30</td></tr>
+<tr><td><strong>泥睦保譚</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#20/30</td></tr>
+<tr><td><strong>鞍張地箱</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#21/30</td></tr>
+<tr><td><strong>笑種工法</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#22/30</td></tr>
+<tr><td><strong>笠踏基防</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#23/30</td></tr>
+<tr><td><strong>茂栂箒涙</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#24/30</td></tr>
+<tr><td><strong>土未工事</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#25/30</td></tr>
+<tr><td><strong>建訴機載</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#26/30</td></tr>
+<tr><td><strong>弐工種袢</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#27/30</td></tr>
+<tr><td><strong>塗装学科表紙</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#28/30</td></tr>
+<tr><td><strong>薬注学科表紙</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#29/30</td></tr>
+<tr><td><strong>一次表紙</strong></td><td class="tac">1</td><td class="tac">3%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">#30/30</td></tr>
+</table>
+<svg viewBox="0 0 410 28" style="max-width:100%;height:28px;margin:4px 0">
+<rect x="0.0" y="2" width="61.5" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>正答肢: 6問 (15%)</title></rect>
+<text x="30.8" y="16" text-anchor="middle" font-size="8" fill="#fff" font-weight="600">正答肢</text>
+<rect x="61.5" y="2" width="30.8" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>第一次検定: 3問 (8%)</title></rect>
+<rect x="92.3" y="2" width="20.5" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土地区画整理士: 2問 (5%)</title></rect>
+<rect x="112.8" y="2" width="20.5" height="22" rx="2" fill="#d97706" opacity="0.8"><title>土地区画整理事: 2問 (5%)</title></rect>
+<rect x="133.3" y="2" width="10.3" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>間題葺号: 1問 (3%)</title></rect>
+<rect x="143.6" y="2" width="10.3" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>集中茂童: 1問 (3%)</title></rect>
+<rect x="153.8" y="2" width="10.3" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>労働忠準没: 1問 (3%)</title></rect>
+<rect x="164.1" y="2" width="10.3" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>一土径水術箔華: 1問 (3%)</title></rect>
+<rect x="174.4" y="2" width="10.3" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>鏡瘻保桟寿策: 1問 (3%)</title></rect>
+<rect x="184.6" y="2" width="10.3" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>蓮証槻載: 1問 (3%)</title></rect>
+<rect x="194.9" y="2" width="10.3" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>土地区画整理組: 1問 (3%)</title></rect>
+<rect x="205.1" y="2" width="10.3" height="22" rx="2" fill="#d97706" opacity="0.8"><title>換地設計: 1問 (3%)</title></rect>
+<rect x="215.4" y="2" width="10.3" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>路線価算定: 1問 (3%)</title></rect>
+<rect x="225.6" y="2" width="10.3" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>路線価式: 1問 (3%)</title></rect>
+<rect x="235.9" y="2" width="10.3" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>個別的要因: 1問 (3%)</title></rect>
+<rect x="246.2" y="2" width="10.3" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>全間籠諏: 1問 (3%)</title></rect>
+<rect x="256.4" y="2" width="10.3" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>模式図: 1問 (3%)</title></rect>
+<rect x="266.7" y="2" width="10.3" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>集中胆童: 1問 (3%)</title></rect>
+<rect x="276.9" y="2" width="10.3" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>建設機鞍: 1問 (3%)</title></rect>
+<rect x="287.2" y="2" width="10.3" height="22" rx="2" fill="#d97706" opacity="0.8"><title>泥睦保譚: 1問 (3%)</title></rect>
+<rect x="297.4" y="2" width="10.3" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>鞍張地箱: 1問 (3%)</title></rect>
+<rect x="307.7" y="2" width="10.3" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>笑種工法: 1問 (3%)</title></rect>
+<rect x="317.9" y="2" width="10.3" height="22" rx="2" fill="#0f766e" opacity="0.8"><title>笠踏基防: 1問 (3%)</title></rect>
+<rect x="328.2" y="2" width="10.3" height="22" rx="2" fill="#9333ea" opacity="0.8"><title>茂栂箒涙: 1問 (3%)</title></rect>
+<rect x="338.5" y="2" width="10.3" height="22" rx="2" fill="#3b82f6" opacity="0.8"><title>土未工事: 1問 (3%)</title></rect>
+<rect x="348.7" y="2" width="10.3" height="22" rx="2" fill="#dc2626" opacity="0.8"><title>建訴機載: 1問 (3%)</title></rect>
+<rect x="359.0" y="2" width="10.3" height="22" rx="2" fill="#16a34a" opacity="0.8"><title>弐工種袢: 1問 (3%)</title></rect>
+<rect x="369.2" y="2" width="10.3" height="22" rx="2" fill="#d97706" opacity="0.8"><title>塗装学科表紙: 1問 (3%)</title></rect>
+<rect x="379.5" y="2" width="10.3" height="22" rx="2" fill="#7c3aed" opacity="0.8"><title>薬注学科表紙: 1問 (3%)</title></rect>
+<rect x="389.7" y="2" width="10.3" height="22" rx="2" fill="#ea580c" opacity="0.8"><title>一次表紙: 1問 (3%)</title></rect>
+</svg>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題傾向:</strong> <span style="color:#dc2626;font-weight:700">広範囲型</span>（多テーマから薄く出題 → 幅広い知識が必要）（30テーマ・平均1.3問/テーマ）</p>
+<p style="font-size:0.88em;margin:4px 0"><strong>この年度の学習ポイント:</strong> 
+正答肢（原理理解が鍵）、第一次検定（原理理解が鍵）、土地区画整理士（原理理解が鍵）、土地区画整理事（原理理解が鍵）、間題葺号（原理理解が鍵）、集中茂童（原理理解が鍵）、労働忠準没（原理理解が鍵）、一土径水術箔華（原理理解が鍵）、鏡瘻保桟寿策（原理理解が鍵）、蓮証槻載（原理理解が鍵）を重点対策。</p>
+<p style="font-size:0.85em;margin:4px 0;color:#6b7280">暗記系: 約0問 / 計算・理解系: 約39問</p>
+</div></details>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="all-questions__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="all-questions.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="all-questions__管工事設備.html">管工事設備 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>

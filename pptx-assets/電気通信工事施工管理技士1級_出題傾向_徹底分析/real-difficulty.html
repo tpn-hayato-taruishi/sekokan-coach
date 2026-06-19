@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合格基準点・合格率 実データ分析 - 電気通信工事施工管理技士1級 出題傾向 徹底分析 R7〜R7</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">合格基準点・合格率 実データ分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="difficulty-trend.html">← 難易度トレンド分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="recommended-videos.html">おすすめ学習動画（電気通信工事施工管理技士1級） →</a></span></nav>
+<section id="real-difficulty">
+  <h2>合格基準点・合格率 実データ分析</h2>
+<p><strong>合格最低得点率: 60%</strong>を基準に、出題データの統計指標で「本当に難しい年度」を特定します。</p>
+<div class="note"><strong>この試験の合格基準</strong>: 得点率60%以上が合格ライン。以下の分析では、この基準を前提に「どの年度が厳しかったか」を5指標で評価します。</div>
+<h3 class="deep-sub">17-1. 年度別 難易度指標</h3>
+<p>年度ごとの<strong>出題テーマ数・新傾向率・カテゴリ分散度</strong>を統合した難易度指標。値が高い年ほど対策が難しい。</p>
+<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:0.85em;width:100%">
+<thead><tr style="background:#0267B7;color:#fff"><th style="padding:6px 8px">年度</th>
+<th>施工管理法</th>
+<th>土木工学</th>
+<th>管工事設備</th>
+<th>電気通信</th>
+<th>造園設計</th>
+<th>全科目平均</th><th>難易度</th></tr></thead><tbody>
+<tr style="background:#f8fafc">
+<td style="padding:4px 8px;font-weight:700">R7</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">40</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">40</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">40</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">40</td>
+<td style="text-align:center;color:#f59e0b;font-weight:700">40</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">40</td>
+<td style="text-align:center;color:#dc2626;font-weight:700">難</td>
+</tr>
+</tbody></table></div>
+<h3 class="deep-sub">17-2. 難易度トレンド推移</h3>
+<p>年度別の難易度指標の推移をグラフで可視化。</p>
+<div style="overflow-x:auto;margin-bottom:12px"><svg viewBox="0 0 650 200" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="40" y1="132.0" x2="630" y2="132.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="135.0" text-anchor="end" font-size="8" fill="#6b7280">20</text>
+<line x1="40" y1="104.0" x2="630" y2="104.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="107.0" text-anchor="end" font-size="8" fill="#6b7280">40</text>
+<line x1="40" y1="76.0" x2="630" y2="76.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="79.0" text-anchor="end" font-size="8" fill="#6b7280">60</text>
+<line x1="40" y1="48.0" x2="630" y2="48.0" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="36" y="51.0" text-anchor="end" font-size="8" fill="#6b7280">80</text>
+<line x1="40" y1="104.0" x2="630" y2="104.0" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4"/>
+<text x="632" y="107.0" font-size="7" fill="#f59e0b">平均40</text>
+<circle cx="40.0" cy="104.0" r="4" fill="#dc2626" stroke="#fff" stroke-width="1"><title>R7: 40</title></circle>
+<text x="40.0" y="175" text-anchor="middle" font-size="7" fill="#6b7280">R7</text>
+</svg></div>
+<h3 class="deep-sub">17-3. 科目別 難易度傾向</h3>
+<table><tr><th>科目</th><th>推定難度</th><th>理解率</th><th>暗記率</th><th>傾向</th><th>対策のポイント</th></tr>
+<tr><td style="color:#0369a1;font-weight:700">施工管理法</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#1e40af;font-weight:700">土木工学</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#be185d;font-weight:700">管工事設備</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#7c3aed;font-weight:700">電気通信</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+<tr><td style="color:#d97706;font-weight:700">造園設計</td><td style="color:#f59e0b;font-weight:700">中</td><td class="tac">25%</td><td class="tac">40%</td><td>バランス型。公式と暗記の両面で対策</td><td class="fz9">公式の適用条件を理解した上で暗記を並行する</td></tr>
+</table>
+<h3 class="deep-sub">17-4. 科目別 新傾向率推移</h3>
+<p>科目ごとの新傾向テーマ出現率をSVGグラフで表示。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">施工管理法</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 22 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="20" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="18" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R7: 100%</title></rect>
+<text x="10.0" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">土木工学</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 22 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="20" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="18" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R7: 100%</title></rect>
+<text x="10.0" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.05em">管工事設備</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 22 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="20" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="18" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R7: 100%</title></rect>
+<text x="10.0" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.05em">電気通信</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 22 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="20" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="18" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R7: 100%</title></rect>
+<text x="10.0" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">造園設計</summary>
+<div style="overflow-x:auto;margin-bottom:8px"><svg viewBox="0 0 22 140" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="120" x2="20" y2="120" stroke="#e5e7eb" stroke-width="1"/>
+<rect x="1" y="0.0" width="18" height="120.0" rx="1" fill="#dc2626" opacity="0.8"><title>R7: 100%</title></rect>
+<text x="10.0" y="132" text-anchor="middle" font-size="7" fill="#64748b">R7</text>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="difficulty-trend.html">← 難易度トレンド分析</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="recommended-videos.html">おすすめ学習動画（電気通信工事施工管理技士1級） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 出題傾向 徹底分析 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>

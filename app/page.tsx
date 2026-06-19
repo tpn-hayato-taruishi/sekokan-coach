@@ -2432,21 +2432,55 @@ ${topThemes}
           >
             📝 経験記述 (第2次)
           </button>
-          <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-            <span className="text-[10px] opacity-80">📊 1次ガイド</span>
-            <a href="/api/report/施工管理1級_簡易版.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-yellow-200 hover:text-yellow-900 px-2 py-0.5 rounded font-bold text-xs" title="1級 第一次検定の要点ガイド">1級</a>
-            <a href="/api/report/施工管理2級_簡易版.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-yellow-200 hover:text-yellow-900 px-2 py-0.5 rounded font-bold text-xs" title="2級 第一次検定の要点ガイド">2級</a>
-          </div>
-          <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-            <span className="text-[10px] opacity-80">📝 2次ガイド</span>
-            <a href="/api/report/施工管理1級_2次_簡易版.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-pink-200 hover:text-pink-900 px-2 py-0.5 rounded font-bold text-xs" title="1級 第二次検定の要点ガイド (経験記述中心)">1級</a>
-            <a href="/api/report/施工管理2級_2次_簡易版.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-pink-200 hover:text-pink-900 px-2 py-0.5 rounded font-bold text-xs" title="2級 第二次検定の要点ガイド (経験記述中心)">2級</a>
-          </div>
-          <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-            <span className="text-[10px] opacity-80">🔬 詳細版</span>
-            <a href="/api/report/施工管理1級_出題傾向_徹底分析/index.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-white/40 px-2 py-0.5 rounded font-bold text-xs" title="1級の徹底分析レポート">1級</a>
-            <a href="/api/report/施工管理2級_出題傾向_徹底分析/index.html" target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-white/40 px-2 py-0.5 rounded font-bold text-xs" title="2級の徹底分析レポート">2級</a>
-          </div>
+          {/* レポートリンクは試験種別に応じて動的に切替 (電気工事 / 電気通信工事) */}
+          {(() => {
+            const reportConfig = examCategory === 'denki' ? {
+              easy1_1: '/api/report/施工管理1級_簡易版.html',
+              easy1_2: '/api/report/施工管理2級_簡易版.html',
+              easy2_1: '/api/report/施工管理1級_2次_簡易版.html',
+              easy2_2: '/api/report/施工管理2級_2次_簡易版.html',
+              detail1: '/api/report/施工管理1級_出題傾向_徹底分析/index.html',
+              detail2: '/api/report/施工管理2級_出題傾向_徹底分析/index.html',
+            } : {
+              easy1_1: null, easy1_2: null, easy2_1: null, easy2_2: null,
+              detail1: '/api/report/電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html',
+              detail2: null,  // 2級は未生成
+            };
+            const linkCls = (url: string | null, color: string) => url
+              ? `bg-white/20 hover:bg-${color}-200 hover:text-${color}-900 px-2 py-0.5 rounded font-bold text-xs`
+              : 'bg-white/5 text-white/30 px-2 py-0.5 rounded font-bold text-xs cursor-not-allowed';
+            return (
+              <>
+                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
+                  <span className="text-[10px] opacity-80">📊 1次ガイド</span>
+                  {reportConfig.easy1_1
+                    ? <a href={reportConfig.easy1_1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy1_1, 'yellow')} title="1級 第一次検定の要点ガイド">1級</a>
+                    : <span className={linkCls(null, 'yellow')} title="電気通信工事 1次ガイドは未対応">1級</span>}
+                  {reportConfig.easy1_2
+                    ? <a href={reportConfig.easy1_2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy1_2, 'yellow')} title="2級 第一次検定の要点ガイド">2級</a>
+                    : <span className={linkCls(null, 'yellow')} title="電気通信工事 1次ガイドは未対応">2級</span>}
+                </div>
+                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
+                  <span className="text-[10px] opacity-80">📝 2次ガイド</span>
+                  {reportConfig.easy2_1
+                    ? <a href={reportConfig.easy2_1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy2_1, 'pink')} title="1級 第二次検定の要点ガイド (経験記述中心)">1級</a>
+                    : <span className={linkCls(null, 'pink')} title="電気通信工事 2次ガイドは未対応">1級</span>}
+                  {reportConfig.easy2_2
+                    ? <a href={reportConfig.easy2_2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy2_2, 'pink')} title="2級 第二次検定の要点ガイド (経験記述中心)">2級</a>
+                    : <span className={linkCls(null, 'pink')} title="電気通信工事 2次ガイドは未対応">2級</span>}
+                </div>
+                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
+                  <span className="text-[10px] opacity-80">🔬 詳細版</span>
+                  {reportConfig.detail1
+                    ? <a href={reportConfig.detail1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.detail1, 'white')} title="1級の徹底分析レポート">1級</a>
+                    : <span className={linkCls(null, 'white')} title="未対応">1級</span>}
+                  {reportConfig.detail2
+                    ? <a href={reportConfig.detail2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.detail2, 'white')} title="2級の徹底分析レポート">2級</a>
+                    : <span className={linkCls(null, 'white')} title="電気通信工事 2級詳細版は未生成">2級</span>}
+                </div>
+              </>
+            );
+          })()}
         </div>
       </header>
 

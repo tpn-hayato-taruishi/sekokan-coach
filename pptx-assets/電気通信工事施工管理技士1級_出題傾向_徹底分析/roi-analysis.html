@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投資対効果分析 - 電気通信工事施工管理技士1級 出題傾向 徹底分析 R7〜R7</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">投資対効果分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+<section id="roi-analysis">
+  <h2>投資対効果分析</h2>
+<p>各テーマの <strong>ROI = 出題確率 / 推定学習時間</strong> を算出。ROIが高いテーマから学習すれば最短で得点が伸びます。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.1em">施工管理法 ROIランキング</summary>
+<div class="tip">上位5個で60%カバー、上位13個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10年</th><th>判定</th></tr>
+<tr><td>1</td><td>土地区画整理事</td><td>28.9%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.193</span></div></td><td>19.3点</td><td>11回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>土地区画整理法</td><td>15.8%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:33px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.105</span></div></td><td>10.5点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>施工管理法</td><td>7.9%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:16px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.053</span></div></td><td>5.3点</td><td>3回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>級土木施工管理</td><td>5.3%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:11px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.035</span></div></td><td>3.5点</td><td>2回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>5</td><td>仮換地</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>6</td><td>保留地</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>7</td><td>品買簗琢</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>8</td><td>土地区画整理審</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>9</td><td>土木施工管理技</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>10</td><td>工型擁壁</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>11</td><td>廻設業法</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>12</td><td>換地処分</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>13</td><td>換地計画</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>14</td><td>換地計算</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>15</td><td>換地設計</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>16</td><td>施工計画</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>17</td><td>施工計畜作歪</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>18</td><td>比例評価式換地</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>19</td><td>発荒詮価</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>20</td><td>級電気通信工事</td><td>2.6%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:5px;height:8px;background:#0369a1;border-radius:4px"></div><span class="fz8">0.018</span></div></td><td>1.8点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（施工管理法 上位15テーマ）</h4>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 土地区画整理事</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.193</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 28.9% → 1時間あたり期待点数 19.3点。1年間で11回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で11回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 土地区画整理法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.105</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 15.8% → 1時間あたり期待点数 10.5点。1年間で6回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で6回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 施工管理法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.053</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.9% → 1時間あたり期待点数 5.3点。1年間で3回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で3回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 級土木施工管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.035</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 5.3% → 1時間あたり期待点数 3.5点。1年間で2回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で2回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 仮換地</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 保留地</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#7 品買簗琢</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#8 土地区画整理審</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#9 土木施工管理技</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#10 工型擁壁</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#11 廻設業法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#12 換地処分</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#13 換地計画</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#14 換地計算</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #0369a1;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#15 換地設計</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.018</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 1.5時間の学習（過去問演習 30分 + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 1.8点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（施工管理法）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>土地区画整理事</td><td>28.9%</td><td>1.5h</td><td><strong>19.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>土地区画整理法</td><td>15.8%</td><td>1.5h</td><td><strong>10.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:55%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>施工管理法</td><td>7.9%</td><td>1.5h</td><td><strong>5.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:27%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>級土木施工管理</td><td>5.3%</td><td>1.5h</td><td><strong>3.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:18%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>仮換地</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>保留地</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>品買簗琢</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>土地区画整理審</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>土木施工管理技</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>工型擁壁</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>廻設業法</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>換地処分</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>換地計画</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>換地計算</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>換地設計</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>施工計画</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>施工計畜作歪</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>比例評価式換地</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>発荒詮価</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+<tr><td>級電気通信工事</td><td>2.6%</td><td>1.5h</td><td><strong>1.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:9%;height:100%;background:#0369a1;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">施工管理法 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="123" x2="580" y2="123" stroke="#f3f4f6"/>
+  <text x="46" y="126" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="560.0" cy="254.5" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="50.0" r="22" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">土地区画整理</text>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="163.6" r="15.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="145.6" font-size="7" fill="#374151" text-anchor="middle">土地区画整理</text>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="231.8" r="7.5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="560.0" cy="277.3" r="5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.1em">土木工学 ROIランキング</summary>
+<div class="tip">上位15個で60%カバー、上位23個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10年</th><th>判定</th></tr>
+<tr><td>1</td><td>正答肢</td><td>15.4%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.044</span></div></td><td>4.4点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>第一次検定</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:30px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>3回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>土地区画整理事</td><td>5.1%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:20px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.015</span></div></td><td>1.5点</td><td>2回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>土地区画整理士</td><td>5.1%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:20px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.015</span></div></td><td>1.5点</td><td>2回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>5</td><td>一土径水術箔華</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>6</td><td>一次表紙</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>7</td><td>個別的要因</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>8</td><td>全間籠諏</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>9</td><td>労働忠準没</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>10</td><td>土地区画整理組</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>11</td><td>土未工事</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>12</td><td>塗装学科表紙</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>13</td><td>建設機鞍</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>14</td><td>建訴機載</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>15</td><td>弐工種袢</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>16</td><td>換地設計</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>17</td><td>模式図</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>18</td><td>泥睦保譚</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>19</td><td>笑種工法</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>20</td><td>笠踏基防</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>21</td><td>茂栂箒涙</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>22</td><td>蓮証槻載</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>23</td><td>薬注学科表紙</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>24</td><td>路線価式</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>25</td><td>路線価算定</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>26</td><td>鏡瘻保桟寿策</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>27</td><td>間題葺号</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>28</td><td>集中胆童</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>29</td><td>集中茂童</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>30</td><td>鞍張地箱</td><td>2.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:10px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.007</span></div></td><td>0.7点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（土木工学 上位15テーマ）</h4>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 正答肢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.044</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 15.4% → 1時間あたり期待点数 4.4点。1年間で6回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で6回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 第一次検定</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で3回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で3回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 土地区画整理事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.015</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 5.1% → 1時間あたり期待点数 1.5点。1年間で2回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で2回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 土地区画整理士</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.015</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 5.1% → 1時間あたり期待点数 1.5点。1年間で2回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で2回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 一土径水術箔華</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 一次表紙</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#7 個別的要因</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#8 全間籠諏</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#9 労働忠準没</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#10 土地区画整理組</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#11 土未工事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#12 塗装学科表紙</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#13 建設機鞍</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#14 建訴機載</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#15 弐工種袢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.007</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 2.6% → 1時間あたり期待点数 0.7点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（土木工学）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>正答肢</td><td>15.4%</td><td>3.5h</td><td><strong>4.4</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>第一次検定</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:50%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>土地区画整理事</td><td>5.1%</td><td>3.5h</td><td><strong>1.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:33%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>土地区画整理士</td><td>5.1%</td><td>3.5h</td><td><strong>1.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:33%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>一土径水術箔華</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>一次表紙</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>個別的要因</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>全間籠諏</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>労働忠準没</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>土地区画整理組</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>土未工事</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>塗装学科表紙</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>建設機鞍</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>建訴機載</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>弐工種袢</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>換地設計</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>模式図</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>泥睦保譚</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>笑種工法</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>笠踏基防</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>茂栂箒涙</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>蓮証槻載</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>薬注学科表紙</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>路線価式</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>路線価算定</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>鏡瘻保桟寿策</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>間題葺号</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>集中胆童</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>集中茂童</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>鞍張地箱</td><td>2.6%</td><td>3.5h</td><td><strong>0.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:17%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">土木工学 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="175.0" r="7.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="50.0" r="15.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="32.0" font-size="7" fill="#374151" text-anchor="middle">正答肢</text>
+  <circle cx="560.0" cy="216.7" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="216.7" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="258.3" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.1em">管工事設備 ROIランキング</summary>
+<div class="tip">上位4個で60%カバー、上位7個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10年</th><th>判定</th></tr>
+<tr><td>1</td><td>土地区画整理事</td><td>30.8%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.088</span></div></td><td>8.8点</td><td>4回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>換地計画</td><td>15.4%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:30px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.044</span></div></td><td>4.4点</td><td>2回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>労佐姜全衛生訣</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>労働姜全衛生訣</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>5</td><td>建誹工鞘</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>6</td><td>換地設計</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>7</td><td>施工計画径歪</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>8</td><td>総代会</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+<tr><td>9</td><td>華道路惰</td><td>7.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:15px;height:8px;background:#be185d;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>1回</td><td><span style="color:#9ca3af">×不要</span></td></tr>
+</table>
+<h4>投資回収シナリオ（管工事設備 上位15テーマ）</h4>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 土地区画整理事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.088</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 30.8% → 1時間あたり期待点数 8.8点。1年間で4回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で4回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 換地計画</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.044</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 15.4% → 1時間あたり期待点数 4.4点。1年間で2回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で2回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 労佐姜全衛生訣</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 労働姜全衛生訣</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 建誹工鞘</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 換地設計</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#7 施工計画径歪</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#8 総代会</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #be185d;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#9 華道路惰</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 7.7% → 1時間あたり期待点数 2.2点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（管工事設備）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>土地区画整理事</td><td>30.8%</td><td>3.5h</td><td><strong>8.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>換地計画</td><td>15.4%</td><td>3.5h</td><td><strong>4.4</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:50%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>労佐姜全衛生訣</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>労働姜全衛生訣</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>建誹工鞘</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>換地設計</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>施工計画径歪</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>総代会</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+<tr><td>華道路惰</td><td>7.7%</td><td>3.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:25%;height:100%;background:#be185d;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">管工事設備 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="134" x2="580" y2="134" stroke="#f3f4f6"/>
+  <text x="46" y="138" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="50.0" r="10.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="37.0" font-size="7" fill="#374151" text-anchor="middle">土地区画整理</text>
+  <circle cx="560.0" cy="175.0" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="237.5" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.1em">電気通信 ROIランキング</summary>
+<div class="tip">上位2個で60%カバー、上位2個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10年</th><th>判定</th></tr>
+<tr><td>1</td><td>剣運路惰</td><td>50.0%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.143</span></div></td><td>14.3点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>藩爵窪王</td><td>50.0%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.143</span></div></td><td>14.3点</td><td>1回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+</table>
+<h4>投資回収シナリオ（電気通信 上位15テーマ）</h4>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 剣運路惰</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.143</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 50.0% → 1時間あたり期待点数 14.3点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 藩爵窪王</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.143</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 50.0% → 1時間あたり期待点数 14.3点。1年間で1回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で1回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（電気通信）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>剣運路惰</td><td>50.0%</td><td>3.5h</td><td><strong>14.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>藩爵窪王</td><td>50.0%</td><td>3.5h</td><td><strong>14.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">電気通信 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="202" x2="580" y2="202" stroke="#f3f4f6"/>
+  <text x="46" y="205" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="94" x2="580" y2="94" stroke="#f3f4f6"/>
+  <text x="46" y="97" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <circle cx="560.0" cy="50.0" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="560.0" cy="50.0" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">造園設計 ROIランキング</summary>
+<div class="tip">上位1個で60%カバー、上位1個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10年</th><th>判定</th></tr>
+<tr><td>1</td><td>正答肢</td><td>100.0%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.286</span></div></td><td>28.6点</td><td>2回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+</table>
+<h4>投資回収シナリオ（造園設計 上位15テーマ）</h4>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 正答肢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.286</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 30分 + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 100.0% → 1時間あたり期待点数 28.6点。1年間で2回出題、1年中1年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10年で2回出題。最終出題: R7。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（造園設計）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>正答肢</td><td>100.0%</td><td>3.5h</td><td><strong>28.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">造園設計 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="256" x2="580" y2="256" stroke="#f3f4f6"/>
+  <text x="46" y="259" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <line x1="50" y1="202" x2="580" y2="202" stroke="#f3f4f6"/>
+  <text x="46" y="205" font-size="8" fill="#9ca3af" text-anchor="end">40%</text>
+  <line x1="50" y1="148" x2="580" y2="148" stroke="#f3f4f6"/>
+  <text x="46" y="151" font-size="8" fill="#9ca3af" text-anchor="end">60%</text>
+  <line x1="50" y1="94" x2="580" y2="94" stroke="#f3f4f6"/>
+  <text x="46" y="97" font-size="8" fill="#9ca3af" text-anchor="end">80%</text>
+  <circle cx="560.0" cy="50.0" r="5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 出題傾向 徹底分析 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出題サイクル分析 - 電気通信工事施工管理技士1級 出題傾向 徹底分析 R7〜R7</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">出題サイクル分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="heatmap.html">← 出題ヒートマップ（年度×分野）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="coverage.html">カバレッジ分析（最小テーマで最大カバー） →</a></span></nav>
+<section id="cycle">
+  <h2>出題サイクル分析</h2>
+<p>各テーマが過去に出題された年度をドットで表示。間隔パターンから出題周期を読み取れます。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.05em">施工管理法（20 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 178 480" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R7</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理事</text>
+<line x1="120" y1="41.0" x2="138" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="8" fill="#0369a1" opacity="0.8"><title>R7: 11問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理法</text>
+<line x1="120" y1="63.0" x2="138" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="8" fill="#0369a1" opacity="0.8"><title>R7: 6問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">施工管理法</text>
+<line x1="120" y1="85.0" x2="138" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="8" fill="#0369a1" opacity="0.8"><title>R7: 3問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">級土木施工管理</text>
+<line x1="120" y1="107.0" x2="138" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="7" fill="#0369a1" opacity="0.8"><title>R7: 2問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">発荒詮価</text>
+<line x1="120" y1="129.0" x2="138" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="129.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="154.0" text-anchor="end" font-size="9" fill="#334155">施工計畜作歪</text>
+<line x1="120" y1="151.0" x2="138" y2="151.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="151.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="176.0" text-anchor="end" font-size="9" fill="#334155">施工計画</text>
+<line x1="120" y1="173.0" x2="138" y2="173.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="173.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="198.0" text-anchor="end" font-size="9" fill="#334155">級電気通信工事</text>
+<line x1="120" y1="195.0" x2="138" y2="195.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="195.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="220.0" text-anchor="end" font-size="9" fill="#334155">比例評価式換地</text>
+<line x1="120" y1="217.0" x2="138" y2="217.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="217.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="242.0" text-anchor="end" font-size="9" fill="#334155">換地設計</text>
+<line x1="120" y1="239.0" x2="138" y2="239.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="239.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="264.0" text-anchor="end" font-size="9" fill="#334155">換地計算</text>
+<line x1="120" y1="261.0" x2="138" y2="261.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="261.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="286.0" text-anchor="end" font-size="9" fill="#334155">換地計画</text>
+<line x1="120" y1="283.0" x2="138" y2="283.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="283.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="308.0" text-anchor="end" font-size="9" fill="#334155">保留地</text>
+<line x1="120" y1="305.0" x2="138" y2="305.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="305.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="330.0" text-anchor="end" font-size="9" fill="#334155">換地処分</text>
+<line x1="120" y1="327.0" x2="138" y2="327.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="327.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="352.0" text-anchor="end" font-size="9" fill="#334155">仮換地</text>
+<line x1="120" y1="349.0" x2="138" y2="349.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="349.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="374.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理審</text>
+<line x1="120" y1="371.0" x2="138" y2="371.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="371.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="396.0" text-anchor="end" font-size="9" fill="#334155">工型擁壁</text>
+<line x1="120" y1="393.0" x2="138" y2="393.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="393.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="418.0" text-anchor="end" font-size="9" fill="#334155">土木施工管理技</text>
+<line x1="120" y1="415.0" x2="138" y2="415.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="415.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="440.0" text-anchor="end" font-size="9" fill="#334155">廻設業法</text>
+<line x1="120" y1="437.0" x2="138" y2="437.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="437.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="462.0" text-anchor="end" font-size="9" fill="#334155">品買簗琢</text>
+<line x1="120" y1="459.0" x2="138" y2="459.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="459.0" r="5" fill="#0369a1" opacity="0.8"><title>R7: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">土木工学（30 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 178 700" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R7</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">正答肢</text>
+<line x1="120" y1="41.0" x2="138" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="8" fill="#1e40af" opacity="0.8"><title>R7: 6問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">第一次検定</text>
+<line x1="120" y1="63.0" x2="138" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="8" fill="#1e40af" opacity="0.8"><title>R7: 3問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理士</text>
+<line x1="120" y1="85.0" x2="138" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="7" fill="#1e40af" opacity="0.8"><title>R7: 2問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理事</text>
+<line x1="120" y1="107.0" x2="138" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="7" fill="#1e40af" opacity="0.8"><title>R7: 2問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">間題葺号</text>
+<line x1="120" y1="129.0" x2="138" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="129.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="154.0" text-anchor="end" font-size="9" fill="#334155">集中茂童</text>
+<line x1="120" y1="151.0" x2="138" y2="151.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="151.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="176.0" text-anchor="end" font-size="9" fill="#334155">労働忠準没</text>
+<line x1="120" y1="173.0" x2="138" y2="173.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="173.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="198.0" text-anchor="end" font-size="9" fill="#334155">一土径水術箔華</text>
+<line x1="120" y1="195.0" x2="138" y2="195.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="195.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="220.0" text-anchor="end" font-size="9" fill="#334155">鏡瘻保桟寿策</text>
+<line x1="120" y1="217.0" x2="138" y2="217.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="217.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="242.0" text-anchor="end" font-size="9" fill="#334155">蓮証槻載</text>
+<line x1="120" y1="239.0" x2="138" y2="239.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="239.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="264.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理組</text>
+<line x1="120" y1="261.0" x2="138" y2="261.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="261.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="286.0" text-anchor="end" font-size="9" fill="#334155">換地設計</text>
+<line x1="120" y1="283.0" x2="138" y2="283.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="283.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="308.0" text-anchor="end" font-size="9" fill="#334155">路線価算定</text>
+<line x1="120" y1="305.0" x2="138" y2="305.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="305.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="330.0" text-anchor="end" font-size="9" fill="#334155">路線価式</text>
+<line x1="120" y1="327.0" x2="138" y2="327.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="327.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="352.0" text-anchor="end" font-size="9" fill="#334155">個別的要因</text>
+<line x1="120" y1="349.0" x2="138" y2="349.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="349.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="374.0" text-anchor="end" font-size="9" fill="#334155">全間籠諏</text>
+<line x1="120" y1="371.0" x2="138" y2="371.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="371.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="396.0" text-anchor="end" font-size="9" fill="#334155">模式図</text>
+<line x1="120" y1="393.0" x2="138" y2="393.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="393.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="418.0" text-anchor="end" font-size="9" fill="#334155">集中胆童</text>
+<line x1="120" y1="415.0" x2="138" y2="415.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="415.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="440.0" text-anchor="end" font-size="9" fill="#334155">建設機鞍</text>
+<line x1="120" y1="437.0" x2="138" y2="437.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="437.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="462.0" text-anchor="end" font-size="9" fill="#334155">泥睦保譚</text>
+<line x1="120" y1="459.0" x2="138" y2="459.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="459.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="484.0" text-anchor="end" font-size="9" fill="#334155">鞍張地箱</text>
+<line x1="120" y1="481.0" x2="138" y2="481.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="481.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="506.0" text-anchor="end" font-size="9" fill="#334155">笑種工法</text>
+<line x1="120" y1="503.0" x2="138" y2="503.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="503.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="528.0" text-anchor="end" font-size="9" fill="#334155">笠踏基防</text>
+<line x1="120" y1="525.0" x2="138" y2="525.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="525.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="550.0" text-anchor="end" font-size="9" fill="#334155">茂栂箒涙</text>
+<line x1="120" y1="547.0" x2="138" y2="547.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="547.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="572.0" text-anchor="end" font-size="9" fill="#334155">土未工事</text>
+<line x1="120" y1="569.0" x2="138" y2="569.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="569.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="594.0" text-anchor="end" font-size="9" fill="#334155">建訴機載</text>
+<line x1="120" y1="591.0" x2="138" y2="591.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="591.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="616.0" text-anchor="end" font-size="9" fill="#334155">弐工種袢</text>
+<line x1="120" y1="613.0" x2="138" y2="613.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="613.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="638.0" text-anchor="end" font-size="9" fill="#334155">塗装学科表紙</text>
+<line x1="120" y1="635.0" x2="138" y2="635.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="635.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="660.0" text-anchor="end" font-size="9" fill="#334155">薬注学科表紙</text>
+<line x1="120" y1="657.0" x2="138" y2="657.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="657.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="682.0" text-anchor="end" font-size="9" fill="#334155">一次表紙</text>
+<line x1="120" y1="679.0" x2="138" y2="679.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="679.0" r="5" fill="#1e40af" opacity="0.8"><title>R7: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.05em">管工事設備（9 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 178 238" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R7</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">土地区画整理事</text>
+<line x1="120" y1="41.0" x2="138" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="8" fill="#be185d" opacity="0.8"><title>R7: 4問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">換地計画</text>
+<line x1="120" y1="63.0" x2="138" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="7" fill="#be185d" opacity="0.8"><title>R7: 2問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">労佐姜全衛生訣</text>
+<line x1="120" y1="85.0" x2="138" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">建誹工鞘</text>
+<line x1="120" y1="107.0" x2="138" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">労働姜全衛生訣</text>
+<line x1="120" y1="129.0" x2="138" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="129.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="154.0" text-anchor="end" font-size="9" fill="#334155">換地設計</text>
+<line x1="120" y1="151.0" x2="138" y2="151.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="151.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="176.0" text-anchor="end" font-size="9" fill="#334155">総代会</text>
+<line x1="120" y1="173.0" x2="138" y2="173.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="173.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="198.0" text-anchor="end" font-size="9" fill="#334155">華道路惰</text>
+<line x1="120" y1="195.0" x2="138" y2="195.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="195.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="220.0" text-anchor="end" font-size="9" fill="#334155">施工計画径歪</text>
+<line x1="120" y1="217.0" x2="138" y2="217.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="217.0" r="5" fill="#be185d" opacity="0.8"><title>R7: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.05em">電気通信（2 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 178 84" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R7</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">藩爵窪王</text>
+<line x1="120" y1="41.0" x2="138" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">剣運路惰</text>
+<line x1="120" y1="63.0" x2="138" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">造園設計（1 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 178 62" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R7</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">正答肢</text>
+<line x1="120" y1="41.0" x2="138" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="7" fill="#d97706" opacity="0.8"><title>R7: 2問</title></circle>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="heatmap.html">← 出題ヒートマップ（年度×分野）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="coverage.html">カバレッジ分析（最小テーマで最大カバー） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 出題傾向 徹底分析 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>

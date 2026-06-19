@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>最小合格セット（60%ライン突破） - 電気通信工事施工管理技士1級 出題傾向 徹底分析 R7〜R7</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士1級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">最小合格セット（60%ライン突破）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map.html">← 学習深度マップ</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="study-todo.html">解くべき過去問リスト（年度別チェックリスト） →</a></span></nav>
+<section id="minimum-pass">
+  <h2>最小合格セット（60%ライン突破）</h2>
+<p><strong>これだけやれば受かる</strong>: 各科目で頻出テーマを上から積み上げ、累積カバー率が60%に達する最小セットを特定します。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0369a1;padding:8px 0;font-size:1.1em">施工管理法 最小セット（5/20テーマで61%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>土地区画整理事</td><td>11</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:28.9%;height:100%;background:#0369a1;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">28.9%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td></tr>
+<tr><td>2</td><td>土地区画整理法</td><td>6</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:44.7%;height:100%;background:#0369a1;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">44.7%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td></tr>
+<tr><td>3</td><td>施工管理法</td><td>3</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:52.6%;height:100%;background:#0369a1;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">52.6%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td></tr>
+<tr><td>4</td><td>級土木施工管理</td><td>2</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:57.9%;height:100%;background:#0369a1;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">57.9%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td></tr>
+<tr><td>5</td><td>仮換地</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:60.5%;height:100%;background:#0369a1;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">60.5%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>1h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #0369a1;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 土地区画整理事</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題11回・期待得点寄与 28.9%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 1h30m（過去問演習 30分 + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 土地区画整理法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題6回・期待得点寄与 15.8%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 1h30m（過去問演習 30分 + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 施工管理法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題3回・期待得点寄与 7.9%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 1h30m（過去問演習 30分 + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>4. 級土木施工管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題2回・期待得点寄与 5.3%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 1h30m（過去問演習 30分 + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #0369a1;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>5. 仮換地</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 1h30m（過去問演習 30分 + 基礎学習 1h）</p>
+</div>
+<h4>最小セットの問題例（施工管理法）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>土地区画整理事</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>土地区画整理法</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>施工管理法</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>級土木施工管理</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>仮換地</strong>: パターン計算問題（解法テンプレートで対応）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R7</td><td>38</td><td>23</td><td>61%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>1/1年（100%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,69.2 55.0,160 55,160" fill="#0369a1" opacity="0.15"/>
+  <polyline points="55.0,69.2" fill="none" stroke="#0369a1" stroke-width="2"/>
+  <circle cx="55.0" cy="69.2" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7</text>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この5テーマだけで61%カバー。推定学習時間: 7h30m</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.1em">土木工学 最小セット（15/30テーマで62%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>正答肢</td><td>6</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:15.4%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">15.4%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>2</td><td>第一次検定</td><td>3</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:23.1%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">23.1%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>3</td><td>土地区画整理事</td><td>2</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:28.2%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">28.2%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>4</td><td>土地区画整理士</td><td>2</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:33.3%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">33.3%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>5</td><td>一土径水術箔華</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:35.9%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">35.9%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>6</td><td>一次表紙</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:38.5%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">38.5%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>7</td><td>個別的要因</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:41.0%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">41.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>8</td><td>全間籠諏</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:43.6%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">43.6%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>9</td><td>労働忠準没</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:46.2%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">46.2%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>10</td><td>土地区画整理組</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:48.7%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">48.7%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>11</td><td>土未工事</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:51.3%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">51.3%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>12</td><td>塗装学科表紙</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:53.8%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">53.8%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>13</td><td>建設機鞍</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:56.4%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">56.4%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>14</td><td>建訴機載</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:59.0%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">59.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>15</td><td>弐工種袢</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:61.5%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">61.5%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 正答肢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題6回・期待得点寄与 15.4%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 第一次検定</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題3回・期待得点寄与 7.7%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 土地区画整理事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題2回・期待得点寄与 5.1%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>4. 土地区画整理士</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題2回・期待得点寄与 5.1%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>5. 一土径水術箔華</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>6. 一次表紙</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>7. 個別的要因</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>8. 全間籠諏</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>9. 労働忠準没</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>10. 土地区画整理組</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>11. 土未工事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>12. 塗装学科表紙</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>13. 建設機鞍</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>14. 建訴機載</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>15. 弐工種袢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 2.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（土木工学）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>正答肢</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>第一次検定</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>土地区画整理事</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>土地区画整理士</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>一土径水術箔華</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>一次表紙</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>個別的要因</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>全間籠諏</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>労働忠準没</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>土地区画整理組</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>土未工事</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>塗装学科表紙</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>建設機鞍</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>建訴機載</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>弐工種袢</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R7</td><td>39</td><td>24</td><td>62%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>1/1年（100%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,67.7 55.0,160 55,160" fill="#1e40af" opacity="0.15"/>
+  <polyline points="55.0,67.7" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <circle cx="55.0" cy="67.7" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7</text>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この15テーマだけで62%カバー。推定学習時間: 52h30m</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#be185d;padding:8px 0;font-size:1.1em">管工事設備 最小セット（4/9テーマで62%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>土地区画整理事</td><td>4</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:30.8%;height:100%;background:#be185d;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">30.8%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>2</td><td>換地計画</td><td>2</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:46.2%;height:100%;background:#be185d;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">46.2%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>3</td><td>労佐姜全衛生訣</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:53.8%;height:100%;background:#be185d;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">53.8%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>4</td><td>労働姜全衛生訣</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:61.5%;height:100%;background:#be185d;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">61.5%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #be185d;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 土地区画整理事</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題4回・期待得点寄与 30.8%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 換地計画</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題2回・期待得点寄与 15.4%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 労佐姜全衛生訣</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 7.7%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #be185d;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>4. 労働姜全衛生訣</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 7.7%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（管工事設備）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>土地区画整理事</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>換地計画</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>労佐姜全衛生訣</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>労働姜全衛生訣</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R7</td><td>13</td><td>8</td><td>62%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>1/1年（100%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,67.7 55.0,160 55,160" fill="#be185d" opacity="0.15"/>
+  <polyline points="55.0,67.7" fill="none" stroke="#be185d" stroke-width="2"/>
+  <circle cx="55.0" cy="67.7" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7</text>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この4テーマだけで62%カバー。推定学習時間: 14h</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.1em">電気通信 最小セット（2/2テーマで100%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>剣運路惰</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:50.0%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">50.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+<tr><td>2</td><td>藩爵窪王</td><td>1</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100.0%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">100.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 剣運路惰</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 50.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 藩爵窪王</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題1回・期待得点寄与 50.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（電気通信）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>剣運路惰</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>藩爵窪王</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R7</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>1/1年（100%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 55.0,160 55,160" fill="#7c3aed" opacity="0.15"/>
+  <polyline points="55.0,10.0" fill="none" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7</text>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この2テーマだけで100%カバー。推定学習時間: 7h</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">造園設計 最小セット（1/1テーマで100%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>正答肢</td><td>2</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100.0%;height:100%;background:#d97706;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">100.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>3h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #d97706;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 正答肢</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題2回・期待得点寄与 100.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R7</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 30分 + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（造園設計）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>正答肢</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R7</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>1/1年（100%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 55.0,160 55,160" fill="#d97706" opacity="0.15"/>
+  <polyline points="55.0,10.0" fill="none" stroke="#d97706" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7</text>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この1テーマだけで100%カバー。推定学習時間: 3h30m</div>
+</details>
+<h3>最小セットだけやった場合の期待点数</h3>
+<table><tr><th>科目</th><th>最小セット数</th><th>カバー率</th><th>推定学習時間</th><th>期待点数</th></tr>
+<tr><td style="color:#0369a1;font-weight:600">施工管理法</td><td>5/20</td><td>61%</td><td>7h30m</td><td>61点</td></tr>
+<tr><td style="color:#1e40af;font-weight:600">土木工学</td><td>15/30</td><td>62%</td><td>52h30m</td><td>62点</td></tr>
+<tr><td style="color:#be185d;font-weight:600">管工事設備</td><td>4/9</td><td>62%</td><td>14h</td><td>62点</td></tr>
+<tr><td style="color:#7c3aed;font-weight:600">電気通信</td><td>2/2</td><td>100%</td><td>7h</td><td>100点</td></tr>
+<tr><td style="color:#d97706;font-weight:600">造園設計</td><td>1/1</td><td>100%</td><td>3h30m</td><td>100点</td></tr>
+</table>
+<svg viewBox="0 0 700 300" style="width:100%;max-width:700px;margin:12px 0">
+  <text x="0" y="44" font-size="12" fill="#374151">施工管理法</text>
+  <rect x="100" y="30" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="30" width="302.6" height="22" fill="#0369a1" rx="4"/>
+  <text x="251.3" y="45" font-size="10" fill="#fff" text-anchor="middle">61%</text>
+  <text x="608" y="45" font-size="10" fill="#6b7280">残り 39%</text>
+  <text x="0" y="89" font-size="12" fill="#374151">土木工学</text>
+  <rect x="100" y="75" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="75" width="307.7" height="22" fill="#1e40af" rx="4"/>
+  <text x="253.8" y="90" font-size="10" fill="#fff" text-anchor="middle">62%</text>
+  <text x="608" y="90" font-size="10" fill="#6b7280">残り 38%</text>
+  <text x="0" y="134" font-size="12" fill="#374151">管工事設備</text>
+  <rect x="100" y="120" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="120" width="307.7" height="22" fill="#be185d" rx="4"/>
+  <text x="253.8" y="135" font-size="10" fill="#fff" text-anchor="middle">62%</text>
+  <text x="608" y="135" font-size="10" fill="#6b7280">残り 38%</text>
+  <text x="0" y="179" font-size="12" fill="#374151">電気通信</text>
+  <rect x="100" y="165" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="165" width="500.0" height="22" fill="#7c3aed" rx="4"/>
+  <text x="350.0" y="180" font-size="10" fill="#fff" text-anchor="middle">100%</text>
+  <text x="608" y="180" font-size="10" fill="#6b7280">残り 0%</text>
+  <text x="0" y="224" font-size="12" fill="#374151">造園設計</text>
+  <rect x="100" y="210" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="210" width="500.0" height="22" fill="#d97706" rx="4"/>
+  <text x="350.0" y="225" font-size="10" fill="#fff" text-anchor="middle">100%</text>
+  <text x="608" y="225" font-size="10" fill="#6b7280">残り 0%</text>
+</svg>
+<div class="warn">最小合格に必要な総学習時間: <strong>84h30m</strong>（過去問演習込み）</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map.html">← 学習深度マップ</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="study-todo.html">解くべき過去問リスト（年度別チェックリスト） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士1級 出題傾向 徹底分析 ｜ R7〜R7 ｜ Generated by Claude Code</footer>
+</body></html>
