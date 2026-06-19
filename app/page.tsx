@@ -746,6 +746,12 @@ export default function QuizPage() {
       'R7_': '86008', 'R6_': '86007', 'R5_': '86006', 'R4_': '86005',
       'R3_': '86004', 'R2_': '86003', 'R1_': '86002', 'H30_': '86001',
     };
+    // 電気通信工事 の場合は専用解説サイトに飛ばす (kakomonn は電気工事のみ)
+    if (examCategory === 'denkitsushin') {
+      const num = current.level === '1級' ? '1' : '2';
+      window.open(`https://dobokujira.com/${num}denkitsushin-pastproblems/`, '_blank');
+      return;
+    }
     const map = current.level === '1級' ? KAKOMON_MAP_1 : KAKOMON_MAP_2;
     const host = current.level === '1級' ? 'denkisekou1' : 'denkisekou2';
     const key = `${current.year}_${current.season || ''}`;
@@ -755,10 +761,59 @@ export default function QuizPage() {
     } else {
       window.open(`https://${host}.kakomonn.com/`, '_blank');
     }
-  }, [current]);
+  }, [current, examCategory]);
+
+  // 電気通信工事 dobokujira PDF URL 生成 (年度ごとに WP の uploads パスが違うので map)
+  const getDenkitsushinPdfUrl = useCallback((level: string, year: string, season: string, kind: 'mondai' | 'kaitou'): string | null => {
+    const num = level === '1級' ? '1' : '2';
+    // 年度+season ごとのアップロードパス
+    // 1級は AM=mondaiA / PM=mondaiB の分割、解答は1つ
+    // 2級は 前期=early / 後期=late、各々問題+解答
+    const ymMap1: Record<string, string> = {
+      R7: '2025/10', R6: '2024/09', R5: '2024/09', R4: '2024/09',
+      R3: '2024/09', R2: '2024/09', R1: '2024/09',
+    };
+    const ymMap2: Record<string, Record<string, string>> = {
+      R8: { 前期: '2026/06' },
+      R7: { 前期: '2025/06', 後期: '2026/01' },
+      R6: { 前期: '2024/09', 後期: '2025/06' },
+      R5: { 前期: '2024/09', 後期: '2024/09' },
+      R4: { 前期: '2024/09', 後期: '2025/11' },
+      R3: { 前期: '2024/09', 後期: '2024/09' },
+      R2: { 前期: '2024/09', 後期: '2024/09' },
+      R1: { 前期: '2024/09', 後期: '2024/09' },
+    };
+
+    if (num === '1') {
+      const ym = ymMap1[year];
+      if (!ym) return null;
+      if (kind === 'kaitou') {
+        return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_1denkitsushin_01_kaitou.pdf`;
+      }
+      // 問題: AM=mondaiA / PM=mondaiB
+      const suffix = season === 'PM' ? 'B' : 'A';
+      return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_1denkitsushin_01_mondai${suffix}.pdf`;
+    } else {
+      const periodKey = season === 'PM' || season === '後期' ? '後期' : '前期';
+      const ym = ymMap2[year]?.[periodKey];
+      if (!ym) return null;
+      const filePeriod = periodKey === '前期' ? 'early' : 'late';
+      return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_2denkitsushin_01_${filePeriod}_${kind}.pdf`;
+    }
+  }, []);
 
   const openProblemPdf = useCallback(() => {
     if (!current) return;
+    // 電気通信工事 の場合は dobokujira URL を直接生成
+    if (examCategory === 'denkitsushin') {
+      const url = getDenkitsushinPdfUrl(current.level, current.year, current.season || '', 'mondai');
+      if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の問題PDFは外部URL未登録。`);
+      }
+      return;
+    }
     const pdfName = current.source_pdf || current.source.replace(/\.txt$/, '.pdf');
     const key = `${current.level}_第一次/${pdfName}`;
     const url = pdfUrls.problem?.[key];
@@ -775,10 +830,20 @@ export default function QuizPage() {
       }
       openKakomon();
     }
-  }, [current, pdfUrls, openKakomon]);
+  }, [current, pdfUrls, openKakomon, examCategory, getDenkitsushinPdfUrl]);
 
   const openAnswerPdf = useCallback(() => {
     if (!current) return;
+    // 電気通信工事 の場合は dobokujira URL を直接生成
+    if (examCategory === 'denkitsushin') {
+      const url = getDenkitsushinPdfUrl(current.level, current.year, current.season || '', 'kaitou');
+      if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      } else {
+        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の解答PDFは外部URL未登録。`);
+      }
+      return;
+    }
     const denki = current.level === '1級' ? '1denki' : '2denki';
     // 1級は AM/PM (午前/午後)、2級は 前期=AM=early / 後期=PM=late
     let suffix = '';
@@ -2442,9 +2507,12 @@ ${topThemes}
               detail1: '/api/report/施工管理1級_出題傾向_徹底分析/index.html',
               detail2: '/api/report/施工管理2級_出題傾向_徹底分析/index.html',
             } : {
-              easy1_1: null, easy1_2: null, easy2_1: null, easy2_2: null,
+              easy1_1: '/api/report/電気通信工事施工管理技士1級_簡易版.html',
+              easy1_2: '/api/report/電気通信工事施工管理技士2級_簡易版.html',
+              easy2_1: '/api/report/電気通信工事施工管理技士1級_2次_簡易版.html',
+              easy2_2: '/api/report/電気通信工事施工管理技士2級_2次_簡易版.html',
               detail1: '/api/report/電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html',
-              detail2: null,  // 2級は未生成
+              detail2: '/api/report/電気通信工事施工管理技士2級_出題傾向_徹底分析/index.html',
             };
             const linkCls = (url: string | null, color: string) => url
               ? `bg-white/20 hover:bg-${color}-200 hover:text-${color}-900 px-2 py-0.5 rounded font-bold text-xs`

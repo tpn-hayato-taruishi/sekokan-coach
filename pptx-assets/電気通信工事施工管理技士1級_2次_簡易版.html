@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>電気通信工事施工管理技士 1級 第二次検定 簡易版</title>
+<style>
+body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; max-width: 980px; margin: 20px auto; padding: 0 20px; line-height: 1.7; color: #1e293b; }
+h1 { color: #be185d; border-bottom: 3px solid #be185d; padding-bottom: 8px; }
+h2 { color: #db2777; border-left: 5px solid #db2777; padding-left: 12px; margin-top: 32px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+table th, table td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+table th { background: #fce7f3; }
+.r { text-align: right; font-weight: 700; color: #be185d; }
+.chip { display: inline-block; background: #fce7f3; color: #be185d; padding: 3px 10px; border-radius: 12px; font-size: 0.85em; margin: 2px; }
+.note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 16px 0; border-radius: 4px; }
+.exp-tips { background: #ecfdf5; border-left: 4px solid #10b981; padding: 12px; margin: 16px 0; border-radius: 4px; }
+ol li { margin-bottom: 6px; }
+</style>
+</head><body>
+<h1>電気通信工事施工管理技士 1級 第二次検定 簡易版</h1>
+<p>第二次検定は記述式中心で過去問の機械抽出が難しいため、構造・戦略・経験記述ポイントをまとめた静的レポートです。</p>
+
+<h2>📋 試験構成</h2>
+<table>
+<tr><th>問題</th><th>分野</th><th>形式</th><th>配点</th><th>内容</th></tr>
+<tr><td>問題1</td><td><strong>経験記述</strong></td><td>記述</td><td class='r'>約30-40点</td><td>実際に従事した電気通信工事について、安全管理・品質管理・工程管理から指定テーマで記述</td></tr>
+<tr><td>問題2</td><td><strong>工程管理</strong></td><td>穴埋め+ネットワーク工程表</td><td class='r'>約20点</td><td>ネットワーク工程表 (CP、TF、FF、最早/最遅) 計算</td></tr>
+<tr><td>問題3</td><td><strong>電気通信設備 施工</strong></td><td>穴埋め+選択</td><td class='r'>約20点</td><td>LAN/光ファイバ/アンテナ/基地局/管路敷設の施工手順</td></tr>
+<tr><td>問題4</td><td><strong>法規</strong></td><td>穴埋め</td><td class='r'>約20点</td><td>電気通信事業法・電波法・有線電気通信法・建設業法・労働安全衛生法</td></tr>
+<tr><td>問題5</td><td><strong>応用問題 (安全/品質)</strong></td><td>穴埋め+記述</td><td class='r'>約20点</td><td>現場での安全管理・品質管理ケーススタディ</td></tr>
+</table>
+<p>試験時間: <strong>180分</strong> / 合格基準: <strong>60%以上</strong></p>
+
+<h2>✍ 経験記述のコツ (問題1)</h2>
+<div class="exp-tips">
+<strong>記述で落としやすい3要素</strong>:
+<ol>
+<li><strong>工事概要が薄い</strong>: 工期・規模・特殊条件 (高所/狭所/夜間/活線)・自分の役職 を端的に</li>
+<li><strong>"したこと" が抽象</strong>: 「安全教育」ではなく「日次KY活動 / 月例安全大会 / 朝礼で当日作業の危険ポイントを共有」のような具体行動</li>
+<li><strong>結果不明</strong>: 「災害ゼロで完工」「品質検査 1発合格」「工程 5日前倒し」のように数値で締める</li>
+</ol>
+</div>
+<p>頻出キーワード: <span class='chip'>KY活動</span> <span class='chip'>リスクアセスメント</span> <span class='chip'>5S</span> <span class='chip'>TBM</span> <span class='chip'>ヒヤリハット</span> <span class='chip'>災害防止</span></p>
+
+<h2>🎯 法規 (問題4) の暗記ポイント</h2>
+<ul>
+<li><strong>電気通信事業法</strong>: 工事担任者、認定電気通信工事担任者の業務範囲</li>
+<li><strong>電波法</strong>: 無線局免許、無線設備工事担任者</li>
+<li><strong>有線電気通信法</strong>: 設置届、工事の制限</li>
+<li><strong>建設業法</strong>: 主任技術者・監理技術者の専任要件、下請契約</li>
+<li><strong>労働安全衛生法</strong>: 安全衛生管理体制、特別教育</li>
+</ul>
+
+<h2>📊 工程管理 (問題2) のCP計算</h2>
+<ol>
+<li>ネットワーク工程表で 各イベントの最早開始時刻 (EST) を順方向計算</li>
+<li>最遅完了時刻 (LCT) を逆方向計算</li>
+<li>余裕日数 = LCT - EST、余裕がゼロの経路がクリティカルパス</li>
+<li>TF (全余裕): その作業の遅延が後続に影響しない範囲</li>
+<li>FF (自由余裕): 後続作業の最早開始に影響しない範囲</li>
+</ol>
+
+<div class="note">
+<strong>合格戦略</strong>: 問題1 (経験記述) は配点高×減点制。
+過去5年分の出題テーマ (安全・品質・工程) のテンプレ3本を事前に準備し、
+当日テーマに合わせて当てはめるのが鉄則。
+</div>
+
+<p style="color: #94a3b8; font-size: 0.85em;">参考: <a href="../電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html">徹底分析レポート</a></p>
+</body></html>
