@@ -229,6 +229,8 @@ export default function QuizPage() {
     try { return JSON.parse(localStorage.getItem('sekokan-subj') || '{}'); } catch { return {}; }
   });
   const [showReport, setShowReport] = useState(false);
+  // ランディング画面 (試験選択) を最初に表示
+  const [showLanding, setShowLanding] = useState(true);
   // TOP画面: 合格ロードマップを常に先頭表示 (アクセス毎)
   const [showWorkflow, setShowWorkflow] = useState(true);
   // ワークフロー対象: 級×検定 (4パターン)
@@ -1892,13 +1894,133 @@ ${
     );
   }
 
+  // === ランディング画面: 試験種別・級・検定を選んでスタート ===
+  if (showLanding) {
+    const examOptions: { v: ExamType; label: string; desc: string; icon: string }[] = [
+      { v: '2級_1次', label: '2級 第一次検定', desc: '四肢択一 (基礎)', icon: '🟢' },
+      { v: '2級_2次', label: '2級 第二次検定', desc: '記述+選択 (基礎)', icon: '🟡' },
+      { v: '1級_1次', label: '1級 第一次検定', desc: '四肢択一 (上位)', icon: '🔵' },
+      { v: '1級_2次', label: '1級 第二次検定', desc: '記述+応用 (上位)', icon: '🟣' },
+    ];
+    return (
+      <div className="min-h-screen w-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white flex flex-col items-center justify-center px-6 py-12">
+        <div className="max-w-3xl w-full">
+          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-center mb-3">
+            ⚡ 施工管理技士<br className="md:hidden" />過去問演習
+          </h1>
+          <p className="text-center text-sm md:text-base opacity-80 mb-10">
+            電気工事 / 電気通信工事 × 1級 / 2級 × 第一次 / 第二次 — 5,400問+ の過去問を AI と一緒に解く
+          </p>
+
+          {/* Step 1: 試験種別 */}
+          <div className="mb-8">
+            <div className="text-xs uppercase tracking-widest opacity-60 mb-3">Step 1. 受験する試験</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button
+                onClick={() => setExamCategory('denki')}
+                className={`group relative p-5 rounded-xl border-2 transition text-left ${
+                  examCategory === 'denki'
+                    ? 'bg-yellow-400 text-yellow-900 border-yellow-300 shadow-2xl'
+                    : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
+                }`}
+              >
+                <div className="text-3xl mb-1">⚡</div>
+                <div className="font-bold text-lg">電気工事施工管理技士</div>
+                <div className="text-xs opacity-75 mt-1">3,906問 (H20〜R8前期) — Bedrock Claude AI解説付</div>
+              </button>
+              <button
+                onClick={() => setExamCategory('denkitsushin')}
+                className={`group relative p-5 rounded-xl border-2 transition text-left ${
+                  examCategory === 'denkitsushin'
+                    ? 'bg-yellow-400 text-yellow-900 border-yellow-300 shadow-2xl'
+                    : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
+                }`}
+              >
+                <div className="text-3xl mb-1">📡</div>
+                <div className="font-bold text-lg">電気通信工事施工管理技士</div>
+                <div className="text-xs opacity-75 mt-1">1,514問 (R1〜R8前期) — 新試験 (R元年〜)</div>
+              </button>
+            </div>
+          </div>
+
+          {/* Step 2: 級×検定 */}
+          <div className="mb-8">
+            <div className="text-xs uppercase tracking-widest opacity-60 mb-3">Step 2. 受験する区分</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {examOptions.map((opt) => (
+                <button
+                  key={opt.v}
+                  onClick={() => setExamType(opt.v)}
+                  className={`p-4 rounded-lg border-2 transition text-center ${
+                    examType === opt.v
+                      ? 'bg-emerald-400 text-emerald-900 border-emerald-300 shadow-xl'
+                      : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
+                  }`}
+                >
+                  <div className="text-2xl mb-1">{opt.icon}</div>
+                  <div className="font-bold text-sm">{opt.label}</div>
+                  <div className="text-[10px] opacity-75 mt-1">{opt.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Step 3: スタート */}
+          <div className="flex flex-col sm:flex-row gap-3 mt-10">
+            <button
+              onClick={() => { setShowLanding(false); setShowWorkflow(true); }}
+              className="flex-1 px-6 py-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 rounded-xl font-black text-lg shadow-2xl transition"
+            >
+              🗺 合格ロードマップから始める
+            </button>
+            <button
+              onClick={() => { setShowLanding(false); setShowWorkflow(false); }}
+              className="flex-1 px-6 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-black text-lg shadow-2xl transition"
+            >
+              ▶ 直接 演習を始める
+            </button>
+          </div>
+
+          <div className="mt-8 text-center text-[11px] opacity-50">
+            選択内容はブラウザに保存されます (localStorage)。次回アクセス時は最後の選択が復元されます。
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (showWorkflow) {
     return (
       <div className="min-h-screen w-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col lg:h-screen lg:overflow-hidden">
         {/* ヘッダー (固定) */}
         <header className="bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-8 py-4 shadow-lg flex items-center justify-between flex-shrink-0">
           <div className="flex-1">
-            <h1 className="text-2xl font-black tracking-tight">⚡ 電気工事施工管理技士 — 合格ロードマップ</h1>
+            <div className="flex items-center gap-3 flex-wrap">
+              <button
+                onClick={() => setShowLanding(true)}
+                className="text-xs bg-white/15 hover:bg-white/25 px-2 py-1 rounded font-bold"
+                title="ランディング画面に戻る"
+              >
+                ← 試験選択
+              </button>
+              <h1 className="text-2xl font-black tracking-tight">⚡ {examLabel}施工管理技士 — 合格ロードマップ</h1>
+              <div className="flex bg-white/10 rounded overflow-hidden text-xs font-bold">
+                <button
+                  onClick={() => setExamCategory('denki')}
+                  className={`px-3 py-1.5 ${examCategory === 'denki' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+                  title="電気工事施工管理技士に切替"
+                >
+                  ⚡ 電気工事
+                </button>
+                <button
+                  onClick={() => setExamCategory('denkitsushin')}
+                  className={`px-3 py-1.5 ${examCategory === 'denkitsushin' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+                  title="電気通信工事施工管理技士に切替"
+                >
+                  📡 電気通信工事
+                </button>
+              </div>
+            </div>
             {/* 4パターン切替 (1級/2級 × 1次/2次) */}
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs opacity-80">対象:</span>
