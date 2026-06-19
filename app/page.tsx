@@ -421,8 +421,23 @@ export default function QuizPage() {
 
   const activeFilterCount = [filterLevel, filterSubject, filterTheme, filterSim, filterFreq].filter(Boolean).length;
 
+  // 試験種別の切替 (電気工事 / 電気通信工事)
+  type ExamCategory = 'denki' | 'denkitsushin';
+  const [examCategory, setExamCategory] = useState<ExamCategory>(() => {
+    if (typeof window === 'undefined') return 'denki';
+    const saved = localStorage.getItem('sekokan-exam-category');
+    return (saved === 'denkitsushin' ? 'denkitsushin' : 'denki');
+  });
   useEffect(() => {
-    fetch('/data/quiz.json')
+    try { localStorage.setItem('sekokan-exam-category', examCategory); } catch {}
+  }, [examCategory]);
+
+  const examLabel = examCategory === 'denki' ? '電気工事' : '電気通信工事';
+  const quizJsonUrl = examCategory === 'denki' ? '/data/quiz.json' : '/data/quiz_denkitsushin.json';
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(quizJsonUrl)
       .then((r) => r.json())
       .then((d: QuizData) => {
         setData(d);
@@ -437,7 +452,7 @@ export default function QuizPage() {
       .then((r) => r.json())
       .then((m: PdfUrlMap) => setPdfUrls(m))
       .catch(() => {});
-  }, []);
+  }, [quizJsonUrl]);
 
   // 頻出度フィルタ判定 (再宣言を避けるため先に置く)
   const themeRanksAll = useMemo(() => {
@@ -2251,9 +2266,27 @@ ${topThemes}
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col lg:h-screen lg:overflow-hidden">
       <header className="bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-6 py-2 shadow flex-shrink-0 flex items-center justify-between">
-        <div>
-          <h1 className="text-lg font-bold leading-tight">⚡ 電気工事施工管理技士 過去問演習</h1>
-          <p className="text-[10px] opacity-80">1級・2級 第1次検定 / Bedrock Claude AI解説</p>
+        <div className="flex items-center gap-3">
+          <div>
+            <h1 className="text-lg font-bold leading-tight">⚡ {examLabel}施工管理技士 過去問演習</h1>
+            <p className="text-[10px] opacity-80">1級・2級 第1次検定 / Bedrock Claude AI解説</p>
+          </div>
+          <div className="flex bg-white/10 rounded overflow-hidden text-xs font-bold">
+            <button
+              onClick={() => setExamCategory('denki')}
+              className={`px-3 py-1.5 ${examCategory === 'denki' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+              title="電気工事施工管理技士に切替"
+            >
+              ⚡ 電気工事
+            </button>
+            <button
+              onClick={() => setExamCategory('denkitsushin')}
+              className={`px-3 py-1.5 ${examCategory === 'denkitsushin' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+              title="電気通信工事施工管理技士に切替"
+            >
+              📡 電気通信工事
+            </button>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <button
