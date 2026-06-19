@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>最小合格セット（60%ライン突破） - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">最小合格セット（60%ライン突破）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map.html">← 学習深度マップ</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="study-todo.html">解くべき過去問リスト（年度別チェックリスト） →</a></span></nav>
+<section id="minimum-pass">
+  <h2>最小合格セット（60%ライン突破）</h2>
+<p><strong>これだけやれば受かる</strong>: 各科目で頻出テーマを上から積み上げ、累積カバー率が60%に達する最小セットを特定します。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.1em">電気通信工学等 最小セット（4/7テーマで72%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>情報工学:ネットワーク基礎</td><td>7</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:15.2%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">15.2%</span></div></td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>4h</td></tr>
+<tr><td>2</td><td>無線工学:アンテナ基礎</td><td>9</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:34.8%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">34.8%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td></tr>
+<tr><td>3</td><td>電気工学:電気回路基礎</td><td>9</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:54.3%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">54.3%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td></tr>
+<tr><td>4</td><td>無線工学:電波伝搬</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:71.7%;height:100%;background:#7c3aed;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">71.7%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 情報工学:ネットワーク基礎</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">出題7回・期待得点寄与 15.2%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R3前期, R4前期, R6前期, R6後期, R7前期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 暗記カード作成→反復</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 4h（過去問演習 3h30m + 基礎学習 30分）</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 無線工学:アンテナ基礎</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題9回・期待得点寄与 19.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1後期, R2, R3前期, R4後期, R5前期, R6前期, R6後期, R7前期, R7後期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h30m（過去問演習 4h30m + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 電気工学:電気回路基礎</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題9回・期待得点寄与 19.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R2, R3後期, R4後期, R5前期, R6前期, R6後期, R7前期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h30m（過去問演習 4h30m + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>4. 無線工学:電波伝搬</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 17.4%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1後期, R2, R3後期, R4後期, R5後期, R7前期, R7後期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h（過去問演習 4h + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（電気通信工学等）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>情報工学:ネットワーク基礎</strong>: 選択式・穴埋め問題（暗記で即答可能）</li>
+<li><strong>無線工学:アンテナ基礎</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>電気工学:電気回路基礎</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>無線工学:電波伝搬</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R1前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R1後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R2</td><td>5</td><td>3</td><td>60%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R4前期</td><td>4</td><td>1</td><td>25%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R4後期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5後期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6前期</td><td>5</td><td>3</td><td>60%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6後期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7前期</td><td>5</td><td>4</td><td>80%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R8前期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>13/14年（93%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 102.7,10.0 150.4,70.0 198.1,60.0 245.8,60.0 293.5,122.5 341.2,47.5 388.8,10.0 436.5,10.0 484.2,70.0 531.9,47.5 579.6,40.0 627.3,10.0 675.0,47.5 675.0,160 55,160" fill="#7c3aed" opacity="0.15"/>
+  <polyline points="55.0,10.0 102.7,10.0 150.4,70.0 198.1,60.0 245.8,60.0 293.5,122.5 341.2,47.5 388.8,10.0 436.5,10.0 484.2,70.0 531.9,47.5 579.6,40.0 627.3,10.0 675.0,47.5" fill="none" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <circle cx="102.7" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="150.4" cy="70.0" r="3" fill="#16a34a"/>
+  <circle cx="198.1" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="245.8" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="293.5" cy="122.5" r="3" fill="#ef4444"/>
+  <text x="293.5" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <circle cx="341.2" cy="47.5" r="3" fill="#16a34a"/>
+  <circle cx="388.8" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="436.5" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="484.2" cy="70.0" r="3" fill="#16a34a"/>
+  <circle cx="531.9" cy="47.5" r="3" fill="#16a34a"/>
+  <text x="531.9" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R6後期</text>
+  <circle cx="579.6" cy="40.0" r="3" fill="#16a34a"/>
+  <circle cx="627.3" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="675.0" cy="47.5" r="3" fill="#16a34a"/>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この4テーマだけで72%カバー。推定学習時間: 26h</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0ea5e9;padding:8px 0;font-size:1.1em">電気通信設備 最小セット（4/6テーマで76%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>情報設備</td><td>6</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:14.6%;height:100%;background:#0ea5e9;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">14.6%</span></div></td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>3h30m</td></tr>
+<tr><td>2</td><td>セキュリティ設備</td><td>10</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:39.0%;height:100%;background:#0ea5e9;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">39.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>8h</td></tr>
+<tr><td>3</td><td>ネットワーク設備</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:58.5%;height:100%;background:#0ea5e9;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">58.5%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h</td></tr>
+<tr><td>4</td><td>有線通信設備</td><td>7</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:75.6%;height:100%;background:#0ea5e9;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">75.6%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>6h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #0ea5e9;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 情報設備</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">出題6回・期待得点寄与 14.6%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R4前期, R6前期, R7前期, R7後期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 暗記カード作成→反復</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 3h30m（過去問演習 3h + 基礎学習 30分）</p>
+</div>
+<div style="border-left:3px solid #0ea5e9;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. セキュリティ設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題10回・期待得点寄与 24.4%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R2, R3前期, R5前期, R5後期, R6前期, R6後期, R7前期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 8h（過去問演習 5h + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #0ea5e9;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. ネットワーク設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 19.5%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1後期, R2, R3前期, R3後期, R4後期, R6前期, R7後期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h（過去問演習 4h + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #0ea5e9;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>4. 有線通信設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題7回・期待得点寄与 17.1%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R2, R3前期, R4前期, R4後期, R5前期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 6h30m（過去問演習 3h30m + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（電気通信設備）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>情報設備</strong>: 選択式・穴埋め問題（暗記で即答可能）</li>
+<li><strong>セキュリティ設備</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>ネットワーク設備</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>有線通信設備</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R1前期</td><td>3</td><td>3</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R1後期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R2</td><td>3</td><td>3</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3前期</td><td>3</td><td>3</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3後期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R5後期</td><td>3</td><td>1</td><td>33%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R6前期</td><td>5</td><td>3</td><td>60%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R6後期</td><td>2</td><td>1</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R7前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R8前期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>12/14年（86%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 102.7,47.5 150.4,10.0 198.1,10.0 245.8,10.0 293.5,10.0 341.2,60.0 388.8,10.0 436.5,110.0 484.2,70.0 531.9,85.0 579.6,60.0 627.3,60.0 675.0,47.5 675.0,160 55,160" fill="#0ea5e9" opacity="0.15"/>
+  <polyline points="55.0,10.0 102.7,47.5 150.4,10.0 198.1,10.0 245.8,10.0 293.5,10.0 341.2,60.0 388.8,10.0 436.5,110.0 484.2,70.0 531.9,85.0 579.6,60.0 627.3,60.0 675.0,47.5" fill="none" stroke="#0ea5e9" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <circle cx="102.7" cy="47.5" r="3" fill="#16a34a"/>
+  <circle cx="150.4" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="198.1" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="245.8" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="293.5" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="293.5" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <circle cx="341.2" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="388.8" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="436.5" cy="110.0" r="3" fill="#ef4444"/>
+  <circle cx="484.2" cy="70.0" r="3" fill="#16a34a"/>
+  <circle cx="531.9" cy="85.0" r="3" fill="#ef4444"/>
+  <text x="531.9" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R6後期</text>
+  <circle cx="579.6" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="627.3" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="675.0" cy="47.5" r="3" fill="#16a34a"/>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この4テーマだけで76%カバー。推定学習時間: 25h</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.1em">設計施工 最小セット（2/4テーマで70%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>施工管理:施工要領</td><td>10</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:37.0%;height:100%;background:#059669;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">37.0%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>8h</td></tr>
+<tr><td>2</td><td>施工管理:試験測定</td><td>9</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:70.4%;height:100%;background:#059669;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">70.4%</span></div></td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #059669;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 施工管理:施工要領</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題10回・期待得点寄与 37.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1後期, R3前期, R3後期, R4前期, R4後期, R5前期, R5後期, R6前期, R6後期, R7前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 8h（過去問演習 5h + 基礎学習 3h）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 施工管理:試験測定</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">出題9回・期待得点寄与 33.3%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R3前期, R4前期, R4後期, R5前期, R6前期, R6後期, R7後期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 公式導出→応用演習→過去問3周</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h30m（過去問演習 4h30m + 基礎学習 3h）</p>
+</div>
+<h4>最小セットの問題例（設計施工）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>施工管理:施工要領</strong>: 応用計算問題（公式適用＋条件整理）</li>
+<li><strong>施工管理:試験測定</strong>: 応用計算問題（公式適用＋条件整理）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R1前期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R1後期</td><td>2</td><td>1</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr style="background:#fef2f2"><td>R2</td><td>2</td><td>0</td><td>0%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R3前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3後期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R5後期</td><td>2</td><td>1</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R6前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7前期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7後期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R8前期</td><td>2</td><td>1</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>10/14年（71%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 102.7,85.0 150.4,160.0 198.1,60.0 245.8,10.0 293.5,60.0 341.2,10.0 388.8,60.0 436.5,85.0 484.2,10.0 531.9,10.0 579.6,10.0 627.3,10.0 675.0,85.0 675.0,160 55,160" fill="#059669" opacity="0.15"/>
+  <polyline points="55.0,10.0 102.7,85.0 150.4,160.0 198.1,60.0 245.8,10.0 293.5,60.0 341.2,10.0 388.8,60.0 436.5,85.0 484.2,10.0 531.9,10.0 579.6,10.0 627.3,10.0 675.0,85.0" fill="none" stroke="#059669" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <circle cx="102.7" cy="85.0" r="3" fill="#ef4444"/>
+  <circle cx="150.4" cy="160.0" r="3" fill="#ef4444"/>
+  <circle cx="198.1" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="245.8" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="293.5" cy="60.0" r="3" fill="#16a34a"/>
+  <text x="293.5" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <circle cx="341.2" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="388.8" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="436.5" cy="85.0" r="3" fill="#ef4444"/>
+  <circle cx="484.2" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="531.9" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="531.9" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R6後期</text>
+  <circle cx="579.6" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="627.3" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="675.0" cy="85.0" r="3" fill="#ef4444"/>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この2テーマだけで70%カバー。推定学習時間: 15h30m</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.1em">施工管理法 最小セット（3/4テーマで75%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>品質管理</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:25.0%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">25.0%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td></tr>
+<tr><td>2</td><td>安全管理</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:50.0%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">50.0%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td></tr>
+<tr><td>3</td><td>工程管理:ネットワーク</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:75.0%;height:100%;background:#1e40af;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">75.0%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 品質管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 25.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R2, R3前期, R4前期, R4後期, R5前期, R5後期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 5h（過去問演習 4h + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 安全管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 25.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R2, R3前期, R3後期, R5後期, R6前期, R6後期, R7前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 5h（過去問演習 4h + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 工程管理:ネットワーク</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 25.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R3後期, R4後期, R5前期, R6前期, R6後期, R7前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 5h（過去問演習 4h + 基礎学習 1h）</p>
+</div>
+<h4>最小セットの問題例（施工管理法）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>品質管理</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>安全管理</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>工程管理:ネットワーク</strong>: パターン計算問題（解法テンプレートで対応）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R1前期</td><td>3</td><td>3</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R1後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R2</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4前期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R4後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R7後期</td><td>1</td><td>0</td><td>0%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr style="background:#fef2f2"><td>R8前期</td><td>1</td><td>0</td><td>0%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>12/14年（86%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,10.0 102.7,60.0 150.4,60.0 198.1,10.0 245.8,60.0 293.5,10.0 341.2,10.0 388.8,60.0 436.5,10.0 484.2,10.0 531.9,60.0 579.6,60.0 627.3,160.0 675.0,160.0 675.0,160 55,160" fill="#1e40af" opacity="0.15"/>
+  <polyline points="55.0,10.0 102.7,60.0 150.4,60.0 198.1,10.0 245.8,60.0 293.5,10.0 341.2,10.0 388.8,60.0 436.5,10.0 484.2,10.0 531.9,60.0 579.6,60.0 627.3,160.0 675.0,160.0" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <circle cx="55.0" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <circle cx="102.7" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="150.4" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="198.1" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="245.8" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="293.5" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="293.5" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R4前期</text>
+  <circle cx="341.2" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="388.8" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="436.5" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="484.2" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="531.9" cy="60.0" r="3" fill="#16a34a"/>
+  <text x="531.9" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R6後期</text>
+  <circle cx="579.6" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="627.3" cy="160.0" r="3" fill="#ef4444"/>
+  <circle cx="675.0" cy="160.0" r="3" fill="#ef4444"/>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この3テーマだけで75%カバー。推定学習時間: 15h</div>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">法規 最小セット（3/5テーマで72%カバー）</summary>
+<table><tr><th>#</th><th>テーマ</th><th>出題数</th><th>累積カバー率</th><th>深度</th><th>推定学習時間</th></tr>
+<tr><td>1</td><td>電気通信事業法</td><td>9</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:22.5%;height:100%;background:#d97706;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">22.5%</span></div></td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>5h</td></tr>
+<tr><td>2</td><td>労働安全衛生法</td><td>12</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:52.5%;height:100%;background:#d97706;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">52.5%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>7h</td></tr>
+<tr><td>3</td><td>建設業法</td><td>8</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:100px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:72.5%;height:100%;background:#d97706;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">72.5%</span></div></td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td></tr>
+</table>
+<h4>テーマ別 学習方法と期待点数</h4>
+<div style="border-left:3px solid #d97706;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>1. 電気通信事業法</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">出題9回・期待得点寄与 22.5%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R2, R4前期, R4後期, R5前期, R5後期, R6前期, R6後期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 暗記カード作成→反復</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 5h（過去問演習 4h30m + 基礎学習 30分）</p>
+</div>
+<div style="border-left:3px solid #d97706;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>2. 労働安全衛生法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題12回・期待得点寄与 30.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R2, R3前期, R4前期, R4後期, R5前期, R5後期, R6前期, R6後期, R7前期, R7後期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 7h（過去問演習 6h + 基礎学習 1h）</p>
+</div>
+<div style="border-left:3px solid #d97706;padding:6px 12px;margin:6px 0;background:#f8fafc">
+<strong>3. 建設業法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">出題8回・期待得点寄与 20.0%</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>出題年:</strong> R1前期, R1後期, R2, R4後期, R5後期, R6前期, R7前期, R8前期</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習方法:</strong> 解法パターン3回反復→時間計測演習</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>学習時間:</strong> 5h（過去問演習 4h + 基礎学習 1h）</p>
+</div>
+<h4>最小セットの問題例（法規）</h4>
+<p style="font-size:0.92em">この最小セットでカバーできる問題タイプ:</p>
+<ul class="fz9">
+<li><strong>電気通信事業法</strong>: 選択式・穴埋め問題（暗記で即答可能）</li>
+<li><strong>労働安全衛生法</strong>: パターン計算問題（解法テンプレートで対応）</li>
+<li><strong>建設業法</strong>: パターン計算問題（解法テンプレートで対応）</li>
+</ul>
+<h4>年度別シミュレーション:「最小セットだけで受験したら」</h4>
+<p style="font-size:0.88em;color:#6b7280">各年度の出題のうち、最小セットに含まれるテーマからの出題だけで何点取れたかを推定。</p>
+<table class="fz88"><tr><th>年度</th><th>全出題数</th><th>カバー出題数</th><th>カバー率</th><th>合否判定</th></tr>
+<tr><td>R1前期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R1後期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R2</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R3前期</td><td>1</td><td>1</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R3後期</td><td>0</td><td>0</td><td>0%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr style="background:#fef2f2"><td>R4前期</td><td>4</td><td>2</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R4後期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R5後期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6前期</td><td>4</td><td>3</td><td>75%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R6後期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr><td>R7前期</td><td>2</td><td>2</td><td>100%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+<tr style="background:#fef2f2"><td>R7後期</td><td>2</td><td>1</td><td>50%</td><td style="color:#dc2626;font-weight:700">不合格</td></tr>
+<tr><td>R8前期</td><td>3</td><td>2</td><td>67%</td><td style="color:#16a34a;font-weight:700">合格</td></tr>
+</table>
+<div class="note">最小セットでの合格率: <strong>11/13年（85%）</strong></div>
+<svg viewBox="0 0 700 200" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="150" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="70" x2="680" y2="70" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="67" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polygon points="55.0,47.5 106.7,60.0 158.3,47.5 210.0,10.0 261.7,85.0 313.3,47.5 365.0,60.0 416.7,47.5 468.3,47.5 520.0,10.0 571.7,10.0 623.3,85.0 675.0,60.0 675.0,160 55,160" fill="#d97706" opacity="0.15"/>
+  <polyline points="55.0,47.5 106.7,60.0 158.3,47.5 210.0,10.0 261.7,85.0 313.3,47.5 365.0,60.0 416.7,47.5 468.3,47.5 520.0,10.0 571.7,10.0 623.3,85.0 675.0,60.0" fill="none" stroke="#d97706" stroke-width="2"/>
+  <circle cx="55.0" cy="47.5" r="3" fill="#16a34a"/>
+  <text x="55.0" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <circle cx="106.7" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="158.3" cy="47.5" r="3" fill="#16a34a"/>
+  <circle cx="210.0" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="261.7" cy="85.0" r="3" fill="#ef4444"/>
+  <circle cx="313.3" cy="47.5" r="3" fill="#16a34a"/>
+  <text x="313.3" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R4後期</text>
+  <circle cx="365.0" cy="60.0" r="3" fill="#16a34a"/>
+  <circle cx="416.7" cy="47.5" r="3" fill="#16a34a"/>
+  <circle cx="468.3" cy="47.5" r="3" fill="#16a34a"/>
+  <circle cx="520.0" cy="10.0" r="3" fill="#16a34a"/>
+  <circle cx="571.7" cy="10.0" r="3" fill="#16a34a"/>
+  <text x="571.7" y="174" font-size="8" fill="#9ca3af" text-anchor="middle">R7前期</text>
+  <circle cx="623.3" cy="85.0" r="3" fill="#ef4444"/>
+  <circle cx="675.0" cy="60.0" r="3" fill="#16a34a"/>
+  <text x="25" y="100" font-size="9" fill="#6b7280" transform="rotate(-90,25,100)">カバー率%</text>
+</svg>
+<div class="tip">この3テーマだけで72%カバー。推定学習時間: 17h</div>
+</details>
+<h3>最小セットだけやった場合の期待点数</h3>
+<table><tr><th>科目</th><th>最小セット数</th><th>カバー率</th><th>推定学習時間</th><th>期待点数</th></tr>
+<tr><td style="color:#7c3aed;font-weight:600">電気通信工学等</td><td>4/7</td><td>72%</td><td>26h</td><td>72点</td></tr>
+<tr><td style="color:#0ea5e9;font-weight:600">電気通信設備</td><td>4/6</td><td>76%</td><td>25h</td><td>76点</td></tr>
+<tr><td style="color:#059669;font-weight:600">設計施工</td><td>2/4</td><td>70%</td><td>15h30m</td><td>70点</td></tr>
+<tr><td style="color:#1e40af;font-weight:600">施工管理法</td><td>3/4</td><td>75%</td><td>15h</td><td>75点</td></tr>
+<tr><td style="color:#d97706;font-weight:600">法規</td><td>3/5</td><td>72%</td><td>17h</td><td>72点</td></tr>
+</table>
+<svg viewBox="0 0 700 300" style="width:100%;max-width:700px;margin:12px 0">
+  <text x="0" y="44" font-size="12" fill="#374151">電気通信工学等</text>
+  <rect x="100" y="30" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="30" width="358.7" height="22" fill="#7c3aed" rx="4"/>
+  <text x="279.3" y="45" font-size="10" fill="#fff" text-anchor="middle">72%</text>
+  <text x="608" y="45" font-size="10" fill="#6b7280">残り 28%</text>
+  <text x="0" y="89" font-size="12" fill="#374151">電気通信設備</text>
+  <rect x="100" y="75" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="75" width="378.0" height="22" fill="#0ea5e9" rx="4"/>
+  <text x="289.0" y="90" font-size="10" fill="#fff" text-anchor="middle">76%</text>
+  <text x="608" y="90" font-size="10" fill="#6b7280">残り 24%</text>
+  <text x="0" y="134" font-size="12" fill="#374151">設計施工</text>
+  <rect x="100" y="120" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="120" width="351.9" height="22" fill="#059669" rx="4"/>
+  <text x="275.9" y="135" font-size="10" fill="#fff" text-anchor="middle">70%</text>
+  <text x="608" y="135" font-size="10" fill="#6b7280">残り 30%</text>
+  <text x="0" y="179" font-size="12" fill="#374151">施工管理法</text>
+  <rect x="100" y="165" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="165" width="375.0" height="22" fill="#1e40af" rx="4"/>
+  <text x="287.5" y="180" font-size="10" fill="#fff" text-anchor="middle">75%</text>
+  <text x="608" y="180" font-size="10" fill="#6b7280">残り 25%</text>
+  <text x="0" y="224" font-size="12" fill="#374151">法規</text>
+  <rect x="100" y="210" width="500" height="22" fill="#e5e7eb" rx="4"/>
+  <rect x="100" y="210" width="362.5" height="22" fill="#d97706" rx="4"/>
+  <text x="281.2" y="225" font-size="10" fill="#fff" text-anchor="middle">72%</text>
+  <text x="608" y="225" font-size="10" fill="#6b7280">残り 28%</text>
+</svg>
+<div class="warn">最小合格に必要な総学習時間: <strong>98h30m</strong>（過去問演習込み）</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="depth-map.html">← 学習深度マップ</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="study-todo.html">解くべき過去問リスト（年度別チェックリスト） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

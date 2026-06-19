@@ -1682,7 +1682,9 @@ ${
     // 簡易版を優先 (要点だけまとめた1ページ版)。第二次検定なら 2次用レポート
     const lvl = filterLevel === '1級' ? '1級' : '2級';
     const is2nd = examType === '1級_2次' || examType === '2級_2次';
-    const target = is2nd ? `施工管理${lvl}_2次_簡易版.html` : `施工管理${lvl}_簡易版.html`;
+    // 試験種別 (電気工事 / 電気通信工事) に応じてレポートファイル名を切替
+    const prefix = examCategory === 'denkitsushin' ? '電気通信工事施工管理技士' : '施工管理';
+    const target = is2nd ? `${prefix}${lvl}_2次_簡易版.html` : `${prefix}${lvl}_簡易版.html`;
     window.open(`/api/report/${target}`, '_blank');
   };
   const wfBrowse = () => {

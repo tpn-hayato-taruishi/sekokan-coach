@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個別テーマ傾向分析（正規化なし・最細粒度） - 設計施工 - 電気通信工事施工管理技士2級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">個別テーマ傾向分析（正規化なし・最細粒度） ／ <strong>設計施工</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="raw-analysis__電気通信設備.html">← 電気通信設備</a></span><span style="text-align:center;flex:1"><a href="raw-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="raw-analysis__施工管理法.html">施工管理法 →</a></span></nav>
+<section id="raw-analysis">
+  <h2>個別テーマ傾向分析（正規化なし・最細粒度）</h2>
+<p>全テーマ×全年度の<strong>生データ</strong>で傾向分析します。</p>
+<div class="note">過去問の出題テーマそのままで分析するため、「何の問題が出たか」が最も正確にわかります。</div>
+<h3 class="deep-sub">14-1. ヒートマップ（個別テーマ × 年度）</h3>
+<p>全トピック単位でヒートマップ表示。青が濃い＝その年に出題あり。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（全4テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:16px"><svg viewBox="0 0 470 144" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="171.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,171.0,32)">R1前期</text>
+<text x="237.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,237.0,32)">R3前期</text>
+<text x="303.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,303.0,32)">R4後期</text>
+<text x="369.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,369.0,32)">R6前期</text>
+<text x="435.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,435.0,32)">R7後期</text>
+<text x="457.0" y="32" text-anchor="middle" font-size="8" fill="#64748b" transform="rotate(-45,457.0,32)">R8前期</text>
+<text x="154" y="61.0" text-anchor="end" font-size="9" fill="#334155">施工管理:施工要領</text>
+<rect x="160" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 施工管理:施工要領: 0問</title></rect>
+<rect x="182" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1後期 施工管理:施工要領: 1問</title></rect>
+<rect x="204" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R2 施工管理:施工要領: 0問</title></rect>
+<rect x="226" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3前期 施工管理:施工要領: 1問</title></rect>
+<rect x="248" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3後期 施工管理:施工要領: 1問</title></rect>
+<rect x="270" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4前期 施工管理:施工要領: 1問</title></rect>
+<rect x="292" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4後期 施工管理:施工要領: 1問</title></rect>
+<rect x="314" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5前期 施工管理:施工要領: 1問</title></rect>
+<rect x="336" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5後期 施工管理:施工要領: 1問</title></rect>
+<rect x="358" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R6前期 施工管理:施工要領: 1問</title></rect>
+<rect x="380" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R6後期 施工管理:施工要領: 1問</title></rect>
+<rect x="402" y="46" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R7前期 施工管理:施工要領: 1問</title></rect>
+<rect x="424" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 施工管理:施工要領: 0問</title></rect>
+<rect x="446" y="46" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R8前期 施工管理:施工要領: 0問</title></rect>
+<text x="154" y="83.0" text-anchor="end" font-size="9" fill="#334155">施工管理:試験測定</text>
+<rect x="160" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1前期 施工管理:試験測定: 1問</title></rect>
+<rect x="182" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 施工管理:試験測定: 0問</title></rect>
+<rect x="204" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R2 施工管理:試験測定: 0問</title></rect>
+<rect x="226" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3前期 施工管理:試験測定: 1問</title></rect>
+<rect x="248" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 施工管理:試験測定: 0問</title></rect>
+<rect x="270" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4前期 施工管理:試験測定: 1問</title></rect>
+<rect x="292" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4後期 施工管理:試験測定: 1問</title></rect>
+<rect x="314" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5前期 施工管理:試験測定: 1問</title></rect>
+<rect x="336" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 施工管理:試験測定: 0問</title></rect>
+<rect x="358" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R6前期 施工管理:試験測定: 1問</title></rect>
+<rect x="380" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R6後期 施工管理:試験測定: 1問</title></rect>
+<rect x="402" y="68" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 施工管理:試験測定: 0問</title></rect>
+<rect x="424" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R7後期 施工管理:試験測定: 1問</title></rect>
+<rect x="446" y="68" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R8前期 施工管理:試験測定: 1問</title></rect>
+<text x="154" y="105.0" text-anchor="end" font-size="9" fill="#334155">施工管理:接続接地</text>
+<rect x="160" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 施工管理:接続接地: 0問</title></rect>
+<rect x="182" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R1後期 施工管理:接続接地: 1問</title></rect>
+<rect x="204" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R2 施工管理:接続接地: 1問</title></rect>
+<rect x="226" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3前期 施工管理:接続接地: 0問</title></rect>
+<rect x="248" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 施工管理:接続接地: 0問</title></rect>
+<rect x="270" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R4前期 施工管理:接続接地: 1問</title></rect>
+<rect x="292" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 施工管理:接続接地: 0問</title></rect>
+<rect x="314" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5前期 施工管理:接続接地: 1問</title></rect>
+<rect x="336" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5後期 施工管理:接続接地: 0問</title></rect>
+<rect x="358" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 施工管理:接続接地: 0問</title></rect>
+<rect x="380" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 施工管理:接続接地: 0問</title></rect>
+<rect x="402" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 施工管理:接続接地: 0問</title></rect>
+<rect x="424" y="90" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 施工管理:接続接地: 0問</title></rect>
+<rect x="446" y="90" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R8前期 施工管理:接続接地: 1問</title></rect>
+<text x="154" y="127.0" text-anchor="end" font-size="9" fill="#334155">施工管理:配線敷設</text>
+<rect x="160" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1前期 施工管理:配線敷設: 0問</title></rect>
+<rect x="182" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R1後期 施工管理:配線敷設: 0問</title></rect>
+<rect x="204" y="112" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R2 施工管理:配線敷設: 1問</title></rect>
+<rect x="226" y="112" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R3前期 施工管理:配線敷設: 1問</title></rect>
+<rect x="248" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R3後期 施工管理:配線敷設: 0問</title></rect>
+<rect x="270" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4前期 施工管理:配線敷設: 0問</title></rect>
+<rect x="292" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R4後期 施工管理:配線敷設: 0問</title></rect>
+<rect x="314" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R5前期 施工管理:配線敷設: 0問</title></rect>
+<rect x="336" y="112" width="22" height="22" rx="2" fill="#93c5fd" opacity="1"><title>R5後期 施工管理:配線敷設: 1問</title></rect>
+<rect x="358" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6前期 施工管理:配線敷設: 0問</title></rect>
+<rect x="380" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R6後期 施工管理:配線敷設: 0問</title></rect>
+<rect x="402" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7前期 施工管理:配線敷設: 0問</title></rect>
+<rect x="424" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R7後期 施工管理:配線敷設: 0問</title></rect>
+<rect x="446" y="112" width="22" height="22" rx="2" fill="#f1f5f9" opacity="1"><title>R8前期 施工管理:配線敷設: 0問</title></rect>
+</svg></div>
+</details>
+<h3 class="deep-sub">14-2. 生データテーブル（全テーマ × 全年度）</h3>
+<p>色付きセルで出題パターンを確認。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（4テーマ）</summary>
+<div style="overflow-x:auto"><table class="fz82">
+<tr><th style="white-space:nowrap">テーマ</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R1前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R1後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R2</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R3前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R3後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R4前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R4後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R5前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R5後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R6前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R6後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R7前期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R7後期</th>
+<th style="padding:4px 6px;font-size:0.75em;writing-mode:vertical-rl">R8前期</th>
+<th>合計</th><th>頻度</th><th>最終</th></tr>
+<tr><td style="white-space:nowrap;font-weight:600">施工管理:施工要領</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="font-weight:700;text-align:center">10</td>
+<td class="tac">71%</td>
+<td style="text-align:center;font-size:0.85em">R7前期</td></tr>
+<tr><td style="white-space:nowrap;font-weight:600">施工管理:試験測定</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="font-weight:700;text-align:center">9</td>
+<td class="tac">64%</td>
+<td style="text-align:center;font-size:0.85em">R8前期</td></tr>
+<tr><td style="white-space:nowrap;font-weight:600">施工管理:接続接地</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="font-weight:700;text-align:center">5</td>
+<td class="tac">36%</td>
+<td style="text-align:center;font-size:0.85em">R8前期</td></tr>
+<tr><td style="white-space:nowrap;font-weight:600">施工管理:配線敷設</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#dbeafe;color:#1e40af;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="font-weight:700;text-align:center">3</td>
+<td class="tac">21%</td>
+<td style="text-align:center;font-size:0.85em">R5後期</td></tr>
+</table></div>
+</details>
+<h3 class="deep-sub">14-3. テーマ別出題回数ランキング</h3>
+<p>全科目のテーマを出題回数順にソート。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">全テーマランキング（全4テーマ）</summary>
+<table class="fz85">
+<tr><th>#</th><th>科目</th><th>テーマ</th><th>出題数</th><th>頻度</th><th>最終</th><th>分類</th></tr>
+<tr><td class="tac fwb">1</td><td style="color:#059669;font-weight:600;font-size:0.85em">設計施工</td><td><strong>施工管理:施工要領</strong></td><td class="tac fwb">10</td><td class="tac">71%</td><td style="text-align:center;font-size:0.85em">R7前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac fwb">2</td><td style="color:#059669;font-weight:600;font-size:0.85em">設計施工</td><td><strong>施工管理:試験測定</strong></td><td class="tac fwb">9</td><td class="tac">64%</td><td style="text-align:center;font-size:0.85em">R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac fwb">3</td><td style="color:#059669;font-weight:600;font-size:0.85em">設計施工</td><td><strong>施工管理:接続接地</strong></td><td class="tac fwb">5</td><td class="tac">36%</td><td style="text-align:center;font-size:0.85em">R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+<tr><td class="tac fwb">4</td><td style="color:#059669;font-weight:600;font-size:0.85em">設計施工</td><td><strong>施工管理:配線敷設</strong></td><td class="tac fwb">3</td><td class="tac">21%</td><td style="text-align:center;font-size:0.85em">R5後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">14-4. 個別テーマ 完全分析カード</h3>
+<p>各テーマの出題パターン・頻度表・傾向・関連テーマ・学習アドバイスを<strong>完全展開</strong>。クリックで各テーマの詳細を確認。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（4テーマ 完全分析カード）</summary>
+<details style="margin:4px 0;border:1px solid #05966933;border-radius:8px;padding:0">
+<summary style="cursor:pointer;padding:10px 14px;font-weight:700;color:#059669;font-size:1.0em;background:#05966908;border-radius:8px">
+#1 施工管理:施工要領 — 10問・出題率71%・最終R7前期</summary>
+<div style="padding:10px 16px">
+<h4 style="margin:4px 0 8px;color:#059669">施工管理:施工要領</h4>
+<p style="font-size:0.9em;margin:2px 0">累計出題: <strong>10問</strong> / 出題率: <strong>71%</strong> / 最終出題: <strong>R7前期</strong> / 空白: <strong>2回</strong> / 分類: <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<div style="margin:6px 0;overflow-x:auto"><svg viewBox="0 0 322 38" style="max-width:100%;height:38px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="10" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<text x="19.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R1前期</text>
+<rect x="28" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<text x="36.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="46" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="64" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="72.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="82" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R3後期: 1問</title></rect>
+<text x="90.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="100" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="108.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="109.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R4前期</text>
+<rect x="118" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<text x="126.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="136" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="144.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="154" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<text x="162.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="172" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<text x="180.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="190" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<text x="198.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="199.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R6後期</text>
+<rect x="208" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R7前期: 1問</title></rect>
+<text x="216.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="226" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="244" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+<text x="266" y="14.0" font-size="9" fill="#059669" font-weight="700">10問</text>
+</svg></div>
+<p style="font-weight:700;margin:8px 0 4px">5年ごとの出題頻度</p>
+<table class="fz85"><tr>
+<th style="padding:4px 8px">R1前期-R2</th>
+<th style="padding:4px 8px">R3前期-R4前期</th>
+<th style="padding:4px 8px">R4後期-R5後期</th>
+<th style="padding:4px 8px">R6前期-R7前期</th>
+<th style="padding:4px 8px">R7後期-R8前期</th>
+<th style="padding:4px 8px">-</th>
+<th>合計</th></tr><tr>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;background:#05966915">3</td>
+<td style="text-align:center;font-weight:700;background:#05966915">3</td>
+<td style="text-align:center;font-weight:700;background:#05966915">3</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:800;color:#059669">10</td>
+</tr></table>
+<svg viewBox="0 0 370 60" style="max-width:370px;height:60px;margin:4px 0">
+<rect x="2.0" y="26.7" width="56.0" height="13.3" rx="2" fill="#059669" opacity="0.7"/>
+<text x="30.0" y="24.7" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="30.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R1前期-R2</text>
+<rect x="62.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="90.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">3</text>
+<text x="90.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R3前期-R4前期</text>
+<rect x="122.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="150.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">3</text>
+<text x="150.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R4後期-R5後期</text>
+<rect x="182.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="210.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">3</text>
+<text x="210.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R6前期-R7前期</text>
+<rect x="242.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="270.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R7後期-R8前期</text>
+<rect x="302.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="330.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">-</text>
+</svg>
+<p style="font-weight:700;margin:8px 0 4px">出題傾向分析</p>
+<p style="font-size:0.9em;margin:4px 0"><span style="color:#9ca3af;font-weight:700">消滅</span>: 後期に出題なし。試験範囲から外れた可能性がある。 最長連続出題: 9回。</p>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題数（全年度）</p>
+<table class="fz8"><tr>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R2</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R8前期</th>
+</tr><tr>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+</tr></table>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題間隔:</strong> 平均 1.1回 / 最短 1回 / 最長 2回 / 間隔一覧: 2回, 1回, 1回, 1回, 1回, 1回, 1回, 1回, 1回</p>
+<p style="font-weight:700;margin:8px 0 4px">関連テーマ（同科目・同年出題）全3件</p>
+<table class="fz85"><tr><th>テーマ</th><th>共起回数</th><th>共起率</th><th>共起年度</th></tr>
+<tr><td>施工管理:試験測定</td><td class="tac fwb">6</td><td class="tac">60%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4後期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R6前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R6後期</span></td></tr>
+<tr><td>施工管理:接続接地</td><td class="tac fwb">3</td><td class="tac">30%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R1後期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span></td></tr>
+<tr><td>施工管理:配線敷設</td><td class="tac fwb">2</td><td class="tac">20%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5後期</span></td></tr>
+</table>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題詳細（全科目横断）</p>
+<div class="fz85">
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R1後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:接続接地(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R3前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:配線敷設(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R3後期: 1問（科目内1問中 100%）</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R4前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:接続接地(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R4後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R5前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:接続接地(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R5後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:配線敷設(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R6前期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R6後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R7前期: 1問（科目内1問中 100%）</p>
+</div>
+</div>
+<p style="font-weight:700;margin:8px 0 4px">学習アドバイス</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・出題率71%の超頻出テーマ。<strong>最優先で完璧に仕上げること</strong>。過去問は全問3回以上解く。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・問答暗記テーマ: 穴埋め問題パターンを収集し、繰り返し暗記する。選択肢の言い回しパターンにも慣れる。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・過去問が10問蓄積されているため、パターン分析がしやすい。共通する解法ステップを抽出して効率化を図る。</p>
+<p style="font-weight:700;margin:8px 0 4px">次回出題予測（R8後期想定）</p>
+<p style="font-size:0.88em;margin:4px 0">出題率71%・空白2回 → <strong style="color:#d97706">出題可能性: 高い</strong>。やや応用レベルの問題形式が予想される。</p>
+<p style="font-size:0.85em;margin:2px 0;color:#6b7280">想定出題形式: 知識の正確性を問う選択問題、または穴埋め問題として出題が予想される。</p>
+<p style="font-weight:700;margin:8px 0 4px">この問題に対する具体的な対策手順</p>
+<ol style="font-size:0.85em;margin:4px 0;padding-left:18px">
+<li style="margin:2px 0">Step1: 過去10問の穴埋め箇所を収集し、頻出パターンを特定する。</li>
+<li style="margin:2px 0">Step2: 穴埋めに使われる用語・数値のリストを作成する。</li>
+<li style="margin:2px 0">Step3: 選択肢の微妙な言い回しの違いを整理し、ひっかけポイントを把握する。</li>
+<li style="margin:2px 0">Step4: 自作の穴埋めテストで定着度を確認。正答率90%以上を目標にする。</li>
+<li style="margin:2px 0">Step5: 2日おきに復習し、忘れやすい項目には印をつけて重点管理する。</li>
+</ol>
+<p style="font-size:0.85em;margin:4px 0"><strong>得点インパクト:</strong> <span style="color:#dc2626;font-weight:700">高インパクト</span>: 科目全体の37.0%を占める重要テーマ。失点は致命的。</p>
+<p style="font-size:0.85em;margin:2px 0"><strong>推定学習時間:</strong> 3.0時間 （得点寄与37.0%あたり8.1時間）</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966933;border-radius:8px;padding:0">
+<summary style="cursor:pointer;padding:10px 14px;font-weight:700;color:#059669;font-size:1.0em;background:#05966908;border-radius:8px">
+#2 施工管理:試験測定 — 9問・出題率64%・最終R8前期</summary>
+<div style="padding:10px 16px">
+<h4 style="margin:4px 0 8px;color:#059669">施工管理:試験測定</h4>
+<p style="font-size:0.9em;margin:2px 0">累計出題: <strong>9問</strong> / 出題率: <strong>64%</strong> / 最終出題: <strong>R8前期</strong> / 空白: <strong>0回</strong> / 分類: <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<div style="margin:6px 0;overflow-x:auto"><svg viewBox="0 0 322 38" style="max-width:100%;height:38px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="10" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R1前期: 1問</title></rect>
+<text x="18.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="19.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R1前期</text>
+<rect x="28" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="46" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="64" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="72.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="82" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="100" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="108.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="109.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R4前期</text>
+<rect x="118" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<text x="126.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="136" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="144.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="154" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="172" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<text x="180.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="190" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<text x="198.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="199.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R6後期</text>
+<rect x="208" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="226" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R7後期: 1問</title></rect>
+<text x="234.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="244" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<text x="252.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="266" y="14.0" font-size="9" fill="#059669" font-weight="700">9問</text>
+</svg></div>
+<p style="font-weight:700;margin:8px 0 4px">5年ごとの出題頻度</p>
+<table class="fz85"><tr>
+<th style="padding:4px 8px">R1前期-R2</th>
+<th style="padding:4px 8px">R3前期-R4前期</th>
+<th style="padding:4px 8px">R4後期-R5後期</th>
+<th style="padding:4px 8px">R6前期-R7前期</th>
+<th style="padding:4px 8px">R7後期-R8前期</th>
+<th style="padding:4px 8px">-</th>
+<th>合計</th></tr><tr>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;background:#05966915">2</td>
+<td style="text-align:center;font-weight:700;background:#05966915">2</td>
+<td style="text-align:center;font-weight:700;background:#05966915">2</td>
+<td style="text-align:center;font-weight:700;background:#05966915">2</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:800;color:#059669">9</td>
+</tr></table>
+<svg viewBox="0 0 370 60" style="max-width:370px;height:60px;margin:4px 0">
+<rect x="2.0" y="20.0" width="56.0" height="20.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="30.0" y="18.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="30.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R1前期-R2</text>
+<rect x="62.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="90.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">2</text>
+<text x="90.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R3前期-R4前期</text>
+<rect x="122.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="150.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">2</text>
+<text x="150.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R4後期-R5後期</text>
+<rect x="182.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="210.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">2</text>
+<text x="210.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R6前期-R7前期</text>
+<rect x="242.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="270.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">2</text>
+<text x="270.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R7後期-R8前期</text>
+<rect x="302.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="330.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">-</text>
+</svg>
+<p style="font-weight:700;margin:8px 0 4px">出題傾向分析</p>
+<p style="font-size:0.9em;margin:4px 0"><span style="color:#3b82f6;font-weight:700">減少傾向</span>: 後期（2問）が前期（3問）・中期（4問）を下回る。出題頻度が低下中。 最長連続出題: 3回。 直近年度で出題あり。次回も出題される可能性が高い。</p>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題数（全年度）</p>
+<table class="fz8"><tr>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R2</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R8前期</th>
+</tr><tr>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+</tr></table>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題間隔:</strong> 平均 1.6回 / 最短 1回 / 最長 3回 / 間隔一覧: 3回, 2回, 1回, 1回, 2回, 1回, 2回, 1回</p>
+<p style="font-weight:700;margin:8px 0 4px">関連テーマ（同科目・同年出題）全3件</p>
+<table class="fz85"><tr><th>テーマ</th><th>共起回数</th><th>共起率</th><th>共起年度</th></tr>
+<tr><td>施工管理:施工要領</td><td class="tac fwb">6</td><td class="tac">67%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4後期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R6前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R6後期</span></td></tr>
+<tr><td>施工管理:接続接地</td><td class="tac fwb">3</td><td class="tac">33%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R8前期</span></td></tr>
+<tr><td>施工管理:配線敷設</td><td class="tac fwb">1</td><td class="tac">11%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span></td></tr>
+</table>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題詳細（全科目横断）</p>
+<div class="fz85">
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R1前期: 1問（科目内1問中 100%）</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R3前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:配線敷設(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R4前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:接続接地(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R4後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R5前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:接続接地(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R6前期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R6後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R7後期: 1問（科目内1問中 100%）</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R8前期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:接続接地(1問)</p>
+</div>
+</div>
+<p style="font-weight:700;margin:8px 0 4px">学習アドバイス</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・出題率64%の超頻出テーマ。<strong>最優先で完璧に仕上げること</strong>。過去問は全問3回以上解く。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・問答暗記テーマ: 穴埋め問題パターンを収集し、繰り返し暗記する。選択肢の言い回しパターンにも慣れる。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・直近年度で出題あり。次回も出題される可能性が高いため、最新の出題形式を必ず確認する。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・過去問が9問蓄積されているため、パターン分析がしやすい。共通する解法ステップを抽出して効率化を図る。</p>
+<p style="font-weight:700;margin:8px 0 4px">次回出題予測（R8後期想定）</p>
+<p style="font-size:0.88em;margin:4px 0">出題率64%・空白0回 → <strong style="color:#dc2626">出題可能性: 非常に高い</strong>。前年と同等レベルの問題が予想される。</p>
+<p style="font-size:0.85em;margin:2px 0;color:#6b7280">想定出題形式: 知識の正確性を問う選択問題、または穴埋め問題として出題が予想される。</p>
+<p style="font-weight:700;margin:8px 0 4px">この問題に対する具体的な対策手順</p>
+<ol style="font-size:0.85em;margin:4px 0;padding-left:18px">
+<li style="margin:2px 0">Step1: 過去9問の穴埋め箇所を収集し、頻出パターンを特定する。</li>
+<li style="margin:2px 0">Step2: 穴埋めに使われる用語・数値のリストを作成する。</li>
+<li style="margin:2px 0">Step3: 選択肢の微妙な言い回しの違いを整理し、ひっかけポイントを把握する。</li>
+<li style="margin:2px 0">Step4: 自作の穴埋めテストで定着度を確認。正答率90%以上を目標にする。</li>
+<li style="margin:2px 0">Step5: 2日おきに復習し、忘れやすい項目には印をつけて重点管理する。</li>
+</ol>
+<p style="font-size:0.85em;margin:4px 0"><strong>得点インパクト:</strong> <span style="color:#dc2626;font-weight:700">高インパクト</span>: 科目全体の33.3%を占める重要テーマ。失点は致命的。</p>
+<p style="font-size:0.85em;margin:2px 0"><strong>推定学習時間:</strong> 2.8時間 （得点寄与33.3%あたり8.3時間）</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966933;border-radius:8px;padding:0">
+<summary style="cursor:pointer;padding:10px 14px;font-weight:700;color:#059669;font-size:1.0em;background:#05966908;border-radius:8px">
+#3 施工管理:接続接地 — 5問・出題率36%・最終R8前期</summary>
+<div style="padding:10px 16px">
+<h4 style="margin:4px 0 8px;color:#059669">施工管理:接続接地</h4>
+<p style="font-size:0.9em;margin:2px 0">累計出題: <strong>5問</strong> / 出題率: <strong>36%</strong> / 最終出題: <strong>R8前期</strong> / 空白: <strong>0回</strong> / 分類: <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<div style="margin:6px 0;overflow-x:auto"><svg viewBox="0 0 322 38" style="max-width:100%;height:38px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="10" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<text x="19.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R1前期</text>
+<rect x="28" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<text x="36.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="46" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<text x="54.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="64" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="82" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="100" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="108.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="109.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R4前期</text>
+<rect x="118" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="136" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="144.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="154" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="172" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="190" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<text x="199.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R6後期</text>
+<rect x="208" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="226" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="244" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<text x="252.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<text x="266" y="14.0" font-size="9" fill="#059669" font-weight="700">5問</text>
+</svg></div>
+<p style="font-weight:700;margin:8px 0 4px">5年ごとの出題頻度</p>
+<table class="fz85"><tr>
+<th style="padding:4px 8px">R1前期-R2</th>
+<th style="padding:4px 8px">R3前期-R4前期</th>
+<th style="padding:4px 8px">R4後期-R5後期</th>
+<th style="padding:4px 8px">R6前期-R7前期</th>
+<th style="padding:4px 8px">R7後期-R8前期</th>
+<th style="padding:4px 8px">-</th>
+<th>合計</th></tr><tr>
+<td style="text-align:center;font-weight:700;background:#05966915">2</td>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:800;color:#059669">5</td>
+</tr></table>
+<svg viewBox="0 0 370 60" style="max-width:370px;height:60px;margin:4px 0">
+<rect x="2.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="30.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">2</text>
+<text x="30.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R1前期-R2</text>
+<rect x="62.0" y="20.0" width="56.0" height="20.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="90.0" y="18.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="90.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R3前期-R4前期</text>
+<rect x="122.0" y="20.0" width="56.0" height="20.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="150.0" y="18.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="150.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R4後期-R5後期</text>
+<rect x="182.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="210.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R6前期-R7前期</text>
+<rect x="242.0" y="20.0" width="56.0" height="20.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="270.0" y="18.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="270.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R7後期-R8前期</text>
+<rect x="302.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="330.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">-</text>
+</svg>
+<p style="font-weight:700;margin:8px 0 4px">出題傾向分析</p>
+<p style="font-size:0.9em;margin:4px 0"><span style="color:#6b7280;font-weight:700">安定</span>: 前期（3問）・中期（1問）・後期（1問）で大きな変動なし。 直近年度で出題あり。次回も出題される可能性が高い。</p>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題数（全年度）</p>
+<table class="fz8"><tr>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R2</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R8前期</th>
+</tr><tr>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+</tr></table>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題間隔:</strong> 平均 3.0回 / 最短 1回 / 最長 6回 / 間隔一覧: 1回, 3回, 2回, 6回</p>
+<p style="font-weight:700;margin:8px 0 4px">関連テーマ（同科目・同年出題）全3件</p>
+<table class="fz85"><tr><th>テーマ</th><th>共起回数</th><th>共起率</th><th>共起年度</th></tr>
+<tr><td>施工管理:施工要領</td><td class="tac fwb">3</td><td class="tac">60%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R1後期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span></td></tr>
+<tr><td>施工管理:試験測定</td><td class="tac fwb">3</td><td class="tac">60%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R4前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R8前期</span></td></tr>
+<tr><td>施工管理:配線敷設</td><td class="tac fwb">1</td><td class="tac">20%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R2</span></td></tr>
+</table>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題詳細（全科目横断）</p>
+<div class="fz85">
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R1後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R2: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:配線敷設(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R4前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R5前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R8前期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:試験測定(1問)</p>
+</div>
+</div>
+<p style="font-weight:700;margin:8px 0 4px">学習アドバイス</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・出題率36%の頻出テーマ。確実に得点できるよう演習を重ねる。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・問答暗記テーマ: 穴埋め問題パターンを収集し、繰り返し暗記する。選択肢の言い回しパターンにも慣れる。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・直近年度で出題あり。次回も出題される可能性が高いため、最新の出題形式を必ず確認する。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・過去問が5問蓄積されているため、パターン分析がしやすい。共通する解法ステップを抽出して効率化を図る。</p>
+<p style="font-weight:700;margin:8px 0 4px">次回出題予測（R8後期想定）</p>
+<p style="font-size:0.88em;margin:4px 0">出題率36%・空白0回 → <strong style="color:#d97706">出題可能性: 高い</strong>。やや応用レベルの問題形式が予想される。</p>
+<p style="font-size:0.85em;margin:2px 0;color:#6b7280">想定出題形式: 知識の正確性を問う選択問題、または穴埋め問題として出題が予想される。</p>
+<p style="font-weight:700;margin:8px 0 4px">この問題に対する具体的な対策手順</p>
+<ol style="font-size:0.85em;margin:4px 0;padding-left:18px">
+<li style="margin:2px 0">Step1: 過去5問の穴埋め箇所を収集し、頻出パターンを特定する。</li>
+<li style="margin:2px 0">Step2: 穴埋めに使われる用語・数値のリストを作成する。</li>
+<li style="margin:2px 0">Step3: 選択肢の微妙な言い回しの違いを整理し、ひっかけポイントを把握する。</li>
+<li style="margin:2px 0">Step4: 自作の穴埋めテストで定着度を確認。正答率90%以上を目標にする。</li>
+<li style="margin:2px 0">Step5: 2日おきに復習し、忘れやすい項目には印をつけて重点管理する。</li>
+</ol>
+<p style="font-size:0.85em;margin:4px 0"><strong>得点インパクト:</strong> <span style="color:#dc2626;font-weight:700">高インパクト</span>: 科目全体の18.5%を占める重要テーマ。失点は致命的。</p>
+<p style="font-size:0.85em;margin:2px 0"><strong>推定学習時間:</strong> 1.8時間 （得点寄与18.5%あたり9.4時間）</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966933;border-radius:8px;padding:0">
+<summary style="cursor:pointer;padding:10px 14px;font-weight:700;color:#059669;font-size:1.0em;background:#05966908;border-radius:8px">
+#4 施工管理:配線敷設 — 3問・出題率21%・最終R5後期</summary>
+<div style="padding:10px 16px">
+<h4 style="margin:4px 0 8px;color:#059669">施工管理:配線敷設</h4>
+<p style="font-size:0.9em;margin:2px 0">累計出題: <strong>3問</strong> / 出題率: <strong>21%</strong> / 最終出題: <strong>R5後期</strong> / 空白: <strong>5回</strong> / 分類: <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<div style="margin:6px 0;overflow-x:auto"><svg viewBox="0 0 322 38" style="max-width:100%;height:38px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="10" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<text x="19.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R1前期</text>
+<rect x="28" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="46" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<text x="54.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="64" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="72.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="82" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="100" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<text x="109.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R4前期</text>
+<rect x="118" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="136" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="154" y="2" width="17" height="20" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<text x="162.5" y="15.0" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="172" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="190" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<text x="199.0" y="34" text-anchor="middle" font-size="6" fill="#9ca3af">R6後期</text>
+<rect x="208" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="226" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="244" y="2" width="17" height="20" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+<text x="266" y="14.0" font-size="9" fill="#059669" font-weight="700">3問</text>
+</svg></div>
+<p style="font-weight:700;margin:8px 0 4px">5年ごとの出題頻度</p>
+<table class="fz85"><tr>
+<th style="padding:4px 8px">R1前期-R2</th>
+<th style="padding:4px 8px">R3前期-R4前期</th>
+<th style="padding:4px 8px">R4後期-R5後期</th>
+<th style="padding:4px 8px">R6前期-R7前期</th>
+<th style="padding:4px 8px">R7後期-R8前期</th>
+<th style="padding:4px 8px">-</th>
+<th>合計</th></tr><tr>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;background:#05966915">1</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:700;">0</td>
+<td style="text-align:center;font-weight:800;color:#059669">3</td>
+</tr></table>
+<svg viewBox="0 0 370 60" style="max-width:370px;height:60px;margin:4px 0">
+<rect x="2.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="30.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="30.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R1前期-R2</text>
+<rect x="62.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="90.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="90.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R3前期-R4前期</text>
+<rect x="122.0" y="0.0" width="56.0" height="40.0" rx="2" fill="#059669" opacity="0.7"/>
+<text x="150.0" y="-2.0" text-anchor="middle" font-size="8" fill="#059669" font-weight="700">1</text>
+<text x="150.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R4後期-R5後期</text>
+<rect x="182.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="210.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R6前期-R7前期</text>
+<rect x="242.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="270.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">R7後期-R8前期</text>
+<rect x="302.0" y="40.0" width="56.0" height="0.0" rx="2" fill="#e5e7eb" opacity="0.7"/>
+<text x="330.0" y="54" text-anchor="middle" font-size="6" fill="#6b7280">-</text>
+</svg>
+<p style="font-weight:700;margin:8px 0 4px">出題傾向分析</p>
+<p style="font-size:0.9em;margin:4px 0"><span style="color:#9ca3af;font-weight:700">消滅</span>: 後期に出題なし。試験範囲から外れた可能性がある。 5回間空白だが過去の出題率は21%と高い。<strong>復活出題の可能性大</strong>。</p>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題数（全年度）</p>
+<table class="fz8"><tr>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R1後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R2</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R3後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R4後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R5後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R6後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7前期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R7後期</th>
+<th style="padding:2px 4px;font-size:0.8em;writing-mode:vertical-rl">R8前期</th>
+</tr><tr>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;background:#05966922;color:#059669;font-weight:700">1</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+<td style="text-align:center;color:#e5e7eb">·</td>
+</tr></table>
+<p style="font-size:0.88em;margin:4px 0"><strong>出題間隔:</strong> 平均 3.0回 / 最短 1回 / 最長 5回 / 間隔一覧: 1回, 5回</p>
+<p style="font-weight:700;margin:8px 0 4px">関連テーマ（同科目・同年出題）全3件</p>
+<table class="fz85"><tr><th>テーマ</th><th>共起回数</th><th>共起率</th><th>共起年度</th></tr>
+<tr><td>施工管理:施工要領</td><td class="tac fwb">2</td><td class="tac">67%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span> <span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R5後期</span></td></tr>
+<tr><td>施工管理:接続接地</td><td class="tac fwb">1</td><td class="tac">33%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R2</span></td></tr>
+<tr><td>施工管理:試験測定</td><td class="tac fwb">1</td><td class="tac">33%</td><td><span style="display:inline-block;background:#f1f5f9;border-radius:3px;padding:0 3px;font-size:0.8em">R3前期</span></td></tr>
+</table>
+<p style="font-weight:700;margin:8px 0 4px">年度別出題詳細（全科目横断）</p>
+<div class="fz85">
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R2: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:接続接地(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R3前期: 1問（科目内3問中 33%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問), 施工管理:試験測定(1問)</p>
+</div>
+<div style="margin:4px 0;padding:6px 10px;border-left:3px solid #05966955;background:#fafbfc;border-radius:0 6px 6px 0">
+<p style="margin:1px 0;font-weight:700">R5後期: 1問（科目内2問中 50%）</p>
+<p style="margin:1px 0;font-size:0.92em">同科目: 施工管理:施工要領(1問)</p>
+</div>
+</div>
+<p style="font-weight:700;margin:8px 0 4px">学習アドバイス</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・出題率21%のやや頻出テーマ。基本パターンを押さえておく。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・問答暗記テーマ: 穴埋め問題パターンを収集し、繰り返し暗記する。選択肢の言い回しパターンにも慣れる。</p>
+<p style="font-size:0.88em;margin:2px 0;padding-left:12px;border-left:2px solid #05966944">・<strong>復活出題警戒</strong>: 5回間出題がないが過去実績は十分。次回試験で出題される可能性が高い。直前期に集中復習すること。</p>
+<p style="font-weight:700;margin:8px 0 4px">次回出題予測（R8後期想定）</p>
+<p style="font-size:0.88em;margin:4px 0">出題率21%・空白5回 → <strong style="color:#7c3aed">復活出題の可能性あり</strong>。久しぶりの出題となるため、基本問題から応用まで幅広く準備が必要。</p>
+<p style="font-size:0.85em;margin:2px 0;color:#6b7280">想定出題形式: 知識の正確性を問う選択問題、または穴埋め問題として出題が予想される。</p>
+<p style="font-weight:700;margin:8px 0 4px">この問題に対する具体的な対策手順</p>
+<ol style="font-size:0.85em;margin:4px 0;padding-left:18px">
+<li style="margin:2px 0">Step1: 過去3問の穴埋め箇所を収集し、頻出パターンを特定する。</li>
+<li style="margin:2px 0">Step2: 穴埋めに使われる用語・数値のリストを作成する。</li>
+<li style="margin:2px 0">Step3: 選択肢の微妙な言い回しの違いを整理し、ひっかけポイントを把握する。</li>
+<li style="margin:2px 0">Step4: 自作の穴埋めテストで定着度を確認。正答率90%以上を目標にする。</li>
+<li style="margin:2px 0">Step5: 2日おきに復習し、忘れやすい項目には印をつけて重点管理する。</li>
+</ol>
+<p style="font-size:0.85em;margin:4px 0"><strong>得点インパクト:</strong> <span style="color:#dc2626;font-weight:700">高インパクト</span>: 科目全体の11.1%を占める重要テーマ。失点は致命的。</p>
+<p style="font-size:0.85em;margin:2px 0"><strong>推定学習時間:</strong> 1.2時間 （得点寄与11.1%あたり11.2時間）</p>
+</div></details>
+</details>
+<h3 class="deep-sub">14-5. 年度別 出題構成の詳細</h3>
+<p>各年度にどのテーマがいくつ出たかを完全に展開。出題パターンの年度変化を追跡。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（年度別構成）</summary>
+<h4 style="margin:12px 0 4px;color:#059669">R8前期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:接続接地</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:試験測定: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:接続接地: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+前年からの新テーマ: 1個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:接続接地: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R7後期（1問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="400.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:試験測定: 1問 (100%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 1/4テーマ出題（カバー率25%）/ 
+前年からの新テーマ: 1個 / 
+標準的な出題構成の年度。
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R7前期（1問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="400.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (100%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 1/4テーマ出題（カバー率25%）/ 
+標準的な出題構成の年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R6後期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R6前期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+前年からの新テーマ: 1個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R5後期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:配線敷設</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:配線敷設: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+前年からの新テーマ: 1個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:配線敷設: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R5前期（3問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:接続接地</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="133.3" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (33%)</title></rect>
+<text x="66.7" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="133.3" y="2" width="133.3" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (33%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="266.7" y="2" width="133.3" height="18" rx="2" fill="#16a34a" opacity="0.8"><title>施工管理:接続接地: 1問 (33%)</title></rect>
+<text x="333.3" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 3/4テーマ出題（カバー率75%）/ 
+前年からの新テーマ: 1個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:接続接地: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R4後期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R4前期（3問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:接続接地</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="133.3" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (33%)</title></rect>
+<text x="66.7" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="133.3" y="2" width="133.3" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (33%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="266.7" y="2" width="133.3" height="18" rx="2" fill="#16a34a" opacity="0.8"><title>施工管理:接続接地: 1問 (33%)</title></rect>
+<text x="333.3" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 3/4テーマ出題（カバー率75%）/ 
+前年からの新テーマ: 2個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:接続接地: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R3後期（1問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="400.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (100%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 1/4テーマ出題（カバー率25%）/ 
+標準的な出題構成の年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R3前期（3問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:配線敷設</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="133.3" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (33%)</title></rect>
+<text x="66.7" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="133.3" y="2" width="133.3" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:試験測定: 1問 (33%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="266.7" y="2" width="133.3" height="18" rx="2" fill="#16a34a" opacity="0.8"><title>施工管理:配線敷設: 1問 (33%)</title></rect>
+<text x="333.3" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac">1</td><td class="tac">33%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 3/4テーマ出題（カバー率75%）/ 
+前年からの新テーマ: 2個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R2（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:接続接地</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:配線敷設</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:接続接地: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:配線敷設: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#9ca3af">=</span></td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+前年からの新テーマ: 1個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:配線敷設: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R1後期（2問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:施工要領</span> <span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:接続接地</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="200.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:施工要領: 1問 (50%)</title></rect>
+<text x="100.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+<rect x="200.0" y="2" width="200.0" height="18" rx="2" fill="#dc2626" opacity="0.8"><title>施工管理:接続接地: 1問 (50%)</title></rect>
+<text x="300.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">1</td><td class="tac">50%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac"><span style="color:#16a34a;font-weight:700">NEW</span></td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 2/4テーマ出題（カバー率50%）/ 
+前年からの新テーマ: 2個 / 
+出題範囲が広く、幅広い知識が必要な年度。
+<br><span style="color:#059669">・施工管理:施工要領: 定番テーマ</span>
+<br><span style="color:#059669">・施工管理:接続接地: 復活出題</span>
+</div>
+<h4 style="margin:12px 0 4px;color:#059669">R1前期（1問）</h4>
+<p><span style="display:inline-block;background:#05966922;color:#059669;border-radius:4px;padding:2px 8px;margin:2px;font-size:0.88em;font-weight:600">施工管理:試験測定</span></p>
+<div style="margin:4px 0 8px"><svg viewBox="0 0 410 24" style="max-width:100%;height:24px;font-family:'Yu Gothic UI',sans-serif">
+<rect x="0.0" y="2" width="400.0" height="18" rx="2" fill="#3b82f6" opacity="0.8"><title>施工管理:試験測定: 1問 (100%)</title></rect>
+<text x="200.0" y="14" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">施工管理</text>
+</svg></div>
+<table style="font-size:0.82em;margin:0 0 12px">
+<tr><th>テーマ</th><th>問数</th><th>割合</th><th>分類</th><th>前年比</th></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">1</td><td class="tac">100%</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td class="tac">-</td></tr>
+</table>
+<div style="font-size:0.82em;margin:0 0 8px;padding:4px 10px;background:#f8fafc;border-radius:4px">
+<strong>分析:</strong> 1/4テーマ出題（カバー率25%）/ 
+前年からの新テーマ: 1個 / 
+標準的な出題構成の年度。
+<br><span style="color:#059669">・施工管理:試験測定: 定番テーマ</span>
+</div>
+</details>
+<h3 class="deep-sub">14-6. テーマ別 出題推移グラフ</h3>
+<p>各テーマの出題推移を個別のSVG折れ線グラフで表示。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（4テーマ 推移グラフ）</summary>
+<div style="margin:8px 0;display:flex;align-items:center;gap:8px">
+<span style="min-width:130px;text-align:right;font-size:0.85em;font-weight:600;color:#334155">施工管理:施工要領</span>
+<svg viewBox="0 0 510 50" style="max-width:510px;height:50px;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="40" x2="500" y2="40" stroke="#e5e7eb" stroke-width="0.5"/>
+<path d="M0.0,40 L0.0,40.0 L38.5,4.0 L76.9,40.0 L115.4,4.0 L153.8,4.0 L192.3,4.0 L230.8,4.0 L269.2,4.0 L307.7,4.0 L346.2,4.0 L384.6,4.0 L423.1,4.0 L461.5,40.0 L500.0,40.0 L500.0,40 Z" fill="#059669" opacity="0.1"/>
+<path d="M0.0,40.0 L38.5,4.0 L76.9,40.0 L115.4,4.0 L153.8,4.0 L192.3,4.0 L230.8,4.0 L269.2,4.0 L307.7,4.0 L346.2,4.0 L384.6,4.0 L423.1,4.0 L461.5,40.0 L500.0,40.0" fill="none" stroke="#059669" stroke-width="1.5"/>
+<circle cx="38.5" cy="4.0" r="2.5" fill="#059669"><title>R1後期: 1問</title></circle>
+<circle cx="115.4" cy="4.0" r="2.5" fill="#059669"><title>R3前期: 1問</title></circle>
+<circle cx="153.8" cy="4.0" r="2.5" fill="#059669"><title>R3後期: 1問</title></circle>
+<circle cx="192.3" cy="4.0" r="2.5" fill="#059669"><title>R4前期: 1問</title></circle>
+<circle cx="230.8" cy="4.0" r="2.5" fill="#059669"><title>R4後期: 1問</title></circle>
+<circle cx="269.2" cy="4.0" r="2.5" fill="#059669"><title>R5前期: 1問</title></circle>
+<circle cx="307.7" cy="4.0" r="2.5" fill="#059669"><title>R5後期: 1問</title></circle>
+<circle cx="346.2" cy="4.0" r="2.5" fill="#059669"><title>R6前期: 1問</title></circle>
+<circle cx="384.6" cy="4.0" r="2.5" fill="#059669"><title>R6後期: 1問</title></circle>
+<circle cx="423.1" cy="4.0" r="2.5" fill="#059669"><title>R7前期: 1問</title></circle>
+</svg>
+<span style="font-size:0.8em;color:#059669;font-weight:700;min-width:40px">10問</span>
+</div>
+<div style="margin:8px 0;display:flex;align-items:center;gap:8px">
+<span style="min-width:130px;text-align:right;font-size:0.85em;font-weight:600;color:#334155">施工管理:試験測定</span>
+<svg viewBox="0 0 510 50" style="max-width:510px;height:50px;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="40" x2="500" y2="40" stroke="#e5e7eb" stroke-width="0.5"/>
+<path d="M0.0,40 L0.0,4.0 L38.5,40.0 L76.9,40.0 L115.4,4.0 L153.8,40.0 L192.3,4.0 L230.8,4.0 L269.2,4.0 L307.7,40.0 L346.2,4.0 L384.6,4.0 L423.1,40.0 L461.5,4.0 L500.0,4.0 L500.0,40 Z" fill="#059669" opacity="0.1"/>
+<path d="M0.0,4.0 L38.5,40.0 L76.9,40.0 L115.4,4.0 L153.8,40.0 L192.3,4.0 L230.8,4.0 L269.2,4.0 L307.7,40.0 L346.2,4.0 L384.6,4.0 L423.1,40.0 L461.5,4.0 L500.0,4.0" fill="none" stroke="#059669" stroke-width="1.5"/>
+<circle cx="0.0" cy="4.0" r="2.5" fill="#059669"><title>R1前期: 1問</title></circle>
+<circle cx="115.4" cy="4.0" r="2.5" fill="#059669"><title>R3前期: 1問</title></circle>
+<circle cx="192.3" cy="4.0" r="2.5" fill="#059669"><title>R4前期: 1問</title></circle>
+<circle cx="230.8" cy="4.0" r="2.5" fill="#059669"><title>R4後期: 1問</title></circle>
+<circle cx="269.2" cy="4.0" r="2.5" fill="#059669"><title>R5前期: 1問</title></circle>
+<circle cx="346.2" cy="4.0" r="2.5" fill="#059669"><title>R6前期: 1問</title></circle>
+<circle cx="384.6" cy="4.0" r="2.5" fill="#059669"><title>R6後期: 1問</title></circle>
+<circle cx="461.5" cy="4.0" r="2.5" fill="#059669"><title>R7後期: 1問</title></circle>
+<circle cx="500.0" cy="4.0" r="2.5" fill="#059669"><title>R8前期: 1問</title></circle>
+</svg>
+<span style="font-size:0.8em;color:#059669;font-weight:700;min-width:40px">9問</span>
+</div>
+<div style="margin:8px 0;display:flex;align-items:center;gap:8px">
+<span style="min-width:130px;text-align:right;font-size:0.85em;font-weight:600;color:#334155">施工管理:接続接地</span>
+<svg viewBox="0 0 510 50" style="max-width:510px;height:50px;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="40" x2="500" y2="40" stroke="#e5e7eb" stroke-width="0.5"/>
+<path d="M0.0,40 L0.0,40.0 L38.5,4.0 L76.9,4.0 L115.4,40.0 L153.8,40.0 L192.3,4.0 L230.8,40.0 L269.2,4.0 L307.7,40.0 L346.2,40.0 L384.6,40.0 L423.1,40.0 L461.5,40.0 L500.0,4.0 L500.0,40 Z" fill="#059669" opacity="0.1"/>
+<path d="M0.0,40.0 L38.5,4.0 L76.9,4.0 L115.4,40.0 L153.8,40.0 L192.3,4.0 L230.8,40.0 L269.2,4.0 L307.7,40.0 L346.2,40.0 L384.6,40.0 L423.1,40.0 L461.5,40.0 L500.0,4.0" fill="none" stroke="#059669" stroke-width="1.5"/>
+<circle cx="38.5" cy="4.0" r="2.5" fill="#059669"><title>R1後期: 1問</title></circle>
+<circle cx="76.9" cy="4.0" r="2.5" fill="#059669"><title>R2: 1問</title></circle>
+<circle cx="192.3" cy="4.0" r="2.5" fill="#059669"><title>R4前期: 1問</title></circle>
+<circle cx="269.2" cy="4.0" r="2.5" fill="#059669"><title>R5前期: 1問</title></circle>
+<circle cx="500.0" cy="4.0" r="2.5" fill="#059669"><title>R8前期: 1問</title></circle>
+</svg>
+<span style="font-size:0.8em;color:#059669;font-weight:700;min-width:40px">5問</span>
+</div>
+<div style="margin:8px 0;display:flex;align-items:center;gap:8px">
+<span style="min-width:130px;text-align:right;font-size:0.85em;font-weight:600;color:#334155">施工管理:配線敷設</span>
+<svg viewBox="0 0 510 50" style="max-width:510px;height:50px;font-family:'Yu Gothic UI',sans-serif">
+<line x1="0" y1="40" x2="500" y2="40" stroke="#e5e7eb" stroke-width="0.5"/>
+<path d="M0.0,40 L0.0,40.0 L38.5,40.0 L76.9,4.0 L115.4,4.0 L153.8,40.0 L192.3,40.0 L230.8,40.0 L269.2,40.0 L307.7,4.0 L346.2,40.0 L384.6,40.0 L423.1,40.0 L461.5,40.0 L500.0,40.0 L500.0,40 Z" fill="#059669" opacity="0.1"/>
+<path d="M0.0,40.0 L38.5,40.0 L76.9,4.0 L115.4,4.0 L153.8,40.0 L192.3,40.0 L230.8,40.0 L269.2,40.0 L307.7,4.0 L346.2,40.0 L384.6,40.0 L423.1,40.0 L461.5,40.0 L500.0,40.0" fill="none" stroke="#059669" stroke-width="1.5"/>
+<circle cx="76.9" cy="4.0" r="2.5" fill="#059669"><title>R2: 1問</title></circle>
+<circle cx="115.4" cy="4.0" r="2.5" fill="#059669"><title>R3前期: 1問</title></circle>
+<circle cx="307.7" cy="4.0" r="2.5" fill="#059669"><title>R5後期: 1問</title></circle>
+</svg>
+<span style="font-size:0.8em;color:#059669;font-weight:700;min-width:40px">3問</span>
+</div>
+</details>
+<h3 class="deep-sub">14-7. 出題間隔分布</h3>
+<p>各テーマの出題間隔（年数）の分布を表示。周期性の把握に。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（間隔分布）</summary>
+<table class="fz85">
+<tr><th>テーマ</th><th>出題回数</th><th>間隔一覧</th><th>平均間隔</th><th>最短</th><th>最長</th><th>間隔分布バー</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac fwb">10</td><td style="font-size:0.8em;color:#6b7280">2, 1, 1, 1, 1, 1, 1, 1, 1</td><td class="tac">1.1</td><td class="tac">1</td><td style="text-align:center;">2</td><td><svg viewBox="0 0 150 14" style="max-width:150px;height:14px"><rect x="0.0" y="0.0" width="15.7" height="14.0" rx="1" fill="#059669" opacity="0.8"><title>間隔2回</title></rect><rect x="16.7" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="33.3" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="50.0" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="66.7" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="83.3" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="100.0" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="116.7" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="133.3" y="7.0" width="15.7" height="7.0" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect></svg></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac fwb">9</td><td style="font-size:0.8em;color:#6b7280">3, 2, 1, 1, 2, 1, 2, 1</td><td class="tac">1.6</td><td class="tac">1</td><td style="text-align:center;">3</td><td><svg viewBox="0 0 150 14" style="max-width:150px;height:14px"><rect x="0.0" y="0.0" width="17.8" height="14.0" rx="1" fill="#f59e0b" opacity="0.8"><title>間隔3回</title></rect><rect x="18.8" y="4.7" width="17.8" height="9.3" rx="1" fill="#059669" opacity="0.8"><title>間隔2回</title></rect><rect x="37.5" y="9.3" width="17.8" height="4.7" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="56.2" y="9.3" width="17.8" height="4.7" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="75.0" y="4.7" width="17.8" height="9.3" rx="1" fill="#059669" opacity="0.8"><title>間隔2回</title></rect><rect x="93.8" y="9.3" width="17.8" height="4.7" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="112.5" y="4.7" width="17.8" height="9.3" rx="1" fill="#059669" opacity="0.8"><title>間隔2回</title></rect><rect x="131.2" y="9.3" width="17.8" height="4.7" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect></svg></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac fwb">5</td><td style="font-size:0.8em;color:#6b7280">1, 3, 2, 6</td><td class="tac">3.0</td><td class="tac">1</td><td style="text-align:center;color:#dc2626;font-weight:700">6</td><td><svg viewBox="0 0 150 14" style="max-width:150px;height:14px"><rect x="0.0" y="11.7" width="36.5" height="2.3" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="37.5" y="7.0" width="36.5" height="7.0" rx="1" fill="#f59e0b" opacity="0.8"><title>間隔3回</title></rect><rect x="75.0" y="9.3" width="36.5" height="4.7" rx="1" fill="#059669" opacity="0.8"><title>間隔2回</title></rect><rect x="112.5" y="0.0" width="36.5" height="14.0" rx="1" fill="#dc2626" opacity="0.8"><title>間隔6回</title></rect></svg></td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac fwb">3</td><td style="font-size:0.8em;color:#6b7280">1, 5</td><td class="tac">3.0</td><td class="tac">1</td><td style="text-align:center;color:#dc2626;font-weight:700">5</td><td><svg viewBox="0 0 150 14" style="max-width:150px;height:14px"><rect x="0.0" y="11.2" width="74.0" height="2.8" rx="1" fill="#059669" opacity="0.8"><title>間隔1回</title></rect><rect x="75.0" y="0.0" width="74.0" height="14.0" rx="1" fill="#dc2626" opacity="0.8"><title>間隔5回</title></rect></svg></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">14-8. 期間別の出題比較</h3>
+<p>R1前期-R3後期 (前期)、R4前期-R6前期 (中期)、R6後期-R8前期 (後期) の3期間で出題テーマの変化を比較。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（期間比較）</summary>
+<table class="fz85">
+<tr><th>テーマ</th>
+<th>R1前期-R3後期 (前期)</th>
+<th>R4前期-R6前期 (中期)</th>
+<th>R6後期-R8前期 (後期)</th>
+<th>傾向</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac"><div style="display:inline-block;width:36px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>3</td><td class="tac"><div style="display:inline-block;width:60px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>5</td><td class="tac"><div style="display:inline-block;width:24px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>2</td><td><span style="color:#3b82f6;font-weight:700">減少傾向</span></td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac"><div style="display:inline-block;width:30px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>2</td><td class="tac"><div style="display:inline-block;width:60px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>4</td><td class="tac"><div style="display:inline-block;width:45px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>3</td><td><span style="color:#6b7280">安定</span></td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac"><div style="display:inline-block;width:60px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>2</td><td class="tac"><div style="display:inline-block;width:60px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>2</td><td class="tac"><div style="display:inline-block;width:30px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>1</td><td><span style="color:#3b82f6;font-weight:700">減少傾向</span></td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac"><div style="display:inline-block;width:60px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>2</td><td class="tac"><div style="display:inline-block;width:30px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>1</td><td class="tac"><div style="display:inline-block;width:0px;height:10px;background:#059669;border-radius:2px;vertical-align:middle;margin-right:4px"></div>0</td><td><span style="color:#3b82f6;font-weight:700">減少傾向</span></td></tr>
+</table>
+</details>
+<h3 class="deep-sub">14-9. テーマ別 学習ノート（全テーマ完全版）</h3>
+<p>各テーマについて、出題パターンの分析結果に基づく<strong>具体的な学習戦略・注意点・時間配分</strong>を網羅的に記載。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（4テーマ 学習ノート）</summary>
+<details style="margin:4px 0;border:1px solid #05966922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;background:#05966905;border-radius:6px;font-weight:600;color:#059669">
+#1 施工管理:施工要領 — 10問 / 71% / <span style="color:#005BA8;font-weight:600">🔵理解必須</span></summary>
+<div style="padding:10px 16px;font-size:0.9em">
+<p><strong>ステータス:</strong> 累計10問（科目内37.0%）/ 出題率71% / 直近5回3問 / 直近10回8問 / 空白2回</p>
+<svg viewBox="0 0 234 22" style="max-width:100%;height:22px;margin:4px 0">
+<rect x="0" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="16" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<text x="23.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="32" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="48" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="55.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="64" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R3後期: 1問</title></rect>
+<text x="71.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="80" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="87.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="96" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<text x="103.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="112" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="119.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="128" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<text x="135.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="144" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<text x="151.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="160" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<text x="167.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="176" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R7前期: 1問</title></rect>
+<text x="183.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="192" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="208" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+</svg>
+<p><strong>分類:</strong> <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<p><strong>学習アプローチ:</strong> このテーマは穴埋め知識の定着が重要。過去問の穴埋め箇所を収集し、頻出の空欄パターンを把握する。選択肢の微妙な言い回しの違いに注意し、正確な用語を暗記する。自作の穴埋めテストで定着度を確認する。</p>
+<p><strong>出題間隔統計:</strong> 平均1.1回 / 最短1回 / 最長2回 / 間隔一覧: 2年, 1年, 1年, 1年, 1年, 1年, 1年, 1年, 1年</p>
+<p><strong>期間別:</strong> R1前期-R2: 1問 / R3前期-R4前期: 3問 / R4後期-R5後期: 3問 / R6前期-R7前期: 3問 / R7後期-R8前期: 0問 / -: 0問</p>
+<p><strong>傾向判定:</strong> 近年出題なし → 試験範囲から外れた可能性がある。対策は後回しでよい。</p>
+<p><strong>次回出題予測:</strong> <span style="color:#dc2626;font-weight:700">出題可能性: 高</span>（スコア55 / 主因: 直近頻度）</p>
+<p><strong>推定必要時間:</strong> 約3.0時間（180分）</p>
+<div class="tip" class="fz9">超高頻度テーマ（71%）。完璧に仕上げることで安定した得点源になる。</div>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;background:#05966905;border-radius:6px;font-weight:600;color:#059669">
+#2 施工管理:試験測定 — 9問 / 64% / <span style="color:#005BA8;font-weight:600">🔵理解必須</span></summary>
+<div style="padding:10px 16px;font-size:0.9em">
+<p><strong>ステータス:</strong> 累計9問（科目内33.3%）/ 出題率64% / 直近5回4問 / 直近10回7問 / 空白0回</p>
+<svg viewBox="0 0 234 22" style="max-width:100%;height:22px;margin:4px 0">
+<rect x="0" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R1前期: 1問</title></rect>
+<text x="7.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="16" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="32" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="48" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="55.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="64" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="80" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="87.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="96" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<text x="103.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="112" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="119.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="128" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="144" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<text x="151.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="160" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<text x="167.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="176" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="192" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R7後期: 1問</title></rect>
+<text x="199.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="208" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<text x="215.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+</svg>
+<p><strong>分類:</strong> <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<p><strong>学習アプローチ:</strong> このテーマは穴埋め知識の定着が重要。過去問の穴埋め箇所を収集し、頻出の空欄パターンを把握する。選択肢の微妙な言い回しの違いに注意し、正確な用語を暗記する。自作の穴埋めテストで定着度を確認する。</p>
+<p><strong>出題間隔統計:</strong> 平均1.6回 / 最短1回 / 最長3回 / 間隔一覧: 3年, 2年, 1年, 1年, 2年, 1年, 2年, 1年</p>
+<p><strong>期間別:</strong> R1前期-R2: 1問 / R3前期-R4前期: 2問 / R4後期-R5後期: 2問 / R6前期-R7前期: 2問 / R7後期-R8前期: 2問 / -: 0問</p>
+<p><strong>傾向判定:</strong> 安定 → コンスタントに出題されている。確実に得点できるよう仕上げる。</p>
+<p><strong>次回出題予測:</strong> <span style="color:#dc2626;font-weight:700">出題可能性: 高</span>（スコア66 / 主因: 直近頻度）</p>
+<p><strong>推定必要時間:</strong> 約2.8時間（165分）</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;background:#05966905;border-radius:6px;font-weight:600;color:#059669">
+#3 施工管理:接続接地 — 5問 / 36% / <span style="color:#005BA8;font-weight:600">🔵理解必須</span></summary>
+<div style="padding:10px 16px;font-size:0.9em">
+<p><strong>ステータス:</strong> 累計5問（科目内18.5%）/ 出題率36% / 直近5回1問 / 直近10回3問 / 空白0回</p>
+<svg viewBox="0 0 234 22" style="max-width:100%;height:22px;margin:4px 0">
+<rect x="0" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="16" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<text x="23.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="32" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<text x="39.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="48" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="64" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="80" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<text x="87.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="96" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="112" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<text x="119.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="128" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="144" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="160" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="176" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="192" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="208" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<text x="215.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+</svg>
+<p><strong>分類:</strong> <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<p><strong>学習アプローチ:</strong> このテーマは穴埋め知識の定着が重要。過去問の穴埋め箇所を収集し、頻出の空欄パターンを把握する。選択肢の微妙な言い回しの違いに注意し、正確な用語を暗記する。自作の穴埋めテストで定着度を確認する。</p>
+<p><strong>出題間隔統計:</strong> 平均3.0回 / 最短1回 / 最長6回 / 間隔一覧: 1年, 3年, 2年, 6年</p>
+<p><strong>期間別:</strong> R1前期-R2: 2問 / R3前期-R4前期: 1問 / R4後期-R5後期: 1問 / R6前期-R7前期: 0問 / R7後期-R8前期: 1問 / -: 0問</p>
+<p><strong>傾向判定:</strong> 減少傾向 → 出題頻度が下がっている。基本だけ押さえて他テーマに時間を回す。</p>
+<p><strong>次回出題予測:</strong> <span style="color:#9ca3af">出題可能性: 低</span>（スコア19）</p>
+<p><strong>推定必要時間:</strong> 約1.8時間（105分）</p>
+</div></details>
+<details style="margin:4px 0;border:1px solid #05966922;border-radius:6px">
+<summary style="cursor:pointer;padding:8px 12px;background:#05966905;border-radius:6px;font-weight:600;color:#059669">
+#4 施工管理:配線敷設 — 3問 / 21% / <span style="color:#005BA8;font-weight:600">🔵理解必須</span></summary>
+<div style="padding:10px 16px;font-size:0.9em">
+<p><strong>ステータス:</strong> 累計3問（科目内11.1%）/ 出題率21% / 直近5回0問 / 直近10回1問 / 空白5回</p>
+<svg viewBox="0 0 234 22" style="max-width:100%;height:22px;margin:4px 0">
+<rect x="0" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="16" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="32" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<text x="39.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="48" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<text x="55.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="64" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="80" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="96" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="112" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="128" y="1" width="15" height="18" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<text x="135.5" y="13" text-anchor="middle" font-size="7" fill="#1e40af" font-weight="700">1</text>
+<rect x="144" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="160" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="176" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="192" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="208" y="1" width="15" height="18" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+</svg>
+<p><strong>分類:</strong> <span style="color:#005BA8;font-weight:600">🔵理解必須</span></p>
+<p><strong>学習アプローチ:</strong> このテーマは穴埋め知識の定着が重要。過去問の穴埋め箇所を収集し、頻出の空欄パターンを把握する。選択肢の微妙な言い回しの違いに注意し、正確な用語を暗記する。自作の穴埋めテストで定着度を確認する。</p>
+<p><strong>出題間隔統計:</strong> 平均3.0回 / 最短1回 / 最長5回 / 間隔一覧: 1年, 5年</p>
+<p><strong>期間別:</strong> R1前期-R2: 1問 / R3前期-R4前期: 1問 / R4後期-R5後期: 1問 / R6前期-R7前期: 0問 / R7後期-R8前期: 0問 / -: 0問</p>
+<p><strong>傾向判定:</strong> 近年出題なし → 試験範囲から外れた可能性がある。対策は後回しでよい。</p>
+<p><strong>次回出題予測:</strong> <span style="color:#9ca3af">出題可能性: 低</span>（スコア2）</p>
+<p><strong>推定必要時間:</strong> 約1.2時間（75分）</p>
+<div class="warn" class="fz9">5回間空白。過去の出題実績（3回）から復活出題の可能性大。直前期に集中復習を推奨。</div>
+</div></details>
+</details>
+<h3 class="deep-sub">14-10. テーマ別 出題シミュレーション</h3>
+<p>各テーマの出題パターンを分析し、<strong>次の10回で何回出題されるか</strong>をシミュレーション。投資判断の材料に。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（シミュレーション）</summary>
+<table class="fz82">
+<tr><th>#</th><th>テーマ</th><th>過去出題率</th><th>直近傾向</th><th>予測次10回</th><th>予測出題数</th><th>学習ROI判定</th></tr>
+<tr><td style="text-align:center;color:#059669">1</td><td><strong>施工管理:施工要領</strong></td><td class="tac">71%</td><td class="tac"><span style="color:#dc2626;font-weight:700">↑上昇</span></td><td style="text-align:center;font-size:0.85em">4.6〜10.8回</td><td style="text-align:center;font-weight:700;color:#059669">7.7回</td><td><span style="color:#16a34a;font-weight:700">◎高効率</span></td></tr>
+<tr><td style="text-align:center;color:#059669">2</td><td><strong>施工管理:試験測定</strong></td><td class="tac">64%</td><td class="tac"><span style="color:#dc2626;font-weight:700">↑上昇</span></td><td style="text-align:center;font-size:0.85em">4.1〜9.6回</td><td style="text-align:center;font-weight:700;color:#059669">6.8回</td><td><span style="color:#16a34a;font-weight:700">◎高効率</span></td></tr>
+<tr><td style="text-align:center;color:#059669">3</td><td><strong>施工管理:接続接地</strong></td><td class="tac">36%</td><td class="tac"><span style="color:#3b82f6;font-weight:700">↓下降</span></td><td style="text-align:center;font-size:0.85em">1.9〜4.4回</td><td style="text-align:center;font-weight:700;color:#059669">3.2回</td><td><span style="color:#2563eb">○標準</span></td></tr>
+<tr><td style="text-align:center;color:#059669">4</td><td><strong>施工管理:配線敷設</strong></td><td class="tac">21%</td><td class="tac"><span style="color:#3b82f6;font-weight:700">↓下降</span></td><td style="text-align:center;font-size:0.85em">0.8〜1.9回</td><td style="text-align:center;font-weight:700;color:#059669">1.3回</td><td><span style="color:#2563eb">○標準</span></td></tr>
+</table>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.85em;color:#059669">#1 施工管理:施工要領 — 詳細シミュレーション</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<svg viewBox="0 0 356 40" style="max-width:100%;height:40px;margin:4px 0">
+<rect x="0" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="14" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<rect x="28" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="42" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<rect x="56" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R3後期: 1問</title></rect>
+<rect x="70" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<rect x="84" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<rect x="98" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<rect x="112" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<rect x="126" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<rect x="140" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<rect x="154" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R7前期: 1問</title></rect>
+<rect x="168" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="182" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+<rect x="196" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R8後期: 予測出題率77%</title></rect>
+<rect x="210" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9前期: 予測出題率77%</title></rect>
+<rect x="224" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9後期: 予測出題率77%</title></rect>
+<rect x="238" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10前期: 予測出題率77%</title></rect>
+<rect x="252" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10後期: 予測出題率77%</title></rect>
+<rect x="266" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11前期: 予測出題率77%</title></rect>
+<rect x="280" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11後期: 予測出題率77%</title></rect>
+<rect x="294" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12前期: 予測出題率77%</title></rect>
+<rect x="308" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12後期: 予測出題率77%</title></rect>
+<rect x="322" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R13前期: 予測出題率77%</title></rect>
+<line x1="195" y1="0" x2="195" y2="20" stroke="#dc2626" stroke-width="1.5"/>
+<text x="195" y="32" font-size="7" fill="#dc2626" text-anchor="middle">現在</text>
+</svg>
+<p><strong>出題周期分析:</strong> 平均間隔 1.1回 ± 0.3回</p>
+<p>周期的に見ると、次回出題は<strong>0回後</strong>前後と予測。
+<span style="color:#dc2626;font-weight:700">既に平均間隔を超過 → 次回出題の確率が高い。</span>
+</p>
+<p><strong>10回予測内訳:</strong></p>
+<table class="fz85"><tr><th>期間</th><th>予測出題数</th><th>根拠</th></tr>
+<tr><td>R9-R10</td><td class="tac">3.7回</td><td>直近の傾向が継続する前提</td></tr>
+<tr><td>R10-R11</td><td class="tac">2.3回</td><td>傾向がやや変動する前提</td></tr>
+<tr><td>R12-R13</td><td class="tac">1.9回</td><td>長期平均に回帰する前提</td></tr>
+</table>
+<p><strong>学習優先度:</strong> <span style="color:#dc2626;font-weight:700">最優先</span>: 今後10回で8回以上の出題が見込まれる。完璧に仕上げること。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.85em;color:#059669">#2 施工管理:試験測定 — 詳細シミュレーション</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<svg viewBox="0 0 356 40" style="max-width:100%;height:40px;margin:4px 0">
+<rect x="0" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R1前期: 1問</title></rect>
+<rect x="14" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="28" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R2: 0問</title></rect>
+<rect x="42" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<rect x="56" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="70" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<rect x="84" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R4後期: 1問</title></rect>
+<rect x="98" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<rect x="112" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="126" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R6前期: 1問</title></rect>
+<rect x="140" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R6後期: 1問</title></rect>
+<rect x="154" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="168" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R7後期: 1問</title></rect>
+<rect x="182" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<rect x="196" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R8後期: 予測出題率68%</title></rect>
+<rect x="210" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9前期: 予測出題率68%</title></rect>
+<rect x="224" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9後期: 予測出題率68%</title></rect>
+<rect x="238" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10前期: 予測出題率68%</title></rect>
+<rect x="252" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10後期: 予測出題率68%</title></rect>
+<rect x="266" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11前期: 予測出題率68%</title></rect>
+<rect x="280" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11後期: 予測出題率68%</title></rect>
+<rect x="294" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12前期: 予測出題率68%</title></rect>
+<rect x="308" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12後期: 予測出題率68%</title></rect>
+<rect x="322" y="2" width="13" height="16" rx="2" fill="#05966988" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R13前期: 予測出題率68%</title></rect>
+<line x1="195" y1="0" x2="195" y2="20" stroke="#dc2626" stroke-width="1.5"/>
+<text x="195" y="32" font-size="7" fill="#dc2626" text-anchor="middle">現在</text>
+</svg>
+<p><strong>出題周期分析:</strong> 平均間隔 1.6回 ± 0.7回</p>
+<p>周期的に見ると、次回出題は<strong>2回後</strong>前後と予測。
+</p>
+<p><strong>10回予測内訳:</strong></p>
+<table class="fz85"><tr><th>期間</th><th>予測出題数</th><th>根拠</th></tr>
+<tr><td>R9-R10</td><td class="tac">3.3回</td><td>直近の傾向が継続する前提</td></tr>
+<tr><td>R10-R11</td><td class="tac">2.0回</td><td>傾向がやや変動する前提</td></tr>
+<tr><td>R12-R13</td><td class="tac">1.6回</td><td>長期平均に回帰する前提</td></tr>
+</table>
+<p><strong>学習優先度:</strong> <span style="color:#dc2626;font-weight:700">最優先</span>: 今後10回で7回以上の出題が見込まれる。完璧に仕上げること。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.85em;color:#059669">#3 施工管理:接続接地 — 詳細シミュレーション</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<svg viewBox="0 0 356 40" style="max-width:100%;height:40px;margin:4px 0">
+<rect x="0" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="14" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R1後期: 1問</title></rect>
+<rect x="28" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<rect x="42" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R3前期: 0問</title></rect>
+<rect x="56" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="70" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R4前期: 1問</title></rect>
+<rect x="84" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="98" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R5前期: 1問</title></rect>
+<rect x="112" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R5後期: 0問</title></rect>
+<rect x="126" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="140" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="154" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="168" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="182" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R8前期: 1問</title></rect>
+<rect x="196" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R8後期: 予測出題率32%</title></rect>
+<rect x="210" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9前期: 予測出題率32%</title></rect>
+<rect x="224" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9後期: 予測出題率32%</title></rect>
+<rect x="238" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10前期: 予測出題率32%</title></rect>
+<rect x="252" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10後期: 予測出題率32%</title></rect>
+<rect x="266" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11前期: 予測出題率32%</title></rect>
+<rect x="280" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11後期: 予測出題率32%</title></rect>
+<rect x="294" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12前期: 予測出題率32%</title></rect>
+<rect x="308" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12後期: 予測出題率32%</title></rect>
+<rect x="322" y="2" width="13" height="16" rx="2" fill="#05966944" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R13前期: 予測出題率32%</title></rect>
+<line x1="195" y1="0" x2="195" y2="20" stroke="#dc2626" stroke-width="1.5"/>
+<text x="195" y="32" font-size="7" fill="#dc2626" text-anchor="middle">現在</text>
+</svg>
+<p><strong>出題周期分析:</strong> 平均間隔 3.0回 ± 1.9回</p>
+<p>周期的に見ると、次回出題は<strong>3回後</strong>前後と予測。
+</p>
+<p><strong>10回予測内訳:</strong></p>
+<table class="fz85"><tr><th>期間</th><th>予測出題数</th><th>根拠</th></tr>
+<tr><td>R9-R10</td><td class="tac">1.5回</td><td>直近の傾向が継続する前提</td></tr>
+<tr><td>R10-R11</td><td class="tac">1.0回</td><td>傾向がやや変動する前提</td></tr>
+<tr><td>R12-R13</td><td class="tac">0.8回</td><td>長期平均に回帰する前提</td></tr>
+</table>
+<p><strong>学習優先度:</strong> <span style="color:#d97706;font-weight:700">標準</span>: 10回で3.2回程度の出題予測。基本を確実に押さえる。</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:4px 8px;font-size:0.85em;color:#059669">#4 施工管理:配線敷設 — 詳細シミュレーション</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<svg viewBox="0 0 356 40" style="max-width:100%;height:40px;margin:4px 0">
+<rect x="0" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R1前期: 0問</title></rect>
+<rect x="14" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R1後期: 0問</title></rect>
+<rect x="28" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R2: 1問</title></rect>
+<rect x="42" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R3前期: 1問</title></rect>
+<rect x="56" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R3後期: 0問</title></rect>
+<rect x="70" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R4前期: 0問</title></rect>
+<rect x="84" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R4後期: 0問</title></rect>
+<rect x="98" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R5前期: 0問</title></rect>
+<rect x="112" y="2" width="13" height="16" rx="2" fill="#93c5fd"><title>R5後期: 1問</title></rect>
+<rect x="126" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R6前期: 0問</title></rect>
+<rect x="140" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R6後期: 0問</title></rect>
+<rect x="154" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7前期: 0問</title></rect>
+<rect x="168" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R7後期: 0問</title></rect>
+<rect x="182" y="2" width="13" height="16" rx="2" fill="#f1f5f9"><title>R8前期: 0問</title></rect>
+<rect x="196" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R8後期: 予測出題率13%</title></rect>
+<rect x="210" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9前期: 予測出題率13%</title></rect>
+<rect x="224" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R9後期: 予測出題率13%</title></rect>
+<rect x="238" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10前期: 予測出題率13%</title></rect>
+<rect x="252" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R10後期: 予測出題率13%</title></rect>
+<rect x="266" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11前期: 予測出題率13%</title></rect>
+<rect x="280" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R11後期: 予測出題率13%</title></rect>
+<rect x="294" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12前期: 予測出題率13%</title></rect>
+<rect x="308" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R12後期: 予測出題率13%</title></rect>
+<rect x="322" y="2" width="13" height="16" rx="2" fill="#05966922" stroke="#059669" stroke-width="0.5" stroke-dasharray="2,2"><title>R13前期: 予測出題率13%</title></rect>
+<line x1="195" y1="0" x2="195" y2="20" stroke="#dc2626" stroke-width="1.5"/>
+<text x="195" y="32" font-size="7" fill="#dc2626" text-anchor="middle">現在</text>
+</svg>
+<p><strong>出題周期分析:</strong> 平均間隔 3.0回 ± 2.0回</p>
+<p>周期的に見ると、次回出題は<strong>0回後</strong>前後と予測。
+<span style="color:#dc2626;font-weight:700">既に平均間隔を超過 → 次回出題の確率が高い。</span>
+</p>
+<p><strong>10回予測内訳:</strong></p>
+<table class="fz85"><tr><th>期間</th><th>予測出題数</th><th>根拠</th></tr>
+<tr><td>R9-R10</td><td class="tac">0.6回</td><td>直近の傾向が継続する前提</td></tr>
+<tr><td>R10-R11</td><td class="tac">0.4回</td><td>傾向がやや変動する前提</td></tr>
+<tr><td>R12-R13</td><td class="tac">0.3回</td><td>長期平均に回帰する前提</td></tr>
+</table>
+<p><strong>学習優先度:</strong> <span style="color:#2563eb">低優先</span>: 10回で1.3回程度。基礎だけ確認する。</p>
+</div></details>
+</details>
+<h3 class="deep-sub">14-11. テーマ別 過去問ドリルスケジュール</h3>
+<p>各テーマについて、出題された<strong>全年度の過去問</strong>を解く順序・方法・目標時間を具体的に指定。効率的な演習計画。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（ドリルスケジュール）</summary>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.88em;color:#059669">#1 施工管理:施工要領（10問・10年分）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p style="font-weight:700;margin:4px 0">Round 1: 初回演習（新しい年度から）</p>
+<table class="fz85"><tr><th>#</th><th>年度</th><th>問数</th><th>目標時間</th><th>方法</th><th>チェック</th></tr>
+<tr><td class="tac">1</td><td class="fws">R7前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">2</td><td class="fws">R6後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">3</td><td class="fws">R6前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">4</td><td class="fws">R5後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">5</td><td class="fws">R5前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">6</td><td class="fws">R4後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">7</td><td class="fws">R4前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">8</td><td class="fws">R3後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">9</td><td class="fws">R3前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">10</td><td class="fws">R1後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr style="font-weight:700;background:#eff6ff"><td colspan="3">Round 1 合計</td><td class="tac">50分</td><td colspan="2">間違えた問題にマーク</td></tr>
+</table>
+<p style="font-weight:700;margin:6px 0 4px">Round 2: 復習（間違えた問題のみ）</p>
+<p style="font-size:0.85em;margin:2px 0">Round 1でマークした問題のみ再演習。推定所要時間: 20〜30分（マーク率40〜60%想定）。
+暗記カードに追加し、復習サイクルに組み込む。
+</p>
+<p style="font-weight:700;margin:6px 0 4px">Round 3: 速度演習（全問）</p>
+<p style="font-size:0.85em;margin:2px 0">全10問を30分以内で解く速度演習。1問あたり3.0分が目標。本番を想定した制限時間で演習。</p>
+<p style="font-weight:700;margin:6px 0 4px">年度別難易度（推定）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#dc2626;font-weight:700">★★★</span> R1後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R3前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R3後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R4前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R4後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R5前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R5後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R6前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R6後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R7前期（1問）</p>
+<p style="font-weight:700;margin:6px 0 4px;color:#059669">合計推定時間: 105分（1.8時間）</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.88em;color:#059669">#2 施工管理:試験測定（9問・9年分）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p style="font-weight:700;margin:4px 0">Round 1: 初回演習（新しい年度から）</p>
+<table class="fz85"><tr><th>#</th><th>年度</th><th>問数</th><th>目標時間</th><th>方法</th><th>チェック</th></tr>
+<tr><td class="tac">1</td><td class="fws">R8前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">2</td><td class="fws">R7後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">3</td><td class="fws">R6後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">4</td><td class="fws">R6前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">5</td><td class="fws">R5前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">6</td><td class="fws">R4後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">7</td><td class="fws">R4前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">8</td><td class="fws">R3前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">9</td><td class="fws">R1前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr style="font-weight:700;background:#eff6ff"><td colspan="3">Round 1 合計</td><td class="tac">45分</td><td colspan="2">間違えた問題にマーク</td></tr>
+</table>
+<p style="font-weight:700;margin:6px 0 4px">Round 2: 復習（間違えた問題のみ）</p>
+<p style="font-size:0.85em;margin:2px 0">Round 1でマークした問題のみ再演習。推定所要時間: 18〜27分（マーク率40〜60%想定）。
+暗記カードに追加し、復習サイクルに組み込む。
+</p>
+<p style="font-weight:700;margin:6px 0 4px">Round 3: 速度演習（全問）</p>
+<p style="font-size:0.85em;margin:2px 0">全9問を27分以内で解く速度演習。1問あたり3.0分が目標。本番を想定した制限時間で演習。</p>
+<p style="font-weight:700;margin:6px 0 4px">年度別難易度（推定）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#dc2626;font-weight:700">★★★</span> R1前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R3前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R4前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R4後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R5前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R6前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R6後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R7後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R8前期（1問）</p>
+<p style="font-weight:700;margin:6px 0 4px;color:#059669">合計推定時間: 94分（1.6時間）</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.88em;color:#059669">#3 施工管理:接続接地（5問・5年分）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p style="font-weight:700;margin:4px 0">Round 1: 初回演習（新しい年度から）</p>
+<table class="fz85"><tr><th>#</th><th>年度</th><th>問数</th><th>目標時間</th><th>方法</th><th>チェック</th></tr>
+<tr><td class="tac">1</td><td class="fws">R8前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">2</td><td class="fws">R5前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">3</td><td class="fws">R4前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">4</td><td class="fws">R2</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">5</td><td class="fws">R1後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr style="font-weight:700;background:#eff6ff"><td colspan="3">Round 1 合計</td><td class="tac">25分</td><td colspan="2">間違えた問題にマーク</td></tr>
+</table>
+<p style="font-weight:700;margin:6px 0 4px">Round 2: 復習（間違えた問題のみ）</p>
+<p style="font-size:0.85em;margin:2px 0">Round 1でマークした問題のみ再演習。推定所要時間: 10〜15分（マーク率40〜60%想定）。
+暗記カードに追加し、復習サイクルに組み込む。
+</p>
+<p style="font-weight:700;margin:6px 0 4px">Round 3: 速度演習（全問）</p>
+<p style="font-size:0.85em;margin:2px 0">全5問を15分以内で解く速度演習。1問あたり3.0分が目標。本番を想定した制限時間で演習。</p>
+<p style="font-weight:700;margin:6px 0 4px">年度別難易度（推定）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#dc2626;font-weight:700">★★★</span> R1後期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R2（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R4前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R5前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R8前期（1問）</p>
+<p style="font-weight:700;margin:6px 0 4px;color:#059669">合計推定時間: 52分（0.9時間）</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.88em;color:#059669">#4 施工管理:配線敷設（3問・3年分）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<p style="font-weight:700;margin:4px 0">Round 1: 初回演習（新しい年度から）</p>
+<table class="fz85"><tr><th>#</th><th>年度</th><th>問数</th><th>目標時間</th><th>方法</th><th>チェック</th></tr>
+<tr><td class="tac">1</td><td class="fws">R5後期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">2</td><td class="fws">R3前期</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr><td class="tac">3</td><td class="fws">R2</td><td class="tac">1</td><td class="tac">5分</td><td>穴埋め箇所を確認し即答</td><td class="tac">□</td></tr>
+<tr style="font-weight:700;background:#eff6ff"><td colspan="3">Round 1 合計</td><td class="tac">15分</td><td colspan="2">間違えた問題にマーク</td></tr>
+</table>
+<p style="font-weight:700;margin:6px 0 4px">Round 2: 復習（間違えた問題のみ）</p>
+<p style="font-size:0.85em;margin:2px 0">Round 1でマークした問題のみ再演習。推定所要時間: 6〜9分（マーク率40〜60%想定）。
+暗記カードに追加し、復習サイクルに組み込む。
+</p>
+<p style="font-weight:700;margin:6px 0 4px">Round 3: 速度演習（全問）</p>
+<p style="font-size:0.85em;margin:2px 0">全3問を9分以内で解く速度演習。1問あたり3.0分が目標。本番を想定した制限時間で演習。</p>
+<p style="font-weight:700;margin:6px 0 4px">年度別難易度（推定）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#dc2626;font-weight:700">★★★</span> R2（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#d97706;font-weight:700">★★</span> R3前期（1問）</p>
+<p style="font-size:0.85em;margin:1px 0;padding-left:8px"><span style="color:#6b7280">★</span> R5後期（1問）</p>
+<p style="font-weight:700;margin:6px 0 4px;color:#059669">合計推定時間: 31分（0.5時間）</p>
+</div></details>
+</details>
+<h3 class="deep-sub">14-12. テーマ別 本番戦略メモ</h3>
+<p>各テーマが試験本番で出題されたときの<strong>解答戦略・時間配分・注意点</strong>。試験直前にこの一覧を確認。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（本番戦略）</summary>
+<table class="fz85">
+<tr><th>テーマ</th><th>問数</th><th>目標時間</th><th>解答戦略</th><th>注意点</th><th>部分点</th></tr>
+<tr><td><strong>施工管理:施工要領</strong></td><td class="tac">10</td><td class="tac">3分</td><td class="fz9">穴埋め箇所のキーワードを確認し、暗記知識で即答。</td><td style="font-size:0.9em;color:#dc2626">似た用語の混同に注意。文脈から正しい用語を判断する。</td><td style="font-size:0.9em;color:#2563eb">確実にわかる穴だけ先に埋め、残りは推測で対応。</td></tr>
+<tr><td><strong>施工管理:試験測定</strong></td><td class="tac">9</td><td class="tac">3分</td><td class="fz9">穴埋め箇所のキーワードを確認し、暗記知識で即答。</td><td style="font-size:0.9em;color:#dc2626">似た用語の混同に注意。文脈から正しい用語を判断する。</td><td style="font-size:0.9em;color:#2563eb">確実にわかる穴だけ先に埋め、残りは推測で対応。</td></tr>
+<tr><td><strong>施工管理:接続接地</strong></td><td class="tac">5</td><td class="tac">3分</td><td class="fz9">穴埋め箇所のキーワードを確認し、暗記知識で即答。</td><td style="font-size:0.9em;color:#dc2626">似た用語の混同に注意。文脈から正しい用語を判断する。</td><td style="font-size:0.9em;color:#2563eb">確実にわかる穴だけ先に埋め、残りは推測で対応。</td></tr>
+<tr><td><strong>施工管理:配線敷設</strong></td><td class="tac">3</td><td class="tac">3分</td><td class="fz9">穴埋め箇所のキーワードを確認し、暗記知識で即答。</td><td style="font-size:0.9em;color:#dc2626">似た用語の混同に注意。文脈から正しい用語を判断する。</td><td style="font-size:0.9em;color:#2563eb">確実にわかる穴だけ先に埋め、残りは推測で対応。</td></tr>
+</table>
+</details>
+<h3 class="deep-sub">14-13. 出題テーマ×年度 完全クロスリファレンス</h3>
+<p>各テーマが出題された全年度について、<strong>出題数・前後年との変化・累積データ</strong>を完全展開。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（完全クロスリファレンス）</summary>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#059669">#1 施工管理:施工要領（10問・10回・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R1後期</strong>: 1問出題 （前回から1回後 / 累計1/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:接続接地</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 10%完了（1/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R3前期</strong>: 1問出題 （前回から2回後 / 累計2/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:配線敷設, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 20%完了（2/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R3後期</strong>: 1問出題 （前回から1回後 / 累計3/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 30%完了（3/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R4前期</strong>: 1問出題 （前回から1回後 / 累計4/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:接続接地, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 40%完了（4/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R4後期</strong>: 1問出題 （前回から1回後 / 累計5/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 50%完了（5/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R5前期</strong>: 1問出題 （前回から1回後 / 累計6/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:接続接地, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 60%完了（6/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R5後期</strong>: 1問出題 （前回から1回後 / 累計7/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:配線敷設</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 70%完了（7/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R6前期</strong>: 1問出題 （前回から1回後 / 累計8/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 80%完了（8/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R6後期</strong>: 1問出題 （前回から1回後 / 累計9/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 90%完了（9/10回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R7前期</strong>: 1問出題 （前回から1回後 / 累計10/10問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 100%完了（10/10回目）</p>
+</div>
+<p style="margin:4px 0"><strong>サマリー:</strong> 全10回出題 / 平均間隔1.1回 / 最短間隔1年 / 最長間隔2年 / 現在の空白2年</p>
+<p style="margin:4px 0;font-size:0.88em"><strong>出題パターン:</strong> 規則的出題パターン: ほぼ1年周期で安定して出題</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#059669">#2 施工管理:試験測定（9問・9回・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R1前期</strong>: 1問出題 （前回から0回後 / 累計1/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 11%完了（1/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R3前期</strong>: 1問出題 （前回から3回後 / 累計2/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:配線敷設</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 22%完了（2/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R4前期</strong>: 1問出題 （前回から2回後 / 累計3/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:接続接地</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 33%完了（3/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R4後期</strong>: 1問出題 （前回から1回後 / 累計4/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 44%完了（4/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R5前期</strong>: 1問出題 （前回から1回後 / 累計5/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:接続接地</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 56%完了（5/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R6前期</strong>: 1問出題 （前回から2回後 / 累計6/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 67%完了（6/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R6後期</strong>: 1問出題 （前回から1回後 / 累計7/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 78%完了（7/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R7後期</strong>: 1問出題 （前回から2回後 / 累計8/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 89%完了（8/9回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R8前期</strong>: 1問出題 （前回から1回後 / 累計9/9問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:接続接地</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 100%完了（9/9回目）</p>
+</div>
+<p style="margin:4px 0"><strong>サマリー:</strong> 全9回出題 / 平均間隔1.6回 / 最短間隔1年 / 最長間隔3年 / 現在の空白0年</p>
+<p style="margin:4px 0;font-size:0.88em"><strong>出題パターン:</strong> 規則的出題パターン: ほぼ2年周期で安定して出題</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#059669">#3 施工管理:接続接地（5問・5回・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R1後期</strong>: 1問出題 （前回から1回後 / 累計1/5問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 20%完了（1/5回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R2</strong>: 1問出題 （前回から1回後 / 累計2/5問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:配線敷設</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 40%完了（2/5回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R4前期</strong>: 1問出題 （前回から3回後 / 累計3/5問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 60%完了（3/5回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R5前期</strong>: 1問出題 （前回から2回後 / 累計4/5問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 80%完了（4/5回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R8前期</strong>: 1問出題 （前回から6回後 / 累計5/5問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 100%完了（5/5回目）</p>
+</div>
+<p style="margin:4px 0"><strong>サマリー:</strong> 全5回出題 / 平均間隔3.0回 / 最短間隔1年 / 最長間隔6年 / 現在の空白0年</p>
+<p style="margin:4px 0;font-size:0.88em"><strong>出題パターン:</strong> やや規則的: 3年±1.9年の周期で出題</p>
+</div></details>
+<details style="margin:2px 0;border-left:2px solid #05966933">
+<summary style="cursor:pointer;padding:3px 8px;font-size:0.85em;color:#059669">#4 施工管理:配線敷設（3問・3回・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</summary>
+<div style="padding:6px 14px;font-size:0.88em">
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R2</strong>: 1問出題 （前回から2回後 / 累計1/3問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:接続接地</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 33%完了（1/3回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R3前期</strong>: 1問出題 （前回から1回後 / 累計2/3問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領, 施工管理:試験測定</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 67%完了（2/3回目）</p>
+</div>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:3px 0;background:#fafafa">
+<p style="margin:1px 0"><strong>R5後期</strong>: 1問出題 （前回から5回後 / 累計3/3問 / 出題率100%/回）</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">同年出題: 施工管理:施工要領</p>
+<p style="font-size:0.85em;margin:1px 0;color:#6b7280">出題ライフサイクル: 100%完了（3/3回目）</p>
+</div>
+<p style="margin:4px 0"><strong>サマリー:</strong> 全3回出題 / 平均間隔3.0回 / 最短間隔1年 / 最長間隔5年 / 現在の空白5年</p>
+<p style="margin:4px 0;font-size:0.88em"><strong>出題パターン:</strong> 不規則出題: 間隔が1〜5年と大きくばらつく</p>
+</div></details>
+</details>
+<h3 class="deep-sub">14-14. テーマ別 マスターチェックリスト</h3>
+<p>各テーマの習熟度を自己評価するためのチェックリスト。全項目にチェックが入れば合格圏。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（マスターチェックリスト）</summary>
+<div style="border-left:3px solid #05966933;padding:6px 12px;margin:4px 0">
+<p style="font-weight:700;color:#059669;margin:2px 0">施工管理:施工要領（10問・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</p>
+<div style="font-size:0.88em;margin:4px 0">
+<p style="margin:1px 0">□ 過去10問の穴埋めパターンを収集済み</p>
+<p style="margin:1px 0">□ 頻出の穴埋め用語をリスト化して暗記済み</p>
+<p style="margin:1px 0">□ 選択肢の微妙な言い回しの違いを整理済み</p>
+<p style="margin:1px 0">□ 自作穴埋めテストで正答率90%以上</p>
+<p style="margin:1px 0">□ 2日おきの復習で忘却を防止中</p>
+</div>
+<p style="font-size:0.85em;color:#6b7280;margin:2px 0">目標: このテーマは最重要。全チェック項目クリアが必須。</p>
+</div>
+<div style="border-left:3px solid #05966933;padding:6px 12px;margin:4px 0">
+<p style="font-weight:700;color:#059669;margin:2px 0">施工管理:試験測定（9問・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</p>
+<div style="font-size:0.88em;margin:4px 0">
+<p style="margin:1px 0">□ 過去9問の穴埋めパターンを収集済み</p>
+<p style="margin:1px 0">□ 頻出の穴埋め用語をリスト化して暗記済み</p>
+<p style="margin:1px 0">□ 選択肢の微妙な言い回しの違いを整理済み</p>
+<p style="margin:1px 0">□ 自作穴埋めテストで正答率90%以上</p>
+<p style="margin:1px 0">□ 2日おきの復習で忘却を防止中</p>
+</div>
+<p style="font-size:0.85em;color:#6b7280;margin:2px 0">目標: このテーマは最重要。全チェック項目クリアが必須。</p>
+</div>
+<div style="border-left:3px solid #05966933;padding:6px 12px;margin:4px 0">
+<p style="font-weight:700;color:#059669;margin:2px 0">施工管理:接続接地（5問・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</p>
+<div style="font-size:0.88em;margin:4px 0">
+<p style="margin:1px 0">□ 過去5問の穴埋めパターンを収集済み</p>
+<p style="margin:1px 0">□ 頻出の穴埋め用語をリスト化して暗記済み</p>
+<p style="margin:1px 0">□ 選択肢の微妙な言い回しの違いを整理済み</p>
+<p style="margin:1px 0">□ 自作穴埋めテストで正答率90%以上</p>
+<p style="margin:1px 0">□ 2日おきの復習で忘却を防止中</p>
+</div>
+<p style="font-size:0.85em;color:#6b7280;margin:2px 0">目標: 標準重要度。少なくとも4項目以上クリアを目標。</p>
+</div>
+<div style="border-left:3px solid #05966933;padding:6px 12px;margin:4px 0">
+<p style="font-weight:700;color:#059669;margin:2px 0">施工管理:配線敷設（3問・<span style="color:#005BA8;font-weight:600">🔵理解必須</span>）</p>
+<div style="font-size:0.88em;margin:4px 0">
+<p style="margin:1px 0">□ 過去3問の穴埋めパターンを収集済み</p>
+<p style="margin:1px 0">□ 頻出の穴埋め用語をリスト化して暗記済み</p>
+<p style="margin:1px 0">□ 選択肢の微妙な言い回しの違いを整理済み</p>
+<p style="margin:1px 0">□ 自作穴埋めテストで正答率90%以上</p>
+<p style="margin:1px 0">□ 2日おきの復習で忘却を防止中</p>
+</div>
+<p style="font-size:0.85em;color:#6b7280;margin:2px 0">目標: 標準重要度。少なくとも4項目以上クリアを目標。</p>
+</div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="raw-analysis__電気通信設備.html">← 電気通信設備</a></span><span style="text-align:center;flex:1"><a href="raw-analysis.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"><a href="raw-analysis__施工管理法.html">施工管理法 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>前提知識グラフ - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">前提知識グラフ</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cut-list.html">← 捨てテーマリスト</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="time-budget.html">時間配分設計 →</a></span></nav>
+<section id="dependency-graph">
+  <h2>前提知識グラフ</h2>
+<p>科目間・テーマ間の<strong>前提知識の依存関係</strong>を示します。矢印の元が前提、先が応用です。</p>
+<svg viewBox="0 0 700 150" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6"/></marker></defs>
+</svg>
+<h3>依存関係の詳細解説</h3>
+<h3>科目別 前提知識チェーン</h3>
+<details><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.05em">電気通信工学等 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（電気通信工学等）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>情報工学:ネットワーク基礎</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h（累積: 4h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#2</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>電気工学:電気回路基礎</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h30m（累積: 11h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#3</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>無線工学:アンテナ基礎</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h30m（累積: 19h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#4</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>無線工学:電波伝搬</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h（累積: 26h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#5</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>通信工学:通信理論基礎</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h30m（累積: 31h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#6</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>電気工学:電力</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 36h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#7c3aed;min-width:24px">#7</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>通信工学:電子回路</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 41h30m）</span>
+</div>
+<h4>テーマ間の依存関係（電気通信工学等）</h4>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 電気工学:電気回路基礎: 「情報工学:ネットワーク基礎」(Lv2)の理解が「電気工学:電気回路基礎」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 無線工学:アンテナ基礎: 「情報工学:ネットワーク基礎」(Lv2)の理解が「無線工学:アンテナ基礎」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 無線工学:電波伝搬: 「情報工学:ネットワーク基礎」(Lv2)の理解が「無線工学:電波伝搬」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 通信工学:通信理論基礎: 「情報工学:ネットワーク基礎」(Lv2)の理解が「通信工学:通信理論基礎」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 電気工学:電力: 「情報工学:ネットワーク基礎」(Lv2)の理解が「電気工学:電力」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#7c3aed">■</span> 情報工学:ネットワーク基礎 → 通信工学:電子回路: 「情報工学:ネットワーク基礎」(Lv2)の理解が「通信工学:電子回路」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<svg viewBox="0 0 700 340" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-電気通信工学等" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7c3aed"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 情報工学:ネットワーク基礎</text>
+  <rect x="260" y="65" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="79" font-size="9" fill="#374151">Lv4 電気工学:電気回路基礎</text>
+  <line x1="280" y1="41" x2="260" y2="76" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#dep-arrow-電気通信工学等)" opacity="0.5"/>
+  <rect x="260" y="100" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="114" font-size="9" fill="#374151">Lv4 無線工学:アンテナ基礎</text>
+  <rect x="260" y="135" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="149" font-size="9" fill="#374151">Lv4 無線工学:電波伝搬</text>
+  <rect x="260" y="170" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="184" font-size="9" fill="#374151">Lv4 通信工学:通信理論基礎</text>
+  <rect x="260" y="205" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="219" font-size="9" fill="#374151">Lv4 電気工学:電力</text>
+  <rect x="260" y="240" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="254" font-size="9" fill="#374151">Lv4 通信工学:電子回路</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0ea5e9;padding:8px 0;font-size:1.05em">電気通信設備 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（電気通信設備）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>情報設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">3h30m（累積: 3h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#2</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>セキュリティ設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">8h（累積: 11h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#3</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>ネットワーク設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h（累積: 18h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#4</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>有線通信設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">6h30m（累積: 25h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#5</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>無線通信設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h30m（累積: 30h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#0ea5e9;min-width:24px">#6</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>電源設備</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h30m（累積: 36h）</span>
+</div>
+<h4>テーマ間の依存関係（電気通信設備）</h4>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#0ea5e9">■</span> 情報設備 → セキュリティ設備: 「情報設備」(Lv2)の理解が「セキュリティ設備」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#0ea5e9">■</span> 情報設備 → ネットワーク設備: 「情報設備」(Lv2)の理解が「ネットワーク設備」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#0ea5e9">■</span> 情報設備 → 有線通信設備: 「情報設備」(Lv2)の理解が「有線通信設備」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#0ea5e9">■</span> 情報設備 → 無線通信設備: 「情報設備」(Lv2)の理解が「無線通信設備」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<p style="font-size:0.88em;margin:3px 0;padding-left:12px"><span style="color:#0ea5e9">■</span> 情報設備 → 電源設備: 「情報設備」(Lv2)の理解が「電源設備」(Lv4)の前提。先に基礎を固めてから応用に進むこと。</p>
+<svg viewBox="0 0 700 300" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-電気通信設備" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#0ea5e9"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 情報設備</text>
+  <rect x="260" y="65" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="79" font-size="9" fill="#374151">Lv4 セキュリティ設備</text>
+  <line x1="280" y1="41" x2="260" y2="76" stroke="#0ea5e9" stroke-width="1.5" marker-end="url(#dep-arrow-電気通信設備)" opacity="0.5"/>
+  <rect x="260" y="100" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="114" font-size="9" fill="#374151">Lv4 ネットワーク設備</text>
+  <rect x="260" y="135" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="149" font-size="9" fill="#374151">Lv4 有線通信設備</text>
+  <rect x="260" y="170" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="184" font-size="9" fill="#374151">Lv4 無線通信設備</text>
+  <rect x="260" y="205" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="219" font-size="9" fill="#374151">Lv4 電源設備</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（設計施工）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#059669;min-width:24px">#1</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>施工管理:施工要領</strong> 
+<span style="font-size:0.82em;color:#6b7280">8h（累積: 8h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#059669;min-width:24px">#2</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>施工管理:試験測定</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h30m（累積: 15h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#059669;min-width:24px">#3</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>施工管理:接続接地</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h30m（累積: 21h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#fef3c7;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#059669;min-width:24px">#4</span>
+<span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> 
+<strong>施工管理:配線敷設</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h30m（累積: 25h30m）</span>
+</div>
+<h4>テーマ間の依存関係（設計施工）</h4>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-設計施工" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#059669"/></marker></defs>
+  <rect x="260" y="30" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="44" font-size="9" fill="#374151">Lv4 施工管理:施工要領</text>
+  <rect x="260" y="65" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="79" font-size="9" fill="#374151">Lv4 施工管理:試験測定</text>
+  <rect x="260" y="100" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="114" font-size="9" fill="#374151">Lv4 施工管理:接続接地</text>
+  <rect x="260" y="135" width="180" height="22" fill="#005BA8" opacity="0.15" stroke="#005BA8" rx="4"/>
+  <text x="266" y="149" font-size="9" fill="#374151">Lv4 施工管理:配線敷設</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（施工管理法）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#1</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>施工計画</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 5h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#2</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>工程管理:ネットワーク</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 10h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#3</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>品質管理</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 15h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#1e40af;min-width:24px">#4</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>安全管理</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 20h）</span>
+</div>
+<h4>テーマ間の依存関係（施工管理法）</h4>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-施工管理法" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1e40af"/></marker></defs>
+  <rect x="180" y="30" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="44" font-size="9" fill="#374151">Lv3 施工計画</text>
+  <rect x="180" y="65" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="79" font-size="9" fill="#374151">Lv3 工程管理:ネットワーク</text>
+  <rect x="180" y="100" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="114" font-size="9" fill="#374151">Lv3 品質管理</text>
+  <rect x="180" y="135" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="149" font-size="9" fill="#374151">Lv3 安全管理</text>
+</svg>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規 学習順序と依存関係</summary>
+<h4>この順番で学ぶと最も効率的（法規）</h4>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#eff6ff;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#1</span>
+<span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> 
+<strong>電気通信事業法</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 5h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#2</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>労働安全衛生法</strong> 
+<span style="font-size:0.82em;color:#6b7280">7h（累積: 12h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#3</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>建設業法</strong> 
+<span style="font-size:0.82em;color:#6b7280">5h（累積: 17h）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#4</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>有線電気通信法</strong> 
+<span style="font-size:0.82em;color:#6b7280">4h30m（累積: 21h30m）</span>
+</div>
+<div style="text-align:center;color:#93c5fd;font-size:1.2em">↓</div>
+<div style="display:flex;align-items:center;gap:10px;padding:6px 12px;background:#f0fdf4;border-radius:6px;margin:2px 0">
+<span style="font-weight:700;color:#d97706;min-width:24px">#5</span>
+<span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> 
+<strong>電波法</strong> 
+<span style="font-size:0.82em;color:#6b7280">3h（累積: 24h30m）</span>
+</div>
+<h4>テーマ間の依存関係（法規）</h4>
+<svg viewBox="0 0 700 260" style="width:100%;max-width:700px;margin:12px 0">
+  <defs><marker id="dep-arrow-法規" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#d97706"/></marker></defs>
+  <rect x="100" y="30" width="180" height="22" fill="#CC3333" opacity="0.15" stroke="#CC3333" rx="4"/>
+  <text x="106" y="44" font-size="9" fill="#374151">Lv2 電気通信事業法</text>
+  <rect x="180" y="65" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="79" font-size="9" fill="#374151">Lv3 労働安全衛生法</text>
+  <line x1="280" y1="41" x2="180" y2="76" stroke="#d97706" stroke-width="1.5" marker-end="url(#dep-arrow-法規)" opacity="0.5"/>
+  <rect x="180" y="100" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="114" font-size="9" fill="#374151">Lv3 建設業法</text>
+  <rect x="180" y="135" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="149" font-size="9" fill="#374151">Lv3 有線電気通信法</text>
+  <rect x="180" y="170" width="180" height="22" fill="#E67E00" opacity="0.15" stroke="#E67E00" rx="4"/>
+  <text x="186" y="184" font-size="9" fill="#374151">Lv3 電波法</text>
+</svg>
+</details>
+<h3>推奨学習順序</h3>
+<div class="tip">前提知識を先に固めてから応用テーマに進むと、理解速度が大幅に上がります。</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 1: 電気通信工学等</strong>
+<p style="font-size:0.9em;margin:4px 0">電気通信工学等の頻出単元から固める。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 41h30m</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 2: 電気通信設備</strong>
+<p style="font-size:0.9em;margin:4px 0">電気通信設備の頻出単元から固める。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 36h</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 3: 設計施工</strong>
+<p style="font-size:0.9em;margin:4px 0">設計施工の頻出単元から固める。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 25h30m</p>
+</div>
+<div style="border-left:4px solid #3b82f6;padding:8px 14px;margin:6px 0;background:#f8fafc">
+<strong>Step 4: 施工管理法</strong>
+<p style="font-size:0.9em;margin:4px 0">施工管理法の頻出単元から固める。</p>
+<p style="font-size:0.85em;color:#6b7280">推定所要時間: 20h</p>
+</div>
+<h3>並行して学べるテーマ</h3>
+<div class="note">以下のテーマ群は相互に依存が少ないため、同時並行で学習できます。</div>
+<p><strong>グループA:</strong> 電気通信工学等, 電気通信設備</p>
+<p><strong>グループB:</strong> 設計施工, 施工管理法, 法規</p>
+<p style="font-size:0.9em;color:#6b7280">ただしグループAの基礎テーマ（深度Lv1-2）を先に済ませてからグループBの応用テーマに着手すると効率が上がる。</p>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="cut-list.html">← 捨てテーマリスト</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="time-budget.html">時間配分設計 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

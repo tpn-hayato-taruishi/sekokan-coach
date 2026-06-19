@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投資対効果分析 - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">投資対効果分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+<section id="roi-analysis">
+  <h2>投資対効果分析</h2>
+<p>各テーマの <strong>ROI = 出題確率 / 推定学習時間</strong> を算出。ROIが高いテーマから学習すれば最短で得点が伸びます。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.1em">電気通信工学等 ROIランキング</summary>
+<div class="tip">上位4個で60%カバー、上位5個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>情報工学:ネットワーク基礎</td><td>15.2%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>4h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.038</span></div></td><td>3.8点</td><td>5回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>無線工学:アンテナ基礎</td><td>19.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:41px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.026</span></div></td><td>2.6点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>電気工学:電気回路基礎</td><td>19.6%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:41px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.026</span></div></td><td>2.6点</td><td>7回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>無線工学:電波伝搬</td><td>17.4%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:39px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.025</span></div></td><td>2.5点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>5</td><td>通信工学:通信理論基礎</td><td>10.9%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:31px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.020</span></div></td><td>2.0点</td><td>3回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>6</td><td>通信工学:電子回路</td><td>8.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.017</span></div></td><td>1.7点</td><td>4回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+<tr><td>7</td><td>電気工学:電力</td><td>8.7%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:27px;height:8px;background:#7c3aed;border-radius:4px"></div><span class="fz8">0.017</span></div></td><td>1.7点</td><td>3回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+</table>
+<h4>投資回収シナリオ（電気通信工学等 上位15テーマ）</h4>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 情報工学:ネットワーク基礎</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.038</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.0時間の学習（過去問演習 3h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 15.2% → 1時間あたり期待点数 3.8点。14年間で7回出題、14年中7年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で5回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 無線工学:アンテナ基礎</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.026</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.5時間の学習（過去問演習 4h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 19.6% → 1時間あたり期待点数 2.6点。14年間で9回出題、14年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R7後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 電気工学:電気回路基礎</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.026</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.5時間の学習（過去問演習 4h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 19.6% → 1時間あたり期待点数 2.6点。14年間で9回出題、14年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で7回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 無線工学:電波伝搬</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.025</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.0時間の学習（過去問演習 4h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 17.4% → 1時間あたり期待点数 2.5点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 通信工学:通信理論基礎</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.020</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.5時間の学習（過去問演習 2h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 10.9% → 1時間あたり期待点数 2.0点。14年間で5回出題、14年中5年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で3回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 通信工学:電子回路</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.017</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 2h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 8.7% → 1時間あたり期待点数 1.7点。14年間で4回出題、14年中4年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 上昇傾向。直近10回で4回出題。最終出題: R7前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #7c3aed;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#7 電気工学:電力</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.017</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 2h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 8.7% → 1時間あたり期待点数 1.7点。14年間で4回出題、14年中4年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で3回出題。最終出題: R6前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（電気通信工学等）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>情報工学:ネットワーク基礎</td><td>15.2%</td><td>4.0h</td><td><strong>3.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>無線工学:アンテナ基礎</td><td>19.6%</td><td>7.5h</td><td><strong>2.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:69%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>電気工学:電気回路基礎</td><td>19.6%</td><td>7.5h</td><td><strong>2.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:69%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>無線工学:電波伝搬</td><td>17.4%</td><td>7.0h</td><td><strong>2.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:65%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>通信工学:通信理論基礎</td><td>10.9%</td><td>5.5h</td><td><strong>2.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:52%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>通信工学:電子回路</td><td>8.7%</td><td>5.0h</td><td><strong>1.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:46%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+<tr><td>電気工学:電力</td><td>8.7%</td><td>5.0h</td><td><strong>1.7</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:46%;height:100%;background:#7c3aed;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">電気通信工学等 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="34" x2="580" y2="34" stroke="#f3f4f6"/>
+  <text x="46" y="37" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">電気工学:電</text>
+  <circle cx="393.3" cy="188.9" r="10.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="393.3" y="175.9" font-size="7" fill="#374151" text-anchor="middle">電気工学:電</text>
+  <circle cx="426.7" cy="161.1" r="12.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="426.7" y="145.6" font-size="7" fill="#374151" text-anchor="middle">通信工学:通</text>
+  <circle cx="393.3" cy="188.9" r="10.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="393.3" y="175.9" font-size="7" fill="#374151" text-anchor="middle">通信工学:電</text>
+  <circle cx="326.7" cy="105.6" r="17.5" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="326.7" y="85.1" font-size="7" fill="#374151" text-anchor="middle">情報工学:ネ</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">無線工学:ア</text>
+  <circle cx="526.7" cy="77.8" r="20.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="526.7" y="54.8" font-size="7" fill="#374151" text-anchor="middle">無線工学:電</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#0ea5e9;padding:8px 0;font-size:1.1em">電気通信設備 ROIランキング</summary>
+<div class="tip">上位4個で60%カバー、上位5個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>情報設備</td><td>14.6%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>3h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.042</span></div></td><td>4.2点</td><td>4回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>セキュリティ設備</td><td>24.4%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>8h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:44px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.030</span></div></td><td>3.0点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>ネットワーク設備</td><td>19.5%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:40px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.028</span></div></td><td>2.8点</td><td>5回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>有線通信設備</td><td>17.1%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>6h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:38px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.026</span></div></td><td>2.6点</td><td>4回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>5</td><td>無線通信設備</td><td>12.2%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:32px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>4回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>6</td><td>電源設備</td><td>12.2%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:32px;height:8px;background:#0ea5e9;border-radius:4px"></div><span class="fz8">0.022</span></div></td><td>2.2点</td><td>5回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+</table>
+<h4>投資回収シナリオ（電気通信設備 上位15テーマ）</h4>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 情報設備</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.042</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.5時間の学習（過去問演習 3h + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 14.6% → 1時間あたり期待点数 4.2点。14年間で6回出題、14年中6年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で4回出題。最終出題: R7後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 セキュリティ設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.030</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 8.0時間の学習（過去問演習 5h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 24.4% → 1時間あたり期待点数 3.0点。14年間で10回出題、14年中10年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 ネットワーク設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.028</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.0時間の学習（過去問演習 4h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 19.5% → 1時間あたり期待点数 2.8点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で5回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 有線通信設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.026</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 6.5時間の学習（過去問演習 3h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 17.1% → 1時間あたり期待点数 2.6点。14年間で7回出題、14年中7年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で4回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 無線通信設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.5時間の学習（過去問演習 2h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 12.2% → 1時間あたり期待点数 2.2点。14年間で5回出題、14年中5年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で4回出題。最終出題: R7後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #0ea5e9;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#6 電源設備</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.022</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.5時間の学習（過去問演習 2h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 12.2% → 1時間あたり期待点数 2.2点。14年間で5回出題、14年中5年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 上昇傾向。直近10回で5回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（電気通信設備）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>情報設備</td><td>14.6%</td><td>3.5h</td><td><strong>4.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+<tr><td>セキュリティ設備</td><td>24.4%</td><td>8.0h</td><td><strong>3.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:73%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+<tr><td>ネットワーク設備</td><td>19.5%</td><td>7.0h</td><td><strong>2.8</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:67%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+<tr><td>有線通信設備</td><td>17.1%</td><td>6.5h</td><td><strong>2.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:63%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+<tr><td>無線通信設備</td><td>12.2%</td><td>5.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:53%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+<tr><td>電源設備</td><td>12.2%</td><td>5.5h</td><td><strong>2.2</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:53%;height:100%;background:#0ea5e9;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">電気通信設備 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="89" x2="580" y2="89" stroke="#f3f4f6"/>
+  <text x="46" y="92" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="466.2" cy="125.0" r="17.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="466.2" y="104.5" font-size="7" fill="#374151" text-anchor="middle">有線通信設備</text>
+  <circle cx="403.8" cy="175.0" r="12.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="403.8" y="159.5" font-size="7" fill="#374151" text-anchor="middle">無線通信設備</text>
+  <circle cx="497.5" cy="100.0" r="20.0" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="497.5" y="77.0" font-size="7" fill="#374151" text-anchor="middle">ネットワーク</text>
+  <circle cx="278.8" cy="150.0" r="15.0" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="278.8" y="132.0" font-size="7" fill="#374151" text-anchor="middle">情報設備</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">セキュリティ</text>
+  <circle cx="403.8" cy="175.0" r="12.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="403.8" y="159.5" font-size="7" fill="#374151" text-anchor="middle">電源設備</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.1em">設計施工 ROIランキング</summary>
+<div class="tip">上位2個で60%カバー、上位3個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>施工管理:施工要領</td><td>37.0%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>8h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#059669;border-radius:4px"></div><span class="fz8">0.046</span></div></td><td>4.6点</td><td>8回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>施工管理:試験測定</td><td>33.3%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>7h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:58px;height:8px;background:#059669;border-radius:4px"></div><span class="fz8">0.044</span></div></td><td>4.4点</td><td>7回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>施工管理:接続接地</td><td>18.5%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>5h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:44px;height:8px;background:#059669;border-radius:4px"></div><span class="fz8">0.034</span></div></td><td>3.4点</td><td>3回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>4</td><td>施工管理:配線敷設</td><td>11.1%</td><td><span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span></td><td>4h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:32px;height:8px;background:#059669;border-radius:4px"></div><span class="fz8">0.025</span></div></td><td>2.5点</td><td>1回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+</table>
+<h4>投資回収シナリオ（設計施工 上位15テーマ）</h4>
+<div style="border-left:4px solid #059669;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 施工管理:施工要領</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.046</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 8.0時間の学習（過去問演習 5h + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 37.0% → 1時間あたり期待点数 4.6点。14年間で10回出題、14年中10年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で8回出題。最終出題: R7前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #059669;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 施工管理:試験測定</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.044</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.5時間の学習（過去問演習 4h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 33.3% → 1時間あたり期待点数 4.4点。14年間で9回出題、14年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で7回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #059669;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 施工管理:接続接地</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.034</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.5時間の学習（過去問演習 2h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 18.5% → 1時間あたり期待点数 3.4点。14年間で5回出題、14年中5年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で3回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<div style="border-left:4px solid #059669;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 施工管理:配線敷設</strong> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.025</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.5時間の学習（過去問演習 1h30m + 基礎学習 3h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 11.1% → 1時間あたり期待点数 2.5点。14年間で3回出題、14年中3年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 下降傾向。直近10回で1回出題。最終出題: R5後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 公式理解により応用問題にも対応可能。投資時間は長いが、関連テーマへの波及効果が大きい。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（設計施工）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>施工管理:施工要領</td><td>37.0%</td><td>8.0h</td><td><strong>4.6</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#059669;border-radius:4px"></div></div></td></tr>
+<tr><td>施工管理:試験測定</td><td>33.3%</td><td>7.5h</td><td><strong>4.4</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:96%;height:100%;background:#059669;border-radius:4px"></div></div></td></tr>
+<tr><td>施工管理:接続接地</td><td>18.5%</td><td>5.5h</td><td><strong>3.4</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:73%;height:100%;background:#059669;border-radius:4px"></div></div></td></tr>
+<tr><td>施工管理:配線敷設</td><td>11.1%</td><td>4.5h</td><td><strong>2.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:53%;height:100%;background:#059669;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">設計施工 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="164" x2="580" y2="164" stroke="#f3f4f6"/>
+  <text x="46" y="167" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">施工管理:施</text>
+  <circle cx="341.2" cy="225.0" r="7.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <circle cx="403.8" cy="175.0" r="12.5" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="403.8" y="159.5" font-size="7" fill="#374151" text-anchor="middle">施工管理:接</text>
+  <circle cx="528.8" cy="75.0" r="22" fill="#005BA8" opacity="0.6" stroke="#005BA8" stroke-width="1"/>
+  <text x="528.8" y="50.0" font-size="7" fill="#374151" text-anchor="middle">施工管理:試</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.1em">施工管理法 ROIランキング</summary>
+<div class="tip">上位3個で60%カバー、上位4個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>品質管理</td><td>25.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.050</span></div></td><td>5.0点</td><td>4回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>安全管理</td><td>25.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.050</span></div></td><td>5.0点</td><td>5回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>工程管理:ネットワーク</td><td>25.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.050</span></div></td><td>5.0点</td><td>6回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>施工計画</td><td>25.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#1e40af;border-radius:4px"></div><span class="fz8">0.050</span></div></td><td>5.0点</td><td>6回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+</table>
+<h4>投資回収シナリオ（施工管理法 上位15テーマ）</h4>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 品質管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.050</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 25.0% → 1時間あたり期待点数 5.0点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で4回出題。最終出題: R5後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 安全管理</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.050</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 25.0% → 1時間あたり期待点数 5.0点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で5回出題。最終出題: R7前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 工程管理:ネットワーク</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.050</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 25.0% → 1時間あたり期待点数 5.0点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R7前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #1e40af;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 施工計画</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.050</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 25.0% → 1時間あたり期待点数 5.0点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（施工管理法）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>品質管理</td><td>25.0%</td><td>5.0h</td><td><strong>5.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>安全管理</td><td>25.0%</td><td>5.0h</td><td><strong>5.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>工程管理:ネットワーク</td><td>25.0%</td><td>5.0h</td><td><strong>5.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+<tr><td>施工計画</td><td>25.0%</td><td>5.0h</td><td><strong>5.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#1e40af;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">施工管理法 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="94" x2="580" y2="94" stroke="#f3f4f6"/>
+  <text x="46" y="97" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="560.0" cy="50.0" r="20.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="27.0" font-size="7" fill="#374151" text-anchor="middle">施工計画</text>
+  <circle cx="560.0" cy="50.0" r="20.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="27.0" font-size="7" fill="#374151" text-anchor="middle">工程管理:ネ</text>
+  <circle cx="560.0" cy="50.0" r="20.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="27.0" font-size="7" fill="#374151" text-anchor="middle">品質管理</text>
+  <circle cx="560.0" cy="50.0" r="20.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="27.0" font-size="7" fill="#374151" text-anchor="middle">安全管理</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">法規 ROIランキング</summary>
+<div class="tip">上位3個で60%カバー、上位4個で80%カバー</div>
+<table><tr><th>#</th><th>テーマ</th><th>出題率</th><th>深度</th><th>学習時間</th><th>ROI</th><th>期待点/h</th><th>直近10回</th><th>判定</th></tr>
+<tr><td>1</td><td>電気通信事業法</td><td>22.5%</td><td><span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:60px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.045</span></div></td><td>4.5点</td><td>7回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>2</td><td>労働安全衛生法</td><td>30.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>7h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:57px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.043</span></div></td><td>4.3点</td><td>8回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>3</td><td>建設業法</td><td>20.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>5h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:53px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.040</span></div></td><td>4.0点</td><td>5回</td><td><span style="color:#dc2626;font-weight:700">◎必修</span></td></tr>
+<tr><td>4</td><td>有線電気通信法</td><td>17.5%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>4h30m</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:52px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.039</span></div></td><td>3.9点</td><td>6回</td><td><span style="color:#2563eb;font-weight:600">○推奨</span></td></tr>
+<tr><td>5</td><td>電波法</td><td>10.0%</td><td><span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span></td><td>3h</td><td><div style="display:flex;align-items:center;gap:4px"><div style="width:44px;height:8px;background:#d97706;border-radius:4px"></div><span class="fz8">0.033</span></div></td><td>3.3点</td><td>2回</td><td><span style="color:#6b7280">△余裕時</span></td></tr>
+</table>
+<h4>投資回収シナリオ（法規 上位15テーマ）</h4>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#1 電気通信事業法</strong> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.045</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h30m + 基礎学習 30分）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 22.5% → 1時間あたり期待点数 4.5点。14年間で9回出題、14年中9年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で7回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> 暗記系テーマのため、短時間で確実な得点源になる。投資回収が最も早い。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#2 労働安全衛生法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.043</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 7.0時間の学習（過去問演習 6h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 30.0% → 1時間あたり期待点数 4.3点。14年間で12回出題、14年中12年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で8回出題。最終出題: R7後期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#3 建設業法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.040</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 5.0時間の学習（過去問演習 4h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 20.0% → 1時間あたり期待点数 4.0点。14年間で8回出題、14年中8年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で5回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#4 有線電気通信法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.039</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 4.5時間の学習（過去問演習 3h30m + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 17.5% → 1時間あたり期待点数 3.9点。14年間で7回出題、14年中7年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で6回出題。最終出題: R8前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<div style="border-left:4px solid #d97706;padding:8px 14px;margin:8px 0;background:#f8fafc">
+<strong>#5 電波法</strong> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <span style="font-size:0.85em;color:#6b7280">ROI: 0.033</span>
+<p style="font-size:0.9em;margin:4px 0"><strong>投資:</strong> 3.0時間の学習（過去問演習 2h + 基礎学習 1h）</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>回収:</strong> 出題確率 10.0% → 1時間あたり期待点数 3.3点。14年間で4回出題、14年中4年に出現。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>傾向:</strong> 安定。直近10回で2回出題。最終出題: R5前期。</p>
+<p style="font-size:0.9em;margin:4px 0"><strong>メリット:</strong> パターン処理で安定得点可能。繰り返し演習で自動化すれば本番での時間短縮にも貢献。</p>
+</div>
+<h4>1時間の勉強で得られる期待点数（法規）</h4>
+<table class="fz88"><tr><th>テーマ</th><th>出題確率</th><th>学習時間(h)</th><th>期待点/h</th><th>効率バー</th></tr>
+<tr><td>電気通信事業法</td><td>22.5%</td><td>5.0h</td><td><strong>4.5</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:100%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>労働安全衛生法</td><td>30.0%</td><td>7.0h</td><td><strong>4.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:95%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>建設業法</td><td>20.0%</td><td>5.0h</td><td><strong>4.0</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:89%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>有線電気通信法</td><td>17.5%</td><td>4.5h</td><td><strong>3.9</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:86%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+<tr><td>電波法</td><td>10.0%</td><td>3.0h</td><td><strong>3.3</strong></td><td><div style="width:100px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden"><div style="width:74%;height:100%;background:#d97706;border-radius:4px"></div></div></td></tr>
+</table>
+<svg viewBox="0 0 600 350" style="width:100%;max-width:600px;margin:12px 0">
+  <text x="300" y="16" font-size="12" fill="#374151" text-anchor="middle">法規 学習時間 vs 期待得点（バブル=出題数）</text>
+  <line x1="50" y1="30" x2="50" y2="310" stroke="#d1d5db"/>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#d1d5db"/>
+  <text x="300" y="342" font-size="10" fill="#6b7280" text-anchor="middle">学習時間 (h)</text>
+  <text x="10" y="175" font-size="10" fill="#6b7280" transform="rotate(-90,10,175)">出題率 (%)</text>
+  <line x1="50" y1="130" x2="580" y2="130" stroke="#f3f4f6"/>
+  <text x="46" y="133" font-size="8" fill="#9ca3af" text-anchor="end">20%</text>
+  <circle cx="417.1" cy="133.3" r="20.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="417.1" y="110.3" font-size="7" fill="#374151" text-anchor="middle">建設業法</text>
+  <circle cx="560.0" cy="50.0" r="22" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="560.0" y="25.0" font-size="7" fill="#374151" text-anchor="middle">労働安全衛生</text>
+  <circle cx="417.1" cy="112.5" r="22" fill="#CC3333" opacity="0.6" stroke="#CC3333" stroke-width="1"/>
+  <text x="417.1" y="87.5" font-size="7" fill="#374151" text-anchor="middle">電気通信事業</text>
+  <circle cx="381.4" cy="154.2" r="17.5" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="381.4" y="133.7" font-size="7" fill="#374151" text-anchor="middle">有線電気通信</text>
+  <circle cx="274.3" cy="216.7" r="10.0" fill="#E67E00" opacity="0.6" stroke="#E67E00" stroke-width="1"/>
+  <text x="274.3" y="203.7" font-size="7" fill="#374151" text-anchor="middle">電波法</text>
+  <circle cx="60" cy="334" r="5" fill="#9ca3af" opacity="0.7"/>
+  <text x="70" y="337" font-size="8" fill="#6b7280">Lv1 見出し暗記</text>
+  <circle cx="170" cy="334" r="5" fill="#CC3333" opacity="0.7"/>
+  <text x="180" y="337" font-size="8" fill="#6b7280">Lv2 1行暗記</text>
+  <circle cx="280" cy="334" r="5" fill="#E67E00" opacity="0.7"/>
+  <text x="290" y="337" font-size="8" fill="#6b7280">Lv3 パターン処理</text>
+  <circle cx="390" cy="334" r="5" fill="#005BA8" opacity="0.7"/>
+  <text x="400" y="337" font-size="8" fill="#6b7280">Lv4 公式適用</text>
+  <circle cx="500" cy="334" r="5" fill="#7c3aed" opacity="0.7"/>
+  <text x="510" y="337" font-size="8" fill="#6b7280">Lv5 原理導出</text>
+</svg>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="required-years.html">← 必要学習年数分析（過去問を何年分やれば合格できるか）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="cut-list.html">捨てテーマリスト →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

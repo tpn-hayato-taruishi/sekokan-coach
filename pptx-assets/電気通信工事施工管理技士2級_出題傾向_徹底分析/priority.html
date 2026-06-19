@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学習優先度ランキング - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">学習優先度ランキング</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="coverage.html">← カバレッジ分析（最小テーマで最大カバー）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="prediction.html">R9（令和9年度）出題予測 →</a></span></nav>
+<section id="priority">
+  <h2>学習優先度ランキング</h2>
+<p><strong>頻度(40%) × 直近度(30%) × コスパ(30%)</strong> の複合スコアで学習優先度を算出。</p>
+<div class="note">優先度スコアが高いテーマから順に学習すれば、最も効率よく得点力が上がります。</div>
+<details><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.05em">電気通信工学等（1位: 電気工学:電気回路基礎）</summary>
+<table>
+<tr><th>#</th><th>カテゴリ</th><th>出題</th><th>頻度</th><th>最終</th><th>主な解法</th><th>優先度</th></tr>
+<tr><td class="tac fwb">🥇</td><td><strong>電気工学:電気回路基礎</strong></td><td>9/14</td><td><div style="width:64px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 64%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">57</td></tr>
+<tr><td class="tac fwb">🥈</td><td><strong>無線工学:アンテナ基礎</strong></td><td>9/14</td><td><div style="width:64px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 64%</td><td>R7後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">57</td></tr>
+<tr><td class="tac fwb">🥉</td><td><strong>情報工学:ネットワーク基礎</strong></td><td>7/14</td><td><div style="width:50px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 50%</td><td>R8前期</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">49</td></tr>
+<tr><td class="tac fwb">4</td><td><strong>無線工学:電波伝搬</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">48</td></tr>
+<tr><td class="tac fwb">5</td><td><strong>通信工学:電子回路</strong></td><td>4/14</td><td><div style="width:28px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 29%</td><td>R7前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">32</td></tr>
+<tr><td class="tac fwb">6</td><td><strong>通信工学:通信理論基礎</strong></td><td>5/14</td><td><div style="width:35px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 36%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">26</td></tr>
+<tr><td class="tac fwb">7</td><td><strong>電気工学:電力</strong></td><td>4/14</td><td><div style="width:28px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 29%</td><td>R6前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">22</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0ea5e9;padding:8px 0;font-size:1.05em">電気通信設備（1位: セキュリティ設備）</summary>
+<table>
+<tr><th>#</th><th>カテゴリ</th><th>出題</th><th>頻度</th><th>最終</th><th>主な解法</th><th>優先度</th></tr>
+<tr><td class="tac fwb">🥇</td><td><strong>セキュリティ設備</strong></td><td>10/14</td><td><div style="width:71px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 71%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">61</td></tr>
+<tr><td class="tac fwb">🥈</td><td><strong>ネットワーク設備</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">48</td></tr>
+<tr><td class="tac fwb">🥉</td><td><strong>情報設備</strong></td><td>6/14</td><td><div style="width:42px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 43%</td><td>R7後期</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">40</td></tr>
+<tr><td class="tac fwb">4</td><td><strong>無線通信設備</strong></td><td>5/14</td><td><div style="width:35px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 36%</td><td>R7後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">36</td></tr>
+<tr><td class="tac fwb">5</td><td><strong>電源設備</strong></td><td>5/14</td><td><div style="width:35px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 36%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">36</td></tr>
+<tr><td class="tac fwb">6</td><td><strong>有線通信設備</strong></td><td>7/14</td><td><div style="width:50px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 50%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">34</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（1位: 施工管理:試験測定）</summary>
+<table>
+<tr><th>#</th><th>カテゴリ</th><th>出題</th><th>頻度</th><th>最終</th><th>主な解法</th><th>優先度</th></tr>
+<tr><td class="tac fwb">🥇</td><td><strong>施工管理:試験測定</strong></td><td>9/14</td><td><div style="width:64px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 64%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">57</td></tr>
+<tr><td class="tac fwb">🥈</td><td><strong>施工管理:施工要領</strong></td><td>10/14</td><td><div style="width:71px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 71%</td><td>R7前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">56</td></tr>
+<tr><td class="tac fwb">🥉</td><td><strong>施工管理:接続接地</strong></td><td>5/14</td><td><div style="width:35px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 36%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">26</td></tr>
+<tr><td class="tac fwb">4</td><td><strong>施工管理:配線敷設</strong></td><td>3/14</td><td><div style="width:21px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 21%</td><td>R5後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">12</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（1位: 施工計画）</summary>
+<table>
+<tr><th>#</th><th>カテゴリ</th><th>出題</th><th>頻度</th><th>最終</th><th>主な解法</th><th>優先度</th></tr>
+<tr><td class="tac fwb">🥇</td><td><strong>施工計画</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">53</td></tr>
+<tr><td class="tac fwb">🥈</td><td><strong>工程管理:ネットワーク</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R7前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">48</td></tr>
+<tr><td class="tac fwb">🥉</td><td><strong>安全管理</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R7前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">48</td></tr>
+<tr><td class="tac fwb">4</td><td><strong>品質管理</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R5後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">33</td></tr>
+</table>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規（1位: 労働安全衛生法）</summary>
+<table>
+<tr><th>#</th><th>カテゴリ</th><th>出題</th><th>頻度</th><th>最終</th><th>主な解法</th><th>優先度</th></tr>
+<tr><td class="tac fwb">🥇</td><td><strong>労働安全衛生法</strong></td><td>12/14</td><td><div style="width:85px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 86%</td><td>R7後期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">70</td></tr>
+<tr><td class="tac fwb">🥈</td><td><strong>電気通信事業法</strong></td><td>9/14</td><td><div style="width:64px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 64%</td><td>R8前期</td><td class="fz85"><span style="color:#008856;font-weight:600">📝問答暗記</span></td><td style="font-weight:800;color:#1e40af">52</td></tr>
+<tr><td class="tac fwb">🥉</td><td><strong>建設業法</strong></td><td>8/14</td><td><div style="width:57px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 57%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">48</td></tr>
+<tr><td class="tac fwb">4</td><td><strong>有線電気通信法</strong></td><td>7/14</td><td><div style="width:50px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 50%</td><td>R8前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">44</td></tr>
+<tr><td class="tac fwb">5</td><td><strong>電波法</strong></td><td>4/14</td><td><div style="width:28px;height:8px;background:#3b82f6;border-radius:4px;display:inline-block"></div> 29%</td><td>R5前期</td><td class="fz85"><span style="color:#005BA8;font-weight:600">🔵理解必須</span></td><td style="font-weight:800;color:#1e40af">17</td></tr>
+</table>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="coverage.html">← カバレッジ分析（最小テーマで最大カバー）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="prediction.html">R9（令和9年度）出題予測 →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

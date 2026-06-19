@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>得点シミュレーション - 法規 - 電気通信工事施工管理技士2級 出題傾向 徹底分析</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head><body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">得点シミュレーション ／ <strong>法規</strong></p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="score-simulation.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"></span></nav>
+<section id="score-simulation">
+  <h2>得点シミュレーション</h2>
+<p>学習範囲の違いで期待点数がどう変わるかを<strong>3つのプラン</strong>でシミュレーションします。</p>
+<details open><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.1em">法規 得点シミュレーション</summary>
+<table><tr><th>プラン</th><th>学習テーマ数</th><th>学習時間</th><th>期待点数</th><th>合格確率</th></tr>
+<tr><td>Plan A: 最小60%</td><td>3</td><td>17h</td><td>72点</td><td style="color:#2563eb;font-weight:700">85%</td></tr>
+<tr><td>Plan B: 安全70%</td><td>3</td><td>17h</td><td>72点</td><td style="color:#2563eb;font-weight:700">85%</td></tr>
+<tr><td>Plan C: フル80%+</td><td>5</td><td>24h30m</td><td>85点</td><td style="color:#16a34a;font-weight:700">95%+</td></tr>
+</table>
+<h4>年度別バックテスト（法規）</h4>
+<p style="font-size:0.88em;color:#6b7280">各プランでR1前期-R8前期の各年度を受験していたら何点取れたかをシミュレーション。</p>
+<table class="fz82"><tr><th>年度</th><th>全出題数</th>
+<th>Plan A: 最小60%</th>
+<th>Plan B: 安全70%</th>
+<th>Plan C: フル80%+</th>
+<th>60%ライン</th></tr>
+<tr><td>R1前期</td><td>4</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R1後期</td><td>3</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R2</td><td>4</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R3前期</td><td>1</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">1問</td></tr>
+<tr><td>R4前期</td><td>4</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R4後期</td><td>4</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R5前期</td><td>3</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R5後期</td><td>4</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R6前期</td><td>4</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">75%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+<tr><td>R6後期</td><td>2</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">1問</td></tr>
+<tr><td>R7前期</td><td>2</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">1問</td></tr>
+<tr><td>R7後期</td><td>2</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#dc2626;font-weight:600;background:#fef2f2;">50%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">1問</td></tr>
+<tr><td>R8前期</td><td>3</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">67%</td>
+<td style="color:#16a34a;font-weight:600;">100%</td>
+<td style="color:#6b7280">2問</td></tr>
+</table>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="170" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="78" x2="680" y2="78" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="75" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <polyline points="55.0,52.5 106.7,66.7 158.3,52.5 210.0,10.0 261.7,95.0 313.3,52.5 365.0,66.7 416.7,52.5 468.3,52.5 520.0,10.0 571.7,10.0 623.3,95.0 675.0,66.7" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="679.0" y="66.7" font-size="8" fill="#d97706">A</text>
+  <polyline points="55.0,52.5 106.7,66.7 158.3,52.5 210.0,10.0 261.7,95.0 313.3,52.5 365.0,66.7 416.7,52.5 468.3,52.5 520.0,10.0 571.7,10.0 623.3,95.0 675.0,66.7" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="679.0" y="66.7" font-size="8" fill="#2563eb">B</text>
+  <polyline points="55.0,10.0 106.7,10.0 158.3,10.0 210.0,10.0 261.7,10.0 313.3,10.0 365.0,10.0 416.7,10.0 468.3,10.0 520.0,10.0 571.7,10.0 623.3,10.0 675.0,10.0" fill="none" stroke="#16a34a" stroke-width="2" stroke-dasharray="2,2"/>
+  <text x="679.0" y="10.0" font-size="8" fill="#16a34a">C</text>
+  <text x="55.0" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">R1前期</text>
+  <text x="313.3" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">R4後期</text>
+  <text x="571.7" y="212" font-size="8" fill="#9ca3af" text-anchor="middle">R7前期</text>
+  <rect x="60" y="198" width="8" height="8" fill="#d97706"/>
+  <text x="72" y="205" font-size="8" fill="#6b7280">Plan A</text>
+  <rect x="120" y="198" width="8" height="8" fill="#2563eb"/>
+  <text x="132" y="205" font-size="8" fill="#6b7280">Plan B</text>
+  <rect x="180" y="198" width="8" height="8" fill="#16a34a"/>
+  <text x="192" y="205" font-size="8" fill="#6b7280">Plan C</text>
+</svg>
+<h4>最も危険な年度（法規）</h4>
+<p class="fz9"><strong>Plan A: 最小60%</strong>: <span style="color:#dc2626">2年度で不合格</span> → R4前期, R7後期</p>
+<p class="fz9"><strong>Plan B: 安全70%</strong>: <span style="color:#dc2626">2年度で不合格</span> → R4前期, R7後期</p>
+<p class="fz9"><strong>Plan C: フル80%+</strong>: <span style="color:#16a34a">全年度合格</span></p>
+<h4>感度分析:「もし新傾向が増えたら」（法規）</h4>
+<table class="fz88"><tr><th>シナリオ</th>
+<th>Plan A: 最小60%</th>
+<th>Plan B: 安全70%</th>
+<th>Plan C: フル80%+</th>
+</tr>
+<tr><td>現状（新傾向0問追加）</td>
+<td style="color:#16a34a;font-weight:600">72%</td>
+<td style="color:#16a34a;font-weight:600">72%</td>
+<td style="color:#16a34a;font-weight:600">85%</td>
+</tr>
+<tr><td>新傾向 +1問</td>
+<td style="color:#dc2626;font-weight:600">55%</td>
+<td style="color:#dc2626;font-weight:600">55%</td>
+<td style="color:#16a34a;font-weight:600">64%</td>
+</tr>
+<tr><td>新傾向 +2問</td>
+<td style="color:#dc2626;font-weight:600">44%</td>
+<td style="color:#dc2626;font-weight:600">44%</td>
+<td style="color:#dc2626;font-weight:600">52%</td>
+</tr>
+<tr><td>新傾向 +3問</td>
+<td style="color:#dc2626;font-weight:600">37%</td>
+<td style="color:#dc2626;font-weight:600">37%</td>
+<td style="color:#dc2626;font-weight:600">43%</td>
+</tr>
+</table>
+<p style="font-size:0.85em;color:#6b7280">新傾向問題は学習範囲外から出題されるため、いずれのプランでもカバーできない。Plan Aは新傾向1問でも危険域に入る可能性がある。</p>
+</details>
+<h3>学習時間 vs 期待点数（収穫逓減カーブ）</h3>
+<svg viewBox="0 0 600 300" style="width:100%;max-width:600px;margin:16px 0">
+  <line x1="60" y1="20" x2="60" y2="260" stroke="#d1d5db"/>
+  <line x1="60" y1="260" x2="580" y2="260" stroke="#d1d5db"/>
+  <text x="300" y="290" font-size="11" fill="#6b7280" text-anchor="middle">累積学習時間 (h)</text>
+  <text x="15" y="150" font-size="11" fill="#6b7280" transform="rotate(-90,15,150)">期待点数</text>
+  <line x1="60" y1="122" x2="580" y2="122" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="582" y="118" font-size="9" fill="#ef4444" text-anchor="end">60%合格ライン</text>
+  <polyline points="210.0,191.0 310.0,139.2 410.0,93.2 500.0,53.0 560.0,30.0" fill="none" stroke="#d97706" stroke-width="2"/>
+  <text x="564.0" y="30.0" font-size="9" fill="#d97706">法規</text>
+</svg>
+<h3>リスク分析</h3>
+<div class="warn">Plan A（最小60%）で不合格になる確率は約40%です。新傾向問題が多い年や、出題が偏る年には60%に届かないリスクがあります。安全に合格するには<strong>Plan B以上</strong>を推奨します。</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation__施工管理法.html">← 施工管理法</a></span><span style="text-align:center;flex:1"><a href="score-simulation.html">📑 セクション目次</a> ｜ <a href="index.html">🏠 全体目次</a></span><span style="text-align:right;flex:1"></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

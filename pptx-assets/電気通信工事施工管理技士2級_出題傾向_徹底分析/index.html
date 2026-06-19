@@ -1,86 +1,144 @@
 <!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8">
-<title>電気通信工事施工管理技士 2級 出題傾向 徹底分析</title>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期（14年分）</title>
 <style>
-body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; max-width: 1100px; margin: 20px auto; padding: 0 20px; line-height: 1.6; color: #1e293b; }
-h1 { color: #1e40af; border-bottom: 3px solid #1e40af; padding-bottom: 8px; }
-h2 { color: #1d4ed8; border-left: 5px solid #1d4ed8; padding-left: 12px; margin-top: 32px; }
-h3 { color: #2563eb; margin-top: 24px; }
-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-table th, table td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; text-align: left; }
-table th { background: #f1f5f9; }
-.r { text-align: right; font-weight: 700; color: #1e40af; }
-.note { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin: 16px 0; border-radius: 4px; }
-ul li { margin-bottom: 4px; font-size: 0.92em; color: #334155; }
-.summary { background: #eff6ff; padding: 16px; border-radius: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+.section-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:20px 0}
+.section-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;display:block;color:#1e3a5f;text-decoration:none;transition:transform 0.15s,box-shadow 0.15s}
+.section-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.15);text-decoration:none}
+.section-card .num{display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background:#3b82f6;color:#fff;border-radius:6px;font-weight:700;font-size:0.85em;margin-right:8px}
+.section-card .title{font-weight:600;font-size:0.95em;display:inline-block;vertical-align:middle}
 </style>
-</head><body>
-<h1>電気通信工事施工管理技士 2級 出題傾向 徹底分析</h1>
-<p>R1〜R8前期の過去問データから抽出した出題傾向のレポートです。1級と異なり 2級は前期/後期の2回実施。</p>
-
-<div class="summary">
-<strong>📊 概要</strong>: 過去問総数 <strong>889問</strong> / 期間 R1〜R8前期
+</head>
+<body>
+<nav style="background:#fef3c7;border-bottom:1px solid #fde68a;padding:8px 16px;text-align:center;font-size:.9em">
+  <a href="../index.html" style="color:#92400e;font-weight:700">🏠 89試験ポータルに戻る</a>
+  ｜ <a href="../試験難易度ランキング_総合レポート.html" style="color:#92400e">📊 難易度ランキング</a>
+</nav>
+<div class="hero">
+  <h1>電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p>R1前期〜R8前期（14期分）× 5科目のデータを多角的に分析</p>
+  <div class="flow">
+    <div class="step">ヒートマップで<br>傾向を把握</div>
+    <div class="arrow">→</div>
+    <div class="step">サイクル分析で<br>次回予測</div>
+    <div class="arrow">→</div>
+    <div class="step">優先度ランキングで<br>学習順を決定</div>
+    <div class="arrow">→</div>
+    <div class="step">カバレッジ分析で<br>最小労力で合格</div>
+  </div>
 </div>
-
-<h2>📅 年度別分布</h2>
-<table>
-<tr><th>年度</th><th>問題数</th></tr>
-<tr><td><strong>R1</strong></td><td class='r'>127問</td></tr>
-<tr><td><strong>R2</strong></td><td class='r'>65問</td></tr>
-<tr><td><strong>R3</strong></td><td class='r'>127問</td></tr>
-<tr><td><strong>R4</strong></td><td class='r'>128問</td></tr>
-<tr><td><strong>R5</strong></td><td class='r'>125問</td></tr>
-<tr><td><strong>R6</strong></td><td class='r'>126問</td></tr>
-<tr><td><strong>R7</strong></td><td class='r'>127問</td></tr>
-<tr><td><strong>R8</strong></td><td class='r'>64問</td></tr>
-</table>
-
-<h2>📚 科目別出題量</h2>
-<table>
-<tr><th>科目</th><th>問題数</th><th>割合</th></tr>
-<tr><td><strong>その他</strong></td><td class='r'>495問</td><td class='r'>55.7%</td></tr>
-<tr><td><strong>電気通信工学</strong></td><td class='r'>203問</td><td class='r'>22.8%</td></tr>
-<tr><td><strong>設計施工</strong></td><td class='r'>85問</td><td class='r'>9.6%</td></tr>
-<tr><td><strong>電気工学</strong></td><td class='r'>75問</td><td class='r'>8.4%</td></tr>
-<tr><td><strong>施工管理法</strong></td><td class='r'>20問</td><td class='r'>2.2%</td></tr>
-<tr><td><strong>法規</strong></td><td class='r'>11問</td><td class='r'>1.2%</td></tr>
-</table>
-
-<h2>📝 各科目の代表問題</h2>
-<h3>電気工学 (75問)</h3><ul><li><strong>R1_前期 No.1</strong>: 下図に示す電極板の面積S ＝0.4［m2］の平行板コンデンサに，比誘電率εr ＝3 の誘 電体があるとき，このコンデンサの静電容量［F］の値として，適当なものは…</li>
-<li><strong>R1_前期 No.2</strong>: 下図に示す回路において，抵抗R1 に流れる電流I1［A］の値として，適当なものはど れか。ただし，抵抗R1 ＝2［Ω］とする。…</li>
-<li><strong>R1_前期 No.3</strong>: 下図に示すRC 並列回路において，抵抗R［Ω］，コンデンサC［F］とした場合の合 成インピーダンス［Ω］として，適当なものはどれか。…</li>
-<li><strong>R1_前期 No.4</strong>: 無線通信において，アンテナの入力インピーダンスと給電線の特性インピーダンスの整 合が必要となる理由に関する記述として，適当でないものはどれか。…</li>
-<li><strong>R1_前期 No.11</strong>: 下図に示すエンハンスメント形MOS-FET に関する記述として，適当でないものはど…</li></ul><h3>電気通信工学 (203問)</h3><ul><li><strong>R1_前期 No.5</strong>: 静止衛星通信に関する記述として，適当なものはどれか。…</li>
-<li><strong>R1_前期 No.6</strong>: 最高周波数が，［kHz］のアナログ信号をサンプリングする場合，もとのアナログ信 号を再現するために必要なサンプリング時間［μs］の値として，適当なものはどれか…</li>
-<li><strong>R1_前期 No.7</strong>: ADSL に関する記述として，適当なものはどれか。…</li>
-<li><strong>R1_前期 No.9</strong>: 無線LAN のアクセス制御の方式として，適当なものはどれか。…</li>
-<li><strong>R1_前期 No.12</strong>: アナログ・デジタル（AD）変換に関する次の記述の に当てはまる語句の組 合せとして，適当なものはどれか。 AD 変換では，まずアナログ入力信号が ア され，そ…</li></ul><h3>その他 (495問)</h3><ul><li><strong>R1_前期 No.8</strong>: マイクロプロセッサーの誤動作原因として，適当でないものはどれか。…</li>
-<li><strong>R1_前期 No.20</strong>: 我が国のITS（高度道路交通システム）で用いられるDSRC（狭域通信）に関する記述 として，適当でないものはどれか。…</li>
-<li><strong>R1_前期 No.26</strong>: 仮想記憶システムでスワップイン，スワップアウトが繰り返されることでコンピュータ の性能が急激に低下するスラッシングの防止対策に関する記述として，適当でないもの …</li>
-<li><strong>R1_前期 No.27</strong>: 施設監視や防犯などで使われる監視カメラに関する記述として，適当なものはどれか。…</li>
-<li><strong>R1_前期 No.37</strong>: 労働者が業務上負傷し，又は疾病にかかった場合の災害補償に関する記述として，労 働基準法上，誤っているものはどれか。…</li></ul><h3>設計施工 (85問)</h3><ul><li><strong>R1_前期 No.19</strong>: 移動体通信で用いられるCDMA 多元接続方式に関する記述として，適当でないものは…</li>
-<li><strong>R1_前期 No.25</strong>: 標準的な入出インターフェースであるUSB 3.0 に関する記述として，適当なものはど…</li>
-<li><strong>R1_前期 No.35</strong>: 建設業に関する記述として，建設業法上，誤っているものはどれか。…</li>
-<li><strong>R1_前期 No.38</strong>: 作業主任者の選任を必要とする作業に関する記述として，労働安全衛生法令上， 誤っているものはどれか。…</li>
-<li><strong>R1_前期 No.51</strong>: 地中埋設管路の施工に関する記述として，適当でないものはどれか。…</li></ul><h3>法規 (11問)</h3><ul><li><strong>R1_前期 No.33</strong>: 建設工事の請負契約に関する記述として，建設業法令上，誤っているものはどれか。…</li>
-<li><strong>R1_前期 No.34</strong>: 建設工事における元請負人と下請負人の関係に関する記述として，建設業法令上， 誤っているものはどれか。…</li>
-<li><strong>R1_前期 No.36</strong>: 労働時間，休日，休暇に関する記述として，労働基準法上，誤っているものはどれ…</li>
-<li><strong>R1_前期 No.41</strong>: 事業用電気通信設備の故障検出に関する次の記述の に当てはまる語句の組合 せとして，電気通信事業法令上，正しいものはどれか。 事業用電気通信設備は，電源停止…</li>
-<li><strong>R1_前期 No.44</strong>: 建築基準法で定められている用語の定義として，誤っているものはどれか。…</li></ul><h3>施工管理法 (20問)</h3><ul><li><strong>R1_前期 No.39</strong>: 安全衛生責任者の職務に関する記述として，労働安全衛生法令上，誤っているもの はどれか。…</li>
-<li><strong>R1_前期 No.40</strong>: 道路占用許可申請書の記載事項として，道路法上，定められているものはどれか。…</li>
-<li><strong>R1_前期 No.62</strong>: ISO 9001:2015 の品質マネジメントの原則として定義されている事項のうち， 適当でないものはどれか。…</li>
-<li><strong>R1_前期 No.63</strong>: 品質管理に用いる図表のうち，問題となっている結果とそれに与える原因との関係を一 目で分かるように体系的に整理する目的で作成される下図の名称として，適当なものは…</li>
-<li><strong>R1_前期 No.64</strong>: 事業者が足場を設ける場合の記述として，労働安全衛生法令上，誤っているものは…</li></ul>
-
-<div class="note">
-<strong>合格戦略</strong>: 2級は科目選択肢が多いので、自分の得意分野を選ぶ戦略が有効。
-電気通信工学は計算問題で点数を稼ぎ、法規は条文暗記で確実に取る。
+<div class="container" style="max-width:1200px">
+<section>
+  <h2>目次（各セクションを別ページで表示）</h2>
+  <p>分析が大規模なため、セクションごとに分割して表示しています。各カードをクリックして該当ページに移動してください。</p>
+  <div class="note">対象: R1前期〜R8前期 の14年分 × 5科目 × 186問</div>
+  <div class="section-grid">
+    <a class="section-card" href="overview.html"><span class="num">1</span><span class="title">分析概要</span></a>
+    <a class="section-card" href="heatmap.html"><span class="num">2</span><span class="title">出題ヒートマップ（年度×分野）</span></a>
+    <a class="section-card" href="cycle.html"><span class="num">3</span><span class="title">出題サイクル分析</span></a>
+    <a class="section-card" href="coverage.html"><span class="num">4</span><span class="title">カバレッジ分析（最小テーマで最大カバー）</span></a>
+    <a class="section-card" href="priority.html"><span class="num">5</span><span class="title">学習優先度ランキング</span></a>
+    <a class="section-card" href="prediction.html"><span class="num">6</span><span class="title">R9（令和9年度）出題予測</span></a>
+    <a class="section-card" href="gap-risk.html"><span class="num">7</span><span class="title">出題空白リスク（全科目横断）</span></a>
+    <a class="section-card" href="kaiho.html"><span class="num">8</span><span class="title">解法パターン分布（科目別）</span></a>
+    <a class="section-card" href="strategy.html"><span class="num">9</span><span class="title">科目別 得点戦略</span></a>
+    <a class="section-card" href="scope-design.html"><span class="num">10</span><span class="title">勉強範囲の絞り込み設計</span></a>
+    <a class="section-card" href="question-selection.html"><span class="num">11</span><span class="title">優先過去問リスト</span></a>
+    <a class="section-card" href="memorization-patterns.html"><span class="num">12</span><span class="title">学習パターンの詳細化</span></a>
+    <a class="section-card" href="depth-map.html"><span class="num">13</span><span class="title">学習深度マップ</span></a>
+    <a class="section-card" href="minimum-pass.html"><span class="num">14</span><span class="title">最小合格セット（60%ライン突破）</span></a>
+    <a class="section-card" href="study-todo.html"><span class="num">15</span><span class="title">解くべき過去問リスト（年度別チェックリスト）</span></a>
+    <a class="section-card" href="rolling-backtest.html"><span class="num">16</span><span class="title">過去問学習シミュレーション（5/10年学習で各年度の得点推移）</span></a>
+    <a class="section-card" href="required-years.html"><span class="num">17</span><span class="title">必要学習年数分析（過去問を何年分やれば合格できるか）</span></a>
+    <a class="section-card" href="roi-analysis.html"><span class="num">18</span><span class="title">投資対効果分析</span></a>
+    <a class="section-card" href="cut-list.html"><span class="num">19</span><span class="title">捨てテーマリスト</span></a>
+    <a class="section-card" href="dependency-graph.html"><span class="num">20</span><span class="title">前提知識グラフ</span></a>
+    <a class="section-card" href="time-budget.html"><span class="num">21</span><span class="title">時間配分設計</span></a>
+    <a class="section-card" href="score-simulation.html"><span class="num">22</span><span class="title">得点シミュレーション</span></a>
+    <a class="section-card" href="weekly-plan.html"><span class="num">23</span><span class="title">週間学習計画</span></a>
+    <a class="section-card" href="deep-analysis.html"><span class="num">24</span><span class="title">深層単元分析（詳細テーマ別 完全版）</span></a>
+    <a class="section-card" href="raw-analysis.html"><span class="num">25</span><span class="title">個別テーマ傾向分析（正規化なし・最細粒度）</span></a>
+    <a class="section-card" href="cross-correlation.html"><span class="num">26</span><span class="title">科目間相関分析</span></a>
+    <a class="section-card" href="yearly-comprehensive.html"><span class="num">27</span><span class="title">年度別総合分析（全年度×全科目 完全展開）</span></a>
+    <a class="section-card" href="topic-pair-comparison.html"><span class="num">28</span><span class="title">テーマペア比較分析（同科目内 全ペア展開）</span></a>
+    <a class="section-card" href="difficulty-trend.html"><span class="num">29</span><span class="title">難易度トレンド分析</span></a>
+    <a class="section-card" href="real-difficulty.html"><span class="num">30</span><span class="title">合格基準点・合格率 実データ分析</span></a>
+    <a class="section-card" href="recommended-videos.html"><span class="num">31</span><span class="title">おすすめ学習動画（電気通信工事施工管理技士2級）</span></a>
+    <a class="section-card" href="coverage-rate.html"><span class="num">32</span><span class="title">過去問カバー率分析（新問を捨てた場合の得点）</span></a>
+    <a class="section-card" href="pass-strategy.html"><span class="num">33</span><span class="title">合格戦略（70%得点プラン）</span></a>
+    <a class="section-card" href="knowledge-map.html"><span class="num">34</span><span class="title">テーマ別 必要知識マップ</span></a>
+    <a class="section-card" href="all-questions.html"><span class="num">35</span><span class="title">全問題一覧（年度別傾向付き）</span></a>
+    <a class="section-card" href="roadmap.html"><span class="num">36</span><span class="title">学習ロードマップ</span></a>
+    <a class="section-card" href="formula-ref.html"><span class="num">37</span><span class="title">科目別 キー公式リファレンス</span></a>
+  </div>
+</section>
 </div>
-
-<p style="color: #94a3b8; font-size: 0.85em;">
-データソース: data/reports/電気通信工事_演習データ.json |
-参考: <a href="../電気通信工事施工管理技士2級_簡易版.html">2級簡易版</a> |
-<a href="../電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html">1級徹底分析</a>
-</p>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期（14年分） × 5科目 × 186問 ｜ Generated by Claude Code</footer>
 </body></html>

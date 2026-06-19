@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>過去問学習シミュレーション（5/10年学習で各年度の得点推移） - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">過去問学習シミュレーション（5/10年学習で各年度の得点推移）</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="study-todo.html">← 解くべき過去問リスト（年度別チェックリスト）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="required-years.html">必要学習年数分析（過去問を何年分やれば合格できるか） →</a></span></nav>
+<section id="rolling-backtest">
+  <h2>過去問学習シミュレーション（ローリングバックテスト）</h2>
+<p><strong>「直前N回の過去問だけ勉強して受験したら、各年度何点取れたか」</strong>を全年度シミュレーション。1回・3回・5回・10回・15回の5シナリオで、学習範囲を「必修(✓)／推奨(○)／余裕時(△)」に分けて期待得点を表示。<br><span style="color:#16a34a;font-weight:600">※ 同じ大分類（単元）の問題は学習で対応可能とみなして照合します（類似問題対応）。</span></p>
+<div class="note"><strong>必修(✓)</strong>: 全年データで<strong>平均が合格ライン60%に届く最小セット</strong>（平均的な年なら通る範囲）。 / <strong>推奨(○)</strong>: 全年データで<strong>最悪年でも60%に届く最小セット</strong>（不調年保険）。 / <strong>余裕時(△)</strong>: それ以外（取りこぼし対策・上位狙い）。<br>必修/推奨/余裕時の<strong>選定は全年データから1回だけ</strong>。各ウィンドウ(N回)では「過去N回に出題されたテーマのうち、固定セットに該当する分」を学んだとみなしてカバー率を測ります。<br>よって10回は5回を必ず包含し、得点は10回≥5回になります。</div>
+<h3 class="deep-sub">直近1回学習シナリオ</h3>
+<p style="font-size:0.92em">直前1回の過去問データから学習範囲を3段階で構築。各テスト年度の出題に対するカバー率（=その範囲だけで取れる得点率）を表示。</p>
+<div class="tip"><strong>サマリー</strong>: 全13年度の平均カバー率 - <span style="color:#16a34a;font-weight:700">必修✓のみ 40%</span> (合格圏到達 2/13年) ／ <span style="color:#2563eb;font-weight:700">必修+推奨○ 51%</span> (合格圏到達 4/13年) ／ <span style="color:#0891b2;font-weight:700">フル(直前1回全テーマ) 58%</span> (合格圏到達 6/13年)</div>
+<div class="warn"><strong>注意</strong>: 直前1回を完璧にしても合格ライン60%に届かない年度があります。これは「回ごとに新規テーマが多い試験」の特徴で、過去問の暗記だけでは限界があります。解くべき過去問リスト（study-todo）の必修テーマは<strong>全年度のデータ</strong>から構築されているため、より広範囲をカバーします。</div>
+<table class="fz9"><tr><th>テスト年度</th><th>出題数</th><th style="color:#16a34a">必修✓得点（平均60%狙い）</th><th style="color:#2563eb">必修+推奨○得点（最悪年も60%）</th><th style="color:#0891b2">フル得点 (window全テーマ)</th><th>判定</th></tr>
+<tr><td class="fwb">R1後期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">43%</span> (6/14)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R2</td><td class="tac">17</td><td class="tac"><span style="color:#16a34a;font-weight:700">35%</span> (6/17)</td><td class="tac"><span style="color:#2563eb;font-weight:700">53%</span> (9/17)</td><td class="tac"><span style="color:#0891b2;font-weight:700">59%</span> (10/17)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R3前期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">33%</span> (4/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">58%</span> (7/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">75%</span> (9/12)</td><td><strong style="color:#0891b2">window全テーマ学習で合格</strong></td></tr>
+<tr><td class="fwb">R3後期</td><td class="tac">8</td><td class="tac"><span style="color:#16a34a;font-weight:700">38%</span> (3/8)</td><td class="tac"><span style="color:#2563eb;font-weight:700">38%</span> (3/8)</td><td class="tac"><span style="color:#0891b2;font-weight:700">50%</span> (4/8)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R4前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">14%</span> (2/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">14%</span> (2/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">14%</span> (2/14)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R4後期</td><td class="tac">15</td><td class="tac"><span style="color:#16a34a;font-weight:700">33%</span> (5/15)</td><td class="tac"><span style="color:#2563eb;font-weight:700">60%</span> (9/15)</td><td class="tac"><span style="color:#0891b2;font-weight:700">60%</span> (9/15)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R5前期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">54%</span> (7/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">69%</span> (9/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">69%</span> (9/13)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R5後期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">42%</span> (5/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">50%</span> (6/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">50%</span> (6/12)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R6前期</td><td class="tac">18</td><td class="tac"><span style="color:#16a34a;font-weight:700">28%</span> (5/18)</td><td class="tac"><span style="color:#2563eb;font-weight:700">39%</span> (7/18)</td><td class="tac"><span style="color:#0891b2;font-weight:700">56%</span> (10/18)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+<tr><td class="fwb">R6後期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">69%</span> (9/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">77%</span> (10/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">92%</span> (12/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">64%</span> (9/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">71%</span> (10/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">79%</span> (11/14)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7後期</td><td class="tac">9</td><td class="tac"><span style="color:#16a34a;font-weight:700">56%</span> (5/9)</td><td class="tac"><span style="color:#2563eb;font-weight:700">56%</span> (5/9)</td><td class="tac"><span style="color:#0891b2;font-weight:700">67%</span> (6/9)</td><td><strong style="color:#0891b2">window全テーマ学習で合格</strong></td></tr>
+<tr><td class="fwb">R8前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">36%</span> (5/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">36%</span> (5/14)</td><td><strong style="color:#dc2626">過去1回では不足</strong></td></tr>
+</table>
+<svg viewBox="0 0 720 240" style="width:100%;max-width:720px;margin:12px 0;font-family:'Yu Gothic UI',sans-serif">
+<rect x="50" y="20" width="650" height="180" fill="#fafafa" stroke="#e5e7eb"/>
+<line x1="50" y1="155" x2="700" y2="155" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="158" font-size="9" fill="#9ca3af" text-anchor="end">25%</text>
+<line x1="50" y1="110" x2="700" y2="110" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="113" font-size="9" fill="#9ca3af" text-anchor="end">50%</text>
+<line x1="50" y1="65" x2="700" y2="65" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="68" font-size="9" fill="#9ca3af" text-anchor="end">75%</text>
+<line x1="50" y1="20" x2="700" y2="20" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="23" font-size="9" fill="#9ca3af" text-anchor="end">100%</text>
+<line x1="50" y1="92" x2="700" y2="92" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="696" y="88" font-size="9" fill="#dc2626" text-anchor="end" font-weight="700">合格ライン60%</text>
+<polyline points="50.0,122.9 104.2,94.1 158.3,65.0 212.5,110.0 266.7,174.3 320.8,92.0 375.0,75.4 429.2,110.0 483.3,100.0 537.5,33.8 591.7,58.6 645.8,80.0 700.0,135.7" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="3,2"/>
+<polyline points="50.0,122.9 104.2,104.7 158.3,95.0 212.5,132.5 266.7,174.3 320.8,92.0 375.0,75.4 429.2,110.0 483.3,130.0 537.5,61.5 591.7,71.4 645.8,100.0 700.0,135.7" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="50.0,148.6 104.2,136.5 158.3,140.0 212.5,132.5 266.7,174.3 320.8,140.0 375.0,103.1 429.2,125.0 483.3,150.0 537.5,75.4 591.7,84.3 645.8,100.0 700.0,148.6" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#0891b2"><title>R1後期 フル(window全テーマ): 43%</title></circle>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#2563eb"><title>R1後期 必修+推奨: 43%</title></circle>
+<circle cx="50.0" cy="148.6" r="3" fill="#dc2626"><title>R1後期 必修: 29%</title></circle>
+<text x="50.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R1後期</text>
+<circle cx="104.2" cy="94.1" r="2.5" fill="#0891b2"><title>R2 フル(window全テーマ): 59%</title></circle>
+<circle cx="104.2" cy="104.7" r="2.5" fill="#2563eb"><title>R2 必修+推奨: 53%</title></circle>
+<circle cx="104.2" cy="136.5" r="3" fill="#dc2626"><title>R2 必修: 35%</title></circle>
+<text x="104.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R2</text>
+<circle cx="158.3" cy="65.0" r="2.5" fill="#0891b2"><title>R3前期 フル(window全テーマ): 75%</title></circle>
+<circle cx="158.3" cy="95.0" r="2.5" fill="#2563eb"><title>R3前期 必修+推奨: 58%</title></circle>
+<circle cx="158.3" cy="140.0" r="3" fill="#dc2626"><title>R3前期 必修: 33%</title></circle>
+<text x="158.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3前期</text>
+<circle cx="212.5" cy="110.0" r="2.5" fill="#0891b2"><title>R3後期 フル(window全テーマ): 50%</title></circle>
+<circle cx="212.5" cy="132.5" r="2.5" fill="#2563eb"><title>R3後期 必修+推奨: 38%</title></circle>
+<circle cx="212.5" cy="132.5" r="3" fill="#dc2626"><title>R3後期 必修: 38%</title></circle>
+<text x="212.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3後期</text>
+<circle cx="266.7" cy="174.3" r="2.5" fill="#0891b2"><title>R4前期 フル(window全テーマ): 14%</title></circle>
+<circle cx="266.7" cy="174.3" r="2.5" fill="#2563eb"><title>R4前期 必修+推奨: 14%</title></circle>
+<circle cx="266.7" cy="174.3" r="3" fill="#dc2626"><title>R4前期 必修: 14%</title></circle>
+<text x="266.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4前期</text>
+<circle cx="320.8" cy="92.0" r="2.5" fill="#0891b2"><title>R4後期 フル(window全テーマ): 60%</title></circle>
+<circle cx="320.8" cy="92.0" r="2.5" fill="#2563eb"><title>R4後期 必修+推奨: 60%</title></circle>
+<circle cx="320.8" cy="140.0" r="3" fill="#dc2626"><title>R4後期 必修: 33%</title></circle>
+<text x="320.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4後期</text>
+<circle cx="375.0" cy="75.4" r="2.5" fill="#0891b2"><title>R5前期 フル(window全テーマ): 69%</title></circle>
+<circle cx="375.0" cy="75.4" r="2.5" fill="#2563eb"><title>R5前期 必修+推奨: 69%</title></circle>
+<circle cx="375.0" cy="103.1" r="3" fill="#dc2626"><title>R5前期 必修: 54%</title></circle>
+<text x="375.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5前期</text>
+<circle cx="429.2" cy="110.0" r="2.5" fill="#0891b2"><title>R5後期 フル(window全テーマ): 50%</title></circle>
+<circle cx="429.2" cy="110.0" r="2.5" fill="#2563eb"><title>R5後期 必修+推奨: 50%</title></circle>
+<circle cx="429.2" cy="125.0" r="3" fill="#dc2626"><title>R5後期 必修: 42%</title></circle>
+<text x="429.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5後期</text>
+<circle cx="483.3" cy="100.0" r="2.5" fill="#0891b2"><title>R6前期 フル(window全テーマ): 56%</title></circle>
+<circle cx="483.3" cy="130.0" r="2.5" fill="#2563eb"><title>R6前期 必修+推奨: 39%</title></circle>
+<circle cx="483.3" cy="150.0" r="3" fill="#dc2626"><title>R6前期 必修: 28%</title></circle>
+<text x="483.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6前期</text>
+<circle cx="537.5" cy="33.8" r="2.5" fill="#0891b2"><title>R6後期 フル(window全テーマ): 92%</title></circle>
+<circle cx="537.5" cy="61.5" r="2.5" fill="#2563eb"><title>R6後期 必修+推奨: 77%</title></circle>
+<circle cx="537.5" cy="75.4" r="3" fill="#16a34a"><title>R6後期 必修: 69%</title></circle>
+<text x="537.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6後期</text>
+<circle cx="591.7" cy="58.6" r="2.5" fill="#0891b2"><title>R7前期 フル(window全テーマ): 79%</title></circle>
+<circle cx="591.7" cy="71.4" r="2.5" fill="#2563eb"><title>R7前期 必修+推奨: 71%</title></circle>
+<circle cx="591.7" cy="84.3" r="3" fill="#16a34a"><title>R7前期 必修: 64%</title></circle>
+<text x="591.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7前期</text>
+<circle cx="645.8" cy="80.0" r="2.5" fill="#0891b2"><title>R7後期 フル(window全テーマ): 67%</title></circle>
+<circle cx="645.8" cy="100.0" r="2.5" fill="#2563eb"><title>R7後期 必修+推奨: 56%</title></circle>
+<circle cx="645.8" cy="100.0" r="3" fill="#dc2626"><title>R7後期 必修: 56%</title></circle>
+<text x="645.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7後期</text>
+<circle cx="700.0" cy="135.7" r="2.5" fill="#0891b2"><title>R8前期 フル(window全テーマ): 36%</title></circle>
+<circle cx="700.0" cy="135.7" r="2.5" fill="#2563eb"><title>R8前期 必修+推奨: 36%</title></circle>
+<circle cx="700.0" cy="148.6" r="3" fill="#dc2626"><title>R8前期 必修: 29%</title></circle>
+<text x="700.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R8前期</text>
+<rect x="60" y="30" width="14" height="3" fill="#16a34a"/>
+<text x="80" y="33" font-size="9" fill="#16a34a" font-weight="700">必修✓</text>
+<rect x="140" y="30" width="14" height="3" fill="#2563eb"/>
+<text x="160" y="33" font-size="9" fill="#2563eb" font-weight="700">必修+推奨○</text>
+<rect x="250" y="30" width="14" height="3" fill="#0891b2"/>
+<text x="270" y="33" font-size="9" fill="#0891b2" font-weight="700">フル(window全テーマ)</text>
+</svg>
+<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:700;padding:8px;background:#f1f5f9;border-radius:6px">📑 科目別ローリングバックテスト（直近1回）— クリックで展開</summary>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #7c3aed;background:#fafbfc;border-radius:4px">
+<h4 style="color:#7c3aed;margin:0 0 6px">電気通信工学等</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓51%</span>(5/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○58%</span>(6/13) ／ <span style="color:#0891b2;font-weight:700">フル58%</span>(6/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">40%</td><td class="tac" style="color:#2563eb;font-weight:600">40%</td><td class="tac" style="color:#0891b2;font-weight:600">40%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">25%</td><td class="tac" style="color:#2563eb;font-weight:600">25%</td><td class="tac" style="color:#0891b2;font-weight:600">25%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">25%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">20%</td><td class="tac" style="color:#2563eb;font-weight:600">20%</td><td class="tac" style="color:#0891b2;font-weight:600">20%</td></tr>
+<tr><td>R6後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">25%</td><td class="tac" style="color:#2563eb;font-weight:600">25%</td><td class="tac" style="color:#0891b2;font-weight:600">25%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #0ea5e9;background:#fafbfc;border-radius:4px">
+<h4 style="color:#0ea5e9;margin:0 0 6px">電気通信設備</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓37%</span>(3/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○46%</span>(3/13) ／ <span style="color:#0891b2;font-weight:700">フル55%</span>(6/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R4後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R5後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">20%</td><td class="tac" style="color:#2563eb;font-weight:600">20%</td><td class="tac" style="color:#0891b2;font-weight:600">60%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R7後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">25%</td><td class="tac" style="color:#2563eb;font-weight:600">25%</td><td class="tac" style="color:#0891b2;font-weight:600">25%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #059669;background:#fafbfc;border-radius:4px">
+<h4 style="color:#059669;margin:0 0 6px">設計施工</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓50%</span>(5/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○54%</span>(5/13) ／ <span style="color:#0891b2;font-weight:700">フル56%</span>(5/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R8前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #1e40af;background:#fafbfc;border-radius:4px">
+<h4 style="color:#1e40af;margin:0 0 6px">施工管理法</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓31%</span>(3/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○50%</span>(6/13) ／ <span style="color:#0891b2;font-weight:700">フル65%</span>(8/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R3前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+<tr><td>R4前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #d97706;background:#fafbfc;border-radius:4px">
+<h4 style="color:#d97706;margin:0 0 6px">法規</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓48%</span>(3/12年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○62%</span>(6/12) ／ <span style="color:#0891b2;font-weight:700">フル64%</span>(7/12)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">25%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+<tr><td>R3前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R8前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">33%</td></tr>
+</table></div>
+</details>
+<h3 class="deep-sub">直近3回学習シナリオ</h3>
+<p style="font-size:0.92em">直前3回の過去問データから学習範囲を3段階で構築。各テスト年度の出題に対するカバー率（=その範囲だけで取れる得点率）を表示。</p>
+<div class="tip"><strong>サマリー</strong>: 全13年度の平均カバー率 - <span style="color:#16a34a;font-weight:700">必修✓のみ 59%</span> (合格圏到達 6/13年) ／ <span style="color:#2563eb;font-weight:700">必修+推奨○ 78%</span> (合格圏到達 12/13年) ／ <span style="color:#0891b2;font-weight:700">フル(直前3回全テーマ) 88%</span> (合格圏到達 12/13年)</div>
+<div class="warn"><strong>注意</strong>: 直前3回を完璧にしても合格ライン60%に届かない年度があります。これは「回ごとに新規テーマが多い試験」の特徴で、過去問の暗記だけでは限界があります。解くべき過去問リスト（study-todo）の必修テーマは<strong>全年度のデータ</strong>から構築されているため、より広範囲をカバーします。</div>
+<table class="fz9"><tr><th>テスト年度</th><th>出題数</th><th style="color:#16a34a">必修✓得点（平均60%狙い）</th><th style="color:#2563eb">必修+推奨○得点（最悪年も60%）</th><th style="color:#0891b2">フル得点 (window全テーマ)</th><th>判定</th></tr>
+<tr><td class="fwb">R1後期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">43%</span> (6/14)</td><td><strong style="color:#dc2626">過去3回では不足</strong></td></tr>
+<tr><td class="fwb">R2</td><td class="tac">17</td><td class="tac"><span style="color:#16a34a;font-weight:700">53%</span> (9/17)</td><td class="tac"><span style="color:#2563eb;font-weight:700">76%</span> (13/17)</td><td class="tac"><span style="color:#0891b2;font-weight:700">88%</span> (15/17)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3前期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">58%</span> (7/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (10/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3後期</td><td class="tac">8</td><td class="tac"><span style="color:#16a34a;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#2563eb;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (8/8)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R4前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">79%</span> (11/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">86%</span> (12/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R4後期</td><td class="tac">15</td><td class="tac"><span style="color:#16a34a;font-weight:700">60%</span> (9/15)</td><td class="tac"><span style="color:#2563eb;font-weight:700">87%</span> (13/15)</td><td class="tac"><span style="color:#0891b2;font-weight:700">87%</span> (13/15)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5前期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">62%</span> (8/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">85%</span> (11/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">92%</span> (12/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5後期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">42%</span> (5/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">67%</span> (8/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">75%</span> (9/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R6前期</td><td class="tac">18</td><td class="tac"><span style="color:#16a34a;font-weight:700">56%</span> (10/18)</td><td class="tac"><span style="color:#2563eb;font-weight:700">72%</span> (13/18)</td><td class="tac"><span style="color:#0891b2;font-weight:700">89%</span> (16/18)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R6後期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">77%</span> (10/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">85%</span> (11/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">71%</span> (10/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">86%</span> (12/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7後期</td><td class="tac">9</td><td class="tac"><span style="color:#16a34a;font-weight:700">78%</span> (7/9)</td><td class="tac"><span style="color:#2563eb;font-weight:700">89%</span> (8/9)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (9/9)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R8前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">57%</span> (8/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">79%</span> (11/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">86%</span> (12/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+</table>
+<svg viewBox="0 0 720 240" style="width:100%;max-width:720px;margin:12px 0;font-family:'Yu Gothic UI',sans-serif">
+<rect x="50" y="20" width="650" height="180" fill="#fafafa" stroke="#e5e7eb"/>
+<line x1="50" y1="155" x2="700" y2="155" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="158" font-size="9" fill="#9ca3af" text-anchor="end">25%</text>
+<line x1="50" y1="110" x2="700" y2="110" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="113" font-size="9" fill="#9ca3af" text-anchor="end">50%</text>
+<line x1="50" y1="65" x2="700" y2="65" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="68" font-size="9" fill="#9ca3af" text-anchor="end">75%</text>
+<line x1="50" y1="20" x2="700" y2="20" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="23" font-size="9" fill="#9ca3af" text-anchor="end">100%</text>
+<line x1="50" y1="92" x2="700" y2="92" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="696" y="88" font-size="9" fill="#dc2626" text-anchor="end" font-weight="700">合格ライン60%</text>
+<polyline points="50.0,122.9 104.2,41.2 158.3,20.0 212.5,20.0 266.7,45.7 320.8,44.0 375.0,33.8 429.2,65.0 483.3,40.0 537.5,20.0 591.7,20.0 645.8,20.0 700.0,45.7" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="3,2"/>
+<polyline points="50.0,122.9 104.2,62.4 158.3,50.0 212.5,42.5 266.7,58.6 320.8,44.0 375.0,47.7 429.2,80.0 483.3,70.0 537.5,47.7 591.7,45.7 645.8,40.0 700.0,58.6" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="50.0,148.6 104.2,104.7 158.3,95.0 212.5,42.5 266.7,122.9 320.8,92.0 375.0,89.2 429.2,125.0 483.3,100.0 537.5,61.5 591.7,71.4 645.8,60.0 700.0,97.1" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#0891b2"><title>R1後期 フル(window全テーマ): 43%</title></circle>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#2563eb"><title>R1後期 必修+推奨: 43%</title></circle>
+<circle cx="50.0" cy="148.6" r="3" fill="#dc2626"><title>R1後期 必修: 29%</title></circle>
+<text x="50.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R1後期</text>
+<circle cx="104.2" cy="41.2" r="2.5" fill="#0891b2"><title>R2 フル(window全テーマ): 88%</title></circle>
+<circle cx="104.2" cy="62.4" r="2.5" fill="#2563eb"><title>R2 必修+推奨: 76%</title></circle>
+<circle cx="104.2" cy="104.7" r="3" fill="#dc2626"><title>R2 必修: 53%</title></circle>
+<text x="104.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R2</text>
+<circle cx="158.3" cy="20.0" r="2.5" fill="#0891b2"><title>R3前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="158.3" cy="50.0" r="2.5" fill="#2563eb"><title>R3前期 必修+推奨: 83%</title></circle>
+<circle cx="158.3" cy="95.0" r="3" fill="#dc2626"><title>R3前期 必修: 58%</title></circle>
+<text x="158.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3前期</text>
+<circle cx="212.5" cy="20.0" r="2.5" fill="#0891b2"><title>R3後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="212.5" cy="42.5" r="2.5" fill="#2563eb"><title>R3後期 必修+推奨: 88%</title></circle>
+<circle cx="212.5" cy="42.5" r="3" fill="#16a34a"><title>R3後期 必修: 88%</title></circle>
+<text x="212.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3後期</text>
+<circle cx="266.7" cy="45.7" r="2.5" fill="#0891b2"><title>R4前期 フル(window全テーマ): 86%</title></circle>
+<circle cx="266.7" cy="58.6" r="2.5" fill="#2563eb"><title>R4前期 必修+推奨: 79%</title></circle>
+<circle cx="266.7" cy="122.9" r="3" fill="#dc2626"><title>R4前期 必修: 43%</title></circle>
+<text x="266.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4前期</text>
+<circle cx="320.8" cy="44.0" r="2.5" fill="#0891b2"><title>R4後期 フル(window全テーマ): 87%</title></circle>
+<circle cx="320.8" cy="44.0" r="2.5" fill="#2563eb"><title>R4後期 必修+推奨: 87%</title></circle>
+<circle cx="320.8" cy="92.0" r="3" fill="#16a34a"><title>R4後期 必修: 60%</title></circle>
+<text x="320.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4後期</text>
+<circle cx="375.0" cy="33.8" r="2.5" fill="#0891b2"><title>R5前期 フル(window全テーマ): 92%</title></circle>
+<circle cx="375.0" cy="47.7" r="2.5" fill="#2563eb"><title>R5前期 必修+推奨: 85%</title></circle>
+<circle cx="375.0" cy="89.2" r="3" fill="#16a34a"><title>R5前期 必修: 62%</title></circle>
+<text x="375.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5前期</text>
+<circle cx="429.2" cy="65.0" r="2.5" fill="#0891b2"><title>R5後期 フル(window全テーマ): 75%</title></circle>
+<circle cx="429.2" cy="80.0" r="2.5" fill="#2563eb"><title>R5後期 必修+推奨: 67%</title></circle>
+<circle cx="429.2" cy="125.0" r="3" fill="#dc2626"><title>R5後期 必修: 42%</title></circle>
+<text x="429.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5後期</text>
+<circle cx="483.3" cy="40.0" r="2.5" fill="#0891b2"><title>R6前期 フル(window全テーマ): 89%</title></circle>
+<circle cx="483.3" cy="70.0" r="2.5" fill="#2563eb"><title>R6前期 必修+推奨: 72%</title></circle>
+<circle cx="483.3" cy="100.0" r="3" fill="#dc2626"><title>R6前期 必修: 56%</title></circle>
+<text x="483.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6前期</text>
+<circle cx="537.5" cy="20.0" r="2.5" fill="#0891b2"><title>R6後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="537.5" cy="47.7" r="2.5" fill="#2563eb"><title>R6後期 必修+推奨: 85%</title></circle>
+<circle cx="537.5" cy="61.5" r="3" fill="#16a34a"><title>R6後期 必修: 77%</title></circle>
+<text x="537.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6後期</text>
+<circle cx="591.7" cy="20.0" r="2.5" fill="#0891b2"><title>R7前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="591.7" cy="45.7" r="2.5" fill="#2563eb"><title>R7前期 必修+推奨: 86%</title></circle>
+<circle cx="591.7" cy="71.4" r="3" fill="#16a34a"><title>R7前期 必修: 71%</title></circle>
+<text x="591.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7前期</text>
+<circle cx="645.8" cy="20.0" r="2.5" fill="#0891b2"><title>R7後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="645.8" cy="40.0" r="2.5" fill="#2563eb"><title>R7後期 必修+推奨: 89%</title></circle>
+<circle cx="645.8" cy="60.0" r="3" fill="#16a34a"><title>R7後期 必修: 78%</title></circle>
+<text x="645.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7後期</text>
+<circle cx="700.0" cy="45.7" r="2.5" fill="#0891b2"><title>R8前期 フル(window全テーマ): 86%</title></circle>
+<circle cx="700.0" cy="58.6" r="2.5" fill="#2563eb"><title>R8前期 必修+推奨: 79%</title></circle>
+<circle cx="700.0" cy="97.1" r="3" fill="#dc2626"><title>R8前期 必修: 57%</title></circle>
+<text x="700.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R8前期</text>
+<rect x="60" y="30" width="14" height="3" fill="#16a34a"/>
+<text x="80" y="33" font-size="9" fill="#16a34a" font-weight="700">必修✓</text>
+<rect x="140" y="30" width="14" height="3" fill="#2563eb"/>
+<text x="160" y="33" font-size="9" fill="#2563eb" font-weight="700">必修+推奨○</text>
+<rect x="250" y="30" width="14" height="3" fill="#0891b2"/>
+<text x="270" y="33" font-size="9" fill="#0891b2" font-weight="700">フル(window全テーマ)</text>
+</svg>
+<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:700;padding:8px;background:#f1f5f9;border-radius:6px">📑 科目別ローリングバックテスト（直近3回）— クリックで展開</summary>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #7c3aed;background:#fafbfc;border-radius:4px">
+<h4 style="color:#7c3aed;margin:0 0 6px">電気通信工学等</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓74%</span>(11/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○89%</span>(12/13) ／ <span style="color:#0891b2;font-weight:700">フル89%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">80%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">60%</td><td class="tac" style="color:#2563eb;font-weight:600">80%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R6後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #0ea5e9;background:#fafbfc;border-radius:4px">
+<h4 style="color:#0ea5e9;margin:0 0 6px">電気通信設備</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓48%</span>(5/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○63%</span>(6/13) ／ <span style="color:#0891b2;font-weight:700">フル80%</span>(10/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R4後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R5後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">40%</td><td class="tac" style="color:#2563eb;font-weight:600">40%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #059669;background:#fafbfc;border-radius:4px">
+<h4 style="color:#059669;margin:0 0 6px">設計施工</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓69%</span>(9/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○78%</span>(9/13) ／ <span style="color:#0891b2;font-weight:700">フル81%</span>(9/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #1e40af;background:#fafbfc;border-radius:4px">
+<h4 style="color:#1e40af;margin:0 0 6px">施工管理法</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓49%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○76%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル94%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #d97706;background:#fafbfc;border-radius:4px">
+<h4 style="color:#d97706;margin:0 0 6px">法規</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(3/12年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○86%</span>(11/12) ／ <span style="color:#0891b2;font-weight:700">フル93%</span>(12/12)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+</details>
+<h3 class="deep-sub">直近5回学習シナリオ</h3>
+<p style="font-size:0.92em">直前5回の過去問データから学習範囲を3段階で構築。各テスト年度の出題に対するカバー率（=その範囲だけで取れる得点率）を表示。</p>
+<div class="tip"><strong>サマリー</strong>: 全13年度の平均カバー率 - <span style="color:#16a34a;font-weight:700">必修✓のみ 61%</span> (合格圏到達 7/13年) ／ <span style="color:#2563eb;font-weight:700">必修+推奨○ 81%</span> (合格圏到達 12/13年) ／ <span style="color:#0891b2;font-weight:700">フル(直前5回全テーマ) 92%</span> (合格圏到達 12/13年)</div>
+<div class="warn"><strong>注意</strong>: 直前5回を完璧にしても合格ライン60%に届かない年度があります。これは「回ごとに新規テーマが多い試験」の特徴で、過去問の暗記だけでは限界があります。解くべき過去問リスト（study-todo）の必修テーマは<strong>全年度のデータ</strong>から構築されているため、より広範囲をカバーします。</div>
+<table class="fz9"><tr><th>テスト年度</th><th>出題数</th><th style="color:#16a34a">必修✓得点（平均60%狙い）</th><th style="color:#2563eb">必修+推奨○得点（最悪年も60%）</th><th style="color:#0891b2">フル得点 (window全テーマ)</th><th>判定</th></tr>
+<tr><td class="fwb">R1後期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">43%</span> (6/14)</td><td><strong style="color:#dc2626">過去5回では不足</strong></td></tr>
+<tr><td class="fwb">R2</td><td class="tac">17</td><td class="tac"><span style="color:#16a34a;font-weight:700">53%</span> (9/17)</td><td class="tac"><span style="color:#2563eb;font-weight:700">76%</span> (13/17)</td><td class="tac"><span style="color:#0891b2;font-weight:700">88%</span> (15/17)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3前期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">58%</span> (7/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (10/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3後期</td><td class="tac">8</td><td class="tac"><span style="color:#16a34a;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#2563eb;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (8/8)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R4前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">50%</span> (7/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (13/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R4後期</td><td class="tac">15</td><td class="tac"><span style="color:#16a34a;font-weight:700">60%</span> (9/15)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (14/15)</td><td class="tac"><span style="color:#0891b2;font-weight:700">93%</span> (14/15)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5前期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">69%</span> (9/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">92%</span> (12/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5後期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">42%</span> (5/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">67%</span> (8/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">92%</span> (11/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R6前期</td><td class="tac">18</td><td class="tac"><span style="color:#16a34a;font-weight:700">67%</span> (12/18)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (15/18)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (18/18)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R6後期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">77%</span> (10/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">85%</span> (11/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">71%</span> (10/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">86%</span> (12/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7後期</td><td class="tac">9</td><td class="tac"><span style="color:#16a34a;font-weight:700">78%</span> (7/9)</td><td class="tac"><span style="color:#2563eb;font-weight:700">89%</span> (8/9)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (9/9)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R8前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">57%</span> (8/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">79%</span> (11/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">86%</span> (12/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+</table>
+<svg viewBox="0 0 720 240" style="width:100%;max-width:720px;margin:12px 0;font-family:'Yu Gothic UI',sans-serif">
+<rect x="50" y="20" width="650" height="180" fill="#fafafa" stroke="#e5e7eb"/>
+<line x1="50" y1="155" x2="700" y2="155" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="158" font-size="9" fill="#9ca3af" text-anchor="end">25%</text>
+<line x1="50" y1="110" x2="700" y2="110" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="113" font-size="9" fill="#9ca3af" text-anchor="end">50%</text>
+<line x1="50" y1="65" x2="700" y2="65" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="68" font-size="9" fill="#9ca3af" text-anchor="end">75%</text>
+<line x1="50" y1="20" x2="700" y2="20" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="23" font-size="9" fill="#9ca3af" text-anchor="end">100%</text>
+<line x1="50" y1="92" x2="700" y2="92" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="696" y="88" font-size="9" fill="#dc2626" text-anchor="end" font-weight="700">合格ライン60%</text>
+<polyline points="50.0,122.9 104.2,41.2 158.3,20.0 212.5,20.0 266.7,20.0 320.8,32.0 375.0,20.0 429.2,35.0 483.3,20.0 537.5,20.0 591.7,20.0 645.8,20.0 700.0,45.7" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="3,2"/>
+<polyline points="50.0,122.9 104.2,62.4 158.3,50.0 212.5,42.5 266.7,32.9 320.8,32.0 375.0,33.8 429.2,80.0 483.3,50.0 537.5,47.7 591.7,45.7 645.8,40.0 700.0,58.6" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="50.0,148.6 104.2,104.7 158.3,95.0 212.5,42.5 266.7,110.0 320.8,92.0 375.0,75.4 429.2,125.0 483.3,80.0 537.5,61.5 591.7,71.4 645.8,60.0 700.0,97.1" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#0891b2"><title>R1後期 フル(window全テーマ): 43%</title></circle>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#2563eb"><title>R1後期 必修+推奨: 43%</title></circle>
+<circle cx="50.0" cy="148.6" r="3" fill="#dc2626"><title>R1後期 必修: 29%</title></circle>
+<text x="50.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R1後期</text>
+<circle cx="104.2" cy="41.2" r="2.5" fill="#0891b2"><title>R2 フル(window全テーマ): 88%</title></circle>
+<circle cx="104.2" cy="62.4" r="2.5" fill="#2563eb"><title>R2 必修+推奨: 76%</title></circle>
+<circle cx="104.2" cy="104.7" r="3" fill="#dc2626"><title>R2 必修: 53%</title></circle>
+<text x="104.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R2</text>
+<circle cx="158.3" cy="20.0" r="2.5" fill="#0891b2"><title>R3前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="158.3" cy="50.0" r="2.5" fill="#2563eb"><title>R3前期 必修+推奨: 83%</title></circle>
+<circle cx="158.3" cy="95.0" r="3" fill="#dc2626"><title>R3前期 必修: 58%</title></circle>
+<text x="158.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3前期</text>
+<circle cx="212.5" cy="20.0" r="2.5" fill="#0891b2"><title>R3後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="212.5" cy="42.5" r="2.5" fill="#2563eb"><title>R3後期 必修+推奨: 88%</title></circle>
+<circle cx="212.5" cy="42.5" r="3" fill="#16a34a"><title>R3後期 必修: 88%</title></circle>
+<text x="212.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3後期</text>
+<circle cx="266.7" cy="20.0" r="2.5" fill="#0891b2"><title>R4前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="266.7" cy="32.9" r="2.5" fill="#2563eb"><title>R4前期 必修+推奨: 93%</title></circle>
+<circle cx="266.7" cy="110.0" r="3" fill="#dc2626"><title>R4前期 必修: 50%</title></circle>
+<text x="266.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4前期</text>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#0891b2"><title>R4後期 フル(window全テーマ): 93%</title></circle>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#2563eb"><title>R4後期 必修+推奨: 93%</title></circle>
+<circle cx="320.8" cy="92.0" r="3" fill="#16a34a"><title>R4後期 必修: 60%</title></circle>
+<text x="320.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4後期</text>
+<circle cx="375.0" cy="20.0" r="2.5" fill="#0891b2"><title>R5前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="375.0" cy="33.8" r="2.5" fill="#2563eb"><title>R5前期 必修+推奨: 92%</title></circle>
+<circle cx="375.0" cy="75.4" r="3" fill="#16a34a"><title>R5前期 必修: 69%</title></circle>
+<text x="375.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5前期</text>
+<circle cx="429.2" cy="35.0" r="2.5" fill="#0891b2"><title>R5後期 フル(window全テーマ): 92%</title></circle>
+<circle cx="429.2" cy="80.0" r="2.5" fill="#2563eb"><title>R5後期 必修+推奨: 67%</title></circle>
+<circle cx="429.2" cy="125.0" r="3" fill="#dc2626"><title>R5後期 必修: 42%</title></circle>
+<text x="429.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5後期</text>
+<circle cx="483.3" cy="20.0" r="2.5" fill="#0891b2"><title>R6前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="483.3" cy="50.0" r="2.5" fill="#2563eb"><title>R6前期 必修+推奨: 83%</title></circle>
+<circle cx="483.3" cy="80.0" r="3" fill="#16a34a"><title>R6前期 必修: 67%</title></circle>
+<text x="483.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6前期</text>
+<circle cx="537.5" cy="20.0" r="2.5" fill="#0891b2"><title>R6後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="537.5" cy="47.7" r="2.5" fill="#2563eb"><title>R6後期 必修+推奨: 85%</title></circle>
+<circle cx="537.5" cy="61.5" r="3" fill="#16a34a"><title>R6後期 必修: 77%</title></circle>
+<text x="537.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6後期</text>
+<circle cx="591.7" cy="20.0" r="2.5" fill="#0891b2"><title>R7前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="591.7" cy="45.7" r="2.5" fill="#2563eb"><title>R7前期 必修+推奨: 86%</title></circle>
+<circle cx="591.7" cy="71.4" r="3" fill="#16a34a"><title>R7前期 必修: 71%</title></circle>
+<text x="591.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7前期</text>
+<circle cx="645.8" cy="20.0" r="2.5" fill="#0891b2"><title>R7後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="645.8" cy="40.0" r="2.5" fill="#2563eb"><title>R7後期 必修+推奨: 89%</title></circle>
+<circle cx="645.8" cy="60.0" r="3" fill="#16a34a"><title>R7後期 必修: 78%</title></circle>
+<text x="645.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7後期</text>
+<circle cx="700.0" cy="45.7" r="2.5" fill="#0891b2"><title>R8前期 フル(window全テーマ): 86%</title></circle>
+<circle cx="700.0" cy="58.6" r="2.5" fill="#2563eb"><title>R8前期 必修+推奨: 79%</title></circle>
+<circle cx="700.0" cy="97.1" r="3" fill="#dc2626"><title>R8前期 必修: 57%</title></circle>
+<text x="700.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R8前期</text>
+<rect x="60" y="30" width="14" height="3" fill="#16a34a"/>
+<text x="80" y="33" font-size="9" fill="#16a34a" font-weight="700">必修✓</text>
+<rect x="140" y="30" width="14" height="3" fill="#2563eb"/>
+<text x="160" y="33" font-size="9" fill="#2563eb" font-weight="700">必修+推奨○</text>
+<rect x="250" y="30" width="14" height="3" fill="#0891b2"/>
+<text x="270" y="33" font-size="9" fill="#0891b2" font-weight="700">フル(window全テーマ)</text>
+</svg>
+<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:700;padding:8px;background:#f1f5f9;border-radius:6px">📑 科目別ローリングバックテスト（直近5回）— クリックで展開</summary>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #7c3aed;background:#fafbfc;border-radius:4px">
+<h4 style="color:#7c3aed;margin:0 0 6px">電気通信工学等</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓76%</span>(11/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○91%</span>(12/13) ／ <span style="color:#0891b2;font-weight:700">フル91%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">80%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #0ea5e9;background:#fafbfc;border-radius:4px">
+<h4 style="color:#0ea5e9;margin:0 0 6px">電気通信設備</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○73%</span>(9/13) ／ <span style="color:#0891b2;font-weight:700">フル89%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">60%</td><td class="tac" style="color:#2563eb;font-weight:600">60%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">75%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #059669;background:#fafbfc;border-radius:4px">
+<h4 style="color:#059669;margin:0 0 6px">設計施工</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓69%</span>(9/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○78%</span>(9/13) ／ <span style="color:#0891b2;font-weight:700">フル85%</span>(10/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #1e40af;background:#fafbfc;border-radius:4px">
+<h4 style="color:#1e40af;margin:0 0 6px">施工管理法</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓49%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○76%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(13/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #d97706;background:#fafbfc;border-radius:4px">
+<h4 style="color:#d97706;margin:0 0 6px">法規</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(3/12年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○90%</span>(12/12) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(12/12)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+</details>
+<h3 class="deep-sub">直近10回学習シナリオ</h3>
+<p style="font-size:0.92em">直前10回の過去問データから学習範囲を3段階で構築。各テスト年度の出題に対するカバー率（=その範囲だけで取れる得点率）を表示。</p>
+<div class="tip"><strong>サマリー</strong>: 全13年度の平均カバー率 - <span style="color:#16a34a;font-weight:700">必修✓のみ 61%</span> (合格圏到達 7/13年) ／ <span style="color:#2563eb;font-weight:700">必修+推奨○ 82%</span> (合格圏到達 12/13年) ／ <span style="color:#0891b2;font-weight:700">フル(直前10回全テーマ) 94%</span> (合格圏到達 12/13年)</div>
+<div class="warn"><strong>注意</strong>: 直前10回を完璧にしても合格ライン60%に届かない年度があります。これは「回ごとに新規テーマが多い試験」の特徴で、過去問の暗記だけでは限界があります。解くべき過去問リスト（study-todo）の必修テーマは<strong>全年度のデータ</strong>から構築されているため、より広範囲をカバーします。</div>
+<table class="fz9"><tr><th>テスト年度</th><th>出題数</th><th style="color:#16a34a">必修✓得点（平均60%狙い）</th><th style="color:#2563eb">必修+推奨○得点（最悪年も60%）</th><th style="color:#0891b2">フル得点 (window全テーマ)</th><th>判定</th></tr>
+<tr><td class="fwb">R1後期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">43%</span> (6/14)</td><td><strong style="color:#dc2626">過去10回では不足</strong></td></tr>
+<tr><td class="fwb">R2</td><td class="tac">17</td><td class="tac"><span style="color:#16a34a;font-weight:700">53%</span> (9/17)</td><td class="tac"><span style="color:#2563eb;font-weight:700">76%</span> (13/17)</td><td class="tac"><span style="color:#0891b2;font-weight:700">88%</span> (15/17)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3前期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">58%</span> (7/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (10/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3後期</td><td class="tac">8</td><td class="tac"><span style="color:#16a34a;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#2563eb;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (8/8)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R4前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">50%</span> (7/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (13/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R4後期</td><td class="tac">15</td><td class="tac"><span style="color:#16a34a;font-weight:700">60%</span> (9/15)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (14/15)</td><td class="tac"><span style="color:#0891b2;font-weight:700">93%</span> (14/15)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5前期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">69%</span> (9/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">92%</span> (12/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5後期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">42%</span> (5/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">67%</span> (8/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R6前期</td><td class="tac">18</td><td class="tac"><span style="color:#16a34a;font-weight:700">67%</span> (12/18)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (15/18)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (18/18)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R6後期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">77%</span> (10/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">85%</span> (11/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">71%</span> (10/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">86%</span> (12/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7後期</td><td class="tac">9</td><td class="tac"><span style="color:#16a34a;font-weight:700">78%</span> (7/9)</td><td class="tac"><span style="color:#2563eb;font-weight:700">89%</span> (8/9)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (9/9)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R8前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">57%</span> (8/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (13/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+</table>
+<svg viewBox="0 0 720 240" style="width:100%;max-width:720px;margin:12px 0;font-family:'Yu Gothic UI',sans-serif">
+<rect x="50" y="20" width="650" height="180" fill="#fafafa" stroke="#e5e7eb"/>
+<line x1="50" y1="155" x2="700" y2="155" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="158" font-size="9" fill="#9ca3af" text-anchor="end">25%</text>
+<line x1="50" y1="110" x2="700" y2="110" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="113" font-size="9" fill="#9ca3af" text-anchor="end">50%</text>
+<line x1="50" y1="65" x2="700" y2="65" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="68" font-size="9" fill="#9ca3af" text-anchor="end">75%</text>
+<line x1="50" y1="20" x2="700" y2="20" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="23" font-size="9" fill="#9ca3af" text-anchor="end">100%</text>
+<line x1="50" y1="92" x2="700" y2="92" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="696" y="88" font-size="9" fill="#dc2626" text-anchor="end" font-weight="700">合格ライン60%</text>
+<polyline points="50.0,122.9 104.2,41.2 158.3,20.0 212.5,20.0 266.7,20.0 320.8,32.0 375.0,20.0 429.2,20.0 483.3,20.0 537.5,20.0 591.7,20.0 645.8,20.0 700.0,20.0" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="3,2"/>
+<polyline points="50.0,122.9 104.2,62.4 158.3,50.0 212.5,42.5 266.7,32.9 320.8,32.0 375.0,33.8 429.2,80.0 483.3,50.0 537.5,47.7 591.7,45.7 645.8,40.0 700.0,32.9" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="50.0,148.6 104.2,104.7 158.3,95.0 212.5,42.5 266.7,110.0 320.8,92.0 375.0,75.4 429.2,125.0 483.3,80.0 537.5,61.5 591.7,71.4 645.8,60.0 700.0,97.1" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#0891b2"><title>R1後期 フル(window全テーマ): 43%</title></circle>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#2563eb"><title>R1後期 必修+推奨: 43%</title></circle>
+<circle cx="50.0" cy="148.6" r="3" fill="#dc2626"><title>R1後期 必修: 29%</title></circle>
+<text x="50.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R1後期</text>
+<circle cx="104.2" cy="41.2" r="2.5" fill="#0891b2"><title>R2 フル(window全テーマ): 88%</title></circle>
+<circle cx="104.2" cy="62.4" r="2.5" fill="#2563eb"><title>R2 必修+推奨: 76%</title></circle>
+<circle cx="104.2" cy="104.7" r="3" fill="#dc2626"><title>R2 必修: 53%</title></circle>
+<text x="104.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R2</text>
+<circle cx="158.3" cy="20.0" r="2.5" fill="#0891b2"><title>R3前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="158.3" cy="50.0" r="2.5" fill="#2563eb"><title>R3前期 必修+推奨: 83%</title></circle>
+<circle cx="158.3" cy="95.0" r="3" fill="#dc2626"><title>R3前期 必修: 58%</title></circle>
+<text x="158.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3前期</text>
+<circle cx="212.5" cy="20.0" r="2.5" fill="#0891b2"><title>R3後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="212.5" cy="42.5" r="2.5" fill="#2563eb"><title>R3後期 必修+推奨: 88%</title></circle>
+<circle cx="212.5" cy="42.5" r="3" fill="#16a34a"><title>R3後期 必修: 88%</title></circle>
+<text x="212.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3後期</text>
+<circle cx="266.7" cy="20.0" r="2.5" fill="#0891b2"><title>R4前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="266.7" cy="32.9" r="2.5" fill="#2563eb"><title>R4前期 必修+推奨: 93%</title></circle>
+<circle cx="266.7" cy="110.0" r="3" fill="#dc2626"><title>R4前期 必修: 50%</title></circle>
+<text x="266.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4前期</text>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#0891b2"><title>R4後期 フル(window全テーマ): 93%</title></circle>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#2563eb"><title>R4後期 必修+推奨: 93%</title></circle>
+<circle cx="320.8" cy="92.0" r="3" fill="#16a34a"><title>R4後期 必修: 60%</title></circle>
+<text x="320.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4後期</text>
+<circle cx="375.0" cy="20.0" r="2.5" fill="#0891b2"><title>R5前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="375.0" cy="33.8" r="2.5" fill="#2563eb"><title>R5前期 必修+推奨: 92%</title></circle>
+<circle cx="375.0" cy="75.4" r="3" fill="#16a34a"><title>R5前期 必修: 69%</title></circle>
+<text x="375.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5前期</text>
+<circle cx="429.2" cy="20.0" r="2.5" fill="#0891b2"><title>R5後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="429.2" cy="80.0" r="2.5" fill="#2563eb"><title>R5後期 必修+推奨: 67%</title></circle>
+<circle cx="429.2" cy="125.0" r="3" fill="#dc2626"><title>R5後期 必修: 42%</title></circle>
+<text x="429.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5後期</text>
+<circle cx="483.3" cy="20.0" r="2.5" fill="#0891b2"><title>R6前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="483.3" cy="50.0" r="2.5" fill="#2563eb"><title>R6前期 必修+推奨: 83%</title></circle>
+<circle cx="483.3" cy="80.0" r="3" fill="#16a34a"><title>R6前期 必修: 67%</title></circle>
+<text x="483.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6前期</text>
+<circle cx="537.5" cy="20.0" r="2.5" fill="#0891b2"><title>R6後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="537.5" cy="47.7" r="2.5" fill="#2563eb"><title>R6後期 必修+推奨: 85%</title></circle>
+<circle cx="537.5" cy="61.5" r="3" fill="#16a34a"><title>R6後期 必修: 77%</title></circle>
+<text x="537.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6後期</text>
+<circle cx="591.7" cy="20.0" r="2.5" fill="#0891b2"><title>R7前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="591.7" cy="45.7" r="2.5" fill="#2563eb"><title>R7前期 必修+推奨: 86%</title></circle>
+<circle cx="591.7" cy="71.4" r="3" fill="#16a34a"><title>R7前期 必修: 71%</title></circle>
+<text x="591.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7前期</text>
+<circle cx="645.8" cy="20.0" r="2.5" fill="#0891b2"><title>R7後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="645.8" cy="40.0" r="2.5" fill="#2563eb"><title>R7後期 必修+推奨: 89%</title></circle>
+<circle cx="645.8" cy="60.0" r="3" fill="#16a34a"><title>R7後期 必修: 78%</title></circle>
+<text x="645.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7後期</text>
+<circle cx="700.0" cy="20.0" r="2.5" fill="#0891b2"><title>R8前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="700.0" cy="32.9" r="2.5" fill="#2563eb"><title>R8前期 必修+推奨: 93%</title></circle>
+<circle cx="700.0" cy="97.1" r="3" fill="#dc2626"><title>R8前期 必修: 57%</title></circle>
+<text x="700.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R8前期</text>
+<rect x="60" y="30" width="14" height="3" fill="#16a34a"/>
+<text x="80" y="33" font-size="9" fill="#16a34a" font-weight="700">必修✓</text>
+<rect x="140" y="30" width="14" height="3" fill="#2563eb"/>
+<text x="160" y="33" font-size="9" fill="#2563eb" font-weight="700">必修+推奨○</text>
+<rect x="250" y="30" width="14" height="3" fill="#0891b2"/>
+<text x="270" y="33" font-size="9" fill="#0891b2" font-weight="700">フル(window全テーマ)</text>
+</svg>
+<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:700;padding:8px;background:#f1f5f9;border-radius:6px">📑 科目別ローリングバックテスト（直近10回）— クリックで展開</summary>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #7c3aed;background:#fafbfc;border-radius:4px">
+<h4 style="color:#7c3aed;margin:0 0 6px">電気通信工学等</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓76%</span>(11/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○91%</span>(12/13) ／ <span style="color:#0891b2;font-weight:700">フル91%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">80%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #0ea5e9;background:#fafbfc;border-radius:4px">
+<h4 style="color:#0ea5e9;margin:0 0 6px">電気通信設備</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○74%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル94%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">60%</td><td class="tac" style="color:#2563eb;font-weight:600">60%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #059669;background:#fafbfc;border-radius:4px">
+<h4 style="color:#059669;margin:0 0 6px">設計施工</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓69%</span>(9/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○82%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル88%</span>(11/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #1e40af;background:#fafbfc;border-radius:4px">
+<h4 style="color:#1e40af;margin:0 0 6px">施工管理法</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓49%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○76%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(13/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #d97706;background:#fafbfc;border-radius:4px">
+<h4 style="color:#d97706;margin:0 0 6px">法規</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(3/12年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○90%</span>(12/12) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(12/12)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+</details>
+<h3 class="deep-sub">直近15回学習シナリオ</h3>
+<p style="font-size:0.92em">直前15回の過去問データから学習範囲を3段階で構築。各テスト年度の出題に対するカバー率（=その範囲だけで取れる得点率）を表示。</p>
+<div class="tip"><strong>サマリー</strong>: 全13年度の平均カバー率 - <span style="color:#16a34a;font-weight:700">必修✓のみ 61%</span> (合格圏到達 7/13年) ／ <span style="color:#2563eb;font-weight:700">必修+推奨○ 82%</span> (合格圏到達 12/13年) ／ <span style="color:#0891b2;font-weight:700">フル(直前15回全テーマ) 94%</span> (合格圏到達 12/13年)</div>
+<div class="warn"><strong>注意</strong>: 直前15回を完璧にしても合格ライン60%に届かない年度があります。これは「回ごとに新規テーマが多い試験」の特徴で、過去問の暗記だけでは限界があります。解くべき過去問リスト（study-todo）の必修テーマは<strong>全年度のデータ</strong>から構築されているため、より広範囲をカバーします。</div>
+<table class="fz9"><tr><th>テスト年度</th><th>出題数</th><th style="color:#16a34a">必修✓得点（平均60%狙い）</th><th style="color:#2563eb">必修+推奨○得点（最悪年も60%）</th><th style="color:#0891b2">フル得点 (window全テーマ)</th><th>判定</th></tr>
+<tr><td class="fwb">R1後期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">29%</span> (4/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">43%</span> (6/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">43%</span> (6/14)</td><td><strong style="color:#dc2626">過去15回では不足</strong></td></tr>
+<tr><td class="fwb">R2</td><td class="tac">17</td><td class="tac"><span style="color:#16a34a;font-weight:700">53%</span> (9/17)</td><td class="tac"><span style="color:#2563eb;font-weight:700">76%</span> (13/17)</td><td class="tac"><span style="color:#0891b2;font-weight:700">88%</span> (15/17)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3前期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">58%</span> (7/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (10/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R3後期</td><td class="tac">8</td><td class="tac"><span style="color:#16a34a;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#2563eb;font-weight:700">88%</span> (7/8)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (8/8)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R4前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">50%</span> (7/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (13/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R4後期</td><td class="tac">15</td><td class="tac"><span style="color:#16a34a;font-weight:700">60%</span> (9/15)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (14/15)</td><td class="tac"><span style="color:#0891b2;font-weight:700">93%</span> (14/15)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5前期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">69%</span> (9/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">92%</span> (12/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R5後期</td><td class="tac">12</td><td class="tac"><span style="color:#16a34a;font-weight:700">42%</span> (5/12)</td><td class="tac"><span style="color:#2563eb;font-weight:700">67%</span> (8/12)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (12/12)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+<tr><td class="fwb">R6前期</td><td class="tac">18</td><td class="tac"><span style="color:#16a34a;font-weight:700">67%</span> (12/18)</td><td class="tac"><span style="color:#2563eb;font-weight:700">83%</span> (15/18)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (18/18)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R6後期</td><td class="tac">13</td><td class="tac"><span style="color:#16a34a;font-weight:700">77%</span> (10/13)</td><td class="tac"><span style="color:#2563eb;font-weight:700">85%</span> (11/13)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (13/13)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">71%</span> (10/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">86%</span> (12/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R7後期</td><td class="tac">9</td><td class="tac"><span style="color:#16a34a;font-weight:700">78%</span> (7/9)</td><td class="tac"><span style="color:#2563eb;font-weight:700">89%</span> (8/9)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (9/9)</td><td><strong style="color:#16a34a">必修✓のみで合格</strong></td></tr>
+<tr><td class="fwb">R8前期</td><td class="tac">14</td><td class="tac"><span style="color:#16a34a;font-weight:700">57%</span> (8/14)</td><td class="tac"><span style="color:#2563eb;font-weight:700">93%</span> (13/14)</td><td class="tac"><span style="color:#0891b2;font-weight:700">100%</span> (14/14)</td><td><strong style="color:#2563eb">推奨○まで学習で合格</strong></td></tr>
+</table>
+<svg viewBox="0 0 720 240" style="width:100%;max-width:720px;margin:12px 0;font-family:'Yu Gothic UI',sans-serif">
+<rect x="50" y="20" width="650" height="180" fill="#fafafa" stroke="#e5e7eb"/>
+<line x1="50" y1="155" x2="700" y2="155" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="158" font-size="9" fill="#9ca3af" text-anchor="end">25%</text>
+<line x1="50" y1="110" x2="700" y2="110" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="113" font-size="9" fill="#9ca3af" text-anchor="end">50%</text>
+<line x1="50" y1="65" x2="700" y2="65" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="68" font-size="9" fill="#9ca3af" text-anchor="end">75%</text>
+<line x1="50" y1="20" x2="700" y2="20" stroke="#e5e7eb" stroke-width="0.5"/>
+<text x="46" y="23" font-size="9" fill="#9ca3af" text-anchor="end">100%</text>
+<line x1="50" y1="92" x2="700" y2="92" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,4"/>
+<text x="696" y="88" font-size="9" fill="#dc2626" text-anchor="end" font-weight="700">合格ライン60%</text>
+<polyline points="50.0,122.9 104.2,41.2 158.3,20.0 212.5,20.0 266.7,20.0 320.8,32.0 375.0,20.0 429.2,20.0 483.3,20.0 537.5,20.0 591.7,20.0 645.8,20.0 700.0,20.0" fill="none" stroke="#0891b2" stroke-width="2" stroke-dasharray="3,2"/>
+<polyline points="50.0,122.9 104.2,62.4 158.3,50.0 212.5,42.5 266.7,32.9 320.8,32.0 375.0,33.8 429.2,80.0 483.3,50.0 537.5,47.7 591.7,45.7 645.8,40.0 700.0,32.9" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="50.0,148.6 104.2,104.7 158.3,95.0 212.5,42.5 266.7,110.0 320.8,92.0 375.0,75.4 429.2,125.0 483.3,80.0 537.5,61.5 591.7,71.4 645.8,60.0 700.0,97.1" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#0891b2"><title>R1後期 フル(window全テーマ): 43%</title></circle>
+<circle cx="50.0" cy="122.9" r="2.5" fill="#2563eb"><title>R1後期 必修+推奨: 43%</title></circle>
+<circle cx="50.0" cy="148.6" r="3" fill="#dc2626"><title>R1後期 必修: 29%</title></circle>
+<text x="50.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R1後期</text>
+<circle cx="104.2" cy="41.2" r="2.5" fill="#0891b2"><title>R2 フル(window全テーマ): 88%</title></circle>
+<circle cx="104.2" cy="62.4" r="2.5" fill="#2563eb"><title>R2 必修+推奨: 76%</title></circle>
+<circle cx="104.2" cy="104.7" r="3" fill="#dc2626"><title>R2 必修: 53%</title></circle>
+<text x="104.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R2</text>
+<circle cx="158.3" cy="20.0" r="2.5" fill="#0891b2"><title>R3前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="158.3" cy="50.0" r="2.5" fill="#2563eb"><title>R3前期 必修+推奨: 83%</title></circle>
+<circle cx="158.3" cy="95.0" r="3" fill="#dc2626"><title>R3前期 必修: 58%</title></circle>
+<text x="158.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3前期</text>
+<circle cx="212.5" cy="20.0" r="2.5" fill="#0891b2"><title>R3後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="212.5" cy="42.5" r="2.5" fill="#2563eb"><title>R3後期 必修+推奨: 88%</title></circle>
+<circle cx="212.5" cy="42.5" r="3" fill="#16a34a"><title>R3後期 必修: 88%</title></circle>
+<text x="212.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R3後期</text>
+<circle cx="266.7" cy="20.0" r="2.5" fill="#0891b2"><title>R4前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="266.7" cy="32.9" r="2.5" fill="#2563eb"><title>R4前期 必修+推奨: 93%</title></circle>
+<circle cx="266.7" cy="110.0" r="3" fill="#dc2626"><title>R4前期 必修: 50%</title></circle>
+<text x="266.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4前期</text>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#0891b2"><title>R4後期 フル(window全テーマ): 93%</title></circle>
+<circle cx="320.8" cy="32.0" r="2.5" fill="#2563eb"><title>R4後期 必修+推奨: 93%</title></circle>
+<circle cx="320.8" cy="92.0" r="3" fill="#16a34a"><title>R4後期 必修: 60%</title></circle>
+<text x="320.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R4後期</text>
+<circle cx="375.0" cy="20.0" r="2.5" fill="#0891b2"><title>R5前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="375.0" cy="33.8" r="2.5" fill="#2563eb"><title>R5前期 必修+推奨: 92%</title></circle>
+<circle cx="375.0" cy="75.4" r="3" fill="#16a34a"><title>R5前期 必修: 69%</title></circle>
+<text x="375.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5前期</text>
+<circle cx="429.2" cy="20.0" r="2.5" fill="#0891b2"><title>R5後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="429.2" cy="80.0" r="2.5" fill="#2563eb"><title>R5後期 必修+推奨: 67%</title></circle>
+<circle cx="429.2" cy="125.0" r="3" fill="#dc2626"><title>R5後期 必修: 42%</title></circle>
+<text x="429.2" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R5後期</text>
+<circle cx="483.3" cy="20.0" r="2.5" fill="#0891b2"><title>R6前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="483.3" cy="50.0" r="2.5" fill="#2563eb"><title>R6前期 必修+推奨: 83%</title></circle>
+<circle cx="483.3" cy="80.0" r="3" fill="#16a34a"><title>R6前期 必修: 67%</title></circle>
+<text x="483.3" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6前期</text>
+<circle cx="537.5" cy="20.0" r="2.5" fill="#0891b2"><title>R6後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="537.5" cy="47.7" r="2.5" fill="#2563eb"><title>R6後期 必修+推奨: 85%</title></circle>
+<circle cx="537.5" cy="61.5" r="3" fill="#16a34a"><title>R6後期 必修: 77%</title></circle>
+<text x="537.5" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R6後期</text>
+<circle cx="591.7" cy="20.0" r="2.5" fill="#0891b2"><title>R7前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="591.7" cy="45.7" r="2.5" fill="#2563eb"><title>R7前期 必修+推奨: 86%</title></circle>
+<circle cx="591.7" cy="71.4" r="3" fill="#16a34a"><title>R7前期 必修: 71%</title></circle>
+<text x="591.7" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7前期</text>
+<circle cx="645.8" cy="20.0" r="2.5" fill="#0891b2"><title>R7後期 フル(window全テーマ): 100%</title></circle>
+<circle cx="645.8" cy="40.0" r="2.5" fill="#2563eb"><title>R7後期 必修+推奨: 89%</title></circle>
+<circle cx="645.8" cy="60.0" r="3" fill="#16a34a"><title>R7後期 必修: 78%</title></circle>
+<text x="645.8" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R7後期</text>
+<circle cx="700.0" cy="20.0" r="2.5" fill="#0891b2"><title>R8前期 フル(window全テーマ): 100%</title></circle>
+<circle cx="700.0" cy="32.9" r="2.5" fill="#2563eb"><title>R8前期 必修+推奨: 93%</title></circle>
+<circle cx="700.0" cy="97.1" r="3" fill="#dc2626"><title>R8前期 必修: 57%</title></circle>
+<text x="700.0" y="214" font-size="8" fill="#6b7280" text-anchor="middle">R8前期</text>
+<rect x="60" y="30" width="14" height="3" fill="#16a34a"/>
+<text x="80" y="33" font-size="9" fill="#16a34a" font-weight="700">必修✓</text>
+<rect x="140" y="30" width="14" height="3" fill="#2563eb"/>
+<text x="160" y="33" font-size="9" fill="#2563eb" font-weight="700">必修+推奨○</text>
+<rect x="250" y="30" width="14" height="3" fill="#0891b2"/>
+<text x="270" y="33" font-size="9" fill="#0891b2" font-weight="700">フル(window全テーマ)</text>
+</svg>
+<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:700;padding:8px;background:#f1f5f9;border-radius:6px">📑 科目別ローリングバックテスト（直近15回）— クリックで展開</summary>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #7c3aed;background:#fafbfc;border-radius:4px">
+<h4 style="color:#7c3aed;margin:0 0 6px">電気通信工学等</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓76%</span>(11/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○91%</span>(12/13) ／ <span style="color:#0891b2;font-weight:700">フル91%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">80%</td><td class="tac" style="color:#0891b2;font-weight:600">80%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">80%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">75%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #0ea5e9;background:#fafbfc;border-radius:4px">
+<h4 style="color:#0ea5e9;margin:0 0 6px">電気通信設備</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○74%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル94%</span>(12/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R5前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">33%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">5</td><td class="tac" style="color:#16a34a;font-weight:600">60%</td><td class="tac" style="color:#2563eb;font-weight:600">60%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #059669;background:#fafbfc;border-radius:4px">
+<h4 style="color:#059669;margin:0 0 6px">設計施工</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓69%</span>(9/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○82%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル88%</span>(11/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">0%</td><td class="tac" style="color:#0891b2;font-weight:600">0%</td></tr>
+<tr><td>R2</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">50%</td></tr>
+<tr><td>R3前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #1e40af;background:#fafbfc;border-radius:4px">
+<h4 style="color:#1e40af;margin:0 0 6px">施工管理法</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓49%</span>(6/13年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○76%</span>(10/13) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(13/13)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">0%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">50%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+<div style="margin:12px 0;padding:12px;border-left:4px solid #d97706;background:#fafbfc;border-radius:4px">
+<h4 style="color:#d97706;margin:0 0 6px">法規</h4>
+<div style="font-size:.85em;color:#475569">平均: <span style="color:#16a34a;font-weight:700">必修✓57%</span>(3/12年合格) ／ <span style="color:#2563eb;font-weight:700">推奨○90%</span>(12/12) ／ <span style="color:#0891b2;font-weight:700">フル97%</span>(12/12)</div>
+<table class="fz9" style="margin-top:8px"><tr><th>年度</th><th>出題</th><th style="color:#16a34a">必修</th><th style="color:#2563eb">推奨</th><th style="color:#0891b2">フル</th></tr>
+<tr><td>R1後期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">67%</td></tr>
+<tr><td>R2</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R3前期</td><td class="tac">1</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">75%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R4後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">67%</td><td class="tac" style="color:#2563eb;font-weight:600">67%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R5後期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6前期</td><td class="tac">4</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R6後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">100%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7前期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R7後期</td><td class="tac">2</td><td class="tac" style="color:#16a34a;font-weight:600">50%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+<tr><td>R8前期</td><td class="tac">3</td><td class="tac" style="color:#16a34a;font-weight:600">33%</td><td class="tac" style="color:#2563eb;font-weight:600">100%</td><td class="tac" style="color:#0891b2;font-weight:600">100%</td></tr>
+</table></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="study-todo.html">← 解くべき過去問リスト（年度別チェックリスト）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="required-years.html">必要学習年数分析（過去問を何年分やれば合格できるか） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

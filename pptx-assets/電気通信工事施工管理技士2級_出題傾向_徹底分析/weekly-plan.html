@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>週間学習計画 - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">週間学習計画</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation.html">← 得点シミュレーション</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="deep-analysis.html">深層単元分析（詳細テーマ別 完全版） →</a></span></nav>
+<section id="weekly-plan">
+  <h2>週間学習計画</h2>
+<p>週10時間の学習ペースを想定した<strong>具体的な週間計画</strong>を生成します。</p>
+<div class="note">想定: 週10時間（月-金 2h/日）の学習ペース。全19週間で全テーマカバー。</div>
+<table><tr><th>週</th><th>対象テーマ</th><th>学習内容</th><th>到達目標</th><th>累積カバー率</th></tr>
+<tr><td>Week 1</td><td>施工計画, 工程管理:ネットワーク</td><td>施工管理法</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:9%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">9%</span></div></td></tr>
+<tr><td>Week 2</td><td>品質管理, 安全管理</td><td>施工管理法</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:17%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">17%</span></div></td></tr>
+<tr><td>Week 3</td><td>施工管理:施工要領</td><td>設計施工</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:23%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">23%</span></div></td></tr>
+<tr><td>Week 4</td><td>電気通信事業法</td><td>法規</td><td>暗記項目を定着</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:27%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">27%</span></div></td></tr>
+<tr><td>Week 5</td><td>施工管理:試験測定</td><td>設計施工</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:32%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">32%</span></div></td></tr>
+<tr><td>Week 6</td><td>労働安全衛生法</td><td>法規</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:39%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">39%</span></div></td></tr>
+<tr><td>Week 7</td><td>情報設備, 建設業法</td><td>法規 / 電気通信設備</td><td>暗記項目を定着</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:46%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">46%</span></div></td></tr>
+<tr><td>Week 8</td><td>有線電気通信法, 情報工学:ネットワーク基礎</td><td>法規 / 電気通信工学等</td><td>暗記項目を定着</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:54%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">54%</span></div></td></tr>
+<tr><td>Week 9</td><td>施工管理:接続接地, 電波法</td><td>法規 / 設計施工</td><td>解法パターン習得</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:59%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">59%</span></div></td></tr>
+<tr><td>Week 10</td><td>セキュリティ設備</td><td>電気通信設備</td><td><span style="color:#dc2626;font-weight:700">60%到達!</span></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:64%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">64%</span></div></td></tr>
+<tr><td>Week 11</td><td>ネットワーク設備</td><td>電気通信設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:68%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">68%</span></div></td></tr>
+<tr><td>Week 12</td><td>有線通信設備</td><td>電気通信設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:72%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">72%</span></div></td></tr>
+<tr><td>Week 13</td><td>電気工学:電気回路基礎</td><td>電気通信工学等</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:77%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">77%</span></div></td></tr>
+<tr><td>Week 14</td><td>無線工学:アンテナ基礎</td><td>電気通信工学等</td><td><span style="color:#16a34a;font-weight:700">80%到達!</span></td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:82%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">82%</span></div></td></tr>
+<tr><td>Week 15</td><td>無線工学:電波伝搬</td><td>電気通信工学等</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:86%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">86%</span></div></td></tr>
+<tr><td>Week 16</td><td>施工管理:配線敷設, 無線通信設備</td><td>設計施工 / 電気通信設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:90%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">90%</span></div></td></tr>
+<tr><td>Week 17</td><td>電源設備</td><td>電気通信設備</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:93%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">93%</span></div></td></tr>
+<tr><td>Week 18</td><td>通信工学:通信理論基礎</td><td>電気通信工学等</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:96%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">96%</span></div></td></tr>
+<tr><td>Week 19</td><td>電気工学:電力, 通信工学:電子回路</td><td>電気通信工学等</td><td>原理理解を深める</td><td><div style="display:flex;align-items:center;gap:6px"><div style="width:80px;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden"><div style="width:100%;height:100%;background:#3b82f6;border-radius:5px"></div></div><span style="font-size:0.82em;font-weight:700">100%</span></div></td></tr>
+</table>
+<h3>週別 詳細学習計画</h3>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 1（10h・累積9%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>施工計画</strong> <span style="font-size:0.82em;color:#6b7280">5h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>工程管理:ネットワーク</strong> <span style="font-size:0.82em;color:#6b7280">5h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工計画</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">工程管理:ネットワー</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工計画」の典型問題を制限時間内に解けるか？</li>
+<li>「工程管理:ネットワーク」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 2（10h・累積17%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>品質管理</strong> <span style="font-size:0.82em;color:#6b7280">5h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #1e40af;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#1e40af;font-weight:600">[施工管理法]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>安全管理</strong> <span style="font-size:0.82em;color:#6b7280">5h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">品質管理</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">安全管理</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「品質管理」の典型問題を制限時間内に解けるか？</li>
+<li>「安全管理」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 3（8h・累積23%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#059669;font-weight:600">[設計施工]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>施工管理:施工要領</strong> <span style="font-size:0.82em;color:#6b7280">8h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工管理:施工要領</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">8h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工管理:施工要領」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 4（5h・累積27%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[法規]</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <strong>電気通信事業法</strong> <span style="font-size:0.82em;color:#6b7280">5h / 読む→暗記する</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">暗記カード作成。数値・定義をフラッシュカード化し、繰り返し確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#CC3333;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">電気通信事業法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「電気通信事業法」の重要数値を暗唱できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 5（7h30m・累積32%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#059669;font-weight:600">[設計施工]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>施工管理:試験測定</strong> <span style="font-size:0.82em;color:#6b7280">7h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工管理:試験測定</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工管理:試験測定」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 6（7h・累積39%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[法規]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>労働安全衛生法</strong> <span style="font-size:0.82em;color:#6b7280">7h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">労働安全衛生法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「労働安全衛生法」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 7（8h30m・累積46%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <strong>情報設備</strong> <span style="font-size:0.82em;color:#6b7280">3h30m / 読む→暗記する</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">暗記カード作成。数値・定義をフラッシュカード化し、繰り返し確認。</p>
+</div>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[法規]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>建設業法</strong> <span style="font-size:0.82em;color:#6b7280">5h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#CC3333;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">情報設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">建設業法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「情報設備」の重要数値を暗唱できるか？</li>
+<li>「建設業法」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 8（8h30m・累積54%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[法規]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>有線電気通信法</strong> <span style="font-size:0.82em;color:#6b7280">4h30m / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#CC3333;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv2 1行暗記</span> <strong>情報工学:ネットワーク基礎</strong> <span style="font-size:0.82em;color:#6b7280">4h / 読む→暗記する</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">暗記カード作成。数値・定義をフラッシュカード化し、繰り返し確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">有線電気通信法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">4h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#CC3333;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">情報工学:ネットワー</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">4h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「有線電気通信法」の典型問題を制限時間内に解けるか？</li>
+<li>「情報工学:ネットワーク基礎」の重要数値を暗唱できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 9（8h30m・累積59%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#059669;font-weight:600">[設計施工]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>施工管理:接続接地</strong> <span style="font-size:0.82em;color:#6b7280">5h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #d97706;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#d97706;font-weight:600">[法規]</span> <span style="display:inline-block;background:#E67E00;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv3 パターン処理</span> <strong>電波法</strong> <span style="font-size:0.82em;color:#6b7280">3h / 解く→パターン化</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">過去問を解き、解法パターンをノートに整理。3回反復して自動化。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工管理:接続接地</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#E67E00;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">電波法</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">3h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工管理:接続接地」の公式を導出過程から説明できるか？</li>
+<li>「電波法」の典型問題を制限時間内に解けるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 10（8h・累積64%） <span style="color:#dc2626;font-weight:700">[60%到達!]</span></summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>セキュリティ設備</strong> <span style="font-size:0.82em;color:#6b7280">8h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">セキュリティ設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">8h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「セキュリティ設備」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 11（7h・累積68%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>ネットワーク設備</strong> <span style="font-size:0.82em;color:#6b7280">7h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">ネットワーク設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「ネットワーク設備」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 12（6h30m・累積72%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>有線通信設備</strong> <span style="font-size:0.82em;color:#6b7280">6h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">有線通信設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">6h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「有線通信設備」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 13（7h30m・累積77%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>電気工学:電気回路基礎</strong> <span style="font-size:0.82em;color:#6b7280">7h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">電気工学:電気回路基</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「電気工学:電気回路基礎」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 14（7h30m・累積82%） <span style="color:#16a34a;font-weight:700">[80%到達!]</span></summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>無線工学:アンテナ基礎</strong> <span style="font-size:0.82em;color:#6b7280">7h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">無線工学:アンテナ基</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「無線工学:アンテナ基礎」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 15（7h・累積86%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>無線工学:電波伝搬</strong> <span style="font-size:0.82em;color:#6b7280">7h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">無線工学:電波伝搬</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">7h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「無線工学:電波伝搬」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 16（10h・累積90%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #059669;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#059669;font-weight:600">[設計施工]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>施工管理:配線敷設</strong> <span style="font-size:0.82em;color:#6b7280">4h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>無線通信設備</strong> <span style="font-size:0.82em;color:#6b7280">5h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">施工管理:配線敷設</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">4h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">無線通信設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「施工管理:配線敷設」の公式を導出過程から説明できるか？</li>
+<li>「無線通信設備」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 17（5h30m・累積93%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #0ea5e9;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#0ea5e9;font-weight:600">[電気通信設備]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>電源設備</strong> <span style="font-size:0.82em;color:#6b7280">5h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">電源設備</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「電源設備」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 18（5h30m・累積96%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>通信工学:通信理論基礎</strong> <span style="font-size:0.82em;color:#6b7280">5h30m / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">通信工学:通信理論基</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h30m</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「通信工学:通信理論基礎」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">Week 19（10h・累積100%）</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 10px">
+<p style="margin:4px 0"><strong>対象テーマ:</strong></p>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>電気工学:電力</strong> <span style="font-size:0.82em;color:#6b7280">5h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<div style="border-left:3px solid #7c3aed;padding:4px 10px;margin:4px 0;background:#fff">
+<span style="font-size:0.8em;color:#7c3aed;font-weight:600">[電気通信工学等]</span> <span style="display:inline-block;background:#005BA8;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.82em;font-weight:600">Lv4 公式適用</span> <strong>通信工学:電子回路</strong> <span style="font-size:0.82em;color:#6b7280">5h / 理解→演習</span>
+<p style="font-size:0.85em;margin:2px 0;color:#555">公式の導出過程を手書きで再現。応用問題を解いて定着確認。</p>
+</div>
+<p style="margin:8px 0 4px"><strong>日別スケジュール（月-金 2h/日）:</strong></p>
+<table style="font-size:0.85em;width:100%"><tr>
+<th style="width:20%;text-align:center">月</th>
+<th style="width:20%;text-align:center">火</th>
+<th style="width:20%;text-align:center">水</th>
+<th style="width:20%;text-align:center">木</th>
+<th style="width:20%;text-align:center">金</th>
+</tr><tr>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">電気工学:電力</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<div style="background:#005BA8;color:#fff;padding:2px 4px;border-radius:3px;margin:1px 0;font-size:0.82em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">通信工学:電子回路</div>
+<div style="font-size:0.78em;color:#6b7280;margin-top:2px">5h</div>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+<td style="vertical-align:top;font-size:0.85em;padding:4px">
+<span style="color:#d1d5db">-</span>
+</td>
+</tr></table>
+<p style="margin:6px 0"><strong>週末チェックポイント:</strong></p>
+<ul style="font-size:0.85em;margin:2px 0;padding-left:18px">
+<li>「電気工学:電力」の公式を導出過程から説明できるか？</li>
+<li>「通信工学:電子回路」の公式を導出過程から説明できるか？</li>
+</ul>
+</div></details>
+<h3>累積カバー率の推移</h3>
+<svg viewBox="0 0 700 220" style="width:100%;max-width:700px;margin:12px 0">
+  <rect x="50" y="10" width="630" height="170" fill="#fafafa" stroke="#e5e7eb"/>
+  <line x1="50" y1="78" x2="680" y2="78" stroke="#ef4444" stroke-dasharray="5,5"/>
+  <text x="682" y="75" font-size="9" fill="#ef4444" text-anchor="end">60%</text>
+  <line x1="50" y1="44" x2="680" y2="44" stroke="#16a34a" stroke-dasharray="5,5"/>
+  <text x="682" y="41" font-size="9" fill="#16a34a" text-anchor="end">80%</text>
+  <polygon points="55.0,165.4 89.4,150.8 123.9,141.6 158.3,133.4 192.8,125.2 227.2,114.2 261.7,101.4 296.1,88.6 330.6,80.4 365.0,71.2 399.4,63.9 433.9,57.5 468.3,49.3 502.8,41.1 537.2,33.8 571.7,26.5 606.1,21.9 640.6,17.3 675.0,10.0 675.0,180 55,180" fill="#3b82f6" opacity="0.12"/>
+  <polyline points="55.0,165.4 89.4,150.8 123.9,141.6 158.3,133.4 192.8,125.2 227.2,114.2 261.7,101.4 296.1,88.6 330.6,80.4 365.0,71.2 399.4,63.9 433.9,57.5 468.3,49.3 502.8,41.1 537.2,33.8 571.7,26.5 606.1,21.9 640.6,17.3 675.0,10.0" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="55.0" cy="165.4" r="3" fill="#3b82f6"/>
+  <text x="55.0" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W1</text>
+  <circle cx="89.4" cy="150.8" r="3" fill="#3b82f6"/>
+  <text x="89.4" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W2</text>
+  <circle cx="123.9" cy="141.6" r="3" fill="#3b82f6"/>
+  <text x="123.9" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W3</text>
+  <circle cx="158.3" cy="133.4" r="3" fill="#3b82f6"/>
+  <text x="158.3" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W4</text>
+  <circle cx="192.8" cy="125.2" r="3" fill="#3b82f6"/>
+  <text x="192.8" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W5</text>
+  <circle cx="227.2" cy="114.2" r="3" fill="#3b82f6"/>
+  <text x="227.2" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W6</text>
+  <circle cx="261.7" cy="101.4" r="3" fill="#3b82f6"/>
+  <text x="261.7" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W7</text>
+  <circle cx="296.1" cy="88.6" r="3" fill="#3b82f6"/>
+  <text x="296.1" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W8</text>
+  <circle cx="330.6" cy="80.4" r="3" fill="#3b82f6"/>
+  <text x="330.6" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W9</text>
+  <circle cx="365.0" cy="71.2" r="3" fill="#3b82f6"/>
+  <text x="365.0" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W10</text>
+  <circle cx="399.4" cy="63.9" r="3" fill="#3b82f6"/>
+  <text x="399.4" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W11</text>
+  <circle cx="433.9" cy="57.5" r="3" fill="#3b82f6"/>
+  <text x="433.9" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W12</text>
+  <circle cx="468.3" cy="49.3" r="3" fill="#3b82f6"/>
+  <text x="468.3" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W13</text>
+  <circle cx="502.8" cy="41.1" r="3" fill="#3b82f6"/>
+  <text x="502.8" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W14</text>
+  <circle cx="537.2" cy="33.8" r="3" fill="#3b82f6"/>
+  <text x="537.2" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W15</text>
+  <circle cx="571.7" cy="26.5" r="3" fill="#3b82f6"/>
+  <text x="571.7" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W16</text>
+  <circle cx="606.1" cy="21.9" r="3" fill="#3b82f6"/>
+  <text x="606.1" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W17</text>
+  <circle cx="640.6" cy="17.3" r="3" fill="#3b82f6"/>
+  <text x="640.6" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W18</text>
+  <circle cx="675.0" cy="10.0" r="3" fill="#3b82f6"/>
+  <text x="675.0" y="194" font-size="7" fill="#9ca3af" text-anchor="middle">W19</text>
+  <text x="25" y="110" font-size="9" fill="#6b7280" transform="rotate(-90,25,110)">カバー率%</text>
+</svg>
+<h3>Ganttチャート</h3>
+<svg viewBox="0 0 700 478" style="width:100%;max-width:700px;margin:12px 0">
+  <text x="0" y="35" font-size="9" fill="#6b7280">W1</text>
+  <rect x="40.0" y="25" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="25" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="55" font-size="9" fill="#6b7280">W2</text>
+  <rect x="40.0" y="45" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="45" width="320.0" height="14" fill="#1e40af" rx="2" opacity="0.8"/>
+  <text x="0" y="75" font-size="9" fill="#6b7280">W3</text>
+  <rect x="40.0" y="65" width="640.0" height="14" fill="#059669" rx="2" opacity="0.8"/>
+  <text x="0" y="95" font-size="9" fill="#6b7280">W4</text>
+  <rect x="40.0" y="85" width="640.0" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <text x="0" y="115" font-size="9" fill="#6b7280">W5</text>
+  <rect x="40.0" y="105" width="640.0" height="14" fill="#059669" rx="2" opacity="0.8"/>
+  <text x="0" y="135" font-size="9" fill="#6b7280">W6</text>
+  <rect x="40.0" y="125" width="640.0" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <text x="0" y="155" font-size="9" fill="#6b7280">W7</text>
+  <rect x="40.0" y="145" width="263.5" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <rect x="303.5" y="145" width="376.5" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <text x="0" y="175" font-size="9" fill="#6b7280">W8</text>
+  <rect x="40.0" y="165" width="338.8" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <rect x="378.8" y="165" width="301.2" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="0" y="195" font-size="9" fill="#6b7280">W9</text>
+  <rect x="40.0" y="185" width="414.1" height="14" fill="#059669" rx="2" opacity="0.8"/>
+  <rect x="454.1" y="185" width="225.9" height="14" fill="#d97706" rx="2" opacity="0.8"/>
+  <text x="0" y="215" font-size="9" fill="#6b7280">W10</text>
+  <rect x="40.0" y="205" width="640.0" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <text x="690" y="215" font-size="9" fill="#dc2626" text-anchor="end">60%</text>
+  <text x="0" y="235" font-size="9" fill="#6b7280">W11</text>
+  <rect x="40.0" y="225" width="640.0" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <text x="0" y="255" font-size="9" fill="#6b7280">W12</text>
+  <rect x="40.0" y="245" width="640.0" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <text x="0" y="275" font-size="9" fill="#6b7280">W13</text>
+  <rect x="40.0" y="265" width="640.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="0" y="295" font-size="9" fill="#6b7280">W14</text>
+  <rect x="40.0" y="285" width="640.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="690" y="295" font-size="9" fill="#16a34a" text-anchor="end">80%</text>
+  <text x="0" y="315" font-size="9" fill="#6b7280">W15</text>
+  <rect x="40.0" y="305" width="640.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="0" y="335" font-size="9" fill="#6b7280">W16</text>
+  <rect x="40.0" y="325" width="288.0" height="14" fill="#059669" rx="2" opacity="0.8"/>
+  <rect x="328.0" y="325" width="352.0" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <text x="0" y="355" font-size="9" fill="#6b7280">W17</text>
+  <rect x="40.0" y="345" width="640.0" height="14" fill="#0ea5e9" rx="2" opacity="0.8"/>
+  <text x="0" y="375" font-size="9" fill="#6b7280">W18</text>
+  <rect x="40.0" y="365" width="640.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <text x="0" y="395" font-size="9" fill="#6b7280">W19</text>
+  <rect x="40.0" y="385" width="320.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+  <rect x="360.0" y="385" width="320.0" height="14" fill="#7c3aed" rx="2" opacity="0.8"/>
+</svg>
+<h3>遅れた場合のリカバリープラン</h3>
+<div class="warn">学習が遅れた場合の対処法を、遅れの程度別に整理します。</div>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">1-2週間の遅れ</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 週末に4時間の追加学習で取り戻す。</li>
+<li><strong>優先:</strong> ROI上位テーマを最優先。深度Lv1-2のテーマは後回し。</li>
+<li><strong>方法:</strong> 暗記テーマは通勤時間にフラッシュカードで補う。</li>
+<li><strong>目安:</strong> 2週間以内にカバー率を計画比-5%以内に戻す。</li>
+</ul></div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">3-4週間の遅れ</summary>
+<div style="padding:6px 12px;background:#f8fafc;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 捨てテーマリストのテーマを全カットし、学習範囲を縮小。</li>
+<li><strong>優先:</strong> 最小合格セットのテーマのみに集中。</li>
+<li><strong>方法:</strong> 深度Lv4-5のテーマはLv3レベルの理解に留め、時間を節約。</li>
+<li><strong>目安:</strong> Plan A（最小60%カバー）に切り替え、合格ライン到達を最優先。</li>
+</ul></div></details>
+<details><summary style="cursor:pointer;font-weight:600;padding:6px 0">5週間以上の遅れ</summary>
+<div style="padding:6px 12px;background:#fef2f2;margin:2px 0 8px">
+<ul class="fz9">
+<li><strong>対策:</strong> 科目を絞る戦略に転換。科目合格制度がある場合は2-3科目に集中。</li>
+<li><strong>優先:</strong> 最も合格に近い科目を優先。法規など暗記科目は短期決戦可能。</li>
+<li><strong>方法:</strong> 過去問の出題頻度上位5テーマだけに絞り、確実に得点。</li>
+<li><strong>心構え:</strong> 全科目合格を諦め、科目合格を積み上げる長期戦略に転換。</li>
+</ul></div></details>
+<div class="tip">総学習期間: 約<strong>19週間</strong>（147h30m）@ 週10h</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="score-simulation.html">← 得点シミュレーション</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="deep-analysis.html">深層単元分析（詳細テーマ別 完全版） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

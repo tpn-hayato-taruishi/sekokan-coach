@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分析概要 - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">分析概要</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="heatmap.html">出題ヒートマップ（年度×分野） →</a></span></nav>
+<section id="overview">
+  <h2>分析概要</h2>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px">
+  <div style="background:#eff6ff;border-radius:10px;padding:20px;text-align:center;border:1px solid #bfdbfe">
+    <div style="font-size:2.2em;font-weight:800;color:#1e40af">14</div><div style="font-size:0.9em;color:#3b82f6">年分のデータ</div>
+  </div>
+  <div style="background:#eff6ff;border-radius:10px;padding:20px;text-align:center;border:1px solid #bfdbfe">
+    <div style="font-size:2.2em;font-weight:800;color:#1e40af">5</div><div style="font-size:0.9em;color:#3b82f6">科目</div>
+  </div>
+  <div style="background:#eff6ff;border-radius:10px;padding:20px;text-align:center;border:1px solid #bfdbfe">
+    <div style="font-size:2.2em;font-weight:800;color:#1e40af">186</div><div style="font-size:0.9em;color:#3b82f6">問の過去問を分析</div>
+  </div>
+  <div style="background:#eff6ff;border-radius:10px;padding:20px;text-align:center;border:1px solid #bfdbfe">
+    <div style="font-size:2.2em;font-weight:800;color:#1e40af">R1前期〜R8前期</div><div style="font-size:0.9em;color:#3b82f6">2019〜2026年</div>
+  </div>
+</div>
+<div class="note">注記: このページの集計値は R1前期〜R8前期 の14年分タグ付き分析データに基づいています。</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0">
+  <div>
+    <h4 style="color:#1e3a5f;margin-bottom:8px">科目別 問題数</h4>
+    <svg viewBox="0 0 500 170" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="94" y="22.0" text-anchor="end" font-size="11" fill="#334155">電気通信工学等</text>
+<rect x="100" y="4" width="340.0" height="26" rx="4" fill="#7c3aed" opacity="0.85"><title>電気通信工学等: 46</title></rect>
+<text x="444.0" y="22.0" font-size="11" font-weight="700" fill="#7c3aed">46</text>
+<text x="94" y="54.0" text-anchor="end" font-size="11" fill="#334155">電気通信設備</text>
+<rect x="100" y="36" width="303.0" height="26" rx="4" fill="#0ea5e9" opacity="0.85"><title>電気通信設備: 41</title></rect>
+<text x="407.0" y="54.0" font-size="11" font-weight="700" fill="#0ea5e9">41</text>
+<text x="94" y="86.0" text-anchor="end" font-size="11" fill="#334155">設計施工</text>
+<rect x="100" y="68" width="199.6" height="26" rx="4" fill="#059669" opacity="0.85"><title>設計施工: 27</title></rect>
+<text x="303.6" y="86.0" font-size="11" font-weight="700" fill="#059669">27</text>
+<text x="94" y="118.0" text-anchor="end" font-size="11" fill="#334155">施工管理法</text>
+<rect x="100" y="100" width="236.5" height="26" rx="4" fill="#1e40af" opacity="0.85"><title>施工管理法: 32</title></rect>
+<text x="340.5" y="118.0" font-size="11" font-weight="700" fill="#1e40af">32</text>
+<text x="94" y="150.0" text-anchor="end" font-size="11" fill="#334155">法規</text>
+<rect x="100" y="132" width="295.7" height="26" rx="4" fill="#d97706" opacity="0.85"><title>法規: 40</title></rect>
+<text x="399.7" y="150.0" font-size="11" font-weight="700" fill="#d97706">40</text>
+</svg>
+  </div>
+  <div class="tac">
+    <h4 style="color:#1e3a5f;margin-bottom:8px">暗記系比率レーダー</h4>
+    <p style="font-size:0.8em;color:#64748b;margin-bottom:4px">外側ほど暗記で得点しやすい</p>
+    <svg viewBox="0 0 280 280" style="max-width:280px;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<polygon points="140.0,115.0 163.8,132.3 154.7,160.2 125.3,160.2 116.2,132.3" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+<polygon points="140.0,90.0 187.6,124.5 169.4,180.5 110.6,180.5 92.4,124.5" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+<polygon points="140.0,65.0 211.3,116.8 184.1,200.7 95.9,200.7 68.7,116.8" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+<polygon points="140.0,40.0 235.1,109.1 198.8,220.9 81.2,220.9 44.9,109.1" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+<polygon points="140.0,100.0 178.0,127.6 163.5,172.4 116.5,172.4 102.0,127.6" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="2"/>
+<circle cx="140.0" cy="100.0" r="4" fill="#3b82f6"/>
+<text x="140.0" y="18.0" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="600">電気通信工学等</text>
+<circle cx="178.0" cy="127.6" r="4" fill="#3b82f6"/>
+<text x="256.0" y="102.3" text-anchor="start" font-size="11" fill="#1e3a5f" font-weight="600">電気通信設備</text>
+<circle cx="163.5" cy="172.4" r="4" fill="#3b82f6"/>
+<text x="211.7" y="238.7" text-anchor="start" font-size="11" fill="#1e3a5f" font-weight="600">設計施工</text>
+<circle cx="116.5" cy="172.4" r="4" fill="#3b82f6"/>
+<text x="68.3" y="238.7" text-anchor="end" font-size="11" fill="#1e3a5f" font-weight="600">施工管理法</text>
+<circle cx="102.0" cy="127.6" r="4" fill="#3b82f6"/>
+<text x="24.0" y="102.3" text-anchor="end" font-size="11" fill="#1e3a5f" font-weight="600">法規</text>
+</svg>
+  </div>
+</div>
+<p>このページでは、14年分の電気通信工事施工管理技士2級過去問データを<strong>多角的に分析</strong>し、<strong>「何を先にやるか」「何を後回しにするか」まで決められる形</strong>に落とし込みます。</p>
+<div class="note"><strong>最初に結論:</strong> <strong>頻出範囲を優先的に学習</strong>し、<strong>苦手科目を作らない</strong>のが基本戦略です。</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0 18px">
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+    <h4 style="margin:0 0 8px;color:#1e40af">頻出単元優先</h4>
+    <p style="margin:0;font-size:0.92em">ROI上位テーマから学習計画を組む。</p>
+  </div>
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+    <h4 style="margin:0 0 8px;color:#1e40af">弱点科目対策</h4>
+    <p style="margin:0;font-size:0.92em">苦手科目で足切りに合わないよう均等学習。</p>
+  </div>
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px">
+    <h4 style="margin:0 0 8px;color:#1e40af">この分析の限界</h4>
+    <p style="margin:0;font-size:0.92em">テーマ頻度は公式範囲表ベースの推定。実問データは未統合。</p>
+  </div>
+</div>
+<h3>このページの使い方</h3>
+<ol style="margin-top:10px">
+  <li>ヒートマップで「毎年ほぼ出る軸」と「年ごとに入れ替わる枠」を分ける。</li>
+  <li>サイクル分析と空白リスクで、「切らないテーマ」と「直前確認で足すテーマ」を決める。</li>
+  <li>カバレッジ分析と優先度ランキングで、学習順序を頻度順ではなく回収率順に並べる。</li>
+  <li>最後に優先過去問リストへ落として、年度横断で縦に回す。</li>
+</ol>
+<div class="tip">分析の価値は「情報量」ではなく「次の一手が決まること」にあります。各セクションを単独で見るより、最後に学習順へ統合して使うのが効果的です。</div>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="heatmap.html">出題ヒートマップ（年度×分野） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>

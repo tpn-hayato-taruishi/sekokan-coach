@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>出題サイクル分析 - 電気通信工事施工管理技士2級 出題傾向 徹底分析 R1前期〜R8前期</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Yu Gothic UI', 'Meiryo UI', 'Hiragino Sans', sans-serif; background: #f5f7fa; color: #333; line-height: 1.8; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #fff; padding: 48px 24px; text-align: center; }
+.hero h1 { font-size: 2em; margin-bottom: 8px; }
+.hero p { font-size: 1.05em; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .flow { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 20px; flex-wrap: wrap; }
+.hero .flow .step { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 8px 14px; font-size: 0.9em; }
+.hero .flow .arrow { font-size: 1.2em; opacity: 0.7; }
+.layout { display: flex; }
+.sidebar { position: sticky; top: 0; height: 100vh; width: 280px; min-width: 280px; overflow-y: auto; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; transition: margin-left 0.3s, min-width 0.3s; z-index: 100; }
+.sidebar.collapsed { margin-left: -280px; min-width: 0; }
+.sidebar-toggle { position: absolute; top: 8px; right: -36px; width: 32px; height: 32px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 1.1em; display: flex; align-items: center; justify-content: center; z-index: 101; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.sidebar-toggle:hover { background: #eff6ff; }
+.container { flex: 1; max-width: 1200px; margin: 0 auto; padding: 24px 40px; min-width: 0; transition: margin-left 0.3s; }
+.container.expanded { margin-left: 0; }
+.toc { padding: 8px 16px; }
+.toc h2 { font-size: 1.1em; margin-bottom: 10px; color: #1e40af; padding: 0 4px; }
+.toc ol { padding-left: 16px; }
+.toc li { margin: 4px 0; font-size: 0.82em; line-height: 1.5; }
+.toc a { color: #4b5563; display: block; padding: 2px 6px; border-radius: 4px; transition: background 0.15s, color 0.15s; }
+.toc a:hover { background: #eff6ff; color: #1e40af; text-decoration: none; }
+.toc a.active { background: #dbeafe; color: #1e40af; font-weight: 600; }
+section { background: #fff; border-radius: 12px; padding: 28px 28px 20px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+section h2 { font-size: 1.4em; color: #1e40af; border-bottom: 3px solid #3b82f6; padding-bottom: 8px; margin-bottom: 20px; }
+section h3 { font-size: 1.15em; color: #1e3a5f; margin: 24px 0 12px; padding-left: 12px; border-left: 4px solid #60a5fa; }
+h3.deep-sub { font-size: 1.25em; color: #1e40af; border-left: none; border-bottom: 2px solid #60a5fa; padding: 0 0 6px; margin: 36px 0 16px; }
+section h4 { font-size: 1.05em; color: #374151; margin: 16px 0 8px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 16px; font-size: 0.92em; }
+th { background: #eff6ff; color: #1e40af; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #bfdbfe; }
+td { padding: 8px 12px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+tr:hover td { background: #f8fafc; }
+.note { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.note::before { content: '💡 '; }
+.tip { background: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.tip::before { content: '✅ '; }
+.warn { background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px 16px; margin: 12px 0; border-radius: 0 8px 8px 0; font-size: 0.93em; }
+.warn::before { content: '⚠️ '; }
+.back-to-top { display: block; text-align: right; font-size: 0.85em; margin-top: 16px; padding-top: 8px; border-top: 1px solid #e5e7eb; color: #6b7280; }
+tr.done td { opacity: 0.45; text-decoration: line-through; }
+tr.done td:first-child { opacity: 1; text-decoration: none; }
+details summary:hover { color: #1e40af; }
+details[open] summary { margin-bottom: 8px; }
+footer { text-align: center; padding: 32px 16px; color: #9ca3af; font-size: 0.85em; }
+@media print { .hero { background: #1e40af !important; -webkit-print-color-adjust: exact; } section { break-inside: avoid; } }
+@media (max-width: 768px) { .sidebar { display: none; } .container { padding: 12px 16px; } .hero { padding: 32px 16px; } .hero h1 { font-size: 1.5em; } table { font-size: 0.8em; } .sidebar-toggle { display: none; } }
+/* 容量削減用のユーティリティクラス（インラインstyle圧縮）*/
+.tac{text-align:center}
+.tar{text-align:right}
+.fwb{font-weight:700}
+.fws{font-weight:600}
+.fwx{font-weight:800}
+.fz7{font-size:0.7em}
+.fz8{font-size:0.8em}
+.fz82{font-size:0.82em}
+.fz85{font-size:0.85em}
+.fz88{font-size:0.88em}
+.fz9{font-size:0.9em}
+.tgrey{color:#6b7280}
+.tred{color:#dc2626}
+.tblue{color:#2563eb}
+.tgreen{color:#16a34a}
+.torange{color:#d97706}
+</style>
+</head>
+<body>
+<div class="hero" style="padding:24px 16px">
+  <h1 style="font-size:1.4em">電気通信工事施工管理技士2級 出題傾向 徹底分析</h1>
+  <p style="font-size:0.95em">出題サイクル分析</p>
+</div>
+<div class="container" id="main-content" style="padding:16px 24px">
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="heatmap.html">← 出題ヒートマップ（年度×分野）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="coverage.html">カバレッジ分析（最小テーマで最大カバー） →</a></span></nav>
+<section id="cycle">
+  <h2>出題サイクル分析</h2>
+<p>各テーマが過去に出題された年度をドットで表示。間隔パターンから出題周期を読み取れます。</p>
+<details><summary style="cursor:pointer;font-weight:700;color:#7c3aed;padding:8px 0;font-size:1.05em">電気通信工学等（7 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 412 194" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R1前期</text>
+<text x="219" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R4前期</text>
+<text x="309" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R6後期</text>
+<text x="363" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R8前期</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">電気工学:電気回路基礎</text>
+<line x1="120" y1="41.0" x2="372" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="165" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="201" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="237" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="291" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="363" cy="41.0" r="5" fill="#7c3aed" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">無線工学:アンテナ基礎</text>
+<line x1="120" y1="63.0" x2="372" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="237" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="291" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="63.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7後期: 1問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">無線工学:電波伝搬</text>
+<line x1="120" y1="85.0" x2="372" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="201" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="237" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="273" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="327" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7後期: 1問</title></circle>
+<circle cx="363" cy="85.0" r="5" fill="#7c3aed" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">情報工学:ネットワーク基礎</text>
+<line x1="120" y1="107.0" x2="372" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="183" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="291" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="363" cy="107.0" r="5" fill="#7c3aed" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">通信工学:通信理論基礎</text>
+<line x1="120" y1="129.0" x2="372" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="165" cy="129.0" r="5" fill="#7c3aed" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="129.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="129.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="129.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="363" cy="129.0" r="5" fill="#7c3aed" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="154.0" text-anchor="end" font-size="9" fill="#334155">電気工学:電力</text>
+<line x1="120" y1="151.0" x2="372" y2="151.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="165" cy="151.0" r="5" fill="#7c3aed" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="201" cy="151.0" r="5" fill="#7c3aed" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="219" cy="151.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="291" cy="151.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6前期: 1問</title></circle>
+<text x="114" y="176.0" text-anchor="end" font-size="9" fill="#334155">通信工学:電子回路</text>
+<line x1="120" y1="173.0" x2="372" y2="173.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="219" cy="173.0" r="5" fill="#7c3aed" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="291" cy="173.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="173.0" r="5" fill="#7c3aed" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="173.0" r="5" fill="#7c3aed" opacity="0.8"><title>R7前期: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#0ea5e9;padding:8px 0;font-size:1.05em">電気通信設備（6 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 412 172" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R1前期</text>
+<text x="219" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R4前期</text>
+<text x="309" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R6後期</text>
+<text x="363" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R8前期</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">セキュリティ設備</text>
+<line x1="120" y1="41.0" x2="372" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="255" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="273" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="363" cy="41.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">ネットワーク設備</text>
+<line x1="120" y1="63.0" x2="372" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="201" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="237" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="291" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="345" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7後期: 1問</title></circle>
+<circle cx="363" cy="63.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">有線通信設備</text>
+<line x1="120" y1="85.0" x2="372" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="165" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="363" cy="85.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">情報設備</text>
+<line x1="120" y1="107.0" x2="372" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="219" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="291" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="327" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="107.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7後期: 1問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">無線通信設備</text>
+<line x1="120" y1="129.0" x2="372" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="129.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="273" cy="129.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="129.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="327" cy="129.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="129.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R7後期: 1問</title></circle>
+<text x="114" y="154.0" text-anchor="end" font-size="9" fill="#334155">電源設備</text>
+<line x1="120" y1="151.0" x2="372" y2="151.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="237" cy="151.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="273" cy="151.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="151.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="151.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="363" cy="151.0" r="5" fill="#0ea5e9" opacity="0.8"><title>R8前期: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#059669;padding:8px 0;font-size:1.05em">設計施工（4 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 412 128" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R1前期</text>
+<text x="219" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R4前期</text>
+<text x="309" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R6後期</text>
+<text x="363" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R8前期</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">施工管理:施工要領</text>
+<line x1="120" y1="41.0" x2="372" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="183" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="201" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="219" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="273" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="41.0" r="5" fill="#059669" opacity="0.8"><title>R7前期: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">施工管理:試験測定</text>
+<line x1="120" y1="63.0" x2="372" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="183" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="291" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="345" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R7後期: 1問</title></circle>
+<circle cx="363" cy="63.0" r="5" fill="#059669" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">施工管理:接続接地</text>
+<line x1="120" y1="85.0" x2="372" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="85.0" r="5" fill="#059669" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="85.0" r="5" fill="#059669" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="219" cy="85.0" r="5" fill="#059669" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="255" cy="85.0" r="5" fill="#059669" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="363" cy="85.0" r="5" fill="#059669" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">施工管理:配線敷設</text>
+<line x1="120" y1="107.0" x2="372" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="165" cy="107.0" r="5" fill="#059669" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="107.0" r="5" fill="#059669" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="273" cy="107.0" r="5" fill="#059669" opacity="0.8"><title>R5後期: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#1e40af;padding:8px 0;font-size:1.05em">施工管理法（4 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 412 128" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R1前期</text>
+<text x="219" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R4前期</text>
+<text x="309" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R6後期</text>
+<text x="363" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R8前期</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">施工計画</text>
+<line x1="120" y1="41.0" x2="372" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="201" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="255" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="309" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R7後期: 1問</title></circle>
+<circle cx="363" cy="41.0" r="5" fill="#1e40af" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">工程管理:ネットワーク</text>
+<line x1="120" y1="63.0" x2="372" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="201" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="237" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="291" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="63.0" r="5" fill="#1e40af" opacity="0.8"><title>R7前期: 1問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">品質管理</text>
+<line x1="120" y1="85.0" x2="372" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="273" cy="85.0" r="5" fill="#1e40af" opacity="0.8"><title>R5後期: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">安全管理</text>
+<line x1="120" y1="107.0" x2="372" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="165" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="201" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R3後期: 1問</title></circle>
+<circle cx="273" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="107.0" r="5" fill="#1e40af" opacity="0.8"><title>R7前期: 1問</title></circle>
+</svg></div>
+</details>
+<details><summary style="cursor:pointer;font-weight:700;color:#d97706;padding:8px 0;font-size:1.05em">法規（5 テーマ）</summary>
+<div style="overflow-x:auto;margin-bottom:20px"><svg viewBox="0 0 412 150" style="max-width:100%;height:auto;font-family:'Yu Gothic UI',sans-serif">
+<text x="129" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R1前期</text>
+<text x="219" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R4前期</text>
+<text x="309" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R6後期</text>
+<text x="363" y="18" text-anchor="middle" font-size="7" fill="#94a3b8">R8前期</text>
+<text x="114" y="44.0" text-anchor="end" font-size="9" fill="#334155">労働安全衛生法</text>
+<line x1="120" y1="41.0" x2="372" y2="41.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="183" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R3前期: 1問</title></circle>
+<circle cx="219" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="273" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="327" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="345" cy="41.0" r="5" fill="#d97706" opacity="0.8"><title>R7後期: 1問</title></circle>
+<text x="114" y="66.0" text-anchor="end" font-size="9" fill="#334155">電気通信事業法</text>
+<line x1="120" y1="63.0" x2="372" y2="63.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="165" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="219" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="255" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R5前期: 1問</title></circle>
+<circle cx="273" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="309" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R6後期: 1問</title></circle>
+<circle cx="363" cy="63.0" r="5" fill="#d97706" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="88.0" text-anchor="end" font-size="9" fill="#334155">建設業法</text>
+<line x1="120" y1="85.0" x2="372" y2="85.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="147" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="237" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="273" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="327" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R7前期: 1問</title></circle>
+<circle cx="363" cy="85.0" r="5" fill="#d97706" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="110.0" text-anchor="end" font-size="9" fill="#334155">有線電気通信法</text>
+<line x1="120" y1="107.0" x2="372" y2="107.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="129" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R1前期: 1問</title></circle>
+<circle cx="219" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="237" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R4後期: 1問</title></circle>
+<circle cx="273" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R5後期: 1問</title></circle>
+<circle cx="291" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R6前期: 1問</title></circle>
+<circle cx="345" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R7後期: 1問</title></circle>
+<circle cx="363" cy="107.0" r="5" fill="#d97706" opacity="0.8"><title>R8前期: 1問</title></circle>
+<text x="114" y="132.0" text-anchor="end" font-size="9" fill="#334155">電波法</text>
+<line x1="120" y1="129.0" x2="372" y2="129.0" stroke="#e5e7eb" stroke-width="1"/>
+<circle cx="147" cy="129.0" r="5" fill="#d97706" opacity="0.8"><title>R1後期: 1問</title></circle>
+<circle cx="165" cy="129.0" r="5" fill="#d97706" opacity="0.8"><title>R2: 1問</title></circle>
+<circle cx="219" cy="129.0" r="5" fill="#d97706" opacity="0.8"><title>R4前期: 1問</title></circle>
+<circle cx="255" cy="129.0" r="5" fill="#d97706" opacity="0.8"><title>R5前期: 1問</title></circle>
+</svg></div>
+</details>
+<a href="#" class="back-to-top">目次に戻る ↑</a>
+</section>
+<nav class="page-nav" style="display:flex;justify-content:space-between;align-items:center;margin:16px 0;padding:12px 16px;background:#eff6ff;border-radius:8px;flex-wrap:wrap;gap:8px"><span style="flex:1"><a href="heatmap.html">← 出題ヒートマップ（年度×分野）</a></span><span style="text-align:center;flex:1"><a href="index.html">📑 目次に戻る</a><a href="../index.html" style="margin-left:8px;color:#a16207">🏠 89試験ポータル</a></span><span style="text-align:right;flex:1"><a href="coverage.html">カバレッジ分析（最小テーマで最大カバー） →</a></span></nav>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('sidebar-toggle');
+  var sb=document.getElementById('sidebar');
+  var mc=document.getElementById('main-content');
+  btn.addEventListener('click',function(){
+    sb.classList.toggle('collapsed');
+    mc.classList.toggle('expanded');
+  });
+  var links=document.querySelectorAll('.toc a');
+  var secs=document.querySelectorAll('section[id]');
+  window.addEventListener('scroll',function(){
+    var top=window.scrollY+80;
+    var cur='';
+    secs.forEach(function(s){ if(s.offsetTop<=top) cur=s.id; });
+    links.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+cur);
+    });
+  });
+})();
+</script>
+<footer>電気通信工事施工管理技士2級 出題傾向 徹底分析 ｜ R1前期〜R8前期 ｜ Generated by Claude Code</footer>
+</body></html>
