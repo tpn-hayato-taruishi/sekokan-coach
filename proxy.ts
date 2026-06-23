@@ -1,15 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // 環境変数 ALLOWED_IPS（カンマ区切りCIDR）からIP制限
-// 未設定時（ローカル開発）は全許可
+// - undefined（env 自体が無い）= ローカル開発 → 全許可
+// - 空文字列（terraform が allowed_ips.txt 不在/空で "" を注入）= fail-closed → 全拒否
 export function proxy(request: NextRequest) {
   const allowedIps = process.env.ALLOWED_IPS;
-  if (!allowedIps) return NextResponse.next();
+
+  // ローカル開発: env が未定義なら制限を無効化
+  if (allowedIps === undefined) return NextResponse.next();
 
   const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
 
   // x-forwarded-for がない = App Runner内部ヘルスチェック → 許可
   if (!clientIp) return NextResponse.next();
+
+  // 本番で allowlist が空 = allowed_ips.txt 未配置/空 → 事故防止のため全拒否
+  if (allowedIps.trim() === '') {
+    console.log(JSON.stringify({
+      type: 'ACCESS_DENIED_NO_ALLOWLIST', ip: clientIp, path: request.nextUrl.pathname,
+      method: request.method, ua: request.headers.get('user-agent')?.slice(0, 200),
+      t: new Date().toISOString(),
+    }));
+    return new NextResponse('IP allowlist 未設定のためアクセスできません', {
+      status: 403,
+      headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+    });
+  }
 
   const cidrs = allowedIps.split(',').map(s => s.trim()).filter(Boolean);
 
