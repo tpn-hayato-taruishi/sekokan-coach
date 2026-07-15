@@ -65,7 +65,7 @@ export async function logAccess(params: {
 
 export async function logOperation(params: {
   ip: string;
-  operation: 'chat' | 'diagnose' | 'report' | 'cost';
+  operation: 'chat' | 'diagnose' | 'report' | 'cost' | 'keiken';
   details?: Record<string, unknown>;
 }): Promise<void> {
   const now = new Date();
