@@ -1765,7 +1765,7 @@ ${
   };
   const wfOpenExperience = () => {
     closeWorkflow();
-    setShowExperience(true);
+    window.location.href = '/keiken';
   };
   const wfLawFilter = () => {
     setStudyMode('normal');
@@ -2494,9 +2494,9 @@ ${topThemes}
             📋 学習プロフィール
           </button>
           <button
-            onClick={() => setShowExperience(true)}
+            onClick={() => { window.location.href = '/keiken'; }}
             className="bg-pink-400 hover:bg-pink-300 text-pink-900 px-3 py-1.5 rounded font-bold text-xs shadow"
-            title="第二次検定 経験記述ジェネレーター: 実務経験を入力するとAIが採点高評価の記述例を生成"
+            title="第二次検定 経験記述・C票・適合チェック: 実務経験を入力してAIが作成支援"
           >
             📝 経験記述 (第2次)
           </button>
