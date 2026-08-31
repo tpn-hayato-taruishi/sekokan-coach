@@ -2,10 +2,18 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ChatUI, { type ChatUIHandle } from '@/components/ChatUI';
+import {
+  DEFAULT_EXAM_ID,
+  EXAMS,
+  EXAM_IDS,
+  isExamId,
+  type ExamId,
+  type PdfUrlMap,
+} from '@/lib/exams';
 
 interface Problem {
   id: string;
-  level: '1級' | '2級';
+  level: string;
   year: string;
   season?: string;
   no: number;
@@ -61,69 +69,6 @@ const SIM_ICON: Record<string, string> = {
   '過去問と全然違う': '🆕',
 };
 
-// 試験の出題構成 — 年度ごとに変遷 (R3で制度改正)
-// 出典: 一般財団法人 建設業振興基金 試験案内
-type ExamGroup = { name: string; subject: string; no: string; out: number; must: number; type: '必須' | '選択' | '必須(50%以上)' | '選択中心' };
-type ExamEra = { era: string; applies: string; total: number; answer: number; pass: number; note: string; groups: ExamGroup[] };
-const EXAM_STRUCTURES: Record<string, ExamEra[]> = {
-  '2級': [
-    {
-      era: 'R3～現行', applies: '令和3年度以降',
-      total: 64, answer: 40, pass: 60,
-      note: '第一次検定に名称変更。No.38-42は5択全問必須 (足切り無し、合格基準60%のみ)。1級と違い応用能力50%足切りは無し。',
-      groups: [
-        { name: '電気工学', subject: '電気理論', no: 'No.1～12', out: 12, must: 8, type: '選択' },
-        { name: '電気応用・電気設備', subject: '電気設備', no: 'No.13～32', out: 20, must: 12, type: '選択' },
-        { name: '関連分野', subject: '電気設備', no: 'No.33～37', out: 5, must: 5, type: '必須' },
-        { name: '施工管理法 (5択問題)', subject: '施工管理法', no: 'No.38～42', out: 5, must: 5, type: '必須' },
-        { name: '施工管理法', subject: '施工管理法', no: 'No.43～52', out: 10, must: 10, type: '必須' },
-        { name: '法規', subject: '法規', no: 'No.53～64', out: 12, must: 10, type: '選択' },
-      ],
-    },
-    {
-      era: 'H29～R2', applies: '平成29～令和2年度',
-      total: 64, answer: 40, pass: 60,
-      note: '「学科試験」と呼称。応用能力問題なし。出題数同じだが応用能力の足切りなくシンプル。',
-      groups: [
-        { name: '電気工学', subject: '電気理論', no: 'No.1～12', out: 12, must: 8, type: '選択' },
-        { name: '電気応用・電気設備', subject: '電気設備', no: 'No.13～32', out: 20, must: 12, type: '選択' },
-        { name: '関連分野', subject: '電気設備', no: 'No.33～37', out: 5, must: 5, type: '必須' },
-        { name: '施工管理法', subject: '施工管理法', no: 'No.38～52', out: 15, must: 15, type: '必須' },
-        { name: '法規', subject: '法規', no: 'No.53～64', out: 12, must: 10, type: '選択' },
-      ],
-    },
-  ],
-  '1級': [
-    {
-      era: 'R3～現行', applies: '令和3年度以降',
-      total: 94, answer: 62, pass: 60,
-      note: '第一次検定に名称変更。応用能力問題(No.71-82)が新設され独立して50%以上必要に。',
-      groups: [
-        { name: '電気工学', subject: '電気理論', no: 'No.1～15', out: 15, must: 10, type: '選択' },
-        { name: '電気応用・電気設備', subject: '電気設備', no: 'No.16～47', out: 32, must: 14, type: '選択' },
-        { name: '関連分野', subject: '電気設備', no: 'No.48～52', out: 5, must: 5, type: '必須' },
-        { name: '設計図書・契約', subject: '施工管理法', no: 'No.53～55', out: 3, must: 1, type: '選択' },
-        { name: '施工管理法', subject: '施工管理法', no: 'No.56～70', out: 15, must: 12, type: '選択' },
-        { name: '施工管理法 (応用能力)', subject: '施工管理法', no: 'No.71～82', out: 12, must: 12, type: '必須(50%以上)' },
-        { name: '法規', subject: '法規', no: 'No.83～94', out: 12, must: 8, type: '選択' },
-      ],
-    },
-    {
-      era: 'H29～R2', applies: '平成29～令和2年度',
-      total: 92, answer: 60, pass: 60,
-      note: '「学科試験」と呼称。応用能力問題なし。',
-      groups: [
-        { name: '電気工学', subject: '電気理論', no: 'No.1～15', out: 15, must: 10, type: '選択' },
-        { name: '電気応用・電気設備', subject: '電気設備', no: 'No.16～47', out: 32, must: 14, type: '選択' },
-        { name: '関連分野', subject: '電気設備', no: 'No.48～52', out: 5, must: 5, type: '必須' },
-        { name: '設計図書・契約', subject: '施工管理法', no: 'No.53～55', out: 3, must: 1, type: '選択' },
-        { name: '施工管理法', subject: '施工管理法', no: 'No.56～80', out: 25, must: 22, type: '選択中心' },
-        { name: '法規', subject: '法規', no: 'No.81～92', out: 12, must: 8, type: '選択' },
-      ],
-    },
-  ],
-};
-
 const CATEGORY_DEF: Record<string, string> = {
   '丸暗記': '法令の条文・規格値・用語の定義など、原理を理解しなくても暗記すれば確実に得点できる問題。試験直前に詰め込みやすい',
   '問答暗記': '穴埋め問題・選択肢の組合せで「問題と選択肢のセット」をパターンとして覚えれば解ける問題',
@@ -138,8 +83,6 @@ const SIM_DEF: Record<string, string> = {
   '大幅違う': '主題 (テーマ) は同じだが、問題の構成や聞き方が大きく異なる派生問題。応用力が必要',
   '過去問と全然違う': '新規テーマ または過去問にない聞き方。最近の出題傾向で要注意',
 };
-
-type PdfUrlMap = { answer?: Record<string, string>; problem?: Record<string, string> };
 
 export default function QuizPage() {
   const [data, setData] = useState<QuizData | null>(null);
@@ -187,33 +130,34 @@ export default function QuizPage() {
     if (typeof window === 'undefined') return new Set();
     try { return new Set(JSON.parse(localStorage.getItem('sekokan-bookmark') || '[]')); } catch { return new Set(); }
   });
-  // 試験種別 (電気工事 / 電気通信工事) — 試験日fetchより前に宣言する必要あり
-  type ExamCategory = 'denki' | 'denkitsushin';
-  const [examCategory, setExamCategory] = useState<ExamCategory>(() => {
-    if (typeof window === 'undefined') return 'denki';
+  // 試験種別 (lib/exams.ts のレジストリ) — 試験日fetchより前に宣言する必要あり
+  const [examCategory, setExamCategory] = useState<ExamId>(() => {
+    if (typeof window === 'undefined') return DEFAULT_EXAM_ID;
     const saved = localStorage.getItem('sekokan-exam-category');
-    return (saved === 'denkitsushin' ? 'denkitsushin' : 'denki');
+    return isExamId(saved) && EXAMS[saved].available ? saved : DEFAULT_EXAM_ID;
   });
+  const exam = EXAMS[examCategory];
   useEffect(() => {
     try { localStorage.setItem('sekokan-exam-category', examCategory); } catch {}
   }, [examCategory]);
 
-  // 試験日 — 1級/2級それぞれの日付を保持 (公式取得 + ユーザー上書き対応)
-  const [examDates, setExamDates] = useState<{ '1級': string; '2級': string }>(() => {
-    if (typeof window === 'undefined') return { '1級': '', '2級': '' };
-    try { return JSON.parse(localStorage.getItem('sekokan-exam-dates') || '{}') as { '1級': string; '2級': string }; }
-    catch { return { '1級': '', '2級': '' }; }
+  // 試験日 — 級ごとの日付を保持 (公式取得 + ユーザー上書き対応)
+  type DateSource = 'auto' | 'manual' | 'fallback' | 'unset';
+  const [examDates, setExamDates] = useState<Record<string, string>>(() => {
+    if (typeof window === 'undefined') return {};
+    try { return JSON.parse(localStorage.getItem('sekokan-exam-dates') || '{}') as Record<string, string>; }
+    catch { return {}; }
   });
-  const [examDateSources, setExamDateSources] = useState<{ '1級': 'auto' | 'manual' | 'fallback' | 'unset'; '2級': 'auto' | 'manual' | 'fallback' | 'unset' }>(() => {
-    if (typeof window === 'undefined') return { '1級': 'unset', '2級': 'unset' };
+  const [examDateSources, setExamDateSources] = useState<Record<string, DateSource>>(() => {
+    if (typeof window === 'undefined') return {};
     try { return JSON.parse(localStorage.getItem('sekokan-exam-date-srcs') || '{}'); }
-    catch { return { '1級': 'unset', '2級': 'unset' }; }
+    catch { return {}; }
   });
-  const [examDateFetching, setExamDateFetching] = useState<{ '1級': boolean; '2級': boolean }>({ '1級': false, '2級': false });
-  const [examDateDebug, setExamDateDebug] = useState<{ '1級': string; '2級': string }>({ '1級': '', '2級': '' });
+  const [examDateFetching, setExamDateFetching] = useState<Record<string, boolean>>({});
+  const [examDateDebug, setExamDateDebug] = useState<Record<string, string>>({});
   // 試験スケジュール詳細 (受付期間・合格発表日)
   type ScheduleInfo = { examName: string; applyStart: string; applyEnd: string; resultDate: string; note?: string };
-  const [examSchedule, setExamSchedule] = useState<{ '1級': ScheduleInfo | null; '2級': ScheduleInfo | null }>({ '1級': null, '2級': null });
+  const [examSchedule, setExamSchedule] = useState<Record<string, ScheduleInfo | null>>({});
   // 日別回答数 (継続率管理)
   const [dailyLog, setDailyLog] = useState<Record<string, number>>(() => {
     if (typeof window === 'undefined') return {};
@@ -244,19 +188,24 @@ export default function QuizPage() {
   const [showLanding, setShowLanding] = useState(true);
   // TOP画面: 合格ロードマップを常に先頭表示 (アクセス毎)
   const [showWorkflow, setShowWorkflow] = useState(true);
-  // ワークフロー対象: 級×検定 (4パターン)
-  type ExamType = '1級_1次' | '1級_2次' | '2級_1次' | '2級_2次';
-  const [examType, setExamType] = useState<ExamType>(() => {
-    if (typeof window === 'undefined') return '2級_1次';
-    const v = localStorage.getItem('sekokan-exam-type') as ExamType | null;
-    if (v === '1級_1次' || v === '1級_2次' || v === '2級_1次' || v === '2級_2次') return v;
-    return '2級_1次';
+  // ワークフロー対象: 級×検定 (試験ごとに exam.examTypes で定義)
+  const defaultExamType = exam.examTypes[0].v;
+  const [examType, setExamType] = useState<string>(() => {
+    if (typeof window === 'undefined') return defaultExamType;
+    return localStorage.getItem('sekokan-exam-type') || defaultExamType;
   });
+  // 試験を切り替えると区分・級フィルタが別試験のものになるので、有効な値に戻す
+  useEffect(() => {
+    if (!exam.examTypes.some((o) => o.v === examType)) setExamType(defaultExamType);
+    setFilterLevel((lv) => (lv && !exam.levels.includes(lv) ? '' : lv));
+    setFilterSubject((s) => (s && !exam.subjects.some((x) => x.name === s) ? '' : s));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [examCategory]);
   // 学習プロフィール: 科目別の自己評価 ('strong' = ほぼ無勉強でOK / 'medium' = 普通 / 'weak' = 苦手)
   // バックグラウンド (大学で電気習ったか・実務経験など) を反映した戦略立案に使う
   type Skill = 'strong' | 'medium' | 'weak';
   const [profile, setProfile] = useState<Record<string, Skill>>(() => {
-    const def: Record<string, Skill> = { '電気理論': 'medium', '電気設備': 'medium', '施工': 'medium', '施工管理法': 'medium', '法規': 'medium' };
+    const def: Record<string, Skill> = Object.fromEntries(exam.subjects.map((s) => [s.name, 'medium' as Skill]));
     if (typeof window === 'undefined') return def;
     try { return { ...def, ...JSON.parse(localStorage.getItem('sekokan-profile') || '{}') }; }
     catch { return def; }
@@ -310,7 +259,7 @@ export default function QuizPage() {
   useEffect(() => { try { localStorage.setItem('sekokan-exam-date-srcs', JSON.stringify(examDateSources)); } catch {} }, [examDateSources]);
 
   // 自動取得: manual で上書き済みでなければ起動時に fetch
-  const fetchExamDate = useCallback(async (level: '1級' | '2級') => {
+  const fetchExamDate = useCallback(async (level: string) => {
     setExamDateFetching((f) => ({ ...f, [level]: true }));
     try {
       const r = await fetch(`/api/exam-date?level=${encodeURIComponent(level)}&category=${examCategory}`);
@@ -341,15 +290,16 @@ export default function QuizPage() {
     }
   }, [examCategory]);
 
-  // 起動時 + 試験種別切替時: 1級+2級 両方を取得 (manualで上書き済みでないもののみ)
+  // 起動時 + 試験種別切替時: 全ての級を取得 (manualで上書き済みでないもののみ)
   useEffect(() => {
-    if (examDateSources['1級'] !== 'manual') fetchExamDate('1級');
-    if (examDateSources['2級'] !== 'manual') fetchExamDate('2級');
+    for (const lvl of exam.levels) {
+      if (examDateSources[lvl] !== 'manual') fetchExamDate(lvl);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [examCategory]);
 
-  // 現在のフィルタ級に対応する試験日 (フィルタなしなら 2級 を主表示)
-  const activeLevel: '1級' | '2級' = (filterLevel === '1級' || filterLevel === '2級') ? filterLevel : '2級';
+  // 現在のフィルタ級に対応する試験日 (フィルタなしなら既定の級を主表示)
+  const activeLevel: string = exam.levels.includes(filterLevel) ? filterLevel : exam.defaultLevel;
   const examDate = examDates[activeLevel];
   const examDateSource = examDateSources[activeLevel];
   useEffect(() => { try { localStorage.setItem('sekokan-daily', JSON.stringify(dailyLog)); } catch {} }, [dailyLog]);
@@ -434,9 +384,8 @@ export default function QuizPage() {
 
   const activeFilterCount = [filterLevel, filterSubject, filterTheme, filterSim, filterFreq].filter(Boolean).length;
 
-  // (examCategory は前方で宣言済み — 試験日fetchより前に必要なため)
-  const examLabel = examCategory === 'denki' ? '電気工事' : '電気通信工事';
-  const quizJsonUrl = examCategory === 'denki' ? '/data/quiz.json' : '/data/quiz_denkitsushin.json';
+  // (examCategory / exam は前方で宣言済み — 試験日fetchより前に必要なため)
+  const quizJsonUrl = exam.quizJsonUrl;
 
   useEffect(() => {
     setLoading(true);
@@ -735,153 +684,43 @@ export default function QuizPage() {
     setSubjStats({});
   }, []);
 
+  // 外部リンク生成に渡すコンテキスト (URL の組み立ては lib/exams.ts の試験ごとの定義側)
+  const linkCtx = useMemo(() => (current ? {
+    level: current.level,
+    year: current.year,
+    season: current.season,
+    page: current.page,
+    source: current.source,
+    source_pdf: current.source_pdf,
+    pdfUrls,
+  } : null), [current, pdfUrls]);
+
   const openKakomon = useCallback(() => {
-    if (!current) return;
-    const KAKOMON_MAP_2: Record<string, string> = {
-      'R7_PM': '73016', 'R7_AM': '73015', 'R6_PM': '73014', 'R6_AM': '73013',
-      'R5_PM': '73012', 'R5_AM': '73011', 'R4_PM': '73010', 'R4_AM': '73009',
-      'R3_PM': '73008', 'R3_AM': '73007', 'R2_PM': '73006',
-      'R1_PM': '73005', 'R1_AM': '73004', 'H30_PM': '73003', 'H29_': '73001',
-    };
-    const KAKOMON_MAP_1: Record<string, string> = {
-      'R7_': '86008', 'R6_': '86007', 'R5_': '86006', 'R4_': '86005',
-      'R3_': '86004', 'R2_': '86003', 'R1_': '86002', 'H30_': '86001',
-    };
-    // 電気通信工事 の場合は専用解説サイトに飛ばす (kakomonn は電気工事のみ)
-    if (examCategory === 'denkitsushin') {
-      const num = current.level === '1級' ? '1' : '2';
-      window.open(`https://dobokujira.com/${num}denkitsushin-pastproblems/`, '_blank');
-      return;
-    }
-    const map = current.level === '1級' ? KAKOMON_MAP_1 : KAKOMON_MAP_2;
-    const host = current.level === '1級' ? 'denkisekou1' : 'denkisekou2';
-    const key = `${current.year}_${current.season || ''}`;
-    const id = map[key] || map[`${current.year}_`];
-    if (id) {
-      window.open(`https://${host}.kakomonn.com/list1/${id}`, '_blank');
-    } else {
-      window.open(`https://${host}.kakomonn.com/`, '_blank');
-    }
-  }, [current, examCategory]);
-
-  // 電気通信工事 dobokujira PDF URL 生成 (年度ごとに WP の uploads パスが違うので map)
-  const getDenkitsushinPdfUrl = useCallback((level: string, year: string, season: string, kind: 'mondai' | 'kaitou'): string | null => {
-    const num = level === '1級' ? '1' : '2';
-    // 年度+season ごとのアップロードパス
-    // 1級は AM=mondaiA / PM=mondaiB の分割、解答は1つ
-    // 2級は 前期=early / 後期=late、各々問題+解答
-    const ymMap1: Record<string, string> = {
-      R7: '2025/10', R6: '2024/09', R5: '2024/09', R4: '2024/09',
-      R3: '2024/09', R2: '2024/09', R1: '2024/09',
-    };
-    const ymMap2: Record<string, Record<string, string>> = {
-      R8: { 前期: '2026/06' },
-      R7: { 前期: '2025/06', 後期: '2026/01' },
-      R6: { 前期: '2024/09', 後期: '2025/06' },
-      R5: { 前期: '2024/09', 後期: '2024/09' },
-      R4: { 前期: '2024/09', 後期: '2025/11' },
-      R3: { 前期: '2024/09', 後期: '2024/09' },
-      R2: { 前期: '2024/09', 後期: '2024/09' },
-      R1: { 前期: '2024/09', 後期: '2024/09' },
-    };
-
-    if (num === '1') {
-      const ym = ymMap1[year];
-      if (!ym) return null;
-      if (kind === 'kaitou') {
-        return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_1denkitsushin_01_kaitou.pdf`;
-      }
-      // 問題: AM=mondaiA / PM=mondaiB
-      const suffix = season === 'PM' ? 'B' : 'A';
-      return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_1denkitsushin_01_mondai${suffix}.pdf`;
-    } else {
-      const periodKey = season === 'PM' || season === '後期' ? '後期' : '前期';
-      const ym = ymMap2[year]?.[periodKey];
-      if (!ym) return null;
-      const filePeriod = periodKey === '前期' ? 'early' : 'late';
-      return `https://dobokujira.com/wp-content/uploads/${ym}/${year}_2denkitsushin_01_${filePeriod}_${kind}.pdf`;
-    }
-  }, []);
+    if (!linkCtx || !exam.explanationUrl) return;
+    window.open(exam.explanationUrl(linkCtx), '_blank');
+  }, [linkCtx, exam]);
 
   const openProblemPdf = useCallback(() => {
-    if (!current) return;
-    // 電気通信工事 の場合は dobokujira URL を直接生成
-    if (examCategory === 'denkitsushin') {
-      const url = getDenkitsushinPdfUrl(current.level, current.year, current.season || '', 'mondai');
-      if (url) {
-        window.open(url, '_blank', 'noopener,noreferrer');
-      } else {
-        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の問題PDFは外部URL未登録。`);
-      }
+    if (!linkCtx || !exam.problemPdfUrl) return;
+    const r = exam.problemPdfUrl(linkCtx);
+    if (r.url) {
+      window.open(r.url, '_blank', 'noopener,noreferrer');
       return;
     }
-    const pdfName = current.source_pdf || current.source.replace(/\.txt$/, '.pdf');
-    const key = `${current.level}_第一次/${pdfName}`;
-    const url = pdfUrls.problem?.[key];
-    // 安全チェック: 必ず 2級 problem -> 2級 URL になっているか
-    const levelTag = current.level === '1級' ? '1denki' : '2denki';
-    const isLevelMismatch = url && url.includes(current.level === '1級' ? '2denki' : '1denki');
-    if (url && !isLevelMismatch) {
-      window.open(`${url}#page=${current.page || 1}`, '_blank', 'noopener,noreferrer');
-    } else {
-      if (isLevelMismatch) {
-        alert(`URL不整合検出: ${current.level} ${current.year} の問題PDFが ${levelTag} を含みません。kakomonn 解説サイトを開きます。`);
-      } else {
-        alert(`${current.level} ${current.year} の問題PDFは外部サイトに直リンク無し。kakomonn 解説サイトを開きます。`);
-      }
-      openKakomon();
-    }
-  }, [current, pdfUrls, openKakomon, examCategory, getDenkitsushinPdfUrl]);
+    alert(r.message);
+    openKakomon();
+  }, [linkCtx, exam, openKakomon]);
 
   const openAnswerPdf = useCallback(() => {
-    if (!current) return;
-    // 電気通信工事 の場合は dobokujira URL を直接生成
-    if (examCategory === 'denkitsushin') {
-      const url = getDenkitsushinPdfUrl(current.level, current.year, current.season || '', 'kaitou');
-      if (url) {
-        window.open(url, '_blank', 'noopener,noreferrer');
-      } else {
-        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の解答PDFは外部URL未登録。`);
-      }
+    if (!linkCtx || !exam.answerPdfUrl) return;
+    const r = exam.answerPdfUrl(linkCtx);
+    if (r.url) {
+      window.open(r.url, '_blank', 'noopener,noreferrer');
       return;
     }
-    const denki = current.level === '1級' ? '1denki' : '2denki';
-    // 1級は AM/PM (午前/午後)、2級は 前期=AM=early / 後期=PM=late
-    let suffix = '';
-    if (current.level === '1級' && current.season === 'AM') suffix = '_am';
-    else if (current.level === '1級' && current.season === 'PM') suffix = '_pm';
-    else if (current.level === '2級' && current.season === 'AM') suffix = '_early';
-    else if (current.level === '2級' && current.season === 'PM') suffix = '_late';
-    const ansName = `${current.year}_${denki}_01${suffix}_kaitou.pdf`;
-    const primaryKey = `${current.level}_第一次/${ansName}`;
-    let url = pdfUrls.answer?.[primaryKey];
-    // フォールバック: suffix なしのキー(古い年度) も試す
-    if (!url) {
-      const fallbackName = `${current.year}_${denki}_01_kaitou.pdf`;
-      url = pdfUrls.answer?.[`${current.level}_第一次/${fallbackName}`];
-    }
-    // フォールバック2: pdf-urls.json の全 answer キーから level/year/season で検索
-    if (!url) {
-      const answerKeys = Object.keys(pdfUrls.answer || {});
-      const yearTag = current.year;
-      const seasonTag = current.season === 'AM' ? '(早|前|am|AM)' : current.season === 'PM' ? '(後|遅|pm|PM|late)' : '';
-      const re = new RegExp(`${current.level}.*${yearTag}.*${seasonTag}`);
-      const matchKey = answerKeys.find((k) => re.test(k));
-      if (matchKey) url = pdfUrls.answer![matchKey];
-    }
-    // 安全チェック: URL が正しい級を指しているか
-    const isLevelMismatch = url && url.includes(current.level === '1級' ? '2denki' : '1denki');
-    if (url && !isLevelMismatch) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    } else {
-      if (isLevelMismatch) {
-        alert(`URL不整合検出: ${current.level} ${current.year} の解答PDFが ${denki} を含みません。kakomonn 解説サイトを開きます。`);
-      } else {
-        alert(`${current.level} ${current.year}${current.season ? ' ' + current.season : ''} の解答PDFは外部URL未登録。kakomonn 解説サイトを開きます。`);
-      }
-      openKakomon();
-    }
-  }, [current, pdfUrls, openKakomon]);
+    alert(r.message);
+    openKakomon();
+  }, [linkCtx, exam, openKakomon]);
 
   const askAi = useCallback(() => {
     if (!current) return;
@@ -1482,14 +1321,8 @@ ${
   if (error) return <div className="p-8 text-red-600">エラー: {error}</div>;
   if (!data) return null;
 
-  const SUBJECTS_ORDER = ['電気理論', '電気設備', '施工', '施工管理法', '法規'] as const;
-  const SUBJECT_HINTS: Record<string, string> = {
-    '電気理論': 'オームの法則・三相交流・電磁気。大学/高校で電気工学・物理を学んだなら強。文系なら弱。',
-    '電気設備': '発電/送電/受変電/照明など。電気現場経験者なら強、未経験なら中。',
-    '施工': '配線/接地/絶縁/試験/検査の手順。現場経験者なら強。',
-    '施工管理法': '工程/品質/安全管理・PERT。建設・製造業の管理経験者なら強。',
-    '法規': '電気事業法・工事士法・建設業法・労働安全衛生法。実務で接していないと弱。',
-  };
+  const SUBJECTS_ORDER = exam.subjects.map((s) => s.name);
+  const SUBJECT_HINTS: Record<string, string> = Object.fromEntries(exam.subjects.map((s) => [s.name, s.hint]));
   const SKILL_LABEL: Record<Skill, string> = { strong: '💪 強み (ほぼ無勉強OK)', medium: '⚖ 普通', weak: '⚠ 苦手 (重点)' };
   const SKILL_COLOR: Record<Skill, string> = { strong: 'bg-emerald-100 text-emerald-800 border-emerald-300', medium: 'bg-slate-100 text-slate-700 border-slate-300', weak: 'bg-red-100 text-red-800 border-red-300' };
 
@@ -1579,13 +1412,13 @@ ${
               <strong className="text-emerald-700">R3 から制度改正</strong>。「学科試験」→「第一次検定」に変更 + 応用能力問題が追加された。
               現行制度 (R3以降) に合わせて学習。古い年度は構成が異なるので参考程度。
             </p>
-            {(['1級', '2級'] as const).map((lvl) => (
+            {exam.levels.filter((lvl) => exam.examStructures[lvl]?.length).map((lvl) => (
               <details key={lvl} open className="mb-3">
                 <summary className="cursor-pointer font-bold text-blue-800 text-sm py-1.5 px-2 bg-blue-50 hover:bg-blue-100 rounded">
                   📋 {lvl}: 現行 + 過去制度
                 </summary>
                 <div className="pt-2 space-y-2">
-                  {EXAM_STRUCTURES[lvl].map((era, eraIdx) => (
+                  {exam.examStructures[lvl].map((era, eraIdx) => (
                     <details key={era.era} open={eraIdx === 0} className="border rounded">
                       <summary className="cursor-pointer px-2 py-1.5 bg-slate-50 hover:bg-slate-100 flex items-center gap-2 text-xs font-bold">
                         <span className="text-slate-800">{era.era} ({era.applies})</span>
@@ -1681,11 +1514,10 @@ ${
   const wfReport = () => {
     closeWorkflow();
     // 簡易版を優先 (要点だけまとめた1ページ版)。第二次検定なら 2次用レポート
-    const lvl = filterLevel === '1級' ? '1級' : '2級';
-    const is2nd = examType === '1級_2次' || examType === '2級_2次';
-    // 試験種別 (電気工事 / 電気通信工事) に応じてレポートファイル名を切替
-    const prefix = examCategory === 'denkitsushin' ? '電気通信工事施工管理技士' : '施工管理';
-    const target = is2nd ? `${prefix}${lvl}_2次_簡易版.html` : `${prefix}${lvl}_簡易版.html`;
+    if (!exam.reportPrefix) return;
+    const lvl = activeLevel;
+    const is2nd = exam.examTypes.find((o) => o.v === examType)?.phase === '2次';
+    const target = is2nd ? `${exam.reportPrefix}${lvl}_2次_簡易版.html` : `${exam.reportPrefix}${lvl}_簡易版.html`;
     window.open(`/api/report/${target}`, '_blank');
   };
   const wfBrowse = () => {
@@ -1780,8 +1612,9 @@ ${
     setTimeout(() => pickNext(), 50);
   };
 
-  // 4パターンのワークフロー定義
-  const WORKFLOW_PRESETS: Record<ExamType, { n: number; icon: string; title: string; short: string; btn: string; action: () => void }[]> = {
+  // 施工管理系 (級×検定 4パターン) のワークフロー定義。
+  // ロードマップ未整備の試験 (exam.features.roadmap === false) では空配列になる。
+  const WORKFLOW_PRESETS: Record<string, { n: number; icon: string; title: string; short: string; btn: string; action: () => void }[]> = {
     '2級_1次': [
       { n: 1, icon: '🗺', title: '敵を知る (2級 第一次)', short: '64問中40問解答・60%合格。試験構成を把握', btn: '2級 要点ガイド', action: () => { setFilterLevel('2級'); wfReport(); } },
       { n: 2, icon: '👀', title: '問題と答えを刷り込む', short: '答え見せ・流し見で脳に焼き付ける', btn: '眺めモード', action: () => { setFilterLevel('2級'); wfBrowse(); } },
@@ -1819,7 +1652,7 @@ ${
       { n: 7, icon: '🎯', title: '直前模擬・記述書き写し', short: '5記述を手書きで定着、応用問題と並行で仕上げ', btn: '経験記述を再表示', action: wfOpenExperience },
     ],
   };
-  const WORKFLOW_STEPS = WORKFLOW_PRESETS[examType];
+  const WORKFLOW_STEPS = (exam.features.roadmap && WORKFLOW_PRESETS[examType]) || [];
 
   if (showExperience) {
     const EXP_THEMES = ['安全管理', '品質管理', '工程管理', '環境保全', '仮設計画'];
@@ -1964,50 +1797,46 @@ ${
 
   // === ランディング画面: 試験種別・級・検定を選んでスタート ===
   if (showLanding) {
-    const examOptions: { v: ExamType; label: string; desc: string; icon: string }[] = [
-      { v: '2級_1次', label: '2級 第一次検定', desc: '四肢択一 (基礎)', icon: '🟢' },
-      { v: '2級_2次', label: '2級 第二次検定', desc: '記述+選択 (基礎)', icon: '🟡' },
-      { v: '1級_1次', label: '1級 第一次検定', desc: '四肢択一 (上位)', icon: '🔵' },
-      { v: '1級_2次', label: '1級 第二次検定', desc: '記述+応用 (上位)', icon: '🟣' },
-    ];
+    const examOptions = exam.examTypes;
     return (
       <div className="min-h-screen w-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white flex flex-col items-center justify-center px-6 py-12">
         <div className="max-w-3xl w-full">
           <h1 className="text-4xl md:text-5xl font-black tracking-tight text-center mb-3">
-            ⚡ 施工管理技士<br className="md:hidden" />過去問演習
+            ⚡ 資格試験<br className="md:hidden" />過去問演習
           </h1>
           <p className="text-center text-sm md:text-base opacity-80 mb-10">
-            電気工事 / 電気通信工事 × 1級 / 2級 × 第一次 / 第二次 — 5,400問+ の過去問を AI と一緒に解く
+            {EXAM_IDS.filter((id) => EXAMS[id].available).map((id) => EXAMS[id].shortLabel).join(' / ')} — 5,400問+ の過去問を AI と一緒に解く
           </p>
 
           {/* Step 1: 試験種別 */}
           <div className="mb-8">
             <div className="text-xs uppercase tracking-widest opacity-60 mb-3">Step 1. 受験する試験</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button
-                onClick={() => setExamCategory('denki')}
-                className={`group relative p-5 rounded-xl border-2 transition text-left ${
-                  examCategory === 'denki'
-                    ? 'bg-yellow-400 text-yellow-900 border-yellow-300 shadow-2xl'
-                    : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
-                }`}
-              >
-                <div className="text-3xl mb-1">⚡</div>
-                <div className="font-bold text-lg">電気工事施工管理技士</div>
-                <div className="text-xs opacity-75 mt-1">3,906問 (H20〜R8前期) — Bedrock Claude AI解説付</div>
-              </button>
-              <button
-                onClick={() => setExamCategory('denkitsushin')}
-                className={`group relative p-5 rounded-xl border-2 transition text-left ${
-                  examCategory === 'denkitsushin'
-                    ? 'bg-yellow-400 text-yellow-900 border-yellow-300 shadow-2xl'
-                    : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
-                }`}
-              >
-                <div className="text-3xl mb-1">📡</div>
-                <div className="font-bold text-lg">電気通信工事施工管理技士</div>
-                <div className="text-xs opacity-75 mt-1">1,514問 (R1〜R8前期) — 新試験 (R元年〜)</div>
-              </button>
+              {EXAM_IDS.map((id) => {
+                const e = EXAMS[id];
+                return (
+                  <button
+                    key={id}
+                    onClick={() => e.available && setExamCategory(id)}
+                    disabled={!e.available}
+                    title={e.available ? e.fullLabel : `${e.fullLabel} は演習データ準備中`}
+                    className={`group relative p-5 rounded-xl border-2 transition text-left ${
+                      !e.available
+                        ? 'bg-white/5 border-white/10 opacity-40 cursor-not-allowed'
+                        : examCategory === id
+                          ? 'bg-yellow-400 text-yellow-900 border-yellow-300 shadow-2xl'
+                          : 'bg-white/5 border-white/20 hover:bg-white/10 hover:border-white/40'
+                    }`}
+                  >
+                    <div className="text-3xl mb-1">{e.icon}</div>
+                    <div className="font-bold text-lg">
+                      {e.fullLabel}
+                      {!e.available && <span className="ml-2 text-[10px] align-middle bg-white/20 px-1.5 py-0.5 rounded">準備中</span>}
+                    </div>
+                    <div className="text-xs opacity-75 mt-1">{e.landingNote}</div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -2035,12 +1864,14 @@ ${
 
           {/* Step 3: スタート */}
           <div className="flex flex-col sm:flex-row gap-3 mt-10">
-            <button
-              onClick={() => { setShowLanding(false); setShowWorkflow(true); }}
-              className="flex-1 px-6 py-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 rounded-xl font-black text-lg shadow-2xl transition"
-            >
-              🗺 合格ロードマップから始める
-            </button>
+            {exam.features.roadmap && (
+              <button
+                onClick={() => { setShowLanding(false); setShowWorkflow(true); }}
+                className="flex-1 px-6 py-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 rounded-xl font-black text-lg shadow-2xl transition"
+              >
+                🗺 合格ロードマップから始める
+              </button>
+            )}
             <button
               onClick={() => { setShowLanding(false); setShowWorkflow(false); }}
               className="flex-1 px-6 py-4 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl font-black text-lg shadow-2xl transition"
@@ -2057,7 +1888,8 @@ ${
     );
   }
 
-  if (showWorkflow) {
+  // ロードマップ未整備の試験ではスキップして演習画面へ
+  if (showWorkflow && exam.features.roadmap) {
     return (
       <div className="min-h-screen w-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex flex-col lg:h-screen lg:overflow-hidden">
         {/* ヘッダー (固定) */}
@@ -2071,33 +1903,24 @@ ${
               >
                 ← 試験選択
               </button>
-              <h1 className="text-2xl font-black tracking-tight">⚡ {examLabel}施工管理技士 — 合格ロードマップ</h1>
+              <h1 className="text-2xl font-black tracking-tight">{exam.icon} {exam.fullLabel} — 合格ロードマップ</h1>
               <div className="flex bg-white/10 rounded overflow-hidden text-xs font-bold">
-                <button
-                  onClick={() => setExamCategory('denki')}
-                  className={`px-3 py-1.5 ${examCategory === 'denki' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
-                  title="電気工事施工管理技士に切替"
-                >
-                  ⚡ 電気工事
-                </button>
-                <button
-                  onClick={() => setExamCategory('denkitsushin')}
-                  className={`px-3 py-1.5 ${examCategory === 'denkitsushin' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
-                  title="電気通信工事施工管理技士に切替"
-                >
-                  📡 電気通信工事
-                </button>
+                {EXAM_IDS.filter((id) => EXAMS[id].available).map((id) => (
+                  <button
+                    key={id}
+                    onClick={() => setExamCategory(id)}
+                    className={`px-3 py-1.5 ${examCategory === id ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+                    title={`${EXAMS[id].fullLabel}に切替`}
+                  >
+                    {EXAMS[id].icon} {EXAMS[id].shortLabel}
+                  </button>
+                ))}
               </div>
             </div>
-            {/* 4パターン切替 (1級/2級 × 1次/2次) */}
+            {/* 級 × 検定 の切替 (試験ごとに exam.examTypes で定義) */}
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xs opacity-80">対象:</span>
-              {([
-                { v: '2級_1次', label: '2級 第一次', desc: '四肢択一64問' },
-                { v: '2級_2次', label: '2級 第二次', desc: '記述+選択' },
-                { v: '1級_1次', label: '1級 第一次', desc: '四肢択一94問' },
-                { v: '1級_2次', label: '1級 第二次', desc: '記述+応用' },
-              ] as { v: ExamType; label: string; desc: string }[]).map((opt) => (
+              {exam.examTypes.map((opt) => (
                 <button
                   key={opt.v}
                   onClick={() => setExamType(opt.v)}
@@ -2117,7 +1940,7 @@ ${
             </p>
           </div>
           <div className="flex items-center gap-4">
-            {(['1級', '2級'] as const).map((lvl) => {
+            {exam.levels.map((lvl) => {
               const d = examDates[lvl];
               const days = d ? (() => {
                 const t = new Date(d + 'T00:00:00');
@@ -2458,34 +2281,32 @@ ${topThemes}
       <header className="bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-6 py-2 shadow flex-shrink-0 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div>
-            <h1 className="text-lg font-bold leading-tight">⚡ {examLabel}施工管理技士 過去問演習</h1>
-            <p className="text-[10px] opacity-80">1級・2級 第1次検定 / Bedrock Claude AI解説</p>
+            <h1 className="text-lg font-bold leading-tight">{exam.icon} {exam.fullLabel} 過去問演習</h1>
+            <p className="text-[10px] opacity-80">{exam.levels.join('・')} / Bedrock Claude AI解説</p>
           </div>
           <div className="flex bg-white/10 rounded overflow-hidden text-xs font-bold">
-            <button
-              onClick={() => setExamCategory('denki')}
-              className={`px-3 py-1.5 ${examCategory === 'denki' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
-              title="電気工事施工管理技士に切替"
-            >
-              ⚡ 電気工事
-            </button>
-            <button
-              onClick={() => setExamCategory('denkitsushin')}
-              className={`px-3 py-1.5 ${examCategory === 'denkitsushin' ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
-              title="電気通信工事施工管理技士に切替"
-            >
-              📡 電気通信工事
-            </button>
+            {EXAM_IDS.filter((id) => EXAMS[id].available).map((id) => (
+              <button
+                key={id}
+                onClick={() => setExamCategory(id)}
+                className={`px-3 py-1.5 ${examCategory === id ? 'bg-yellow-400 text-yellow-900' : 'hover:bg-white/20'}`}
+                title={`${EXAMS[id].fullLabel}に切替`}
+              >
+                {EXAMS[id].icon} {EXAMS[id].shortLabel}
+              </button>
+            ))}
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => setShowWorkflow(true)}
-            className="bg-yellow-400 hover:bg-yellow-300 text-yellow-900 px-3 py-1.5 rounded font-bold text-xs shadow"
-            title="最小努力で合格するための7ステップ・ロードマップ"
-          >
-            🗺 合格ロードマップ
-          </button>
+          {exam.features.roadmap && (
+            <button
+              onClick={() => setShowWorkflow(true)}
+              className="bg-yellow-400 hover:bg-yellow-300 text-yellow-900 px-3 py-1.5 rounded font-bold text-xs shadow"
+              title="最小努力で合格するための7ステップ・ロードマップ"
+            >
+              🗺 合格ロードマップ
+            </button>
+          )}
           <button
             onClick={() => setShowProfile(true)}
             className="bg-emerald-400 hover:bg-emerald-300 text-emerald-900 px-3 py-1.5 rounded font-bold text-xs shadow"
@@ -2493,62 +2314,43 @@ ${topThemes}
           >
             📋 学習プロフィール
           </button>
-          <button
-            onClick={() => { window.location.href = '/keiken'; }}
-            className="bg-pink-400 hover:bg-pink-300 text-pink-900 px-3 py-1.5 rounded font-bold text-xs shadow"
-            title="第二次検定 経験記述・C票・適合チェック: 実務経験を入力してAIが作成支援"
-          >
-            📝 経験記述 (第2次)
-          </button>
-          {/* レポートリンクは試験種別に応じて動的に切替 (電気工事 / 電気通信工事) */}
-          {(() => {
-            const reportConfig = examCategory === 'denki' ? {
-              easy1_1: '/api/report/施工管理1級_簡易版.html',
-              easy1_2: '/api/report/施工管理2級_簡易版.html',
-              easy2_1: '/api/report/施工管理1級_2次_簡易版.html',
-              easy2_2: '/api/report/施工管理2級_2次_簡易版.html',
-              detail1: '/api/report/施工管理1級_出題傾向_徹底分析/index.html',
-              detail2: '/api/report/施工管理2級_出題傾向_徹底分析/index.html',
-            } : {
-              easy1_1: '/api/report/電気通信工事施工管理技士1級_簡易版.html',
-              easy1_2: '/api/report/電気通信工事施工管理技士2級_簡易版.html',
-              easy2_1: '/api/report/電気通信工事施工管理技士1級_2次_簡易版.html',
-              easy2_2: '/api/report/電気通信工事施工管理技士2級_2次_簡易版.html',
-              detail1: '/api/report/電気通信工事施工管理技士1級_出題傾向_徹底分析/index.html',
-              detail2: '/api/report/電気通信工事施工管理技士2級_出題傾向_徹底分析/index.html',
-            };
-            const linkCls = (url: string | null, color: string) => url
-              ? `bg-white/20 hover:bg-${color}-200 hover:text-${color}-900 px-2 py-0.5 rounded font-bold text-xs`
-              : 'bg-white/5 text-white/30 px-2 py-0.5 rounded font-bold text-xs cursor-not-allowed';
+          {exam.features.keiken && (
+            <button
+              onClick={() => { window.location.href = '/keiken'; }}
+              className="bg-pink-400 hover:bg-pink-300 text-pink-900 px-3 py-1.5 rounded font-bold text-xs shadow"
+              title="第二次検定 経験記述・C票・適合チェック: 実務経験を入力してAIが作成支援"
+            >
+              📝 経験記述 (第2次)
+            </button>
+          )}
+          {/* レポートリンク: 試験ごとの reportPrefix × 級 で組み立て (未整備の試験は非表示) */}
+          {exam.reportPrefix && (() => {
+            const prefix = exam.reportPrefix;
+            const linkCls = (color: string) =>
+              `bg-white/20 hover:bg-${color}-200 hover:text-${color}-900 px-2 py-0.5 rounded font-bold text-xs`;
+            const group = (icon: string, label: string, color: string, href: (lvl: string) => string, hint: string) => (
+              <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
+                <span className="text-[10px] opacity-80">{icon} {label}</span>
+                {exam.levels.map((lvl) => (
+                  <a
+                    key={lvl}
+                    href={href(lvl)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkCls(color)}
+                    title={`${lvl} ${hint}`}
+                  >
+                    {lvl}
+                  </a>
+                ))}
+              </div>
+            );
             return (
               <>
-                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-                  <span className="text-[10px] opacity-80">📊 1次ガイド</span>
-                  {reportConfig.easy1_1
-                    ? <a href={reportConfig.easy1_1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy1_1, 'yellow')} title="1級 第一次検定の要点ガイド">1級</a>
-                    : <span className={linkCls(null, 'yellow')} title="電気通信工事 1次ガイドは未対応">1級</span>}
-                  {reportConfig.easy1_2
-                    ? <a href={reportConfig.easy1_2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy1_2, 'yellow')} title="2級 第一次検定の要点ガイド">2級</a>
-                    : <span className={linkCls(null, 'yellow')} title="電気通信工事 1次ガイドは未対応">2級</span>}
-                </div>
-                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-                  <span className="text-[10px] opacity-80">📝 2次ガイド</span>
-                  {reportConfig.easy2_1
-                    ? <a href={reportConfig.easy2_1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy2_1, 'pink')} title="1級 第二次検定の要点ガイド (経験記述中心)">1級</a>
-                    : <span className={linkCls(null, 'pink')} title="電気通信工事 2次ガイドは未対応">1級</span>}
-                  {reportConfig.easy2_2
-                    ? <a href={reportConfig.easy2_2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.easy2_2, 'pink')} title="2級 第二次検定の要点ガイド (経験記述中心)">2級</a>
-                    : <span className={linkCls(null, 'pink')} title="電気通信工事 2次ガイドは未対応">2級</span>}
-                </div>
-                <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
-                  <span className="text-[10px] opacity-80">🔬 詳細版</span>
-                  {reportConfig.detail1
-                    ? <a href={reportConfig.detail1} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.detail1, 'white')} title="1級の徹底分析レポート">1級</a>
-                    : <span className={linkCls(null, 'white')} title="未対応">1級</span>}
-                  {reportConfig.detail2
-                    ? <a href={reportConfig.detail2} target="_blank" rel="noopener noreferrer" className={linkCls(reportConfig.detail2, 'white')} title="2級の徹底分析レポート">2級</a>
-                    : <span className={linkCls(null, 'white')} title="電気通信工事 2級詳細版は未生成">2級</span>}
-                </div>
+                {group('📊', '1次ガイド', 'yellow', (lvl) => `/api/report/${prefix}${lvl}_簡易版.html`, '第一次検定の要点ガイド')}
+                {exam.features.secondExam &&
+                  group('📝', '2次ガイド', 'pink', (lvl) => `/api/report/${prefix}${lvl}_2次_簡易版.html`, '第二次検定の要点ガイド (経験記述中心)')}
+                {group('🔬', '詳細版', 'white', (lvl) => `/api/report/${prefix}${lvl}_出題傾向_徹底分析/index.html`, 'の徹底分析レポート')}
               </>
             );
           })()}
@@ -2567,18 +2369,15 @@ ${topThemes}
             📊 ダッシュボード
             {dashboardCollapsed && (
               <span className="ml-2 font-normal text-slate-500 text-[11px]">
-                試験日 {examDates['1級'] ? (() => {
-                  const t = new Date(examDates['1級'] + 'T00:00:00');
-                  const today = new Date(); today.setHours(0, 0, 0, 0);
-                  const d = Math.floor((t.getTime() - today.getTime()) / 86400000);
-                  return `1級残${d >= 0 ? d : '?'}日 / `;
-                })() : ''}
-                {examDates['2級'] ? (() => {
-                  const t = new Date(examDates['2級'] + 'T00:00:00');
-                  const today = new Date(); today.setHours(0, 0, 0, 0);
-                  const d = Math.floor((t.getTime() - today.getTime()) / 86400000);
-                  return `2級残${d >= 0 ? d : '?'}日`;
-                })() : ''}
+                試験日 {exam.levels
+                  .filter((lvl) => examDates[lvl])
+                  .map((lvl) => {
+                    const t = new Date(examDates[lvl] + 'T00:00:00');
+                    const today = new Date(); today.setHours(0, 0, 0, 0);
+                    const d = Math.floor((t.getTime() - today.getTime()) / 86400000);
+                    return `${lvl}残${d >= 0 ? d : '?'}日`;
+                  })
+                  .join(' / ')}
                 {' / 🎯 '}{studyMode === 'browse' ? '👀眺め' : studyMode === 'weak' ? '🔥弱点' : studyMode === 'bookmark' ? '⭐ブックマーク' : '通常'}
                 {' / 📊 '}{stats.correct}/{stats.total} ({stats.total ? Math.round(stats.correct / stats.total * 100) : 0}%)
               </span>
@@ -2587,8 +2386,8 @@ ${topThemes}
         </div>
         {!dashboardCollapsed && (
         <div className="flex flex-wrap items-stretch gap-2 text-xs">
-          {/* 試験日カウントダウン: 1級 + 2級 両方表示 (active な級をハイライト) */}
-          {(['1級', '2級'] as const).map((lvl) => {
+          {/* 試験日カウントダウン: 全ての級を表示 (active な級をハイライト) */}
+          {exam.levels.map((lvl) => {
             const d = examDates[lvl];
             const src = examDateSources[lvl];
             const sch = examSchedule[lvl];
@@ -2794,9 +2593,10 @@ ${topThemes}
                   onChange={(e) => setFilterLevel(e.target.value)}
                   className="mt-1 px-2 py-2 border border-slate-300 rounded text-sm w-full"
                 >
-                  <option value="">すべて ({(levelCounts['1級'] || 0) + (levelCounts['2級'] || 0)})</option>
-                  <option value="1級">1級 ({levelCounts['1級'] || 0})</option>
-                  <option value="2級">2級 ({levelCounts['2級'] || 0})</option>
+                  <option value="">すべて ({exam.levels.reduce((n, lvl) => n + (levelCounts[lvl] || 0), 0)})</option>
+                  {exam.levels.map((lvl) => (
+                    <option key={lvl} value={lvl}>{lvl} ({levelCounts[lvl] || 0})</option>
+                  ))}
                 </select>
               </label>
               <label className="flex flex-col text-xs text-slate-600 font-semibold">

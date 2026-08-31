@@ -1,142 +1,14 @@
-// 公式試験スケジュールを取得 (試験種別: 電気工事 / 電気通信工事)
+// 公式試験スケジュールを取得 (試験種別は lib/exams.ts の ExamId)
 // - 電気工事: fcip-shiken.jp (建設業振興基金)
 // - 電気通信工事: jctc.jp (全国建設研修センター)
 // 試験日 + 受付期間 + 合格発表日 をセットで返す
-// 取得失敗時 (社内プロキシ等) は SCHEDULE 表から返す
+// 取得失敗時 (社内プロキシ等) は lib/exam-schedule.ts の表から返す
+
+import { isExamId } from '@/lib/exams';
+import { EXAM_SCHEDULE, EXAM_SCHEDULE_URLS } from '@/lib/exam-schedule';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 21600; // 6時間キャッシュ
-
-const URLS: Record<string, Record<string, string[]>> = {
-  denki: {
-    '1級': [
-      'https://www.fcip-shiken.jp/den1/',
-      'https://www.fcip-shiken.jp/den1/index.html',
-      'https://www.fcip-shiken.jp/',
-    ],
-    '2級': [
-      'https://www.fcip-shiken.jp/den2/',
-      'https://www.fcip-shiken.jp/den2/index.html',
-      'https://www.fcip-shiken.jp/',
-    ],
-  },
-  denkitsushin: {
-    '1級': [
-      'https://www.jctc.jp/exam_dentsu_1q/',
-      'https://www.jctc.jp/',
-    ],
-    '2級': [
-      'https://www.jctc.jp/exam_dentsu_2q/',
-      'https://www.jctc.jp/',
-    ],
-  },
-};
-
-// 公式から取得した R8 試験スケジュール (試験終了後に手動更新)
-// 出典: https://www.fcip-shiken.jp/den1/index.html, /den2/index.html (取得日: 2026-06-15)
-type ScheduleEntry = {
-  examDate: string;       // 試験日
-  examName: string;       // 表示名
-  applyStart: string;     // 受付開始
-  applyEnd: string;       // 受付締切
-  resultDate: string;     // 合格発表日 (空文字列なら未公表)
-  note?: string;          // 補足
-};
-
-const SCHEDULE: Record<string, Record<string, ScheduleEntry[]>> = {
-  denki: {
-    '1級': [
-      {
-        examDate: '2026-07-12',
-        examName: 'R8 1級 第一次検定',
-        applyStart: '2026-02-13',
-        applyEnd: '2026-02-27',
-        resultDate: '2026-08-25',
-        note: '「第一次のみ」受検申請は 2026-02-13～2026-04-07 に延長可',
-      },
-      {
-        examDate: '2026-10-18',
-        examName: 'R8 1級 第二次検定',
-        applyStart: '2026-02-13',
-        applyEnd: '2026-02-27',
-        resultDate: '2027-01-08',
-      },
-    ],
-    '2級': [
-      {
-        examDate: '2026-06-14',
-        examName: 'R8 2級 前期 第一次検定',
-        applyStart: '2026-02-06',
-        applyEnd: '2026-02-27',
-        resultDate: '2026-07-13',
-        note: '前期は第二次検定なし',
-      },
-      {
-        examDate: '2026-11-08',
-        examName: 'R8 2級 後期 第一次検定',
-        applyStart: '2026-06-29',
-        applyEnd: '2026-07-27',
-        resultDate: '2026-12-21',
-        note: 'ネット 6/29-7/27 / 書面 7/13-7/27',
-      },
-      {
-        examDate: '2027-02-05',
-        examName: 'R8 2級 後期 第二次検定',
-        applyStart: '2026-06-29',
-        applyEnd: '2026-07-27',
-        resultDate: '',
-        note: '合格発表は未公表',
-      },
-    ],
-  },
-  denkitsushin: {
-    // JCTC 公式 (全国建設研修センター) - 例年実施スケジュールから推定
-    '1級': [
-      {
-        examDate: '2026-09-06',
-        examName: 'R8 1級 第一次検定',
-        applyStart: '2026-05-07',
-        applyEnd: '2026-05-21',
-        resultDate: '2026-10-15',
-        note: 'JCTC公式の例年スケジュールから推定 (詳細は jctc.jp を確認)',
-      },
-      {
-        examDate: '2026-12-06',
-        examName: 'R8 1級 第二次検定',
-        applyStart: '2026-05-07',
-        applyEnd: '2026-05-21',
-        resultDate: '2027-03-05',
-        note: '一次合格後に二次受検 (推定)',
-      },
-    ],
-    '2級': [
-      {
-        examDate: '2026-06-07',
-        examName: 'R8 2級 前期 第一次検定',
-        applyStart: '2026-03-04',
-        applyEnd: '2026-03-18',
-        resultDate: '2026-07-08',
-        note: '前期は第二次検定なし (推定)',
-      },
-      {
-        examDate: '2026-11-15',
-        examName: 'R8 2級 後期 第一次検定',
-        applyStart: '2026-07-08',
-        applyEnd: '2026-07-22',
-        resultDate: '2027-01-08',
-        note: 'JCTC公式の例年スケジュールから推定',
-      },
-      {
-        examDate: '2026-11-15',
-        examName: 'R8 2級 後期 第二次検定',
-        applyStart: '2026-07-08',
-        applyEnd: '2026-07-22',
-        resultDate: '2027-03-05',
-        note: '後期は一次+二次 同日実施 (推定)',
-      },
-    ],
-  },
-};
 
 function toNum(s: string): number {
   return parseInt(s.replace(/[０-９]/g, (c) => String(c.charCodeAt(0) - 0xFF10)), 10);
@@ -197,19 +69,20 @@ async function fetchOfficial(urls: string[]): Promise<{ futureDates: string[]; d
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const level = searchParams.get('level') || '2級';
-  const category = searchParams.get('category') === 'denkitsushin' ? 'denkitsushin' : 'denki';
-  const urls = URLS[category]?.[level];
+  const rawCategory = searchParams.get('category');
+  const category = isExamId(rawCategory) ? rawCategory : 'denki';
+  const urls = EXAM_SCHEDULE_URLS[category]?.[level];
   if (!urls) return Response.json({ error: 'invalid level or category' }, { status: 400 });
 
   const today = new Date().toISOString().slice(0, 10);
   const fetched = await fetchOfficial(urls);
 
   // SCHEDULE 表から「今日以降の試験日」を持つエントリを抽出
-  const upcomingSchedule = (SCHEDULE[category]?.[level] || []).filter((s) => s.examDate >= today);
+  const upcomingSchedule = (EXAM_SCHEDULE[category]?.[level] || []).filter((s) => s.examDate >= today);
 
   // 公式取得成功 = 試験日が公式に未来日として含まれているか確認
   let source: 'official' | 'fallback' = 'fallback';
-  let primary: ScheduleEntry | null = upcomingSchedule[0] || null;
+  const primary = upcomingSchedule[0] || null;
   if (fetched.futureDates.length > 0 && primary && fetched.futureDates.includes(primary.examDate)) {
     source = 'official';
   }
