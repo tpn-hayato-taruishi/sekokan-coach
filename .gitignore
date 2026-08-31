@@ -56,3 +56,5 @@ next-env.d.ts
 # (figures は deploy.sh prebuild で必要に応じて配置するか、CI でスキップ)
 pptx-assets/施工管理_figures/
 dev.log
+terraform/*.tfplan
+terraform/tfplan*
