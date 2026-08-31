@@ -58,3 +58,4 @@ pptx-assets/施工管理_figures/
 dev.log
 terraform/*.tfplan
 terraform/tfplan*
+!.env.local.example

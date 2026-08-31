@@ -53,9 +53,7 @@ resource "aws_iam_policy" "bedrock_invoke" {
           "bedrock:ConverseStream"
         ]
         Resource = [
-          "arn:aws:bedrock:*::foundation-model/anthropic.claude-3-haiku-20240307-v1:0",
-          "arn:aws:bedrock:*::foundation-model/apac.anthropic.claude-3-haiku-20240307-v1:0",
-          "arn:aws:bedrock:${var.aws_region}:${data.aws_caller_identity.current.account_id}:inference-profile/apac.*"
+          "arn:aws:bedrock:${var.aws_region}::foundation-model/${var.bedrock_model_id}"
         ]
       }
     ]

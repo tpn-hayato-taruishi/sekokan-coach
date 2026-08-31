@@ -24,7 +24,7 @@ variable "app_name" {
 variable "bedrock_model_id" {
   description = "Amazon Bedrock model ID used by chat and report APIs."
   type        = string
-  default     = "apac.anthropic.claude-3-haiku-20240307-v1:0"
+  default     = "anthropic.claude-3-haiku-20240307-v1:0"
 }
 
 variable "bedrock_monthly_limit_yen" {

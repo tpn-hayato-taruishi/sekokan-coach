@@ -234,12 +234,6 @@ function createBedrockClient() {
   const config: ConstructorParameters<typeof BedrockRuntimeClient>[0] = {
     region: process.env.AWS_REGION || 'ap-northeast-1',
   };
-  if (process.env.AWS_ACCESS_KEY_ID) {
-    config.credentials = {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-    };
-  }
 
   const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY;
   if (proxyUrl) {
@@ -302,7 +296,7 @@ export async function POST(req: NextRequest) {
 
     const quizContext: QuizContext = body.quizContext || {};
     const systemPrompt = `${BASE_PROMPT}${QUIZ_CONTEXT_PROMPT(quizContext)}`;
-    const modelId = process.env.BEDROCK_MODEL_ID || 'apac.anthropic.claude-3-haiku-20240307-v1:0';
+    const modelId = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-3-haiku-20240307-v1:0';
     const client = createBedrockClient();
     const response = await client.send(new ConverseStreamCommand({
       modelId,

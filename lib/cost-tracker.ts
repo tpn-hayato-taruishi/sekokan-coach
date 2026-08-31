@@ -28,12 +28,6 @@ function createClient(): DynamoDBDocumentClient {
   const config: ConstructorParameters<typeof DynamoDBClient>[0] = {
     region: process.env.AWS_REGION || 'ap-northeast-1',
   };
-  if (process.env.AWS_ACCESS_KEY_ID) {
-    config.credentials = {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || '',
-    };
-  }
   return DynamoDBDocumentClient.from(new DynamoDBClient(config));
 }
 
