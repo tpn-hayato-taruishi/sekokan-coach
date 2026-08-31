@@ -38,7 +38,11 @@ type QuizContext = {
 };
 
 const MAX_MESSAGES = 30;
-const MAX_MESSAGE_LENGTH = 4000;
+// アプリ内蔵プロンプト (瞬殺テク集など) は同テーマの過去問を最大8問埋め込むため
+// 1万字を超える。利用者の手入力ではなくアプリ生成分がここを通る。
+const MAX_MESSAGE_LENGTH = 20000;
+// 会話全体の上限。モデルのコンテキスト超過を手前で弾く。
+const MAX_TOTAL_LENGTH = 80000;
 const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW_MS = 60_000;
 
@@ -213,6 +217,7 @@ function validateMessages(value: unknown): { ok: true; messages: IncomingMessage
     return { ok: false, status: 400, error: `メッセージ数が上限（${MAX_MESSAGES}件）を超えています。` };
   }
 
+  let totalLength = 0;
   for (const item of value) {
     if (!item || typeof item !== 'object') {
       return { ok: false, status: 400, error: 'メッセージの形式が不正です。' };
@@ -223,8 +228,13 @@ function validateMessages(value: unknown): { ok: true; messages: IncomingMessage
     }
     const contentText = textOf(message.content ?? '');
     if (contentText.length > MAX_MESSAGE_LENGTH) {
-      return { ok: false, status: 400, error: `メッセージが長すぎます（上限${MAX_MESSAGE_LENGTH}文字）。` };
+      return { ok: false, status: 400, error: `メッセージが長すぎます（${contentText.length}文字 / 上限${MAX_MESSAGE_LENGTH}文字）。` };
     }
+    totalLength += contentText.length;
+  }
+
+  if (totalLength > MAX_TOTAL_LENGTH) {
+    return { ok: false, status: 400, error: '会話が長くなりすぎました。新しいチャットを始めてください。' };
   }
 
   return { ok: true, messages: value as IncomingMessage[] };
