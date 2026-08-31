@@ -1,3 +1,8 @@
+resource "random_password" "admin_token" {
+  length  = 48
+  special = false
+}
+
 resource "aws_apprunner_auto_scaling_configuration_version" "app" {
   auto_scaling_configuration_name = "${var.app_name}-scaling"
   max_concurrency                 = 100
@@ -27,7 +32,7 @@ resource "aws_apprunner_service" "app" {
           BEDROCK_MODEL_ID          = var.bedrock_model_id
           BEDROCK_MONTHLY_LIMIT_YEN = tostring(var.bedrock_monthly_limit_yen)
           ACTIVITY_TABLE_NAME       = aws_dynamodb_table.activity_logs.name
-          ADMIN_TOKEN               = var.admin_token
+          ADMIN_TOKEN               = random_password.admin_token.result
           ALLOWED_IPS               = join(",", local.allowed_cidrs)
         }
       }

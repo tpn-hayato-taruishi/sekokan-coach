@@ -47,3 +47,9 @@ output "github_actions_role_arn" {
   description = "IAM role ARN assumed by GitHub Actions via OIDC."
   value       = aws_iam_role.github_actions.arn
 }
+
+output "admin_token" {
+  description = "Generated bearer token for admin APIs."
+  value       = random_password.admin_token.result
+  sensitive   = true
+}

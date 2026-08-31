@@ -45,12 +45,6 @@ variable "app_runner_memory" {
   default     = "512"
 }
 
-variable "admin_token" {
-  description = "Bearer token for admin APIs."
-  type        = string
-  sensitive   = true
-}
-
 variable "holidays" {
   description = "JST dates when the App Runner resume schedule should be skipped."
   type        = list(string)
