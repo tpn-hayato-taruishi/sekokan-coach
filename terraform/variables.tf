@@ -88,3 +88,9 @@ variable "ecr_force_delete" {
   type        = bool
   default     = true
 }
+
+variable "github_repository" {
+  description = "GitHub repository (owner/name) allowed to assume the deployment role via OIDC."
+  type        = string
+  default     = "tpn-hayato-taruishi/sekokan-coach"
+}

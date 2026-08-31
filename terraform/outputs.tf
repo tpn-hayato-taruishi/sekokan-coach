@@ -42,3 +42,8 @@ output "docker_push_commands" {
     aws apprunner start-deployment --service-arn ${aws_apprunner_service.app.arn}
   EOT
 }
+
+output "github_actions_role_arn" {
+  description = "IAM role ARN assumed by GitHub Actions via OIDC."
+  value       = aws_iam_role.github_actions.arn
+}
